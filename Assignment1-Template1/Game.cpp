@@ -489,8 +489,7 @@ void Game::BuildShadersAndInputLayout()
 void Game::BuildShapeGeometry()
 {
 	GeometryGenerator geoGen;
-	//GeometryGenerator::MeshData box = geoGen.CreateQuad(-0.5f, 0.5f, 1.0f, 1.0f, 1.0f);
-	GeometryGenerator::MeshData box = geoGen.CreateBox(20, 0.2, 20, 1);
+	GeometryGenerator::MeshData box = geoGen.CreateBox(1, 0, 1, 1);
 	SubmeshGeometry boxSubmesh;
 	boxSubmesh.IndexCount = (UINT)box.Indices32.size();
 	boxSubmesh.StartIndexLocation = 0;
