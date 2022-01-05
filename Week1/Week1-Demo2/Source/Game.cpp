@@ -1,4 +1,4 @@
-#include <Book/Game.hpp>
+#include "Game.hpp"
 
 
 Game::Game()
@@ -41,8 +41,8 @@ Game::Game()
 
 	//mText.setRotation(45);
 
-	
-	mMusic.openFromFile("Media/Textures/nice_music.ogg");
+
+	mMusic.openFromFile("Media/Sound/nice_music.ogg");
 	//Play the music
 	mMusic.play();
 
@@ -93,6 +93,4 @@ void Game::render()
 	//Update the window
 	mWindow.display();
 }
-
-
 

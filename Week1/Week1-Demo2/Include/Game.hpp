@@ -1,5 +1,4 @@
-#ifndef BOOK_GAME_HPP
-#define BOOK_GAME_HPP
+#pragma once
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
@@ -37,5 +36,3 @@ private:
 #pragma endregion
 
 };
-
-#endif // BOOK_GAME_HPP
