@@ -1,0 +1,717 @@
+\hypertarget{classsf_1_1_input_sound_file}{}\doxysection{sf\+::Input\+Sound\+File Class Reference}
+\label{classsf_1_1_input_sound_file}\index{sf::InputSoundFile@{sf::InputSoundFile}}
+
+
+Provide read access to sound files.  
+
+
+
+
+{\ttfamily \#include $<$Input\+Sound\+File.\+hpp$>$}
+
+Inheritance diagram for sf\+::Input\+Sound\+File\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsf_1_1_input_sound_file}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsf_1_1_input_sound_file_a3b95347de25d1d93a3230287cf47a077}{Input\+Sound\+File}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_input_sound_file_a326a1a486587038123de0c187bf5c635}{$\sim$\+Input\+Sound\+File}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_input_sound_file_af68e54bc9bfac19554c84601156fe93f}{open\+From\+File}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Open a sound file from the disk for reading. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_input_sound_file_a4e034a8e9e69ca3c33a3f11180250400}{open\+From\+Memory}} (const void $\ast$data, std\+::size\+\_\+t size\+In\+Bytes)
+\begin{DoxyCompactList}\small\item\em Open a sound file in memory for reading. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_input_sound_file_a32b76497aeb088a2b46dc6efd819b909}{open\+From\+Stream}} (\mbox{\hyperlink{classsf_1_1_input_stream}{Input\+Stream}} \&stream)
+\begin{DoxyCompactList}\small\item\em Open a sound file from a custom stream for reading. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} \mbox{\hyperlink{classsf_1_1_input_sound_file_a665b7fed6cdca3e0c622909e5a6655e4}{get\+Sample\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Get the total number of audio samples in the file. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classsf_1_1_input_sound_file_a54307c308ba05dea63aba54a29c804a4}{get\+Channel\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of channels used by the sound. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classsf_1_1_input_sound_file_a6b8177e40dd8020752f6d52f96b774c3}{get\+Sample\+Rate}} () const
+\begin{DoxyCompactList}\small\item\em Get the sample rate of the sound. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_time}{Time}} \mbox{\hyperlink{classsf_1_1_input_sound_file_aa081bd4d9732408d10b48227a360778e}{get\+Duration}} () const
+\begin{DoxyCompactList}\small\item\em Get the total duration of the sound file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_time}{Time}} \mbox{\hyperlink{classsf_1_1_input_sound_file_ad1a2238acb734d8b1144ecd75cccc2e7}{get\+Time\+Offset}} () const
+\begin{DoxyCompactList}\small\item\em Get the read offset of the file in time. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} \mbox{\hyperlink{classsf_1_1_input_sound_file_a73a99f159e8aca6e39478f6cf686d7ad}{get\+Sample\+Offset}} () const
+\begin{DoxyCompactList}\small\item\em Get the read offset of the file in samples. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_input_sound_file_aaf97be15020a42e159ff88f76f22af20}{seek}} (\mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} sample\+Offset)
+\begin{DoxyCompactList}\small\item\em Change the current read position to the given sample offset. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_input_sound_file_a8eee7af58ad75ddc61f93ad72e2d66c1}{seek}} (\mbox{\hyperlink{classsf_1_1_time}{Time}} time\+Offset)
+\begin{DoxyCompactList}\small\item\em Change the current read position to the given time offset. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} \mbox{\hyperlink{classsf_1_1_input_sound_file_a83d6f64617456601edeb0daf9d14a17f}{read}} (\mbox{\hyperlink{namespacesf_a3c8e10435e2a310a7741755e66b5c94e}{Int16}} $\ast$samples, \mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} max\+Count)
+\begin{DoxyCompactList}\small\item\em Read audio samples from the open file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_input_sound_file_a3b95347de25d1d93a3230287cf47a077}{Input\+Sound\+File}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_input_sound_file_a326a1a486587038123de0c187bf5c635}{$\sim$\+Input\+Sound\+File}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_input_sound_file_af68e54bc9bfac19554c84601156fe93f}{open\+From\+File}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Open a sound file from the disk for reading. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_input_sound_file_a4e034a8e9e69ca3c33a3f11180250400}{open\+From\+Memory}} (const void $\ast$data, std\+::size\+\_\+t size\+In\+Bytes)
+\begin{DoxyCompactList}\small\item\em Open a sound file in memory for reading. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_input_sound_file_a32b76497aeb088a2b46dc6efd819b909}{open\+From\+Stream}} (\mbox{\hyperlink{classsf_1_1_input_stream}{Input\+Stream}} \&stream)
+\begin{DoxyCompactList}\small\item\em Open a sound file from a custom stream for reading. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} \mbox{\hyperlink{classsf_1_1_input_sound_file_a665b7fed6cdca3e0c622909e5a6655e4}{get\+Sample\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Get the total number of audio samples in the file. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classsf_1_1_input_sound_file_a54307c308ba05dea63aba54a29c804a4}{get\+Channel\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of channels used by the sound. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classsf_1_1_input_sound_file_a6b8177e40dd8020752f6d52f96b774c3}{get\+Sample\+Rate}} () const
+\begin{DoxyCompactList}\small\item\em Get the sample rate of the sound. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_time}{Time}} \mbox{\hyperlink{classsf_1_1_input_sound_file_aa081bd4d9732408d10b48227a360778e}{get\+Duration}} () const
+\begin{DoxyCompactList}\small\item\em Get the total duration of the sound file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_time}{Time}} \mbox{\hyperlink{classsf_1_1_input_sound_file_ad1a2238acb734d8b1144ecd75cccc2e7}{get\+Time\+Offset}} () const
+\begin{DoxyCompactList}\small\item\em Get the read offset of the file in time. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} \mbox{\hyperlink{classsf_1_1_input_sound_file_a73a99f159e8aca6e39478f6cf686d7ad}{get\+Sample\+Offset}} () const
+\begin{DoxyCompactList}\small\item\em Get the read offset of the file in samples. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_input_sound_file_aaf97be15020a42e159ff88f76f22af20}{seek}} (\mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} sample\+Offset)
+\begin{DoxyCompactList}\small\item\em Change the current read position to the given sample offset. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_input_sound_file_a8eee7af58ad75ddc61f93ad72e2d66c1}{seek}} (\mbox{\hyperlink{classsf_1_1_time}{Time}} time\+Offset)
+\begin{DoxyCompactList}\small\item\em Change the current read position to the given time offset. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} \mbox{\hyperlink{classsf_1_1_input_sound_file_a83d6f64617456601edeb0daf9d14a17f}{read}} (\mbox{\hyperlink{namespacesf_a3c8e10435e2a310a7741755e66b5c94e}{Int16}} $\ast$samples, \mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} max\+Count)
+\begin{DoxyCompactList}\small\item\em Read audio samples from the open file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsf_1_1_input_sound_file_ad28182aea9dc9f7d0dfc7f78691825b4}{close}} ()
+\begin{DoxyCompactList}\small\item\em Close the current file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_input_sound_file_ad28182aea9dc9f7d0dfc7f78691825b4}{close}} ()
+\begin{DoxyCompactList}\small\item\em Close the current file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsf_1_1_sound_file_reader}{Sound\+File\+Reader}} $\ast$ \mbox{\hyperlink{classsf_1_1_input_sound_file_abcab8c8227c67460963451af69f724fd}{m\+\_\+reader}}
+\begin{DoxyCompactList}\small\item\em Reader that handles I/O on the file\textquotesingle{}s format. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_input_stream}{Input\+Stream}} $\ast$ \mbox{\hyperlink{classsf_1_1_input_sound_file_a7c16814d792d67386712a07388ce64d6}{m\+\_\+stream}}
+\begin{DoxyCompactList}\small\item\em Input stream used to access the file\textquotesingle{}s data. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_input_sound_file_a6dd8c6ef3876d886a9d4c2df538bd3a4}{m\+\_\+stream\+Owned}}
+\begin{DoxyCompactList}\small\item\em Is the stream internal or external? \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} \mbox{\hyperlink{classsf_1_1_input_sound_file_a616395e2cbf4ff2f23aa7f7e4fb731a9}{m\+\_\+sample\+Offset}}
+\begin{DoxyCompactList}\small\item\em Sample Read Position. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} \mbox{\hyperlink{classsf_1_1_input_sound_file_a6cac79628c9ae40da0db0a218304c3b6}{m\+\_\+sample\+Count}}
+\begin{DoxyCompactList}\small\item\em Total number of samples in the file. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classsf_1_1_input_sound_file_a8139ba49fe8f159bc338766d7c761f2d}{m\+\_\+channel\+Count}}
+\begin{DoxyCompactList}\small\item\em Number of channels of the sound. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classsf_1_1_input_sound_file_a7ce1620cc87d165b3ab9c4f623cad57d}{m\+\_\+sample\+Rate}}
+\begin{DoxyCompactList}\small\item\em Number of samples per second. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provide read access to sound files. 
+
+This class decodes audio samples from a sound file.
+
+It is used internally by higher-\/level classes such as \mbox{\hyperlink{classsf_1_1_sound_buffer}{sf\+::\+Sound\+Buffer}} and \mbox{\hyperlink{classsf_1_1_music}{sf\+::\+Music}}, but can also be useful if you want to process or analyze audio files without playing them, or if you want to implement your own version of \mbox{\hyperlink{classsf_1_1_music}{sf\+::\+Music}} with more specific features.
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Open a sound file}}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_input_sound_file}{sf::InputSoundFile}} file;}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (!file.\mbox{\hyperlink{classsf_1_1_input_sound_file_af68e54bc9bfac19554c84601156fe93f}{openFromFile}}(\textcolor{stringliteral}{"{}music.ogg"{}}))}
+\DoxyCodeLine{    \textcolor{comment}{/* error */};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Print the sound attributes}}
+\DoxyCodeLine{std::cout << \textcolor{stringliteral}{"{}duration: "{}} << file.\mbox{\hyperlink{classsf_1_1_input_sound_file_aa081bd4d9732408d10b48227a360778e}{getDuration}}().\mbox{\hyperlink{classsf_1_1_time_aa3df2f992d0b0041b4eb02258d43f0e3}{asSeconds}}() << std::endl;}
+\DoxyCodeLine{std::cout << \textcolor{stringliteral}{"{}channels: "{}} << file.\mbox{\hyperlink{classsf_1_1_input_sound_file_a54307c308ba05dea63aba54a29c804a4}{getChannelCount}}() << std::endl;}
+\DoxyCodeLine{std::cout << \textcolor{stringliteral}{"{}sample rate: "{}} << file.\mbox{\hyperlink{classsf_1_1_input_sound_file_a6b8177e40dd8020752f6d52f96b774c3}{getSampleRate}}() << std::endl;}
+\DoxyCodeLine{std::cout << \textcolor{stringliteral}{"{}sample count: "{}} << file.\mbox{\hyperlink{classsf_1_1_input_sound_file_a665b7fed6cdca3e0c622909e5a6655e4}{getSampleCount}}() << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Read and process batches of samples until the end of file is reached}}
+\DoxyCodeLine{\mbox{\hyperlink{namespacesf_a3c8e10435e2a310a7741755e66b5c94e}{sf::Int16}} samples[1024];}
+\DoxyCodeLine{\mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{sf::Uint64}} count;}
+\DoxyCodeLine{\textcolor{keywordflow}{do}}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    count = file.\mbox{\hyperlink{classsf_1_1_input_sound_file_a83d6f64617456601edeb0daf9d14a17f}{read}}(samples, 1024);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// process, analyze, play, convert, or whatever}}
+\DoxyCodeLine{    \textcolor{comment}{// you want to do with the samples...}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{keywordflow}{while} (count > 0);}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_sound_file_reader}{sf\+::\+Sound\+File\+Reader}}, \mbox{\hyperlink{classsf_1_1_output_sound_file}{sf\+::\+Output\+Sound\+File}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_input_sound_file_8hpp_source_l00047}{47}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_input_sound_file_8hpp_source}{Input\+Sound\+File.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_a3b95347de25d1d93a3230287cf47a077}\label{classsf_1_1_input_sound_file_a3b95347de25d1d93a3230287cf47a077}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!InputSoundFile@{InputSoundFile}}
+\index{InputSoundFile@{InputSoundFile}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{InputSoundFile()}{InputSoundFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily sf\+::\+Input\+Sound\+File\+::\+Input\+Sound\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_a326a1a486587038123de0c187bf5c635}\label{classsf_1_1_input_sound_file_a326a1a486587038123de0c187bf5c635}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!````~InputSoundFile@{$\sim$InputSoundFile}}
+\index{````~InputSoundFile@{$\sim$InputSoundFile}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{$\sim$InputSoundFile()}{~InputSoundFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily sf\+::\+Input\+Sound\+File\+::$\sim$\+Input\+Sound\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_a3b95347de25d1d93a3230287cf47a077}\label{classsf_1_1_input_sound_file_a3b95347de25d1d93a3230287cf47a077}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!InputSoundFile@{InputSoundFile}}
+\index{InputSoundFile@{InputSoundFile}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{InputSoundFile()}{InputSoundFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sf\+::\+Input\+Sound\+File\+::\+Input\+Sound\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_a326a1a486587038123de0c187bf5c635}\label{classsf_1_1_input_sound_file_a326a1a486587038123de0c187bf5c635}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!````~InputSoundFile@{$\sim$InputSoundFile}}
+\index{````~InputSoundFile@{$\sim$InputSoundFile}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{$\sim$InputSoundFile()}{~InputSoundFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sf\+::\+Input\+Sound\+File\+::$\sim$\+Input\+Sound\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_ad28182aea9dc9f7d0dfc7f78691825b4}\label{classsf_1_1_input_sound_file_ad28182aea9dc9f7d0dfc7f78691825b4}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!close@{close}}
+\index{close@{close}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Input\+Sound\+File\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Close the current file. 
+
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_ad28182aea9dc9f7d0dfc7f78691825b4}\label{classsf_1_1_input_sound_file_ad28182aea9dc9f7d0dfc7f78691825b4}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!close@{close}}
+\index{close@{close}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Input\+Sound\+File\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Close the current file. 
+
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_a54307c308ba05dea63aba54a29c804a4}\label{classsf_1_1_input_sound_file_a54307c308ba05dea63aba54a29c804a4}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!getChannelCount@{getChannelCount}}
+\index{getChannelCount@{getChannelCount}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{getChannelCount()}{getChannelCount()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Input\+Sound\+File\+::get\+Channel\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the number of channels used by the sound. 
+
+\begin{DoxyReturn}{Returns}
+Number of channels (1 = mono, 2 = stereo) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_a54307c308ba05dea63aba54a29c804a4}\label{classsf_1_1_input_sound_file_a54307c308ba05dea63aba54a29c804a4}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!getChannelCount@{getChannelCount}}
+\index{getChannelCount@{getChannelCount}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{getChannelCount()}{getChannelCount()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Input\+Sound\+File\+::get\+Channel\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the number of channels used by the sound. 
+
+\begin{DoxyReturn}{Returns}
+Number of channels (1 = mono, 2 = stereo) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_aa081bd4d9732408d10b48227a360778e}\label{classsf_1_1_input_sound_file_aa081bd4d9732408d10b48227a360778e}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!getDuration@{getDuration}}
+\index{getDuration@{getDuration}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{getDuration()}{getDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_time}{Time}} sf\+::\+Input\+Sound\+File\+::get\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the total duration of the sound file. 
+
+This function is provided for convenience, the duration is deduced from the other sound file attributes.
+
+\begin{DoxyReturn}{Returns}
+Duration of the sound file 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_aa081bd4d9732408d10b48227a360778e}\label{classsf_1_1_input_sound_file_aa081bd4d9732408d10b48227a360778e}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!getDuration@{getDuration}}
+\index{getDuration@{getDuration}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{getDuration()}{getDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_time}{Time}} sf\+::\+Input\+Sound\+File\+::get\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the total duration of the sound file. 
+
+This function is provided for convenience, the duration is deduced from the other sound file attributes.
+
+\begin{DoxyReturn}{Returns}
+Duration of the sound file 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_a665b7fed6cdca3e0c622909e5a6655e4}\label{classsf_1_1_input_sound_file_a665b7fed6cdca3e0c622909e5a6655e4}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!getSampleCount@{getSampleCount}}
+\index{getSampleCount@{getSampleCount}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{getSampleCount()}{getSampleCount()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} sf\+::\+Input\+Sound\+File\+::get\+Sample\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the total number of audio samples in the file. 
+
+\begin{DoxyReturn}{Returns}
+Number of samples 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_a665b7fed6cdca3e0c622909e5a6655e4}\label{classsf_1_1_input_sound_file_a665b7fed6cdca3e0c622909e5a6655e4}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!getSampleCount@{getSampleCount}}
+\index{getSampleCount@{getSampleCount}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{getSampleCount()}{getSampleCount()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} sf\+::\+Input\+Sound\+File\+::get\+Sample\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the total number of audio samples in the file. 
+
+\begin{DoxyReturn}{Returns}
+Number of samples 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_a73a99f159e8aca6e39478f6cf686d7ad}\label{classsf_1_1_input_sound_file_a73a99f159e8aca6e39478f6cf686d7ad}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!getSampleOffset@{getSampleOffset}}
+\index{getSampleOffset@{getSampleOffset}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{getSampleOffset()}{getSampleOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} sf\+::\+Input\+Sound\+File\+::get\+Sample\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the read offset of the file in samples. 
+
+\begin{DoxyReturn}{Returns}
+Sample position 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_a73a99f159e8aca6e39478f6cf686d7ad}\label{classsf_1_1_input_sound_file_a73a99f159e8aca6e39478f6cf686d7ad}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!getSampleOffset@{getSampleOffset}}
+\index{getSampleOffset@{getSampleOffset}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{getSampleOffset()}{getSampleOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} sf\+::\+Input\+Sound\+File\+::get\+Sample\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the read offset of the file in samples. 
+
+\begin{DoxyReturn}{Returns}
+Sample position 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_a6b8177e40dd8020752f6d52f96b774c3}\label{classsf_1_1_input_sound_file_a6b8177e40dd8020752f6d52f96b774c3}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!getSampleRate@{getSampleRate}}
+\index{getSampleRate@{getSampleRate}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{getSampleRate()}{getSampleRate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Input\+Sound\+File\+::get\+Sample\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the sample rate of the sound. 
+
+\begin{DoxyReturn}{Returns}
+Sample rate, in samples per second 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_a6b8177e40dd8020752f6d52f96b774c3}\label{classsf_1_1_input_sound_file_a6b8177e40dd8020752f6d52f96b774c3}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!getSampleRate@{getSampleRate}}
+\index{getSampleRate@{getSampleRate}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{getSampleRate()}{getSampleRate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Input\+Sound\+File\+::get\+Sample\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the sample rate of the sound. 
+
+\begin{DoxyReturn}{Returns}
+Sample rate, in samples per second 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_ad1a2238acb734d8b1144ecd75cccc2e7}\label{classsf_1_1_input_sound_file_ad1a2238acb734d8b1144ecd75cccc2e7}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!getTimeOffset@{getTimeOffset}}
+\index{getTimeOffset@{getTimeOffset}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{getTimeOffset()}{getTimeOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_time}{Time}} sf\+::\+Input\+Sound\+File\+::get\+Time\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the read offset of the file in time. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classsf_1_1_time}{Time}} position 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_ad1a2238acb734d8b1144ecd75cccc2e7}\label{classsf_1_1_input_sound_file_ad1a2238acb734d8b1144ecd75cccc2e7}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!getTimeOffset@{getTimeOffset}}
+\index{getTimeOffset@{getTimeOffset}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{getTimeOffset()}{getTimeOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_time}{Time}} sf\+::\+Input\+Sound\+File\+::get\+Time\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the read offset of the file in time. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classsf_1_1_time}{Time}} position 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_af68e54bc9bfac19554c84601156fe93f}\label{classsf_1_1_input_sound_file_af68e54bc9bfac19554c84601156fe93f}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!openFromFile@{openFromFile}}
+\index{openFromFile@{openFromFile}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{openFromFile()}{openFromFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool sf\+::\+Input\+Sound\+File\+::open\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Open a sound file from the disk for reading. 
+
+The supported audio formats are\+: WAV (PCM only), OGG/\+Vorbis, FLAC. The supported sample sizes for FLAC and WAV are 8, 16, 24 and 32 bit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Path of the sound file to load\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the file was successfully opened 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_af68e54bc9bfac19554c84601156fe93f}\label{classsf_1_1_input_sound_file_af68e54bc9bfac19554c84601156fe93f}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!openFromFile@{openFromFile}}
+\index{openFromFile@{openFromFile}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{openFromFile()}{openFromFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool sf\+::\+Input\+Sound\+File\+::open\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Open a sound file from the disk for reading. 
+
+The supported audio formats are\+: WAV (PCM only), OGG/\+Vorbis, FLAC. The supported sample sizes for FLAC and WAV are 8, 16, 24 and 32 bit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Path of the sound file to load\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the file was successfully opened 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_a4e034a8e9e69ca3c33a3f11180250400}\label{classsf_1_1_input_sound_file_a4e034a8e9e69ca3c33a3f11180250400}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!openFromMemory@{openFromMemory}}
+\index{openFromMemory@{openFromMemory}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{openFromMemory()}{openFromMemory()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool sf\+::\+Input\+Sound\+File\+::open\+From\+Memory (\begin{DoxyParamCaption}\item[{const void $\ast$}]{data,  }\item[{std\+::size\+\_\+t}]{size\+In\+Bytes }\end{DoxyParamCaption})}
+
+
+
+Open a sound file in memory for reading. 
+
+The supported audio formats are\+: WAV (PCM only), OGG/\+Vorbis, FLAC. The supported sample sizes for FLAC and WAV are 8, 16, 24 and 32 bit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the file data in memory \\
+\hline
+{\em size\+In\+Bytes} & Size of the data to load, in bytes\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the file was successfully opened 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_a4e034a8e9e69ca3c33a3f11180250400}\label{classsf_1_1_input_sound_file_a4e034a8e9e69ca3c33a3f11180250400}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!openFromMemory@{openFromMemory}}
+\index{openFromMemory@{openFromMemory}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{openFromMemory()}{openFromMemory()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool sf\+::\+Input\+Sound\+File\+::open\+From\+Memory (\begin{DoxyParamCaption}\item[{const void $\ast$}]{data,  }\item[{std\+::size\+\_\+t}]{size\+In\+Bytes }\end{DoxyParamCaption})}
+
+
+
+Open a sound file in memory for reading. 
+
+The supported audio formats are\+: WAV (PCM only), OGG/\+Vorbis, FLAC. The supported sample sizes for FLAC and WAV are 8, 16, 24 and 32 bit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the file data in memory \\
+\hline
+{\em size\+In\+Bytes} & Size of the data to load, in bytes\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the file was successfully opened 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_a32b76497aeb088a2b46dc6efd819b909}\label{classsf_1_1_input_sound_file_a32b76497aeb088a2b46dc6efd819b909}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!openFromStream@{openFromStream}}
+\index{openFromStream@{openFromStream}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{openFromStream()}{openFromStream()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool sf\+::\+Input\+Sound\+File\+::open\+From\+Stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_input_stream}{Input\+Stream}} \&}]{stream }\end{DoxyParamCaption})}
+
+
+
+Open a sound file from a custom stream for reading. 
+
+The supported audio formats are\+: WAV (PCM only), OGG/\+Vorbis, FLAC. The supported sample sizes for FLAC and WAV are 8, 16, 24 and 32 bit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & Source stream to read from\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the file was successfully opened 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_a32b76497aeb088a2b46dc6efd819b909}\label{classsf_1_1_input_sound_file_a32b76497aeb088a2b46dc6efd819b909}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!openFromStream@{openFromStream}}
+\index{openFromStream@{openFromStream}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{openFromStream()}{openFromStream()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool sf\+::\+Input\+Sound\+File\+::open\+From\+Stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_input_stream}{Input\+Stream}} \&}]{stream }\end{DoxyParamCaption})}
+
+
+
+Open a sound file from a custom stream for reading. 
+
+The supported audio formats are\+: WAV (PCM only), OGG/\+Vorbis, FLAC. The supported sample sizes for FLAC and WAV are 8, 16, 24 and 32 bit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & Source stream to read from\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the file was successfully opened 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_a83d6f64617456601edeb0daf9d14a17f}\label{classsf_1_1_input_sound_file_a83d6f64617456601edeb0daf9d14a17f}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!read@{read}}
+\index{read@{read}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} sf\+::\+Input\+Sound\+File\+::read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_a3c8e10435e2a310a7741755e66b5c94e}{Int16}} $\ast$}]{samples,  }\item[{\mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}}}]{max\+Count }\end{DoxyParamCaption})}
+
+
+
+Read audio samples from the open file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em samples} & Pointer to the sample array to fill \\
+\hline
+{\em max\+Count} & Maximum number of samples to read\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of samples actually read (may be less than {\itshape max\+Count}) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_a83d6f64617456601edeb0daf9d14a17f}\label{classsf_1_1_input_sound_file_a83d6f64617456601edeb0daf9d14a17f}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!read@{read}}
+\index{read@{read}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} sf\+::\+Input\+Sound\+File\+::read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_a3c8e10435e2a310a7741755e66b5c94e}{Int16}} $\ast$}]{samples,  }\item[{\mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}}}]{max\+Count }\end{DoxyParamCaption})}
+
+
+
+Read audio samples from the open file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em samples} & Pointer to the sample array to fill \\
+\hline
+{\em max\+Count} & Maximum number of samples to read\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of samples actually read (may be less than {\itshape max\+Count}) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_a8eee7af58ad75ddc61f93ad72e2d66c1}\label{classsf_1_1_input_sound_file_a8eee7af58ad75ddc61f93ad72e2d66c1}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!seek@{seek}}
+\index{seek@{seek}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{seek()}{seek()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void sf\+::\+Input\+Sound\+File\+::seek (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{Time}}}]{time\+Offset }\end{DoxyParamCaption})}
+
+
+
+Change the current read position to the given time offset. 
+
+Using a time offset is handy but imprecise. If you need an accurate result, consider using the overload which takes a sample offset.
+
+If the given time exceeds to total duration, this function jumps to the end of the sound file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\+Offset} & \mbox{\hyperlink{classsf_1_1_time}{Time}} to jump to, relative to the beginning \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_a8eee7af58ad75ddc61f93ad72e2d66c1}\label{classsf_1_1_input_sound_file_a8eee7af58ad75ddc61f93ad72e2d66c1}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!seek@{seek}}
+\index{seek@{seek}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{seek()}{seek()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void sf\+::\+Input\+Sound\+File\+::seek (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{Time}}}]{time\+Offset }\end{DoxyParamCaption})}
+
+
+
+Change the current read position to the given time offset. 
+
+Using a time offset is handy but imprecise. If you need an accurate result, consider using the overload which takes a sample offset.
+
+If the given time exceeds to total duration, this function jumps to the end of the sound file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\+Offset} & \mbox{\hyperlink{classsf_1_1_time}{Time}} to jump to, relative to the beginning \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_aaf97be15020a42e159ff88f76f22af20}\label{classsf_1_1_input_sound_file_aaf97be15020a42e159ff88f76f22af20}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!seek@{seek}}
+\index{seek@{seek}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{seek()}{seek()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void sf\+::\+Input\+Sound\+File\+::seek (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}}}]{sample\+Offset }\end{DoxyParamCaption})}
+
+
+
+Change the current read position to the given sample offset. 
+
+This function takes a sample offset to provide maximum precision. If you need to jump to a given time, use the other overload.
+
+The sample offset takes the channels into account. If you have a time offset instead, you can easily find the corresponding sample offset with the following formula\+: {\ttfamily time\+In\+Seconds $\ast$ sample\+Rate $\ast$ channel\+Count} If the given offset exceeds to total number of samples, this function jumps to the end of the sound file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sample\+Offset} & Index of the sample to jump to, relative to the beginning \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_aaf97be15020a42e159ff88f76f22af20}\label{classsf_1_1_input_sound_file_aaf97be15020a42e159ff88f76f22af20}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!seek@{seek}}
+\index{seek@{seek}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{seek()}{seek()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void sf\+::\+Input\+Sound\+File\+::seek (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}}}]{sample\+Offset }\end{DoxyParamCaption})}
+
+
+
+Change the current read position to the given sample offset. 
+
+This function takes a sample offset to provide maximum precision. If you need to jump to a given time, use the other overload.
+
+The sample offset takes the channels into account. If you have a time offset instead, you can easily find the corresponding sample offset with the following formula\+: {\ttfamily time\+In\+Seconds $\ast$ sample\+Rate $\ast$ channel\+Count} If the given offset exceeds to total number of samples, this function jumps to the end of the sound file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sample\+Offset} & Index of the sample to jump to, relative to the beginning \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_a8139ba49fe8f159bc338766d7c761f2d}\label{classsf_1_1_input_sound_file_a8139ba49fe8f159bc338766d7c761f2d}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!m\_channelCount@{m\_channelCount}}
+\index{m\_channelCount@{m\_channelCount}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{m\_channelCount}{m\_channelCount}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Input\+Sound\+File\+::m\+\_\+channel\+Count\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of channels of the sound. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_input_sound_file_8hpp_source_l00214}{214}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_input_sound_file_8hpp_source}{Input\+Sound\+File.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_abcab8c8227c67460963451af69f724fd}\label{classsf_1_1_input_sound_file_abcab8c8227c67460963451af69f724fd}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!m\_reader@{m\_reader}}
+\index{m\_reader@{m\_reader}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{m\_reader}{m\_reader}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_sound_file_reader}{Sound\+File\+Reader}} $\ast$ sf\+::\+Input\+Sound\+File\+::m\+\_\+reader\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reader that handles I/O on the file\textquotesingle{}s format. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_input_sound_file_8hpp_source_l00209}{209}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_input_sound_file_8hpp_source}{Input\+Sound\+File.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_a6cac79628c9ae40da0db0a218304c3b6}\label{classsf_1_1_input_sound_file_a6cac79628c9ae40da0db0a218304c3b6}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!m\_sampleCount@{m\_sampleCount}}
+\index{m\_sampleCount@{m\_sampleCount}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{m\_sampleCount}{m\_sampleCount}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} sf\+::\+Input\+Sound\+File\+::m\+\_\+sample\+Count\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Total number of samples in the file. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_input_sound_file_8hpp_source_l00213}{213}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_input_sound_file_8hpp_source}{Input\+Sound\+File.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_a616395e2cbf4ff2f23aa7f7e4fb731a9}\label{classsf_1_1_input_sound_file_a616395e2cbf4ff2f23aa7f7e4fb731a9}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!m\_sampleOffset@{m\_sampleOffset}}
+\index{m\_sampleOffset@{m\_sampleOffset}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{m\_sampleOffset}{m\_sampleOffset}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} sf\+::\+Input\+Sound\+File\+::m\+\_\+sample\+Offset\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sample Read Position. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_input_sound_file_8hpp_source_l00212}{212}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_input_sound_file_8hpp_source}{Input\+Sound\+File.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_a7ce1620cc87d165b3ab9c4f623cad57d}\label{classsf_1_1_input_sound_file_a7ce1620cc87d165b3ab9c4f623cad57d}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!m\_sampleRate@{m\_sampleRate}}
+\index{m\_sampleRate@{m\_sampleRate}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{m\_sampleRate}{m\_sampleRate}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Input\+Sound\+File\+::m\+\_\+sample\+Rate\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of samples per second. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_input_sound_file_8hpp_source_l00215}{215}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_input_sound_file_8hpp_source}{Input\+Sound\+File.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_a7c16814d792d67386712a07388ce64d6}\label{classsf_1_1_input_sound_file_a7c16814d792d67386712a07388ce64d6}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!m\_stream@{m\_stream}}
+\index{m\_stream@{m\_stream}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{m\_stream}{m\_stream}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_input_stream}{Input\+Stream}} $\ast$ sf\+::\+Input\+Sound\+File\+::m\+\_\+stream\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Input stream used to access the file\textquotesingle{}s data. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_input_sound_file_8hpp_source_l00210}{210}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_input_sound_file_8hpp_source}{Input\+Sound\+File.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_input_sound_file_a6dd8c6ef3876d886a9d4c2df538bd3a4}\label{classsf_1_1_input_sound_file_a6dd8c6ef3876d886a9d4c2df538bd3a4}} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!m\_streamOwned@{m\_streamOwned}}
+\index{m\_streamOwned@{m\_streamOwned}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{m\_streamOwned}{m\_streamOwned}}
+{\footnotesize\ttfamily bool sf\+::\+Input\+Sound\+File\+::m\+\_\+stream\+Owned\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Is the stream internal or external? 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_input_sound_file_8hpp_source_l00211}{211}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_input_sound_file_8hpp_source}{Input\+Sound\+File.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+SFML-\/2.\+5.\+1/include/\+SFML/\+Audio/\mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_input_sound_file_8hpp}{Input\+Sound\+File.\+hpp}}\item 
+Week14/\+SFML-\/2.\+5.\+1/include/\+SFML/\+Audio/\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_input_sound_file_8hpp}{Input\+Sound\+File.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,200 @@
+\hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source}{}\doxysection{Ftp.\+cpp}
+\label{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source}\index{SFML-\/2.5.1/examples/ftp/Ftp.cpp@{SFML-\/2.5.1/examples/ftp/Ftp.cpp}}
+\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00003}00003 \textcolor{comment}{// Headers}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00005}00005 \textcolor{comment}{}\textcolor{preprocessor}{\#include <SFML/Network.hpp>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00014}\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_a0162d6462470d1532055a914b9699075}{00014}} std::ostream\& \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_a0162d6462470d1532055a914b9699075}{operator <<}}(std::ostream\& stream, \textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_ftp_1_1_response}{sf::Ftp::Response}}\& response)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00015}00015 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00016}00016     \textcolor{keywordflow}{return} stream << response.\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_a52bbca9fbf5451157bc055e3d8430c25}{getStatus}}() << response.\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_adc2890c93c9f8ee997b828fcbef82c97}{getMessage}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00017}00017 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00026}\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00026}} \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00027}00027 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00028}00028     \textcolor{comment}{// Choose the server address}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00029}00029     \mbox{\hyperlink{classsf_1_1_ip_address}{sf::IpAddress}} address;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00030}00030     \textcolor{keywordflow}{do}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00031}00031     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00032}00032         std::cout << \textcolor{stringliteral}{"{}Enter the FTP server address: "{}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00033}00033         std::cin  >> address;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00034}00034     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00035}00035     \textcolor{keywordflow}{while} (address == \mbox{\hyperlink{classsf_1_1_ip_address_af95b0353e632372b5266d6227bc0e3ec}{sf::IpAddress::None}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00037}00037     \textcolor{comment}{// Connect to the server}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00038}00038     \mbox{\hyperlink{classsf_1_1_ftp}{sf::Ftp}} server;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00039}00039     \mbox{\hyperlink{classsf_1_1_ftp_1_1_response}{sf::Ftp::Response}} connectResponse = server.\mbox{\hyperlink{classsf_1_1_ftp_af02fb3de3f450a50a27981961c69c860}{connect}}(address);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00040}00040     std::cout << connectResponse << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00041}00041     \textcolor{keywordflow}{if} (!connectResponse.\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_a5102552955a2652c1a39e9046e617b36}{isOk}}())}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00042}00042         \textcolor{keywordflow}{return} EXIT\_FAILURE;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00044}00044     \textcolor{comment}{// Ask for user name and password}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00045}00045     std::string user, password;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00046}00046     std::cout << \textcolor{stringliteral}{"{}User name: "{}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00047}00047     std::cin  >> user;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00048}00048     std::cout << \textcolor{stringliteral}{"{}Password: "{}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00049}00049     std::cin  >> password;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00051}00051     \textcolor{comment}{// Login to the server}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00052}00052     \mbox{\hyperlink{classsf_1_1_ftp_1_1_response}{sf::Ftp::Response}} loginResponse = server.\mbox{\hyperlink{classsf_1_1_ftp_a686262bc377584cd50e52e1576aa3a9b}{login}}(user, password);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00053}00053     std::cout << loginResponse << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00054}00054     \textcolor{keywordflow}{if} (!loginResponse.\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_a5102552955a2652c1a39e9046e617b36}{isOk}}())}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00055}00055         \textcolor{keywordflow}{return} EXIT\_FAILURE;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00057}00057     \textcolor{comment}{// Main menu}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00058}00058     \textcolor{keywordtype}{int} choice = 0;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00059}00059     \textcolor{keywordflow}{do}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00060}00060     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00061}00061         \textcolor{comment}{// Main FTP menu}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00062}00062         std::cout << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00063}00063         std::cout << \textcolor{stringliteral}{"{}Choose an action:"{}}                      << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00064}00064         std::cout << \textcolor{stringliteral}{"{}1. Print working directory"{}}             << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00065}00065         std::cout << \textcolor{stringliteral}{"{}2. Print contents of working directory"{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00066}00066         std::cout << \textcolor{stringliteral}{"{}3. Change directory"{}}                    << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00067}00067         std::cout << \textcolor{stringliteral}{"{}4. Create directory"{}}                    << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00068}00068         std::cout << \textcolor{stringliteral}{"{}5. Delete directory"{}}                    << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00069}00069         std::cout << \textcolor{stringliteral}{"{}6. Rename file"{}}                         << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00070}00070         std::cout << \textcolor{stringliteral}{"{}7. Remove file"{}}                         << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00071}00071         std::cout << \textcolor{stringliteral}{"{}8. Download file"{}}                       << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00072}00072         std::cout << \textcolor{stringliteral}{"{}9. Upload file"{}}                         << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00073}00073         std::cout << \textcolor{stringliteral}{"{}0. Disconnect"{}}                          << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00074}00074         std::cout << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00076}00076         std::cout << \textcolor{stringliteral}{"{}Your choice: "{}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00077}00077         std::cin  >> choice;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00078}00078         std::cout << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00080}00080         \textcolor{keywordflow}{switch} (choice)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00081}00081         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00082}00082             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00083}00083             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00084}00084                 \textcolor{comment}{// Wrong choice}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00085}00085                 std::cout << \textcolor{stringliteral}{"{}Invalid choice!"{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00086}00086                 std::cin.clear();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00087}00087                 std::cin.ignore(10000, \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00088}00088                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00089}00089             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00091}00091             \textcolor{keywordflow}{case} 1:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00092}00092             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00093}00093                 \textcolor{comment}{// Print the current server directory}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00094}00094                 \mbox{\hyperlink{classsf_1_1_ftp_1_1_directory_response}{sf::Ftp::DirectoryResponse}} response = server.\mbox{\hyperlink{classsf_1_1_ftp_a79c654fcdd0c81e68c4fa29af3b45e0c}{getWorkingDirectory}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00095}00095                 std::cout << response << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00096}00096                 std::cout << \textcolor{stringliteral}{"{}Current directory is "{}} << response.\mbox{\hyperlink{classsf_1_1_ftp_1_1_directory_response_a983b0ce3d99c687e0862212040158d67}{getDirectory}}() << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00097}00097                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00098}00098             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00100}00100             \textcolor{keywordflow}{case} 2:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00101}00101             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00102}00102                 \textcolor{comment}{// Print the contents of the current server directory}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00103}00103                 \mbox{\hyperlink{classsf_1_1_ftp_1_1_listing_response}{sf::Ftp::ListingResponse}} response = server.\mbox{\hyperlink{classsf_1_1_ftp_a8f37258e461fcb9e2a0655e9df0be4a0}{getDirectoryListing}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00104}00104                 std::cout << response << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00105}00105                 \textcolor{keyword}{const} std::vector<std::string>\& names = response.\mbox{\hyperlink{classsf_1_1_ftp_1_1_listing_response_a0d0579db7e0531761992dbbae1174bf2}{getListing}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00106}00106                 \textcolor{keywordflow}{for} (std::vector<std::string>::const\_iterator it = names.begin(); it != names.end(); ++it)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00107}00107                     std::cout << *it << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00108}00108                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00109}00109             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00110}00110 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00111}00111             \textcolor{keywordflow}{case} 3:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00112}00112             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00113}00113                 \textcolor{comment}{// Change the current directory}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00114}00114                 std::string directory;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00115}00115                 std::cout << \textcolor{stringliteral}{"{}Choose a directory: "{}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00116}00116                 std::cin  >> directory;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00117}00117                 std::cout << server.\mbox{\hyperlink{classsf_1_1_ftp_a7e93488ea6330dd4dd76e428da9bb6d3}{changeDirectory}}(directory) << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00118}00118                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00119}00119             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00120}00120 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00121}00121             \textcolor{keywordflow}{case} 4:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00122}00122             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00123}00123                 \textcolor{comment}{// Create a new directory}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00124}00124                 std::string directory;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00125}00125                 std::cout << \textcolor{stringliteral}{"{}Name of the directory to create: "{}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00126}00126                 std::cin  >> directory;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00127}00127                 std::cout << server.\mbox{\hyperlink{classsf_1_1_ftp_a247b84c4b25da37804218c2b748c4787}{createDirectory}}(directory) << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00128}00128                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00129}00129             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00130}00130 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00131}00131             \textcolor{keywordflow}{case} 5:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00132}00132             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00133}00133                 \textcolor{comment}{// Remove an existing directory}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00134}00134                 std::string directory;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00135}00135                 std::cout << \textcolor{stringliteral}{"{}Name of the directory to remove: "{}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00136}00136                 std::cin  >> directory;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00137}00137                 std::cout << server.\mbox{\hyperlink{classsf_1_1_ftp_a2a8a7ef9144204b5b319c9a4be8806c2}{deleteDirectory}}(directory) << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00138}00138                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00139}00139             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00140}00140 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00141}00141             \textcolor{keywordflow}{case} 6:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00142}00142             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00143}00143                 \textcolor{comment}{// Rename a file}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00144}00144                 std::string source, destination;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00145}00145                 std::cout << \textcolor{stringliteral}{"{}Name of the file to rename: "{}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00146}00146                 std::cin  >> source;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00147}00147                 std::cout << \textcolor{stringliteral}{"{}New name: "{}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00148}00148                 std::cin  >> destination;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00149}00149                 std::cout << server.\mbox{\hyperlink{classsf_1_1_ftp_a8f99251d7153e1dc26723e4006deb764}{renameFile}}(source, destination) << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00150}00150                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00151}00151             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00152}00152 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00153}00153             \textcolor{keywordflow}{case} 7:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00154}00154             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00155}00155                 \textcolor{comment}{// Remove an existing directory}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00156}00156                 std::string filename;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00157}00157                 std::cout << \textcolor{stringliteral}{"{}Name of the file to remove: "{}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00158}00158                 std::cin  >> filename;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00159}00159                 std::cout << server.\mbox{\hyperlink{classsf_1_1_ftp_a8aa272b0eb7769a850006e70fcad370f}{deleteFile}}(filename) << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00160}00160                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00161}00161             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00162}00162 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00163}00163             \textcolor{keywordflow}{case} 8:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00164}00164             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00165}00165                 \textcolor{comment}{// Download a file from server}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00166}00166                 std::string filename, directory;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00167}00167                 std::cout << \textcolor{stringliteral}{"{}Filename of the file to download (relative to current directory): "{}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00168}00168                 std::cin  >> filename;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00169}00169                 std::cout << \textcolor{stringliteral}{"{}Directory to download the file to: "{}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00170}00170                 std::cin  >> directory;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00171}00171                 std::cout << server.\mbox{\hyperlink{classsf_1_1_ftp_a20c1600ec5fd6f5a2ad1429ab8aa5df4}{download}}(filename, directory) << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00172}00172                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00173}00173             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00174}00174 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00175}00175             \textcolor{keywordflow}{case} 9:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00176}00176             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00177}00177                 \textcolor{comment}{// Upload a file to server}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00178}00178                 std::string filename, directory;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00179}00179                 std::cout << \textcolor{stringliteral}{"{}Path of the file to upload (absolute or relative to working directory): "{}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00180}00180                 std::cin  >> filename;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00181}00181                 std::cout << \textcolor{stringliteral}{"{}Directory to upload the file to (relative to current directory): "{}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00182}00182                 std::cin  >> directory;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00183}00183                 std::cout << server.\mbox{\hyperlink{classsf_1_1_ftp_a0402d2cec27a197ffba34c88ffaddeac}{upload}}(filename, directory) << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00184}00184                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00185}00185             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00186}00186 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00187}00187             \textcolor{keywordflow}{case} 0:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00188}00188             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00189}00189                 \textcolor{comment}{// Disconnect}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00190}00190                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00191}00191             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00192}00192         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00193}00193 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00194}00194     \} \textcolor{keywordflow}{while} (choice != 0);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00195}00195 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00196}00196     \textcolor{comment}{// Disconnect from the server}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00197}00197     std::cout << \textcolor{stringliteral}{"{}Disconnecting from server..."{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00198}00198     std::cout << server.\mbox{\hyperlink{classsf_1_1_ftp_acf7459926f3391cd06bf84337ed6a0f4}{disconnect}}() << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00199}00199 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00200}00200     \textcolor{comment}{// Wait until the user presses 'enter' key}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00201}00201     std::cout << \textcolor{stringliteral}{"{}Press enter to exit..."{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00202}00202     std::cin.ignore(10000, \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00203}00203     std::cin.ignore(10000, \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00204}00204 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00205}00205     \textcolor{keywordflow}{return} EXIT\_SUCCESS;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2ftp_2_ftp_8cpp_source_l00206}00206 \}}
+
+\end{DoxyCode}

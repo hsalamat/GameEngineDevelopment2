@@ -1,0 +1,73 @@
+\hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source}{}\doxysection{World.\+hpp}
+\label{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source}\index{Week8/Week8-\/Demo3-\/Button/Include/World.hpp@{Week8/Week8-\/Demo3-\/Button/Include/World.hpp}}
+\mbox{\hyperlink{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#ifndef BOOK\_WORLD\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#define BOOK\_WORLD\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_include_2_resource_holder_8hpp}{ResourceHolder.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00005}00005 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_include_2_resource_identifiers_8hpp}{ResourceIdentifiers.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00006}00006 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_include_2_scene_node_8hpp}{SceneNode.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00007}00007 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_include_2_sprite_node_8hpp}{SpriteNode.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00008}00008 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_include_2_aircraft_8hpp}{Aircraft.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00009}00009 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_include_2_command_queue_8hpp}{CommandQueue.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00010}00010 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_include_2_command_8hpp}{Command.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00012}00012 \textcolor{preprocessor}{\#include <SFML/System/NonCopyable.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00013}00013 \textcolor{preprocessor}{\#include <SFML/Graphics/View.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00014}00014 \textcolor{preprocessor}{\#include <SFML/Graphics/Texture.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00016}00016 \textcolor{preprocessor}{\#include <array>}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00017}00017 \textcolor{preprocessor}{\#include <queue>}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00020}00020 \textcolor{comment}{// Forward declaration}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00021}00021 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacesf}{sf}}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00022}00022 \{}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00023}00023     \textcolor{keyword}{class }RenderWindow;}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00024}00024 \}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00026}00026 \textcolor{keyword}{class }\mbox{\hyperlink{class_world}{World}} : \textcolor{keyword}{private} \mbox{\hyperlink{classsf_1_1_non_copyable}{sf::NonCopyable}}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00027}00027 \{}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00028}00028     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00029}\mbox{\hyperlink{class_world_a00985c4e0cb3b402e13698319a63cd62}{00029}}         \textcolor{keyword}{explicit}                            \mbox{\hyperlink{class_world_a00985c4e0cb3b402e13698319a63cd62}{World}}(\mbox{\hyperlink{classsf_1_1_render_window}{sf::RenderWindow}}\& window);}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00030}\mbox{\hyperlink{class_world_ac7b3a3923c95b812ec2d00d97c8cd56e}{00030}}         \textcolor{keywordtype}{void}                                \mbox{\hyperlink{class_world_ac7b3a3923c95b812ec2d00d97c8cd56e}{update}}(\mbox{\hyperlink{classsf_1_1_time}{sf::Time}} dt);}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00031}\mbox{\hyperlink{class_world_ab51a17ccbb108616daacd0c34973dc8d}{00031}}         \textcolor{keywordtype}{void}                                \mbox{\hyperlink{class_world_ab51a17ccbb108616daacd0c34973dc8d}{draw}}();}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00032}00032         }
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00033}\mbox{\hyperlink{class_world_af224b413f30c86ec99d042d0f4df56ee}{00033}}         \mbox{\hyperlink{class_command_queue}{CommandQueue}}\&                       \mbox{\hyperlink{class_world_af224b413f30c86ec99d042d0f4df56ee}{getCommandQueue}}();}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00036}00036     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00037}\mbox{\hyperlink{class_world_acaa2a31572eecd5091a9556e20098919}{00037}}         \textcolor{keywordtype}{void}                                \mbox{\hyperlink{class_world_acaa2a31572eecd5091a9556e20098919}{loadTextures}}();}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00038}\mbox{\hyperlink{class_world_ae7df49f5d488e5cd1254bf360966f410}{00038}}         \textcolor{keywordtype}{void}                                \mbox{\hyperlink{class_world_ae7df49f5d488e5cd1254bf360966f410}{buildScene}}();}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00039}\mbox{\hyperlink{class_world_a0200a52c67934169111b2ea563883bf3}{00039}}         \textcolor{keywordtype}{void}                                \mbox{\hyperlink{class_world_a0200a52c67934169111b2ea563883bf3}{adaptPlayerPosition}}();}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00040}\mbox{\hyperlink{class_world_ac5d9b6b0e18307c0e50d60f1426a147f}{00040}}         \textcolor{keywordtype}{void}                                \mbox{\hyperlink{class_world_ac5d9b6b0e18307c0e50d60f1426a147f}{adaptPlayerVelocity}}();}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00043}00043     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00044}\mbox{\hyperlink{class_world_a7580b1f38bb9018be3eeef74462b4b2f}{00044}}         \textcolor{keyword}{enum} \mbox{\hyperlink{class_world_a7580b1f38bb9018be3eeef74462b4b2f}{Layer}}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00045}00045         \{}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00046}00046             \mbox{\hyperlink{class_world_a7580b1f38bb9018be3eeef74462b4b2fa5f23597b194441cc9ad20c9387f7a8f6}{Background}},}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00047}00047             \mbox{\hyperlink{class_world_a7580b1f38bb9018be3eeef74462b4b2fa1f2776fcecedc8eba46a96c87aa121b1}{Air}},}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00048}00048             \mbox{\hyperlink{class_world_a7580b1f38bb9018be3eeef74462b4b2fab66783c7d6d5d959f9cff82aa6d1aea3}{LayerCount}}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00049}00049         \};}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00052}00052     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00053}00053         \mbox{\hyperlink{classsf_1_1_render_window}{sf::RenderWindow}}\&                   \mbox{\hyperlink{class_world_a9d6d73abc01f3f535610eacabd3501b7}{mWindow}};}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00054}00054         \mbox{\hyperlink{classsf_1_1_view}{sf::View}}                            \mbox{\hyperlink{class_world_a3834349bcaa35987c32dfdc9eb36c138}{mWorldView}};}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00055}00055         \mbox{\hyperlink{class_texture_holder}{TextureHolder}}                      \mbox{\hyperlink{class_world_a31c4250c39693514fa6b6c4760a04282}{mTextures}};}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00057}00057         \mbox{\hyperlink{class_scene_node}{SceneNode}}                          \mbox{\hyperlink{class_world_a8c17f92ce71613a8f3a9b248ede3955f}{mSceneGraph}};}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00058}00058         std::array<SceneNode*, LayerCount>  \mbox{\hyperlink{class_world_a7fbcf2483eec1761bd9b0df50880c063}{mSceneLayers}};}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00059}00059         \mbox{\hyperlink{class_command_queue}{CommandQueue}}                        \mbox{\hyperlink{class_world_a9d71cb20104cb74327b561a93db34a54}{mCommandQueue}};}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00061}00061         \mbox{\hyperlink{classsf_1_1_rect}{sf::FloatRect}}                      \mbox{\hyperlink{class_world_af739e946b9a2683927c10b5cf20e103b}{mWorldBounds}};}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00062}00062         \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}}                        \mbox{\hyperlink{class_world_a37be90e8cff89df427cdd756dfb0fea0}{mSpawnPosition}};}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00063}00063         \textcolor{keywordtype}{float}                               \mbox{\hyperlink{class_world_a1c2d240ef6483547a5c2e5ded0e3a150}{mScrollSpeed}};}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00064}00064         \mbox{\hyperlink{class_aircraft}{Aircraft}}*                           \mbox{\hyperlink{class_world_ac0fdeccf8a6e20472e079f63d64fe159}{mPlayerAircraft}};}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00065}00065 \};}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_world_8hpp_source_l00067}00067 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// BOOK\_WORLD\_HPP}}
+
+\end{DoxyCode}

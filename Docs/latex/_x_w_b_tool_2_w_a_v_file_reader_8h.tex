@@ -1,0 +1,27 @@
+\hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h}{}\doxysection{Week13/\+XWBTool/\+WAVFile\+Reader.h File Reference}
+\label{_x_w_b_tool_2_w_a_v_file_reader_8h}\index{Week13/XWBTool/WAVFileReader.h@{Week13/XWBTool/WAVFileReader.h}}
+{\ttfamily \#include $<$objbase.\+h$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$mmreg.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_direct_x_1_1_w_a_v_data}{Direct\+X\+::\+WAVData}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_direct_x}{DirectX}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+HRESULT \mbox{\hyperlink{namespace_direct_x_a7c3aef7ede9bdebe5c569921bd910753}{Direct\+X\+::\+Load\+WAVAudio\+In\+Memory}} (\+\_\+\+In\+\_\+reads\+\_\+bytes\+\_\+(wav\+Data\+Size) const uint8\+\_\+t $\ast$wav\+Data, \+\_\+\+In\+\_\+ size\+\_\+t wav\+Data\+Size, \+\_\+\+Outptr\+\_\+ const WAVEFORMATEX $\ast$$\ast$wfx, \+\_\+\+Outptr\+\_\+ const uint8\+\_\+t $\ast$$\ast$start\+Audio, \+\_\+\+Out\+\_\+ uint32\+\_\+t $\ast$audio\+Bytes) noexcept
+\item 
+HRESULT \mbox{\hyperlink{namespace_direct_x_a2a62130f6dcc9c323458838ffe0d1f8a}{Direct\+X\+::\+Load\+WAVAudio\+From\+File}} (\+\_\+\+In\+\_\+z\+\_\+ const wchar\+\_\+t $\ast$sz\+File\+Name, \+\_\+\+Inout\+\_\+ std\+::unique\+\_\+ptr$<$ uint8\+\_\+t\mbox{[}$\,$\mbox{]}$>$ \&wav\+Data, \+\_\+\+Outptr\+\_\+ const WAVEFORMATEX $\ast$$\ast$wfx, \+\_\+\+Outptr\+\_\+ const uint8\+\_\+t $\ast$$\ast$start\+Audio, \+\_\+\+Out\+\_\+ uint32\+\_\+t $\ast$audio\+Bytes) noexcept
+\item 
+HRESULT \mbox{\hyperlink{namespace_direct_x_a685875055eaed43fd822407cc40d973e}{Direct\+X\+::\+Load\+WAVAudio\+In\+Memory\+Ex}} (\+\_\+\+In\+\_\+reads\+\_\+bytes\+\_\+(wav\+Data\+Size) const uint8\+\_\+t $\ast$wav\+Data, \+\_\+\+In\+\_\+ size\+\_\+t wav\+Data\+Size, \+\_\+\+Out\+\_\+ WAVData \&result) noexcept
+\item 
+HRESULT \mbox{\hyperlink{namespace_direct_x_aa35f921e8b5bb5f9fd94c00e5e2f91ef}{Direct\+X\+::\+Load\+WAVAudio\+From\+File\+Ex}} (\+\_\+\+In\+\_\+z\+\_\+ const wchar\+\_\+t $\ast$sz\+File\+Name, \+\_\+\+Inout\+\_\+ std\+::unique\+\_\+ptr$<$ uint8\+\_\+t\mbox{[}$\,$\mbox{]}$>$ \&wav\+Data, \+\_\+\+Out\+\_\+ WAVData \&result) noexcept
+\end{DoxyCompactItemize}

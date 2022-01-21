@@ -1,0 +1,48 @@
+\hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source}{}\doxysection{Container.\+hpp}
+\label{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source}\index{Week8/Week8-\/Demo3-\/Button/Include/Container.hpp@{Week8/Week8-\/Demo3-\/Button/Include/Container.hpp}}
+\mbox{\hyperlink{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_include_2_component_8hpp}{Component.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00005}00005 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00007}00007 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_u_i}{GUI}}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00008}00008 \{}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00010}00010     \textcolor{keyword}{class }Container : \textcolor{keyword}{public} Component}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00011}00011     \{}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00012}00012     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00013}00013         \textcolor{comment}{//multiple pointers share an object. Reference counting ensures that object is alive as long as any shred\_ptr points to it}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00014}\mbox{\hyperlink{class_g_u_i_1_1_container_aff900329cc0dbef99abdd1c95175823a}{00014}}         \textcolor{keyword}{typedef} std::shared\_ptr<Container> \mbox{\hyperlink{class_g_u_i_1_1_container_aff900329cc0dbef99abdd1c95175823a}{Ptr}};}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00017}00017     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00018}\mbox{\hyperlink{class_g_u_i_1_1_container_a29ad430d6a9f0bebfea8567c91de1095}{00018}}         \mbox{\hyperlink{class_g_u_i_1_1_container_a29ad430d6a9f0bebfea8567c91de1095}{Container}}();}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00019}00019         \textcolor{comment}{//Pack new component to the list}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00020}\mbox{\hyperlink{class_g_u_i_1_1_container_a96138fff70a580a2c0184347be95c74c}{00020}}         \textcolor{keywordtype}{void}                \mbox{\hyperlink{class_g_u_i_1_1_container_a96138fff70a580a2c0184347be95c74c}{pack}}(\mbox{\hyperlink{class_g_u_i_1_1_component_aa51eb17541f4cbe71b60cf7e1e16f32b}{Component::Ptr}} component);}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00022}\mbox{\hyperlink{class_g_u_i_1_1_container_ae7d7bc665dc5e10c0010abc05ea4a116}{00022}}         \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool}        \mbox{\hyperlink{class_g_u_i_1_1_container_ae7d7bc665dc5e10c0010abc05ea4a116}{isSelectable}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00023}\mbox{\hyperlink{class_g_u_i_1_1_container_adc3b4318b7cb683482f0d0de5b1431d3}{00023}}         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}        \mbox{\hyperlink{class_g_u_i_1_1_container_adc3b4318b7cb683482f0d0de5b1431d3}{handleEvent}}(\textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_event}{sf::Event}}\& event);}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00026}00026     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00027}\mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{00027}}         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}        \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{draw}}(\mbox{\hyperlink{classsf_1_1_render_target}{sf::RenderTarget}}\& target, \mbox{\hyperlink{classsf_1_1_render_states}{sf::RenderStates}} states) \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00029}\mbox{\hyperlink{class_g_u_i_1_1_container_a1402c6167b65daac7d31a669dd1c4263}{00029}}         \textcolor{keywordtype}{bool}                \mbox{\hyperlink{class_g_u_i_1_1_container_a1402c6167b65daac7d31a669dd1c4263}{hasSelection}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00030}\mbox{\hyperlink{class_g_u_i_1_1_container_a270c45fb9148bf56d8b178df27cb4c5b}{00030}}         \textcolor{keywordtype}{void}                \mbox{\hyperlink{class_g_u_i_1_1_container_a270c45fb9148bf56d8b178df27cb4c5b}{select}}(std::size\_t index);}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00031}\mbox{\hyperlink{class_g_u_i_1_1_container_a7264469c99757382583094036ffa7942}{00031}}         \textcolor{keywordtype}{void}                \mbox{\hyperlink{class_g_u_i_1_1_container_a7264469c99757382583094036ffa7942}{selectNext}}();}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00032}\mbox{\hyperlink{class_g_u_i_1_1_container_a405e33ffbec3e7f9d10b147607f8baef}{00032}}         \textcolor{keywordtype}{void}                \mbox{\hyperlink{class_g_u_i_1_1_container_a405e33ffbec3e7f9d10b147607f8baef}{selectPrevious}}();}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00035}00035     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00036}00036         std::vector<Component::Ptr>     \mbox{\hyperlink{class_g_u_i_1_1_container_a4b9763d59d947aa36c627798f72d31b6}{mChildren}};}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00037}00037         \textcolor{keywordtype}{int}                             \mbox{\hyperlink{class_g_u_i_1_1_container_aa62abbcae1590236215472c38523dcfc}{mSelectedChild}};}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00038}00038     \};}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00040}00040 \}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_include_2_container_8hpp_source_l00042}00042 }
+
+\end{DoxyCode}

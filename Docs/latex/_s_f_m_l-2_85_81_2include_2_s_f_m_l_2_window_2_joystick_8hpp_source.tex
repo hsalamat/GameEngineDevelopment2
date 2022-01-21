@@ -1,0 +1,92 @@
+\hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source}{}\doxysection{Joystick.\+hpp}
+\label{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source}\index{SFML-\/2.5.1/include/SFML/Window/Joystick.hpp@{SFML-\/2.5.1/include/SFML/Window/Joystick.hpp}}
+\mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00002}00002 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00003}00003 \textcolor{comment}{// SFML -\/ Simple and Fast Multimedia Library}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00004}00004 \textcolor{comment}{// Copyright (C) 2007-\/2018 Laurent Gomila (laurent@sfml-\/dev.org)}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00005}00005 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00006}00006 \textcolor{comment}{// This software is provided 'as-\/is', without any express or implied warranty.}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00007}00007 \textcolor{comment}{// In no event will the authors be held liable for any damages arising from the use of this software.}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00008}00008 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00009}00009 \textcolor{comment}{// Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00010}00010 \textcolor{comment}{// including commercial applications, and to alter it and redistribute it freely,}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00011}00011 \textcolor{comment}{// subject to the following restrictions:}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00012}00012 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00013}00013 \textcolor{comment}{// 1. The origin of this software must not be misrepresented;}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00014}00014 \textcolor{comment}{//    you must not claim that you wrote the original software.}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00015}00015 \textcolor{comment}{//    If you use this software in a product, an acknowledgment}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00016}00016 \textcolor{comment}{//    in the product documentation would be appreciated but is not required.}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00017}00017 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00018}00018 \textcolor{comment}{// 2. Altered source versions must be plainly marked as such,}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00019}00019 \textcolor{comment}{//    and must not be misrepresented as being the original software.}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00020}00020 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00021}00021 \textcolor{comment}{// 3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00022}00022 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00024}00024 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00025}00025 \textcolor{preprocessor}{\#ifndef SFML\_JOYSTICK\_HPP}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00026}00026 \textcolor{preprocessor}{\#define SFML\_JOYSTICK\_HPP}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00029}00029 \textcolor{comment}{// Headers}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00031}00031 \textcolor{comment}{}\textcolor{preprocessor}{\#include <SFML/Window/Export.hpp>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00032}00032 \textcolor{preprocessor}{\#include <SFML/System/String.hpp>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00035}00035 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacesf}{sf}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00036}00036 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00041}\mbox{\hyperlink{classsf_1_1_joystick}{00041}} \textcolor{keyword}{class }\mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_export_8hpp_a1ab885b7907ee088350359516d68be64}{SFML\_WINDOW\_API}} \mbox{\hyperlink{classsf_1_1_joystick}{Joystick}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00042}00042 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00043}00043 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00049}00049     \textcolor{keyword}{enum}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00050}00050     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00051}\mbox{\hyperlink{classsf_1_1_joystick_a9b3cbac99980fc1240a61584e7c318bca58bb2e8f3749310d61097e4361bc0ba8}{00051}}         \mbox{\hyperlink{namespace_player_action_abc541606b807d19f360a066ab7e1e268ad7d8c7c8c9c9f022de8c9ea3af8a535b}{Count}}       = 8,  }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00052}\mbox{\hyperlink{classsf_1_1_joystick_a9b3cbac99980fc1240a61584e7c318bca34b2a9c61551a32ea6f60004963c7252}{00052}}         ButtonCount = 32, }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00053}00053         AxisCount   = 8   }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00054}\mbox{\hyperlink{classsf_1_1_joystick_a9b3cbac99980fc1240a61584e7c318bca09f1cd81cc403e481e06a7cf15a18877}{00054}}     \};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00060}\mbox{\hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7}{00060}}     \textcolor{keyword}{enum} \mbox{\hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7}{Axis}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00061}00061     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00062}\mbox{\hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7ad77e00ab254935d6757860e82945a01b}{00062}}         \mbox{\hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7ad77e00ab254935d6757860e82945a01b}{X}},    }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00063}\mbox{\hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7ab93da03117a7dc92d19243e39c50bde0}{00063}}         \mbox{\hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7ab93da03117a7dc92d19243e39c50bde0}{Y}},    }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00064}\mbox{\hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7a2ab9334de564994be3bfd322c7ef9383}{00064}}         \mbox{\hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7a2ab9334de564994be3bfd322c7ef9383}{Z}},    }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00065}\mbox{\hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7a668cd1a4a624c7867fd93b834c4d7333}{00065}}         \mbox{\hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7a668cd1a4a624c7867fd93b834c4d7333}{R}},    }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00066}\mbox{\hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7a2e03a7c4db4d0a7a2b8c2c51faa45203}{00066}}         \mbox{\hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7a2e03a7c4db4d0a7a2b8c2c51faa45203}{U}},    }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00067}\mbox{\hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7a1ee0dbe4e1d77261b4ce772d1aed6d37}{00067}}         \mbox{\hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7a1ee0dbe4e1d77261b4ce772d1aed6d37}{V}},    }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00068}\mbox{\hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7ad101907fe074bbd494692ce7039e1399}{00068}}         \mbox{\hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7ad101907fe074bbd494692ce7039e1399}{PovX}}, }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00069}00069         PovY  }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00070}\mbox{\hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7abf442ce176359975f9a08dbc2e28d1ef}{00070}}     \};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00076}\mbox{\hyperlink{structsf_1_1_joystick_1_1_identification}{00076}}     \textcolor{keyword}{struct }\mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_export_8hpp_a1ab885b7907ee088350359516d68be64}{SFML\_WINDOW\_API}} \mbox{\hyperlink{structsf_1_1_joystick_1_1_identification}{Identification}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00077}00077     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00078}\mbox{\hyperlink{structsf_1_1_joystick_1_1_identification_ae36b29759fab7db1d16bb99695093334}{00078}}         \mbox{\hyperlink{structsf_1_1_joystick_1_1_identification_ae36b29759fab7db1d16bb99695093334}{Identification}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00080}\mbox{\hyperlink{structsf_1_1_joystick_1_1_identification_a135a9a3a4dc11c2b5cde51159b4d136d}{00080}}         \mbox{\hyperlink{classsf_1_1_string}{String}}       \mbox{\hyperlink{structsf_1_1_joystick_1_1_identification_a135a9a3a4dc11c2b5cde51159b4d136d}{name}};      }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00081}\mbox{\hyperlink{structsf_1_1_joystick_1_1_identification_a827caf37a56492e3430e5ca6b15b5e9f}{00081}}         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structsf_1_1_joystick_1_1_identification_a827caf37a56492e3430e5ca6b15b5e9f}{vendorId}};  }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00082}\mbox{\hyperlink{structsf_1_1_joystick_1_1_identification_a18c21317789f51f9a5f132677727ff77}{00082}}         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structsf_1_1_joystick_1_1_identification_a18c21317789f51f9a5f132677727ff77}{productId}}; }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00083}00083     \};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00093}\mbox{\hyperlink{classsf_1_1_joystick_ac7d4e1923e9f9420174f26703ea63d6c}{00093}}     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classsf_1_1_joystick_ac7d4e1923e9f9420174f26703ea63d6c}{isConnected}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} joystick);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00105}\mbox{\hyperlink{classsf_1_1_joystick_a4de9f445c6582bfe9f0873f695682885}{00105}}     \textcolor{keyword}{static} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{classsf_1_1_joystick_a4de9f445c6582bfe9f0873f695682885}{getButtonCount}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} joystick);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00106}00106 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00118}\mbox{\hyperlink{classsf_1_1_joystick_a268e8f2a11ae6af4a47c727cb4ab4d95}{00118}}     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classsf_1_1_joystick_a268e8f2a11ae6af4a47c727cb4ab4d95}{hasAxis}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} joystick, \mbox{\hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7}{Axis}} axis);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00119}00119 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00131}\mbox{\hyperlink{classsf_1_1_joystick_ae0d97a4b84268cbe6a7078e1b2717835}{00131}}     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classsf_1_1_joystick_ae0d97a4b84268cbe6a7078e1b2717835}{isButtonPressed}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} joystick, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_a92decbf8642d08b3993016451fdad8df}{button}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00132}00132 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00144}\mbox{\hyperlink{classsf_1_1_joystick_aea4930193331df1851b709f3060ba58b}{00144}}     \textcolor{keyword}{static} \textcolor{keywordtype}{float} \mbox{\hyperlink{classsf_1_1_joystick_aea4930193331df1851b709f3060ba58b}{getAxisPosition}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} joystick, \mbox{\hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7}{Axis}} axis);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00145}00145 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00154}\mbox{\hyperlink{classsf_1_1_joystick_aa917c9435330e6e0368d3893672d1b74}{00154}}     \textcolor{keyword}{static} \mbox{\hyperlink{structsf_1_1_joystick_1_1_identification}{Identification}} \mbox{\hyperlink{classsf_1_1_joystick_aa917c9435330e6e0368d3893672d1b74}{getIdentification}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} joystick);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00155}00155 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00165}\mbox{\hyperlink{classsf_1_1_joystick_ab85fa9175b4edd3e5a07ee3cde0b0f48}{00165}}     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_joystick_ab85fa9175b4edd3e5a07ee3cde0b0f48}{update}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00166}00166 \};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00167}00167 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00168}00168 \} \textcolor{comment}{// namespace sf}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00169}00169 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00170}00170 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00171}00171 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// SFML\_JOYSTICK\_HPP}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00172}00172 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_joystick_8hpp_source_l00173}00173 }
+
+\end{DoxyCode}

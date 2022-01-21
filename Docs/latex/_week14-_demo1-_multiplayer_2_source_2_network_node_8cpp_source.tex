@@ -1,0 +1,42 @@
+\hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source}{}\doxysection{Network\+Node.\+cpp}
+\label{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source}\index{Week14/Week14-\/Demo1-\/Multiplayer/Source/NetworkNode.cpp@{Week14/Week14-\/Demo1-\/Multiplayer/Source/NetworkNode.cpp}}
+\mbox{\hyperlink{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma region step 10}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <NetworkNode.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <NetworkProtocol.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00006}00006 \mbox{\hyperlink{class_network_node_a0303ba00c970e3a6f9163d33ebac10bd}{NetworkNode::NetworkNode}}()}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00007}00007     : \mbox{\hyperlink{class_scene_node}{SceneNode}}()}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00008}00008     , mPendingActions()}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00009}00009 \{}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00010}00010 \}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00012}00012 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_network_node_aae5b3c7b6f20f4a5ba695957b51e52bc}{NetworkNode::getCategory}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00013}00013 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00014}00014     \textcolor{keywordflow}{return} \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a2ffca533b60b8f001f163badb78416f3}{Category::Network}};}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00015}00015 \}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00017}00017 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_network_node_a76c8daddb63d9d2ea57a1e3096b0fcc1}{NetworkNode::notifyGameAction}}(\mbox{\hyperlink{namespace_game_actions_a2c10fdbcc811f03c02f357cdd0c4e76d}{GameActions::Type}} type, \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}} position)}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00018}00018 \{}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00019}00019     \mbox{\hyperlink{class_network_node_ac97682252e2e21694af40b8f1abf8972}{mPendingActions}}.push(\mbox{\hyperlink{struct_game_actions_1_1_action}{GameActions::Action}}(type, position));}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00020}00020 \}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00022}00022 \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_network_node_a324d5374146ccb8e1a77c932623464c1}{NetworkNode::pollGameAction}}(\mbox{\hyperlink{struct_game_actions_1_1_action}{GameActions::Action}}\& out)}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00023}00023 \{}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00024}00024     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_network_node_ac97682252e2e21694af40b8f1abf8972}{mPendingActions}}.empty())}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00025}00025     \{}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00026}00026         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00027}00027     \}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00028}00028     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00029}00029     \{}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00030}00030         out = \mbox{\hyperlink{class_network_node_ac97682252e2e21694af40b8f1abf8972}{mPendingActions}}.front();}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00031}00031         \mbox{\hyperlink{class_network_node_ac97682252e2e21694af40b8f1abf8972}{mPendingActions}}.pop();}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00032}00032         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00033}00033     \}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00034}00034 \}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00036}00036 \textcolor{preprocessor}{\#pragma endregion}}
+
+\end{DoxyCode}

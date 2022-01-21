@@ -1,0 +1,770 @@
+\hypertarget{class_game_server}{}\doxysection{Game\+Server Class Reference}
+\label{class_game_server}\index{GameServer@{GameServer}}
+
+
+{\ttfamily \#include $<$Game\+Server.\+hpp$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_game_server_1_1_aircraft_info}{Aircraft\+Info}}
+\item 
+struct \mbox{\hyperlink{struct_game_server_1_1_remote_peer}{Remote\+Peer}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_server_a61393ed81464c44e95784b4c3f49f19c}{Game\+Server}} (\mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{sf\+::\+Vector2f}} battlefield\+Size)
+\item 
+\mbox{\hyperlink{class_game_server_aa5abf46ddd77528735ecdfd546be1b8a}{$\sim$\+Game\+Server}} ()
+\item 
+void \mbox{\hyperlink{class_game_server_a3a0a351ef8758c358f7e9cbdee82889c}{notify\+Player\+Spawn}} (\mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}} aircraft\+Identifier)
+\item 
+void \mbox{\hyperlink{class_game_server_a8659271d4966189f507da61f55b7f984}{notify\+Player\+Realtime\+Change}} (\mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}} aircraft\+Identifier, \mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}} action, bool action\+Enabled)
+\item 
+void \mbox{\hyperlink{class_game_server_add73992b0e7cb29ebbfc745a4f79155e}{notify\+Player\+Event}} (\mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}} aircraft\+Identifier, \mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}} action)
+\item 
+\mbox{\hyperlink{class_game_server_a61393ed81464c44e95784b4c3f49f19c}{Game\+Server}} (\mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{sf\+::\+Vector2f}} battlefield\+Size)
+\item 
+\mbox{\hyperlink{class_game_server_aa5abf46ddd77528735ecdfd546be1b8a}{$\sim$\+Game\+Server}} ()
+\item 
+void \mbox{\hyperlink{class_game_server_a3a0a351ef8758c358f7e9cbdee82889c}{notify\+Player\+Spawn}} (\mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}} aircraft\+Identifier)
+\item 
+void \mbox{\hyperlink{class_game_server_a8659271d4966189f507da61f55b7f984}{notify\+Player\+Realtime\+Change}} (\mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}} aircraft\+Identifier, \mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}} action, bool action\+Enabled)
+\item 
+void \mbox{\hyperlink{class_game_server_add73992b0e7cb29ebbfc745a4f79155e}{notify\+Player\+Event}} (\mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}} aircraft\+Identifier, \mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}} action)
+\item 
+\mbox{\hyperlink{class_game_server_a61393ed81464c44e95784b4c3f49f19c}{Game\+Server}} (\mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{sf\+::\+Vector2f}} battlefield\+Size)
+\item 
+\mbox{\hyperlink{class_game_server_aa5abf46ddd77528735ecdfd546be1b8a}{$\sim$\+Game\+Server}} ()
+\item 
+void \mbox{\hyperlink{class_game_server_a3a0a351ef8758c358f7e9cbdee82889c}{notify\+Player\+Spawn}} (\mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}} aircraft\+Identifier)
+\item 
+void \mbox{\hyperlink{class_game_server_a8659271d4966189f507da61f55b7f984}{notify\+Player\+Realtime\+Change}} (\mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}} aircraft\+Identifier, \mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}} action, bool action\+Enabled)
+\item 
+void \mbox{\hyperlink{class_game_server_add73992b0e7cb29ebbfc745a4f79155e}{notify\+Player\+Event}} (\mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}} aircraft\+Identifier, \mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}} action)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{struct_game_server_1_1_remote_peer}{Remote\+Peer}} $>$ \mbox{\hyperlink{class_game_server_a778579be1a515d88327eab7df8723b4e}{Peer\+Ptr}}
+\item 
+typedef std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{struct_game_server_1_1_remote_peer}{Remote\+Peer}} $>$ \mbox{\hyperlink{class_game_server_a778579be1a515d88327eab7df8723b4e}{Peer\+Ptr}}
+\item 
+typedef std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{struct_game_server_1_1_remote_peer}{Remote\+Peer}} $>$ \mbox{\hyperlink{class_game_server_a778579be1a515d88327eab7df8723b4e}{Peer\+Ptr}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_game_server_a4273bd99c42c6051d9238ce3869a545a}{set\+Listening}} (bool enable)
+\item 
+void \mbox{\hyperlink{class_game_server_abd3837db1570641a462cec8b8349aca1}{execution\+Thread}} ()
+\item 
+void \mbox{\hyperlink{class_game_server_ad8ddf7b88b8317830d94313e0282e53f}{tick}} ()
+\item 
+\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} \mbox{\hyperlink{class_game_server_a1c2a296c7ada599beb3cbf6308ffd2f1}{now}} () const
+\item 
+void \mbox{\hyperlink{class_game_server_a3ddd221a655984904dcdcc2eb3996c9f}{handle\+Incoming\+Packets}} ()
+\item 
+void \mbox{\hyperlink{class_game_server_a58aa9e497e112704b9fa1407dc2f55dd}{handle\+Incoming\+Packet}} (\mbox{\hyperlink{classsf_1_1_packet}{sf\+::\+Packet}} \&packet, \mbox{\hyperlink{struct_game_server_1_1_remote_peer}{Remote\+Peer}} \&receiving\+Peer, bool \&detected\+Timeout)
+\item 
+void \mbox{\hyperlink{class_game_server_a314a8addb9f006a20ec610a2271e41ce}{handle\+Incoming\+Connections}} ()
+\item 
+void \mbox{\hyperlink{class_game_server_a0bfc6770f486c8310f6cf018a936949b}{handle\+Disconnections}} ()
+\item 
+void \mbox{\hyperlink{class_game_server_aa5c2a7bd2eb009db64f5d51440c5af3b}{inform\+World\+State}} (\mbox{\hyperlink{classsf_1_1_tcp_socket}{sf\+::\+Tcp\+Socket}} \&socket)
+\item 
+void \mbox{\hyperlink{class_game_server_a886cdfb8915f0d6dc03a7c75a667bc53}{broadcast\+Message}} (const std\+::string \&message)
+\item 
+void \mbox{\hyperlink{class_game_server_a0809f9d44734c7c4c7a03f5e8f71506f}{send\+To\+All}} (\mbox{\hyperlink{classsf_1_1_packet}{sf\+::\+Packet}} \&packet)
+\item 
+void \mbox{\hyperlink{class_game_server_ae19669090d624643c14f6fabd177bc5f}{update\+Client\+State}} ()
+\item 
+void \mbox{\hyperlink{class_game_server_a4273bd99c42c6051d9238ce3869a545a}{set\+Listening}} (bool enable)
+\item 
+void \mbox{\hyperlink{class_game_server_abd3837db1570641a462cec8b8349aca1}{execution\+Thread}} ()
+\item 
+void \mbox{\hyperlink{class_game_server_ad8ddf7b88b8317830d94313e0282e53f}{tick}} ()
+\item 
+\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} \mbox{\hyperlink{class_game_server_a1c2a296c7ada599beb3cbf6308ffd2f1}{now}} () const
+\item 
+void \mbox{\hyperlink{class_game_server_a3ddd221a655984904dcdcc2eb3996c9f}{handle\+Incoming\+Packets}} ()
+\item 
+void \mbox{\hyperlink{class_game_server_a58aa9e497e112704b9fa1407dc2f55dd}{handle\+Incoming\+Packet}} (\mbox{\hyperlink{classsf_1_1_packet}{sf\+::\+Packet}} \&packet, \mbox{\hyperlink{struct_game_server_1_1_remote_peer}{Remote\+Peer}} \&receiving\+Peer, bool \&detected\+Timeout)
+\item 
+void \mbox{\hyperlink{class_game_server_a314a8addb9f006a20ec610a2271e41ce}{handle\+Incoming\+Connections}} ()
+\item 
+void \mbox{\hyperlink{class_game_server_a0bfc6770f486c8310f6cf018a936949b}{handle\+Disconnections}} ()
+\item 
+void \mbox{\hyperlink{class_game_server_aa5c2a7bd2eb009db64f5d51440c5af3b}{inform\+World\+State}} (\mbox{\hyperlink{classsf_1_1_tcp_socket}{sf\+::\+Tcp\+Socket}} \&socket)
+\item 
+void \mbox{\hyperlink{class_game_server_a886cdfb8915f0d6dc03a7c75a667bc53}{broadcast\+Message}} (const std\+::string \&message)
+\item 
+void \mbox{\hyperlink{class_game_server_a0809f9d44734c7c4c7a03f5e8f71506f}{send\+To\+All}} (\mbox{\hyperlink{classsf_1_1_packet}{sf\+::\+Packet}} \&packet)
+\item 
+void \mbox{\hyperlink{class_game_server_ae19669090d624643c14f6fabd177bc5f}{update\+Client\+State}} ()
+\item 
+void \mbox{\hyperlink{class_game_server_a4273bd99c42c6051d9238ce3869a545a}{set\+Listening}} (bool enable)
+\item 
+void \mbox{\hyperlink{class_game_server_abd3837db1570641a462cec8b8349aca1}{execution\+Thread}} ()
+\item 
+void \mbox{\hyperlink{class_game_server_ad8ddf7b88b8317830d94313e0282e53f}{tick}} ()
+\item 
+\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} \mbox{\hyperlink{class_game_server_a1c2a296c7ada599beb3cbf6308ffd2f1}{now}} () const
+\item 
+void \mbox{\hyperlink{class_game_server_a3ddd221a655984904dcdcc2eb3996c9f}{handle\+Incoming\+Packets}} ()
+\item 
+void \mbox{\hyperlink{class_game_server_a58aa9e497e112704b9fa1407dc2f55dd}{handle\+Incoming\+Packet}} (\mbox{\hyperlink{classsf_1_1_packet}{sf\+::\+Packet}} \&packet, \mbox{\hyperlink{struct_game_server_1_1_remote_peer}{Remote\+Peer}} \&receiving\+Peer, bool \&detected\+Timeout)
+\item 
+void \mbox{\hyperlink{class_game_server_a314a8addb9f006a20ec610a2271e41ce}{handle\+Incoming\+Connections}} ()
+\item 
+void \mbox{\hyperlink{class_game_server_a0bfc6770f486c8310f6cf018a936949b}{handle\+Disconnections}} ()
+\item 
+void \mbox{\hyperlink{class_game_server_aa5c2a7bd2eb009db64f5d51440c5af3b}{inform\+World\+State}} (\mbox{\hyperlink{classsf_1_1_tcp_socket}{sf\+::\+Tcp\+Socket}} \&socket)
+\item 
+void \mbox{\hyperlink{class_game_server_a886cdfb8915f0d6dc03a7c75a667bc53}{broadcast\+Message}} (const std\+::string \&message)
+\item 
+void \mbox{\hyperlink{class_game_server_a0809f9d44734c7c4c7a03f5e8f71506f}{send\+To\+All}} (\mbox{\hyperlink{classsf_1_1_packet}{sf\+::\+Packet}} \&packet)
+\item 
+void \mbox{\hyperlink{class_game_server_ae19669090d624643c14f6fabd177bc5f}{update\+Client\+State}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsf_1_1_thread}{sf\+::\+Thread}} \mbox{\hyperlink{class_game_server_ada16342f087153975c446ad722f8b389}{m\+Thread}}
+\item 
+\mbox{\hyperlink{classsf_1_1_clock}{sf\+::\+Clock}} \mbox{\hyperlink{class_game_server_a53de5a7062321e6ce4c5b2ae0778e972}{m\+Clock}}
+\item 
+\mbox{\hyperlink{classsf_1_1_tcp_listener}{sf\+::\+Tcp\+Listener}} \mbox{\hyperlink{class_game_server_a76cb496620a1f155406fc6d8ce14bd97}{m\+Listener\+Socket}}
+\item 
+bool \mbox{\hyperlink{class_game_server_a131c4e604c1b02c457582fbb55cfa8bb}{m\+Listening\+State}}
+\item 
+\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} \mbox{\hyperlink{class_game_server_ac706801b840f51ea4e39cfa0b019a6fa}{m\+Client\+Timeout\+Time}}
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{class_game_server_af91e35eafab607f11b9b37514fd2d34d}{m\+Max\+Connected\+Players}}
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{class_game_server_a52f1a396a8d504e55e74d0eb1d517f12}{m\+Connected\+Players}}
+\item 
+float \mbox{\hyperlink{class_game_server_aad5ecc9250943d09391399bc8869aae4}{m\+World\+Height}}
+\item 
+\mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} \mbox{\hyperlink{class_game_server_a0cb1dbda51ca5e2c1b23578203057bde}{m\+Battle\+Field\+Rect}}
+\item 
+float \mbox{\hyperlink{class_game_server_a0c1b67d38cc2d8049ca8dd5db69f96c4}{m\+Battle\+Field\+Scroll\+Speed}}
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{class_game_server_af64f1ccdf9d774f18a6da50db8172caa}{m\+Aircraft\+Count}}
+\item 
+std\+::map$<$ \mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}}, \mbox{\hyperlink{struct_game_server_1_1_aircraft_info}{Aircraft\+Info}} $>$ \mbox{\hyperlink{class_game_server_a624c89ca109dcc8127f159e1aacd6903}{m\+Aircraft\+Info}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_game_server_a778579be1a515d88327eab7df8723b4e}{Peer\+Ptr}} $>$ \mbox{\hyperlink{class_game_server_ada23408f036bdc921a3301ca5749c767}{m\+Peers}}
+\item 
+\mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}} \mbox{\hyperlink{class_game_server_aac49918247fbabef608bd46a978c6330}{m\+Aircraft\+Identifier\+Counter}}
+\item 
+bool \mbox{\hyperlink{class_game_server_a72a6f69668450750453a3967f1f2e3eb}{m\+Waiting\+Thread\+End}}
+\item 
+\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} \mbox{\hyperlink{class_game_server_af0ab37b42b47d02035884afb2aaf2493}{m\+Last\+Spawn\+Time}}
+\item 
+\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} \mbox{\hyperlink{class_game_server_ac9fb6351dbc1651bba9d55f1ceb3ed61}{m\+Time\+For\+Next\+Spawn}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source_l00017}{17}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source}{Game\+Server.\+hpp}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{class_game_server_a778579be1a515d88327eab7df8723b4e}\label{class_game_server_a778579be1a515d88327eab7df8723b4e}} 
+\index{GameServer@{GameServer}!PeerPtr@{PeerPtr}}
+\index{PeerPtr@{PeerPtr}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{PeerPtr}{PeerPtr}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily typedef std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{struct_game_server_1_1_remote_peer}{Remote\+Peer}}$>$ \mbox{\hyperlink{class_game_server_a778579be1a515d88327eab7df8723b4e}{Game\+Server\+::\+Peer\+Ptr}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source_l00051}{51}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source}{Game\+Server.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_server_a778579be1a515d88327eab7df8723b4e}\label{class_game_server_a778579be1a515d88327eab7df8723b4e}} 
+\index{GameServer@{GameServer}!PeerPtr@{PeerPtr}}
+\index{PeerPtr@{PeerPtr}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{PeerPtr}{PeerPtr}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily typedef std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{struct_game_server_1_1_remote_peer}{Remote\+Peer}}$>$ \mbox{\hyperlink{class_game_server_a778579be1a515d88327eab7df8723b4e}{Game\+Server\+::\+Peer\+Ptr}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_week14-_demo1-_multiplayer_2_include_2_game_server_8hpp_source_l00051}{51}} of file \mbox{\hyperlink{_week14-_demo1-_multiplayer_2_include_2_game_server_8hpp_source}{Game\+Server.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_server_a778579be1a515d88327eab7df8723b4e}\label{class_game_server_a778579be1a515d88327eab7df8723b4e}} 
+\index{GameServer@{GameServer}!PeerPtr@{PeerPtr}}
+\index{PeerPtr@{PeerPtr}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{PeerPtr}{PeerPtr}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily typedef std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{struct_game_server_1_1_remote_peer}{Remote\+Peer}}$>$ \mbox{\hyperlink{class_game_server_a778579be1a515d88327eab7df8723b4e}{Game\+Server\+::\+Peer\+Ptr}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_week14-_demo1-_player2_2_include_2_game_server_8hpp_source_l00051}{51}} of file \mbox{\hyperlink{_week14-_demo1-_player2_2_include_2_game_server_8hpp_source}{Game\+Server.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_game_server_a61393ed81464c44e95784b4c3f49f19c}\label{class_game_server_a61393ed81464c44e95784b4c3f49f19c}} 
+\index{GameServer@{GameServer}!GameServer@{GameServer}}
+\index{GameServer@{GameServer}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{GameServer()}{GameServer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Game\+Server\+::\+Game\+Server (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{sf\+::\+Vector2f}}}]{battlefield\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source}{Game\+Server.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_server_aa5abf46ddd77528735ecdfd546be1b8a}\label{class_game_server_aa5abf46ddd77528735ecdfd546be1b8a}} 
+\index{GameServer@{GameServer}!````~GameServer@{$\sim$GameServer}}
+\index{````~GameServer@{$\sim$GameServer}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{$\sim$GameServer()}{~GameServer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Game\+Server\+::$\sim$\+Game\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source}{Game\+Server.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_server_a61393ed81464c44e95784b4c3f49f19c}\label{class_game_server_a61393ed81464c44e95784b4c3f49f19c}} 
+\index{GameServer@{GameServer}!GameServer@{GameServer}}
+\index{GameServer@{GameServer}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{GameServer()}{GameServer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Game\+Server\+::\+Game\+Server (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{sf\+::\+Vector2f}}}]{battlefield\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_game_server_aa5abf46ddd77528735ecdfd546be1b8a}\label{class_game_server_aa5abf46ddd77528735ecdfd546be1b8a}} 
+\index{GameServer@{GameServer}!````~GameServer@{$\sim$GameServer}}
+\index{````~GameServer@{$\sim$GameServer}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{$\sim$GameServer()}{~GameServer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Game\+Server\+::$\sim$\+Game\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_game_server_a61393ed81464c44e95784b4c3f49f19c}\label{class_game_server_a61393ed81464c44e95784b4c3f49f19c}} 
+\index{GameServer@{GameServer}!GameServer@{GameServer}}
+\index{GameServer@{GameServer}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{GameServer()}{GameServer()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Game\+Server\+::\+Game\+Server (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{sf\+::\+Vector2f}}}]{battlefield\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_game_server_aa5abf46ddd77528735ecdfd546be1b8a}\label{class_game_server_aa5abf46ddd77528735ecdfd546be1b8a}} 
+\index{GameServer@{GameServer}!````~GameServer@{$\sim$GameServer}}
+\index{````~GameServer@{$\sim$GameServer}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{$\sim$GameServer()}{~GameServer()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Game\+Server\+::$\sim$\+Game\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_server_a886cdfb8915f0d6dc03a7c75a667bc53}\label{class_game_server_a886cdfb8915f0d6dc03a7c75a667bc53}} 
+\index{GameServer@{GameServer}!broadcastMessage@{broadcastMessage}}
+\index{broadcastMessage@{broadcastMessage}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{broadcastMessage()}{broadcastMessage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::broadcast\+Message (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00463}{463}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source}{Game\+Server.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_server_a886cdfb8915f0d6dc03a7c75a667bc53}\label{class_game_server_a886cdfb8915f0d6dc03a7c75a667bc53}} 
+\index{GameServer@{GameServer}!broadcastMessage@{broadcastMessage}}
+\index{broadcastMessage@{broadcastMessage}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{broadcastMessage()}{broadcastMessage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::broadcast\+Message (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_game_server_a886cdfb8915f0d6dc03a7c75a667bc53}\label{class_game_server_a886cdfb8915f0d6dc03a7c75a667bc53}} 
+\index{GameServer@{GameServer}!broadcastMessage@{broadcastMessage}}
+\index{broadcastMessage@{broadcastMessage}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{broadcastMessage()}{broadcastMessage()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::broadcast\+Message (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_game_server_abd3837db1570641a462cec8b8349aca1}\label{class_game_server_abd3837db1570641a462cec8b8349aca1}} 
+\index{GameServer@{GameServer}!executionThread@{executionThread}}
+\index{executionThread@{executionThread}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{executionThread()}{executionThread()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::execution\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00106}{106}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source}{Game\+Server.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_server_abd3837db1570641a462cec8b8349aca1}\label{class_game_server_abd3837db1570641a462cec8b8349aca1}} 
+\index{GameServer@{GameServer}!executionThread@{executionThread}}
+\index{executionThread@{executionThread}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{executionThread()}{executionThread()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::execution\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_game_server_abd3837db1570641a462cec8b8349aca1}\label{class_game_server_abd3837db1570641a462cec8b8349aca1}} 
+\index{GameServer@{GameServer}!executionThread@{executionThread}}
+\index{executionThread@{executionThread}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{executionThread()}{executionThread()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::execution\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_game_server_a0bfc6770f486c8310f6cf018a936949b}\label{class_game_server_a0bfc6770f486c8310f6cf018a936949b}} 
+\index{GameServer@{GameServer}!handleDisconnections@{handleDisconnections}}
+\index{handleDisconnections@{handleDisconnections}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{handleDisconnections()}{handleDisconnections()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::handle\+Disconnections (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00408}{408}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source}{Game\+Server.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_server_a0bfc6770f486c8310f6cf018a936949b}\label{class_game_server_a0bfc6770f486c8310f6cf018a936949b}} 
+\index{GameServer@{GameServer}!handleDisconnections@{handleDisconnections}}
+\index{handleDisconnections@{handleDisconnections}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{handleDisconnections()}{handleDisconnections()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::handle\+Disconnections (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_game_server_a0bfc6770f486c8310f6cf018a936949b}\label{class_game_server_a0bfc6770f486c8310f6cf018a936949b}} 
+\index{GameServer@{GameServer}!handleDisconnections@{handleDisconnections}}
+\index{handleDisconnections@{handleDisconnections}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{handleDisconnections()}{handleDisconnections()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::handle\+Disconnections (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_game_server_a314a8addb9f006a20ec610a2271e41ce}\label{class_game_server_a314a8addb9f006a20ec610a2271e41ce}} 
+\index{GameServer@{GameServer}!handleIncomingConnections@{handleIncomingConnections}}
+\index{handleIncomingConnections@{handleIncomingConnections}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{handleIncomingConnections()}{handleIncomingConnections()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::handle\+Incoming\+Connections (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00371}{371}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source}{Game\+Server.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_server_a314a8addb9f006a20ec610a2271e41ce}\label{class_game_server_a314a8addb9f006a20ec610a2271e41ce}} 
+\index{GameServer@{GameServer}!handleIncomingConnections@{handleIncomingConnections}}
+\index{handleIncomingConnections@{handleIncomingConnections}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{handleIncomingConnections()}{handleIncomingConnections()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::handle\+Incoming\+Connections (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_game_server_a314a8addb9f006a20ec610a2271e41ce}\label{class_game_server_a314a8addb9f006a20ec610a2271e41ce}} 
+\index{GameServer@{GameServer}!handleIncomingConnections@{handleIncomingConnections}}
+\index{handleIncomingConnections@{handleIncomingConnections}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{handleIncomingConnections()}{handleIncomingConnections()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::handle\+Incoming\+Connections (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_game_server_a58aa9e497e112704b9fa1407dc2f55dd}\label{class_game_server_a58aa9e497e112704b9fa1407dc2f55dd}} 
+\index{GameServer@{GameServer}!handleIncomingPacket@{handleIncomingPacket}}
+\index{handleIncomingPacket@{handleIncomingPacket}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{handleIncomingPacket()}{handleIncomingPacket()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::handle\+Incoming\+Packet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_packet}{sf\+::\+Packet}} \&}]{packet,  }\item[{\mbox{\hyperlink{struct_game_server_1_1_remote_peer}{Remote\+Peer}} \&}]{receiving\+Peer,  }\item[{bool \&}]{detected\+Timeout }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00250}{250}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source}{Game\+Server.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_server_a58aa9e497e112704b9fa1407dc2f55dd}\label{class_game_server_a58aa9e497e112704b9fa1407dc2f55dd}} 
+\index{GameServer@{GameServer}!handleIncomingPacket@{handleIncomingPacket}}
+\index{handleIncomingPacket@{handleIncomingPacket}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{handleIncomingPacket()}{handleIncomingPacket()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::handle\+Incoming\+Packet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_packet}{sf\+::\+Packet}} \&}]{packet,  }\item[{\mbox{\hyperlink{struct_game_server_1_1_remote_peer}{Remote\+Peer}} \&}]{receiving\+Peer,  }\item[{bool \&}]{detected\+Timeout }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_game_server_a58aa9e497e112704b9fa1407dc2f55dd}\label{class_game_server_a58aa9e497e112704b9fa1407dc2f55dd}} 
+\index{GameServer@{GameServer}!handleIncomingPacket@{handleIncomingPacket}}
+\index{handleIncomingPacket@{handleIncomingPacket}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{handleIncomingPacket()}{handleIncomingPacket()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::handle\+Incoming\+Packet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_packet}{sf\+::\+Packet}} \&}]{packet,  }\item[{\mbox{\hyperlink{struct_game_server_1_1_remote_peer}{Remote\+Peer}} \&}]{receiving\+Peer,  }\item[{bool \&}]{detected\+Timeout }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_game_server_a3ddd221a655984904dcdcc2eb3996c9f}\label{class_game_server_a3ddd221a655984904dcdcc2eb3996c9f}} 
+\index{GameServer@{GameServer}!handleIncomingPackets@{handleIncomingPackets}}
+\index{handleIncomingPackets@{handleIncomingPackets}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{handleIncomingPackets()}{handleIncomingPackets()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::handle\+Incoming\+Packets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00219}{219}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source}{Game\+Server.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_server_a3ddd221a655984904dcdcc2eb3996c9f}\label{class_game_server_a3ddd221a655984904dcdcc2eb3996c9f}} 
+\index{GameServer@{GameServer}!handleIncomingPackets@{handleIncomingPackets}}
+\index{handleIncomingPackets@{handleIncomingPackets}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{handleIncomingPackets()}{handleIncomingPackets()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::handle\+Incoming\+Packets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_game_server_a3ddd221a655984904dcdcc2eb3996c9f}\label{class_game_server_a3ddd221a655984904dcdcc2eb3996c9f}} 
+\index{GameServer@{GameServer}!handleIncomingPackets@{handleIncomingPackets}}
+\index{handleIncomingPackets@{handleIncomingPackets}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{handleIncomingPackets()}{handleIncomingPackets()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::handle\+Incoming\+Packets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_game_server_aa5c2a7bd2eb009db64f5d51440c5af3b}\label{class_game_server_aa5c2a7bd2eb009db64f5d51440c5af3b}} 
+\index{GameServer@{GameServer}!informWorldState@{informWorldState}}
+\index{informWorldState@{informWorldState}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{informWorldState()}{informWorldState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::inform\+World\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_tcp_socket}{sf\+::\+Tcp\+Socket}} \&}]{socket }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00444}{444}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source}{Game\+Server.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_server_aa5c2a7bd2eb009db64f5d51440c5af3b}\label{class_game_server_aa5c2a7bd2eb009db64f5d51440c5af3b}} 
+\index{GameServer@{GameServer}!informWorldState@{informWorldState}}
+\index{informWorldState@{informWorldState}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{informWorldState()}{informWorldState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::inform\+World\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_tcp_socket}{sf\+::\+Tcp\+Socket}} \&}]{socket }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_game_server_aa5c2a7bd2eb009db64f5d51440c5af3b}\label{class_game_server_aa5c2a7bd2eb009db64f5d51440c5af3b}} 
+\index{GameServer@{GameServer}!informWorldState@{informWorldState}}
+\index{informWorldState@{informWorldState}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{informWorldState()}{informWorldState()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::inform\+World\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_tcp_socket}{sf\+::\+Tcp\+Socket}} \&}]{socket }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_game_server_add73992b0e7cb29ebbfc745a4f79155e}\label{class_game_server_add73992b0e7cb29ebbfc745a4f79155e}} 
+\index{GameServer@{GameServer}!notifyPlayerEvent@{notifyPlayerEvent}}
+\index{notifyPlayerEvent@{notifyPlayerEvent}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{notifyPlayerEvent()}{notifyPlayerEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::notify\+Player\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}}}]{aircraft\+Identifier,  }\item[{\mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}}}]{action }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00061}{61}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source}{Game\+Server.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_server_add73992b0e7cb29ebbfc745a4f79155e}\label{class_game_server_add73992b0e7cb29ebbfc745a4f79155e}} 
+\index{GameServer@{GameServer}!notifyPlayerEvent@{notifyPlayerEvent}}
+\index{notifyPlayerEvent@{notifyPlayerEvent}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{notifyPlayerEvent()}{notifyPlayerEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::notify\+Player\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}}}]{aircraft\+Identifier,  }\item[{\mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}}}]{action }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_game_server_add73992b0e7cb29ebbfc745a4f79155e}\label{class_game_server_add73992b0e7cb29ebbfc745a4f79155e}} 
+\index{GameServer@{GameServer}!notifyPlayerEvent@{notifyPlayerEvent}}
+\index{notifyPlayerEvent@{notifyPlayerEvent}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{notifyPlayerEvent()}{notifyPlayerEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::notify\+Player\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}}}]{aircraft\+Identifier,  }\item[{\mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}}}]{action }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_game_server_a8659271d4966189f507da61f55b7f984}\label{class_game_server_a8659271d4966189f507da61f55b7f984}} 
+\index{GameServer@{GameServer}!notifyPlayerRealtimeChange@{notifyPlayerRealtimeChange}}
+\index{notifyPlayerRealtimeChange@{notifyPlayerRealtimeChange}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{notifyPlayerRealtimeChange()}{notifyPlayerRealtimeChange()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::notify\+Player\+Realtime\+Change (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}}}]{aircraft\+Identifier,  }\item[{\mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}}}]{action,  }\item[{bool}]{action\+Enabled }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00044}{44}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source}{Game\+Server.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_server_a8659271d4966189f507da61f55b7f984}\label{class_game_server_a8659271d4966189f507da61f55b7f984}} 
+\index{GameServer@{GameServer}!notifyPlayerRealtimeChange@{notifyPlayerRealtimeChange}}
+\index{notifyPlayerRealtimeChange@{notifyPlayerRealtimeChange}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{notifyPlayerRealtimeChange()}{notifyPlayerRealtimeChange()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::notify\+Player\+Realtime\+Change (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}}}]{aircraft\+Identifier,  }\item[{\mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}}}]{action,  }\item[{bool}]{action\+Enabled }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_game_server_a8659271d4966189f507da61f55b7f984}\label{class_game_server_a8659271d4966189f507da61f55b7f984}} 
+\index{GameServer@{GameServer}!notifyPlayerRealtimeChange@{notifyPlayerRealtimeChange}}
+\index{notifyPlayerRealtimeChange@{notifyPlayerRealtimeChange}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{notifyPlayerRealtimeChange()}{notifyPlayerRealtimeChange()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::notify\+Player\+Realtime\+Change (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}}}]{aircraft\+Identifier,  }\item[{\mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}}}]{action,  }\item[{bool}]{action\+Enabled }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_game_server_a3a0a351ef8758c358f7e9cbdee82889c}\label{class_game_server_a3a0a351ef8758c358f7e9cbdee82889c}} 
+\index{GameServer@{GameServer}!notifyPlayerSpawn@{notifyPlayerSpawn}}
+\index{notifyPlayerSpawn@{notifyPlayerSpawn}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{notifyPlayerSpawn()}{notifyPlayerSpawn()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::notify\+Player\+Spawn (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}}}]{aircraft\+Identifier }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00077}{77}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source}{Game\+Server.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_server_a3a0a351ef8758c358f7e9cbdee82889c}\label{class_game_server_a3a0a351ef8758c358f7e9cbdee82889c}} 
+\index{GameServer@{GameServer}!notifyPlayerSpawn@{notifyPlayerSpawn}}
+\index{notifyPlayerSpawn@{notifyPlayerSpawn}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{notifyPlayerSpawn()}{notifyPlayerSpawn()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::notify\+Player\+Spawn (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}}}]{aircraft\+Identifier }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_game_server_a3a0a351ef8758c358f7e9cbdee82889c}\label{class_game_server_a3a0a351ef8758c358f7e9cbdee82889c}} 
+\index{GameServer@{GameServer}!notifyPlayerSpawn@{notifyPlayerSpawn}}
+\index{notifyPlayerSpawn@{notifyPlayerSpawn}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{notifyPlayerSpawn()}{notifyPlayerSpawn()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::notify\+Player\+Spawn (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}}}]{aircraft\+Identifier }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_game_server_a1c2a296c7ada599beb3cbf6308ffd2f1}\label{class_game_server_a1c2a296c7ada599beb3cbf6308ffd2f1}} 
+\index{GameServer@{GameServer}!now@{now}}
+\index{now@{now}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{now()}{now()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} Game\+Server\+::now (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00214}{214}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source}{Game\+Server.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_server_a1c2a296c7ada599beb3cbf6308ffd2f1}\label{class_game_server_a1c2a296c7ada599beb3cbf6308ffd2f1}} 
+\index{GameServer@{GameServer}!now@{now}}
+\index{now@{now}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{now()}{now()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} Game\+Server\+::now (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_game_server_a1c2a296c7ada599beb3cbf6308ffd2f1}\label{class_game_server_a1c2a296c7ada599beb3cbf6308ffd2f1}} 
+\index{GameServer@{GameServer}!now@{now}}
+\index{now@{now}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{now()}{now()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} Game\+Server\+::now (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_game_server_a0809f9d44734c7c4c7a03f5e8f71506f}\label{class_game_server_a0809f9d44734c7c4c7a03f5e8f71506f}} 
+\index{GameServer@{GameServer}!sendToAll@{sendToAll}}
+\index{sendToAll@{sendToAll}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{sendToAll()}{sendToAll()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::send\+To\+All (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_packet}{sf\+::\+Packet}} \&}]{packet }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00478}{478}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source}{Game\+Server.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_server_a0809f9d44734c7c4c7a03f5e8f71506f}\label{class_game_server_a0809f9d44734c7c4c7a03f5e8f71506f}} 
+\index{GameServer@{GameServer}!sendToAll@{sendToAll}}
+\index{sendToAll@{sendToAll}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{sendToAll()}{sendToAll()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::send\+To\+All (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_packet}{sf\+::\+Packet}} \&}]{packet }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_game_server_a0809f9d44734c7c4c7a03f5e8f71506f}\label{class_game_server_a0809f9d44734c7c4c7a03f5e8f71506f}} 
+\index{GameServer@{GameServer}!sendToAll@{sendToAll}}
+\index{sendToAll@{sendToAll}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{sendToAll()}{sendToAll()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::send\+To\+All (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_packet}{sf\+::\+Packet}} \&}]{packet }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_game_server_a4273bd99c42c6051d9238ce3869a545a}\label{class_game_server_a4273bd99c42c6051d9238ce3869a545a}} 
+\index{GameServer@{GameServer}!setListening@{setListening}}
+\index{setListening@{setListening}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{setListening()}{setListening()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::set\+Listening (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00091}{91}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source}{Game\+Server.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_server_a4273bd99c42c6051d9238ce3869a545a}\label{class_game_server_a4273bd99c42c6051d9238ce3869a545a}} 
+\index{GameServer@{GameServer}!setListening@{setListening}}
+\index{setListening@{setListening}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{setListening()}{setListening()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::set\+Listening (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_game_server_a4273bd99c42c6051d9238ce3869a545a}\label{class_game_server_a4273bd99c42c6051d9238ce3869a545a}} 
+\index{GameServer@{GameServer}!setListening@{setListening}}
+\index{setListening@{setListening}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{setListening()}{setListening()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::set\+Listening (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_game_server_ad8ddf7b88b8317830d94313e0282e53f}\label{class_game_server_ad8ddf7b88b8317830d94313e0282e53f}} 
+\index{GameServer@{GameServer}!tick@{tick}}
+\index{tick@{tick}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00146}{146}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source}{Game\+Server.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_server_ad8ddf7b88b8317830d94313e0282e53f}\label{class_game_server_ad8ddf7b88b8317830d94313e0282e53f}} 
+\index{GameServer@{GameServer}!tick@{tick}}
+\index{tick@{tick}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_game_server_ad8ddf7b88b8317830d94313e0282e53f}\label{class_game_server_ad8ddf7b88b8317830d94313e0282e53f}} 
+\index{GameServer@{GameServer}!tick@{tick}}
+\index{tick@{tick}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_game_server_ae19669090d624643c14f6fabd177bc5f}\label{class_game_server_ae19669090d624643c14f6fabd177bc5f}} 
+\index{GameServer@{GameServer}!updateClientState@{updateClientState}}
+\index{updateClientState@{updateClientState}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{updateClientState()}{updateClientState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::update\+Client\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00358}{358}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source}{Game\+Server.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_server_ae19669090d624643c14f6fabd177bc5f}\label{class_game_server_ae19669090d624643c14f6fabd177bc5f}} 
+\index{GameServer@{GameServer}!updateClientState@{updateClientState}}
+\index{updateClientState@{updateClientState}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{updateClientState()}{updateClientState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::update\+Client\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_game_server_ae19669090d624643c14f6fabd177bc5f}\label{class_game_server_ae19669090d624643c14f6fabd177bc5f}} 
+\index{GameServer@{GameServer}!updateClientState@{updateClientState}}
+\index{updateClientState@{updateClientState}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{updateClientState()}{updateClientState()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Game\+Server\+::update\+Client\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_game_server_af64f1ccdf9d774f18a6da50db8172caa}\label{class_game_server_af64f1ccdf9d774f18a6da50db8172caa}} 
+\index{GameServer@{GameServer}!mAircraftCount@{mAircraftCount}}
+\index{mAircraftCount@{mAircraftCount}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{mAircraftCount}{mAircraftCount}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Game\+Server\+::m\+Aircraft\+Count\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source_l00086}{86}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source}{Game\+Server.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_server_aac49918247fbabef608bd46a978c6330}\label{class_game_server_aac49918247fbabef608bd46a978c6330}} 
+\index{GameServer@{GameServer}!mAircraftIdentifierCounter@{mAircraftIdentifierCounter}}
+\index{mAircraftIdentifierCounter@{mAircraftIdentifierCounter}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{mAircraftIdentifierCounter}{mAircraftIdentifierCounter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}} Game\+Server\+::m\+Aircraft\+Identifier\+Counter\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source_l00090}{90}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source}{Game\+Server.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_server_a624c89ca109dcc8127f159e1aacd6903}\label{class_game_server_a624c89ca109dcc8127f159e1aacd6903}} 
+\index{GameServer@{GameServer}!mAircraftInfo@{mAircraftInfo}}
+\index{mAircraftInfo@{mAircraftInfo}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{mAircraftInfo}{mAircraftInfo}}
+{\footnotesize\ttfamily std\+::map$<$ \mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}}, \mbox{\hyperlink{struct_game_server_1_1_aircraft_info}{Aircraft\+Info}} $>$ Game\+Server\+::m\+Aircraft\+Info\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source_l00087}{87}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source}{Game\+Server.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_server_a0cb1dbda51ca5e2c1b23578203057bde}\label{class_game_server_a0cb1dbda51ca5e2c1b23578203057bde}} 
+\index{GameServer@{GameServer}!mBattleFieldRect@{mBattleFieldRect}}
+\index{mBattleFieldRect@{mBattleFieldRect}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{mBattleFieldRect}{mBattleFieldRect}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} Game\+Server\+::m\+Battle\+Field\+Rect\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source_l00083}{83}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source}{Game\+Server.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_server_a0c1b67d38cc2d8049ca8dd5db69f96c4}\label{class_game_server_a0c1b67d38cc2d8049ca8dd5db69f96c4}} 
+\index{GameServer@{GameServer}!mBattleFieldScrollSpeed@{mBattleFieldScrollSpeed}}
+\index{mBattleFieldScrollSpeed@{mBattleFieldScrollSpeed}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{mBattleFieldScrollSpeed}{mBattleFieldScrollSpeed}}
+{\footnotesize\ttfamily float Game\+Server\+::m\+Battle\+Field\+Scroll\+Speed\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source_l00084}{84}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source}{Game\+Server.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_server_ac706801b840f51ea4e39cfa0b019a6fa}\label{class_game_server_ac706801b840f51ea4e39cfa0b019a6fa}} 
+\index{GameServer@{GameServer}!mClientTimeoutTime@{mClientTimeoutTime}}
+\index{mClientTimeoutTime@{mClientTimeoutTime}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{mClientTimeoutTime}{mClientTimeoutTime}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} Game\+Server\+::m\+Client\+Timeout\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source_l00077}{77}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source}{Game\+Server.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_server_a53de5a7062321e6ce4c5b2ae0778e972}\label{class_game_server_a53de5a7062321e6ce4c5b2ae0778e972}} 
+\index{GameServer@{GameServer}!mClock@{mClock}}
+\index{mClock@{mClock}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{mClock}{mClock}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_clock}{sf\+::\+Clock}} Game\+Server\+::m\+Clock\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source_l00074}{74}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source}{Game\+Server.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_server_a52f1a396a8d504e55e74d0eb1d517f12}\label{class_game_server_a52f1a396a8d504e55e74d0eb1d517f12}} 
+\index{GameServer@{GameServer}!mConnectedPlayers@{mConnectedPlayers}}
+\index{mConnectedPlayers@{mConnectedPlayers}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{mConnectedPlayers}{mConnectedPlayers}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Game\+Server\+::m\+Connected\+Players\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source_l00080}{80}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source}{Game\+Server.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_server_af0ab37b42b47d02035884afb2aaf2493}\label{class_game_server_af0ab37b42b47d02035884afb2aaf2493}} 
+\index{GameServer@{GameServer}!mLastSpawnTime@{mLastSpawnTime}}
+\index{mLastSpawnTime@{mLastSpawnTime}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{mLastSpawnTime}{mLastSpawnTime}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} Game\+Server\+::m\+Last\+Spawn\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source_l00093}{93}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source}{Game\+Server.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_server_a76cb496620a1f155406fc6d8ce14bd97}\label{class_game_server_a76cb496620a1f155406fc6d8ce14bd97}} 
+\index{GameServer@{GameServer}!mListenerSocket@{mListenerSocket}}
+\index{mListenerSocket@{mListenerSocket}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{mListenerSocket}{mListenerSocket}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_tcp_listener}{sf\+::\+Tcp\+Listener}} Game\+Server\+::m\+Listener\+Socket\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source_l00075}{75}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source}{Game\+Server.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_server_a131c4e604c1b02c457582fbb55cfa8bb}\label{class_game_server_a131c4e604c1b02c457582fbb55cfa8bb}} 
+\index{GameServer@{GameServer}!mListeningState@{mListeningState}}
+\index{mListeningState@{mListeningState}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{mListeningState}{mListeningState}}
+{\footnotesize\ttfamily bool Game\+Server\+::m\+Listening\+State\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source_l00076}{76}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source}{Game\+Server.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_server_af91e35eafab607f11b9b37514fd2d34d}\label{class_game_server_af91e35eafab607f11b9b37514fd2d34d}} 
+\index{GameServer@{GameServer}!mMaxConnectedPlayers@{mMaxConnectedPlayers}}
+\index{mMaxConnectedPlayers@{mMaxConnectedPlayers}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{mMaxConnectedPlayers}{mMaxConnectedPlayers}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Game\+Server\+::m\+Max\+Connected\+Players\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source_l00079}{79}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source}{Game\+Server.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_server_ada23408f036bdc921a3301ca5749c767}\label{class_game_server_ada23408f036bdc921a3301ca5749c767}} 
+\index{GameServer@{GameServer}!mPeers@{mPeers}}
+\index{mPeers@{mPeers}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{mPeers}{mPeers}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_game_server_a778579be1a515d88327eab7df8723b4e}{Peer\+Ptr}} $>$ Game\+Server\+::m\+Peers\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source_l00089}{89}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source}{Game\+Server.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_server_ada16342f087153975c446ad722f8b389}\label{class_game_server_ada16342f087153975c446ad722f8b389}} 
+\index{GameServer@{GameServer}!mThread@{mThread}}
+\index{mThread@{mThread}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{mThread}{mThread}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_thread}{sf\+::\+Thread}} Game\+Server\+::m\+Thread\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source_l00073}{73}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source}{Game\+Server.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_server_ac9fb6351dbc1651bba9d55f1ceb3ed61}\label{class_game_server_ac9fb6351dbc1651bba9d55f1ceb3ed61}} 
+\index{GameServer@{GameServer}!mTimeForNextSpawn@{mTimeForNextSpawn}}
+\index{mTimeForNextSpawn@{mTimeForNextSpawn}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{mTimeForNextSpawn}{mTimeForNextSpawn}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} Game\+Server\+::m\+Time\+For\+Next\+Spawn\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source_l00094}{94}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source}{Game\+Server.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_server_a72a6f69668450750453a3967f1f2e3eb}\label{class_game_server_a72a6f69668450750453a3967f1f2e3eb}} 
+\index{GameServer@{GameServer}!mWaitingThreadEnd@{mWaitingThreadEnd}}
+\index{mWaitingThreadEnd@{mWaitingThreadEnd}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{mWaitingThreadEnd}{mWaitingThreadEnd}}
+{\footnotesize\ttfamily bool Game\+Server\+::m\+Waiting\+Thread\+End\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source_l00091}{91}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source}{Game\+Server.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_server_aad5ecc9250943d09391399bc8869aae4}\label{class_game_server_aad5ecc9250943d09391399bc8869aae4}} 
+\index{GameServer@{GameServer}!mWorldHeight@{mWorldHeight}}
+\index{mWorldHeight@{mWorldHeight}!GameServer@{GameServer}}
+\doxysubsubsection{\texorpdfstring{mWorldHeight}{mWorldHeight}}
+{\footnotesize\ttfamily float Game\+Server\+::m\+World\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source_l00082}{82}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp_source}{Game\+Server.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Week14/\+SFML-\/2.\+5.\+1/include/\mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_game_server_8hpp}{Game\+Server.\+hpp}}\item 
+Week14/\+Week14-\/\+Demo1-\/\+Multiplayer/\+Include/\mbox{\hyperlink{_week14-_demo1-_multiplayer_2_include_2_game_server_8hpp}{Game\+Server.\+hpp}}\item 
+Week14/\+Week14-\/\+Demo1-\/\+Player2/\+Include/\mbox{\hyperlink{_week14-_demo1-_player2_2_include_2_game_server_8hpp}{Game\+Server.\+hpp}}\item 
+Week14/\+SFML-\/2.\+5.\+1/\+Source/\mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp}{Game\+Server.\+cpp}}\item 
+Week14/\+Week14-\/\+Demo1-\/\+Multiplayer/\+Source/\mbox{\hyperlink{_week14-_demo1-_multiplayer_2_source_2_game_server_8cpp}{Game\+Server.\+cpp}}\item 
+Week14/\+Week14-\/\+Demo1-\/\+Player2/\+Source/\mbox{\hyperlink{_week14-_demo1-_player2_2_source_2_game_server_8cpp}{Game\+Server.\+cpp}}\end{DoxyCompactItemize}

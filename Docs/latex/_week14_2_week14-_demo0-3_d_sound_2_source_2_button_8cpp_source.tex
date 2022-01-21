@@ -1,0 +1,123 @@
+\hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source}{}\doxysection{Button.\+cpp}
+\label{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source}\index{Week14/Week14-\/Demo0-\/3DSound/Source/Button.cpp@{Week14/Week14-\/Demo0-\/3DSound/Source/Button.cpp}}
+\mbox{\hyperlink{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include <Button.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <Utility.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <SoundPlayer.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include <ResourceHolder.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include <SFML/Window/Event.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#include <SFML/Graphics/RenderStates.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#include <SFML/Graphics/RenderTarget.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00012}00012 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_u_i}{GUI}}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00013}00013 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00015}00015     \mbox{\hyperlink{class_g_u_i_1_1_button_aa624162ff8bee4bd4523428c3ea2150b}{Button::Button}}(\mbox{\hyperlink{struct_state_1_1_context}{State::Context}} context)}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00016}00016         : mCallback()}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00017}00017         , mSprite(context.textures-\/>get(\mbox{\hyperlink{namespace_textures}{Textures}}::\mbox{\hyperlink{namespace_textures_a2cfe2099537d4e80b08437b4978301a5aaf51ef3da59b1e4825c8a808aa9aa46c}{Buttons}}))}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00018}00018         , mText(\textcolor{stringliteral}{"{}"{}}, context.fonts-\/>get(\mbox{\hyperlink{namespace_fonts}{Fonts}}::\mbox{\hyperlink{namespace_fonts_a240717ec0dc75e98501af734a02c396da9e5a008b88415e37d30b922f06c8eabc}{Main}}), 16)}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00019}00019         , mIsToggle(false)}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00020}00020         , mSounds(*context.sounds)}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00021}00021     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00022}00022         changeTexture(Normal);}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00024}00024         \mbox{\hyperlink{classsf_1_1_rect}{sf::FloatRect}} bounds = mSprite.getLocalBounds();}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00025}00025         mText.setPosition(bounds.\mbox{\hyperlink{classsf_1_1_rect_a4dd5b9d4333bebbc51bd309298fd500f}{width}} / 2.f, bounds.\mbox{\hyperlink{classsf_1_1_rect_a6fa0fc7de1636d78cae1a1b54eef95cd}{height}} / 2.f);}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00026}00026     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00028}00028     \textcolor{keywordtype}{void} Button::setCallback(Callback callback)}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00029}00029     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00030}00030         mCallback = std::move(callback);}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00031}00031     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00033}00033     \textcolor{keywordtype}{void} Button::setText(\textcolor{keyword}{const} std::string\& text)}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00034}00034     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00035}00035         mText.setString(text);}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00036}00036         \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_add3ffea68d586813ee6765c3bc796d35}{centerOrigin}}(mText);}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00037}00037     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00039}00039     \textcolor{keywordtype}{void} Button::setToggle(\textcolor{keywordtype}{bool} flag)}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00040}00040     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00041}00041         mIsToggle = flag;}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00042}00042     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00044}00044     \textcolor{keywordtype}{bool} Button::isSelectable()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00045}00045 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00046}00046         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00047}00047     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00049}00049     \textcolor{keywordtype}{void} Button::select()}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00050}00050     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00051}00051         Component::select();}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00053}00053         changeTexture(Selected);}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00054}00054     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00056}00056     \textcolor{keywordtype}{void} Button::deselect()}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00057}00057     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00058}00058         Component::deselect();}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00060}00060         changeTexture(Normal);}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00061}00061     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00063}00063     \textcolor{keywordtype}{void} Button::activate()}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00064}00064     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00065}00065         Component::activate();}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00067}00067         \textcolor{comment}{// If we are toggle then we should show that the button is pressed and thus "{}toggled"{}.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00068}00068         \textcolor{keywordflow}{if} (mIsToggle)}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00069}00069             changeTexture(Pressed);}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00071}00071         \textcolor{keywordflow}{if} (mCallback)}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00072}00072             mCallback();}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00074}00074         \textcolor{comment}{// If we are not a toggle then deactivate the button since we are just momentarily activated.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00075}00075         \textcolor{keywordflow}{if} (!mIsToggle)}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00076}00076             deactivate();}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00078}00078 \textcolor{preprocessor}{\#pragma region step 17}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00079}00079         mSounds.play(\mbox{\hyperlink{namespace_sound_effect_a11ffbf1eb89e85a34cbfd5a59b2cd9cba873f21feb9c14e40ff579673bbd6e335}{SoundEffect::Button}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00080}00080 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00082}00082     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00084}00084     \textcolor{keywordtype}{void} Button::deactivate()}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00085}00085     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00086}00086         Component::deactivate();}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00087}00087 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00088}00088         \textcolor{keywordflow}{if} (mIsToggle)}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00089}00089         \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00090}00090             \textcolor{comment}{// Reset texture to right one depending on if we are selected or not.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00091}00091             \textcolor{keywordflow}{if} (isSelected())}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00092}00092                 changeTexture(Selected);}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00093}00093             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00094}00094                 changeTexture(Normal);}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00095}00095         \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00096}00096     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00097}00097 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00098}00098     \textcolor{keywordtype}{void} Button::handleEvent(\textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_event}{sf::Event}}\&)}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00099}00099     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00100}00100     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00101}00101 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00102}00102     \textcolor{keywordtype}{void} Button::draw(\mbox{\hyperlink{classsf_1_1_render_target}{sf::RenderTarget}}\& target, \mbox{\hyperlink{classsf_1_1_render_states}{sf::RenderStates}} states)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00103}00103 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00104}00104         states.\mbox{\hyperlink{classsf_1_1_render_states_a1f737981a0f2f0d4bb8dac866a8d1149}{transform}} *= getTransform();}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00105}00105         target.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(mSprite, states);}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00106}00106         target.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(mText, states);}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00107}00107     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00108}00108 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00109}00109 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00110}00110     \textcolor{keywordtype}{void} Button::changeTexture(\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0}{Type}} buttonType)}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00111}00111     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00112}00112         \mbox{\hyperlink{classsf_1_1_rect}{sf::IntRect}} textureRect(0, 50 * buttonType, 200, 50);}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00113}00113         mSprite.setTextureRect(textureRect);}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00114}00114     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00115}00115 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00116}00116 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo0-3_d_sound_2_source_2_button_8cpp_source_l00117}00117 \}}
+
+\end{DoxyCode}

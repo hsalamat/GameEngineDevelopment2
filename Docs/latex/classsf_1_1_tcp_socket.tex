@@ -1,0 +1,652 @@
+\hypertarget{classsf_1_1_tcp_socket}{}\doxysection{sf\+::Tcp\+Socket Class Reference}
+\label{classsf_1_1_tcp_socket}\index{sf::TcpSocket@{sf::TcpSocket}}
+
+
+Specialized socket using the TCP protocol.  
+
+
+
+
+{\ttfamily \#include $<$Tcp\+Socket.\+hpp$>$}
+
+Inheritance diagram for sf\+::Tcp\+Socket\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classsf_1_1_tcp_socket}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structsf_1_1_tcp_socket_1_1_pending_packet}{Pending\+Packet}}
+\begin{DoxyCompactList}\small\item\em Structure holding the data of a pending packet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsf_1_1_tcp_socket_a62a9bf81fd7f15fedb29fd1348483236}{Tcp\+Socket}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+unsigned short \mbox{\hyperlink{classsf_1_1_tcp_socket_a98e45f0f49af1fd99216b9195e86d86b}{get\+Local\+Port}} () const
+\begin{DoxyCompactList}\small\item\em Get the port to which the socket is bound locally. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} \mbox{\hyperlink{classsf_1_1_tcp_socket_aa8579c203b1fd21beb74d7f76444a94c}{get\+Remote\+Address}} () const
+\begin{DoxyCompactList}\small\item\em Get the address of the connected peer. \end{DoxyCompactList}\item 
+unsigned short \mbox{\hyperlink{classsf_1_1_tcp_socket_a93bced0afd4b1c60797a85725be04951}{get\+Remote\+Port}} () const
+\begin{DoxyCompactList}\small\item\em Get the port of the connected peer to which the socket is connected. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{Status}} \mbox{\hyperlink{classsf_1_1_tcp_socket_a68cd42d5ab70ab54b16787f555951c40}{connect}} (const \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} \&remote\+Address, unsigned short remote\+Port, \mbox{\hyperlink{classsf_1_1_time}{Time}} timeout=\mbox{\hyperlink{classsf_1_1_time_aa343e67f43a940e7b3b51aa10a495f2f}{Time\+::\+Zero}})
+\begin{DoxyCompactList}\small\item\em Connect the socket to a remote peer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_tcp_socket_ac18f518a9be3d6be5e74b9404c253c1e}{disconnect}} ()
+\begin{DoxyCompactList}\small\item\em Disconnect the socket from its remote peer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{Status}} \mbox{\hyperlink{classsf_1_1_tcp_socket_affce26ab3bcc4f5b9269dad79db544c0}{send}} (const void $\ast$data, std\+::size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Send raw data to the remote peer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{Status}} \mbox{\hyperlink{classsf_1_1_tcp_socket_a31f5b280126a96c6f3ad430f4cbcb54d}{send}} (const void $\ast$data, std\+::size\+\_\+t size, std\+::size\+\_\+t \&sent)
+\begin{DoxyCompactList}\small\item\em Send raw data to the remote peer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{Status}} \mbox{\hyperlink{classsf_1_1_tcp_socket_a90ce50811ea61d4f00efc62bb99ae1af}{receive}} (void $\ast$data, std\+::size\+\_\+t size, std\+::size\+\_\+t \&received)
+\begin{DoxyCompactList}\small\item\em Receive raw data from the remote peer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{Status}} \mbox{\hyperlink{classsf_1_1_tcp_socket_a0f8276e2b1c75aac4a7b0a707b250f44}{send}} (\mbox{\hyperlink{classsf_1_1_packet}{Packet}} \&packet)
+\begin{DoxyCompactList}\small\item\em Send a formatted packet of data to the remote peer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{Status}} \mbox{\hyperlink{classsf_1_1_tcp_socket_aa655352609bc9804f2baa020df3e7331}{receive}} (\mbox{\hyperlink{classsf_1_1_packet}{Packet}} \&packet)
+\begin{DoxyCompactList}\small\item\em Receive a formatted packet of data from the remote peer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_tcp_socket_a62a9bf81fd7f15fedb29fd1348483236}{Tcp\+Socket}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+unsigned short \mbox{\hyperlink{classsf_1_1_tcp_socket_a98e45f0f49af1fd99216b9195e86d86b}{get\+Local\+Port}} () const
+\begin{DoxyCompactList}\small\item\em Get the port to which the socket is bound locally. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} \mbox{\hyperlink{classsf_1_1_tcp_socket_aa8579c203b1fd21beb74d7f76444a94c}{get\+Remote\+Address}} () const
+\begin{DoxyCompactList}\small\item\em Get the address of the connected peer. \end{DoxyCompactList}\item 
+unsigned short \mbox{\hyperlink{classsf_1_1_tcp_socket_a93bced0afd4b1c60797a85725be04951}{get\+Remote\+Port}} () const
+\begin{DoxyCompactList}\small\item\em Get the port of the connected peer to which the socket is connected. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{Status}} \mbox{\hyperlink{classsf_1_1_tcp_socket_a68cd42d5ab70ab54b16787f555951c40}{connect}} (const \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} \&remote\+Address, unsigned short remote\+Port, \mbox{\hyperlink{classsf_1_1_time}{Time}} timeout=\mbox{\hyperlink{classsf_1_1_time_aa343e67f43a940e7b3b51aa10a495f2f}{Time\+::\+Zero}})
+\begin{DoxyCompactList}\small\item\em Connect the socket to a remote peer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_tcp_socket_ac18f518a9be3d6be5e74b9404c253c1e}{disconnect}} ()
+\begin{DoxyCompactList}\small\item\em Disconnect the socket from its remote peer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{Status}} \mbox{\hyperlink{classsf_1_1_tcp_socket_affce26ab3bcc4f5b9269dad79db544c0}{send}} (const void $\ast$data, std\+::size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Send raw data to the remote peer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{Status}} \mbox{\hyperlink{classsf_1_1_tcp_socket_a31f5b280126a96c6f3ad430f4cbcb54d}{send}} (const void $\ast$data, std\+::size\+\_\+t size, std\+::size\+\_\+t \&sent)
+\begin{DoxyCompactList}\small\item\em Send raw data to the remote peer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{Status}} \mbox{\hyperlink{classsf_1_1_tcp_socket_a90ce50811ea61d4f00efc62bb99ae1af}{receive}} (void $\ast$data, std\+::size\+\_\+t size, std\+::size\+\_\+t \&received)
+\begin{DoxyCompactList}\small\item\em Receive raw data from the remote peer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{Status}} \mbox{\hyperlink{classsf_1_1_tcp_socket_a0f8276e2b1c75aac4a7b0a707b250f44}{send}} (\mbox{\hyperlink{classsf_1_1_packet}{Packet}} \&packet)
+\begin{DoxyCompactList}\small\item\em Send a formatted packet of data to the remote peer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{Status}} \mbox{\hyperlink{classsf_1_1_tcp_socket_aa655352609bc9804f2baa020df3e7331}{receive}} (\mbox{\hyperlink{classsf_1_1_packet}{Packet}} \&packet)
+\begin{DoxyCompactList}\small\item\em Receive a formatted packet of data from the remote peer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structsf_1_1_tcp_socket_1_1_pending_packet}{Pending\+Packet}} \mbox{\hyperlink{classsf_1_1_tcp_socket_ab46b6b5cfafbc4255d8bdca3148584a8}{m\+\_\+pending\+Packet}}
+\begin{DoxyCompactList}\small\item\em Temporary data of the packet currently being received. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsf_1_1_tcp_socket_a0a6bae466f66732c4d05d5335d705d64}{Tcp\+Listener}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Specialized socket using the TCP protocol. 
+
+TCP is a connected protocol, which means that a TCP socket can only communicate with the host it is connected to.
+
+It can\textquotesingle{}t send or receive anything if it is not connected.
+
+The TCP protocol is reliable but adds a slight overhead. It ensures that your data will always be received in order and without errors (no data corrupted, lost or duplicated).
+
+When a socket is connected to a remote host, you can retrieve informations about this host with the get\+Remote\+Address and get\+Remote\+Port functions. You can also get the local port to which the socket is bound (which is automatically chosen when the socket is connected), with the get\+Local\+Port function.
+
+Sending and receiving data can use either the low-\/level or the high-\/level functions. The low-\/level functions process a raw sequence of bytes, and cannot ensure that one call to Send will exactly match one call to Receive at the other end of the socket.
+
+The high-\/level interface uses packets (see \mbox{\hyperlink{classsf_1_1_packet}{sf\+::\+Packet}}), which are easier to use and provide more safety regarding the data that is exchanged. You can look at the \mbox{\hyperlink{classsf_1_1_packet}{sf\+::\+Packet}} class to get more details about how they work.
+
+The socket is automatically disconnected when it is destroyed, but if you want to explicitly close the connection while the socket instance is still alive, you can call disconnect.
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// -\/-\/-\/-\/-\/ The client -\/-\/-\/-\/-\/}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Create a socket and connect it to 192.168.1.50 on port 55001}}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_tcp_socket}{sf::TcpSocket}} socket;}
+\DoxyCodeLine{socket.\mbox{\hyperlink{classsf_1_1_tcp_socket_a68cd42d5ab70ab54b16787f555951c40}{connect}}(\textcolor{stringliteral}{"{}192.168.1.50"{}}, 55001);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Send a message to the connected host}}
+\DoxyCodeLine{std::string message = \textcolor{stringliteral}{"{}Hi, I am a client"{}};}
+\DoxyCodeLine{socket.\mbox{\hyperlink{classsf_1_1_tcp_socket_affce26ab3bcc4f5b9269dad79db544c0}{send}}(message.c\_str(), message.size() + 1);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Receive an answer from the server}}
+\DoxyCodeLine{\textcolor{keywordtype}{char} buffer[1024];}
+\DoxyCodeLine{std::size\_t received = 0;}
+\DoxyCodeLine{socket.\mbox{\hyperlink{classsf_1_1_tcp_socket_a90ce50811ea61d4f00efc62bb99ae1af}{receive}}(buffer, \textcolor{keyword}{sizeof}(buffer), received);}
+\DoxyCodeLine{std::cout << \textcolor{stringliteral}{"{}The server said: "{}} << buffer << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// -\/-\/-\/-\/-\/ The server -\/-\/-\/-\/-\/}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Create a listener to wait for incoming connections on port 55001}}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_tcp_listener}{sf::TcpListener}} listener;}
+\DoxyCodeLine{listener.\mbox{\hyperlink{classsf_1_1_tcp_listener_a9504758ea3570e62cb20b209c11776a1}{listen}}(55001);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Wait for a connection}}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_tcp_socket}{sf::TcpSocket}} socket;}
+\DoxyCodeLine{listener.\mbox{\hyperlink{classsf_1_1_tcp_listener_ae2c83ce5a64d50b68180c46bef0a7346}{accept}}(socket);}
+\DoxyCodeLine{std::cout << \textcolor{stringliteral}{"{}New client connected: "{}} << socket.\mbox{\hyperlink{classsf_1_1_tcp_socket_aa8579c203b1fd21beb74d7f76444a94c}{getRemoteAddress}}() << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Receive a message from the client}}
+\DoxyCodeLine{\textcolor{keywordtype}{char} buffer[1024];}
+\DoxyCodeLine{std::size\_t received = 0;}
+\DoxyCodeLine{socket.\mbox{\hyperlink{classsf_1_1_tcp_socket_a90ce50811ea61d4f00efc62bb99ae1af}{receive}}(buffer, \textcolor{keyword}{sizeof}(buffer), received);}
+\DoxyCodeLine{std::cout << \textcolor{stringliteral}{"{}The client said: "{}} << buffer << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Send an answer}}
+\DoxyCodeLine{std::string message = \textcolor{stringliteral}{"{}Welcome, client"{}};}
+\DoxyCodeLine{socket.\mbox{\hyperlink{classsf_1_1_tcp_socket_affce26ab3bcc4f5b9269dad79db544c0}{send}}(message.c\_str(), message.size() + 1);}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_socket}{sf\+::\+Socket}}, \mbox{\hyperlink{classsf_1_1_udp_socket}{sf\+::\+Udp\+Socket}}, \mbox{\hyperlink{classsf_1_1_packet}{sf\+::\+Packet}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_tcp_socket_8hpp_source_l00046}{46}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_tcp_socket_8hpp_source}{Tcp\+Socket.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsf_1_1_tcp_socket_a62a9bf81fd7f15fedb29fd1348483236}\label{classsf_1_1_tcp_socket_a62a9bf81fd7f15fedb29fd1348483236}} 
+\index{sf::TcpSocket@{sf::TcpSocket}!TcpSocket@{TcpSocket}}
+\index{TcpSocket@{TcpSocket}!sf::TcpSocket@{sf::TcpSocket}}
+\doxysubsubsection{\texorpdfstring{TcpSocket()}{TcpSocket()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily sf\+::\+Tcp\+Socket\+::\+Tcp\+Socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+\mbox{\Hypertarget{classsf_1_1_tcp_socket_a62a9bf81fd7f15fedb29fd1348483236}\label{classsf_1_1_tcp_socket_a62a9bf81fd7f15fedb29fd1348483236}} 
+\index{sf::TcpSocket@{sf::TcpSocket}!TcpSocket@{TcpSocket}}
+\index{TcpSocket@{TcpSocket}!sf::TcpSocket@{sf::TcpSocket}}
+\doxysubsubsection{\texorpdfstring{TcpSocket()}{TcpSocket()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sf\+::\+Tcp\+Socket\+::\+Tcp\+Socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsf_1_1_tcp_socket_a68cd42d5ab70ab54b16787f555951c40}\label{classsf_1_1_tcp_socket_a68cd42d5ab70ab54b16787f555951c40}} 
+\index{sf::TcpSocket@{sf::TcpSocket}!connect@{connect}}
+\index{connect@{connect}!sf::TcpSocket@{sf::TcpSocket}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{Status}} sf\+::\+Tcp\+Socket\+::connect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} \&}]{remote\+Address,  }\item[{unsigned short}]{remote\+Port,  }\item[{\mbox{\hyperlink{classsf_1_1_time}{Time}}}]{timeout = {\ttfamily \mbox{\hyperlink{classsf_1_1_time_aa343e67f43a940e7b3b51aa10a495f2f}{Time\+::\+Zero}}} }\end{DoxyParamCaption})}
+
+
+
+Connect the socket to a remote peer. 
+
+In blocking mode, this function may take a while, especially if the remote peer is not reachable. The last parameter allows you to stop trying to connect after a given timeout. If the socket is already connected, the connection is forcibly disconnected before attempting to connect again.
+
+
+\begin{DoxyParams}{Parameters}
+{\em remote\+Address} & Address of the remote peer \\
+\hline
+{\em remote\+Port} & Port of the remote peer \\
+\hline
+{\em timeout} & Optional maximum time to wait\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_tcp_socket_ac18f518a9be3d6be5e74b9404c253c1e}{disconnect}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_tcp_socket_a68cd42d5ab70ab54b16787f555951c40}\label{classsf_1_1_tcp_socket_a68cd42d5ab70ab54b16787f555951c40}} 
+\index{sf::TcpSocket@{sf::TcpSocket}!connect@{connect}}
+\index{connect@{connect}!sf::TcpSocket@{sf::TcpSocket}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{Status}} sf\+::\+Tcp\+Socket\+::connect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} \&}]{remote\+Address,  }\item[{unsigned short}]{remote\+Port,  }\item[{\mbox{\hyperlink{classsf_1_1_time}{Time}}}]{timeout = {\ttfamily \mbox{\hyperlink{classsf_1_1_time_aa343e67f43a940e7b3b51aa10a495f2f}{Time\+::\+Zero}}} }\end{DoxyParamCaption})}
+
+
+
+Connect the socket to a remote peer. 
+
+In blocking mode, this function may take a while, especially if the remote peer is not reachable. The last parameter allows you to stop trying to connect after a given timeout. If the socket is already connected, the connection is forcibly disconnected before attempting to connect again.
+
+
+\begin{DoxyParams}{Parameters}
+{\em remote\+Address} & Address of the remote peer \\
+\hline
+{\em remote\+Port} & Port of the remote peer \\
+\hline
+{\em timeout} & Optional maximum time to wait\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_tcp_socket_ac18f518a9be3d6be5e74b9404c253c1e}{disconnect}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_tcp_socket_ac18f518a9be3d6be5e74b9404c253c1e}\label{classsf_1_1_tcp_socket_ac18f518a9be3d6be5e74b9404c253c1e}} 
+\index{sf::TcpSocket@{sf::TcpSocket}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!sf::TcpSocket@{sf::TcpSocket}}
+\doxysubsubsection{\texorpdfstring{disconnect()}{disconnect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Tcp\+Socket\+::disconnect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Disconnect the socket from its remote peer. 
+
+This function gracefully closes the connection. If the socket is not connected, this function has no effect.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_tcp_socket_a68cd42d5ab70ab54b16787f555951c40}{connect}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_tcp_socket_ac18f518a9be3d6be5e74b9404c253c1e}\label{classsf_1_1_tcp_socket_ac18f518a9be3d6be5e74b9404c253c1e}} 
+\index{sf::TcpSocket@{sf::TcpSocket}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!sf::TcpSocket@{sf::TcpSocket}}
+\doxysubsubsection{\texorpdfstring{disconnect()}{disconnect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Tcp\+Socket\+::disconnect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Disconnect the socket from its remote peer. 
+
+This function gracefully closes the connection. If the socket is not connected, this function has no effect.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_tcp_socket_a68cd42d5ab70ab54b16787f555951c40}{connect}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_tcp_socket_a98e45f0f49af1fd99216b9195e86d86b}\label{classsf_1_1_tcp_socket_a98e45f0f49af1fd99216b9195e86d86b}} 
+\index{sf::TcpSocket@{sf::TcpSocket}!getLocalPort@{getLocalPort}}
+\index{getLocalPort@{getLocalPort}!sf::TcpSocket@{sf::TcpSocket}}
+\doxysubsubsection{\texorpdfstring{getLocalPort()}{getLocalPort()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned short sf\+::\+Tcp\+Socket\+::get\+Local\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the port to which the socket is bound locally. 
+
+If the socket is not connected, this function returns 0.
+
+\begin{DoxyReturn}{Returns}
+Port to which the socket is bound
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_tcp_socket_a68cd42d5ab70ab54b16787f555951c40}{connect}}, \mbox{\hyperlink{classsf_1_1_tcp_socket_a93bced0afd4b1c60797a85725be04951}{get\+Remote\+Port}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_tcp_socket_a98e45f0f49af1fd99216b9195e86d86b}\label{classsf_1_1_tcp_socket_a98e45f0f49af1fd99216b9195e86d86b}} 
+\index{sf::TcpSocket@{sf::TcpSocket}!getLocalPort@{getLocalPort}}
+\index{getLocalPort@{getLocalPort}!sf::TcpSocket@{sf::TcpSocket}}
+\doxysubsubsection{\texorpdfstring{getLocalPort()}{getLocalPort()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily unsigned short sf\+::\+Tcp\+Socket\+::get\+Local\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the port to which the socket is bound locally. 
+
+If the socket is not connected, this function returns 0.
+
+\begin{DoxyReturn}{Returns}
+Port to which the socket is bound
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_tcp_socket_a68cd42d5ab70ab54b16787f555951c40}{connect}}, \mbox{\hyperlink{classsf_1_1_tcp_socket_a93bced0afd4b1c60797a85725be04951}{get\+Remote\+Port}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_tcp_socket_aa8579c203b1fd21beb74d7f76444a94c}\label{classsf_1_1_tcp_socket_aa8579c203b1fd21beb74d7f76444a94c}} 
+\index{sf::TcpSocket@{sf::TcpSocket}!getRemoteAddress@{getRemoteAddress}}
+\index{getRemoteAddress@{getRemoteAddress}!sf::TcpSocket@{sf::TcpSocket}}
+\doxysubsubsection{\texorpdfstring{getRemoteAddress()}{getRemoteAddress()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} sf\+::\+Tcp\+Socket\+::get\+Remote\+Address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the address of the connected peer. 
+
+It the socket is not connected, this function returns \mbox{\hyperlink{classsf_1_1_ip_address_af95b0353e632372b5266d6227bc0e3ec}{sf\+::\+Ip\+Address\+::\+None}}.
+
+\begin{DoxyReturn}{Returns}
+Address of the remote peer
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_tcp_socket_a93bced0afd4b1c60797a85725be04951}{get\+Remote\+Port}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_tcp_socket_aa8579c203b1fd21beb74d7f76444a94c}\label{classsf_1_1_tcp_socket_aa8579c203b1fd21beb74d7f76444a94c}} 
+\index{sf::TcpSocket@{sf::TcpSocket}!getRemoteAddress@{getRemoteAddress}}
+\index{getRemoteAddress@{getRemoteAddress}!sf::TcpSocket@{sf::TcpSocket}}
+\doxysubsubsection{\texorpdfstring{getRemoteAddress()}{getRemoteAddress()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} sf\+::\+Tcp\+Socket\+::get\+Remote\+Address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the address of the connected peer. 
+
+It the socket is not connected, this function returns \mbox{\hyperlink{classsf_1_1_ip_address_af95b0353e632372b5266d6227bc0e3ec}{sf\+::\+Ip\+Address\+::\+None}}.
+
+\begin{DoxyReturn}{Returns}
+Address of the remote peer
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_tcp_socket_a93bced0afd4b1c60797a85725be04951}{get\+Remote\+Port}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_tcp_socket_a93bced0afd4b1c60797a85725be04951}\label{classsf_1_1_tcp_socket_a93bced0afd4b1c60797a85725be04951}} 
+\index{sf::TcpSocket@{sf::TcpSocket}!getRemotePort@{getRemotePort}}
+\index{getRemotePort@{getRemotePort}!sf::TcpSocket@{sf::TcpSocket}}
+\doxysubsubsection{\texorpdfstring{getRemotePort()}{getRemotePort()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned short sf\+::\+Tcp\+Socket\+::get\+Remote\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the port of the connected peer to which the socket is connected. 
+
+If the socket is not connected, this function returns 0.
+
+\begin{DoxyReturn}{Returns}
+Remote port to which the socket is connected
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_tcp_socket_aa8579c203b1fd21beb74d7f76444a94c}{get\+Remote\+Address}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_tcp_socket_a93bced0afd4b1c60797a85725be04951}\label{classsf_1_1_tcp_socket_a93bced0afd4b1c60797a85725be04951}} 
+\index{sf::TcpSocket@{sf::TcpSocket}!getRemotePort@{getRemotePort}}
+\index{getRemotePort@{getRemotePort}!sf::TcpSocket@{sf::TcpSocket}}
+\doxysubsubsection{\texorpdfstring{getRemotePort()}{getRemotePort()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily unsigned short sf\+::\+Tcp\+Socket\+::get\+Remote\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the port of the connected peer to which the socket is connected. 
+
+If the socket is not connected, this function returns 0.
+
+\begin{DoxyReturn}{Returns}
+Remote port to which the socket is connected
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_tcp_socket_aa8579c203b1fd21beb74d7f76444a94c}{get\+Remote\+Address}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_tcp_socket_aa655352609bc9804f2baa020df3e7331}\label{classsf_1_1_tcp_socket_aa655352609bc9804f2baa020df3e7331}} 
+\index{sf::TcpSocket@{sf::TcpSocket}!receive@{receive}}
+\index{receive@{receive}!sf::TcpSocket@{sf::TcpSocket}}
+\doxysubsubsection{\texorpdfstring{receive()}{receive()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{Status}} sf\+::\+Tcp\+Socket\+::receive (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_packet}{Packet}} \&}]{packet }\end{DoxyParamCaption})}
+
+
+
+Receive a formatted packet of data from the remote peer. 
+
+In blocking mode, this function will wait until the whole packet has been received. This function will fail if the socket is not connected.
+
+
+\begin{DoxyParams}{Parameters}
+{\em packet} & \mbox{\hyperlink{classsf_1_1_packet}{Packet}} to fill with the received data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_tcp_socket_affce26ab3bcc4f5b9269dad79db544c0}{send}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_tcp_socket_aa655352609bc9804f2baa020df3e7331}\label{classsf_1_1_tcp_socket_aa655352609bc9804f2baa020df3e7331}} 
+\index{sf::TcpSocket@{sf::TcpSocket}!receive@{receive}}
+\index{receive@{receive}!sf::TcpSocket@{sf::TcpSocket}}
+\doxysubsubsection{\texorpdfstring{receive()}{receive()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{Status}} sf\+::\+Tcp\+Socket\+::receive (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_packet}{Packet}} \&}]{packet }\end{DoxyParamCaption})}
+
+
+
+Receive a formatted packet of data from the remote peer. 
+
+In blocking mode, this function will wait until the whole packet has been received. This function will fail if the socket is not connected.
+
+
+\begin{DoxyParams}{Parameters}
+{\em packet} & \mbox{\hyperlink{classsf_1_1_packet}{Packet}} to fill with the received data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_tcp_socket_affce26ab3bcc4f5b9269dad79db544c0}{send}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_tcp_socket_a90ce50811ea61d4f00efc62bb99ae1af}\label{classsf_1_1_tcp_socket_a90ce50811ea61d4f00efc62bb99ae1af}} 
+\index{sf::TcpSocket@{sf::TcpSocket}!receive@{receive}}
+\index{receive@{receive}!sf::TcpSocket@{sf::TcpSocket}}
+\doxysubsubsection{\texorpdfstring{receive()}{receive()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{Status}} sf\+::\+Tcp\+Socket\+::receive (\begin{DoxyParamCaption}\item[{void $\ast$}]{data,  }\item[{std\+::size\+\_\+t}]{size,  }\item[{std\+::size\+\_\+t \&}]{received }\end{DoxyParamCaption})}
+
+
+
+Receive raw data from the remote peer. 
+
+In blocking mode, this function will wait until some bytes are actually received. This function will fail if the socket is not connected.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the array to fill with the received bytes \\
+\hline
+{\em size} & Maximum number of bytes that can be received \\
+\hline
+{\em received} & This variable is filled with the actual number of bytes received\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_tcp_socket_affce26ab3bcc4f5b9269dad79db544c0}{send}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_tcp_socket_a90ce50811ea61d4f00efc62bb99ae1af}\label{classsf_1_1_tcp_socket_a90ce50811ea61d4f00efc62bb99ae1af}} 
+\index{sf::TcpSocket@{sf::TcpSocket}!receive@{receive}}
+\index{receive@{receive}!sf::TcpSocket@{sf::TcpSocket}}
+\doxysubsubsection{\texorpdfstring{receive()}{receive()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{Status}} sf\+::\+Tcp\+Socket\+::receive (\begin{DoxyParamCaption}\item[{void $\ast$}]{data,  }\item[{std\+::size\+\_\+t}]{size,  }\item[{std\+::size\+\_\+t \&}]{received }\end{DoxyParamCaption})}
+
+
+
+Receive raw data from the remote peer. 
+
+In blocking mode, this function will wait until some bytes are actually received. This function will fail if the socket is not connected.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the array to fill with the received bytes \\
+\hline
+{\em size} & Maximum number of bytes that can be received \\
+\hline
+{\em received} & This variable is filled with the actual number of bytes received\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_tcp_socket_affce26ab3bcc4f5b9269dad79db544c0}{send}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_tcp_socket_affce26ab3bcc4f5b9269dad79db544c0}\label{classsf_1_1_tcp_socket_affce26ab3bcc4f5b9269dad79db544c0}} 
+\index{sf::TcpSocket@{sf::TcpSocket}!send@{send}}
+\index{send@{send}!sf::TcpSocket@{sf::TcpSocket}}
+\doxysubsubsection{\texorpdfstring{send()}{send()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{Status}} sf\+::\+Tcp\+Socket\+::send (\begin{DoxyParamCaption}\item[{const void $\ast$}]{data,  }\item[{std\+::size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Send raw data to the remote peer. 
+
+To be able to handle partial sends over non-\/blocking sockets, use the \mbox{\hyperlink{classsf_1_1_tcp_socket_a31f5b280126a96c6f3ad430f4cbcb54d}{send(const void$\ast$, std\+::size\+\_\+t, std\+::size\+\_\+t\&)}} overload instead. This function will fail if the socket is not connected.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the sequence of bytes to send \\
+\hline
+{\em size} & Number of bytes to send\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_tcp_socket_a90ce50811ea61d4f00efc62bb99ae1af}{receive}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_tcp_socket_affce26ab3bcc4f5b9269dad79db544c0}\label{classsf_1_1_tcp_socket_affce26ab3bcc4f5b9269dad79db544c0}} 
+\index{sf::TcpSocket@{sf::TcpSocket}!send@{send}}
+\index{send@{send}!sf::TcpSocket@{sf::TcpSocket}}
+\doxysubsubsection{\texorpdfstring{send()}{send()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{Status}} sf\+::\+Tcp\+Socket\+::send (\begin{DoxyParamCaption}\item[{const void $\ast$}]{data,  }\item[{std\+::size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Send raw data to the remote peer. 
+
+To be able to handle partial sends over non-\/blocking sockets, use the \mbox{\hyperlink{classsf_1_1_tcp_socket_a31f5b280126a96c6f3ad430f4cbcb54d}{send(const void$\ast$, std\+::size\+\_\+t, std\+::size\+\_\+t\&)}} overload instead. This function will fail if the socket is not connected.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the sequence of bytes to send \\
+\hline
+{\em size} & Number of bytes to send\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_tcp_socket_a90ce50811ea61d4f00efc62bb99ae1af}{receive}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_tcp_socket_a31f5b280126a96c6f3ad430f4cbcb54d}\label{classsf_1_1_tcp_socket_a31f5b280126a96c6f3ad430f4cbcb54d}} 
+\index{sf::TcpSocket@{sf::TcpSocket}!send@{send}}
+\index{send@{send}!sf::TcpSocket@{sf::TcpSocket}}
+\doxysubsubsection{\texorpdfstring{send()}{send()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{Status}} sf\+::\+Tcp\+Socket\+::send (\begin{DoxyParamCaption}\item[{const void $\ast$}]{data,  }\item[{std\+::size\+\_\+t}]{size,  }\item[{std\+::size\+\_\+t \&}]{sent }\end{DoxyParamCaption})}
+
+
+
+Send raw data to the remote peer. 
+
+This function will fail if the socket is not connected.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the sequence of bytes to send \\
+\hline
+{\em size} & Number of bytes to send \\
+\hline
+{\em sent} & The number of bytes sent will be written here\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_tcp_socket_a90ce50811ea61d4f00efc62bb99ae1af}{receive}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_tcp_socket_a31f5b280126a96c6f3ad430f4cbcb54d}\label{classsf_1_1_tcp_socket_a31f5b280126a96c6f3ad430f4cbcb54d}} 
+\index{sf::TcpSocket@{sf::TcpSocket}!send@{send}}
+\index{send@{send}!sf::TcpSocket@{sf::TcpSocket}}
+\doxysubsubsection{\texorpdfstring{send()}{send()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{Status}} sf\+::\+Tcp\+Socket\+::send (\begin{DoxyParamCaption}\item[{const void $\ast$}]{data,  }\item[{std\+::size\+\_\+t}]{size,  }\item[{std\+::size\+\_\+t \&}]{sent }\end{DoxyParamCaption})}
+
+
+
+Send raw data to the remote peer. 
+
+This function will fail if the socket is not connected.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the sequence of bytes to send \\
+\hline
+{\em size} & Number of bytes to send \\
+\hline
+{\em sent} & The number of bytes sent will be written here\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_tcp_socket_a90ce50811ea61d4f00efc62bb99ae1af}{receive}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_tcp_socket_a0f8276e2b1c75aac4a7b0a707b250f44}\label{classsf_1_1_tcp_socket_a0f8276e2b1c75aac4a7b0a707b250f44}} 
+\index{sf::TcpSocket@{sf::TcpSocket}!send@{send}}
+\index{send@{send}!sf::TcpSocket@{sf::TcpSocket}}
+\doxysubsubsection{\texorpdfstring{send()}{send()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{Status}} sf\+::\+Tcp\+Socket\+::send (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_packet}{Packet}} \&}]{packet }\end{DoxyParamCaption})}
+
+
+
+Send a formatted packet of data to the remote peer. 
+
+In non-\/blocking mode, if this function returns \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca1c852ba07a30478851e563336d86042e}{sf\+::\+Socket\+::\+Partial}}, you {\itshape must} retry sending the same unmodified packet before sending anything else in order to guarantee the packet arrives at the remote peer uncorrupted. This function will fail if the socket is not connected.
+
+
+\begin{DoxyParams}{Parameters}
+{\em packet} & \mbox{\hyperlink{classsf_1_1_packet}{Packet}} to send\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_tcp_socket_a90ce50811ea61d4f00efc62bb99ae1af}{receive}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_tcp_socket_a0f8276e2b1c75aac4a7b0a707b250f44}\label{classsf_1_1_tcp_socket_a0f8276e2b1c75aac4a7b0a707b250f44}} 
+\index{sf::TcpSocket@{sf::TcpSocket}!send@{send}}
+\index{send@{send}!sf::TcpSocket@{sf::TcpSocket}}
+\doxysubsubsection{\texorpdfstring{send()}{send()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{Status}} sf\+::\+Tcp\+Socket\+::send (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_packet}{Packet}} \&}]{packet }\end{DoxyParamCaption})}
+
+
+
+Send a formatted packet of data to the remote peer. 
+
+In non-\/blocking mode, if this function returns \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca1c852ba07a30478851e563336d86042e}{sf\+::\+Socket\+::\+Partial}}, you {\itshape must} retry sending the same unmodified packet before sending anything else in order to guarantee the packet arrives at the remote peer uncorrupted. This function will fail if the socket is not connected.
+
+
+\begin{DoxyParams}{Parameters}
+{\em packet} & \mbox{\hyperlink{classsf_1_1_packet}{Packet}} to send\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_tcp_socket_a90ce50811ea61d4f00efc62bb99ae1af}{receive}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classsf_1_1_tcp_socket_a0a6bae466f66732c4d05d5335d705d64}\label{classsf_1_1_tcp_socket_a0a6bae466f66732c4d05d5335d705d64}} 
+\index{sf::TcpSocket@{sf::TcpSocket}!TcpListener@{TcpListener}}
+\index{TcpListener@{TcpListener}!sf::TcpSocket@{sf::TcpSocket}}
+\doxysubsubsection{\texorpdfstring{TcpListener}{TcpListener}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_tcp_listener}{Tcp\+Listener}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_tcp_socket_8hpp_source_l00213}{213}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_tcp_socket_8hpp_source}{Tcp\+Socket.\+hpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsf_1_1_tcp_socket_ab46b6b5cfafbc4255d8bdca3148584a8}\label{classsf_1_1_tcp_socket_ab46b6b5cfafbc4255d8bdca3148584a8}} 
+\index{sf::TcpSocket@{sf::TcpSocket}!m\_pendingPacket@{m\_pendingPacket}}
+\index{m\_pendingPacket@{m\_pendingPacket}!sf::TcpSocket@{sf::TcpSocket}}
+\doxysubsubsection{\texorpdfstring{m\_pendingPacket}{m\_pendingPacket}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structsf_1_1_tcp_socket_1_1_pending_packet}{Pending\+Packet}} sf\+::\+Tcp\+Socket\+::m\+\_\+pending\+Packet\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Temporary data of the packet currently being received. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_tcp_socket_8hpp_source_l00231}{231}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_tcp_socket_8hpp_source}{Tcp\+Socket.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+SFML-\/2.\+5.\+1/include/\+SFML/\+Network/\mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_tcp_socket_8hpp}{Tcp\+Socket.\+hpp}}\item 
+Week14/\+SFML-\/2.\+5.\+1/include/\+SFML/\+Network/\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_tcp_socket_8hpp}{Tcp\+Socket.\+hpp}}\end{DoxyCompactItemize}

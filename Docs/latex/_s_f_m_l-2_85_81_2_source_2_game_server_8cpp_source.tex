@@ -1,0 +1,493 @@
+\hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source}{}\doxysection{Game\+Server.\+cpp}
+\label{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source}\index{Week14/SFML-\/2.5.1/Source/GameServer.cpp@{Week14/SFML-\/2.5.1/Source/GameServer.cpp}}
+\mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma region step 7}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <GameServer.hpp>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <NetworkProtocol.hpp>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <Utility.hpp>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include <Pickup.hpp>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <Aircraft.hpp>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#include <SFML/Network/Packet.hpp>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00010}\mbox{\hyperlink{struct_game_server_1_1_remote_peer_a3ee2508616bff2111d5cda98d6dc73ce}{00010}} \mbox{\hyperlink{struct_game_server_1_1_remote_peer_a3ee2508616bff2111d5cda98d6dc73ce}{GameServer::RemotePeer::RemotePeer}}()}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00011}00011     : ready(false)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00012}00012     , timedOut(false)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00013}00013 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00014}00014     \mbox{\hyperlink{struct_game_server_1_1_remote_peer_a747c2f4a28c39a16dea9d565d2f91208}{socket}}.\mbox{\hyperlink{classsf_1_1_socket_a165fc1423e281ea2714c70303d3a9782}{setBlocking}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00015}00015 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00017}\mbox{\hyperlink{class_game_server_a61393ed81464c44e95784b4c3f49f19c}{00017}} \mbox{\hyperlink{class_game_server_a61393ed81464c44e95784b4c3f49f19c}{GameServer::GameServer}}(\mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}} battlefieldSize)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00018}00018     : \mbox{\hyperlink{class_game_server_ada16342f087153975c446ad722f8b389}{mThread}}(\&\mbox{\hyperlink{class_game_server}{GameServer}}::\mbox{\hyperlink{class_game_server_abd3837db1570641a462cec8b8349aca1}{executionThread}}, this)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00019}00019     , \mbox{\hyperlink{class_game_server_a131c4e604c1b02c457582fbb55cfa8bb}{mListeningState}}(false)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00020}00020     , \mbox{\hyperlink{class_game_server_ac706801b840f51ea4e39cfa0b019a6fa}{mClientTimeoutTime}}(\mbox{\hyperlink{namespacesf}{sf}}::seconds(3.f))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00021}00021     , \mbox{\hyperlink{class_game_server_af91e35eafab607f11b9b37514fd2d34d}{mMaxConnectedPlayers}}(10)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00022}00022     , \mbox{\hyperlink{class_game_server_a52f1a396a8d504e55e74d0eb1d517f12}{mConnectedPlayers}}(0)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00023}00023     , \mbox{\hyperlink{class_game_server_aad5ecc9250943d09391399bc8869aae4}{mWorldHeight}}(5000.f)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00024}00024     , \mbox{\hyperlink{class_game_server_a0cb1dbda51ca5e2c1b23578203057bde}{mBattleFieldRect}}(0.f, \mbox{\hyperlink{class_game_server_aad5ecc9250943d09391399bc8869aae4}{mWorldHeight}} -\/ battlefieldSize.y, battlefieldSize.x, battlefieldSize.y)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00025}00025     , \mbox{\hyperlink{class_game_server_a0c1b67d38cc2d8049ca8dd5db69f96c4}{mBattleFieldScrollSpeed}}(-\/50.f)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00026}00026     , \mbox{\hyperlink{class_game_server_af64f1ccdf9d774f18a6da50db8172caa}{mAircraftCount}}(0)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00027}00027     , \mbox{\hyperlink{class_game_server_ada23408f036bdc921a3301ca5749c767}{mPeers}}(1)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00028}00028     , \mbox{\hyperlink{class_game_server_aac49918247fbabef608bd46a978c6330}{mAircraftIdentifierCounter}}(1)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00029}00029     , \mbox{\hyperlink{class_game_server_a72a6f69668450750453a3967f1f2e3eb}{mWaitingThreadEnd}}(false)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00030}00030     , \mbox{\hyperlink{class_game_server_af0ab37b42b47d02035884afb2aaf2493}{mLastSpawnTime}}(\mbox{\hyperlink{namespacesf}{sf}}::Time::Zero)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00031}00031     , \mbox{\hyperlink{class_game_server_ac9fb6351dbc1651bba9d55f1ceb3ed61}{mTimeForNextSpawn}}(\mbox{\hyperlink{namespacesf}{sf}}::seconds(5.f))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00032}00032 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00033}00033     \mbox{\hyperlink{class_game_server_a76cb496620a1f155406fc6d8ce14bd97}{mListenerSocket}}.\mbox{\hyperlink{classsf_1_1_socket_a165fc1423e281ea2714c70303d3a9782}{setBlocking}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00034}00034     \mbox{\hyperlink{class_game_server_ada23408f036bdc921a3301ca5749c767}{mPeers}}[0].reset(\textcolor{keyword}{new} \mbox{\hyperlink{struct_game_server_1_1_remote_peer}{RemotePeer}}());}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00035}00035     \mbox{\hyperlink{class_game_server_ada16342f087153975c446ad722f8b389}{mThread}}.\mbox{\hyperlink{classsf_1_1_thread_a74f75a9e86e1eb47479496314048b5f6}{launch}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00036}00036 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00038}\mbox{\hyperlink{class_game_server_aa5abf46ddd77528735ecdfd546be1b8a}{00038}} \mbox{\hyperlink{class_game_server_aa5abf46ddd77528735ecdfd546be1b8a}{GameServer::\string~GameServer}}()}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00039}00039 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00040}00040     \mbox{\hyperlink{class_game_server_a72a6f69668450750453a3967f1f2e3eb}{mWaitingThreadEnd}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00041}00041     \mbox{\hyperlink{class_game_server_ada16342f087153975c446ad722f8b389}{mThread}}.\mbox{\hyperlink{classsf_1_1_thread_a724b1f94c2d54f84280f2f78bde95fa0}{wait}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00042}00042 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00044}\mbox{\hyperlink{class_game_server_a8659271d4966189f507da61f55b7f984}{00044}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_server_a8659271d4966189f507da61f55b7f984}{GameServer::notifyPlayerRealtimeChange}}(\mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf::Int32}} aircraftIdentifier, \mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf::Int32}} action, \textcolor{keywordtype}{bool} actionEnabled)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00045}00045 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00046}00046     \textcolor{keywordflow}{for} (std::size\_t i = 0; i < \mbox{\hyperlink{class_game_server_a52f1a396a8d504e55e74d0eb1d517f12}{mConnectedPlayers}}; ++i)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00047}00047     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00048}00048         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_game_server_ada23408f036bdc921a3301ca5749c767}{mPeers}}[i]-\/>ready)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00049}00049         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00050}00050             \mbox{\hyperlink{classsf_1_1_packet}{sf::Packet}} packet;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00051}00051             packet << static\_cast<sf::Int32>(\mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a728c998480b4325abd1de68a647efddb}{Server::PlayerRealtimeChange}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00052}00052             packet << aircraftIdentifier;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00053}00053             packet << action;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00054}00054             packet << actionEnabled;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00056}00056             \mbox{\hyperlink{class_game_server_ada23408f036bdc921a3301ca5749c767}{mPeers}}[i]-\/>socket.send(packet);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00057}00057         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00058}00058     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00059}00059 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00061}\mbox{\hyperlink{class_game_server_add73992b0e7cb29ebbfc745a4f79155e}{00061}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_server_add73992b0e7cb29ebbfc745a4f79155e}{GameServer::notifyPlayerEvent}}(\mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf::Int32}} aircraftIdentifier, \mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf::Int32}} action)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00062}00062 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00063}00063     \textcolor{keywordflow}{for} (std::size\_t i = 0; i < \mbox{\hyperlink{class_game_server_a52f1a396a8d504e55e74d0eb1d517f12}{mConnectedPlayers}}; ++i)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00064}00064     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00065}00065         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_game_server_ada23408f036bdc921a3301ca5749c767}{mPeers}}[i]-\/>ready)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00066}00066         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00067}00067             \mbox{\hyperlink{classsf_1_1_packet}{sf::Packet}} packet;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00068}00068             packet << static\_cast<sf::Int32>(\mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220adc6586044f8877151745cc07e86aaafa}{Server::PlayerEvent}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00069}00069             packet << aircraftIdentifier;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00070}00070             packet << action;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00072}00072             \mbox{\hyperlink{class_game_server_ada23408f036bdc921a3301ca5749c767}{mPeers}}[i]-\/>socket.send(packet);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00073}00073         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00074}00074     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00075}00075 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00077}\mbox{\hyperlink{class_game_server_a3a0a351ef8758c358f7e9cbdee82889c}{00077}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_server_a3a0a351ef8758c358f7e9cbdee82889c}{GameServer::notifyPlayerSpawn}}(\mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf::Int32}} aircraftIdentifier)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00078}00078 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00079}00079     \textcolor{keywordflow}{for} (std::size\_t i = 0; i < \mbox{\hyperlink{class_game_server_a52f1a396a8d504e55e74d0eb1d517f12}{mConnectedPlayers}}; ++i)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00080}00080     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00081}00081         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_game_server_ada23408f036bdc921a3301ca5749c767}{mPeers}}[i]-\/>ready)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00082}00082         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00083}00083             \mbox{\hyperlink{classsf_1_1_packet}{sf::Packet}} packet;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00084}00084             packet << static\_cast<sf::Int32>(\mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a0b14dd2cfef4723b98c71a2e38473ab9}{Server::PlayerConnect}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00085}00085             packet << aircraftIdentifier << \mbox{\hyperlink{class_game_server_a624c89ca109dcc8127f159e1aacd6903}{mAircraftInfo}}[aircraftIdentifier].position.x << \mbox{\hyperlink{class_game_server_a624c89ca109dcc8127f159e1aacd6903}{mAircraftInfo}}[aircraftIdentifier].position.y;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00086}00086             \mbox{\hyperlink{class_game_server_ada23408f036bdc921a3301ca5749c767}{mPeers}}[i]-\/>socket.send(packet);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00087}00087         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00088}00088     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00089}00089 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00091}\mbox{\hyperlink{class_game_server_a4273bd99c42c6051d9238ce3869a545a}{00091}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_server_a4273bd99c42c6051d9238ce3869a545a}{GameServer::setListening}}(\textcolor{keywordtype}{bool} enable)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00092}00092 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00093}00093     \textcolor{comment}{// Check if it isn't already listening}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00094}00094     \textcolor{keywordflow}{if} (enable)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00095}00095     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00096}00096         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_game_server_a131c4e604c1b02c457582fbb55cfa8bb}{mListeningState}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00097}00097             \mbox{\hyperlink{class_game_server_a131c4e604c1b02c457582fbb55cfa8bb}{mListeningState}} = (\mbox{\hyperlink{class_game_server_a76cb496620a1f155406fc6d8ce14bd97}{mListenerSocket}}.\mbox{\hyperlink{classsf_1_1_tcp_listener_a9504758ea3570e62cb20b209c11776a1}{listen}}(\mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_network_protocol_8hpp_a46f6fa8990f0a21731b90db2d1e75e21}{ServerPort}}) == \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca6b3d5ba897b6df8ebda86c823b30348a}{sf::TcpListener::Done}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00098}00098     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00099}00099     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00100}00100     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00101}00101         \mbox{\hyperlink{class_game_server_a76cb496620a1f155406fc6d8ce14bd97}{mListenerSocket}}.\mbox{\hyperlink{classsf_1_1_tcp_listener_a3a00a850506bd0f9f48867a0fe59556b}{close}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00102}00102         \mbox{\hyperlink{class_game_server_a131c4e604c1b02c457582fbb55cfa8bb}{mListeningState}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00103}00103     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00104}00104 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00106}\mbox{\hyperlink{class_game_server_abd3837db1570641a462cec8b8349aca1}{00106}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_server_abd3837db1570641a462cec8b8349aca1}{GameServer::executionThread}}()}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00107}00107 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00108}00108     \mbox{\hyperlink{class_game_server_a4273bd99c42c6051d9238ce3869a545a}{setListening}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00109}00109 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00110}00110     \mbox{\hyperlink{classsf_1_1_time}{sf::Time}} stepInterval = sf::seconds(1.f / 60.f);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00111}00111     \mbox{\hyperlink{classsf_1_1_time}{sf::Time}} stepTime = \mbox{\hyperlink{classsf_1_1_time_aa343e67f43a940e7b3b51aa10a495f2f}{sf::Time::Zero}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00112}00112     \mbox{\hyperlink{classsf_1_1_time}{sf::Time}} tickInterval = sf::seconds(1.f / 20.f);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00113}00113     \mbox{\hyperlink{classsf_1_1_time}{sf::Time}} tickTime = \mbox{\hyperlink{classsf_1_1_time_aa343e67f43a940e7b3b51aa10a495f2f}{sf::Time::Zero}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00114}00114     \mbox{\hyperlink{classsf_1_1_clock}{sf::Clock}} stepClock, tickClock;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00115}00115 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00116}00116     \textcolor{keywordflow}{while} (!\mbox{\hyperlink{class_game_server_a72a6f69668450750453a3967f1f2e3eb}{mWaitingThreadEnd}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00117}00117     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00118}00118         \mbox{\hyperlink{class_game_server_a3ddd221a655984904dcdcc2eb3996c9f}{handleIncomingPackets}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00119}00119         \mbox{\hyperlink{class_game_server_a314a8addb9f006a20ec610a2271e41ce}{handleIncomingConnections}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00120}00120 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00121}00121         stepTime += stepClock.\mbox{\hyperlink{classsf_1_1_clock_abe889b42a65bcd8eefc16419645d08a7}{getElapsedTime}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00122}00122         stepClock.\mbox{\hyperlink{classsf_1_1_clock_a123e2627f2943e5ecaa1db0c7df3231b}{restart}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00123}00123 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00124}00124         tickTime += tickClock.\mbox{\hyperlink{classsf_1_1_clock_abe889b42a65bcd8eefc16419645d08a7}{getElapsedTime}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00125}00125         tickClock.\mbox{\hyperlink{classsf_1_1_clock_a123e2627f2943e5ecaa1db0c7df3231b}{restart}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00126}00126 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00127}00127         \textcolor{comment}{// Fixed update step}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00128}00128         \textcolor{keywordflow}{while} (stepTime >= stepInterval)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00129}00129         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00130}00130             \mbox{\hyperlink{class_game_server_a0cb1dbda51ca5e2c1b23578203057bde}{mBattleFieldRect}}.\mbox{\hyperlink{classsf_1_1_rect_abd3d3a2d0ad211ef0082bd0aa1a5c0e3}{top}} += \mbox{\hyperlink{class_game_server_a0c1b67d38cc2d8049ca8dd5db69f96c4}{mBattleFieldScrollSpeed}} * stepInterval.\mbox{\hyperlink{classsf_1_1_time_aa3df2f992d0b0041b4eb02258d43f0e3}{asSeconds}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00131}00131             stepTime -\/= stepInterval;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00132}00132         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00133}00133 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00134}00134         \textcolor{comment}{// Fixed tick step}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00135}00135         \textcolor{keywordflow}{while} (tickTime >= tickInterval)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00136}00136         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00137}00137             \mbox{\hyperlink{class_game_server_ad8ddf7b88b8317830d94313e0282e53f}{tick}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00138}00138             tickTime -\/= tickInterval;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00139}00139         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00140}00140 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00141}00141         \textcolor{comment}{// Sleep to prevent server from consuming 100\% CPU}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00142}00142         \mbox{\hyperlink{group__system_ga2f2620831533dee0ed432ed982342e09}{sf::sleep}}(sf::milliseconds(100));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00143}00143     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00144}00144 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00145}00145 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00146}\mbox{\hyperlink{class_game_server_ad8ddf7b88b8317830d94313e0282e53f}{00146}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_server_ad8ddf7b88b8317830d94313e0282e53f}{GameServer::tick}}()}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00147}00147 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00148}00148     \mbox{\hyperlink{class_game_server_ae19669090d624643c14f6fabd177bc5f}{updateClientState}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00149}00149 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00150}00150     \textcolor{comment}{// Check for mission success = all planes with position.y < offset}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00151}00151     \textcolor{keywordtype}{bool} allAircraftsDone = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00152}00152     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} pair : \mbox{\hyperlink{class_game_server_a624c89ca109dcc8127f159e1aacd6903}{mAircraftInfo}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00153}00153     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00154}00154         \textcolor{comment}{// As long as one player has not crossed the finish line yet, set variable to false}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00155}00155         \textcolor{keywordflow}{if} (pair.second.position.y > 0.f)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00156}00156             allAircraftsDone = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00157}00157     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00158}00158     \textcolor{keywordflow}{if} (allAircraftsDone)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00159}00159     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00160}00160         \mbox{\hyperlink{classsf_1_1_packet}{sf::Packet}} missionSuccessPacket;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00161}00161         missionSuccessPacket << static\_cast<sf::Int32>(\mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220ac3149c45c0b866c1ad17a2c9cf969eaf}{Server::MissionSuccess}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00162}00162         \mbox{\hyperlink{class_game_server_a0809f9d44734c7c4c7a03f5e8f71506f}{sendToAll}}(missionSuccessPacket);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00163}00163     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00164}00164 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00165}00165     \textcolor{comment}{// Remove IDs of aircraft that have been destroyed (relevant if a client has two, and loses one)}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00166}00166     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} itr = \mbox{\hyperlink{class_game_server_a624c89ca109dcc8127f159e1aacd6903}{mAircraftInfo}}.begin(); itr != \mbox{\hyperlink{class_game_server_a624c89ca109dcc8127f159e1aacd6903}{mAircraftInfo}}.end(); )}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00167}00167     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00168}00168         \textcolor{keywordflow}{if} (itr-\/>second.hitpoints <= 0)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00169}00169             \mbox{\hyperlink{class_game_server_a624c89ca109dcc8127f159e1aacd6903}{mAircraftInfo}}.erase(itr++);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00170}00170         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00171}00171             ++itr;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00172}00172     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00173}00173 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00174}00174     \textcolor{comment}{// Check if its time to attempt to spawn enemies}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00175}00175     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_game_server_a1c2a296c7ada599beb3cbf6308ffd2f1}{now}}() >= \mbox{\hyperlink{class_game_server_ac9fb6351dbc1651bba9d55f1ceb3ed61}{mTimeForNextSpawn}} + \mbox{\hyperlink{class_game_server_af0ab37b42b47d02035884afb2aaf2493}{mLastSpawnTime}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00176}00176     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00177}00177         \textcolor{comment}{// No more enemies are spawned near the end}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00178}00178         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_game_server_a0cb1dbda51ca5e2c1b23578203057bde}{mBattleFieldRect}}.\mbox{\hyperlink{classsf_1_1_rect_abd3d3a2d0ad211ef0082bd0aa1a5c0e3}{top}} > 600.f)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00179}00179         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00180}00180             std::size\_t enemyCount = 1u + \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_a2b5c63e659d4c60c2db5b576d3bc3bf1}{randomInt}}(2);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00181}00181             \textcolor{keywordtype}{float} spawnCenter = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(\mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_a2b5c63e659d4c60c2db5b576d3bc3bf1}{randomInt}}(500) -\/ 250);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00182}00182 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00183}00183             \textcolor{comment}{// In case only one enemy is being spawned, it appears directly at the spawnCenter}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00184}00184             \textcolor{keywordtype}{float} planeDistance = 0.f;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00185}00185             \textcolor{keywordtype}{float} nextSpawnPosition = spawnCenter;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00186}00186 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00187}00187             \textcolor{comment}{// In case there are two enemies being spawned together, each is spawned at each side of the spawnCenter, with a minimum distance}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00188}00188             \textcolor{keywordflow}{if} (enemyCount == 2)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00189}00189             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00190}00190                 planeDistance = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(150 + \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_a2b5c63e659d4c60c2db5b576d3bc3bf1}{randomInt}}(250));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00191}00191                 nextSpawnPosition = spawnCenter -\/ planeDistance / 2.f;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00192}00192             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00193}00193 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00194}00194             \textcolor{comment}{// Send the spawn orders to all clients}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00195}00195             \textcolor{keywordflow}{for} (std::size\_t i = 0; i < enemyCount; ++i)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00196}00196             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00197}00197                 \mbox{\hyperlink{classsf_1_1_packet}{sf::Packet}} packet;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00198}00198                 packet << static\_cast<sf::Int32>(\mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220ac3313cf4836d35b920b827b0c853ed91}{Server::SpawnEnemy}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00199}00199                 packet << static\_cast<sf::Int32>(1 + \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_a2b5c63e659d4c60c2db5b576d3bc3bf1}{randomInt}}(\mbox{\hyperlink{class_aircraft_a7dae28542933e088032b753600046acda71b15ab4308d5df17ab4ee5633dfd246}{Aircraft::TypeCount}} -\/ 1));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00200}00200                 packet << \mbox{\hyperlink{class_game_server_aad5ecc9250943d09391399bc8869aae4}{mWorldHeight}} -\/ \mbox{\hyperlink{class_game_server_a0cb1dbda51ca5e2c1b23578203057bde}{mBattleFieldRect}}.\mbox{\hyperlink{classsf_1_1_rect_abd3d3a2d0ad211ef0082bd0aa1a5c0e3}{top}} + 500;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00201}00201                 packet << nextSpawnPosition;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00202}00202 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00203}00203                 nextSpawnPosition += planeDistance / 2.f;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00204}00204 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00205}00205                 \mbox{\hyperlink{class_game_server_a0809f9d44734c7c4c7a03f5e8f71506f}{sendToAll}}(packet);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00206}00206             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00207}00207 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00208}00208             \mbox{\hyperlink{class_game_server_af0ab37b42b47d02035884afb2aaf2493}{mLastSpawnTime}} = \mbox{\hyperlink{class_game_server_a1c2a296c7ada599beb3cbf6308ffd2f1}{now}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00209}00209             \mbox{\hyperlink{class_game_server_ac9fb6351dbc1651bba9d55f1ceb3ed61}{mTimeForNextSpawn}} = sf::milliseconds(2000 + \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_a2b5c63e659d4c60c2db5b576d3bc3bf1}{randomInt}}(6000));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00210}00210         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00211}00211     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00212}00212 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00213}00213 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00214}\mbox{\hyperlink{class_game_server_a1c2a296c7ada599beb3cbf6308ffd2f1}{00214}} \mbox{\hyperlink{classsf_1_1_time}{sf::Time}} \mbox{\hyperlink{class_game_server_a1c2a296c7ada599beb3cbf6308ffd2f1}{GameServer::now}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00215}00215 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00216}00216     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_game_server_a53de5a7062321e6ce4c5b2ae0778e972}{mClock}}.\mbox{\hyperlink{classsf_1_1_clock_abe889b42a65bcd8eefc16419645d08a7}{getElapsedTime}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00217}00217 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00218}00218 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00219}\mbox{\hyperlink{class_game_server_a3ddd221a655984904dcdcc2eb3996c9f}{00219}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_server_a3ddd221a655984904dcdcc2eb3996c9f}{GameServer::handleIncomingPackets}}()}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00220}00220 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00221}00221     \textcolor{keywordtype}{bool} detectedTimeout = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00222}00222 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00223}00223     \textcolor{keywordflow}{for} (\mbox{\hyperlink{class_game_server_a778579be1a515d88327eab7df8723b4e}{PeerPtr}}\& peer : \mbox{\hyperlink{class_game_server_ada23408f036bdc921a3301ca5749c767}{mPeers}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00224}00224     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00225}00225         \textcolor{keywordflow}{if} (peer-\/>ready)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00226}00226         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00227}00227             \mbox{\hyperlink{classsf_1_1_packet}{sf::Packet}} packet;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00228}00228             \textcolor{keywordflow}{while} (peer-\/>socket.receive(packet) == \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca6b3d5ba897b6df8ebda86c823b30348a}{sf::Socket::Done}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00229}00229             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00230}00230                 \textcolor{comment}{// Interpret packet and react to it}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00231}00231                 \mbox{\hyperlink{class_game_server_a58aa9e497e112704b9fa1407dc2f55dd}{handleIncomingPacket}}(packet, *peer, detectedTimeout);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00232}00232 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00233}00233                 \textcolor{comment}{// Packet was indeed received, update the ping timer}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00234}00234                 peer-\/>lastPacketTime = \mbox{\hyperlink{class_game_server_a1c2a296c7ada599beb3cbf6308ffd2f1}{now}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00235}00235                 packet.\mbox{\hyperlink{classsf_1_1_packet_a133ea8b8fe6e93c230f0d79f19a3bf0d}{clear}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00236}00236             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00237}00237 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00238}00238             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_game_server_a1c2a296c7ada599beb3cbf6308ffd2f1}{now}}() >= peer-\/>lastPacketTime + \mbox{\hyperlink{class_game_server_ac706801b840f51ea4e39cfa0b019a6fa}{mClientTimeoutTime}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00239}00239             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00240}00240                 peer-\/>timedOut = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00241}00241                 detectedTimeout = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00242}00242             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00243}00243         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00244}00244     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00245}00245 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00246}00246     \textcolor{keywordflow}{if} (detectedTimeout)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00247}00247         \mbox{\hyperlink{class_game_server_a0bfc6770f486c8310f6cf018a936949b}{handleDisconnections}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00248}00248 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00249}00249 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00250}\mbox{\hyperlink{class_game_server_a58aa9e497e112704b9fa1407dc2f55dd}{00250}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_server_a58aa9e497e112704b9fa1407dc2f55dd}{GameServer::handleIncomingPacket}}(\mbox{\hyperlink{classsf_1_1_packet}{sf::Packet}}\& packet, \mbox{\hyperlink{struct_game_server_1_1_remote_peer}{RemotePeer}}\& receivingPeer, \textcolor{keywordtype}{bool}\& detectedTimeout)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00251}00251 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00252}00252     \mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf::Int32}} packetType;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00253}00253     packet >> packetType;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00254}00254 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00255}00255     \textcolor{keywordflow}{switch} (packetType)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00256}00256     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00257}00257     \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_client_a68298dc54679aba9954afeb49186f8f0a0875fd7848910bd45f98d72f5081a205}{Client::Quit}}:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00258}00258     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00259}00259         receivingPeer.\mbox{\hyperlink{struct_game_server_1_1_remote_peer_a48869b129125ada4eefa1aab96e80548}{timedOut}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00260}00260         detectedTimeout = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00261}00261     \} \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00262}00262 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00263}00263     \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_client_a68298dc54679aba9954afeb49186f8f0a81a4415cfba96f2c62e337570365cc34}{Client::PlayerEvent}}:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00264}00264     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00265}00265         \mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf::Int32}} aircraftIdentifier;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00266}00266         \mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf::Int32}} action;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00267}00267         packet >> aircraftIdentifier >> action;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00268}00268 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00269}00269         \mbox{\hyperlink{class_game_server_add73992b0e7cb29ebbfc745a4f79155e}{notifyPlayerEvent}}(aircraftIdentifier, action);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00270}00270     \} \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00271}00271 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00272}00272     \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_client_a68298dc54679aba9954afeb49186f8f0ab92ea026fd3ad34751b56d7733e814e4}{Client::PlayerRealtimeChange}}:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00273}00273     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00274}00274         \mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf::Int32}} aircraftIdentifier;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00275}00275         \mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf::Int32}} action;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00276}00276         \textcolor{keywordtype}{bool} actionEnabled;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00277}00277         packet >> aircraftIdentifier >> action >> actionEnabled;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00278}00278         \mbox{\hyperlink{class_game_server_a624c89ca109dcc8127f159e1aacd6903}{mAircraftInfo}}[aircraftIdentifier].realtimeActions[action] = actionEnabled;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00279}00279         \mbox{\hyperlink{class_game_server_a8659271d4966189f507da61f55b7f984}{notifyPlayerRealtimeChange}}(aircraftIdentifier, action, actionEnabled);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00280}00280     \} \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00281}00281 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00282}00282     \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_client_a68298dc54679aba9954afeb49186f8f0a81fcf6a64d26ded8d4e54e4df020f5b1}{Client::RequestCoopPartner}}:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00283}00283     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00284}00284         receivingPeer.\mbox{\hyperlink{struct_game_server_1_1_remote_peer_ac1b75bac57dcda0ea9fc1c4425d528e9}{aircraftIdentifiers}}.push\_back(\mbox{\hyperlink{class_game_server_aac49918247fbabef608bd46a978c6330}{mAircraftIdentifierCounter}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00285}00285         \mbox{\hyperlink{class_game_server_a624c89ca109dcc8127f159e1aacd6903}{mAircraftInfo}}[\mbox{\hyperlink{class_game_server_aac49918247fbabef608bd46a978c6330}{mAircraftIdentifierCounter}}].position = \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{sf::Vector2f}}(\mbox{\hyperlink{class_game_server_a0cb1dbda51ca5e2c1b23578203057bde}{mBattleFieldRect}}.\mbox{\hyperlink{classsf_1_1_rect_a4dd5b9d4333bebbc51bd309298fd500f}{width}} / 2, \mbox{\hyperlink{class_game_server_a0cb1dbda51ca5e2c1b23578203057bde}{mBattleFieldRect}}.\mbox{\hyperlink{classsf_1_1_rect_abd3d3a2d0ad211ef0082bd0aa1a5c0e3}{top}} + \mbox{\hyperlink{class_game_server_a0cb1dbda51ca5e2c1b23578203057bde}{mBattleFieldRect}}.\mbox{\hyperlink{classsf_1_1_rect_a6fa0fc7de1636d78cae1a1b54eef95cd}{height}} / 2);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00286}00286         \mbox{\hyperlink{class_game_server_a624c89ca109dcc8127f159e1aacd6903}{mAircraftInfo}}[\mbox{\hyperlink{class_game_server_aac49918247fbabef608bd46a978c6330}{mAircraftIdentifierCounter}}].hitpoints = 100;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00287}00287         \mbox{\hyperlink{class_game_server_a624c89ca109dcc8127f159e1aacd6903}{mAircraftInfo}}[\mbox{\hyperlink{class_game_server_aac49918247fbabef608bd46a978c6330}{mAircraftIdentifierCounter}}].missileAmmo = 2;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00288}00288 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00289}00289         \mbox{\hyperlink{classsf_1_1_packet}{sf::Packet}} requestPacket;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00290}00290         requestPacket << static\_cast<sf::Int32>(\mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220af39f187a4ee5bbe2060d16099a34ed11}{Server::AcceptCoopPartner}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00291}00291         requestPacket << \mbox{\hyperlink{class_game_server_aac49918247fbabef608bd46a978c6330}{mAircraftIdentifierCounter}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00292}00292         requestPacket << \mbox{\hyperlink{class_game_server_a624c89ca109dcc8127f159e1aacd6903}{mAircraftInfo}}[\mbox{\hyperlink{class_game_server_aac49918247fbabef608bd46a978c6330}{mAircraftIdentifierCounter}}].position.x;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00293}00293         requestPacket << \mbox{\hyperlink{class_game_server_a624c89ca109dcc8127f159e1aacd6903}{mAircraftInfo}}[\mbox{\hyperlink{class_game_server_aac49918247fbabef608bd46a978c6330}{mAircraftIdentifierCounter}}].position.y;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00294}00294 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00295}00295         receivingPeer.\mbox{\hyperlink{struct_game_server_1_1_remote_peer_a747c2f4a28c39a16dea9d565d2f91208}{socket}}.\mbox{\hyperlink{classsf_1_1_tcp_socket_affce26ab3bcc4f5b9269dad79db544c0}{send}}(requestPacket);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00296}00296         \mbox{\hyperlink{class_game_server_af64f1ccdf9d774f18a6da50db8172caa}{mAircraftCount}}++;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00297}00297 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00298}00298         \textcolor{comment}{// Inform every other peer about this new plane}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00299}00299         \textcolor{keywordflow}{for} (\mbox{\hyperlink{class_game_server_a778579be1a515d88327eab7df8723b4e}{PeerPtr}}\& peer : \mbox{\hyperlink{class_game_server_ada23408f036bdc921a3301ca5749c767}{mPeers}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00300}00300         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00301}00301             \textcolor{keywordflow}{if} (peer.get() != \&receivingPeer \&\& peer-\/>\mbox{\hyperlink{struct_game_server_1_1_remote_peer_a174939152600c498aea816b1bbe3e42b}{ready}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00302}00302             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00303}00303                 \mbox{\hyperlink{classsf_1_1_packet}{sf::Packet}} notifyPacket;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00304}00304                 notifyPacket << static\_cast<sf::Int32>(\mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a0b14dd2cfef4723b98c71a2e38473ab9}{Server::PlayerConnect}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00305}00305                 notifyPacket << \mbox{\hyperlink{class_game_server_aac49918247fbabef608bd46a978c6330}{mAircraftIdentifierCounter}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00306}00306                 notifyPacket << \mbox{\hyperlink{class_game_server_a624c89ca109dcc8127f159e1aacd6903}{mAircraftInfo}}[\mbox{\hyperlink{class_game_server_aac49918247fbabef608bd46a978c6330}{mAircraftIdentifierCounter}}].position.x;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00307}00307                 notifyPacket << \mbox{\hyperlink{class_game_server_a624c89ca109dcc8127f159e1aacd6903}{mAircraftInfo}}[\mbox{\hyperlink{class_game_server_aac49918247fbabef608bd46a978c6330}{mAircraftIdentifierCounter}}].position.y;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00308}00308                 peer-\/>socket.send(notifyPacket);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00309}00309             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00310}00310         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00311}00311         \mbox{\hyperlink{class_game_server_aac49918247fbabef608bd46a978c6330}{mAircraftIdentifierCounter}}++;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00312}00312     \} \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00313}00313 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00314}00314     \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_client_a68298dc54679aba9954afeb49186f8f0af1f1f7cef86c4058a0105657e764f72c}{Client::PositionUpdate}}:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00315}00315     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00316}00316         \mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf::Int32}} numAircrafts;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00317}00317         packet >> numAircrafts;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00318}00318 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00319}00319         \textcolor{keywordflow}{for} (\mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf::Int32}} i = 0; i < numAircrafts; ++i)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00320}00320         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00321}00321             \mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf::Int32}} aircraftIdentifier;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00322}00322             \mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf::Int32}} aircraftHitpoints;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00323}00323             \mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf::Int32}} missileAmmo;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00324}00324             \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}} aircraftPosition;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00325}00325             packet >> aircraftIdentifier >> aircraftPosition.\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}} >> aircraftPosition.\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} >> aircraftHitpoints >> missileAmmo;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00326}00326             \mbox{\hyperlink{class_game_server_a624c89ca109dcc8127f159e1aacd6903}{mAircraftInfo}}[aircraftIdentifier].position = aircraftPosition;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00327}00327             \mbox{\hyperlink{class_game_server_a624c89ca109dcc8127f159e1aacd6903}{mAircraftInfo}}[aircraftIdentifier].hitpoints = aircraftHitpoints;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00328}00328             \mbox{\hyperlink{class_game_server_a624c89ca109dcc8127f159e1aacd6903}{mAircraftInfo}}[aircraftIdentifier].missileAmmo = missileAmmo;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00329}00329         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00330}00330     \} \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00331}00331 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00332}00332     \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_client_a68298dc54679aba9954afeb49186f8f0ad53486696653a4baa5f48b134f01caad}{Client::GameEvent}}:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00333}00333     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00334}00334         \mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf::Int32}} action;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00335}00335         \textcolor{keywordtype}{float} x;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00336}00336         \textcolor{keywordtype}{float} y;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00337}00337 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00338}00338         packet >> action;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00339}00339         packet >> x;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00340}00340         packet >> y;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00341}00341 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00342}00342         \textcolor{comment}{// Enemy explodes: With certain probability, drop pickup}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00343}00343         \textcolor{comment}{// To avoid multiple messages spawning multiple pickups, only listen to first peer (host)}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00344}00344         \textcolor{keywordflow}{if} (action == \mbox{\hyperlink{namespace_game_actions_a2c10fdbcc811f03c02f357cdd0c4e76da7c5f0acddf6e9f52706102fc83cf9f55}{GameActions::EnemyExplode}} \&\& \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_a2b5c63e659d4c60c2db5b576d3bc3bf1}{randomInt}}(3) == 0 \&\& \&receivingPeer == \mbox{\hyperlink{class_game_server_ada23408f036bdc921a3301ca5749c767}{mPeers}}[0].get())}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00345}00345         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00346}00346             \mbox{\hyperlink{classsf_1_1_packet}{sf::Packet}} packet;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00347}00347             packet << static\_cast<sf::Int32>(\mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a903d70ec235b5d0091e1efabc782e218}{Server::SpawnPickup}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00348}00348             packet << static\_cast<sf::Int32>(\mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_a2b5c63e659d4c60c2db5b576d3bc3bf1}{randomInt}}(\mbox{\hyperlink{class_pickup_ad4681315b06f1fc58c8f2a17937dd88aa5a8b006eb65cd6ac0b6e3e18bfc07502}{Pickup::TypeCount}}));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00349}00349             packet << x;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00350}00350             packet << y;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00351}00351 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00352}00352             \mbox{\hyperlink{class_game_server_a0809f9d44734c7c4c7a03f5e8f71506f}{sendToAll}}(packet);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00353}00353         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00354}00354     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00355}00355     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00356}00356 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00357}00357 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00358}\mbox{\hyperlink{class_game_server_ae19669090d624643c14f6fabd177bc5f}{00358}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_server_ae19669090d624643c14f6fabd177bc5f}{GameServer::updateClientState}}()}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00359}00359 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00360}00360     \mbox{\hyperlink{classsf_1_1_packet}{sf::Packet}} updateClientStatePacket;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00361}00361     updateClientStatePacket << static\_cast<sf::Int32>(\mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a2bc55dcb334ed968816aa4ff901e205a}{Server::UpdateClientState}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00362}00362     updateClientStatePacket << static\_cast<float>(\mbox{\hyperlink{class_game_server_a0cb1dbda51ca5e2c1b23578203057bde}{mBattleFieldRect}}.\mbox{\hyperlink{classsf_1_1_rect_abd3d3a2d0ad211ef0082bd0aa1a5c0e3}{top}} + \mbox{\hyperlink{class_game_server_a0cb1dbda51ca5e2c1b23578203057bde}{mBattleFieldRect}}.\mbox{\hyperlink{classsf_1_1_rect_a6fa0fc7de1636d78cae1a1b54eef95cd}{height}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00363}00363     updateClientStatePacket << static\_cast<sf::Int32>(\mbox{\hyperlink{class_game_server_a624c89ca109dcc8127f159e1aacd6903}{mAircraftInfo}}.size());}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00364}00364 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00365}00365     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} aircraft : \mbox{\hyperlink{class_game_server_a624c89ca109dcc8127f159e1aacd6903}{mAircraftInfo}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00366}00366         updateClientStatePacket << aircraft.first << aircraft.second.position.x << aircraft.second.position.y;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00367}00367 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00368}00368     \mbox{\hyperlink{class_game_server_a0809f9d44734c7c4c7a03f5e8f71506f}{sendToAll}}(updateClientStatePacket);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00369}00369 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00370}00370 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00371}\mbox{\hyperlink{class_game_server_a314a8addb9f006a20ec610a2271e41ce}{00371}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_server_a314a8addb9f006a20ec610a2271e41ce}{GameServer::handleIncomingConnections}}()}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00372}00372 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00373}00373     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_game_server_a131c4e604c1b02c457582fbb55cfa8bb}{mListeningState}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00374}00374         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00375}00375 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00376}00376     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_game_server_a76cb496620a1f155406fc6d8ce14bd97}{mListenerSocket}}.\mbox{\hyperlink{classsf_1_1_tcp_listener_ae2c83ce5a64d50b68180c46bef0a7346}{accept}}(\mbox{\hyperlink{class_game_server_ada23408f036bdc921a3301ca5749c767}{mPeers}}[\mbox{\hyperlink{class_game_server_a52f1a396a8d504e55e74d0eb1d517f12}{mConnectedPlayers}}]-\/>socket) == \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca6b3d5ba897b6df8ebda86c823b30348a}{sf::TcpListener::Done}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00377}00377     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00378}00378         \textcolor{comment}{// order the new client to spawn its own plane ( player 1 )}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00379}00379         \mbox{\hyperlink{class_game_server_a624c89ca109dcc8127f159e1aacd6903}{mAircraftInfo}}[\mbox{\hyperlink{class_game_server_aac49918247fbabef608bd46a978c6330}{mAircraftIdentifierCounter}}].position = \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{sf::Vector2f}}(\mbox{\hyperlink{class_game_server_a0cb1dbda51ca5e2c1b23578203057bde}{mBattleFieldRect}}.\mbox{\hyperlink{classsf_1_1_rect_a4dd5b9d4333bebbc51bd309298fd500f}{width}} / 2, \mbox{\hyperlink{class_game_server_a0cb1dbda51ca5e2c1b23578203057bde}{mBattleFieldRect}}.\mbox{\hyperlink{classsf_1_1_rect_abd3d3a2d0ad211ef0082bd0aa1a5c0e3}{top}} + \mbox{\hyperlink{class_game_server_a0cb1dbda51ca5e2c1b23578203057bde}{mBattleFieldRect}}.\mbox{\hyperlink{classsf_1_1_rect_a6fa0fc7de1636d78cae1a1b54eef95cd}{height}} / 2);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00380}00380         \mbox{\hyperlink{class_game_server_a624c89ca109dcc8127f159e1aacd6903}{mAircraftInfo}}[\mbox{\hyperlink{class_game_server_aac49918247fbabef608bd46a978c6330}{mAircraftIdentifierCounter}}].hitpoints = 100;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00381}00381         \mbox{\hyperlink{class_game_server_a624c89ca109dcc8127f159e1aacd6903}{mAircraftInfo}}[\mbox{\hyperlink{class_game_server_aac49918247fbabef608bd46a978c6330}{mAircraftIdentifierCounter}}].missileAmmo = 2;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00382}00382 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00383}00383         \mbox{\hyperlink{classsf_1_1_packet}{sf::Packet}} packet;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00384}00384         packet << static\_cast<sf::Int32>(\mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a01037da7a85ce2494c247553ddebfbf7}{Server::SpawnSelf}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00385}00385         packet << \mbox{\hyperlink{class_game_server_aac49918247fbabef608bd46a978c6330}{mAircraftIdentifierCounter}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00386}00386         packet << \mbox{\hyperlink{class_game_server_a624c89ca109dcc8127f159e1aacd6903}{mAircraftInfo}}[\mbox{\hyperlink{class_game_server_aac49918247fbabef608bd46a978c6330}{mAircraftIdentifierCounter}}].position.x;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00387}00387         packet << \mbox{\hyperlink{class_game_server_a624c89ca109dcc8127f159e1aacd6903}{mAircraftInfo}}[\mbox{\hyperlink{class_game_server_aac49918247fbabef608bd46a978c6330}{mAircraftIdentifierCounter}}].position.y;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00388}00388 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00389}00389         \mbox{\hyperlink{class_game_server_ada23408f036bdc921a3301ca5749c767}{mPeers}}[\mbox{\hyperlink{class_game_server_a52f1a396a8d504e55e74d0eb1d517f12}{mConnectedPlayers}}]-\/>aircraftIdentifiers.push\_back(\mbox{\hyperlink{class_game_server_aac49918247fbabef608bd46a978c6330}{mAircraftIdentifierCounter}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00390}00390 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00391}00391         \mbox{\hyperlink{class_game_server_a886cdfb8915f0d6dc03a7c75a667bc53}{broadcastMessage}}(\textcolor{stringliteral}{"{}New player!"{}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00392}00392         \mbox{\hyperlink{class_game_server_aa5c2a7bd2eb009db64f5d51440c5af3b}{informWorldState}}(\mbox{\hyperlink{class_game_server_ada23408f036bdc921a3301ca5749c767}{mPeers}}[\mbox{\hyperlink{class_game_server_a52f1a396a8d504e55e74d0eb1d517f12}{mConnectedPlayers}}]-\/>socket);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00393}00393         \mbox{\hyperlink{class_game_server_a3a0a351ef8758c358f7e9cbdee82889c}{notifyPlayerSpawn}}(\mbox{\hyperlink{class_game_server_aac49918247fbabef608bd46a978c6330}{mAircraftIdentifierCounter}}++);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00394}00394 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00395}00395         \mbox{\hyperlink{class_game_server_ada23408f036bdc921a3301ca5749c767}{mPeers}}[\mbox{\hyperlink{class_game_server_a52f1a396a8d504e55e74d0eb1d517f12}{mConnectedPlayers}}]-\/>socket.send(packet);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00396}00396         \mbox{\hyperlink{class_game_server_ada23408f036bdc921a3301ca5749c767}{mPeers}}[\mbox{\hyperlink{class_game_server_a52f1a396a8d504e55e74d0eb1d517f12}{mConnectedPlayers}}]-\/>ready = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00397}00397         \mbox{\hyperlink{class_game_server_ada23408f036bdc921a3301ca5749c767}{mPeers}}[\mbox{\hyperlink{class_game_server_a52f1a396a8d504e55e74d0eb1d517f12}{mConnectedPlayers}}]-\/>lastPacketTime = \mbox{\hyperlink{class_game_server_a1c2a296c7ada599beb3cbf6308ffd2f1}{now}}(); \textcolor{comment}{// prevent initial timeouts}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00398}00398         \mbox{\hyperlink{class_game_server_af64f1ccdf9d774f18a6da50db8172caa}{mAircraftCount}}++;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00399}00399         \mbox{\hyperlink{class_game_server_a52f1a396a8d504e55e74d0eb1d517f12}{mConnectedPlayers}}++;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00400}00400 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00401}00401         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_game_server_a52f1a396a8d504e55e74d0eb1d517f12}{mConnectedPlayers}} >= \mbox{\hyperlink{class_game_server_af91e35eafab607f11b9b37514fd2d34d}{mMaxConnectedPlayers}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00402}00402             \mbox{\hyperlink{class_game_server_a4273bd99c42c6051d9238ce3869a545a}{setListening}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00403}00403         \textcolor{keywordflow}{else} \textcolor{comment}{// Add a new waiting peer}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00404}00404             \mbox{\hyperlink{class_game_server_ada23408f036bdc921a3301ca5749c767}{mPeers}}.push\_back(\mbox{\hyperlink{class_game_server_a778579be1a515d88327eab7df8723b4e}{PeerPtr}}(\textcolor{keyword}{new} \mbox{\hyperlink{struct_game_server_1_1_remote_peer}{RemotePeer}}()));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00405}00405     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00406}00406 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00407}00407 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00408}\mbox{\hyperlink{class_game_server_a0bfc6770f486c8310f6cf018a936949b}{00408}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_server_a0bfc6770f486c8310f6cf018a936949b}{GameServer::handleDisconnections}}()}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00409}00409 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00410}00410     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} itr = \mbox{\hyperlink{class_game_server_ada23408f036bdc921a3301ca5749c767}{mPeers}}.begin(); itr != \mbox{\hyperlink{class_game_server_ada23408f036bdc921a3301ca5749c767}{mPeers}}.end(); )}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00411}00411     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00412}00412         \textcolor{keywordflow}{if} ((*itr)-\/>timedOut)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00413}00413         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00414}00414             \textcolor{comment}{// Inform everyone of the disconnection, erase }}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00415}00415             \textcolor{keywordflow}{for} (\mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf::Int32}} identifier : (*itr)-\/>aircraftIdentifiers)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00416}00416             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00417}00417                 \mbox{\hyperlink{class_game_server_a0809f9d44734c7c4c7a03f5e8f71506f}{sendToAll}}(\mbox{\hyperlink{classsf_1_1_packet}{sf::Packet}}() << \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf::Int32}}\textcolor{keyword}{>}(\mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a627515caee434e5f1a8797dcf2414336}{Server::PlayerDisconnect}}) << identifier);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00418}00418 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00419}00419                 \mbox{\hyperlink{class_game_server_a624c89ca109dcc8127f159e1aacd6903}{mAircraftInfo}}.erase(identifier);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00420}00420             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00421}00421 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00422}00422             \mbox{\hyperlink{class_game_server_a52f1a396a8d504e55e74d0eb1d517f12}{mConnectedPlayers}}-\/-\/;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00423}00423             \mbox{\hyperlink{class_game_server_af64f1ccdf9d774f18a6da50db8172caa}{mAircraftCount}} -\/= (*itr)-\/>aircraftIdentifiers.size();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00424}00424 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00425}00425             itr = \mbox{\hyperlink{class_game_server_ada23408f036bdc921a3301ca5749c767}{mPeers}}.erase(itr);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00426}00426 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00427}00427             \textcolor{comment}{// Go back to a listening state if needed}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00428}00428             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_game_server_a52f1a396a8d504e55e74d0eb1d517f12}{mConnectedPlayers}} < \mbox{\hyperlink{class_game_server_af91e35eafab607f11b9b37514fd2d34d}{mMaxConnectedPlayers}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00429}00429             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00430}00430                 \mbox{\hyperlink{class_game_server_ada23408f036bdc921a3301ca5749c767}{mPeers}}.push\_back(\mbox{\hyperlink{class_game_server_a778579be1a515d88327eab7df8723b4e}{PeerPtr}}(\textcolor{keyword}{new} \mbox{\hyperlink{struct_game_server_1_1_remote_peer}{RemotePeer}}()));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00431}00431                 \mbox{\hyperlink{class_game_server_a4273bd99c42c6051d9238ce3869a545a}{setListening}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00432}00432             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00433}00433 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00434}00434             \mbox{\hyperlink{class_game_server_a886cdfb8915f0d6dc03a7c75a667bc53}{broadcastMessage}}(\textcolor{stringliteral}{"{}An ally has disconnected."{}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00435}00435         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00436}00436         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00437}00437         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00438}00438             ++itr;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00439}00439         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00440}00440     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00441}00441 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00442}00442 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00443}00443 \textcolor{comment}{// Tell the newly connected peer about how the world is currently}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00444}\mbox{\hyperlink{class_game_server_aa5c2a7bd2eb009db64f5d51440c5af3b}{00444}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_server_aa5c2a7bd2eb009db64f5d51440c5af3b}{GameServer::informWorldState}}(\mbox{\hyperlink{classsf_1_1_tcp_socket}{sf::TcpSocket}}\& socket)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00445}00445 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00446}00446     \mbox{\hyperlink{classsf_1_1_packet}{sf::Packet}} packet;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00447}00447     packet << static\_cast<sf::Int32>(\mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a1bf0bd9c2b28f6f00fdf4c1cc7af3388}{Server::InitialState}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00448}00448     packet << \mbox{\hyperlink{class_game_server_aad5ecc9250943d09391399bc8869aae4}{mWorldHeight}} << \mbox{\hyperlink{class_game_server_a0cb1dbda51ca5e2c1b23578203057bde}{mBattleFieldRect}}.\mbox{\hyperlink{classsf_1_1_rect_abd3d3a2d0ad211ef0082bd0aa1a5c0e3}{top}} + \mbox{\hyperlink{class_game_server_a0cb1dbda51ca5e2c1b23578203057bde}{mBattleFieldRect}}.\mbox{\hyperlink{classsf_1_1_rect_a6fa0fc7de1636d78cae1a1b54eef95cd}{height}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00449}00449     packet << static\_cast<sf::Int32>(\mbox{\hyperlink{class_game_server_af64f1ccdf9d774f18a6da50db8172caa}{mAircraftCount}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00450}00450 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00451}00451     \textcolor{keywordflow}{for} (std::size\_t i = 0; i < \mbox{\hyperlink{class_game_server_a52f1a396a8d504e55e74d0eb1d517f12}{mConnectedPlayers}}; ++i)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00452}00452     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00453}00453         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_game_server_ada23408f036bdc921a3301ca5749c767}{mPeers}}[i]-\/>ready)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00454}00454         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00455}00455             \textcolor{keywordflow}{for} (\mbox{\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf::Int32}} identifier : \mbox{\hyperlink{class_game_server_ada23408f036bdc921a3301ca5749c767}{mPeers}}[i]-\/>aircraftIdentifiers)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00456}00456                 packet << identifier << \mbox{\hyperlink{class_game_server_a624c89ca109dcc8127f159e1aacd6903}{mAircraftInfo}}[identifier].position.x << \mbox{\hyperlink{class_game_server_a624c89ca109dcc8127f159e1aacd6903}{mAircraftInfo}}[identifier].position.y << \mbox{\hyperlink{class_game_server_a624c89ca109dcc8127f159e1aacd6903}{mAircraftInfo}}[identifier].hitpoints << \mbox{\hyperlink{class_game_server_a624c89ca109dcc8127f159e1aacd6903}{mAircraftInfo}}[identifier].missileAmmo;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00457}00457         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00458}00458     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00459}00459 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00460}00460     socket.\mbox{\hyperlink{classsf_1_1_tcp_socket_affce26ab3bcc4f5b9269dad79db544c0}{send}}(packet);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00461}00461 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00462}00462 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00463}\mbox{\hyperlink{class_game_server_a886cdfb8915f0d6dc03a7c75a667bc53}{00463}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_server_a886cdfb8915f0d6dc03a7c75a667bc53}{GameServer::broadcastMessage}}(\textcolor{keyword}{const} std::string\& message)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00464}00464 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00465}00465     \textcolor{keywordflow}{for} (std::size\_t i = 0; i < \mbox{\hyperlink{class_game_server_a52f1a396a8d504e55e74d0eb1d517f12}{mConnectedPlayers}}; ++i)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00466}00466     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00467}00467         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_game_server_ada23408f036bdc921a3301ca5749c767}{mPeers}}[i]-\/>ready)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00468}00468         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00469}00469             \mbox{\hyperlink{classsf_1_1_packet}{sf::Packet}} packet;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00470}00470             packet << static\_cast<sf::Int32>(\mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a6cd0e2c2482d4841446d21650cfce562}{Server::BroadcastMessage}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00471}00471             packet << message;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00472}00472 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00473}00473             \mbox{\hyperlink{class_game_server_ada23408f036bdc921a3301ca5749c767}{mPeers}}[i]-\/>socket.send(packet);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00474}00474         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00475}00475     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00476}00476 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00477}00477 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00478}\mbox{\hyperlink{class_game_server_a0809f9d44734c7c4c7a03f5e8f71506f}{00478}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_server_a0809f9d44734c7c4c7a03f5e8f71506f}{GameServer::sendToAll}}(\mbox{\hyperlink{classsf_1_1_packet}{sf::Packet}}\& packet)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00479}00479 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00480}00480     \textcolor{keywordflow}{for} (\mbox{\hyperlink{class_game_server_a778579be1a515d88327eab7df8723b4e}{PeerPtr}}\& peer : \mbox{\hyperlink{class_game_server_ada23408f036bdc921a3301ca5749c767}{mPeers}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00481}00481     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00482}00482         \textcolor{keywordflow}{if} (peer-\/>ready)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00483}00483             peer-\/>socket.send(packet);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00484}00484     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00485}00485 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00486}00486 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2_source_2_game_server_8cpp_source_l00487}00487 \textcolor{preprocessor}{\#pragma endregion}}
+
+\end{DoxyCode}

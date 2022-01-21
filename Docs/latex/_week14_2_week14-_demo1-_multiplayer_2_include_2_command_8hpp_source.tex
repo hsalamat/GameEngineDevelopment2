@@ -1,0 +1,43 @@
+\hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source}{}\doxysection{Command.\+hpp}
+\label{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source}\index{Week14/Week14-\/Demo1-\/Multiplayer/Include/Command.hpp@{Week14/Week14-\/Demo1-\/Multiplayer/Include/Command.hpp}}
+\mbox{\hyperlink{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#ifndef BOOK\_COMMAND\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#define BOOK\_COMMAND\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_include_2_category_8hpp}{Category.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00006}00006 \textcolor{preprocessor}{\#include <SFML/System/Time.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00008}00008 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00009}00009 \textcolor{preprocessor}{\#include <cassert>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00012}00012 \textcolor{keyword}{class }\mbox{\hyperlink{class_scene_node}{SceneNode}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00014}00014 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_command}{Command}}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00015}00015 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00016}\mbox{\hyperlink{struct_command_a9030619d41c14cf006de08ba0b19c5c7}{00016}}     \textcolor{keyword}{typedef} std::function<void(\mbox{\hyperlink{class_scene_node}{SceneNode}}\&, \mbox{\hyperlink{classsf_1_1_time}{sf::Time}})> \mbox{\hyperlink{struct_command_a9030619d41c14cf006de08ba0b19c5c7}{Action}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00018}\mbox{\hyperlink{struct_command_a18df2d81039392daeb0b78c346a70537}{00018}}                                 \mbox{\hyperlink{struct_command_a18df2d81039392daeb0b78c346a70537}{Command}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00020}00020     \mbox{\hyperlink{struct_command_a9030619d41c14cf006de08ba0b19c5c7}{Action}}                        \mbox{\hyperlink{struct_command_ac5473faf8b8b03ce83353838bc00c6dd}{action}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00021}00021     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}                \mbox{\hyperlink{struct_command_a1529e898c9e6dd47b1826b5b1eac09fb}{category}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00022}00022 \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00024}00024 \textcolor{keyword}{template} <\textcolor{keyword}{typename} GameObject, \textcolor{keyword}{typename} Function>}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00025}\mbox{\hyperlink{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_aff9a5a7c9ffc804fdb599271545dccea}{00025}} \mbox{\hyperlink{struct_command_a9030619d41c14cf006de08ba0b19c5c7}{Command::Action}} \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_command_8hpp_aff9a5a7c9ffc804fdb599271545dccea}{derivedAction}}(Function fn)}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00026}00026 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00027}00027     \textcolor{keywordflow}{return} [=] (\mbox{\hyperlink{class_scene_node}{SceneNode}}\& node, \mbox{\hyperlink{classsf_1_1_time}{sf::Time}} dt)}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00028}00028     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00029}00029         \textcolor{comment}{// Check if cast is safe}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00030}00030         assert(\textcolor{keyword}{dynamic\_cast<}GameObject*\textcolor{keyword}{>}(\&node) != \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00032}00032         \textcolor{comment}{// Downcast node and invoke function on it}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00033}00033         fn(\textcolor{keyword}{static\_cast<}GameObject\&\textcolor{keyword}{>}(node), dt);}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00034}00034     \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00035}00035 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_include_2_command_8hpp_source_l00037}00037 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// BOOK\_COMMAND\_HPP}}
+
+\end{DoxyCode}

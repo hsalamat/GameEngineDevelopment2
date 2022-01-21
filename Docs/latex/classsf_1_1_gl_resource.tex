@@ -1,0 +1,139 @@
+\hypertarget{classsf_1_1_gl_resource}{}\doxysection{sf\+::Gl\+Resource Class Reference}
+\label{classsf_1_1_gl_resource}\index{sf::GlResource@{sf::GlResource}}
+
+
+Base class for classes that require an Open\+GL context.  
+
+
+
+
+{\ttfamily \#include $<$Gl\+Resource.\+hpp$>$}
+
+Inheritance diagram for sf\+::Gl\+Resource\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=11.000000cm]{classsf_1_1_gl_resource}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsf_1_1_gl_resource_1_1_transient_context_lock}{Transient\+Context\+Lock}}
+\begin{DoxyCompactList}\small\item\em RAII helper class to temporarily lock an available context for use. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsf_1_1_gl_resource_ad8fb7a0674f0f77e530dacc2a3b0dc6a}{Gl\+Resource}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_gl_resource_ab99035b67052331d1e8cf67abd93de98}{$\sim$\+Gl\+Resource}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_gl_resource_ad8fb7a0674f0f77e530dacc2a3b0dc6a}{Gl\+Resource}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_gl_resource_ab99035b67052331d1e8cf67abd93de98}{$\sim$\+Gl\+Resource}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classsf_1_1_gl_resource_ab171bdaf5eb36789da14b30a846db471}{register\+Context\+Destroy\+Callback}} (\mbox{\hyperlink{namespacesf_afa0382ec625a0479b43ebe0b33f55818}{Context\+Destroy\+Callback}} callback, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Register a function to be called when a context is destroyed. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classsf_1_1_gl_resource_ab171bdaf5eb36789da14b30a846db471}{register\+Context\+Destroy\+Callback}} (\mbox{\hyperlink{namespacesf_afa0382ec625a0479b43ebe0b33f55818}{Context\+Destroy\+Callback}} callback, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Register a function to be called when a context is destroyed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for classes that require an Open\+GL context. 
+
+This class is for internal use only, it must be the base of every class that requires a valid Open\+GL context in order to work. 
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_gl_resource_8hpp_source_l00046}{46}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_gl_resource_8hpp_source}{Gl\+Resource.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsf_1_1_gl_resource_ad8fb7a0674f0f77e530dacc2a3b0dc6a}\label{classsf_1_1_gl_resource_ad8fb7a0674f0f77e530dacc2a3b0dc6a}} 
+\index{sf::GlResource@{sf::GlResource}!GlResource@{GlResource}}
+\index{GlResource@{GlResource}!sf::GlResource@{sf::GlResource}}
+\doxysubsubsection{\texorpdfstring{GlResource()}{GlResource()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily sf\+::\+Gl\+Resource\+::\+Gl\+Resource (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Default constructor. 
+
+\mbox{\Hypertarget{classsf_1_1_gl_resource_ab99035b67052331d1e8cf67abd93de98}\label{classsf_1_1_gl_resource_ab99035b67052331d1e8cf67abd93de98}} 
+\index{sf::GlResource@{sf::GlResource}!````~GlResource@{$\sim$GlResource}}
+\index{````~GlResource@{$\sim$GlResource}!sf::GlResource@{sf::GlResource}}
+\doxysubsubsection{\texorpdfstring{$\sim$GlResource()}{~GlResource()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily sf\+::\+Gl\+Resource\+::$\sim$\+Gl\+Resource (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Destructor. 
+
+\mbox{\Hypertarget{classsf_1_1_gl_resource_ad8fb7a0674f0f77e530dacc2a3b0dc6a}\label{classsf_1_1_gl_resource_ad8fb7a0674f0f77e530dacc2a3b0dc6a}} 
+\index{sf::GlResource@{sf::GlResource}!GlResource@{GlResource}}
+\index{GlResource@{GlResource}!sf::GlResource@{sf::GlResource}}
+\doxysubsubsection{\texorpdfstring{GlResource()}{GlResource()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sf\+::\+Gl\+Resource\+::\+Gl\+Resource (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Default constructor. 
+
+\mbox{\Hypertarget{classsf_1_1_gl_resource_ab99035b67052331d1e8cf67abd93de98}\label{classsf_1_1_gl_resource_ab99035b67052331d1e8cf67abd93de98}} 
+\index{sf::GlResource@{sf::GlResource}!````~GlResource@{$\sim$GlResource}}
+\index{````~GlResource@{$\sim$GlResource}!sf::GlResource@{sf::GlResource}}
+\doxysubsubsection{\texorpdfstring{$\sim$GlResource()}{~GlResource()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sf\+::\+Gl\+Resource\+::$\sim$\+Gl\+Resource (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsf_1_1_gl_resource_ab171bdaf5eb36789da14b30a846db471}\label{classsf_1_1_gl_resource_ab171bdaf5eb36789da14b30a846db471}} 
+\index{sf::GlResource@{sf::GlResource}!registerContextDestroyCallback@{registerContextDestroyCallback}}
+\index{registerContextDestroyCallback@{registerContextDestroyCallback}!sf::GlResource@{sf::GlResource}}
+\doxysubsubsection{\texorpdfstring{registerContextDestroyCallback()}{registerContextDestroyCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void sf\+::\+Gl\+Resource\+::register\+Context\+Destroy\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_afa0382ec625a0479b43ebe0b33f55818}{Context\+Destroy\+Callback}}}]{callback,  }\item[{void $\ast$}]{arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Register a function to be called when a context is destroyed. 
+
+This is used for internal purposes in order to properly clean up Open\+GL resources that cannot be shared between contexts.
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & Function to be called when a context is destroyed \\
+\hline
+{\em arg} & Argument to pass when calling the function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_gl_resource_ab171bdaf5eb36789da14b30a846db471}\label{classsf_1_1_gl_resource_ab171bdaf5eb36789da14b30a846db471}} 
+\index{sf::GlResource@{sf::GlResource}!registerContextDestroyCallback@{registerContextDestroyCallback}}
+\index{registerContextDestroyCallback@{registerContextDestroyCallback}!sf::GlResource@{sf::GlResource}}
+\doxysubsubsection{\texorpdfstring{registerContextDestroyCallback()}{registerContextDestroyCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void sf\+::\+Gl\+Resource\+::register\+Context\+Destroy\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_afa0382ec625a0479b43ebe0b33f55818}{Context\+Destroy\+Callback}}}]{callback,  }\item[{void $\ast$}]{arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Register a function to be called when a context is destroyed. 
+
+This is used for internal purposes in order to properly clean up Open\+GL resources that cannot be shared between contexts.
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & Function to be called when a context is destroyed \\
+\hline
+{\em arg} & Argument to pass when calling the function \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+SFML-\/2.\+5.\+1/include/\+SFML/\+Window/\mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_gl_resource_8hpp}{Gl\+Resource.\+hpp}}\item 
+Week14/\+SFML-\/2.\+5.\+1/include/\+SFML/\+Window/\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_gl_resource_8hpp}{Gl\+Resource.\+hpp}}\end{DoxyCompactItemize}

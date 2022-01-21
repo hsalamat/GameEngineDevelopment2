@@ -1,0 +1,282 @@
+\hypertarget{classsf_1_1_rectangle_shape}{}\doxysection{sf\+::Rectangle\+Shape Class Reference}
+\label{classsf_1_1_rectangle_shape}\index{sf::RectangleShape@{sf::RectangleShape}}
+
+
+Specialized shape representing a rectangle.  
+
+
+
+
+{\ttfamily \#include $<$Rectangle\+Shape.\+hpp$>$}
+
+Inheritance diagram for sf\+::Rectangle\+Shape\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{classsf_1_1_rectangle_shape}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsf_1_1_rectangle_shape_a83a2be157ebee85c95ed491c3e78dd7c}{Rectangle\+Shape}} (const \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}} \&size=\mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}}(0, 0))
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_rectangle_shape_a5c65d374d4a259dfdc24efdd24a5dbec}{set\+Size}} (const \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}} \&size)
+\begin{DoxyCompactList}\small\item\em Set the size of the rectangle. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}} \& \mbox{\hyperlink{classsf_1_1_rectangle_shape_af6819a7b842b83863f21e7a9c63097e7}{get\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Get the size of the rectangle. \end{DoxyCompactList}\item 
+virtual std\+::size\+\_\+t \mbox{\hyperlink{classsf_1_1_rectangle_shape_adfb2f429e5720c9ccdb26d5996c3ae33}{get\+Point\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of points defining the shape. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}} \mbox{\hyperlink{classsf_1_1_rectangle_shape_a3909f1a1946930ff5ae17c26206c0f81}{get\+Point}} (std\+::size\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em Get a point of the rectangle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_rectangle_shape_a83a2be157ebee85c95ed491c3e78dd7c}{Rectangle\+Shape}} (const \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}} \&size=\mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}}(0, 0))
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_rectangle_shape_a5c65d374d4a259dfdc24efdd24a5dbec}{set\+Size}} (const \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}} \&size)
+\begin{DoxyCompactList}\small\item\em Set the size of the rectangle. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}} \& \mbox{\hyperlink{classsf_1_1_rectangle_shape_af6819a7b842b83863f21e7a9c63097e7}{get\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Get the size of the rectangle. \end{DoxyCompactList}\item 
+virtual std\+::size\+\_\+t \mbox{\hyperlink{classsf_1_1_rectangle_shape_adfb2f429e5720c9ccdb26d5996c3ae33}{get\+Point\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of points defining the shape. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}} \mbox{\hyperlink{classsf_1_1_rectangle_shape_a3909f1a1946930ff5ae17c26206c0f81}{get\+Point}} (std\+::size\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em Get a point of the rectangle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}} \mbox{\hyperlink{classsf_1_1_rectangle_shape_ab97ec42ef436e2a622b7a853c9202118}{m\+\_\+size}}
+\begin{DoxyCompactList}\small\item\em Size of the rectangle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Specialized shape representing a rectangle. 
+
+This class inherits all the functions of \mbox{\hyperlink{classsf_1_1_transformable}{sf\+::\+Transformable}} (position, rotation, scale, bounds, ...) as well as the functions of \mbox{\hyperlink{classsf_1_1_shape}{sf\+::\+Shape}} (outline, color, texture, ...).
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_rectangle_shape}{sf::RectangleShape}} rectangle;}
+\DoxyCodeLine{rectangle.\mbox{\hyperlink{classsf_1_1_rectangle_shape_a5c65d374d4a259dfdc24efdd24a5dbec}{setSize}}(\mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}}(100, 50));}
+\DoxyCodeLine{rectangle.\mbox{\hyperlink{classsf_1_1_shape_a5978f41ee349ac3c52942996dcb184f7}{setOutlineColor}}(\mbox{\hyperlink{classsf_1_1_color_a7052b1c5408a953e25f9691e0e828c9d}{sf::Color::Red}});}
+\DoxyCodeLine{rectangle.\mbox{\hyperlink{classsf_1_1_shape_a5ad336ad74fc1f567fce3b7e44cf87dc}{setOutlineThickness}}(5);}
+\DoxyCodeLine{rectangle.\mbox{\hyperlink{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{setPosition}}(10, 20);}
+\DoxyCodeLine{...}
+\DoxyCodeLine{window.draw(rectangle);}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shape}{sf\+::\+Shape}}, \mbox{\hyperlink{classsf_1_1_circle_shape}{sf\+::\+Circle\+Shape}}, \mbox{\hyperlink{classsf_1_1_convex_shape}{sf\+::\+Convex\+Shape}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_rectangle_shape_8hpp_source_l00041}{41}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_rectangle_shape_8hpp_source}{Rectangle\+Shape.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsf_1_1_rectangle_shape_a83a2be157ebee85c95ed491c3e78dd7c}\label{classsf_1_1_rectangle_shape_a83a2be157ebee85c95ed491c3e78dd7c}} 
+\index{sf::RectangleShape@{sf::RectangleShape}!RectangleShape@{RectangleShape}}
+\index{RectangleShape@{RectangleShape}!sf::RectangleShape@{sf::RectangleShape}}
+\doxysubsubsection{\texorpdfstring{RectangleShape()}{RectangleShape()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape\+::\+Rectangle\+Shape (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}} \&}]{size = {\ttfamily \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}}(0,~0)} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Default constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & Size of the rectangle \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_rectangle_shape_a83a2be157ebee85c95ed491c3e78dd7c}\label{classsf_1_1_rectangle_shape_a83a2be157ebee85c95ed491c3e78dd7c}} 
+\index{sf::RectangleShape@{sf::RectangleShape}!RectangleShape@{RectangleShape}}
+\index{RectangleShape@{RectangleShape}!sf::RectangleShape@{sf::RectangleShape}}
+\doxysubsubsection{\texorpdfstring{RectangleShape()}{RectangleShape()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape\+::\+Rectangle\+Shape (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}} \&}]{size = {\ttfamily \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}}(0,~0)} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Default constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & Size of the rectangle \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsf_1_1_rectangle_shape_a3909f1a1946930ff5ae17c26206c0f81}\label{classsf_1_1_rectangle_shape_a3909f1a1946930ff5ae17c26206c0f81}} 
+\index{sf::RectangleShape@{sf::RectangleShape}!getPoint@{getPoint}}
+\index{getPoint@{getPoint}!sf::RectangleShape@{sf::RectangleShape}}
+\doxysubsubsection{\texorpdfstring{getPoint()}{getPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}} sf\+::\+Rectangle\+Shape\+::get\+Point (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get a point of the rectangle. 
+
+The returned point is in local coordinates, that is, the shape\textquotesingle{}s transforms (position, rotation, scale) are not taken into account. The result is undefined if {\itshape index} is out of the valid range.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the point to get, in range \mbox{[}0 .. 3\mbox{]}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+index-\/th point of the shape 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classsf_1_1_shape_a40e5d83713eb9f0c999944cf96458085}{sf\+::\+Shape}}.
+
+\mbox{\Hypertarget{classsf_1_1_rectangle_shape_a3909f1a1946930ff5ae17c26206c0f81}\label{classsf_1_1_rectangle_shape_a3909f1a1946930ff5ae17c26206c0f81}} 
+\index{sf::RectangleShape@{sf::RectangleShape}!getPoint@{getPoint}}
+\index{getPoint@{getPoint}!sf::RectangleShape@{sf::RectangleShape}}
+\doxysubsubsection{\texorpdfstring{getPoint()}{getPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}} sf\+::\+Rectangle\+Shape\+::get\+Point (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get a point of the rectangle. 
+
+The returned point is in local coordinates, that is, the shape\textquotesingle{}s transforms (position, rotation, scale) are not taken into account. The result is undefined if {\itshape index} is out of the valid range.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the point to get, in range \mbox{[}0 .. 3\mbox{]}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+index-\/th point of the shape 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classsf_1_1_shape_a40e5d83713eb9f0c999944cf96458085}{sf\+::\+Shape}}.
+
+\mbox{\Hypertarget{classsf_1_1_rectangle_shape_adfb2f429e5720c9ccdb26d5996c3ae33}\label{classsf_1_1_rectangle_shape_adfb2f429e5720c9ccdb26d5996c3ae33}} 
+\index{sf::RectangleShape@{sf::RectangleShape}!getPointCount@{getPointCount}}
+\index{getPointCount@{getPointCount}!sf::RectangleShape@{sf::RectangleShape}}
+\doxysubsubsection{\texorpdfstring{getPointCount()}{getPointCount()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual std\+::size\+\_\+t sf\+::\+Rectangle\+Shape\+::get\+Point\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the number of points defining the shape. 
+
+\begin{DoxyReturn}{Returns}
+Number of points of the shape. For rectangle shapes, this number is always 4. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classsf_1_1_shape_af988dd61a29803fc04d02198e44b5643}{sf\+::\+Shape}}.
+
+\mbox{\Hypertarget{classsf_1_1_rectangle_shape_adfb2f429e5720c9ccdb26d5996c3ae33}\label{classsf_1_1_rectangle_shape_adfb2f429e5720c9ccdb26d5996c3ae33}} 
+\index{sf::RectangleShape@{sf::RectangleShape}!getPointCount@{getPointCount}}
+\index{getPointCount@{getPointCount}!sf::RectangleShape@{sf::RectangleShape}}
+\doxysubsubsection{\texorpdfstring{getPointCount()}{getPointCount()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual std\+::size\+\_\+t sf\+::\+Rectangle\+Shape\+::get\+Point\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the number of points defining the shape. 
+
+\begin{DoxyReturn}{Returns}
+Number of points of the shape. For rectangle shapes, this number is always 4. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classsf_1_1_shape_af988dd61a29803fc04d02198e44b5643}{sf\+::\+Shape}}.
+
+\mbox{\Hypertarget{classsf_1_1_rectangle_shape_af6819a7b842b83863f21e7a9c63097e7}\label{classsf_1_1_rectangle_shape_af6819a7b842b83863f21e7a9c63097e7}} 
+\index{sf::RectangleShape@{sf::RectangleShape}!getSize@{getSize}}
+\index{getSize@{getSize}!sf::RectangleShape@{sf::RectangleShape}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}} \& sf\+::\+Rectangle\+Shape\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the size of the rectangle. 
+
+\begin{DoxyReturn}{Returns}
+Size of the rectangle
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_rectangle_shape_a5c65d374d4a259dfdc24efdd24a5dbec}{set\+Size}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_rectangle_shape_af6819a7b842b83863f21e7a9c63097e7}\label{classsf_1_1_rectangle_shape_af6819a7b842b83863f21e7a9c63097e7}} 
+\index{sf::RectangleShape@{sf::RectangleShape}!getSize@{getSize}}
+\index{getSize@{getSize}!sf::RectangleShape@{sf::RectangleShape}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}} \& sf\+::\+Rectangle\+Shape\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the size of the rectangle. 
+
+\begin{DoxyReturn}{Returns}
+Size of the rectangle
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_rectangle_shape_a5c65d374d4a259dfdc24efdd24a5dbec}{set\+Size}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_rectangle_shape_a5c65d374d4a259dfdc24efdd24a5dbec}\label{classsf_1_1_rectangle_shape_a5c65d374d4a259dfdc24efdd24a5dbec}} 
+\index{sf::RectangleShape@{sf::RectangleShape}!setSize@{setSize}}
+\index{setSize@{setSize}!sf::RectangleShape@{sf::RectangleShape}}
+\doxysubsubsection{\texorpdfstring{setSize()}{setSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Rectangle\+Shape\+::set\+Size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}} \&}]{size }\end{DoxyParamCaption})}
+
+
+
+Set the size of the rectangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & New size of the rectangle\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_rectangle_shape_af6819a7b842b83863f21e7a9c63097e7}{get\+Size}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_rectangle_shape_a5c65d374d4a259dfdc24efdd24a5dbec}\label{classsf_1_1_rectangle_shape_a5c65d374d4a259dfdc24efdd24a5dbec}} 
+\index{sf::RectangleShape@{sf::RectangleShape}!setSize@{setSize}}
+\index{setSize@{setSize}!sf::RectangleShape@{sf::RectangleShape}}
+\doxysubsubsection{\texorpdfstring{setSize()}{setSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Rectangle\+Shape\+::set\+Size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}} \&}]{size }\end{DoxyParamCaption})}
+
+
+
+Set the size of the rectangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & New size of the rectangle\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_rectangle_shape_af6819a7b842b83863f21e7a9c63097e7}{get\+Size}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsf_1_1_rectangle_shape_ab97ec42ef436e2a622b7a853c9202118}\label{classsf_1_1_rectangle_shape_ab97ec42ef436e2a622b7a853c9202118}} 
+\index{sf::RectangleShape@{sf::RectangleShape}!m\_size@{m\_size}}
+\index{m\_size@{m\_size}!sf::RectangleShape@{sf::RectangleShape}}
+\doxysubsubsection{\texorpdfstring{m\_size}{m\_size}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}} sf\+::\+Rectangle\+Shape\+::m\+\_\+size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Size of the rectangle. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_rectangle_shape_8hpp_source_l00102}{102}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_rectangle_shape_8hpp_source}{Rectangle\+Shape.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+SFML-\/2.\+5.\+1/include/\+SFML/\+Graphics/\mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_rectangle_shape_8hpp}{Rectangle\+Shape.\+hpp}}\item 
+Week14/\+SFML-\/2.\+5.\+1/include/\+SFML/\+Graphics/\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_rectangle_shape_8hpp}{Rectangle\+Shape.\+hpp}}\end{DoxyCompactItemize}

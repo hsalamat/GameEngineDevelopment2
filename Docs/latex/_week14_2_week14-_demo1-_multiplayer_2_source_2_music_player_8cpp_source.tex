@@ -1,0 +1,47 @@
+\hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source}{}\doxysection{Music\+Player.\+cpp}
+\label{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source}\index{Week14/Week14-\/Demo1-\/Multiplayer/Source/MusicPlayer.cpp@{Week14/Week14-\/Demo1-\/Multiplayer/Source/MusicPlayer.cpp}}
+\mbox{\hyperlink{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include <MusicPlayer.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00004}00004 \mbox{\hyperlink{class_music_player_a157211d92ff78fe87fdef2bb77a2b5fa}{MusicPlayer::MusicPlayer}}()}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00005}00005 : mMusic()}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00006}00006 , mFilenames()}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00007}00007 , mVolume(100.f)}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00008}00008 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00009}00009     mFilenames[\mbox{\hyperlink{namespace_music_ad5e0c8c2e2e7bdcbffbb125051531b86af4616f7e8d4a5c96cddc49dfe111d3c3}{Music::MenuTheme}}]    = \textcolor{stringliteral}{"{}Media/Music/MenuTheme.ogg"{}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00010}00010     mFilenames[\mbox{\hyperlink{namespace_music_ad5e0c8c2e2e7bdcbffbb125051531b86ae4e89e8707f6839c7ad32e35a5881da7}{Music::MissionTheme}}] = \textcolor{stringliteral}{"{}Media/Music/MissionTheme.ogg"{}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00011}00011 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00013}00013 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_music_player_a8a10a649154c8b7af3031c5f36cb53ca}{MusicPlayer::play}}(\mbox{\hyperlink{namespace_music_ad5e0c8c2e2e7bdcbffbb125051531b86}{Music::ID}} theme)}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00014}00014 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00015}00015     std::string filename = \mbox{\hyperlink{class_music_player_a56ec3cf00ff836dc378dd228443fbc87}{mFilenames}}[theme];}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00017}00017     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_music_player_ad18cdf29e5ebac13d62185a9e1b646d5}{mMusic}}.\mbox{\hyperlink{classsf_1_1_music_a3edc66e5f5b3f11e84b90eaec9c7d7c0}{openFromFile}}(filename))}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00018}00018         \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Music "{}} + filename + \textcolor{stringliteral}{"{} could not be loaded."{}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00020}00020     \mbox{\hyperlink{class_music_player_ad18cdf29e5ebac13d62185a9e1b646d5}{mMusic}}.\mbox{\hyperlink{classsf_1_1_sound_source_a2f192f2b49fb8e2b82f3498d3663fcc2}{setVolume}}(\mbox{\hyperlink{class_music_player_ad4d026091511aa086cd96047c1adfd97}{mVolume}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00021}00021     \mbox{\hyperlink{class_music_player_ad18cdf29e5ebac13d62185a9e1b646d5}{mMusic}}.\mbox{\hyperlink{classsf_1_1_sound_stream_a43fade018ffba7e4f847a9f00b353f3d}{setLoop}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00022}00022     \mbox{\hyperlink{class_music_player_ad18cdf29e5ebac13d62185a9e1b646d5}{mMusic}}.\mbox{\hyperlink{classsf_1_1_sound_stream_afdc08b69cab5f243d9324940a85a1144}{play}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00023}00023 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00025}00025 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_music_player_a54e47a9e937730493d886aa5624c44d1}{MusicPlayer::stop}}()}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00026}00026 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00027}00027     \mbox{\hyperlink{class_music_player_ad18cdf29e5ebac13d62185a9e1b646d5}{mMusic}}.\mbox{\hyperlink{classsf_1_1_sound_stream_a16cc6a0404b32e42c4dce184bb94d0f4}{stop}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00028}00028 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00030}00030 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_music_player_a361cbcbfb31d3c0c841d0b67a79c5cdd}{MusicPlayer::setVolume}}(\textcolor{keywordtype}{float} volume)}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00031}00031 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00032}00032     \mbox{\hyperlink{class_music_player_ad4d026091511aa086cd96047c1adfd97}{mVolume}} = volume;}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00033}00033 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00035}00035 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_music_player_a59b313a9a9eb850e590f9c6555ad80cf}{MusicPlayer::setPaused}}(\textcolor{keywordtype}{bool} paused)}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00036}00036 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00037}00037     \textcolor{keywordflow}{if} (paused)}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00038}00038         \mbox{\hyperlink{class_music_player_ad18cdf29e5ebac13d62185a9e1b646d5}{mMusic}}.\mbox{\hyperlink{classsf_1_1_sound_stream_a932ff181e661503cad288b4bb6fe45ca}{pause}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00039}00039     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00040}00040         \mbox{\hyperlink{class_music_player_ad18cdf29e5ebac13d62185a9e1b646d5}{mMusic}}.\mbox{\hyperlink{classsf_1_1_sound_stream_afdc08b69cab5f243d9324940a85a1144}{play}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_music_player_8cpp_source_l00041}00041 \}}
+
+\end{DoxyCode}

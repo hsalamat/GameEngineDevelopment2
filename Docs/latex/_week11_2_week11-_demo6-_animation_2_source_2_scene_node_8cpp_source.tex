@@ -1,0 +1,181 @@
+\hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source}{}\doxysection{Scene\+Node.\+cpp}
+\label{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source}\index{Week11/Week11-\/Demo6-\/Animation/Source/SceneNode.cpp@{Week11/Week11-\/Demo6-\/Animation/Source/SceneNode.cpp}}
+\mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include <SceneNode.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <Command.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <Utility.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include <SFML/Graphics/RectangleShape.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <SFML/Graphics/RenderTarget.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#include <cassert>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00010}00010 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00013}00013 \mbox{\hyperlink{class_scene_node_acc2e7940323560ba86dad8e2d6eb6690}{SceneNode::SceneNode}}(\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0}{Category::Type}} category)}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00014}00014 : mChildren()}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00015}00015 , mParent(nullptr)}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00016}00016 , mDefaultCategory(category)}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00017}00017 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00018}00018 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00020}00020 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_node_acdfa2c2ba28bce076c886eaba2d9e650}{SceneNode::attachChild}}(Ptr child)}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00021}00021 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00022}00022     child-\/>mParent = \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00023}00023     \mbox{\hyperlink{class_scene_node_a3b0fe936833756d9eb3406389a976ed2}{mChildren}}.push\_back(std::move(child));}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00024}00024 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00026}00026 \mbox{\hyperlink{class_scene_node_aaf5c9ad8475874b51b70e400822f2e9a}{SceneNode::Ptr}} \mbox{\hyperlink{class_scene_node_a3b9681eb3db7d9e575945b57e275e040}{SceneNode::detachChild}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_scene_node}{SceneNode}}\& node)}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00027}00027 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00028}00028     \textcolor{keyword}{auto} found = std::find\_if(\mbox{\hyperlink{class_scene_node_a3b0fe936833756d9eb3406389a976ed2}{mChildren}}.begin(), \mbox{\hyperlink{class_scene_node_a3b0fe936833756d9eb3406389a976ed2}{mChildren}}.end(), [\&] (\mbox{\hyperlink{class_scene_node_aaf5c9ad8475874b51b70e400822f2e9a}{Ptr}}\& p) \{ return p.get() == \&node; \});}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00029}00029     assert(found != \mbox{\hyperlink{class_scene_node_a3b0fe936833756d9eb3406389a976ed2}{mChildren}}.end());}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00031}00031     \mbox{\hyperlink{class_scene_node_aaf5c9ad8475874b51b70e400822f2e9a}{Ptr}} result = std::move(*found);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00032}00032     result-\/>mParent = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00033}00033     \mbox{\hyperlink{class_scene_node_a3b0fe936833756d9eb3406389a976ed2}{mChildren}}.erase(found);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00034}00034     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00035}00035 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00037}00037 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_node_a5494c3a380d7ea5ae7148122c4255400}{SceneNode::update}}(\mbox{\hyperlink{classsf_1_1_time}{sf::Time}} dt, \mbox{\hyperlink{class_command_queue}{CommandQueue}}\& commands)}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00038}00038 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00039}00039     \mbox{\hyperlink{class_scene_node_a09e4ce66d7dac35e9d665200bee2595b}{updateCurrent}}(dt, commands);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00040}00040     \mbox{\hyperlink{class_scene_node_a2f0510d5e2255c2b85e6490a51ac1284}{updateChildren}}(dt, commands);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00041}00041 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00043}00043 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_node_a09e4ce66d7dac35e9d665200bee2595b}{SceneNode::updateCurrent}}(\mbox{\hyperlink{classsf_1_1_time}{sf::Time}}, \mbox{\hyperlink{class_command_queue}{CommandQueue}}\&)}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00044}00044 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00045}00045     \textcolor{comment}{// Do nothing by default}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00046}00046 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00048}00048 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_node_a2f0510d5e2255c2b85e6490a51ac1284}{SceneNode::updateChildren}}(\mbox{\hyperlink{classsf_1_1_time}{sf::Time}} dt, \mbox{\hyperlink{class_command_queue}{CommandQueue}}\& commands)}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00049}00049 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00050}00050     \textcolor{keywordflow}{for}(\mbox{\hyperlink{class_scene_node_aaf5c9ad8475874b51b70e400822f2e9a}{Ptr}}\& child: \mbox{\hyperlink{class_scene_node_a3b0fe936833756d9eb3406389a976ed2}{mChildren}})}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00051}00051         child-\/>update(dt, commands);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00052}00052 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00054}00054 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_node_a81dd820c6f2cbe39fcb0e2ac4af9ec1a}{SceneNode::draw}}(\mbox{\hyperlink{classsf_1_1_render_target}{sf::RenderTarget}}\& target, \mbox{\hyperlink{classsf_1_1_render_states}{sf::RenderStates}} states)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00055}00055 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00056}00056     \textcolor{comment}{// Apply transform of current node}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00057}00057     states.\mbox{\hyperlink{classsf_1_1_render_states_a1f737981a0f2f0d4bb8dac866a8d1149}{transform}} *= \mbox{\hyperlink{classsf_1_1_transformable_a3e1b4772a451ec66ac7e6af655726154}{getTransform}}();}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00059}00059     \textcolor{comment}{// Draw node and children with changed transform}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00060}00060     \mbox{\hyperlink{class_scene_node_af3d9ad9725fb8c7bbaa71026c46e5a50}{drawCurrent}}(target, states);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00061}00061     \mbox{\hyperlink{class_scene_node_a7857a9a8f3f7f3fad1f32627d9873719}{drawChildren}}(target, states);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00063}00063     \textcolor{comment}{// Draw bounding rectangle -\/ disabled by default}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00064}00064     \textcolor{comment}{//drawBoundingRect(target, states);}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00065}00065 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00067}00067 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_node_af3d9ad9725fb8c7bbaa71026c46e5a50}{SceneNode::drawCurrent}}(\mbox{\hyperlink{classsf_1_1_render_target}{sf::RenderTarget}}\&, \mbox{\hyperlink{classsf_1_1_render_states}{sf::RenderStates}})\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00068}00068 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00069}00069     \textcolor{comment}{// Do nothing by default}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00070}00070 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00072}00072 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_node_a7857a9a8f3f7f3fad1f32627d9873719}{SceneNode::drawChildren}}(\mbox{\hyperlink{classsf_1_1_render_target}{sf::RenderTarget}}\& target, \mbox{\hyperlink{classsf_1_1_render_states}{sf::RenderStates}} states)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00073}00073 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00074}00074     \textcolor{keywordflow}{for}(\textcolor{keyword}{const} \mbox{\hyperlink{class_scene_node_aaf5c9ad8475874b51b70e400822f2e9a}{Ptr}}\& child: \mbox{\hyperlink{class_scene_node_a3b0fe936833756d9eb3406389a976ed2}{mChildren}})}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00075}00075         child-\/>draw(target, states);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00076}00076 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00078}00078 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_node_a5335184cae1d4a57357af488d09b64d1}{SceneNode::drawBoundingRect}}(\mbox{\hyperlink{classsf_1_1_render_target}{sf::RenderTarget}}\& target, \mbox{\hyperlink{classsf_1_1_render_states}{sf::RenderStates}})\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00079}00079 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00080}00080     \mbox{\hyperlink{classsf_1_1_rect}{sf::FloatRect}} rect = \mbox{\hyperlink{class_scene_node_aeed27ee83b56ecaa87e41f21fa0ffa7b}{getBoundingRect}}();}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00082}00082     \mbox{\hyperlink{classsf_1_1_rectangle_shape}{sf::RectangleShape}} shape;}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00083}00083     shape.\mbox{\hyperlink{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{setPosition}}(\mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}}(rect.\mbox{\hyperlink{classsf_1_1_rect_aa49960fa465103d9cb7069ceb25c7c32}{left}}, rect.\mbox{\hyperlink{classsf_1_1_rect_abd3d3a2d0ad211ef0082bd0aa1a5c0e3}{top}}));}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00084}00084     shape.\mbox{\hyperlink{classsf_1_1_rectangle_shape_a5c65d374d4a259dfdc24efdd24a5dbec}{setSize}}(\mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}}(rect.\mbox{\hyperlink{classsf_1_1_rect_a4dd5b9d4333bebbc51bd309298fd500f}{width}}, rect.\mbox{\hyperlink{classsf_1_1_rect_a6fa0fc7de1636d78cae1a1b54eef95cd}{height}}));}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00085}00085     shape.\mbox{\hyperlink{classsf_1_1_shape_a3506f9b5d916fec14d583d16f23c2485}{setFillColor}}(\mbox{\hyperlink{classsf_1_1_color_a422c310394afa396d3a2798aad982145}{sf::Color::Transparent}});}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00086}00086     shape.\mbox{\hyperlink{classsf_1_1_shape_a5978f41ee349ac3c52942996dcb184f7}{setOutlineColor}}(\mbox{\hyperlink{classsf_1_1_color_a71bdec1f240038ee66fc8f3b418fce71}{sf::Color::Green}});}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00087}00087     shape.\mbox{\hyperlink{classsf_1_1_shape_a5ad336ad74fc1f567fce3b7e44cf87dc}{setOutlineThickness}}(1.f);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00089}00089     target.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(shape);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00090}00090 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00092}00092 \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}} \mbox{\hyperlink{class_scene_node_a43061f972f26184b271e6c56723a29c2}{SceneNode::getWorldPosition}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00093}00093 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00094}00094     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_scene_node_aedae712e618334745fea3c934d51a390}{getWorldTransform}}() * \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{sf::Vector2f}}();}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00095}00095 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00097}00097 \mbox{\hyperlink{classsf_1_1_transform}{sf::Transform}} \mbox{\hyperlink{class_scene_node_aedae712e618334745fea3c934d51a390}{SceneNode::getWorldTransform}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00098}00098 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00099}00099     \mbox{\hyperlink{classsf_1_1_transform}{sf::Transform}} transform = \mbox{\hyperlink{classsf_1_1_transform_a854729912a691efeca9f213c54be4f59}{sf::Transform::Identity}};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00100}00100 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00101}00101     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \mbox{\hyperlink{class_scene_node}{SceneNode}}* node = \textcolor{keyword}{this}; node != \textcolor{keyword}{nullptr}; node = node-\/>\mbox{\hyperlink{class_scene_node_a6daef2e9f35ba0959c37b9fe5ed837de}{mParent}})}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00102}00102         transform = node-\/>\mbox{\hyperlink{classsf_1_1_transformable_a3e1b4772a451ec66ac7e6af655726154}{getTransform}}() * transform;}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00103}00103 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00104}00104     \textcolor{keywordflow}{return} transform;}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00105}00105 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00106}00106 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00107}00107 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_node_af6f126fe8727414a0c967f84f9754968}{SceneNode::onCommand}}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_command}{Command}}\& command, \mbox{\hyperlink{classsf_1_1_time}{sf::Time}} dt)}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00108}00108 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00109}00109     \textcolor{comment}{// Command current node, if category matches}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00110}00110     \textcolor{keywordflow}{if} (command.\mbox{\hyperlink{struct_command_a1529e898c9e6dd47b1826b5b1eac09fb}{category}} \& \mbox{\hyperlink{class_scene_node_af713a8c58831a27bc791a2efdfb7c495}{getCategory}}())}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00111}00111         command.\mbox{\hyperlink{struct_command_ac5473faf8b8b03ce83353838bc00c6dd}{action}}(*\textcolor{keyword}{this}, dt);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00112}00112 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00113}00113     \textcolor{comment}{// Command children}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00114}00114     \textcolor{keywordflow}{for}(\mbox{\hyperlink{class_scene_node_aaf5c9ad8475874b51b70e400822f2e9a}{Ptr}}\& child: \mbox{\hyperlink{class_scene_node_a3b0fe936833756d9eb3406389a976ed2}{mChildren}})}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00115}00115         child-\/>onCommand(command, dt);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00116}00116 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00117}00117 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00118}00118 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_scene_node_af713a8c58831a27bc791a2efdfb7c495}{SceneNode::getCategory}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00119}00119 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00120}00120     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_scene_node_a72f78015e2ec7e9928c7c53a3c4ee56d}{mDefaultCategory}};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00121}00121 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00122}00122 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00123}00123 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_node_adc84f9ef6a872340ff5489b54d9bf626}{SceneNode::checkSceneCollision}}(\mbox{\hyperlink{class_scene_node}{SceneNode}}\& sceneGraph, std::set<Pair>\& collisionPairs)}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00124}00124 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00125}00125     \mbox{\hyperlink{class_scene_node_afcb3176686c13d320ca0bfb0c22bbd4f}{checkNodeCollision}}(sceneGraph, collisionPairs);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00126}00126 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00127}00127     \textcolor{keywordflow}{for}(\mbox{\hyperlink{class_scene_node_aaf5c9ad8475874b51b70e400822f2e9a}{Ptr}}\& child: sceneGraph.\mbox{\hyperlink{class_scene_node_a3b0fe936833756d9eb3406389a976ed2}{mChildren}})}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00128}00128         \mbox{\hyperlink{class_scene_node_adc84f9ef6a872340ff5489b54d9bf626}{checkSceneCollision}}(*child, collisionPairs);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00129}00129 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00130}00130 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00131}00131 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_node_afcb3176686c13d320ca0bfb0c22bbd4f}{SceneNode::checkNodeCollision}}(\mbox{\hyperlink{class_scene_node}{SceneNode}}\& node, std::set<Pair>\& collisionPairs)}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00132}00132 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00133}00133     \textcolor{keywordflow}{if} (\textcolor{keyword}{this} != \&node \&\& \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_source_2_scene_node_8cpp_a24980ccaf0cdb93a841d317bd8c65a3d}{collision}}(*\textcolor{keyword}{this}, node) \&\& !\mbox{\hyperlink{class_scene_node_add1a151301a5056b29e552a83be4f507}{isDestroyed}}() \&\& !node.\mbox{\hyperlink{class_scene_node_add1a151301a5056b29e552a83be4f507}{isDestroyed}}())}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00134}00134         collisionPairs.insert(std::minmax(\textcolor{keyword}{this}, \&node));}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00135}00135 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00136}00136     \textcolor{keywordflow}{for}(\mbox{\hyperlink{class_scene_node_aaf5c9ad8475874b51b70e400822f2e9a}{Ptr}}\& child: \mbox{\hyperlink{class_scene_node_a3b0fe936833756d9eb3406389a976ed2}{mChildren}})}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00137}00137         child-\/>checkNodeCollision(node, collisionPairs);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00138}00138 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00139}00139 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00140}00140 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_node_a4ab07dfa68f4094e2e9152b6f4869794}{SceneNode::removeWrecks}}()}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00141}00141 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00142}00142     \textcolor{comment}{// Remove all children which request so}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00143}00143     \textcolor{keyword}{auto} wreckfieldBegin = std::remove\_if(\mbox{\hyperlink{class_scene_node_a3b0fe936833756d9eb3406389a976ed2}{mChildren}}.begin(), \mbox{\hyperlink{class_scene_node_a3b0fe936833756d9eb3406389a976ed2}{mChildren}}.end(), std::mem\_fn(\&\mbox{\hyperlink{class_scene_node_a8a0f6080efbd7e49569552b5542fd855}{SceneNode::isMarkedForRemoval}}));}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00144}00144     \mbox{\hyperlink{class_scene_node_a3b0fe936833756d9eb3406389a976ed2}{mChildren}}.erase(wreckfieldBegin, \mbox{\hyperlink{class_scene_node_a3b0fe936833756d9eb3406389a976ed2}{mChildren}}.end());}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00145}00145 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00146}00146     \textcolor{comment}{// Call function recursively for all remaining children}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00147}00147     std::for\_each(\mbox{\hyperlink{class_scene_node_a3b0fe936833756d9eb3406389a976ed2}{mChildren}}.begin(), \mbox{\hyperlink{class_scene_node_a3b0fe936833756d9eb3406389a976ed2}{mChildren}}.end(), std::mem\_fn(\&\mbox{\hyperlink{class_scene_node_a4ab07dfa68f4094e2e9152b6f4869794}{SceneNode::removeWrecks}}));}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00148}00148 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00149}00149 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00150}00150 \mbox{\hyperlink{classsf_1_1_rect}{sf::FloatRect}} \mbox{\hyperlink{class_scene_node_aeed27ee83b56ecaa87e41f21fa0ffa7b}{SceneNode::getBoundingRect}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00151}00151 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00152}00152     \textcolor{keywordflow}{return} \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf::FloatRect}}();}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00153}00153 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00154}00154 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00155}00155 \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_scene_node_a8a0f6080efbd7e49569552b5542fd855}{SceneNode::isMarkedForRemoval}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00156}00156 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00157}00157     \textcolor{comment}{// By default, remove node if entity is destroyed}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00158}00158     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_scene_node_add1a151301a5056b29e552a83be4f507}{isDestroyed}}();}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00159}00159 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00160}00160 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00161}00161 \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_scene_node_add1a151301a5056b29e552a83be4f507}{SceneNode::isDestroyed}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00162}00162 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00163}00163     \textcolor{comment}{// By default, scene node needn't be removed}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00164}00164     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00165}00165 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00166}00166 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00167}\mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_a24980ccaf0cdb93a841d317bd8c65a3d}{00167}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_source_2_scene_node_8cpp_a24980ccaf0cdb93a841d317bd8c65a3d}{collision}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_scene_node}{SceneNode}}\& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{class_scene_node}{SceneNode}}\& rhs)}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00168}00168 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00169}00169     \textcolor{keywordflow}{return} lhs.\mbox{\hyperlink{class_scene_node_aeed27ee83b56ecaa87e41f21fa0ffa7b}{getBoundingRect}}().\mbox{\hyperlink{classsf_1_1_rect_ac77531698f39203e4bbe023097bb6a13}{intersects}}(rhs.\mbox{\hyperlink{class_scene_node_aeed27ee83b56ecaa87e41f21fa0ffa7b}{getBoundingRect}}());}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00170}00170 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00171}00171                                                                                                                                                                                                                                          }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00172}\mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_a7b80a3dcfdac5445e81c0d5baa0e18af}{00172}} \textcolor{keywordtype}{float} \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_source_2_scene_node_8cpp_a7b80a3dcfdac5445e81c0d5baa0e18af}{distance}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_scene_node}{SceneNode}}\& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{class_scene_node}{SceneNode}}\& rhs)}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00173}00173 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00174}00174     \textcolor{keywordflow}{return} \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_a658e7a578e1b8e49820b0691fd6993d6}{length}}(lhs.\mbox{\hyperlink{class_scene_node_a43061f972f26184b271e6c56723a29c2}{getWorldPosition}}() -\/ rhs.\mbox{\hyperlink{class_scene_node_a43061f972f26184b271e6c56723a29c2}{getWorldPosition}}());}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_scene_node_8cpp_source_l00175}00175 \}}
+
+\end{DoxyCode}

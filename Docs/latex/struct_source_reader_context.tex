@@ -1,0 +1,203 @@
+\hypertarget{struct_source_reader_context}{}\doxysection{Source\+Reader\+Context Struct Reference}
+\label{struct_source_reader_context}\index{SourceReaderContext@{SourceReaderContext}}
+Inheritance diagram for Source\+Reader\+Context\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_source_reader_context}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+STDMETHOD() \mbox{\hyperlink{struct_source_reader_context_a97f791f4caf1d0787daf8f197e56d9e2}{Query\+Interface}} (REFIID iid, \+\_\+\+COM\+\_\+\+Outptr\+\_\+ void $\ast$$\ast$ppv) override
+\item 
+\mbox{\hyperlink{struct_source_reader_context_a195d6c8c7f0e7a652a52112209b469f6}{STDMETHOD\+\_\+}} (ULONG, Add\+Ref)() override
+\item 
+\mbox{\hyperlink{struct_source_reader_context_afd7160e859e080d741f194760a3434c1}{STDMETHOD\+\_\+}} (ULONG, Release)() override
+\item 
+STDMETHOD() \mbox{\hyperlink{struct_source_reader_context_ad6788614303d5fd53fb1bdba28615491}{On\+Read\+Sample}} (\+\_\+\+In\+\_\+ HRESULT hr\+Status, \+\_\+\+In\+\_\+ DWORD dw\+Stream\+Index, \+\_\+\+In\+\_\+ DWORD dw\+Stream\+Flags, \+\_\+\+In\+\_\+ LONGLONG ll\+Timestamp, \+\_\+\+In\+\_\+opt\+\_\+ IMFSample $\ast$p\+Sample) override
+\item 
+STDMETHOD() \mbox{\hyperlink{struct_source_reader_context_a6bf3f633e072f6697c16cd2950dc6fbc}{On\+Flush}} (\+\_\+\+In\+\_\+ DWORD) override
+\item 
+STDMETHOD() \mbox{\hyperlink{struct_source_reader_context_a05ab6d201b2c773a8e646b069869ac1a}{On\+Event}} (\+\_\+\+In\+\_\+ DWORD, \+\_\+\+In\+\_\+ IMFMedia\+Event $\ast$) override
+\item 
+void \mbox{\hyperlink{struct_source_reader_context_ae926cdda528102dd3b52ab43f1d8affc}{Restart}} ()
+\item 
+\mbox{\hyperlink{struct_source_reader_context_a9a8b73ffea851d45aefb6ed9d88c12f6}{Source\+Reader\+Context}} ()
+\item 
+virtual \mbox{\hyperlink{struct_source_reader_context_aae052cdea59ac8b328653a7a61e654f7}{$\sim$\+Source\+Reader\+Context}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+HANDLE \mbox{\hyperlink{struct_source_reader_context_ad9b1ba7be7966da6f919cb48609b551f}{h\+Read\+Sample}}
+\item 
+bool \mbox{\hyperlink{struct_source_reader_context_ad263c2cc821a86842faafe210816c003}{end\+Of\+Stream}}
+\item 
+HRESULT \mbox{\hyperlink{struct_source_reader_context_ac60667f793769f8005c364fde74802fb}{status}}
+\item 
+std\+::mutex \mbox{\hyperlink{struct_source_reader_context_a98f362d33b27fe053fb5676ebe6f5a4b}{guard}}
+\item 
+Com\+Ptr$<$ IMFSample $>$ \mbox{\hyperlink{struct_source_reader_context_ab82a19a93fca575f55845b605a2f959d}{sample}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source_l00086}{86}} of file \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source}{Week13-\/3-\/\+MFStream.\+cpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_source_reader_context_a9a8b73ffea851d45aefb6ed9d88c12f6}\label{struct_source_reader_context_a9a8b73ffea851d45aefb6ed9d88c12f6}} 
+\index{SourceReaderContext@{SourceReaderContext}!SourceReaderContext@{SourceReaderContext}}
+\index{SourceReaderContext@{SourceReaderContext}!SourceReaderContext@{SourceReaderContext}}
+\doxysubsubsection{\texorpdfstring{SourceReaderContext()}{SourceReaderContext()}}
+{\footnotesize\ttfamily Source\+Reader\+Context\+::\+Source\+Reader\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source_l00162}{162}} of file \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source}{Week13-\/3-\/\+MFStream.\+cpp}}.
+
+\mbox{\Hypertarget{struct_source_reader_context_aae052cdea59ac8b328653a7a61e654f7}\label{struct_source_reader_context_aae052cdea59ac8b328653a7a61e654f7}} 
+\index{SourceReaderContext@{SourceReaderContext}!````~SourceReaderContext@{$\sim$SourceReaderContext}}
+\index{````~SourceReaderContext@{$\sim$SourceReaderContext}!SourceReaderContext@{SourceReaderContext}}
+\doxysubsubsection{\texorpdfstring{$\sim$SourceReaderContext()}{~SourceReaderContext()}}
+{\footnotesize\ttfamily virtual Source\+Reader\+Context\+::$\sim$\+Source\+Reader\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source_l00172}{172}} of file \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source}{Week13-\/3-\/\+MFStream.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_source_reader_context_a05ab6d201b2c773a8e646b069869ac1a}\label{struct_source_reader_context_a05ab6d201b2c773a8e646b069869ac1a}} 
+\index{SourceReaderContext@{SourceReaderContext}!OnEvent@{OnEvent}}
+\index{OnEvent@{OnEvent}!SourceReaderContext@{SourceReaderContext}}
+\doxysubsubsection{\texorpdfstring{OnEvent()}{OnEvent()}}
+{\footnotesize\ttfamily STDMETHOD() Source\+Reader\+Context\+::\+On\+Event (\begin{DoxyParamCaption}\item[{\+\_\+\+In\+\_\+}]{DWORD,  }\item[{\+\_\+\+In\+\_\+ IMFMedia\+Event $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source_l00144}{144}} of file \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source}{Week13-\/3-\/\+MFStream.\+cpp}}.
+
+\mbox{\Hypertarget{struct_source_reader_context_a6bf3f633e072f6697c16cd2950dc6fbc}\label{struct_source_reader_context_a6bf3f633e072f6697c16cd2950dc6fbc}} 
+\index{SourceReaderContext@{SourceReaderContext}!OnFlush@{OnFlush}}
+\index{OnFlush@{OnFlush}!SourceReaderContext@{SourceReaderContext}}
+\doxysubsubsection{\texorpdfstring{OnFlush()}{OnFlush()}}
+{\footnotesize\ttfamily STDMETHOD() Source\+Reader\+Context\+::\+On\+Flush (\begin{DoxyParamCaption}\item[{\+\_\+\+In\+\_\+}]{DWORD }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source_l00139}{139}} of file \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source}{Week13-\/3-\/\+MFStream.\+cpp}}.
+
+\mbox{\Hypertarget{struct_source_reader_context_ad6788614303d5fd53fb1bdba28615491}\label{struct_source_reader_context_ad6788614303d5fd53fb1bdba28615491}} 
+\index{SourceReaderContext@{SourceReaderContext}!OnReadSample@{OnReadSample}}
+\index{OnReadSample@{OnReadSample}!SourceReaderContext@{SourceReaderContext}}
+\doxysubsubsection{\texorpdfstring{OnReadSample()}{OnReadSample()}}
+{\footnotesize\ttfamily STDMETHOD() Source\+Reader\+Context\+::\+On\+Read\+Sample (\begin{DoxyParamCaption}\item[{\+\_\+\+In\+\_\+ HRESULT}]{hr\+Status,  }\item[{\+\_\+\+In\+\_\+ DWORD}]{dw\+Stream\+Index,  }\item[{\+\_\+\+In\+\_\+ DWORD}]{dw\+Stream\+Flags,  }\item[{\+\_\+\+In\+\_\+ LONGLONG}]{ll\+Timestamp,  }\item[{\+\_\+\+In\+\_\+opt\+\_\+ IMFSample $\ast$}]{p\+Sample }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source_l00113}{113}} of file \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source}{Week13-\/3-\/\+MFStream.\+cpp}}.
+
+\mbox{\Hypertarget{struct_source_reader_context_a97f791f4caf1d0787daf8f197e56d9e2}\label{struct_source_reader_context_a97f791f4caf1d0787daf8f197e56d9e2}} 
+\index{SourceReaderContext@{SourceReaderContext}!QueryInterface@{QueryInterface}}
+\index{QueryInterface@{QueryInterface}!SourceReaderContext@{SourceReaderContext}}
+\doxysubsubsection{\texorpdfstring{QueryInterface()}{QueryInterface()}}
+{\footnotesize\ttfamily STDMETHOD() Source\+Reader\+Context\+::\+Query\+Interface (\begin{DoxyParamCaption}\item[{REFIID}]{iid,  }\item[{\+\_\+\+COM\+\_\+\+Outptr\+\_\+ void $\ast$$\ast$}]{ppv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source_l00088}{88}} of file \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source}{Week13-\/3-\/\+MFStream.\+cpp}}.
+
+\mbox{\Hypertarget{struct_source_reader_context_ae926cdda528102dd3b52ab43f1d8affc}\label{struct_source_reader_context_ae926cdda528102dd3b52ab43f1d8affc}} 
+\index{SourceReaderContext@{SourceReaderContext}!Restart@{Restart}}
+\index{Restart@{Restart}!SourceReaderContext@{SourceReaderContext}}
+\doxysubsubsection{\texorpdfstring{Restart()}{Restart()}}
+{\footnotesize\ttfamily void Source\+Reader\+Context\+::\+Restart (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source_l00149}{149}} of file \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source}{Week13-\/3-\/\+MFStream.\+cpp}}.
+
+\mbox{\Hypertarget{struct_source_reader_context_a195d6c8c7f0e7a652a52112209b469f6}\label{struct_source_reader_context_a195d6c8c7f0e7a652a52112209b469f6}} 
+\index{SourceReaderContext@{SourceReaderContext}!STDMETHOD\_@{STDMETHOD\_}}
+\index{STDMETHOD\_@{STDMETHOD\_}!SourceReaderContext@{SourceReaderContext}}
+\doxysubsubsection{\texorpdfstring{STDMETHOD\_()}{STDMETHOD\_()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Source\+Reader\+Context\+::\+STDMETHOD\+\_\+ (\begin{DoxyParamCaption}\item[{ULONG}]{,  }\item[{Add\+Ref}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source_l00103}{103}} of file \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source}{Week13-\/3-\/\+MFStream.\+cpp}}.
+
+\mbox{\Hypertarget{struct_source_reader_context_afd7160e859e080d741f194760a3434c1}\label{struct_source_reader_context_afd7160e859e080d741f194760a3434c1}} 
+\index{SourceReaderContext@{SourceReaderContext}!STDMETHOD\_@{STDMETHOD\_}}
+\index{STDMETHOD\_@{STDMETHOD\_}!SourceReaderContext@{SourceReaderContext}}
+\doxysubsubsection{\texorpdfstring{STDMETHOD\_()}{STDMETHOD\_()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Source\+Reader\+Context\+::\+STDMETHOD\+\_\+ (\begin{DoxyParamCaption}\item[{ULONG}]{,  }\item[{Release}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source_l00108}{108}} of file \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source}{Week13-\/3-\/\+MFStream.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_source_reader_context_ad263c2cc821a86842faafe210816c003}\label{struct_source_reader_context_ad263c2cc821a86842faafe210816c003}} 
+\index{SourceReaderContext@{SourceReaderContext}!endOfStream@{endOfStream}}
+\index{endOfStream@{endOfStream}!SourceReaderContext@{SourceReaderContext}}
+\doxysubsubsection{\texorpdfstring{endOfStream}{endOfStream}}
+{\footnotesize\ttfamily bool Source\+Reader\+Context\+::end\+Of\+Stream}
+
+
+
+Definition at line \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source_l00157}{157}} of file \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source}{Week13-\/3-\/\+MFStream.\+cpp}}.
+
+\mbox{\Hypertarget{struct_source_reader_context_a98f362d33b27fe053fb5676ebe6f5a4b}\label{struct_source_reader_context_a98f362d33b27fe053fb5676ebe6f5a4b}} 
+\index{SourceReaderContext@{SourceReaderContext}!guard@{guard}}
+\index{guard@{guard}!SourceReaderContext@{SourceReaderContext}}
+\doxysubsubsection{\texorpdfstring{guard}{guard}}
+{\footnotesize\ttfamily std\+::mutex Source\+Reader\+Context\+::guard}
+
+
+
+Definition at line \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source_l00159}{159}} of file \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source}{Week13-\/3-\/\+MFStream.\+cpp}}.
+
+\mbox{\Hypertarget{struct_source_reader_context_ad9b1ba7be7966da6f919cb48609b551f}\label{struct_source_reader_context_ad9b1ba7be7966da6f919cb48609b551f}} 
+\index{SourceReaderContext@{SourceReaderContext}!hReadSample@{hReadSample}}
+\index{hReadSample@{hReadSample}!SourceReaderContext@{SourceReaderContext}}
+\doxysubsubsection{\texorpdfstring{hReadSample}{hReadSample}}
+{\footnotesize\ttfamily HANDLE Source\+Reader\+Context\+::h\+Read\+Sample}
+
+
+
+Definition at line \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source_l00156}{156}} of file \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source}{Week13-\/3-\/\+MFStream.\+cpp}}.
+
+\mbox{\Hypertarget{struct_source_reader_context_ab82a19a93fca575f55845b605a2f959d}\label{struct_source_reader_context_ab82a19a93fca575f55845b605a2f959d}} 
+\index{SourceReaderContext@{SourceReaderContext}!sample@{sample}}
+\index{sample@{sample}!SourceReaderContext@{SourceReaderContext}}
+\doxysubsubsection{\texorpdfstring{sample}{sample}}
+{\footnotesize\ttfamily Com\+Ptr$<$IMFSample$>$ Source\+Reader\+Context\+::sample}
+
+
+
+Definition at line \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source_l00160}{160}} of file \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source}{Week13-\/3-\/\+MFStream.\+cpp}}.
+
+\mbox{\Hypertarget{struct_source_reader_context_ac60667f793769f8005c364fde74802fb}\label{struct_source_reader_context_ac60667f793769f8005c364fde74802fb}} 
+\index{SourceReaderContext@{SourceReaderContext}!status@{status}}
+\index{status@{status}!SourceReaderContext@{SourceReaderContext}}
+\doxysubsubsection{\texorpdfstring{status}{status}}
+{\footnotesize\ttfamily HRESULT Source\+Reader\+Context\+::status}
+
+
+
+Definition at line \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source_l00158}{158}} of file \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source}{Week13-\/3-\/\+MFStream.\+cpp}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Week13/\mbox{\hyperlink{_week13-3-_m_f_stream_8cpp}{Week13-\/3-\/\+MFStream.\+cpp}}\end{DoxyCompactItemize}

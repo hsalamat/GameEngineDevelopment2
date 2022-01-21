@@ -1,0 +1,394 @@
+\hypertarget{group__graphics}{}\doxysection{Graphics module}
+\label{group__graphics}\index{Graphics module@{Graphics module}}
+
+
+2D graphics module\+: sprites, text, shapes, ...  
+
+
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesf_1_1_glsl}{sf\+::\+Glsl}}
+\begin{DoxyCompactList}\small\item\em Namespace with GLSL types. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{structsf_1_1_blend_mode}{sf\+::\+Blend\+Mode}}
+\begin{DoxyCompactList}\small\item\em Blending modes for drawing. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_circle_shape}{sf\+::\+Circle\+Shape}}
+\begin{DoxyCompactList}\small\item\em Specialized shape representing a circle. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_color}{sf\+::\+Color}}
+\begin{DoxyCompactList}\small\item\em Utility class for manipulating RGBA colors. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_convex_shape}{sf\+::\+Convex\+Shape}}
+\begin{DoxyCompactList}\small\item\em Specialized shape representing a convex polygon. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_drawable}{sf\+::\+Drawable}}
+\begin{DoxyCompactList}\small\item\em Abstract base class for objects that can be drawn to a render target. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_font}{sf\+::\+Font}}
+\begin{DoxyCompactList}\small\item\em Class for loading and manipulating character fonts. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_glyph}{sf\+::\+Glyph}}
+\begin{DoxyCompactList}\small\item\em Structure describing a glyph. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_image}{sf\+::\+Image}}
+\begin{DoxyCompactList}\small\item\em Class for loading, manipulating and saving images. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_rect}{sf\+::\+Rect$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Utility class for manipulating 2D axis aligned rectangles. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_rectangle_shape}{sf\+::\+Rectangle\+Shape}}
+\begin{DoxyCompactList}\small\item\em Specialized shape representing a rectangle. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_render_states}{sf\+::\+Render\+States}}
+\begin{DoxyCompactList}\small\item\em Define the states used for drawing to a \mbox{\hyperlink{classsf_1_1_render_target}{Render\+Target}}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_render_target}{sf\+::\+Render\+Target}}
+\begin{DoxyCompactList}\small\item\em Base class for all render targets (window, texture, ...) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_render_texture}{sf\+::\+Render\+Texture}}
+\begin{DoxyCompactList}\small\item\em Target for off-\/screen 2D rendering into a texture. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_render_window}{sf\+::\+Render\+Window}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsf_1_1_window}{Window}} that can serve as a target for 2D drawing. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_shader}{sf\+::\+Shader}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsf_1_1_shader}{Shader}} class (vertex, geometry and fragment) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_shape}{sf\+::\+Shape}}
+\begin{DoxyCompactList}\small\item\em Base class for textured shapes with outline. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_sprite}{sf\+::\+Sprite}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsf_1_1_drawable}{Drawable}} representation of a texture, with its own transformations, color, etc. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_text}{sf\+::\+Text}}
+\begin{DoxyCompactList}\small\item\em Graphical text that can be drawn to a render target. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsf_1_1_image}{Image}} living on the graphics card that can be used for drawing. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_transform}{sf\+::\+Transform}}
+\begin{DoxyCompactList}\small\item\em Define a 3x3 transform matrix. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_transformable}{sf\+::\+Transformable}}
+\begin{DoxyCompactList}\small\item\em Decomposed transform defined by a position, a rotation and a scale. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_vertex}{sf\+::\+Vertex}}
+\begin{DoxyCompactList}\small\item\em Define a point with color and texture coordinates. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_vertex_array}{sf\+::\+Vertex\+Array}}
+\begin{DoxyCompactList}\small\item\em Define a set of one or more 2D primitives. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_vertex_buffer}{sf\+::\+Vertex\+Buffer}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsf_1_1_vertex}{Vertex}} buffer storage for one or more 2D primitives. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_view}{sf\+::\+View}}
+\begin{DoxyCompactList}\small\item\em 2D camera that defines what region is shown on screen \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__graphics_ga5ee56ac1339984909610713096283b1b}{sf\+::\+Primitive\+Type}} \{ \newline
+\mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1ba85cf551ca780a29ec5df3ee9fc282c22}{sf\+::\+Points}}
+, \mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1ba2017328f9eda40a9aade94d5c45d0e8c}{sf\+::\+Lines}}
+, \mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1baa58596ca614193671ca68cc213d8ecf1}{sf\+::\+Line\+Strip}}
+, \mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1babdd5e75b8944a886fdaa30e5bb3adc0d}{sf\+::\+Triangles}}
+, \newline
+\mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1bae9b9616d82cb0d0dd4fe0c9e14f7a22a}{sf\+::\+Triangle\+Strip}}
+, \mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1ba00348a97a2ba25f9d9325d5b9933abc3}{sf\+::\+Triangle\+Fan}}
+, \mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1bac968add05250b2cf59350dc68043a3c0}{sf\+::\+Quads}}
+, \mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1bafc070260a0222df367922706bbeb905a}{sf\+::\+Lines\+Strip}} = Line\+Strip
+, \newline
+\mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1baf5ef0ffa5d13f9ea3e0eb18a2a8da7fb}{sf\+::\+Triangles\+Strip}} = Triangle\+Strip
+, \mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1ba698ecd8ec938b4132412b8da44a1a6be}{sf\+::\+Triangles\+Fan}} = Triangle\+Fan
+, \mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1ba85cf551ca780a29ec5df3ee9fc282c22}{sf\+::\+Points}}
+, \mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1ba2017328f9eda40a9aade94d5c45d0e8c}{sf\+::\+Lines}}
+, \newline
+\mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1baa58596ca614193671ca68cc213d8ecf1}{sf\+::\+Line\+Strip}}
+, \mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1babdd5e75b8944a886fdaa30e5bb3adc0d}{sf\+::\+Triangles}}
+, \mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1bae9b9616d82cb0d0dd4fe0c9e14f7a22a}{sf\+::\+Triangle\+Strip}}
+, \mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1ba00348a97a2ba25f9d9325d5b9933abc3}{sf\+::\+Triangle\+Fan}}
+, \newline
+\mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1bac968add05250b2cf59350dc68043a3c0}{sf\+::\+Quads}}
+, \mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1bafc070260a0222df367922706bbeb905a}{sf\+::\+Lines\+Strip}} = Line\+Strip
+, \mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1baf5ef0ffa5d13f9ea3e0eb18a2a8da7fb}{sf\+::\+Triangles\+Strip}} = Triangle\+Strip
+, \mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1ba698ecd8ec938b4132412b8da44a1a6be}{sf\+::\+Triangles\+Fan}} = Triangle\+Fan
+ \}
+\begin{DoxyCompactList}\small\item\em Types of primitives that a \mbox{\hyperlink{classsf_1_1_vertex_array}{sf\+::\+Vertex\+Array}} can render. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__graphics_ga5ee56ac1339984909610713096283b1b}{sf\+::\+Primitive\+Type}} \{ \newline
+\mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1ba85cf551ca780a29ec5df3ee9fc282c22}{sf\+::\+Points}}
+, \mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1ba2017328f9eda40a9aade94d5c45d0e8c}{sf\+::\+Lines}}
+, \mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1baa58596ca614193671ca68cc213d8ecf1}{sf\+::\+Line\+Strip}}
+, \mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1babdd5e75b8944a886fdaa30e5bb3adc0d}{sf\+::\+Triangles}}
+, \newline
+\mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1bae9b9616d82cb0d0dd4fe0c9e14f7a22a}{sf\+::\+Triangle\+Strip}}
+, \mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1ba00348a97a2ba25f9d9325d5b9933abc3}{sf\+::\+Triangle\+Fan}}
+, \mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1bac968add05250b2cf59350dc68043a3c0}{sf\+::\+Quads}}
+, \mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1bafc070260a0222df367922706bbeb905a}{sf\+::\+Lines\+Strip}} = Line\+Strip
+, \newline
+\mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1baf5ef0ffa5d13f9ea3e0eb18a2a8da7fb}{sf\+::\+Triangles\+Strip}} = Triangle\+Strip
+, \mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1ba698ecd8ec938b4132412b8da44a1a6be}{sf\+::\+Triangles\+Fan}} = Triangle\+Fan
+, \mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1ba85cf551ca780a29ec5df3ee9fc282c22}{sf\+::\+Points}}
+, \mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1ba2017328f9eda40a9aade94d5c45d0e8c}{sf\+::\+Lines}}
+, \newline
+\mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1baa58596ca614193671ca68cc213d8ecf1}{sf\+::\+Line\+Strip}}
+, \mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1babdd5e75b8944a886fdaa30e5bb3adc0d}{sf\+::\+Triangles}}
+, \mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1bae9b9616d82cb0d0dd4fe0c9e14f7a22a}{sf\+::\+Triangle\+Strip}}
+, \mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1ba00348a97a2ba25f9d9325d5b9933abc3}{sf\+::\+Triangle\+Fan}}
+, \newline
+\mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1bac968add05250b2cf59350dc68043a3c0}{sf\+::\+Quads}}
+, \mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1bafc070260a0222df367922706bbeb905a}{sf\+::\+Lines\+Strip}} = Line\+Strip
+, \mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1baf5ef0ffa5d13f9ea3e0eb18a2a8da7fb}{sf\+::\+Triangles\+Strip}} = Triangle\+Strip
+, \mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1ba698ecd8ec938b4132412b8da44a1a6be}{sf\+::\+Triangles\+Fan}} = Triangle\+Fan
+ \}
+\begin{DoxyCompactList}\small\item\em Types of primitives that a \mbox{\hyperlink{classsf_1_1_vertex_array}{sf\+::\+Vertex\+Array}} can render. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+2D graphics module\+: sprites, text, shapes, ... 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group__graphics_ga5ee56ac1339984909610713096283b1b}\label{group__graphics_ga5ee56ac1339984909610713096283b1b}} 
+\index{Graphics module@{Graphics module}!PrimitiveType@{PrimitiveType}}
+\index{PrimitiveType@{PrimitiveType}!Graphics module@{Graphics module}}
+\doxysubsubsection{\texorpdfstring{PrimitiveType}{PrimitiveType}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__graphics_ga5ee56ac1339984909610713096283b1b}{sf\+::\+Primitive\+Type}}}
+
+
+
+Types of primitives that a \mbox{\hyperlink{classsf_1_1_vertex_array}{sf\+::\+Vertex\+Array}} can render. 
+
+Points and lines have no area, therefore their thickness will always be 1 pixel, regardless the current transform and view. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Points@{Points}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!Points@{Points}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1ba85cf551ca780a29ec5df3ee9fc282c22}\label{group__graphics_gga5ee56ac1339984909610713096283b1ba85cf551ca780a29ec5df3ee9fc282c22}} 
+Points&List of individual points. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Lines@{Lines}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!Lines@{Lines}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1ba2017328f9eda40a9aade94d5c45d0e8c}\label{group__graphics_gga5ee56ac1339984909610713096283b1ba2017328f9eda40a9aade94d5c45d0e8c}} 
+Lines&List of individual lines. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LineStrip@{LineStrip}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!LineStrip@{LineStrip}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1baa58596ca614193671ca68cc213d8ecf1}\label{group__graphics_gga5ee56ac1339984909610713096283b1baa58596ca614193671ca68cc213d8ecf1}} 
+Line\+Strip&List of connected lines, a point uses the previous point to form a line. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Triangles@{Triangles}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!Triangles@{Triangles}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1babdd5e75b8944a886fdaa30e5bb3adc0d}\label{group__graphics_gga5ee56ac1339984909610713096283b1babdd5e75b8944a886fdaa30e5bb3adc0d}} 
+Triangles&List of individual triangles. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TriangleStrip@{TriangleStrip}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!TriangleStrip@{TriangleStrip}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1bae9b9616d82cb0d0dd4fe0c9e14f7a22a}\label{group__graphics_gga5ee56ac1339984909610713096283b1bae9b9616d82cb0d0dd4fe0c9e14f7a22a}} 
+Triangle\+Strip&List of connected triangles, a point uses the two previous points to form a triangle. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TriangleFan@{TriangleFan}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!TriangleFan@{TriangleFan}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1ba00348a97a2ba25f9d9325d5b9933abc3}\label{group__graphics_gga5ee56ac1339984909610713096283b1ba00348a97a2ba25f9d9325d5b9933abc3}} 
+Triangle\+Fan&List of connected triangles, a point uses the common center and the previous point to form a triangle. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Quads@{Quads}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!Quads@{Quads}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1bac968add05250b2cf59350dc68043a3c0}\label{group__graphics_gga5ee56ac1339984909610713096283b1bac968add05250b2cf59350dc68043a3c0}} 
+Quads&List of individual quads (deprecated, don\textquotesingle{}t work with Open\+GL ES) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LinesStrip@{LinesStrip}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!LinesStrip@{LinesStrip}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1bafc070260a0222df367922706bbeb905a}\label{group__graphics_gga5ee56ac1339984909610713096283b1bafc070260a0222df367922706bbeb905a}} 
+Lines\+Strip&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000001}{Deprecated}}]Use Line\+Strip instead \end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000024}{Deprecated}}]Use Line\+Strip instead \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TrianglesStrip@{TrianglesStrip}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!TrianglesStrip@{TrianglesStrip}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1baf5ef0ffa5d13f9ea3e0eb18a2a8da7fb}\label{group__graphics_gga5ee56ac1339984909610713096283b1baf5ef0ffa5d13f9ea3e0eb18a2a8da7fb}} 
+Triangles\+Strip&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000002}{Deprecated}}]Use Triangle\+Strip instead \end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000025}{Deprecated}}]Use Triangle\+Strip instead \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TrianglesFan@{TrianglesFan}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!TrianglesFan@{TrianglesFan}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1ba698ecd8ec938b4132412b8da44a1a6be}\label{group__graphics_gga5ee56ac1339984909610713096283b1ba698ecd8ec938b4132412b8da44a1a6be}} 
+Triangles\+Fan&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000003}{Deprecated}}]Use Triangle\+Fan instead \end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000026}{Deprecated}}]Use Triangle\+Fan instead \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Points@{Points}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!Points@{Points}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1ba85cf551ca780a29ec5df3ee9fc282c22}\label{group__graphics_gga5ee56ac1339984909610713096283b1ba85cf551ca780a29ec5df3ee9fc282c22}} 
+Points&List of individual points. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Lines@{Lines}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!Lines@{Lines}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1ba2017328f9eda40a9aade94d5c45d0e8c}\label{group__graphics_gga5ee56ac1339984909610713096283b1ba2017328f9eda40a9aade94d5c45d0e8c}} 
+Lines&List of individual lines. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LineStrip@{LineStrip}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!LineStrip@{LineStrip}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1baa58596ca614193671ca68cc213d8ecf1}\label{group__graphics_gga5ee56ac1339984909610713096283b1baa58596ca614193671ca68cc213d8ecf1}} 
+Line\+Strip&List of connected lines, a point uses the previous point to form a line. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Triangles@{Triangles}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!Triangles@{Triangles}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1babdd5e75b8944a886fdaa30e5bb3adc0d}\label{group__graphics_gga5ee56ac1339984909610713096283b1babdd5e75b8944a886fdaa30e5bb3adc0d}} 
+Triangles&List of individual triangles. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TriangleStrip@{TriangleStrip}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!TriangleStrip@{TriangleStrip}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1bae9b9616d82cb0d0dd4fe0c9e14f7a22a}\label{group__graphics_gga5ee56ac1339984909610713096283b1bae9b9616d82cb0d0dd4fe0c9e14f7a22a}} 
+Triangle\+Strip&List of connected triangles, a point uses the two previous points to form a triangle. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TriangleFan@{TriangleFan}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!TriangleFan@{TriangleFan}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1ba00348a97a2ba25f9d9325d5b9933abc3}\label{group__graphics_gga5ee56ac1339984909610713096283b1ba00348a97a2ba25f9d9325d5b9933abc3}} 
+Triangle\+Fan&List of connected triangles, a point uses the common center and the previous point to form a triangle. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Quads@{Quads}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!Quads@{Quads}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1bac968add05250b2cf59350dc68043a3c0}\label{group__graphics_gga5ee56ac1339984909610713096283b1bac968add05250b2cf59350dc68043a3c0}} 
+Quads&List of individual quads (deprecated, don\textquotesingle{}t work with Open\+GL ES) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LinesStrip@{LinesStrip}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!LinesStrip@{LinesStrip}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1bafc070260a0222df367922706bbeb905a}\label{group__graphics_gga5ee56ac1339984909610713096283b1bafc070260a0222df367922706bbeb905a}} 
+Lines\+Strip&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000001}{Deprecated}}]Use Line\+Strip instead \end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000024}{Deprecated}}]Use Line\+Strip instead \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TrianglesStrip@{TrianglesStrip}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!TrianglesStrip@{TrianglesStrip}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1baf5ef0ffa5d13f9ea3e0eb18a2a8da7fb}\label{group__graphics_gga5ee56ac1339984909610713096283b1baf5ef0ffa5d13f9ea3e0eb18a2a8da7fb}} 
+Triangles\+Strip&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000002}{Deprecated}}]Use Triangle\+Strip instead \end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000025}{Deprecated}}]Use Triangle\+Strip instead \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TrianglesFan@{TrianglesFan}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!TrianglesFan@{TrianglesFan}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1ba698ecd8ec938b4132412b8da44a1a6be}\label{group__graphics_gga5ee56ac1339984909610713096283b1ba698ecd8ec938b4132412b8da44a1a6be}} 
+Triangles\+Fan&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000003}{Deprecated}}]Use Triangle\+Fan instead \end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000026}{Deprecated}}]Use Triangle\+Fan instead \end{DoxyRefDesc}
+\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_primitive_type_8hpp_source_l00039}{39}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_primitive_type_8hpp_source}{Primitive\+Type.\+hpp}}.
+
+\mbox{\Hypertarget{group__graphics_ga5ee56ac1339984909610713096283b1b}\label{group__graphics_ga5ee56ac1339984909610713096283b1b}} 
+\index{Graphics module@{Graphics module}!PrimitiveType@{PrimitiveType}}
+\index{PrimitiveType@{PrimitiveType}!Graphics module@{Graphics module}}
+\doxysubsubsection{\texorpdfstring{PrimitiveType}{PrimitiveType}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__graphics_ga5ee56ac1339984909610713096283b1b}{sf\+::\+Primitive\+Type}}}
+
+
+
+Types of primitives that a \mbox{\hyperlink{classsf_1_1_vertex_array}{sf\+::\+Vertex\+Array}} can render. 
+
+Points and lines have no area, therefore their thickness will always be 1 pixel, regardless the current transform and view. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Points@{Points}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!Points@{Points}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1ba85cf551ca780a29ec5df3ee9fc282c22}\label{group__graphics_gga5ee56ac1339984909610713096283b1ba85cf551ca780a29ec5df3ee9fc282c22}} 
+Points&List of individual points. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Lines@{Lines}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!Lines@{Lines}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1ba2017328f9eda40a9aade94d5c45d0e8c}\label{group__graphics_gga5ee56ac1339984909610713096283b1ba2017328f9eda40a9aade94d5c45d0e8c}} 
+Lines&List of individual lines. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LineStrip@{LineStrip}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!LineStrip@{LineStrip}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1baa58596ca614193671ca68cc213d8ecf1}\label{group__graphics_gga5ee56ac1339984909610713096283b1baa58596ca614193671ca68cc213d8ecf1}} 
+Line\+Strip&List of connected lines, a point uses the previous point to form a line. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Triangles@{Triangles}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!Triangles@{Triangles}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1babdd5e75b8944a886fdaa30e5bb3adc0d}\label{group__graphics_gga5ee56ac1339984909610713096283b1babdd5e75b8944a886fdaa30e5bb3adc0d}} 
+Triangles&List of individual triangles. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TriangleStrip@{TriangleStrip}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!TriangleStrip@{TriangleStrip}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1bae9b9616d82cb0d0dd4fe0c9e14f7a22a}\label{group__graphics_gga5ee56ac1339984909610713096283b1bae9b9616d82cb0d0dd4fe0c9e14f7a22a}} 
+Triangle\+Strip&List of connected triangles, a point uses the two previous points to form a triangle. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TriangleFan@{TriangleFan}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!TriangleFan@{TriangleFan}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1ba00348a97a2ba25f9d9325d5b9933abc3}\label{group__graphics_gga5ee56ac1339984909610713096283b1ba00348a97a2ba25f9d9325d5b9933abc3}} 
+Triangle\+Fan&List of connected triangles, a point uses the common center and the previous point to form a triangle. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Quads@{Quads}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!Quads@{Quads}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1bac968add05250b2cf59350dc68043a3c0}\label{group__graphics_gga5ee56ac1339984909610713096283b1bac968add05250b2cf59350dc68043a3c0}} 
+Quads&List of individual quads (deprecated, don\textquotesingle{}t work with Open\+GL ES) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LinesStrip@{LinesStrip}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!LinesStrip@{LinesStrip}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1bafc070260a0222df367922706bbeb905a}\label{group__graphics_gga5ee56ac1339984909610713096283b1bafc070260a0222df367922706bbeb905a}} 
+Lines\+Strip&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000001}{Deprecated}}]Use Line\+Strip instead \end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000024}{Deprecated}}]Use Line\+Strip instead \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TrianglesStrip@{TrianglesStrip}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!TrianglesStrip@{TrianglesStrip}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1baf5ef0ffa5d13f9ea3e0eb18a2a8da7fb}\label{group__graphics_gga5ee56ac1339984909610713096283b1baf5ef0ffa5d13f9ea3e0eb18a2a8da7fb}} 
+Triangles\+Strip&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000002}{Deprecated}}]Use Triangle\+Strip instead \end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000025}{Deprecated}}]Use Triangle\+Strip instead \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TrianglesFan@{TrianglesFan}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!TrianglesFan@{TrianglesFan}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1ba698ecd8ec938b4132412b8da44a1a6be}\label{group__graphics_gga5ee56ac1339984909610713096283b1ba698ecd8ec938b4132412b8da44a1a6be}} 
+Triangles\+Fan&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000003}{Deprecated}}]Use Triangle\+Fan instead \end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000026}{Deprecated}}]Use Triangle\+Fan instead \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Points@{Points}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!Points@{Points}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1ba85cf551ca780a29ec5df3ee9fc282c22}\label{group__graphics_gga5ee56ac1339984909610713096283b1ba85cf551ca780a29ec5df3ee9fc282c22}} 
+Points&List of individual points. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Lines@{Lines}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!Lines@{Lines}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1ba2017328f9eda40a9aade94d5c45d0e8c}\label{group__graphics_gga5ee56ac1339984909610713096283b1ba2017328f9eda40a9aade94d5c45d0e8c}} 
+Lines&List of individual lines. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LineStrip@{LineStrip}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!LineStrip@{LineStrip}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1baa58596ca614193671ca68cc213d8ecf1}\label{group__graphics_gga5ee56ac1339984909610713096283b1baa58596ca614193671ca68cc213d8ecf1}} 
+Line\+Strip&List of connected lines, a point uses the previous point to form a line. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Triangles@{Triangles}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!Triangles@{Triangles}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1babdd5e75b8944a886fdaa30e5bb3adc0d}\label{group__graphics_gga5ee56ac1339984909610713096283b1babdd5e75b8944a886fdaa30e5bb3adc0d}} 
+Triangles&List of individual triangles. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TriangleStrip@{TriangleStrip}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!TriangleStrip@{TriangleStrip}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1bae9b9616d82cb0d0dd4fe0c9e14f7a22a}\label{group__graphics_gga5ee56ac1339984909610713096283b1bae9b9616d82cb0d0dd4fe0c9e14f7a22a}} 
+Triangle\+Strip&List of connected triangles, a point uses the two previous points to form a triangle. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TriangleFan@{TriangleFan}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!TriangleFan@{TriangleFan}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1ba00348a97a2ba25f9d9325d5b9933abc3}\label{group__graphics_gga5ee56ac1339984909610713096283b1ba00348a97a2ba25f9d9325d5b9933abc3}} 
+Triangle\+Fan&List of connected triangles, a point uses the common center and the previous point to form a triangle. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Quads@{Quads}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!Quads@{Quads}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1bac968add05250b2cf59350dc68043a3c0}\label{group__graphics_gga5ee56ac1339984909610713096283b1bac968add05250b2cf59350dc68043a3c0}} 
+Quads&List of individual quads (deprecated, don\textquotesingle{}t work with Open\+GL ES) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LinesStrip@{LinesStrip}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!LinesStrip@{LinesStrip}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1bafc070260a0222df367922706bbeb905a}\label{group__graphics_gga5ee56ac1339984909610713096283b1bafc070260a0222df367922706bbeb905a}} 
+Lines\+Strip&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000001}{Deprecated}}]Use Line\+Strip instead \end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000024}{Deprecated}}]Use Line\+Strip instead \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TrianglesStrip@{TrianglesStrip}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!TrianglesStrip@{TrianglesStrip}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1baf5ef0ffa5d13f9ea3e0eb18a2a8da7fb}\label{group__graphics_gga5ee56ac1339984909610713096283b1baf5ef0ffa5d13f9ea3e0eb18a2a8da7fb}} 
+Triangles\+Strip&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000002}{Deprecated}}]Use Triangle\+Strip instead \end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000025}{Deprecated}}]Use Triangle\+Strip instead \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TrianglesFan@{TrianglesFan}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!TrianglesFan@{TrianglesFan}}}\mbox{\Hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1ba698ecd8ec938b4132412b8da44a1a6be}\label{group__graphics_gga5ee56ac1339984909610713096283b1ba698ecd8ec938b4132412b8da44a1a6be}} 
+Triangles\+Fan&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000003}{Deprecated}}]Use Triangle\+Fan instead \end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000026}{Deprecated}}]Use Triangle\+Fan instead \end{DoxyRefDesc}
+\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_primitive_type_8hpp_source_l00039}{39}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_primitive_type_8hpp_source}{Primitive\+Type.\+hpp}}.
+

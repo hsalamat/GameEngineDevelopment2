@@ -1,0 +1,66 @@
+\hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source}{}\doxysection{Convex\+Shape.\+hpp}
+\label{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source}\index{Week14/SFML-\/2.5.1/include/SFML/Graphics/ConvexShape.hpp@{Week14/SFML-\/2.5.1/include/SFML/Graphics/ConvexShape.hpp}}
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00002}00002 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00003}00003 \textcolor{comment}{// SFML -\/ Simple and Fast Multimedia Library}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00004}00004 \textcolor{comment}{// Copyright (C) 2007-\/2018 Laurent Gomila (laurent@sfml-\/dev.org)}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00005}00005 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00006}00006 \textcolor{comment}{// This software is provided 'as-\/is', without any express or implied warranty.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00007}00007 \textcolor{comment}{// In no event will the authors be held liable for any damages arising from the use of this software.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00008}00008 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00009}00009 \textcolor{comment}{// Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00010}00010 \textcolor{comment}{// including commercial applications, and to alter it and redistribute it freely,}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00011}00011 \textcolor{comment}{// subject to the following restrictions:}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00012}00012 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00013}00013 \textcolor{comment}{// 1. The origin of this software must not be misrepresented;}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00014}00014 \textcolor{comment}{//    you must not claim that you wrote the original software.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00015}00015 \textcolor{comment}{//    If you use this software in a product, an acknowledgment}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00016}00016 \textcolor{comment}{//    in the product documentation would be appreciated but is not required.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00017}00017 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00018}00018 \textcolor{comment}{// 2. Altered source versions must be plainly marked as such,}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00019}00019 \textcolor{comment}{//    and must not be misrepresented as being the original software.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00020}00020 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00021}00021 \textcolor{comment}{// 3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00022}00022 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00024}00024 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00025}00025 \textcolor{preprocessor}{\#ifndef SFML\_CONVEXSHAPE\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00026}00026 \textcolor{preprocessor}{\#define SFML\_CONVEXSHAPE\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00029}00029 \textcolor{comment}{// Headers}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00031}00031 \textcolor{comment}{}\textcolor{preprocessor}{\#include <SFML/Graphics/Export.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00032}00032 \textcolor{preprocessor}{\#include <SFML/Graphics/Shape.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00033}00033 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00036}00036 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacesf}{sf}}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00037}00037 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00042}00042 \textcolor{keyword}{class }\mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_export_8hpp_ab84c9f1035e146917de3bc0f98d72b35}{SFML\_GRAPHICS\_API}} ConvexShape : \textcolor{keyword}{public} Shape}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00043}00043 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00044}00044 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00052}\mbox{\hyperlink{classsf_1_1_convex_shape_af9981b8909569b381b3fccf32fc69856}{00052}}     \textcolor{keyword}{explicit} \mbox{\hyperlink{classsf_1_1_convex_shape_af9981b8909569b381b3fccf32fc69856}{ConvexShape}}(std::size\_t pointCount = 0);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00064}\mbox{\hyperlink{classsf_1_1_convex_shape_a56e6e79ade6dd651cc1a0e39cb68deae}{00064}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_convex_shape_a56e6e79ade6dd651cc1a0e39cb68deae}{setPointCount}}(std::size\_t count);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00074}\mbox{\hyperlink{classsf_1_1_convex_shape_a0c54b8d48fe4e13414f6e667dbfc22a3}{00074}}     \textcolor{keyword}{virtual} std::size\_t \mbox{\hyperlink{classsf_1_1_convex_shape_a0c54b8d48fe4e13414f6e667dbfc22a3}{getPointCount}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00091}\mbox{\hyperlink{classsf_1_1_convex_shape_a5929e0ab0ba5ca1f102b40c234a8e92d}{00091}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_convex_shape_a5929e0ab0ba5ca1f102b40c234a8e92d}{setPoint}}(std::size\_t index, \textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_vector2}{Vector2f}}\& point);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00108}\mbox{\hyperlink{classsf_1_1_convex_shape_a72a97bc426d8daf4d682a20fcb7f3fe7}{00108}}     \textcolor{keyword}{virtual} \mbox{\hyperlink{classsf_1_1_vector2}{Vector2f}} \mbox{\hyperlink{classsf_1_1_convex_shape_a72a97bc426d8daf4d682a20fcb7f3fe7}{getPoint}}(std::size\_t index) \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00109}00109 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00110}00110 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00111}00111 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00113}00113     \textcolor{comment}{// Member data}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00115}00115 \textcolor{comment}{}    std::vector<Vector2f> m\_points; }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00116}00116 \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00117}00117 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00118}00118 \} \textcolor{comment}{// namespace sf}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00119}00119 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00120}00120 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00121}00121 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// SFML\_CONVEXSHAPE\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00122}00122 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_convex_shape_8hpp_source_l00123}00123 }
+
+\end{DoxyCode}

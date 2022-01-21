@@ -1,0 +1,182 @@
+\hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source}{}\doxysection{Event.\+hpp}
+\label{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source}\index{Week14/SFML-\/2.5.1/include/SFML/Window/Event.hpp@{Week14/SFML-\/2.5.1/include/SFML/Window/Event.hpp}}
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00002}00002 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00003}00003 \textcolor{comment}{// SFML -\/ Simple and Fast Multimedia Library}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00004}00004 \textcolor{comment}{// Copyright (C) 2007-\/2018 Laurent Gomila (laurent@sfml-\/dev.org)}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00005}00005 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00006}00006 \textcolor{comment}{// This software is provided 'as-\/is', without any express or implied warranty.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00007}00007 \textcolor{comment}{// In no event will the authors be held liable for any damages arising from the use of this software.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00008}00008 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00009}00009 \textcolor{comment}{// Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00010}00010 \textcolor{comment}{// including commercial applications, and to alter it and redistribute it freely,}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00011}00011 \textcolor{comment}{// subject to the following restrictions:}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00012}00012 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00013}00013 \textcolor{comment}{// 1. The origin of this software must not be misrepresented;}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00014}00014 \textcolor{comment}{//    you must not claim that you wrote the original software.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00015}00015 \textcolor{comment}{//    If you use this software in a product, an acknowledgment}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00016}00016 \textcolor{comment}{//    in the product documentation would be appreciated but is not required.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00017}00017 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00018}00018 \textcolor{comment}{// 2. Altered source versions must be plainly marked as such,}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00019}00019 \textcolor{comment}{//    and must not be misrepresented as being the original software.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00020}00020 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00021}00021 \textcolor{comment}{// 3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00022}00022 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00024}00024 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00025}00025 \textcolor{preprocessor}{\#ifndef SFML\_EVENT\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00026}00026 \textcolor{preprocessor}{\#define SFML\_EVENT\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00029}00029 \textcolor{comment}{// Headers}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00031}00031 \textcolor{comment}{}\textcolor{preprocessor}{\#include <SFML/Config.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00032}00032 \textcolor{preprocessor}{\#include <SFML/Window/Joystick.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00033}00033 \textcolor{preprocessor}{\#include <SFML/Window/Keyboard.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00034}00034 \textcolor{preprocessor}{\#include <SFML/Window/Mouse.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00035}00035 \textcolor{preprocessor}{\#include <SFML/Window/Sensor.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00038}00038 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacesf}{sf}}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00039}00039 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00044}00044 \textcolor{keyword}{class }Event}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00045}00045 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00046}00046 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00052}00052     \textcolor{keyword}{struct }SizeEvent}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00053}00053     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00054}00054         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structsf_1_1_event_1_1_size_event_a20ea1b78c9bb1604432f8f0067bbfd94}{width}};  }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00055}00055         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structsf_1_1_event_1_1_size_event_af0f76a599d5f48189cb8d78d4e5facdb}{height}}; }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00056}00056     \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00062}00062     \textcolor{keyword}{struct }KeyEvent}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00063}00063     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00064}00064         \mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142}{Keyboard::Key}} \mbox{\hyperlink{structsf_1_1_event_1_1_key_event_a2879fdab8a68cb1c6ecc45730a2d0e61}{code}};    }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00065}00065         \textcolor{keywordtype}{bool}          \mbox{\hyperlink{structsf_1_1_event_1_1_key_event_a915a483317de67d995188a855701fbd7}{alt}};     }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00066}00066         \textcolor{keywordtype}{bool}          \mbox{\hyperlink{structsf_1_1_event_1_1_key_event_a9255861c2f88501d80ad6b44a310b62f}{control}}; }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00067}00067         \textcolor{keywordtype}{bool}          \mbox{\hyperlink{structsf_1_1_event_1_1_key_event_a776af1a3ca79abeeec18ebf1c0065aa9}{shift}};   }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00068}00068         \textcolor{keywordtype}{bool}          \mbox{\hyperlink{structsf_1_1_event_1_1_key_event_ac0557f7edc2a608ec65175fdd843afc5}{system}};  }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00069}00069     \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00075}00075     \textcolor{keyword}{struct }TextEvent}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00076}00076     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00077}00077         \mbox{\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} \mbox{\hyperlink{structsf_1_1_event_1_1_text_event_a00d96b1a5328a1d7cbc276e161befcb0}{unicode}}; }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00078}00078     \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00084}00084     \textcolor{keyword}{struct }MouseMoveEvent}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00085}00085     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00086}00086         \textcolor{keywordtype}{int} \mbox{\hyperlink{structsf_1_1_event_1_1_mouse_move_event_aa3a23809afb905cbb52c66d8512e21fd}{x}}; }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00087}00087         \textcolor{keywordtype}{int} \mbox{\hyperlink{structsf_1_1_event_1_1_mouse_move_event_a86d78a2fba5b3abda16ca059f2392ad4}{y}}; }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00088}00088     \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00095}00095     \textcolor{keyword}{struct }MouseButtonEvent}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00096}00096     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00097}00097         \mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90}{Mouse::Button}} \mbox{\hyperlink{structsf_1_1_event_1_1_mouse_button_event_a5f53725aa7b647705486eeb95f723024}{button}}; }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00098}00098         \textcolor{keywordtype}{int}           \mbox{\hyperlink{structsf_1_1_event_1_1_mouse_button_event_a49b937b311729174950787781aafcdc7}{x}};      }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00099}00099         \textcolor{keywordtype}{int}           \mbox{\hyperlink{structsf_1_1_event_1_1_mouse_button_event_aae4735071868d4411d1782bf67619d64}{y}};      }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00100}00100     \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00101}00101 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00109}00109     \textcolor{keyword}{struct }MouseWheelEvent}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00110}00110     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00111}00111         \textcolor{keywordtype}{int} \mbox{\hyperlink{structsf_1_1_event_1_1_mouse_wheel_event_a4d02b524b5530c7863e7b0f211fa522c}{delta}}; }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00112}00112         \textcolor{keywordtype}{int} \mbox{\hyperlink{structsf_1_1_event_1_1_mouse_wheel_event_a3079803f836ed7208f43b60332ab053e}{x}};     }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00113}00113         \textcolor{keywordtype}{int} \mbox{\hyperlink{structsf_1_1_event_1_1_mouse_wheel_event_a7ea1b8d8c28e2f530c6e9e6d9a5d32d3}{y}};     }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00114}00114     \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00115}00115 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00120}00120     \textcolor{keyword}{struct }MouseWheelScrollEvent}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00121}00121     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00122}00122         \mbox{\hyperlink{classsf_1_1_mouse_a60dd479a43f26f200e7957aa11803ff4}{Mouse::Wheel}} \mbox{\hyperlink{structsf_1_1_event_1_1_mouse_wheel_scroll_event_a1d82dccecc46968d517b2fc66639dd74}{wheel}}; }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00123}00123         \textcolor{keywordtype}{float}        \mbox{\hyperlink{structsf_1_1_event_1_1_mouse_wheel_scroll_event_ac45c164997a594d424071e74b53b5817}{delta}}; }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00124}00124         \textcolor{keywordtype}{int}          \mbox{\hyperlink{structsf_1_1_event_1_1_mouse_wheel_scroll_event_a3d17cae0568d18083f879655abdc8ae4}{x}};     }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00125}00125         \textcolor{keywordtype}{int}          \mbox{\hyperlink{structsf_1_1_event_1_1_mouse_wheel_scroll_event_aa38bf23704162024eed19917eef3853c}{y}};     }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00126}00126     \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00127}00127 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00133}00133     \textcolor{keyword}{struct }JoystickConnectEvent}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00134}00134     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00135}00135         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structsf_1_1_event_1_1_joystick_connect_event_a08e58e8559d3e4fe4654855fec79194b}{joystickId}}; }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00136}00136     \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00137}00137 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00142}00142     \textcolor{keyword}{struct }JoystickMoveEvent}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00143}00143     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00144}00144         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}   \mbox{\hyperlink{structsf_1_1_event_1_1_joystick_move_event_a7bf2b2f2941a21ed26a67c95f5e4232f}{joystickId}}; }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00145}00145         \mbox{\hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7}{Joystick::Axis}} \mbox{\hyperlink{structsf_1_1_event_1_1_joystick_move_event_add22e8126b7974271991dc6380cbdee3}{axis}};       }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00146}00146         \textcolor{keywordtype}{float}          \mbox{\hyperlink{structsf_1_1_event_1_1_joystick_move_event_aba5a70815420161375fd2e756689c32a}{position}};   }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00147}00147     \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00148}00148 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00154}00154     \textcolor{keyword}{struct }JoystickButtonEvent}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00155}00155     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00156}00156         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structsf_1_1_event_1_1_joystick_button_event_a2f80ecdb964a5ae0fc30726a404c41ec}{joystickId}}; }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00157}00157         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structsf_1_1_event_1_1_joystick_button_event_a6412e698a2f7904c5aa875a0d1b34da4}{button}};     }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00158}00158     \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00159}00159 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00164}00164     \textcolor{keyword}{struct }TouchEvent}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00165}00165     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00166}00166         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structsf_1_1_event_1_1_touch_event_a9a79fe86bf9ac3c16ec7326f96feb61a}{finger}}; }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00167}00167         \textcolor{keywordtype}{int} \mbox{\hyperlink{structsf_1_1_event_1_1_touch_event_a8993963790b850caa68b98d3cad2be45}{x}};               }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00168}00168         \textcolor{keywordtype}{int} \mbox{\hyperlink{structsf_1_1_event_1_1_touch_event_add80639dc68bc37e3275744d501cdbe0}{y}};               }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00169}00169     \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00170}00170 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00175}00175     \textcolor{keyword}{struct }SensorEvent}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00176}00176     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00177}00177         \mbox{\hyperlink{classsf_1_1_sensor_a687375af3ab77b818fca73735bcaea84}{Sensor::Type}} \mbox{\hyperlink{structsf_1_1_event_1_1_sensor_event_abee7d67bf0947fd1138e4466011e2436}{type}}; }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00178}00178         \textcolor{keywordtype}{float} \mbox{\hyperlink{structsf_1_1_event_1_1_sensor_event_aa6ccbd13c181b866a6467462158d93d9}{x}};           }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00179}00179         \textcolor{keywordtype}{float} \mbox{\hyperlink{structsf_1_1_event_1_1_sensor_event_aecafcd25ecb3ba486e42284e4bb69a57}{y}};           }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00180}00180         \textcolor{keywordtype}{float} \mbox{\hyperlink{structsf_1_1_event_1_1_sensor_event_a5704e0d0b82b07f051cc858894f3ea43}{z}};           }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00181}00181     \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00182}00182 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00187}\mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4a}{00187}}     \textcolor{keyword}{enum} \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4a}{EventType}}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00188}00188     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00189}00189         \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa4f718a7f43b0f2d46be222fe23198d9e}{Closed}},                 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00190}00190         \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aac5a9f3d76cbf4a577fa982623f3198eb}{Resized}},                }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00191}00191         \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa3ce2632aef3b12bc0d22c8a3045e8eb3}{LostFocus}},              }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00192}00192         \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa067f8b39dcd270abc715652102ce6e66}{GainedFocus}},            }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00193}00193         \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa4da4ae2f3e97f8cbd3cb725f2da21a10}{TextEntered}},            }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00194}00194         \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4}{KeyPressed}},             }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00195}00195         \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa1df4a1c59bf3a4613f3d577ce137b8f1}{KeyReleased}},            }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00196}00196         \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aad53fec9b30096b56d96ae0cc3680c717}{MouseWheelMoved}},        }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00197}00197         \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aab9002e9cf83b792763b6dd8992c0b535}{MouseWheelScrolled}},     }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00198}00198         \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa0d16fdcf7907ec64a9cfabac6e135d1b}{MouseButtonPressed}},     }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00199}00199         \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aafa0ebea6e6dd90e3fe49ca9b52977836}{MouseButtonReleased}},    }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00200}00200         \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aacc43824f451738c5afd00c7cd08e25b5}{MouseMoved}},             }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00201}00201         \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa3d49ae0a508d337c5a3759e9e3752348}{MouseEntered}},           }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00202}00202         \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aaedc7ba1176d5bfd5aac46f7c08457c32}{MouseLeft}},              }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00203}00203         \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa048f17d935ca55b7fa063062ed3aa7ee}{JoystickButtonPressed}},  }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00204}00204         \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aab7c62947d6d4248d8ff05896f06bd360}{JoystickButtonReleased}}, }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00205}00205         \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aac6e368e4ec275235dbab7e782d857d52}{JoystickMoved}},          }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00206}00206         \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa103511bbaf4d9710be5028510b80a011}{JoystickConnected}},      }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00207}00207         \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa8f4151bb75a0eec34a2950ea9d341894}{JoystickDisconnected}},   }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00208}00208         \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aafcdbb3d909117eb088c6d290b564e6b5}{TouchBegan}},             }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00209}00209         \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa4eed100fe434d73ac20e6a8cfd1e726c}{TouchMoved}},             }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00210}00210         \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aae35e2e04bb23e95d3786bef60ea4c074}{TouchEnded}},             }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00211}00211         \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aac175c7fb90d3b03cda554ada20d42795}{SensorChanged}},          }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00212}00212 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00213}00213         \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aae5c49a2d50ccccd9c941e6be36b0d05f}{Count}}                   }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00214}00214     \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00215}00215 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00217}00217     \textcolor{comment}{// Member data}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00219}00219 \textcolor{comment}{}    \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4a}{EventType}} \mbox{\hyperlink{classsf_1_1_event_adf2f8044f713fd9d6019077b0d1ffe0a}{type}}; }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00220}00220 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00221}00221     \textcolor{keyword}{union}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00222}00222     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00223}00223         SizeEvent             \mbox{\hyperlink{classsf_1_1_event_a85dae56a377eeffd39183c3f6fc96cb9}{size}};              }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00224}00224         KeyEvent              \mbox{\hyperlink{classsf_1_1_event_a45b92fc6757ca7c193f06b302e424ab0}{key}};               }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00225}00225         TextEvent             \mbox{\hyperlink{classsf_1_1_event_a00c7bba6bee892791847ec22440e0a83}{text}};              }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00226}00226         MouseMoveEvent        \mbox{\hyperlink{classsf_1_1_event_a786620ec4315d40c7c4cf4ddf3a1881f}{mouseMove}};         }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00227}00227         MouseButtonEvent      \mbox{\hyperlink{classsf_1_1_event_a20886a16ab7624de070b97145bb1dcac}{mouseButton}};       }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00228}00228         MouseWheelEvent       \mbox{\hyperlink{classsf_1_1_event_a8758c6d7998757978fd9146099a02a1e}{mouseWheel}};        }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00229}00229         MouseWheelScrollEvent \mbox{\hyperlink{classsf_1_1_event_a5fd91c82198a31a0cd3dc93c4d1ae4c6}{mouseWheelScroll}};  }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00230}00230         JoystickMoveEvent     \mbox{\hyperlink{classsf_1_1_event_ac479e8351cc2024d5c1094dc33970f7f}{joystickMove}};      }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00231}00231         JoystickButtonEvent   \mbox{\hyperlink{classsf_1_1_event_a42aad27a054c1c05bd5c3d020e1db174}{joystickButton}};    }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00232}00232         JoystickConnectEvent  \mbox{\hyperlink{classsf_1_1_event_aa354335c9ad73362442bc54ffe81118f}{joystickConnect}};   }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00233}00233         TouchEvent            \mbox{\hyperlink{classsf_1_1_event_a5f6ed8e499a4c3d171ff1baab469b2ee}{touch}};             }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00234}00234         SensorEvent           \mbox{\hyperlink{classsf_1_1_event_acdeacbb321655b962e27d08eeec5a190}{sensor}};            }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00235}00235     \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00236}00236 \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00237}00237 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00238}00238 \} \textcolor{comment}{// namespace sf}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00239}00239 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00240}00240 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00241}00241 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// SFML\_EVENT\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00242}00242 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source_l00243}00243 }
+
+\end{DoxyCode}

@@ -1,0 +1,75 @@
+\hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source}{}\doxysection{TCP.\+cpp}
+\label{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source}\index{SFML-\/2.5.1/examples/sockets/TCP.cpp@{SFML-\/2.5.1/examples/sockets/TCP.cpp}}
+\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00003}00003 \textcolor{comment}{// Headers}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00005}00005 \textcolor{comment}{}\textcolor{preprocessor}{\#include <SFML/Network.hpp>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00014}\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2sockets_2_sockets_8cpp_a918906a98ab06440251f6920f5fc4bbb}{00014}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_a918906a98ab06440251f6920f5fc4bbb}{runTcpServer}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} port)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00015}00015 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00016}00016     \textcolor{comment}{// Create a server socket to accept new connections}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00017}00017     \mbox{\hyperlink{classsf_1_1_tcp_listener}{sf::TcpListener}} listener;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00019}00019     \textcolor{comment}{// Listen to the given port for incoming connections}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00020}00020     \textcolor{keywordflow}{if} (listener.\mbox{\hyperlink{classsf_1_1_tcp_listener_a9504758ea3570e62cb20b209c11776a1}{listen}}(port) != \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca6b3d5ba897b6df8ebda86c823b30348a}{sf::Socket::Done}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00021}00021         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00022}00022     std::cout << \textcolor{stringliteral}{"{}Server is listening to port "{}} << port << \textcolor{stringliteral}{"{}, waiting for connections... "{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00024}00024     \textcolor{comment}{// Wait for a connection}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00025}00025     \mbox{\hyperlink{classsf_1_1_tcp_socket}{sf::TcpSocket}} socket;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00026}00026     \textcolor{keywordflow}{if} (listener.\mbox{\hyperlink{classsf_1_1_tcp_listener_ae2c83ce5a64d50b68180c46bef0a7346}{accept}}(socket) != \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca6b3d5ba897b6df8ebda86c823b30348a}{sf::Socket::Done}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00027}00027         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00028}00028     std::cout << \textcolor{stringliteral}{"{}Client connected: "{}} << socket.\mbox{\hyperlink{classsf_1_1_tcp_socket_aa8579c203b1fd21beb74d7f76444a94c}{getRemoteAddress}}() << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00030}00030     \textcolor{comment}{// Send a message to the connected client}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00031}00031     \textcolor{keyword}{const} \textcolor{keywordtype}{char} out[] = \textcolor{stringliteral}{"{}Hi, I'm the server"{}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00032}00032     \textcolor{keywordflow}{if} (socket.\mbox{\hyperlink{classsf_1_1_tcp_socket_affce26ab3bcc4f5b9269dad79db544c0}{send}}(out, \textcolor{keyword}{sizeof}(out)) != \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca6b3d5ba897b6df8ebda86c823b30348a}{sf::Socket::Done}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00033}00033         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00034}00034     std::cout << \textcolor{stringliteral}{"{}Message sent to the client: \(\backslash\)"{}"{}} << out << \textcolor{stringliteral}{"{}\(\backslash\)"{}"{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00036}00036     \textcolor{comment}{// Receive a message back from the client}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00037}00037     \textcolor{keywordtype}{char} in[128];}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00038}00038     std::size\_t received;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00039}00039     \textcolor{keywordflow}{if} (socket.\mbox{\hyperlink{classsf_1_1_tcp_socket_a90ce50811ea61d4f00efc62bb99ae1af}{receive}}(in, \textcolor{keyword}{sizeof}(in), received) != \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca6b3d5ba897b6df8ebda86c823b30348a}{sf::Socket::Done}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00040}00040         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00041}00041     std::cout << \textcolor{stringliteral}{"{}Answer received from the client: \(\backslash\)"{}"{}} << in << \textcolor{stringliteral}{"{}\(\backslash\)"{}"{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00042}00042 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00050}\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2sockets_2_sockets_8cpp_acab1386c826ab10447f392c272e70a86}{00050}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_acab1386c826ab10447f392c272e70a86}{runTcpClient}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} port)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00051}00051 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00052}00052     \textcolor{comment}{// Ask for the server address}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00053}00053     \mbox{\hyperlink{classsf_1_1_ip_address}{sf::IpAddress}} server;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00054}00054     \textcolor{keywordflow}{do}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00055}00055     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00056}00056         std::cout << \textcolor{stringliteral}{"{}Type the address or name of the server to connect to: "{}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00057}00057         std::cin  >> server;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00058}00058     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00059}00059     \textcolor{keywordflow}{while} (server == \mbox{\hyperlink{classsf_1_1_ip_address_af95b0353e632372b5266d6227bc0e3ec}{sf::IpAddress::None}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00061}00061     \textcolor{comment}{// Create a socket for communicating with the server}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00062}00062     \mbox{\hyperlink{classsf_1_1_tcp_socket}{sf::TcpSocket}} socket;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00064}00064     \textcolor{comment}{// Connect to the server}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00065}00065     \textcolor{keywordflow}{if} (socket.\mbox{\hyperlink{classsf_1_1_tcp_socket_a68cd42d5ab70ab54b16787f555951c40}{connect}}(server, port) != \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca6b3d5ba897b6df8ebda86c823b30348a}{sf::Socket::Done}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00066}00066         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00067}00067     std::cout << \textcolor{stringliteral}{"{}Connected to server "{}} << server << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00069}00069     \textcolor{comment}{// Receive a message from the server}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00070}00070     \textcolor{keywordtype}{char} in[128];}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00071}00071     std::size\_t received;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00072}00072     \textcolor{keywordflow}{if} (socket.\mbox{\hyperlink{classsf_1_1_tcp_socket_a90ce50811ea61d4f00efc62bb99ae1af}{receive}}(in, \textcolor{keyword}{sizeof}(in), received) != \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca6b3d5ba897b6df8ebda86c823b30348a}{sf::Socket::Done}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00073}00073         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00074}00074     std::cout << \textcolor{stringliteral}{"{}Message received from the server: \(\backslash\)"{}"{}} << in << \textcolor{stringliteral}{"{}\(\backslash\)"{}"{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00076}00076     \textcolor{comment}{// Send an answer to the server}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00077}00077     \textcolor{keyword}{const} \textcolor{keywordtype}{char} out[] = \textcolor{stringliteral}{"{}Hi, I'm a client"{}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00078}00078     \textcolor{keywordflow}{if} (socket.\mbox{\hyperlink{classsf_1_1_tcp_socket_affce26ab3bcc4f5b9269dad79db544c0}{send}}(out, \textcolor{keyword}{sizeof}(out)) != \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca6b3d5ba897b6df8ebda86c823b30348a}{sf::Socket::Done}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00079}00079         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00080}00080     std::cout << \textcolor{stringliteral}{"{}Message sent to the server: \(\backslash\)"{}"{}} << out << \textcolor{stringliteral}{"{}\(\backslash\)"{}"{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2sockets_2_t_c_p_8cpp_source_l00081}00081 \}}
+
+\end{DoxyCode}

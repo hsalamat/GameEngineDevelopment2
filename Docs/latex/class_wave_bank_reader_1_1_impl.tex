@@ -1,0 +1,304 @@
+\hypertarget{class_wave_bank_reader_1_1_impl}{}\doxysection{DirectX\+::Wave\+Bank\+Reader\+::Impl Class Reference}
+\label{class_wave_bank_reader_1_1_impl}\index{DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_wave_bank_reader_1_1_impl_a008a2f869a20694e680c051ef75a949e}{Impl}} () noexcept
+\item 
+\mbox{\hyperlink{class_wave_bank_reader_1_1_impl_a01a2f10e6eda89f37affefb6da699155}{Impl}} (\mbox{\hyperlink{class_wave_bank_reader_1_1_impl}{Impl}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_wave_bank_reader_1_1_impl}{Impl}} \& \mbox{\hyperlink{class_wave_bank_reader_1_1_impl_a433352975376076ae74a9f9ef2eb891a}{operator=}} (\mbox{\hyperlink{class_wave_bank_reader_1_1_impl}{Impl}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_wave_bank_reader_1_1_impl_a80a89cc50e7d1437e35137f0eed89edb}{Impl}} (\mbox{\hyperlink{class_wave_bank_reader_1_1_impl}{Impl}} const \&)=delete
+\item 
+\mbox{\hyperlink{class_wave_bank_reader_1_1_impl}{Impl}} \& \mbox{\hyperlink{class_wave_bank_reader_1_1_impl_aac1686b7eca5df9f50b5d8c9a6a20739}{operator=}} (\mbox{\hyperlink{class_wave_bank_reader_1_1_impl}{Impl}} const \&)=delete
+\item 
+\mbox{\hyperlink{class_wave_bank_reader_1_1_impl_ad669451a36724ad4974342f140de30a4}{$\sim$\+Impl}} ()
+\item 
+HRESULT \mbox{\hyperlink{class_wave_bank_reader_1_1_impl_ae786ae7c68c344b56e9fa7901a62a6fb}{Open}} (\+\_\+\+In\+\_\+z\+\_\+ const wchar\+\_\+t $\ast$sz\+File\+Name) noexcept(false)
+\item 
+void \mbox{\hyperlink{class_wave_bank_reader_1_1_impl_a6562002e1eb7adbbf79abf81f0cc7296}{Close}} () noexcept
+\item 
+HRESULT \mbox{\hyperlink{class_wave_bank_reader_1_1_impl_a97c95839347c8e53ee541021d718b967}{Get\+Format}} (\+\_\+\+In\+\_\+ uint32\+\_\+t index, \+\_\+\+Out\+\_\+writes\+\_\+bytes\+\_\+(maxsize) WAVEFORMATEX $\ast$p\+Format, \+\_\+\+In\+\_\+ size\+\_\+t maxsize) const noexcept
+\item 
+HRESULT \mbox{\hyperlink{class_wave_bank_reader_1_1_impl_a36f2ebfa1756a997d2627c8e5039d822}{Get\+Wave\+Data}} (\+\_\+\+In\+\_\+ uint32\+\_\+t index, \+\_\+\+Outptr\+\_\+ const uint8\+\_\+t $\ast$$\ast$p\+Data, \+\_\+\+Out\+\_\+ uint32\+\_\+t \&data\+Size) const noexcept
+\item 
+HRESULT \mbox{\hyperlink{class_wave_bank_reader_1_1_impl_ad18bb2b866fad22bdf54ab4748a5f5b5}{Get\+Seek\+Table}} (\+\_\+\+In\+\_\+ uint32\+\_\+t index, \+\_\+\+Out\+\_\+ const uint32\+\_\+t $\ast$$\ast$p\+Data, \+\_\+\+Out\+\_\+ uint32\+\_\+t \&data\+Count, \+\_\+\+Out\+\_\+ uint32\+\_\+t \&tag) const noexcept
+\item 
+HRESULT \mbox{\hyperlink{class_wave_bank_reader_1_1_impl_a2df251e4ec08b21f4197648a539cbbaa}{Get\+Metadata}} (\+\_\+\+In\+\_\+ uint32\+\_\+t index, \+\_\+\+Out\+\_\+ \mbox{\hyperlink{struct_direct_x_1_1_wave_bank_reader_1_1_metadata}{Metadata}} \&metadata) const noexcept
+\item 
+bool \mbox{\hyperlink{class_wave_bank_reader_1_1_impl_a8346f9a62338fd734672d89dc9cc6007}{Update\+Prepared}} () noexcept
+\item 
+void \mbox{\hyperlink{class_wave_bank_reader_1_1_impl_a17913d959f6b1a588b02f942117b56be}{Clear}} () noexcept
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+HANDLE \mbox{\hyperlink{class_wave_bank_reader_1_1_impl_ab8f389a1facf854c0f4732dc13ec367e}{m\+\_\+async}}
+\item 
+Scoped\+Handle \mbox{\hyperlink{class_wave_bank_reader_1_1_impl_adf56e31e39352f85d3f913f08e0cfc3b}{m\+\_\+event}}
+\item 
+OVERLAPPED \mbox{\hyperlink{class_wave_bank_reader_1_1_impl_a3d37a0db5d9e58a48b896bd4ef8fe13c}{m\+\_\+request}}
+\item 
+bool \mbox{\hyperlink{class_wave_bank_reader_1_1_impl_a9e75ee6e869da6ffebb1178ea6cec3ea}{m\+\_\+prepared}}
+\item 
+HEADER \mbox{\hyperlink{class_wave_bank_reader_1_1_impl_a6049cfcc1c1c5e6cae8d57ef3671fe3d}{m\+\_\+header}}
+\item 
+BANKDATA \mbox{\hyperlink{class_wave_bank_reader_1_1_impl_a67df206186ec44d748c0ee8e445dc74b}{m\+\_\+data}}
+\item 
+std\+::map$<$ std\+::string, uint32\+\_\+t $>$ \mbox{\hyperlink{class_wave_bank_reader_1_1_impl_a30297e6512c5cfa4d6c8225c01a5a079}{m\+\_\+names}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ uint8\+\_\+t\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{class_wave_bank_reader_1_1_impl_ab553a9bdf6f980dee7afcf9c7ae7ff56}{m\+\_\+entries}}
+\item 
+std\+::unique\+\_\+ptr$<$ uint8\+\_\+t\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{class_wave_bank_reader_1_1_impl_a4c543a32858393cf58f569c23c844c9b}{m\+\_\+seek\+Data}}
+\item 
+std\+::unique\+\_\+ptr$<$ uint8\+\_\+t\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{class_wave_bank_reader_1_1_impl_afdc86417bd5faa65b026a6802250c6b6}{m\+\_\+wave\+Data}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_wave_bank_reader_8cpp_source_l00376}{376}} of file \mbox{\hyperlink{_wave_bank_reader_8cpp_source}{Wave\+Bank\+Reader.\+cpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_wave_bank_reader_1_1_impl_a008a2f869a20694e680c051ef75a949e}\label{class_wave_bank_reader_1_1_impl_a008a2f869a20694e680c051ef75a949e}} 
+\index{DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}!Impl@{Impl}}
+\index{Impl@{Impl}!DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}}
+\doxysubsubsection{\texorpdfstring{Impl()}{Impl()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Direct\+X\+::\+Wave\+Bank\+Reader\+::\+Impl\+::\+Impl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{_wave_bank_reader_8cpp_source_l00379}{379}} of file \mbox{\hyperlink{_wave_bank_reader_8cpp_source}{Wave\+Bank\+Reader.\+cpp}}.
+
+\mbox{\Hypertarget{class_wave_bank_reader_1_1_impl_a01a2f10e6eda89f37affefb6da699155}\label{class_wave_bank_reader_1_1_impl_a01a2f10e6eda89f37affefb6da699155}} 
+\index{DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}!Impl@{Impl}}
+\index{Impl@{Impl}!DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}}
+\doxysubsubsection{\texorpdfstring{Impl()}{Impl()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Direct\+X\+::\+Wave\+Bank\+Reader\+::\+Impl\+::\+Impl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_wave_bank_reader_1_1_impl}{Impl}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{class_wave_bank_reader_1_1_impl_a80a89cc50e7d1437e35137f0eed89edb}\label{class_wave_bank_reader_1_1_impl_a80a89cc50e7d1437e35137f0eed89edb}} 
+\index{DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}!Impl@{Impl}}
+\index{Impl@{Impl}!DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}}
+\doxysubsubsection{\texorpdfstring{Impl()}{Impl()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Direct\+X\+::\+Wave\+Bank\+Reader\+::\+Impl\+::\+Impl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_wave_bank_reader_1_1_impl}{Impl}} const \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{class_wave_bank_reader_1_1_impl_ad669451a36724ad4974342f140de30a4}\label{class_wave_bank_reader_1_1_impl_ad669451a36724ad4974342f140de30a4}} 
+\index{DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}!````~Impl@{$\sim$Impl}}
+\index{````~Impl@{$\sim$Impl}!DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}}
+\doxysubsubsection{\texorpdfstring{$\sim$Impl()}{~Impl()}}
+{\footnotesize\ttfamily Direct\+X\+::\+Wave\+Bank\+Reader\+::\+Impl\+::$\sim$\+Impl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_wave_bank_reader_8cpp_source_l00394}{394}} of file \mbox{\hyperlink{_wave_bank_reader_8cpp_source}{Wave\+Bank\+Reader.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_wave_bank_reader_1_1_impl_a17913d959f6b1a588b02f942117b56be}\label{class_wave_bank_reader_1_1_impl_a17913d959f6b1a588b02f942117b56be}} 
+\index{DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}!Clear@{Clear}}
+\index{Clear@{Clear}!DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void Direct\+X\+::\+Wave\+Bank\+Reader\+::\+Impl\+::\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{_wave_bank_reader_8cpp_source_l00409}{409}} of file \mbox{\hyperlink{_wave_bank_reader_8cpp_source}{Wave\+Bank\+Reader.\+cpp}}.
+
+\mbox{\Hypertarget{class_wave_bank_reader_1_1_impl_a6562002e1eb7adbbf79abf81f0cc7296}\label{class_wave_bank_reader_1_1_impl_a6562002e1eb7adbbf79abf81f0cc7296}} 
+\index{DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}!Close@{Close}}
+\index{Close@{Close}!DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}}
+\doxysubsubsection{\texorpdfstring{Close()}{Close()}}
+{\footnotesize\ttfamily void Direct\+X\+::\+Wave\+Bank\+Reader\+::\+Impl\+::\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{_wave_bank_reader_8cpp_source_l00796}{796}} of file \mbox{\hyperlink{_wave_bank_reader_8cpp_source}{Wave\+Bank\+Reader.\+cpp}}.
+
+\mbox{\Hypertarget{class_wave_bank_reader_1_1_impl_a97c95839347c8e53ee541021d718b967}\label{class_wave_bank_reader_1_1_impl_a97c95839347c8e53ee541021d718b967}} 
+\index{DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}!GetFormat@{GetFormat}}
+\index{GetFormat@{GetFormat}!DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}}
+\doxysubsubsection{\texorpdfstring{GetFormat()}{GetFormat()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_d_d_s_texture_loader_8h_a3150346626fcea3ad7afe5dfb4ce27d8}{\+\_\+\+Use\+\_\+decl\+\_\+annotations\+\_\+}} HRESULT Direct\+X\+::\+Wave\+Bank\+Reader\+::\+Impl\+::\+Get\+Format (\begin{DoxyParamCaption}\item[{\+\_\+\+In\+\_\+ uint32\+\_\+t}]{index,  }\item[{\+\_\+\+Out\+\_\+writes\+\_\+bytes\+\_\+(maxsize) WAVEFORMATEX $\ast$}]{p\+Format,  }\item[{\+\_\+\+In\+\_\+ size\+\_\+t}]{maxsize }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{_wave_bank_reader_8cpp_source_l00820}{820}} of file \mbox{\hyperlink{_wave_bank_reader_8cpp_source}{Wave\+Bank\+Reader.\+cpp}}.
+
+\mbox{\Hypertarget{class_wave_bank_reader_1_1_impl_a2df251e4ec08b21f4197648a539cbbaa}\label{class_wave_bank_reader_1_1_impl_a2df251e4ec08b21f4197648a539cbbaa}} 
+\index{DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}!GetMetadata@{GetMetadata}}
+\index{GetMetadata@{GetMetadata}!DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}}
+\doxysubsubsection{\texorpdfstring{GetMetadata()}{GetMetadata()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_d_d_s_texture_loader_8h_a3150346626fcea3ad7afe5dfb4ce27d8}{\+\_\+\+Use\+\_\+decl\+\_\+annotations\+\_\+}} HRESULT Direct\+X\+::\+Wave\+Bank\+Reader\+::\+Impl\+::\+Get\+Metadata (\begin{DoxyParamCaption}\item[{\+\_\+\+In\+\_\+ uint32\+\_\+t}]{index,  }\item[{\+\_\+\+Out\+\_\+ \mbox{\hyperlink{struct_direct_x_1_1_wave_bank_reader_1_1_metadata}{Metadata}} \&}]{metadata }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{_wave_bank_reader_8cpp_source_l00988}{988}} of file \mbox{\hyperlink{_wave_bank_reader_8cpp_source}{Wave\+Bank\+Reader.\+cpp}}.
+
+\mbox{\Hypertarget{class_wave_bank_reader_1_1_impl_ad18bb2b866fad22bdf54ab4748a5f5b5}\label{class_wave_bank_reader_1_1_impl_ad18bb2b866fad22bdf54ab4748a5f5b5}} 
+\index{DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}!GetSeekTable@{GetSeekTable}}
+\index{GetSeekTable@{GetSeekTable}!DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}}
+\doxysubsubsection{\texorpdfstring{GetSeekTable()}{GetSeekTable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_d_d_s_texture_loader_8h_a3150346626fcea3ad7afe5dfb4ce27d8}{\+\_\+\+Use\+\_\+decl\+\_\+annotations\+\_\+}} HRESULT Direct\+X\+::\+Wave\+Bank\+Reader\+::\+Impl\+::\+Get\+Seek\+Table (\begin{DoxyParamCaption}\item[{\+\_\+\+In\+\_\+ uint32\+\_\+t}]{index,  }\item[{\+\_\+\+Out\+\_\+ const uint32\+\_\+t $\ast$$\ast$}]{p\+Data,  }\item[{\+\_\+\+Out\+\_\+ uint32\+\_\+t \&}]{data\+Count,  }\item[{\+\_\+\+Out\+\_\+ uint32\+\_\+t \&}]{tag }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{_wave_bank_reader_8cpp_source_l00943}{943}} of file \mbox{\hyperlink{_wave_bank_reader_8cpp_source}{Wave\+Bank\+Reader.\+cpp}}.
+
+\mbox{\Hypertarget{class_wave_bank_reader_1_1_impl_a36f2ebfa1756a997d2627c8e5039d822}\label{class_wave_bank_reader_1_1_impl_a36f2ebfa1756a997d2627c8e5039d822}} 
+\index{DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}!GetWaveData@{GetWaveData}}
+\index{GetWaveData@{GetWaveData}!DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}}
+\doxysubsubsection{\texorpdfstring{GetWaveData()}{GetWaveData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_d_d_s_texture_loader_8h_a3150346626fcea3ad7afe5dfb4ce27d8}{\+\_\+\+Use\+\_\+decl\+\_\+annotations\+\_\+}} HRESULT Direct\+X\+::\+Wave\+Bank\+Reader\+::\+Impl\+::\+Get\+Wave\+Data (\begin{DoxyParamCaption}\item[{\+\_\+\+In\+\_\+ uint32\+\_\+t}]{index,  }\item[{\+\_\+\+Outptr\+\_\+ const uint8\+\_\+t $\ast$$\ast$}]{p\+Data,  }\item[{\+\_\+\+Out\+\_\+ uint32\+\_\+t \&}]{data\+Size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{_wave_bank_reader_8cpp_source_l00885}{885}} of file \mbox{\hyperlink{_wave_bank_reader_8cpp_source}{Wave\+Bank\+Reader.\+cpp}}.
+
+\mbox{\Hypertarget{class_wave_bank_reader_1_1_impl_ae786ae7c68c344b56e9fa7901a62a6fb}\label{class_wave_bank_reader_1_1_impl_ae786ae7c68c344b56e9fa7901a62a6fb}} 
+\index{DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}!Open@{Open}}
+\index{Open@{Open}!DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}}
+\doxysubsubsection{\texorpdfstring{Open()}{Open()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_d_d_s_texture_loader_8h_a3150346626fcea3ad7afe5dfb4ce27d8}{\+\_\+\+Use\+\_\+decl\+\_\+annotations\+\_\+}} HRESULT Direct\+X\+::\+Wave\+Bank\+Reader\+::\+Impl\+::\+Open (\begin{DoxyParamCaption}\item[{\+\_\+\+In\+\_\+z\+\_\+ const wchar\+\_\+t $\ast$}]{sz\+File\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{_wave_bank_reader_8cpp_source_l00437}{437}} of file \mbox{\hyperlink{_wave_bank_reader_8cpp_source}{Wave\+Bank\+Reader.\+cpp}}.
+
+\mbox{\Hypertarget{class_wave_bank_reader_1_1_impl_a433352975376076ae74a9f9ef2eb891a}\label{class_wave_bank_reader_1_1_impl_a433352975376076ae74a9f9ef2eb891a}} 
+\index{DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}!operator=@{operator=}}
+\index{operator=@{operator=}!DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_wave_bank_reader_1_1_impl}{Impl}} \& Direct\+X\+::\+Wave\+Bank\+Reader\+::\+Impl\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_wave_bank_reader_1_1_impl}{Impl}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{class_wave_bank_reader_1_1_impl_aac1686b7eca5df9f50b5d8c9a6a20739}\label{class_wave_bank_reader_1_1_impl_aac1686b7eca5df9f50b5d8c9a6a20739}} 
+\index{DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}!operator=@{operator=}}
+\index{operator=@{operator=}!DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_wave_bank_reader_1_1_impl}{Impl}} \& Direct\+X\+::\+Wave\+Bank\+Reader\+::\+Impl\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_wave_bank_reader_1_1_impl}{Impl}} const \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{class_wave_bank_reader_1_1_impl_a8346f9a62338fd734672d89dc9cc6007}\label{class_wave_bank_reader_1_1_impl_a8346f9a62338fd734672d89dc9cc6007}} 
+\index{DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}!UpdatePrepared@{UpdatePrepared}}
+\index{UpdatePrepared@{UpdatePrepared}!DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}}
+\doxysubsubsection{\texorpdfstring{UpdatePrepared()}{UpdatePrepared()}}
+{\footnotesize\ttfamily bool Direct\+X\+::\+Wave\+Bank\+Reader\+::\+Impl\+::\+Update\+Prepared (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{_wave_bank_reader_8cpp_source_l01032}{1032}} of file \mbox{\hyperlink{_wave_bank_reader_8cpp_source}{Wave\+Bank\+Reader.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_wave_bank_reader_1_1_impl_ab8f389a1facf854c0f4732dc13ec367e}\label{class_wave_bank_reader_1_1_impl_ab8f389a1facf854c0f4732dc13ec367e}} 
+\index{DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}!m\_async@{m\_async}}
+\index{m\_async@{m\_async}!DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}}
+\doxysubsubsection{\texorpdfstring{m\_async}{m\_async}}
+{\footnotesize\ttfamily HANDLE Direct\+X\+::\+Wave\+Bank\+Reader\+::\+Impl\+::m\+\_\+async}
+
+
+
+Definition at line \mbox{\hyperlink{_wave_bank_reader_8cpp_source_l00420}{420}} of file \mbox{\hyperlink{_wave_bank_reader_8cpp_source}{Wave\+Bank\+Reader.\+cpp}}.
+
+\mbox{\Hypertarget{class_wave_bank_reader_1_1_impl_a67df206186ec44d748c0ee8e445dc74b}\label{class_wave_bank_reader_1_1_impl_a67df206186ec44d748c0ee8e445dc74b}} 
+\index{DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}!m\_data@{m\_data}}
+\index{m\_data@{m\_data}!DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}}
+\doxysubsubsection{\texorpdfstring{m\_data}{m\_data}}
+{\footnotesize\ttfamily BANKDATA Direct\+X\+::\+Wave\+Bank\+Reader\+::\+Impl\+::m\+\_\+data}
+
+
+
+Definition at line \mbox{\hyperlink{_wave_bank_reader_8cpp_source_l00426}{426}} of file \mbox{\hyperlink{_wave_bank_reader_8cpp_source}{Wave\+Bank\+Reader.\+cpp}}.
+
+\mbox{\Hypertarget{class_wave_bank_reader_1_1_impl_ab553a9bdf6f980dee7afcf9c7ae7ff56}\label{class_wave_bank_reader_1_1_impl_ab553a9bdf6f980dee7afcf9c7ae7ff56}} 
+\index{DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}!m\_entries@{m\_entries}}
+\index{m\_entries@{m\_entries}!DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}}
+\doxysubsubsection{\texorpdfstring{m\_entries}{m\_entries}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$uint8\+\_\+t\mbox{[}$\,$\mbox{]}$>$ Direct\+X\+::\+Wave\+Bank\+Reader\+::\+Impl\+::m\+\_\+entries\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_wave_bank_reader_8cpp_source_l00430}{430}} of file \mbox{\hyperlink{_wave_bank_reader_8cpp_source}{Wave\+Bank\+Reader.\+cpp}}.
+
+\mbox{\Hypertarget{class_wave_bank_reader_1_1_impl_adf56e31e39352f85d3f913f08e0cfc3b}\label{class_wave_bank_reader_1_1_impl_adf56e31e39352f85d3f913f08e0cfc3b}} 
+\index{DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}!m\_event@{m\_event}}
+\index{m\_event@{m\_event}!DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}}
+\doxysubsubsection{\texorpdfstring{m\_event}{m\_event}}
+{\footnotesize\ttfamily Scoped\+Handle Direct\+X\+::\+Wave\+Bank\+Reader\+::\+Impl\+::m\+\_\+event}
+
+
+
+Definition at line \mbox{\hyperlink{_wave_bank_reader_8cpp_source_l00421}{421}} of file \mbox{\hyperlink{_wave_bank_reader_8cpp_source}{Wave\+Bank\+Reader.\+cpp}}.
+
+\mbox{\Hypertarget{class_wave_bank_reader_1_1_impl_a6049cfcc1c1c5e6cae8d57ef3671fe3d}\label{class_wave_bank_reader_1_1_impl_a6049cfcc1c1c5e6cae8d57ef3671fe3d}} 
+\index{DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}!m\_header@{m\_header}}
+\index{m\_header@{m\_header}!DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}}
+\doxysubsubsection{\texorpdfstring{m\_header}{m\_header}}
+{\footnotesize\ttfamily HEADER Direct\+X\+::\+Wave\+Bank\+Reader\+::\+Impl\+::m\+\_\+header}
+
+
+
+Definition at line \mbox{\hyperlink{_wave_bank_reader_8cpp_source_l00425}{425}} of file \mbox{\hyperlink{_wave_bank_reader_8cpp_source}{Wave\+Bank\+Reader.\+cpp}}.
+
+\mbox{\Hypertarget{class_wave_bank_reader_1_1_impl_a30297e6512c5cfa4d6c8225c01a5a079}\label{class_wave_bank_reader_1_1_impl_a30297e6512c5cfa4d6c8225c01a5a079}} 
+\index{DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}!m\_names@{m\_names}}
+\index{m\_names@{m\_names}!DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}}
+\doxysubsubsection{\texorpdfstring{m\_names}{m\_names}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, uint32\+\_\+t$>$ Direct\+X\+::\+Wave\+Bank\+Reader\+::\+Impl\+::m\+\_\+names}
+
+
+
+Definition at line \mbox{\hyperlink{_wave_bank_reader_8cpp_source_l00427}{427}} of file \mbox{\hyperlink{_wave_bank_reader_8cpp_source}{Wave\+Bank\+Reader.\+cpp}}.
+
+\mbox{\Hypertarget{class_wave_bank_reader_1_1_impl_a9e75ee6e869da6ffebb1178ea6cec3ea}\label{class_wave_bank_reader_1_1_impl_a9e75ee6e869da6ffebb1178ea6cec3ea}} 
+\index{DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}!m\_prepared@{m\_prepared}}
+\index{m\_prepared@{m\_prepared}!DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}}
+\doxysubsubsection{\texorpdfstring{m\_prepared}{m\_prepared}}
+{\footnotesize\ttfamily bool Direct\+X\+::\+Wave\+Bank\+Reader\+::\+Impl\+::m\+\_\+prepared}
+
+
+
+Definition at line \mbox{\hyperlink{_wave_bank_reader_8cpp_source_l00423}{423}} of file \mbox{\hyperlink{_wave_bank_reader_8cpp_source}{Wave\+Bank\+Reader.\+cpp}}.
+
+\mbox{\Hypertarget{class_wave_bank_reader_1_1_impl_a3d37a0db5d9e58a48b896bd4ef8fe13c}\label{class_wave_bank_reader_1_1_impl_a3d37a0db5d9e58a48b896bd4ef8fe13c}} 
+\index{DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}!m\_request@{m\_request}}
+\index{m\_request@{m\_request}!DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}}
+\doxysubsubsection{\texorpdfstring{m\_request}{m\_request}}
+{\footnotesize\ttfamily OVERLAPPED Direct\+X\+::\+Wave\+Bank\+Reader\+::\+Impl\+::m\+\_\+request}
+
+
+
+Definition at line \mbox{\hyperlink{_wave_bank_reader_8cpp_source_l00422}{422}} of file \mbox{\hyperlink{_wave_bank_reader_8cpp_source}{Wave\+Bank\+Reader.\+cpp}}.
+
+\mbox{\Hypertarget{class_wave_bank_reader_1_1_impl_a4c543a32858393cf58f569c23c844c9b}\label{class_wave_bank_reader_1_1_impl_a4c543a32858393cf58f569c23c844c9b}} 
+\index{DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}!m\_seekData@{m\_seekData}}
+\index{m\_seekData@{m\_seekData}!DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}}
+\doxysubsubsection{\texorpdfstring{m\_seekData}{m\_seekData}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$uint8\+\_\+t\mbox{[}$\,$\mbox{]}$>$ Direct\+X\+::\+Wave\+Bank\+Reader\+::\+Impl\+::m\+\_\+seek\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_wave_bank_reader_8cpp_source_l00431}{431}} of file \mbox{\hyperlink{_wave_bank_reader_8cpp_source}{Wave\+Bank\+Reader.\+cpp}}.
+
+\mbox{\Hypertarget{class_wave_bank_reader_1_1_impl_afdc86417bd5faa65b026a6802250c6b6}\label{class_wave_bank_reader_1_1_impl_afdc86417bd5faa65b026a6802250c6b6}} 
+\index{DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}!m\_waveData@{m\_waveData}}
+\index{m\_waveData@{m\_waveData}!DirectX::WaveBankReader::Impl@{DirectX::WaveBankReader::Impl}}
+\doxysubsubsection{\texorpdfstring{m\_waveData}{m\_waveData}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$uint8\+\_\+t\mbox{[}$\,$\mbox{]}$>$ Direct\+X\+::\+Wave\+Bank\+Reader\+::\+Impl\+::m\+\_\+wave\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_wave_bank_reader_8cpp_source_l00432}{432}} of file \mbox{\hyperlink{_wave_bank_reader_8cpp_source}{Wave\+Bank\+Reader.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Week13/\mbox{\hyperlink{_wave_bank_reader_8cpp}{Wave\+Bank\+Reader.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,99 @@
+\hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source}{}\doxysection{Sound\+File\+Factory.\+inl}
+\label{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source}\index{SFML-\/2.5.1/include/SFML/Audio/SoundFileFactory.inl@{SFML-\/2.5.1/include/SFML/Audio/SoundFileFactory.inl}}
+\mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00002}00002 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00003}00003 \textcolor{comment}{// SFML -\/ Simple and Fast Multimedia Library}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00004}00004 \textcolor{comment}{// Copyright (C) 2007-\/2018 Laurent Gomila (laurent@sfml-\/dev.org)}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00005}00005 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00006}00006 \textcolor{comment}{// This software is provided 'as-\/is', without any express or implied warranty.}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00007}00007 \textcolor{comment}{// In no event will the authors be held liable for any damages arising from the use of this software.}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00008}00008 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00009}00009 \textcolor{comment}{// Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00010}00010 \textcolor{comment}{// including commercial applications, and to alter it and redistribute it freely,}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00011}00011 \textcolor{comment}{// subject to the following restrictions:}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00012}00012 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00013}00013 \textcolor{comment}{// 1. The origin of this software must not be misrepresented;}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00014}00014 \textcolor{comment}{//    you must not claim that you wrote the original software.}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00015}00015 \textcolor{comment}{//    If you use this software in a product, an acknowledgment}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00016}00016 \textcolor{comment}{//    in the product documentation would be appreciated but is not required.}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00017}00017 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00018}00018 \textcolor{comment}{// 2. Altered source versions must be plainly marked as such,}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00019}00019 \textcolor{comment}{//    and must not be misrepresented as being the original software.}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00020}00020 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00021}00021 \textcolor{comment}{// 3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00022}00022 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00024}00024 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00026}00026 \textcolor{comment}{// Headers}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00028}00028 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00030}00030 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacesf}{sf}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00031}00031 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00032}\mbox{\hyperlink{namespacesf_1_1priv}{00032}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacepriv}{priv}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00033}00033 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00034}\mbox{\hyperlink{namespacesf_1_1priv_aca30ad5e6ee22353d72145af1af53b78}{00034}}     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T> \mbox{\hyperlink{classsf_1_1_sound_file_reader}{SoundFileReader}}* \mbox{\hyperlink{namespacesf_1_1priv_aca30ad5e6ee22353d72145af1af53b78}{createReader}}() \{\textcolor{keywordflow}{return} \textcolor{keyword}{new} T;\}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00035}\mbox{\hyperlink{namespacesf_1_1priv_aaa8b548de29fc4570064f372b4df8df0}{00035}}     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T> \mbox{\hyperlink{classsf_1_1_sound_file_writer}{SoundFileWriter}}* \mbox{\hyperlink{namespacesf_1_1priv_aaa8b548de29fc4570064f372b4df8df0}{createWriter}}() \{\textcolor{keywordflow}{return} \textcolor{keyword}{new} T;\}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00036}00036 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00039}00039 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00040}\mbox{\hyperlink{classsf_1_1_sound_file_factory_acaf1f0bf1b7c7b9988ec76b33e33fe95}{00040}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_sound_file_factory_acaf1f0bf1b7c7b9988ec76b33e33fe95}{SoundFileFactory::registerReader}}()}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00041}00041 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00042}00042     \textcolor{comment}{// Make sure the same class won't be registered twice}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00043}00043     unregisterReader<T>();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00045}00045     \textcolor{comment}{// Create a new factory with the functions provided by the class}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00046}00046     \mbox{\hyperlink{structsf_1_1_sound_file_factory_1_1_reader_factory}{ReaderFactory}} factory;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00047}00047     factory.\mbox{\hyperlink{structsf_1_1_sound_file_factory_1_1_reader_factory_a1eeddd12b9b72ea710852c3ff9906d87}{check}} = \&T::check;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00048}00048     factory.\mbox{\hyperlink{structsf_1_1_sound_file_factory_1_1_reader_factory_a9d3647a9340d66836ea1c34fe0885a40}{create}} = \&priv::createReader<T>;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00050}00050     \textcolor{comment}{// Add it}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00051}00051     \mbox{\hyperlink{classsf_1_1_sound_file_factory_a5003b7cae1046435992ffa7433024964}{s\_readers}}.push\_back(factory);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00052}00052 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00056}00056 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00057}\mbox{\hyperlink{classsf_1_1_sound_file_factory_a9e6765c41e2784bc755388afb4a2f432}{00057}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_sound_file_factory_a9e6765c41e2784bc755388afb4a2f432}{SoundFileFactory::unregisterReader}}()}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00058}00058 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00059}00059     \textcolor{comment}{// Remove the instance(s) of the reader from the array of factories}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00060}00060     \textcolor{keywordflow}{for} (ReaderFactoryArray::iterator it = \mbox{\hyperlink{classsf_1_1_sound_file_factory_a5003b7cae1046435992ffa7433024964}{s\_readers}}.begin(); it != \mbox{\hyperlink{classsf_1_1_sound_file_factory_a5003b7cae1046435992ffa7433024964}{s\_readers}}.end(); )}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00061}00061     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00062}00062         \textcolor{keywordflow}{if} (it-\/>create == \&priv::createReader<T>)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00063}00063             it = \mbox{\hyperlink{classsf_1_1_sound_file_factory_a5003b7cae1046435992ffa7433024964}{s\_readers}}.erase(it);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00064}00064         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00065}00065             ++it;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00066}00066     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00067}00067 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00070}00070 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00071}\mbox{\hyperlink{classsf_1_1_sound_file_factory_a3a59140e6ccf1f252f721b790eddd661}{00071}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_sound_file_factory_a3a59140e6ccf1f252f721b790eddd661}{SoundFileFactory::registerWriter}}()}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00072}00072 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00073}00073     \textcolor{comment}{// Make sure the same class won't be registered twice}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00074}00074     unregisterWriter<T>();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00076}00076     \textcolor{comment}{// Create a new factory with the functions provided by the class}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00077}00077     \mbox{\hyperlink{structsf_1_1_sound_file_factory_1_1_writer_factory}{WriterFactory}} factory;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00078}00078     factory.\mbox{\hyperlink{structsf_1_1_sound_file_factory_1_1_writer_factory_a9d629fa9a1842af3634283b13af84d53}{check}} = \&T::check;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00079}00079     factory.\mbox{\hyperlink{structsf_1_1_sound_file_factory_1_1_writer_factory_aaafbc648fb41936a6e401d2415b4686d}{create}} = \&priv::createWriter<T>;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00081}00081     \textcolor{comment}{// Add it}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00082}00082     \mbox{\hyperlink{classsf_1_1_sound_file_factory_af0d25a94d7788fc06714fd90aee2b5a6}{s\_writers}}.push\_back(factory);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00083}00083 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00087}00087 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00088}\mbox{\hyperlink{classsf_1_1_sound_file_factory_a2306f90d1f72e474732e4bcceeb34215}{00088}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_sound_file_factory_a2306f90d1f72e474732e4bcceeb34215}{SoundFileFactory::unregisterWriter}}()}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00089}00089 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00090}00090     \textcolor{comment}{// Remove the instance(s) of the writer from the array of factories}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00091}00091     \textcolor{keywordflow}{for} (WriterFactoryArray::iterator it = \mbox{\hyperlink{classsf_1_1_sound_file_factory_af0d25a94d7788fc06714fd90aee2b5a6}{s\_writers}}.begin(); it != \mbox{\hyperlink{classsf_1_1_sound_file_factory_af0d25a94d7788fc06714fd90aee2b5a6}{s\_writers}}.end(); )}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00092}00092     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00093}00093         \textcolor{keywordflow}{if} (it-\/>create == \&priv::createWriter<T>)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00094}00094             it = \mbox{\hyperlink{classsf_1_1_sound_file_factory_af0d25a94d7788fc06714fd90aee2b5a6}{s\_writers}}.erase(it);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00095}00095         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00096}00096             ++it;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00097}00097     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00098}00098 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00100}00100 \} \textcolor{comment}{// namespace sf}}
+
+\end{DoxyCode}

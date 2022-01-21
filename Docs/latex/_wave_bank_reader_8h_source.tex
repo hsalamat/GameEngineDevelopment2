@@ -1,0 +1,77 @@
+\hypertarget{_wave_bank_reader_8h_source}{}\doxysection{Wave\+Bank\+Reader.\+h}
+\label{_wave_bank_reader_8h_source}\index{Week13/WaveBankReader.h@{Week13/WaveBankReader.h}}
+\mbox{\hyperlink{_wave_bank_reader_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00001}00001 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00002}00002 \textcolor{comment}{// File: WaveBankReader.h}}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00003}00003 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00004}00004 \textcolor{comment}{// Functions for loading audio data from Wave Banks}}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00005}00005 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00007}00007 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00009}00009 \textcolor{preprocessor}{\#include <objbase.h>}}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00010}00010 \textcolor{preprocessor}{\#include <mmreg.h>}}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00012}00012 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00013}00013 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00016}\mbox{\hyperlink{namespace_direct_x}{00016}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_direct_x}{DirectX}}}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00017}00017 \{}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00018}\mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader}{00018}}     \textcolor{keyword}{class }\mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader}{WaveBankReader}}}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00019}00019     \{}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00020}00020     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00021}00021         \mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader_ac5305dc261b2d1909c6ce320a2233047}{WaveBankReader}}() \textcolor{keyword}{noexcept}(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00023}\mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader_ab99be709b127f6e024d88bd10668672b}{00023}}         \mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader_ab99be709b127f6e024d88bd10668672b}{WaveBankReader}}(\mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader}{WaveBankReader}}\&\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00024}\mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader_a86b2375a09e88ec857fb187afdc5f0d7}{00024}}         \mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader}{WaveBankReader}}\& \mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader_a86b2375a09e88ec857fb187afdc5f0d7}{operator= }}(\mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader}{WaveBankReader}}\&\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00026}\mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader_a6a5c8e66cdf9eda3fd37b84689ab0d72}{00026}}         \mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader_a6a5c8e66cdf9eda3fd37b84689ab0d72}{WaveBankReader}}(\mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader}{WaveBankReader}} \textcolor{keyword}{const}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00027}\mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader_a5829d53f6a9f17f18c156d1f8df924a9}{00027}}         \mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader}{WaveBankReader}}\& \mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader_a86b2375a09e88ec857fb187afdc5f0d7}{operator= }}(\mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader}{WaveBankReader}} \textcolor{keyword}{const}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00029}00029         \mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader_abe7cc7e0686e0c6afc4f685c5d254f5b}{\string~WaveBankReader}}();}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00031}00031         HRESULT \mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader_a2ec9adf03d35e11cf51a13b12c54b6b2}{Open}}(\_In\_z\_ \textcolor{keyword}{const} \textcolor{keywordtype}{wchar\_t}* szFileName) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00033}00033         uint32\_t \mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader_adcf1feede1070887cfdcb6fbc3416a7c}{Find}}(\_In\_z\_ \textcolor{keyword}{const} \textcolor{keywordtype}{char}* name) \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00035}00035         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader_a3555288de20069e25eaecc85dd256555}{IsPrepared}}() noexcept;}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00036}00036         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader_a3a1e4c9f86b27da3d51dbff448fffd09}{WaitOnPrepare}}() noexcept;}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00038}00038         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader_a134f8ace8cde4cab12e64f0abbb685e1}{HasNames}}() const noexcept;}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00039}00039         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader_aaa5e6b8e0e0e80a143499c9481f3d460}{IsStreamingBank}}() const noexcept;}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00041}00041         const \textcolor{keywordtype}{char}* \mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader_ab584b9653c114a5ab1f3f194c08db471}{BankName}}() const noexcept;}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00043}00043         uint32\_t \mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader_a519664a5a3e389664a5192e026e418b5}{Count}}() const noexcept;}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00045}00045         uint32\_t \mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader_a2ad7b1978f51ae2e2cea7481afec441a}{BankAudioSize}}() const noexcept;}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00047}00047         HRESULT \mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader_a50ed0b658fddf6af82f9fc74e96c5b7a}{GetFormat}}(\_In\_ uint32\_t index, \_Out\_writes\_bytes\_(maxsize) WAVEFORMATEX* pFormat, \_In\_ \textcolor{keywordtype}{size\_t} maxsize) const noexcept;}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00049}00049         HRESULT \mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader_a744a2c4bd5b6d690be26424c16786836}{GetWaveData}}(\_In\_ uint32\_t index, \_Outptr\_ const uint8\_t** pData, \_Out\_ uint32\_t\& dataSize) const noexcept;}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00051}00051         HRESULT \mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader_aca78da05279aab92f0b0f83d65f4c1cf}{GetSeekTable}}(\_In\_ uint32\_t index, \_Out\_ const uint32\_t** pData, \_Out\_ uint32\_t\& dataCount, \_Out\_ uint32\_t\& tag) const noexcept;}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00053}00053         HANDLE \mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader_a65814e765c107e614830b939bdbe4c86}{GetAsyncHandle}}() const noexcept;}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00055}\mbox{\hyperlink{struct_direct_x_1_1_wave_bank_reader_1_1_metadata}{00055}}         struct \mbox{\hyperlink{struct_direct_x_1_1_wave_bank_reader_1_1_metadata}{Metadata}}}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00056}00056         \{}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00057}\mbox{\hyperlink{struct_direct_x_1_1_wave_bank_reader_1_1_metadata_a9c659f672900c2bba8c28ecbaac128c2}{00057}}             uint32\_t    \mbox{\hyperlink{struct_direct_x_1_1_wave_bank_reader_1_1_metadata_a9c659f672900c2bba8c28ecbaac128c2}{duration}};}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00058}\mbox{\hyperlink{struct_direct_x_1_1_wave_bank_reader_1_1_metadata_a6933f3edd86bae6dc9de4e4a8c7ffea6}{00058}}             uint32\_t    \mbox{\hyperlink{struct_direct_x_1_1_wave_bank_reader_1_1_metadata_a6933f3edd86bae6dc9de4e4a8c7ffea6}{loopStart}};}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00059}\mbox{\hyperlink{struct_direct_x_1_1_wave_bank_reader_1_1_metadata_aa6e5dd184797c8c63bc83fa0147ad551}{00059}}             uint32\_t    \mbox{\hyperlink{struct_direct_x_1_1_wave_bank_reader_1_1_metadata_aa6e5dd184797c8c63bc83fa0147ad551}{loopLength}};}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00060}\mbox{\hyperlink{struct_direct_x_1_1_wave_bank_reader_1_1_metadata_ac3c4675edfa7fc241cb463cfb81788bd}{00060}}             uint32\_t    \mbox{\hyperlink{struct_direct_x_1_1_wave_bank_reader_1_1_metadata_ac3c4675edfa7fc241cb463cfb81788bd}{offsetBytes}};}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00061}\mbox{\hyperlink{struct_direct_x_1_1_wave_bank_reader_1_1_metadata_ae728d57737d2c990d061630fccf8b0b9}{00061}}             uint32\_t    \mbox{\hyperlink{struct_direct_x_1_1_wave_bank_reader_1_1_metadata_ae728d57737d2c990d061630fccf8b0b9}{lengthBytes}};}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00062}00062         \};}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00063}00063         HRESULT \mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader_ae3e4fedea9f72088cf9241b08f622312}{GetMetadata}}(\_In\_ uint32\_t index, \_Out\_ \mbox{\hyperlink{struct_direct_x_1_1_wave_bank_reader_1_1_metadata}{Metadata}}\& metadata) \textcolor{keyword}{const} \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00065}00065     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00066}00066         \textcolor{comment}{// Private implementation.}}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00067}00067         \textcolor{keyword}{class }\mbox{\hyperlink{class_wave_bank_reader_1_1_impl}{Impl}};}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00069}\mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader_ad1f5898bf1cd5d15ae963f11c31cfd8e}{00069}}         std::unique\_ptr<Impl> \mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader_ad1f5898bf1cd5d15ae963f11c31cfd8e}{pImpl}};}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00070}00070     \};}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8h_source_l00071}00071 \}}
+
+\end{DoxyCode}

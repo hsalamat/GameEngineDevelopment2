@@ -1,0 +1,501 @@
+\hypertarget{classsf_1_1_mouse}{}\doxysection{sf\+::Mouse Class Reference}
+\label{classsf_1_1_mouse}\index{sf::Mouse@{sf::Mouse}}
+
+
+Give access to the real-\/time state of the mouse.  
+
+
+
+
+{\ttfamily \#include $<$Mouse.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90}{Button}} \{ \newline
+\mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a7fedad2e16d5c1dcf61de9eff0dbb501}{Left}}
+, \mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a64bbf245db73f3b156bc65aa30666831}{Right}}
+, \mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90abb6be270c8c9398b9a0421258b057b76}{Middle}}
+, \mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a3af65e31680f6b1881897691a42cc934}{XButton1}}
+, \newline
+\mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a634ef28ebbf74e5ef62d66c8ed185350}{XButton2}}
+, \mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a8912c097ec6ffbd248c3057b4b95685d}{Button\+Count}}
+, \mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a7fedad2e16d5c1dcf61de9eff0dbb501}{Left}}
+, \mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a64bbf245db73f3b156bc65aa30666831}{Right}}
+, \newline
+\mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90abb6be270c8c9398b9a0421258b057b76}{Middle}}
+, \mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a3af65e31680f6b1881897691a42cc934}{XButton1}}
+, \mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a634ef28ebbf74e5ef62d66c8ed185350}{XButton2}}
+, \mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a8912c097ec6ffbd248c3057b4b95685d}{Button\+Count}}
+ \}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsf_1_1_mouse}{Mouse}} buttons. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{classsf_1_1_mouse_a60dd479a43f26f200e7957aa11803ff4}{Wheel}} \{ \mbox{\hyperlink{classsf_1_1_mouse_a60dd479a43f26f200e7957aa11803ff4a8964269d4e4c0efc6cdefaad1b700250}{Vertical\+Wheel}}
+, \mbox{\hyperlink{classsf_1_1_mouse_a60dd479a43f26f200e7957aa11803ff4ab2ce0c19ab64d60255d7671a86d0f021}{Horizontal\+Wheel}}
+, \mbox{\hyperlink{classsf_1_1_mouse_a60dd479a43f26f200e7957aa11803ff4a8964269d4e4c0efc6cdefaad1b700250}{Vertical\+Wheel}}
+, \mbox{\hyperlink{classsf_1_1_mouse_a60dd479a43f26f200e7957aa11803ff4ab2ce0c19ab64d60255d7671a86d0f021}{Horizontal\+Wheel}}
+ \}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsf_1_1_mouse}{Mouse}} wheels. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90}{Button}} \{ \newline
+\mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a7fedad2e16d5c1dcf61de9eff0dbb501}{Left}}
+, \mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a64bbf245db73f3b156bc65aa30666831}{Right}}
+, \mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90abb6be270c8c9398b9a0421258b057b76}{Middle}}
+, \mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a3af65e31680f6b1881897691a42cc934}{XButton1}}
+, \newline
+\mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a634ef28ebbf74e5ef62d66c8ed185350}{XButton2}}
+, \mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a8912c097ec6ffbd248c3057b4b95685d}{Button\+Count}}
+, \mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a7fedad2e16d5c1dcf61de9eff0dbb501}{Left}}
+, \mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a64bbf245db73f3b156bc65aa30666831}{Right}}
+, \newline
+\mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90abb6be270c8c9398b9a0421258b057b76}{Middle}}
+, \mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a3af65e31680f6b1881897691a42cc934}{XButton1}}
+, \mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a634ef28ebbf74e5ef62d66c8ed185350}{XButton2}}
+, \mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a8912c097ec6ffbd248c3057b4b95685d}{Button\+Count}}
+ \}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsf_1_1_mouse}{Mouse}} buttons. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{classsf_1_1_mouse_a60dd479a43f26f200e7957aa11803ff4}{Wheel}} \{ \mbox{\hyperlink{classsf_1_1_mouse_a60dd479a43f26f200e7957aa11803ff4a8964269d4e4c0efc6cdefaad1b700250}{Vertical\+Wheel}}
+, \mbox{\hyperlink{classsf_1_1_mouse_a60dd479a43f26f200e7957aa11803ff4ab2ce0c19ab64d60255d7671a86d0f021}{Horizontal\+Wheel}}
+, \mbox{\hyperlink{classsf_1_1_mouse_a60dd479a43f26f200e7957aa11803ff4a8964269d4e4c0efc6cdefaad1b700250}{Vertical\+Wheel}}
+, \mbox{\hyperlink{classsf_1_1_mouse_a60dd479a43f26f200e7957aa11803ff4ab2ce0c19ab64d60255d7671a86d0f021}{Horizontal\+Wheel}}
+ \}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsf_1_1_mouse}{Mouse}} wheels. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classsf_1_1_mouse_ab647159eb88e369a0332a9c5a7ba6687}{is\+Button\+Pressed}} (\mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90}{Button}} \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_a92decbf8642d08b3993016451fdad8df}{button}})
+\begin{DoxyCompactList}\small\item\em Check if a mouse button is pressed. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{Vector2i}} \mbox{\hyperlink{classsf_1_1_mouse_ac368680f797b7f6e4f50b5b7928c1387}{get\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Get the current position of the mouse in desktop coordinates. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{Vector2i}} \mbox{\hyperlink{classsf_1_1_mouse_a93b4d2ebef728e77a0ec9d83c1e0b0c8}{get\+Position}} (const \mbox{\hyperlink{classsf_1_1_window}{Window}} \&relative\+To)
+\begin{DoxyCompactList}\small\item\em Get the current position of the mouse in window coordinates. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classsf_1_1_mouse_a1222e16c583be9e3d176d86e0b7817d7}{set\+Position}} (const \mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{Vector2i}} \&position)
+\begin{DoxyCompactList}\small\item\em Set the current position of the mouse in desktop coordinates. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classsf_1_1_mouse_ad9b16ec7041531315f06b26b413dfea8}{set\+Position}} (const \mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{Vector2i}} \&position, const \mbox{\hyperlink{classsf_1_1_window}{Window}} \&relative\+To)
+\begin{DoxyCompactList}\small\item\em Set the current position of the mouse in window coordinates. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classsf_1_1_mouse_ab647159eb88e369a0332a9c5a7ba6687}{is\+Button\+Pressed}} (\mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90}{Button}} \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_a92decbf8642d08b3993016451fdad8df}{button}})
+\begin{DoxyCompactList}\small\item\em Check if a mouse button is pressed. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{Vector2i}} \mbox{\hyperlink{classsf_1_1_mouse_ac368680f797b7f6e4f50b5b7928c1387}{get\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Get the current position of the mouse in desktop coordinates. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{Vector2i}} \mbox{\hyperlink{classsf_1_1_mouse_a93b4d2ebef728e77a0ec9d83c1e0b0c8}{get\+Position}} (const \mbox{\hyperlink{classsf_1_1_window}{Window}} \&relative\+To)
+\begin{DoxyCompactList}\small\item\em Get the current position of the mouse in window coordinates. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classsf_1_1_mouse_a1222e16c583be9e3d176d86e0b7817d7}{set\+Position}} (const \mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{Vector2i}} \&position)
+\begin{DoxyCompactList}\small\item\em Set the current position of the mouse in desktop coordinates. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classsf_1_1_mouse_ad9b16ec7041531315f06b26b413dfea8}{set\+Position}} (const \mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{Vector2i}} \&position, const \mbox{\hyperlink{classsf_1_1_window}{Window}} \&relative\+To)
+\begin{DoxyCompactList}\small\item\em Set the current position of the mouse in window coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Give access to the real-\/time state of the mouse. 
+
+\mbox{\hyperlink{classsf_1_1_mouse}{sf\+::\+Mouse}} provides an interface to the state of the mouse.
+
+It only contains static functions (a single mouse is assumed), so it\textquotesingle{}s not meant to be instantiated.
+
+This class allows users to query the mouse state at any time and directly, without having to deal with a window and its events. Compared to the Mouse\+Moved, Mouse\+Button\+Pressed and Mouse\+Button\+Released events, \mbox{\hyperlink{classsf_1_1_mouse}{sf\+::\+Mouse}} can retrieve the state of the cursor and the buttons at any time (you don\textquotesingle{}t need to store and update a boolean on your side in order to know if a button is pressed or released), and you always get the real state of the mouse, even if it is moved, pressed or released when your window is out of focus and no event is triggered.
+
+The set\+Position and get\+Position functions can be used to change or retrieve the current position of the mouse pointer. There are two versions\+: one that operates in global coordinates (relative to the desktop) and one that operates in window coordinates (relative to a specific window).
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (\mbox{\hyperlink{classsf_1_1_mouse_ab647159eb88e369a0332a9c5a7ba6687}{sf::Mouse::isButtonPressed}}(\mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a7fedad2e16d5c1dcf61de9eff0dbb501}{sf::Mouse::Left}}))}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{comment}{// left click...}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// get global mouse position}}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2i}} position = \mbox{\hyperlink{classsf_1_1_mouse_ac368680f797b7f6e4f50b5b7928c1387}{sf::Mouse::getPosition}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// set mouse position relative to a window}}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_mouse_a1222e16c583be9e3d176d86e0b7817d7}{sf::Mouse::setPosition}}(\mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2i}}(100, 200), window);}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_joystick}{sf\+::\+Joystick}}, \mbox{\hyperlink{classsf_1_1_keyboard}{sf\+::\+Keyboard}}, \mbox{\hyperlink{classsf_1_1_touch}{sf\+::\+Touch}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_mouse_8hpp_source_l00043}{43}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_mouse_8hpp_source}{Mouse.\+hpp}}.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90}\label{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90}} 
+\index{sf::Mouse@{sf::Mouse}!Button@{Button}}
+\index{Button@{Button}!sf::Mouse@{sf::Mouse}}
+\doxysubsubsection{\texorpdfstring{Button}{Button}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90}{sf\+::\+Mouse\+::\+Button}}}
+
+
+
+\mbox{\hyperlink{classsf_1_1_mouse}{Mouse}} buttons. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Left@{Left}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!Left@{Left}}}\mbox{\Hypertarget{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a7fedad2e16d5c1dcf61de9eff0dbb501}\label{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a7fedad2e16d5c1dcf61de9eff0dbb501}} 
+Left&The left mouse button. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Right@{Right}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!Right@{Right}}}\mbox{\Hypertarget{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a64bbf245db73f3b156bc65aa30666831}\label{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a64bbf245db73f3b156bc65aa30666831}} 
+Right&The right mouse button. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Middle@{Middle}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!Middle@{Middle}}}\mbox{\Hypertarget{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90abb6be270c8c9398b9a0421258b057b76}\label{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90abb6be270c8c9398b9a0421258b057b76}} 
+Middle&The middle (wheel) mouse button. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XButton1@{XButton1}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!XButton1@{XButton1}}}\mbox{\Hypertarget{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a3af65e31680f6b1881897691a42cc934}\label{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a3af65e31680f6b1881897691a42cc934}} 
+XButton1&The first extra mouse button. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XButton2@{XButton2}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!XButton2@{XButton2}}}\mbox{\Hypertarget{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a634ef28ebbf74e5ef62d66c8ed185350}\label{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a634ef28ebbf74e5ef62d66c8ed185350}} 
+XButton2&The second extra mouse button. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ButtonCount@{ButtonCount}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!ButtonCount@{ButtonCount}}}\mbox{\Hypertarget{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a8912c097ec6ffbd248c3057b4b95685d}\label{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a8912c097ec6ffbd248c3057b4b95685d}} 
+Button\+Count&Keep last -- the total number of mouse buttons. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Left@{Left}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!Left@{Left}}}\mbox{\Hypertarget{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a7fedad2e16d5c1dcf61de9eff0dbb501}\label{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a7fedad2e16d5c1dcf61de9eff0dbb501}} 
+Left&The left mouse button. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Right@{Right}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!Right@{Right}}}\mbox{\Hypertarget{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a64bbf245db73f3b156bc65aa30666831}\label{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a64bbf245db73f3b156bc65aa30666831}} 
+Right&The right mouse button. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Middle@{Middle}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!Middle@{Middle}}}\mbox{\Hypertarget{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90abb6be270c8c9398b9a0421258b057b76}\label{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90abb6be270c8c9398b9a0421258b057b76}} 
+Middle&The middle (wheel) mouse button. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XButton1@{XButton1}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!XButton1@{XButton1}}}\mbox{\Hypertarget{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a3af65e31680f6b1881897691a42cc934}\label{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a3af65e31680f6b1881897691a42cc934}} 
+XButton1&The first extra mouse button. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XButton2@{XButton2}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!XButton2@{XButton2}}}\mbox{\Hypertarget{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a634ef28ebbf74e5ef62d66c8ed185350}\label{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a634ef28ebbf74e5ef62d66c8ed185350}} 
+XButton2&The second extra mouse button. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ButtonCount@{ButtonCount}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!ButtonCount@{ButtonCount}}}\mbox{\Hypertarget{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a8912c097ec6ffbd248c3057b4b95685d}\label{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a8912c097ec6ffbd248c3057b4b95685d}} 
+Button\+Count&Keep last -- the total number of mouse buttons. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_mouse_8hpp_source_l00051}{51}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_mouse_8hpp_source}{Mouse.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90}\label{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90}} 
+\index{sf::Mouse@{sf::Mouse}!Button@{Button}}
+\index{Button@{Button}!sf::Mouse@{sf::Mouse}}
+\doxysubsubsection{\texorpdfstring{Button}{Button}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90}{sf\+::\+Mouse\+::\+Button}}}
+
+
+
+\mbox{\hyperlink{classsf_1_1_mouse}{Mouse}} buttons. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Left@{Left}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!Left@{Left}}}\mbox{\Hypertarget{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a7fedad2e16d5c1dcf61de9eff0dbb501}\label{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a7fedad2e16d5c1dcf61de9eff0dbb501}} 
+Left&The left mouse button. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Right@{Right}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!Right@{Right}}}\mbox{\Hypertarget{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a64bbf245db73f3b156bc65aa30666831}\label{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a64bbf245db73f3b156bc65aa30666831}} 
+Right&The right mouse button. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Middle@{Middle}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!Middle@{Middle}}}\mbox{\Hypertarget{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90abb6be270c8c9398b9a0421258b057b76}\label{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90abb6be270c8c9398b9a0421258b057b76}} 
+Middle&The middle (wheel) mouse button. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XButton1@{XButton1}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!XButton1@{XButton1}}}\mbox{\Hypertarget{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a3af65e31680f6b1881897691a42cc934}\label{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a3af65e31680f6b1881897691a42cc934}} 
+XButton1&The first extra mouse button. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XButton2@{XButton2}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!XButton2@{XButton2}}}\mbox{\Hypertarget{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a634ef28ebbf74e5ef62d66c8ed185350}\label{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a634ef28ebbf74e5ef62d66c8ed185350}} 
+XButton2&The second extra mouse button. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ButtonCount@{ButtonCount}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!ButtonCount@{ButtonCount}}}\mbox{\Hypertarget{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a8912c097ec6ffbd248c3057b4b95685d}\label{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a8912c097ec6ffbd248c3057b4b95685d}} 
+Button\+Count&Keep last -- the total number of mouse buttons. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Left@{Left}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!Left@{Left}}}\mbox{\Hypertarget{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a7fedad2e16d5c1dcf61de9eff0dbb501}\label{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a7fedad2e16d5c1dcf61de9eff0dbb501}} 
+Left&The left mouse button. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Right@{Right}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!Right@{Right}}}\mbox{\Hypertarget{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a64bbf245db73f3b156bc65aa30666831}\label{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a64bbf245db73f3b156bc65aa30666831}} 
+Right&The right mouse button. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Middle@{Middle}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!Middle@{Middle}}}\mbox{\Hypertarget{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90abb6be270c8c9398b9a0421258b057b76}\label{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90abb6be270c8c9398b9a0421258b057b76}} 
+Middle&The middle (wheel) mouse button. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XButton1@{XButton1}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!XButton1@{XButton1}}}\mbox{\Hypertarget{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a3af65e31680f6b1881897691a42cc934}\label{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a3af65e31680f6b1881897691a42cc934}} 
+XButton1&The first extra mouse button. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XButton2@{XButton2}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!XButton2@{XButton2}}}\mbox{\Hypertarget{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a634ef28ebbf74e5ef62d66c8ed185350}\label{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a634ef28ebbf74e5ef62d66c8ed185350}} 
+XButton2&The second extra mouse button. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ButtonCount@{ButtonCount}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!ButtonCount@{ButtonCount}}}\mbox{\Hypertarget{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a8912c097ec6ffbd248c3057b4b95685d}\label{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a8912c097ec6ffbd248c3057b4b95685d}} 
+Button\+Count&Keep last -- the total number of mouse buttons. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_mouse_8hpp_source_l00051}{51}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_mouse_8hpp_source}{Mouse.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_mouse_a60dd479a43f26f200e7957aa11803ff4}\label{classsf_1_1_mouse_a60dd479a43f26f200e7957aa11803ff4}} 
+\index{sf::Mouse@{sf::Mouse}!Wheel@{Wheel}}
+\index{Wheel@{Wheel}!sf::Mouse@{sf::Mouse}}
+\doxysubsubsection{\texorpdfstring{Wheel}{Wheel}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classsf_1_1_mouse_a60dd479a43f26f200e7957aa11803ff4}{sf\+::\+Mouse\+::\+Wheel}}}
+
+
+
+\mbox{\hyperlink{classsf_1_1_mouse}{Mouse}} wheels. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VerticalWheel@{VerticalWheel}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!VerticalWheel@{VerticalWheel}}}\mbox{\Hypertarget{classsf_1_1_mouse_a60dd479a43f26f200e7957aa11803ff4a8964269d4e4c0efc6cdefaad1b700250}\label{classsf_1_1_mouse_a60dd479a43f26f200e7957aa11803ff4a8964269d4e4c0efc6cdefaad1b700250}} 
+Vertical\+Wheel&The vertical mouse wheel. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HorizontalWheel@{HorizontalWheel}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!HorizontalWheel@{HorizontalWheel}}}\mbox{\Hypertarget{classsf_1_1_mouse_a60dd479a43f26f200e7957aa11803ff4ab2ce0c19ab64d60255d7671a86d0f021}\label{classsf_1_1_mouse_a60dd479a43f26f200e7957aa11803ff4ab2ce0c19ab64d60255d7671a86d0f021}} 
+Horizontal\+Wheel&The horizontal mouse wheel. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VerticalWheel@{VerticalWheel}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!VerticalWheel@{VerticalWheel}}}\mbox{\Hypertarget{classsf_1_1_mouse_a60dd479a43f26f200e7957aa11803ff4a8964269d4e4c0efc6cdefaad1b700250}\label{classsf_1_1_mouse_a60dd479a43f26f200e7957aa11803ff4a8964269d4e4c0efc6cdefaad1b700250}} 
+Vertical\+Wheel&The vertical mouse wheel. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HorizontalWheel@{HorizontalWheel}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!HorizontalWheel@{HorizontalWheel}}}\mbox{\Hypertarget{classsf_1_1_mouse_a60dd479a43f26f200e7957aa11803ff4ab2ce0c19ab64d60255d7671a86d0f021}\label{classsf_1_1_mouse_a60dd479a43f26f200e7957aa11803ff4ab2ce0c19ab64d60255d7671a86d0f021}} 
+Horizontal\+Wheel&The horizontal mouse wheel. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_mouse_8hpp_source_l00066}{66}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_mouse_8hpp_source}{Mouse.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_mouse_a60dd479a43f26f200e7957aa11803ff4}\label{classsf_1_1_mouse_a60dd479a43f26f200e7957aa11803ff4}} 
+\index{sf::Mouse@{sf::Mouse}!Wheel@{Wheel}}
+\index{Wheel@{Wheel}!sf::Mouse@{sf::Mouse}}
+\doxysubsubsection{\texorpdfstring{Wheel}{Wheel}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classsf_1_1_mouse_a60dd479a43f26f200e7957aa11803ff4}{sf\+::\+Mouse\+::\+Wheel}}}
+
+
+
+\mbox{\hyperlink{classsf_1_1_mouse}{Mouse}} wheels. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VerticalWheel@{VerticalWheel}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!VerticalWheel@{VerticalWheel}}}\mbox{\Hypertarget{classsf_1_1_mouse_a60dd479a43f26f200e7957aa11803ff4a8964269d4e4c0efc6cdefaad1b700250}\label{classsf_1_1_mouse_a60dd479a43f26f200e7957aa11803ff4a8964269d4e4c0efc6cdefaad1b700250}} 
+Vertical\+Wheel&The vertical mouse wheel. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HorizontalWheel@{HorizontalWheel}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!HorizontalWheel@{HorizontalWheel}}}\mbox{\Hypertarget{classsf_1_1_mouse_a60dd479a43f26f200e7957aa11803ff4ab2ce0c19ab64d60255d7671a86d0f021}\label{classsf_1_1_mouse_a60dd479a43f26f200e7957aa11803ff4ab2ce0c19ab64d60255d7671a86d0f021}} 
+Horizontal\+Wheel&The horizontal mouse wheel. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VerticalWheel@{VerticalWheel}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!VerticalWheel@{VerticalWheel}}}\mbox{\Hypertarget{classsf_1_1_mouse_a60dd479a43f26f200e7957aa11803ff4a8964269d4e4c0efc6cdefaad1b700250}\label{classsf_1_1_mouse_a60dd479a43f26f200e7957aa11803ff4a8964269d4e4c0efc6cdefaad1b700250}} 
+Vertical\+Wheel&The vertical mouse wheel. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HorizontalWheel@{HorizontalWheel}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!HorizontalWheel@{HorizontalWheel}}}\mbox{\Hypertarget{classsf_1_1_mouse_a60dd479a43f26f200e7957aa11803ff4ab2ce0c19ab64d60255d7671a86d0f021}\label{classsf_1_1_mouse_a60dd479a43f26f200e7957aa11803ff4ab2ce0c19ab64d60255d7671a86d0f021}} 
+Horizontal\+Wheel&The horizontal mouse wheel. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_mouse_8hpp_source_l00066}{66}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_mouse_8hpp_source}{Mouse.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsf_1_1_mouse_ac368680f797b7f6e4f50b5b7928c1387}\label{classsf_1_1_mouse_ac368680f797b7f6e4f50b5b7928c1387}} 
+\index{sf::Mouse@{sf::Mouse}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!sf::Mouse@{sf::Mouse}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{Vector2i}} sf\+::\+Mouse\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the current position of the mouse in desktop coordinates. 
+
+This function returns the global position of the mouse cursor on the desktop.
+
+\begin{DoxyReturn}{Returns}
+Current position of the mouse 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_mouse_ac368680f797b7f6e4f50b5b7928c1387}\label{classsf_1_1_mouse_ac368680f797b7f6e4f50b5b7928c1387}} 
+\index{sf::Mouse@{sf::Mouse}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!sf::Mouse@{sf::Mouse}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{Vector2i}} sf\+::\+Mouse\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the current position of the mouse in desktop coordinates. 
+
+This function returns the global position of the mouse cursor on the desktop.
+
+\begin{DoxyReturn}{Returns}
+Current position of the mouse 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_mouse_a93b4d2ebef728e77a0ec9d83c1e0b0c8}\label{classsf_1_1_mouse_a93b4d2ebef728e77a0ec9d83c1e0b0c8}} 
+\index{sf::Mouse@{sf::Mouse}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!sf::Mouse@{sf::Mouse}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{Vector2i}} sf\+::\+Mouse\+::get\+Position (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_window}{Window}} \&}]{relative\+To }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the current position of the mouse in window coordinates. 
+
+This function returns the current position of the mouse cursor, relative to the given window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em relative\+To} & Reference window\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Current position of the mouse 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_mouse_a93b4d2ebef728e77a0ec9d83c1e0b0c8}\label{classsf_1_1_mouse_a93b4d2ebef728e77a0ec9d83c1e0b0c8}} 
+\index{sf::Mouse@{sf::Mouse}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!sf::Mouse@{sf::Mouse}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{Vector2i}} sf\+::\+Mouse\+::get\+Position (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_window}{Window}} \&}]{relative\+To }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the current position of the mouse in window coordinates. 
+
+This function returns the current position of the mouse cursor, relative to the given window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em relative\+To} & Reference window\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Current position of the mouse 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_mouse_ab647159eb88e369a0332a9c5a7ba6687}\label{classsf_1_1_mouse_ab647159eb88e369a0332a9c5a7ba6687}} 
+\index{sf::Mouse@{sf::Mouse}!isButtonPressed@{isButtonPressed}}
+\index{isButtonPressed@{isButtonPressed}!sf::Mouse@{sf::Mouse}}
+\doxysubsubsection{\texorpdfstring{isButtonPressed()}{isButtonPressed()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static bool sf\+::\+Mouse\+::is\+Button\+Pressed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90}{Button}}}]{button }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check if a mouse button is pressed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em button} & Button to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the button is pressed, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_mouse_ab647159eb88e369a0332a9c5a7ba6687}\label{classsf_1_1_mouse_ab647159eb88e369a0332a9c5a7ba6687}} 
+\index{sf::Mouse@{sf::Mouse}!isButtonPressed@{isButtonPressed}}
+\index{isButtonPressed@{isButtonPressed}!sf::Mouse@{sf::Mouse}}
+\doxysubsubsection{\texorpdfstring{isButtonPressed()}{isButtonPressed()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static bool sf\+::\+Mouse\+::is\+Button\+Pressed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90}{Button}}}]{button }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check if a mouse button is pressed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em button} & Button to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the button is pressed, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_mouse_a1222e16c583be9e3d176d86e0b7817d7}\label{classsf_1_1_mouse_a1222e16c583be9e3d176d86e0b7817d7}} 
+\index{sf::Mouse@{sf::Mouse}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!sf::Mouse@{sf::Mouse}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily static void sf\+::\+Mouse\+::set\+Position (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{Vector2i}} \&}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Set the current position of the mouse in desktop coordinates. 
+
+This function sets the global position of the mouse cursor on the desktop.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & New position of the mouse \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_mouse_a1222e16c583be9e3d176d86e0b7817d7}\label{classsf_1_1_mouse_a1222e16c583be9e3d176d86e0b7817d7}} 
+\index{sf::Mouse@{sf::Mouse}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!sf::Mouse@{sf::Mouse}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily static void sf\+::\+Mouse\+::set\+Position (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{Vector2i}} \&}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Set the current position of the mouse in desktop coordinates. 
+
+This function sets the global position of the mouse cursor on the desktop.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & New position of the mouse \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_mouse_ad9b16ec7041531315f06b26b413dfea8}\label{classsf_1_1_mouse_ad9b16ec7041531315f06b26b413dfea8}} 
+\index{sf::Mouse@{sf::Mouse}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!sf::Mouse@{sf::Mouse}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily static void sf\+::\+Mouse\+::set\+Position (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{Vector2i}} \&}]{position,  }\item[{const \mbox{\hyperlink{classsf_1_1_window}{Window}} \&}]{relative\+To }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Set the current position of the mouse in window coordinates. 
+
+This function sets the current position of the mouse cursor, relative to the given window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & New position of the mouse \\
+\hline
+{\em relative\+To} & Reference window \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_mouse_ad9b16ec7041531315f06b26b413dfea8}\label{classsf_1_1_mouse_ad9b16ec7041531315f06b26b413dfea8}} 
+\index{sf::Mouse@{sf::Mouse}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!sf::Mouse@{sf::Mouse}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily static void sf\+::\+Mouse\+::set\+Position (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{Vector2i}} \&}]{position,  }\item[{const \mbox{\hyperlink{classsf_1_1_window}{Window}} \&}]{relative\+To }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Set the current position of the mouse in window coordinates. 
+
+This function sets the current position of the mouse cursor, relative to the given window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & New position of the mouse \\
+\hline
+{\em relative\+To} & Reference window \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+SFML-\/2.\+5.\+1/include/\+SFML/\+Window/\mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_mouse_8hpp}{Mouse.\+hpp}}\item 
+Week14/\+SFML-\/2.\+5.\+1/include/\+SFML/\+Window/\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_mouse_8hpp}{Mouse.\+hpp}}\end{DoxyCompactItemize}

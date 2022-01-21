@@ -1,0 +1,448 @@
+\hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source}{}\doxysection{Shader.\+cpp}
+\label{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source}\index{SFML-\/2.5.1/examples/shader/Shader.cpp@{SFML-\/2.5.1/examples/shader/Shader.cpp}}
+\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00003}00003 \textcolor{comment}{// Headers}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00005}00005 \textcolor{comment}{}\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp}{Effect.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00010}00010 \textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_font}{sf::Font}}* \mbox{\hyperlink{class_effect_afa8f3dbd6bb7adb50b1e4b49eb336a3e}{Effect::s\_font}} = NULL;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00013}00013 \textcolor{comment}{// "{}Pixelate"{} fragment shader}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00015}\mbox{\hyperlink{class_pixelate}{00015}} \textcolor{comment}{}\textcolor{keyword}{class }\mbox{\hyperlink{class_pixelate}{Pixelate}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_effect}{Effect}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00016}00016 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00017}00017 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00019}\mbox{\hyperlink{class_pixelate_a015529c914b50983e95905cf29da8f86}{00019}}     \mbox{\hyperlink{class_pixelate_a015529c914b50983e95905cf29da8f86}{Pixelate}}() :}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00020}00020     \mbox{\hyperlink{class_effect}{Effect}}(\textcolor{stringliteral}{"{}pixelate"{}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00021}00021     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00022}00022     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00024}\mbox{\hyperlink{class_pixelate_a815d873c5d41fe57af715965b4f2fbbd}{00024}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_pixelate_a815d873c5d41fe57af715965b4f2fbbd}{onLoad}}()}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00025}00025     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00026}00026         \textcolor{comment}{// Load the texture and initialize the sprite}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00027}00027         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_pixelate_a9f6db6282097976b9b15f88f58405a4d}{m\_texture}}.\mbox{\hyperlink{classsf_1_1_texture_a8e1b56eabfe33e2e0e1cb03712c7fcc7}{loadFromFile}}(\textcolor{stringliteral}{"{}resources/background.jpg"{}}))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00028}00028             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00029}00029         \mbox{\hyperlink{class_pixelate_a6c661fa59f96923fa6b0e22b3fe12feb}{m\_sprite}}.\mbox{\hyperlink{classsf_1_1_sprite_a3729c88d88ac38c19317c18e87242560}{setTexture}}(\mbox{\hyperlink{class_pixelate_a9f6db6282097976b9b15f88f58405a4d}{m\_texture}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00031}00031         \textcolor{comment}{// Load the shader}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00032}00032         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_pixelate_a83c68478745be302262e6728d9078cd4}{m\_shader}}.\mbox{\hyperlink{classsf_1_1_shader_a053a5632848ebaca2fcd8ba29abe9e6e}{loadFromFile}}(\textcolor{stringliteral}{"{}resources/pixelate.frag"{}}, \mbox{\hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3adb35eecade8e954987a1a265125e1845}{sf::Shader::Fragment}}))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00033}00033             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00034}00034         \mbox{\hyperlink{class_pixelate_a83c68478745be302262e6728d9078cd4}{m\_shader}}.\mbox{\hyperlink{classsf_1_1_shader_abf78e3bea1e9b0bab850b6b0a0de29c7}{setUniform}}(\textcolor{stringliteral}{"{}texture"{}}, \mbox{\hyperlink{classsf_1_1_shader_ad679e434fc4f1a1af65f3815b2310fb5}{sf::Shader::CurrentTexture}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00036}00036         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00037}00037     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00039}\mbox{\hyperlink{class_pixelate_a78dd551e6e8cf39326acb1131b4964fe}{00039}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_pixelate_a78dd551e6e8cf39326acb1131b4964fe}{onUpdate}}(\textcolor{keywordtype}{float}, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00040}00040     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00041}00041         \mbox{\hyperlink{class_pixelate_a83c68478745be302262e6728d9078cd4}{m\_shader}}.\mbox{\hyperlink{classsf_1_1_shader_abf78e3bea1e9b0bab850b6b0a0de29c7}{setUniform}}(\textcolor{stringliteral}{"{}pixel\_threshold"{}}, (x + y) / 30);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00042}00042     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00044}\mbox{\hyperlink{class_pixelate_ad700c97025a7645098e3bdb7577ed939}{00044}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_pixelate_ad700c97025a7645098e3bdb7577ed939}{onDraw}}(\mbox{\hyperlink{classsf_1_1_render_target}{sf::RenderTarget}}\& target, \mbox{\hyperlink{classsf_1_1_render_states}{sf::RenderStates}} states)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00045}00045 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00046}00046         states.\mbox{\hyperlink{classsf_1_1_render_states_a30e00c9f28ca246ae73119975255ebd0}{shader}} = \&\mbox{\hyperlink{class_pixelate_a83c68478745be302262e6728d9078cd4}{m\_shader}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00047}00047         target.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(\mbox{\hyperlink{class_pixelate_a6c661fa59f96923fa6b0e22b3fe12feb}{m\_sprite}}, states);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00048}00048     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00050}00050 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00052}\mbox{\hyperlink{class_pixelate_a9f6db6282097976b9b15f88f58405a4d}{00052}}     \mbox{\hyperlink{classsf_1_1_texture}{sf::Texture}} \mbox{\hyperlink{class_pixelate_a9f6db6282097976b9b15f88f58405a4d}{m\_texture}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00053}\mbox{\hyperlink{class_pixelate_a6c661fa59f96923fa6b0e22b3fe12feb}{00053}}     \mbox{\hyperlink{classsf_1_1_sprite}{sf::Sprite}} \mbox{\hyperlink{class_pixelate_a6c661fa59f96923fa6b0e22b3fe12feb}{m\_sprite}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00054}\mbox{\hyperlink{class_pixelate_a83c68478745be302262e6728d9078cd4}{00054}}     \mbox{\hyperlink{classsf_1_1_shader}{sf::Shader}} \mbox{\hyperlink{class_pixelate_a83c68478745be302262e6728d9078cd4}{m\_shader}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00055}00055 \};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00059}00059 \textcolor{comment}{// "{}Wave"{} vertex shader + "{}blur"{} fragment shader}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00061}\mbox{\hyperlink{class_wave_blur}{00061}} \textcolor{comment}{}\textcolor{keyword}{class }\mbox{\hyperlink{class_wave_blur}{WaveBlur}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_effect}{Effect}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00062}00062 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00063}00063 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00065}\mbox{\hyperlink{class_wave_blur_ad66678786f597687d92a0c476b62ec31}{00065}}     \mbox{\hyperlink{class_wave_blur_ad66678786f597687d92a0c476b62ec31}{WaveBlur}}() :}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00066}00066     \mbox{\hyperlink{class_effect}{Effect}}(\textcolor{stringliteral}{"{}wave + blur"{}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00067}00067     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00068}00068     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00070}\mbox{\hyperlink{class_wave_blur_a7fea002e212a7bb88126b25b6bd57396}{00070}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_wave_blur_a7fea002e212a7bb88126b25b6bd57396}{onLoad}}()}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00071}00071     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00072}00072         \textcolor{comment}{// Create the text}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00073}00073         \mbox{\hyperlink{class_wave_blur_abff668dacacbe804edb845695ca7ce5a}{m\_text}}.\mbox{\hyperlink{classsf_1_1_text_a7d3b3359f286fd9503d1ced25b7b6c33}{setString}}(\textcolor{stringliteral}{"{}Praesent suscipit augue in velit pulvinar hendrerit varius purus aliquam.\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00074}00074                          \textcolor{stringliteral}{"{}Mauris mi odio, bibendum quis fringilla a, laoreet vel orci. Proin vitae vulputate tortor.\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00075}00075                          \textcolor{stringliteral}{"{}Praesent cursus ultrices justo, ut feugiat ante vehicula quis.\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00076}00076                          \textcolor{stringliteral}{"{}Donec fringilla scelerisque mauris et viverra.\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00077}00077                          \textcolor{stringliteral}{"{}Maecenas adipiscing ornare scelerisque. Nullam at libero elit.\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00078}00078                          \textcolor{stringliteral}{"{}Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00079}00079                          \textcolor{stringliteral}{"{}Nullam leo urna, tincidunt id semper eget, ultricies sed mi.\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00080}00080                          \textcolor{stringliteral}{"{}Morbi mauris massa, commodo id dignissim vel, lobortis et elit.\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00081}00081                          \textcolor{stringliteral}{"{}Fusce vel libero sed neque scelerisque venenatis.\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00082}00082                          \textcolor{stringliteral}{"{}Integer mattis tincidunt quam vitae iaculis.\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00083}00083                          \textcolor{stringliteral}{"{}Vivamus fringilla sem non velit venenatis fermentum.\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00084}00084                          \textcolor{stringliteral}{"{}Vivamus varius tincidunt nisi id vehicula.\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00085}00085                          \textcolor{stringliteral}{"{}Integer ullamcorper, enim vitae euismod rutrum, massa nisl semper ipsum,\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00086}00086                          \textcolor{stringliteral}{"{}vestibulum sodales sem ante in massa.\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00087}00087                          \textcolor{stringliteral}{"{}Vestibulum in augue non felis convallis viverra.\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00088}00088                          \textcolor{stringliteral}{"{}Mauris ultricies dolor sed massa convallis sed aliquet augue fringilla.\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00089}00089                          \textcolor{stringliteral}{"{}Duis erat eros, porta in accumsan in, blandit quis sem.\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00090}00090                          \textcolor{stringliteral}{"{}In hac habitasse platea dictumst. Etiam fringilla est id odio dapibus sit amet semper dui laoreet.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00091}00091         \mbox{\hyperlink{class_wave_blur_abff668dacacbe804edb845695ca7ce5a}{m\_text}}.\mbox{\hyperlink{classsf_1_1_text_a2927805d1ae92d57f15034ea34756b81}{setFont}}(\mbox{\hyperlink{class_effect_aa66af317229f52d12619b7e720c500d3}{getFont}}());}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00092}00092         \mbox{\hyperlink{class_wave_blur_abff668dacacbe804edb845695ca7ce5a}{m\_text}}.\mbox{\hyperlink{classsf_1_1_text_ae96f835fc1bff858f8a23c5b01eaaf7e}{setCharacterSize}}(22);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00093}00093         \mbox{\hyperlink{class_wave_blur_abff668dacacbe804edb845695ca7ce5a}{m\_text}}.\mbox{\hyperlink{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{setPosition}}(30, 20);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00095}00095         \textcolor{comment}{// Load the shader}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00096}00096         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_wave_blur_a7ec5eadae30f3a7cb96214e9f6c18aba}{m\_shader}}.\mbox{\hyperlink{classsf_1_1_shader_a053a5632848ebaca2fcd8ba29abe9e6e}{loadFromFile}}(\textcolor{stringliteral}{"{}resources/wave.vert"{}}, \textcolor{stringliteral}{"{}resources/blur.frag"{}}))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00097}00097             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00098}00098 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00099}00099         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00100}00100     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00101}00101 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00102}\mbox{\hyperlink{class_wave_blur_afbc71110feb1a9638b15be91bffd9ec6}{00102}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_wave_blur_afbc71110feb1a9638b15be91bffd9ec6}{onUpdate}}(\textcolor{keywordtype}{float} time, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00103}00103     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00104}00104         \mbox{\hyperlink{class_wave_blur_a7ec5eadae30f3a7cb96214e9f6c18aba}{m\_shader}}.\mbox{\hyperlink{classsf_1_1_shader_abf78e3bea1e9b0bab850b6b0a0de29c7}{setUniform}}(\textcolor{stringliteral}{"{}wave\_phase"{}}, time);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00105}00105         \mbox{\hyperlink{class_wave_blur_a7ec5eadae30f3a7cb96214e9f6c18aba}{m\_shader}}.\mbox{\hyperlink{classsf_1_1_shader_abf78e3bea1e9b0bab850b6b0a0de29c7}{setUniform}}(\textcolor{stringliteral}{"{}wave\_amplitude"{}}, \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}}(x * 40, y * 40));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00106}00106         \mbox{\hyperlink{class_wave_blur_a7ec5eadae30f3a7cb96214e9f6c18aba}{m\_shader}}.\mbox{\hyperlink{classsf_1_1_shader_abf78e3bea1e9b0bab850b6b0a0de29c7}{setUniform}}(\textcolor{stringliteral}{"{}blur\_radius"{}}, (x + y) * 0.008f);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00107}00107     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00108}00108 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00109}\mbox{\hyperlink{class_wave_blur_a49f4365ad9b266513aa82f39628ea2ef}{00109}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_wave_blur_a49f4365ad9b266513aa82f39628ea2ef}{onDraw}}(\mbox{\hyperlink{classsf_1_1_render_target}{sf::RenderTarget}}\& target, \mbox{\hyperlink{classsf_1_1_render_states}{sf::RenderStates}} states)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00110}00110 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00111}00111         states.\mbox{\hyperlink{classsf_1_1_render_states_a30e00c9f28ca246ae73119975255ebd0}{shader}} = \&\mbox{\hyperlink{class_wave_blur_a7ec5eadae30f3a7cb96214e9f6c18aba}{m\_shader}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00112}00112         target.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(\mbox{\hyperlink{class_wave_blur_abff668dacacbe804edb845695ca7ce5a}{m\_text}}, states);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00113}00113     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00115}00115 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00116}00116 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00117}\mbox{\hyperlink{class_wave_blur_abff668dacacbe804edb845695ca7ce5a}{00117}}     \mbox{\hyperlink{classsf_1_1_text}{sf::Text}} \mbox{\hyperlink{class_wave_blur_abff668dacacbe804edb845695ca7ce5a}{m\_text}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00118}\mbox{\hyperlink{class_wave_blur_a7ec5eadae30f3a7cb96214e9f6c18aba}{00118}}     \mbox{\hyperlink{classsf_1_1_shader}{sf::Shader}} \mbox{\hyperlink{class_wave_blur_a7ec5eadae30f3a7cb96214e9f6c18aba}{m\_shader}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00119}00119 \};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00120}00120 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00121}00121 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00123}00123 \textcolor{comment}{// "{}Storm"{} vertex shader + "{}blink"{} fragment shader}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00125}\mbox{\hyperlink{class_storm_blink}{00125}} \textcolor{comment}{}\textcolor{keyword}{class }\mbox{\hyperlink{class_storm_blink}{StormBlink}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_effect}{Effect}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00126}00126 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00127}00127 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00128}00128 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00129}\mbox{\hyperlink{class_storm_blink_a7f9ebfe8ba1afa662d5efaf3b2ea64d1}{00129}}     \mbox{\hyperlink{class_storm_blink_a7f9ebfe8ba1afa662d5efaf3b2ea64d1}{StormBlink}}() :}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00130}00130     \mbox{\hyperlink{class_effect}{Effect}}(\textcolor{stringliteral}{"{}storm + blink"{}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00131}00131     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00132}00132     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00133}00133 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00134}\mbox{\hyperlink{class_storm_blink_aaf78eaf05b23742e6b5f5c471b790cbe}{00134}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_storm_blink_aaf78eaf05b23742e6b5f5c471b790cbe}{onLoad}}()}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00135}00135     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00136}00136         \textcolor{comment}{// Create the points}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00137}00137         \mbox{\hyperlink{class_storm_blink_ac1534b535efefe6b4f331e902f236cec}{m\_points}}.\mbox{\hyperlink{classsf_1_1_vertex_array_aa38c10707c28a97f4627ae8b2f3ad969}{setPrimitiveType}}(\mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1ba85cf551ca780a29ec5df3ee9fc282c22}{sf::Points}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00138}00138         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 40000; ++i)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00139}00139         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00140}00140             \textcolor{keywordtype}{float} x = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(std::rand() \% 800);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00141}00141             \textcolor{keywordtype}{float} y = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(std::rand() \% 600);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00142}00142             \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{sf::Uint8}} r = std::rand() \% 255;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00143}00143             \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{sf::Uint8}} g = std::rand() \% 255;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00144}00144             \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{sf::Uint8}} b = std::rand() \% 255;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00145}00145             \mbox{\hyperlink{class_storm_blink_ac1534b535efefe6b4f331e902f236cec}{m\_points}}.\mbox{\hyperlink{classsf_1_1_vertex_array_a80c8f6865e53bd21fc6cb10fffa10035}{append}}(\mbox{\hyperlink{classsf_1_1_vertex}{sf::Vertex}}(\mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}}(x, y), \mbox{\hyperlink{classsf_1_1_color}{sf::Color}}(r, g, b)));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00146}00146         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00147}00147 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00148}00148         \textcolor{comment}{// Load the shader}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00149}00149         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_storm_blink_ac519abab2ffa7f87c32c0488df4eb1bc}{m\_shader}}.\mbox{\hyperlink{classsf_1_1_shader_a053a5632848ebaca2fcd8ba29abe9e6e}{loadFromFile}}(\textcolor{stringliteral}{"{}resources/storm.vert"{}}, \textcolor{stringliteral}{"{}resources/blink.frag"{}}))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00150}00150             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00151}00151 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00152}00152         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00153}00153     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00154}00154 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00155}\mbox{\hyperlink{class_storm_blink_ab679ebd3ef1b7a1b8fbd579cd7c87fce}{00155}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_storm_blink_ab679ebd3ef1b7a1b8fbd579cd7c87fce}{onUpdate}}(\textcolor{keywordtype}{float} time, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00156}00156     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00157}00157         \textcolor{keywordtype}{float} radius = 200 + std::cos(time) * 150;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00158}00158         \mbox{\hyperlink{class_storm_blink_ac519abab2ffa7f87c32c0488df4eb1bc}{m\_shader}}.\mbox{\hyperlink{classsf_1_1_shader_abf78e3bea1e9b0bab850b6b0a0de29c7}{setUniform}}(\textcolor{stringliteral}{"{}storm\_position"{}}, \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}}(x * 800, y * 600));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00159}00159         \mbox{\hyperlink{class_storm_blink_ac519abab2ffa7f87c32c0488df4eb1bc}{m\_shader}}.\mbox{\hyperlink{classsf_1_1_shader_abf78e3bea1e9b0bab850b6b0a0de29c7}{setUniform}}(\textcolor{stringliteral}{"{}storm\_inner\_radius"{}}, radius / 3);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00160}00160         \mbox{\hyperlink{class_storm_blink_ac519abab2ffa7f87c32c0488df4eb1bc}{m\_shader}}.\mbox{\hyperlink{classsf_1_1_shader_abf78e3bea1e9b0bab850b6b0a0de29c7}{setUniform}}(\textcolor{stringliteral}{"{}storm\_total\_radius"{}}, radius);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00161}00161         \mbox{\hyperlink{class_storm_blink_ac519abab2ffa7f87c32c0488df4eb1bc}{m\_shader}}.\mbox{\hyperlink{classsf_1_1_shader_abf78e3bea1e9b0bab850b6b0a0de29c7}{setUniform}}(\textcolor{stringliteral}{"{}blink\_alpha"{}}, 0.5f + std::cos(time * 3) * 0.25f);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00162}00162     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00163}00163 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00164}\mbox{\hyperlink{class_storm_blink_a75b5ef78dd4855d858b5f7e4f5be1053}{00164}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_storm_blink_a75b5ef78dd4855d858b5f7e4f5be1053}{onDraw}}(\mbox{\hyperlink{classsf_1_1_render_target}{sf::RenderTarget}}\& target, \mbox{\hyperlink{classsf_1_1_render_states}{sf::RenderStates}} states)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00165}00165 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00166}00166         states.\mbox{\hyperlink{classsf_1_1_render_states_a30e00c9f28ca246ae73119975255ebd0}{shader}} = \&\mbox{\hyperlink{class_storm_blink_ac519abab2ffa7f87c32c0488df4eb1bc}{m\_shader}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00167}00167         target.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(\mbox{\hyperlink{class_storm_blink_ac1534b535efefe6b4f331e902f236cec}{m\_points}}, states);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00168}00168     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00169}00169 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00170}00170 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00171}00171 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00172}\mbox{\hyperlink{class_storm_blink_ac1534b535efefe6b4f331e902f236cec}{00172}}     \mbox{\hyperlink{classsf_1_1_vertex_array}{sf::VertexArray}} \mbox{\hyperlink{class_storm_blink_ac1534b535efefe6b4f331e902f236cec}{m\_points}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00173}\mbox{\hyperlink{class_storm_blink_ac519abab2ffa7f87c32c0488df4eb1bc}{00173}}     \mbox{\hyperlink{classsf_1_1_shader}{sf::Shader}} \mbox{\hyperlink{class_storm_blink_ac519abab2ffa7f87c32c0488df4eb1bc}{m\_shader}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00174}00174 \};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00175}00175 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00176}00176 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00178}00178 \textcolor{comment}{// "{}Edge"{} post-\/effect fragment shader}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00180}\mbox{\hyperlink{class_edge}{00180}} \textcolor{comment}{}\textcolor{keyword}{class }\mbox{\hyperlink{class_edge}{Edge}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_effect}{Effect}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00181}00181 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00182}00182 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00183}00183 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00184}\mbox{\hyperlink{class_edge_a3106b11d60125009dbf7a738ce540fdf}{00184}}     \mbox{\hyperlink{class_edge_a3106b11d60125009dbf7a738ce540fdf}{Edge}}() :}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00185}00185     \mbox{\hyperlink{class_effect}{Effect}}(\textcolor{stringliteral}{"{}edge post-\/effect"{}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00186}00186     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00187}00187     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00188}00188 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00189}\mbox{\hyperlink{class_edge_a85a432189d48b34f17f154d59814a7ed}{00189}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_edge_a85a432189d48b34f17f154d59814a7ed}{onLoad}}()}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00190}00190     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00191}00191         \textcolor{comment}{// Create the off-\/screen surface}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00192}00192         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_edge_a455e4dd17cc23208dbfb84b781ff407d}{m\_surface}}.\mbox{\hyperlink{classsf_1_1_render_texture_aaec1fb8ee77844da50b0143cb41c8a71}{create}}(800, 600))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00193}00193             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00194}00194         \mbox{\hyperlink{class_edge_a455e4dd17cc23208dbfb84b781ff407d}{m\_surface}}.\mbox{\hyperlink{classsf_1_1_render_texture_af08991e63c6020865dd07b20e27305b6}{setSmooth}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00195}00195 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00196}00196         \textcolor{comment}{// Load the textures}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00197}00197         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_edge_a49b1f097be3238269d2bcc36bbe8e023}{m\_backgroundTexture}}.\mbox{\hyperlink{classsf_1_1_texture_a8e1b56eabfe33e2e0e1cb03712c7fcc7}{loadFromFile}}(\textcolor{stringliteral}{"{}resources/sfml.png"{}}))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00198}00198             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00199}00199         \mbox{\hyperlink{class_edge_a49b1f097be3238269d2bcc36bbe8e023}{m\_backgroundTexture}}.\mbox{\hyperlink{classsf_1_1_texture_a0c3bd6825b9a99714f10d44179d74324}{setSmooth}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00200}00200         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_edge_a43381dd898ef369ddca2e0e27d36e4ce}{m\_entityTexture}}.\mbox{\hyperlink{classsf_1_1_texture_a8e1b56eabfe33e2e0e1cb03712c7fcc7}{loadFromFile}}(\textcolor{stringliteral}{"{}resources/devices.png"{}}))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00201}00201             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00202}00202         \mbox{\hyperlink{class_edge_a43381dd898ef369ddca2e0e27d36e4ce}{m\_entityTexture}}.\mbox{\hyperlink{classsf_1_1_texture_a0c3bd6825b9a99714f10d44179d74324}{setSmooth}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00203}00203 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00204}00204         \textcolor{comment}{// Initialize the background sprite}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00205}00205         \mbox{\hyperlink{class_edge_a10f26fdc52458b55e14861beca462642}{m\_backgroundSprite}}.\mbox{\hyperlink{classsf_1_1_sprite_a3729c88d88ac38c19317c18e87242560}{setTexture}}(\mbox{\hyperlink{class_edge_a49b1f097be3238269d2bcc36bbe8e023}{m\_backgroundTexture}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00206}00206         \mbox{\hyperlink{class_edge_a10f26fdc52458b55e14861beca462642}{m\_backgroundSprite}}.\mbox{\hyperlink{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{setPosition}}(135, 100);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00207}00207 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00208}00208         \textcolor{comment}{// Load the moving entities}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00209}00209         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 6; ++i)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00210}00210         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00211}00211             \mbox{\hyperlink{classsf_1_1_sprite}{sf::Sprite}} entity(\mbox{\hyperlink{class_edge_a43381dd898ef369ddca2e0e27d36e4ce}{m\_entityTexture}}, \mbox{\hyperlink{classsf_1_1_rect}{sf::IntRect}}(96 * i, 0, 96, 96));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00212}00212             \mbox{\hyperlink{class_edge_a5421a8fa75caa61d1af4bb4007d85576}{m\_entities}}.push\_back(entity);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00213}00213         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00214}00214 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00215}00215         \textcolor{comment}{// Load the shader}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00216}00216         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_edge_a9fa208b4768f1765e65f99dde015fc77}{m\_shader}}.\mbox{\hyperlink{classsf_1_1_shader_a053a5632848ebaca2fcd8ba29abe9e6e}{loadFromFile}}(\textcolor{stringliteral}{"{}resources/edge.frag"{}}, \mbox{\hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3adb35eecade8e954987a1a265125e1845}{sf::Shader::Fragment}}))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00217}00217             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00218}00218         \mbox{\hyperlink{class_edge_a9fa208b4768f1765e65f99dde015fc77}{m\_shader}}.\mbox{\hyperlink{classsf_1_1_shader_abf78e3bea1e9b0bab850b6b0a0de29c7}{setUniform}}(\textcolor{stringliteral}{"{}texture"{}}, \mbox{\hyperlink{classsf_1_1_shader_ad679e434fc4f1a1af65f3815b2310fb5}{sf::Shader::CurrentTexture}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00219}00219 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00220}00220         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00221}00221     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00222}00222 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00223}\mbox{\hyperlink{class_edge_a7a803416ae1c07a17a7fb1bee8d4821c}{00223}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_edge_a7a803416ae1c07a17a7fb1bee8d4821c}{onUpdate}}(\textcolor{keywordtype}{float} time, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00224}00224     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00225}00225         \mbox{\hyperlink{class_edge_a9fa208b4768f1765e65f99dde015fc77}{m\_shader}}.\mbox{\hyperlink{classsf_1_1_shader_abf78e3bea1e9b0bab850b6b0a0de29c7}{setUniform}}(\textcolor{stringliteral}{"{}edge\_threshold"{}}, 1 -\/ (x + y) / 2);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00226}00226 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00227}00227         \textcolor{comment}{// Update the position of the moving entities}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00228}00228         \textcolor{keywordflow}{for} (std::size\_t i = 0; i < \mbox{\hyperlink{class_edge_a5421a8fa75caa61d1af4bb4007d85576}{m\_entities}}.size(); ++i)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00229}00229         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00230}00230             \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}} position;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00231}00231             position.\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}} = std::cos(0.25f * (time * i + (\mbox{\hyperlink{class_edge_a5421a8fa75caa61d1af4bb4007d85576}{m\_entities}}.size() -\/ i))) * 300 + 350;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00232}00232             position.\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} = std::sin(0.25f * (time * (\mbox{\hyperlink{class_edge_a5421a8fa75caa61d1af4bb4007d85576}{m\_entities}}.size() -\/ i) + i)) * 200 + 250;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00233}00233             \mbox{\hyperlink{class_edge_a5421a8fa75caa61d1af4bb4007d85576}{m\_entities}}[i].setPosition(position);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00234}00234         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00235}00235 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00236}00236         \textcolor{comment}{// Render the updated scene to the off-\/screen surface}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00237}00237         \mbox{\hyperlink{class_edge_a455e4dd17cc23208dbfb84b781ff407d}{m\_surface}}.\mbox{\hyperlink{classsf_1_1_render_target_a6bb6f0ba348f2b1e2f46114aeaf60f26}{clear}}(\mbox{\hyperlink{classsf_1_1_color_abd9695b00da63b890ea40f74629237c0}{sf::Color::White}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00238}00238         \mbox{\hyperlink{class_edge_a455e4dd17cc23208dbfb84b781ff407d}{m\_surface}}.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(\mbox{\hyperlink{class_edge_a10f26fdc52458b55e14861beca462642}{m\_backgroundSprite}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00239}00239         \textcolor{keywordflow}{for} (std::size\_t i = 0; i < \mbox{\hyperlink{class_edge_a5421a8fa75caa61d1af4bb4007d85576}{m\_entities}}.size(); ++i)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00240}00240             \mbox{\hyperlink{class_edge_a455e4dd17cc23208dbfb84b781ff407d}{m\_surface}}.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(\mbox{\hyperlink{class_edge_a5421a8fa75caa61d1af4bb4007d85576}{m\_entities}}[i]);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00241}00241         \mbox{\hyperlink{class_edge_a455e4dd17cc23208dbfb84b781ff407d}{m\_surface}}.\mbox{\hyperlink{classsf_1_1_render_texture_af92886d5faef3916caff9fa9ab32c555}{display}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00242}00242     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00243}00243 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00244}\mbox{\hyperlink{class_edge_a865269e6bc1bd90d6160b5c38f15757f}{00244}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_edge_a865269e6bc1bd90d6160b5c38f15757f}{onDraw}}(\mbox{\hyperlink{classsf_1_1_render_target}{sf::RenderTarget}}\& target, \mbox{\hyperlink{classsf_1_1_render_states}{sf::RenderStates}} states)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00245}00245 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00246}00246         states.\mbox{\hyperlink{classsf_1_1_render_states_a30e00c9f28ca246ae73119975255ebd0}{shader}} = \&\mbox{\hyperlink{class_edge_a9fa208b4768f1765e65f99dde015fc77}{m\_shader}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00247}00247         target.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(\mbox{\hyperlink{classsf_1_1_sprite}{sf::Sprite}}(\mbox{\hyperlink{class_edge_a455e4dd17cc23208dbfb84b781ff407d}{m\_surface}}.\mbox{\hyperlink{classsf_1_1_render_texture_a61a6eba45d5c9e5c913aebeccb7b7eda}{getTexture}}()), states);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00248}00248     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00249}00249 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00250}00250 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00251}00251 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00252}\mbox{\hyperlink{class_edge_a455e4dd17cc23208dbfb84b781ff407d}{00252}}     \mbox{\hyperlink{classsf_1_1_render_texture}{sf::RenderTexture}} \mbox{\hyperlink{class_edge_a455e4dd17cc23208dbfb84b781ff407d}{m\_surface}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00253}\mbox{\hyperlink{class_edge_a49b1f097be3238269d2bcc36bbe8e023}{00253}}     \mbox{\hyperlink{classsf_1_1_texture}{sf::Texture}} \mbox{\hyperlink{class_edge_a49b1f097be3238269d2bcc36bbe8e023}{m\_backgroundTexture}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00254}\mbox{\hyperlink{class_edge_a43381dd898ef369ddca2e0e27d36e4ce}{00254}}     \mbox{\hyperlink{classsf_1_1_texture}{sf::Texture}} \mbox{\hyperlink{class_edge_a43381dd898ef369ddca2e0e27d36e4ce}{m\_entityTexture}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00255}\mbox{\hyperlink{class_edge_a10f26fdc52458b55e14861beca462642}{00255}}     \mbox{\hyperlink{classsf_1_1_sprite}{sf::Sprite}} \mbox{\hyperlink{class_edge_a10f26fdc52458b55e14861beca462642}{m\_backgroundSprite}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00256}\mbox{\hyperlink{class_edge_a5421a8fa75caa61d1af4bb4007d85576}{00256}}     std::vector<sf::Sprite> \mbox{\hyperlink{class_edge_a5421a8fa75caa61d1af4bb4007d85576}{m\_entities}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00257}\mbox{\hyperlink{class_edge_a9fa208b4768f1765e65f99dde015fc77}{00257}}     \mbox{\hyperlink{classsf_1_1_shader}{sf::Shader}} \mbox{\hyperlink{class_edge_a9fa208b4768f1765e65f99dde015fc77}{m\_shader}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00258}00258 \};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00259}00259 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00260}00260 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00262}00262 \textcolor{comment}{// "{}Geometry"{} geometry shader example}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00264}\mbox{\hyperlink{class_geometry}{00264}} \textcolor{comment}{}\textcolor{keyword}{class }\mbox{\hyperlink{class_geometry}{Geometry}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_effect}{Effect}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00265}00265 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00266}00266 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00267}00267 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00268}\mbox{\hyperlink{class_geometry_a4c301c163c63d21ed08c17b0f4e131d3}{00268}}     \mbox{\hyperlink{class_geometry_a4c301c163c63d21ed08c17b0f4e131d3}{Geometry}}() :}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00269}00269         \mbox{\hyperlink{class_effect}{Effect}}(\textcolor{stringliteral}{"{}geometry shader billboards"{}}),}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00270}00270         \mbox{\hyperlink{class_geometry_a46f19bff1a9321155e7b22c9e42c2175}{m\_pointCloud}}(\mbox{\hyperlink{namespacesf}{sf}}::\mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1ba85cf551ca780a29ec5df3ee9fc282c22}{Points}}, 10000)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00271}00271     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00272}00272     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00273}00273 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00274}\mbox{\hyperlink{class_geometry_a2282e16f6c9c7362350b5066d187ae34}{00274}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_geometry_a2282e16f6c9c7362350b5066d187ae34}{onLoad}}()}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00275}00275     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00276}00276         \textcolor{comment}{// Check if geometry shaders are supported}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00277}00277         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classsf_1_1_shader_a45db14baf1bbc688577f81813b1fce96}{sf::Shader::isGeometryAvailable}}())}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00278}00278             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00279}00279 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00280}00280         \textcolor{comment}{// Move the points in the point cloud to random positions}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00281}00281         \textcolor{keywordflow}{for} (std::size\_t i = 0; i < 10000; i++)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00282}00282         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00283}00283             \textcolor{comment}{// Spread the coordinates from -\/480 to +480}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00284}00284             \textcolor{comment}{// So they'll always fill the viewport at 800x600}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00285}00285             \mbox{\hyperlink{class_geometry_a46f19bff1a9321155e7b22c9e42c2175}{m\_pointCloud}}[i].position.x = rand() \% 960 -\/ 480.f;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00286}00286             \mbox{\hyperlink{class_geometry_a46f19bff1a9321155e7b22c9e42c2175}{m\_pointCloud}}[i].position.y = rand() \% 960 -\/ 480.f;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00287}00287         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00288}00288 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00289}00289         \textcolor{comment}{// Load the texture}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00290}00290         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_geometry_af0efefeb9506dfbe74b96eaed3d3636e}{m\_logoTexture}}.\mbox{\hyperlink{classsf_1_1_texture_a8e1b56eabfe33e2e0e1cb03712c7fcc7}{loadFromFile}}(\textcolor{stringliteral}{"{}resources/logo.png"{}}))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00291}00291             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00292}00292 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00293}00293         \textcolor{comment}{// Load the shader}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00294}00294         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_geometry_a8ca74fd77bf9875768a6315d3600b408}{m\_shader}}.\mbox{\hyperlink{classsf_1_1_shader_a053a5632848ebaca2fcd8ba29abe9e6e}{loadFromFile}}(\textcolor{stringliteral}{"{}resources/billboard.vert"{}}, \textcolor{stringliteral}{"{}resources/billboard.geom"{}}, \textcolor{stringliteral}{"{}resources/billboard.frag"{}}))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00295}00295             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00296}00296         \mbox{\hyperlink{class_geometry_a8ca74fd77bf9875768a6315d3600b408}{m\_shader}}.\mbox{\hyperlink{classsf_1_1_shader_abf78e3bea1e9b0bab850b6b0a0de29c7}{setUniform}}(\textcolor{stringliteral}{"{}texture"{}}, \mbox{\hyperlink{classsf_1_1_shader_ad679e434fc4f1a1af65f3815b2310fb5}{sf::Shader::CurrentTexture}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00297}00297 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00298}00298         \textcolor{comment}{// Set the render resolution (used for proper scaling)}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00299}00299         \mbox{\hyperlink{class_geometry_a8ca74fd77bf9875768a6315d3600b408}{m\_shader}}.\mbox{\hyperlink{classsf_1_1_shader_abf78e3bea1e9b0bab850b6b0a0de29c7}{setUniform}}(\textcolor{stringliteral}{"{}resolution"{}}, \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}}(800, 600));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00300}00300 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00301}00301         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00302}00302     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00303}00303 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00304}\mbox{\hyperlink{class_geometry_a04ed5bfc73b07d2547e532d42bcd93e7}{00304}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_geometry_a04ed5bfc73b07d2547e532d42bcd93e7}{onUpdate}}(\textcolor{keywordtype}{float} time, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00305}00305     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00306}00306         \textcolor{comment}{// Reset our transformation matrix}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00307}00307         \mbox{\hyperlink{class_geometry_a62d708553e700293a2c1e51a73daa616}{m\_transform}} = \mbox{\hyperlink{classsf_1_1_transform_a854729912a691efeca9f213c54be4f59}{sf::Transform::Identity}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00308}00308         \textcolor{comment}{// Move to the center of the window}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00309}00309         \mbox{\hyperlink{class_geometry_a62d708553e700293a2c1e51a73daa616}{m\_transform}}.\mbox{\hyperlink{classsf_1_1_transform_a053cd024e320ae719837386d126d0f51}{translate}}(400, 300);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00310}00310         \textcolor{comment}{// Rotate everything based on cursor position}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00311}00311         \mbox{\hyperlink{class_geometry_a62d708553e700293a2c1e51a73daa616}{m\_transform}}.\mbox{\hyperlink{classsf_1_1_transform_ad09ce22a1fb08709f66f30befc7b2e7b}{rotate}}(x * 360.f);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00312}00312 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00313}00313         \textcolor{comment}{// Adjust billboard size to scale between 25 and 75}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00314}00314         \textcolor{keywordtype}{float} size = 25 + std::abs(y) * 50;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00315}00315 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00316}00316         \textcolor{comment}{// Update the shader parameter}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00317}00317         \mbox{\hyperlink{class_geometry_a8ca74fd77bf9875768a6315d3600b408}{m\_shader}}.\mbox{\hyperlink{classsf_1_1_shader_abf78e3bea1e9b0bab850b6b0a0de29c7}{setUniform}}(\textcolor{stringliteral}{"{}size"{}}, \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}}(size, size));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00318}00318     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00319}00319 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00320}\mbox{\hyperlink{class_geometry_ab6112c3c25ca6dc914f1e6922724a6a7}{00320}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_geometry_ab6112c3c25ca6dc914f1e6922724a6a7}{onDraw}}(\mbox{\hyperlink{classsf_1_1_render_target}{sf::RenderTarget}}\& target, \mbox{\hyperlink{classsf_1_1_render_states}{sf::RenderStates}} states)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00321}00321 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00322}00322         \textcolor{comment}{// Prepare the render state}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00323}00323         states.\mbox{\hyperlink{classsf_1_1_render_states_a30e00c9f28ca246ae73119975255ebd0}{shader}} = \&\mbox{\hyperlink{class_geometry_a8ca74fd77bf9875768a6315d3600b408}{m\_shader}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00324}00324         states.\mbox{\hyperlink{classsf_1_1_render_states_ad7eb50453917561fa7a9df7f4c53f1fd}{texture}} = \&\mbox{\hyperlink{class_geometry_af0efefeb9506dfbe74b96eaed3d3636e}{m\_logoTexture}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00325}00325         states.\mbox{\hyperlink{classsf_1_1_render_states_a1f737981a0f2f0d4bb8dac866a8d1149}{transform}} = \mbox{\hyperlink{class_geometry_a62d708553e700293a2c1e51a73daa616}{m\_transform}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00326}00326 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00327}00327         \textcolor{comment}{// Draw the point cloud}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00328}00328         target.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(\mbox{\hyperlink{class_geometry_a46f19bff1a9321155e7b22c9e42c2175}{m\_pointCloud}}, states);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00329}00329     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00330}00330 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00331}00331 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00332}00332 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00333}\mbox{\hyperlink{class_geometry_af0efefeb9506dfbe74b96eaed3d3636e}{00333}}     \mbox{\hyperlink{classsf_1_1_texture}{sf::Texture}} \mbox{\hyperlink{class_geometry_af0efefeb9506dfbe74b96eaed3d3636e}{m\_logoTexture}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00334}\mbox{\hyperlink{class_geometry_a62d708553e700293a2c1e51a73daa616}{00334}}     \mbox{\hyperlink{classsf_1_1_transform}{sf::Transform}} \mbox{\hyperlink{class_geometry_a62d708553e700293a2c1e51a73daa616}{m\_transform}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00335}\mbox{\hyperlink{class_geometry_a8ca74fd77bf9875768a6315d3600b408}{00335}}     \mbox{\hyperlink{classsf_1_1_shader}{sf::Shader}} \mbox{\hyperlink{class_geometry_a8ca74fd77bf9875768a6315d3600b408}{m\_shader}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00336}\mbox{\hyperlink{class_geometry_a46f19bff1a9321155e7b22c9e42c2175}{00336}}     \mbox{\hyperlink{classsf_1_1_vertex_array}{sf::VertexArray}} \mbox{\hyperlink{class_geometry_a46f19bff1a9321155e7b22c9e42c2175}{m\_pointCloud}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00337}00337 \};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00338}00338 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00339}00339 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00346}\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00346}} \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00347}00347 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00348}00348     \textcolor{comment}{// Create the main window}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00349}00349     \mbox{\hyperlink{classsf_1_1_render_window}{sf::RenderWindow}} window(\mbox{\hyperlink{classsf_1_1_video_mode}{sf::VideoMode}}(800, 600), \textcolor{stringliteral}{"{}SFML Shader"{}},}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00350}00350                             \mbox{\hyperlink{group__window_ggaa75e94f0d3f52da8a61ed467ffd6d6e8abf046c6fcae63075c651812c6774e389}{sf::Style::Titlebar}} | \mbox{\hyperlink{group__window_ggaa75e94f0d3f52da8a61ed467ffd6d6e8a76bbd82b28e359cc0feec9e5ec123b40}{sf::Style::Close}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00351}00351     window.\mbox{\hyperlink{classsf_1_1_window_a59041c4556e0351048f8aff366034f61}{setVerticalSyncEnabled}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00352}00352 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00353}00353     \textcolor{comment}{// Load the application font and pass it to the Effect class}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00354}00354     \mbox{\hyperlink{classsf_1_1_font}{sf::Font}} font;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00355}00355     \textcolor{keywordflow}{if} (!font.\mbox{\hyperlink{classsf_1_1_font_ab020052ef4e01f6c749a85571c0f3fd1}{loadFromFile}}(\textcolor{stringliteral}{"{}resources/sansation.ttf"{}}))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00356}00356         \textcolor{keywordflow}{return} EXIT\_FAILURE;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00357}00357     \mbox{\hyperlink{class_effect_a2a4eaf667af8ea6498b77fe532c5a43d}{Effect::setFont}}(font);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00358}00358 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00359}00359     \textcolor{comment}{// Create the effects}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00360}00360     std::vector<Effect*> effects;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00361}00361     effects.push\_back(\textcolor{keyword}{new} \mbox{\hyperlink{class_pixelate}{Pixelate}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00362}00362     effects.push\_back(\textcolor{keyword}{new} \mbox{\hyperlink{class_wave_blur}{WaveBlur}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00363}00363     effects.push\_back(\textcolor{keyword}{new} \mbox{\hyperlink{class_storm_blink}{StormBlink}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00364}00364     effects.push\_back(\textcolor{keyword}{new} \mbox{\hyperlink{class_edge}{Edge}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00365}00365     effects.push\_back(\textcolor{keyword}{new} \mbox{\hyperlink{class_geometry}{Geometry}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00366}00366     std::size\_t current = 0;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00367}00367 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00368}00368     \textcolor{comment}{// Initialize them}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00369}00369     \textcolor{keywordflow}{for} (std::size\_t i = 0; i < effects.size(); ++i)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00370}00370         effects[i]-\/>load();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00371}00371 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00372}00372     \textcolor{comment}{// Create the messages background}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00373}00373     \mbox{\hyperlink{classsf_1_1_texture}{sf::Texture}} textBackgroundTexture;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00374}00374     \textcolor{keywordflow}{if} (!textBackgroundTexture.\mbox{\hyperlink{classsf_1_1_texture_a8e1b56eabfe33e2e0e1cb03712c7fcc7}{loadFromFile}}(\textcolor{stringliteral}{"{}resources/text-\/background.png"{}}))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00375}00375         \textcolor{keywordflow}{return} EXIT\_FAILURE;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00376}00376     \mbox{\hyperlink{classsf_1_1_sprite}{sf::Sprite}} textBackground(textBackgroundTexture);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00377}00377     textBackground.\mbox{\hyperlink{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{setPosition}}(0, 520);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00378}00378     textBackground.\mbox{\hyperlink{classsf_1_1_sprite_a14def44da6437bfea20c4df5e71aba4c}{setColor}}(\mbox{\hyperlink{classsf_1_1_color}{sf::Color}}(255, 255, 255, 200));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00379}00379 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00380}00380     \textcolor{comment}{// Create the description text}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00381}00381     \mbox{\hyperlink{classsf_1_1_text}{sf::Text}} description(\textcolor{stringliteral}{"{}Current effect: "{}} + effects[current]-\/>getName(), font, 20);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00382}00382     description.\mbox{\hyperlink{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{setPosition}}(10, 530);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00383}00383     description.\mbox{\hyperlink{classsf_1_1_text_ab7bb3babac5a6da1802b2c3e1a3e6dcc}{setFillColor}}(\mbox{\hyperlink{classsf_1_1_color}{sf::Color}}(80, 80, 80));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00384}00384 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00385}00385     \textcolor{comment}{// Create the instructions text}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00386}00386     \mbox{\hyperlink{classsf_1_1_text}{sf::Text}} instructions(\textcolor{stringliteral}{"{}Press left and right arrows to change the current shader"{}}, font, 20);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00387}00387     instructions.\mbox{\hyperlink{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{setPosition}}(280, 555);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00388}00388     instructions.\mbox{\hyperlink{classsf_1_1_text_ab7bb3babac5a6da1802b2c3e1a3e6dcc}{setFillColor}}(\mbox{\hyperlink{classsf_1_1_color}{sf::Color}}(80, 80, 80));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00389}00389 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00390}00390     \textcolor{comment}{// Start the game loop}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00391}00391     \mbox{\hyperlink{classsf_1_1_clock}{sf::Clock}} clock;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00392}00392     \textcolor{keywordflow}{while} (window.\mbox{\hyperlink{classsf_1_1_window_ae873503db7d48157bb9cbf6129562bce}{isOpen}}())}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00393}00393     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00394}00394         \textcolor{comment}{// Process events}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00395}00395         \mbox{\hyperlink{classsf_1_1_event}{sf::Event}} event;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00396}00396         \textcolor{keywordflow}{while} (window.\mbox{\hyperlink{classsf_1_1_window_a338e996585faf82e93069858e3b531b7}{pollEvent}}(event))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00397}00397         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00398}00398             \textcolor{comment}{// Close window: exit}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00399}00399             \textcolor{keywordflow}{if} (event.\mbox{\hyperlink{classsf_1_1_event_adf2f8044f713fd9d6019077b0d1ffe0a}{type}} == \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa4f718a7f43b0f2d46be222fe23198d9e}{sf::Event::Closed}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00400}00400                 window.\mbox{\hyperlink{classsf_1_1_window_a99d1e030387b0c26f5995670504fe7b5}{close}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00401}00401 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00402}00402             \textcolor{keywordflow}{if} (event.\mbox{\hyperlink{classsf_1_1_event_adf2f8044f713fd9d6019077b0d1ffe0a}{type}} == \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4}{sf::Event::KeyPressed}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00403}00403             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00404}00404                 \textcolor{keywordflow}{switch} (event.\mbox{\hyperlink{classsf_1_1_event_a45b92fc6757ca7c193f06b302e424ab0}{key}}.\mbox{\hyperlink{structsf_1_1_event_1_1_key_event_a2879fdab8a68cb1c6ecc45730a2d0e61}{code}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00405}00405                 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00406}00406                     \textcolor{comment}{// Escape key: exit}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00407}00407                     \textcolor{keywordflow}{case} \mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142a72019ff9ecb145a9d3910177a49c757a}{sf::Keyboard::Escape}}:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00408}00408                         window.\mbox{\hyperlink{classsf_1_1_window_a99d1e030387b0c26f5995670504fe7b5}{close}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00409}00409                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00410}00410 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00411}00411                     \textcolor{comment}{// Left arrow key: previous shader}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00412}00412                     \textcolor{keywordflow}{case} \mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142a5e7dd0a44aba7c8ca5cde717af892507}{sf::Keyboard::Left}}:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00413}00413                         \textcolor{keywordflow}{if} (current == 0)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00414}00414                             current = effects.size() -\/ 1;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00415}00415                         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00416}00416                             current-\/-\/;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00417}00417                         description.\mbox{\hyperlink{classsf_1_1_text_a7d3b3359f286fd9503d1ced25b7b6c33}{setString}}(\textcolor{stringliteral}{"{}Current effect: "{}} + effects[current]-\/>getName());}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00418}00418                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00419}00419 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00420}00420                     \textcolor{comment}{// Right arrow key: next shader}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00421}00421                     \textcolor{keywordflow}{case} \mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142a30e643d209ea070c73ca1b5602e10ff4}{sf::Keyboard::Right}}:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00422}00422                         \textcolor{keywordflow}{if} (current == effects.size() -\/ 1)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00423}00423                             current = 0;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00424}00424                         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00425}00425                             current++;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00426}00426                         description.\mbox{\hyperlink{classsf_1_1_text_a7d3b3359f286fd9503d1ced25b7b6c33}{setString}}(\textcolor{stringliteral}{"{}Current effect: "{}} + effects[current]-\/>getName());}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00427}00427                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00428}00428 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00429}00429                     \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00430}00430                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00431}00431                 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00432}00432             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00433}00433         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00434}00434 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00435}00435         \textcolor{comment}{// Update the current example}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00436}00436         \textcolor{keywordtype}{float} x = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(\mbox{\hyperlink{classsf_1_1_mouse_ac368680f797b7f6e4f50b5b7928c1387}{sf::Mouse::getPosition}}(window).\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}}) / window.\mbox{\hyperlink{classsf_1_1_render_window_ae3eacf93661c8068fca7a78d57dc7e14}{getSize}}().\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00437}00437         \textcolor{keywordtype}{float} y = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(\mbox{\hyperlink{classsf_1_1_mouse_ac368680f797b7f6e4f50b5b7928c1387}{sf::Mouse::getPosition}}(window).\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}}) / window.\mbox{\hyperlink{classsf_1_1_render_window_ae3eacf93661c8068fca7a78d57dc7e14}{getSize}}().\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00438}00438         effects[current]-\/>update(clock.\mbox{\hyperlink{classsf_1_1_clock_abe889b42a65bcd8eefc16419645d08a7}{getElapsedTime}}().\mbox{\hyperlink{classsf_1_1_time_aa3df2f992d0b0041b4eb02258d43f0e3}{asSeconds}}(), x, y);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00439}00439 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00440}00440         \textcolor{comment}{// Clear the window}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00441}00441         window.\mbox{\hyperlink{classsf_1_1_render_target_a6bb6f0ba348f2b1e2f46114aeaf60f26}{clear}}(\mbox{\hyperlink{classsf_1_1_color}{sf::Color}}(255, 128, 0));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00442}00442 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00443}00443         \textcolor{comment}{// Draw the current example}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00444}00444         window.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(*effects[current]);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00445}00445 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00446}00446         \textcolor{comment}{// Draw the text}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00447}00447         window.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(textBackground);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00448}00448         window.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(instructions);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00449}00449         window.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(description);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00450}00450 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00451}00451         \textcolor{comment}{// Finally, display the rendered frame on screen}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00452}00452         window.\mbox{\hyperlink{classsf_1_1_window_adabf839cb103ac96cfc82f781638772a}{display}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00453}00453     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00454}00454 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00455}00455     \textcolor{comment}{// delete the effects}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00456}00456     \textcolor{keywordflow}{for} (std::size\_t i = 0; i < effects.size(); ++i)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00457}00457         \textcolor{keyword}{delete} effects[i];}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00458}00458 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00459}00459     \textcolor{keywordflow}{return} EXIT\_SUCCESS;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2shader_2_shader_8cpp_source_l00460}00460 \}}
+
+\end{DoxyCode}

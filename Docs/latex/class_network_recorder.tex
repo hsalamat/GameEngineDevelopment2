@@ -1,0 +1,291 @@
+\hypertarget{class_network_recorder}{}\doxysection{Network\+Recorder Class Reference}
+\label{class_network_recorder}\index{NetworkRecorder@{NetworkRecorder}}
+
+
+Specialization of audio recorder for sending recorded audio data through the network.  
+
+
+Inheritance diagram for Network\+Recorder\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_network_recorder}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_network_recorder_a30777f6c7a72b29e5230d9eb2033c92b}{Network\+Recorder}} (const \mbox{\hyperlink{classsf_1_1_ip_address}{sf\+::\+Ip\+Address}} \&host, unsigned short port)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_network_recorder_a3df2a0d4bc3576cd8c745d34bf2cdfe2}{$\sim$\+Network\+Recorder}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_network_recorder_a30777f6c7a72b29e5230d9eb2033c92b}{Network\+Recorder}} (const \mbox{\hyperlink{classsf_1_1_ip_address}{sf\+::\+Ip\+Address}} \&host, unsigned short port)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_network_recorder_a3df2a0d4bc3576cd8c745d34bf2cdfe2}{$\sim$\+Network\+Recorder}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{class_network_recorder_aeab34631d5cd58cb42640152b726e1c0}{on\+Start}} ()
+\item 
+virtual bool \mbox{\hyperlink{class_network_recorder_aeba28ae4824715c651cf6b2323044fe2}{on\+Process\+Samples}} (const \mbox{\hyperlink{namespacesf_a3c8e10435e2a310a7741755e66b5c94e}{sf\+::\+Int16}} $\ast$samples, std\+::size\+\_\+t sample\+Count)
+\item 
+virtual void \mbox{\hyperlink{class_network_recorder_a3ae6d62a6b72c7d54ce7b0d45d8291fa}{on\+Stop}} ()
+\item 
+virtual bool \mbox{\hyperlink{class_network_recorder_aeab34631d5cd58cb42640152b726e1c0}{on\+Start}} ()
+\item 
+virtual bool \mbox{\hyperlink{class_network_recorder_aeba28ae4824715c651cf6b2323044fe2}{on\+Process\+Samples}} (const \mbox{\hyperlink{namespacesf_a3c8e10435e2a310a7741755e66b5c94e}{sf\+::\+Int16}} $\ast$samples, std\+::size\+\_\+t sample\+Count)
+\item 
+virtual void \mbox{\hyperlink{class_network_recorder_a3ae6d62a6b72c7d54ce7b0d45d8291fa}{on\+Stop}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsf_1_1_ip_address}{sf\+::\+Ip\+Address}} \mbox{\hyperlink{class_network_recorder_a4c1fcf67d73d1891676deff267ab8ef1}{m\+\_\+host}}
+\begin{DoxyCompactList}\small\item\em Address of the remote host. \end{DoxyCompactList}\item 
+unsigned short \mbox{\hyperlink{class_network_recorder_ab30fc2cd0feb15190bae786da926a869}{m\+\_\+port}}
+\begin{DoxyCompactList}\small\item\em Remote port. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_tcp_socket}{sf\+::\+Tcp\+Socket}} \mbox{\hyperlink{class_network_recorder_a74ad89a9fd640f242c817e9e26ba74a8}{m\+\_\+socket}}
+\begin{DoxyCompactList}\small\item\em Socket used to communicate with the server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Specialization of audio recorder for sending recorded audio data through the network. 
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source}{Client.\+cpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_network_recorder_a30777f6c7a72b29e5230d9eb2033c92b}\label{class_network_recorder_a30777f6c7a72b29e5230d9eb2033c92b}} 
+\index{NetworkRecorder@{NetworkRecorder}!NetworkRecorder@{NetworkRecorder}}
+\index{NetworkRecorder@{NetworkRecorder}!NetworkRecorder@{NetworkRecorder}}
+\doxysubsubsection{\texorpdfstring{NetworkRecorder()}{NetworkRecorder()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Network\+Recorder\+::\+Network\+Recorder (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_ip_address}{sf\+::\+Ip\+Address}} \&}]{host,  }\item[{unsigned short}]{port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em host} & Remote host to which send the recording data \\
+\hline
+{\em port} & Port of the remote host \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source}{Client.\+cpp}}.
+
+\mbox{\Hypertarget{class_network_recorder_a3df2a0d4bc3576cd8c745d34bf2cdfe2}\label{class_network_recorder_a3df2a0d4bc3576cd8c745d34bf2cdfe2}} 
+\index{NetworkRecorder@{NetworkRecorder}!````~NetworkRecorder@{$\sim$NetworkRecorder}}
+\index{````~NetworkRecorder@{$\sim$NetworkRecorder}!NetworkRecorder@{NetworkRecorder}}
+\doxysubsubsection{\texorpdfstring{$\sim$NetworkRecorder()}{~NetworkRecorder()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Network\+Recorder\+::$\sim$\+Network\+Recorder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor. 
+
+\begin{DoxySeeAlso}{See also}
+Sound\+Recorder\+::$\sim$\+Sound\+Recorder() 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source}{Client.\+cpp}}.
+
+\mbox{\Hypertarget{class_network_recorder_a30777f6c7a72b29e5230d9eb2033c92b}\label{class_network_recorder_a30777f6c7a72b29e5230d9eb2033c92b}} 
+\index{NetworkRecorder@{NetworkRecorder}!NetworkRecorder@{NetworkRecorder}}
+\index{NetworkRecorder@{NetworkRecorder}!NetworkRecorder@{NetworkRecorder}}
+\doxysubsubsection{\texorpdfstring{NetworkRecorder()}{NetworkRecorder()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Network\+Recorder\+::\+Network\+Recorder (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_ip_address}{sf\+::\+Ip\+Address}} \&}]{host,  }\item[{unsigned short}]{port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em host} & Remote host to which send the recording data \\
+\hline
+{\em port} & Port of the remote host \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source}{Client.\+cpp}}.
+
+\mbox{\Hypertarget{class_network_recorder_a3df2a0d4bc3576cd8c745d34bf2cdfe2}\label{class_network_recorder_a3df2a0d4bc3576cd8c745d34bf2cdfe2}} 
+\index{NetworkRecorder@{NetworkRecorder}!````~NetworkRecorder@{$\sim$NetworkRecorder}}
+\index{````~NetworkRecorder@{$\sim$NetworkRecorder}!NetworkRecorder@{NetworkRecorder}}
+\doxysubsubsection{\texorpdfstring{$\sim$NetworkRecorder()}{~NetworkRecorder()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Network\+Recorder\+::$\sim$\+Network\+Recorder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor. 
+
+\begin{DoxySeeAlso}{See also}
+Sound\+Recorder\+::$\sim$\+Sound\+Recorder() 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source}{Client.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_network_recorder_aeba28ae4824715c651cf6b2323044fe2}\label{class_network_recorder_aeba28ae4824715c651cf6b2323044fe2}} 
+\index{NetworkRecorder@{NetworkRecorder}!onProcessSamples@{onProcessSamples}}
+\index{onProcessSamples@{onProcessSamples}!NetworkRecorder@{NetworkRecorder}}
+\doxysubsubsection{\texorpdfstring{onProcessSamples()}{onProcessSamples()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool Network\+Recorder\+::on\+Process\+Samples (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacesf_a3c8e10435e2a310a7741755e66b5c94e}{sf\+::\+Int16}} $\ast$}]{samples,  }\item[{std\+::size\+\_\+t}]{sample\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+\begin{DoxySeeAlso}{See also}
+Sound\+Recorder\+::on\+Process\+Samples 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{classsf_1_1_sound_recorder_a2670124cbe7a87c7e46b4840807f4fd7}{sf\+::\+Sound\+Recorder}}.
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00070}{70}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source}{Client.\+cpp}}.
+
+\mbox{\Hypertarget{class_network_recorder_aeba28ae4824715c651cf6b2323044fe2}\label{class_network_recorder_aeba28ae4824715c651cf6b2323044fe2}} 
+\index{NetworkRecorder@{NetworkRecorder}!onProcessSamples@{onProcessSamples}}
+\index{onProcessSamples@{onProcessSamples}!NetworkRecorder@{NetworkRecorder}}
+\doxysubsubsection{\texorpdfstring{onProcessSamples()}{onProcessSamples()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool Network\+Recorder\+::on\+Process\+Samples (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacesf_a3c8e10435e2a310a7741755e66b5c94e}{sf\+::\+Int16}} $\ast$}]{samples,  }\item[{std\+::size\+\_\+t}]{sample\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+\begin{DoxySeeAlso}{See also}
+Sound\+Recorder\+::on\+Process\+Samples 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{classsf_1_1_sound_recorder_a2670124cbe7a87c7e46b4840807f4fd7}{sf\+::\+Sound\+Recorder}}.
+
+
+
+Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00070}{70}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source}{Client.\+cpp}}.
+
+\mbox{\Hypertarget{class_network_recorder_aeab34631d5cd58cb42640152b726e1c0}\label{class_network_recorder_aeab34631d5cd58cb42640152b726e1c0}} 
+\index{NetworkRecorder@{NetworkRecorder}!onStart@{onStart}}
+\index{onStart@{onStart}!NetworkRecorder@{NetworkRecorder}}
+\doxysubsubsection{\texorpdfstring{onStart()}{onStart()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool Network\+Recorder\+::on\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+\begin{DoxySeeAlso}{See also}
+Sound\+Recorder\+::on\+Start 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \mbox{\hyperlink{classsf_1_1_sound_recorder_a7af418fb036201d3f85745bef78ce77f}{sf\+::\+Sound\+Recorder}}.
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source}{Client.\+cpp}}.
+
+\mbox{\Hypertarget{class_network_recorder_aeab34631d5cd58cb42640152b726e1c0}\label{class_network_recorder_aeab34631d5cd58cb42640152b726e1c0}} 
+\index{NetworkRecorder@{NetworkRecorder}!onStart@{onStart}}
+\index{onStart@{onStart}!NetworkRecorder@{NetworkRecorder}}
+\doxysubsubsection{\texorpdfstring{onStart()}{onStart()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool Network\+Recorder\+::on\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+\begin{DoxySeeAlso}{See also}
+Sound\+Recorder\+::on\+Start 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \mbox{\hyperlink{classsf_1_1_sound_recorder_a7af418fb036201d3f85745bef78ce77f}{sf\+::\+Sound\+Recorder}}.
+
+
+
+Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source}{Client.\+cpp}}.
+
+\mbox{\Hypertarget{class_network_recorder_a3ae6d62a6b72c7d54ce7b0d45d8291fa}\label{class_network_recorder_a3ae6d62a6b72c7d54ce7b0d45d8291fa}} 
+\index{NetworkRecorder@{NetworkRecorder}!onStop@{onStop}}
+\index{onStop@{onStop}!NetworkRecorder@{NetworkRecorder}}
+\doxysubsubsection{\texorpdfstring{onStop()}{onStop()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Network\+Recorder\+::on\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+\begin{DoxySeeAlso}{See also}
+Sound\+Recorder\+::on\+Stop 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \mbox{\hyperlink{classsf_1_1_sound_recorder_aefc36138ca1e96c658301280e4a31b64}{sf\+::\+Sound\+Recorder}}.
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00085}{85}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source}{Client.\+cpp}}.
+
+\mbox{\Hypertarget{class_network_recorder_a3ae6d62a6b72c7d54ce7b0d45d8291fa}\label{class_network_recorder_a3ae6d62a6b72c7d54ce7b0d45d8291fa}} 
+\index{NetworkRecorder@{NetworkRecorder}!onStop@{onStop}}
+\index{onStop@{onStop}!NetworkRecorder@{NetworkRecorder}}
+\doxysubsubsection{\texorpdfstring{onStop()}{onStop()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Network\+Recorder\+::on\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+\begin{DoxySeeAlso}{See also}
+Sound\+Recorder\+::on\+Stop 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \mbox{\hyperlink{classsf_1_1_sound_recorder_aefc36138ca1e96c658301280e4a31b64}{sf\+::\+Sound\+Recorder}}.
+
+
+
+Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00085}{85}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source}{Client.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_network_recorder_a4c1fcf67d73d1891676deff267ab8ef1}\label{class_network_recorder_a4c1fcf67d73d1891676deff267ab8ef1}} 
+\index{NetworkRecorder@{NetworkRecorder}!m\_host@{m\_host}}
+\index{m\_host@{m\_host}!NetworkRecorder@{NetworkRecorder}}
+\doxysubsubsection{\texorpdfstring{m\_host}{m\_host}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_ip_address}{sf\+::\+Ip\+Address}} Network\+Recorder\+::m\+\_\+host\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Address of the remote host. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00099}{99}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source}{Client.\+cpp}}.
+
+\mbox{\Hypertarget{class_network_recorder_ab30fc2cd0feb15190bae786da926a869}\label{class_network_recorder_ab30fc2cd0feb15190bae786da926a869}} 
+\index{NetworkRecorder@{NetworkRecorder}!m\_port@{m\_port}}
+\index{m\_port@{m\_port}!NetworkRecorder@{NetworkRecorder}}
+\doxysubsubsection{\texorpdfstring{m\_port}{m\_port}}
+{\footnotesize\ttfamily unsigned short Network\+Recorder\+::m\+\_\+port\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Remote port. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00100}{100}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source}{Client.\+cpp}}.
+
+\mbox{\Hypertarget{class_network_recorder_a74ad89a9fd640f242c817e9e26ba74a8}\label{class_network_recorder_a74ad89a9fd640f242c817e9e26ba74a8}} 
+\index{NetworkRecorder@{NetworkRecorder}!m\_socket@{m\_socket}}
+\index{m\_socket@{m\_socket}!NetworkRecorder@{NetworkRecorder}}
+\doxysubsubsection{\texorpdfstring{m\_socket}{m\_socket}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_tcp_socket}{sf\+::\+Tcp\+Socket}} Network\+Recorder\+::m\+\_\+socket\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Socket used to communicate with the server. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00101}{101}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source}{Client.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+SFML-\/2.\+5.\+1/examples/voip/\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp}{Client.\+cpp}}\item 
+Week14/\+SFML-\/2.\+5.\+1/examples/voip/\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp}{Client.\+cpp}}\end{DoxyCompactItemize}

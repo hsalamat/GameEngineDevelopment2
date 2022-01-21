@@ -1,0 +1,739 @@
+\hypertarget{structsf_1_1_blend_mode}{}\doxysection{sf\+::Blend\+Mode Class Reference}
+\label{structsf_1_1_blend_mode}\index{sf::BlendMode@{sf::BlendMode}}
+
+
+Blending modes for drawing.  
+
+
+
+
+{\ttfamily \#include $<$Blend\+Mode.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}} \{ \newline
+\mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba65485893f4abfbf2ae7702f371e003c1}{Zero}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba45992876072f707d1565f2d08d6b5ed6}{One}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbae3d90dc633cbb883554339e4303f0355}{Src\+Color}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbafc9454075ca0b0613f23c9d7d614dca4}{One\+Minus\+Src\+Color}}
+, \newline
+\mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbabf55ba7b1fd4567def92e4fbfa40387a}{Dst\+Color}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbae000102101f7c9828e106c9162ddb69e}{One\+Minus\+Dst\+Color}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba8b0cabd5aa52557b385848b8055cb270}{Src\+Alpha}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbaf882a5496651c616d7f23cafc8eafe61}{One\+Minus\+Src\+Alpha}}
+, \newline
+\mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba3344b2d94959aa49f66797bf8046b15b}{Dst\+Alpha}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba6f0663bcd2a998b0bb03110fb691ff48}{One\+Minus\+Dst\+Alpha}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba65485893f4abfbf2ae7702f371e003c1}{Zero}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba45992876072f707d1565f2d08d6b5ed6}{One}}
+, \newline
+\mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbae3d90dc633cbb883554339e4303f0355}{Src\+Color}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbafc9454075ca0b0613f23c9d7d614dca4}{One\+Minus\+Src\+Color}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbabf55ba7b1fd4567def92e4fbfa40387a}{Dst\+Color}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbae000102101f7c9828e106c9162ddb69e}{One\+Minus\+Dst\+Color}}
+, \newline
+\mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba8b0cabd5aa52557b385848b8055cb270}{Src\+Alpha}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbaf882a5496651c616d7f23cafc8eafe61}{One\+Minus\+Src\+Alpha}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba3344b2d94959aa49f66797bf8046b15b}{Dst\+Alpha}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba6f0663bcd2a998b0bb03110fb691ff48}{One\+Minus\+Dst\+Alpha}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of the blending factors. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32}{Equation}} \{ \newline
+\mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32ada07390f79e829c0eeb83909d3b828dc}{Add}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32a1c1006d7453b982cb868d65ca439e75c}{Subtract}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32aae64991689dfb87f2b607706a1b11835}{Reverse\+Subtract}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32ada07390f79e829c0eeb83909d3b828dc}{Add}}
+, \newline
+\mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32a1c1006d7453b982cb868d65ca439e75c}{Subtract}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32aae64991689dfb87f2b607706a1b11835}{Reverse\+Subtract}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of the blending equations. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}} \{ \newline
+\mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba65485893f4abfbf2ae7702f371e003c1}{Zero}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba45992876072f707d1565f2d08d6b5ed6}{One}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbae3d90dc633cbb883554339e4303f0355}{Src\+Color}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbafc9454075ca0b0613f23c9d7d614dca4}{One\+Minus\+Src\+Color}}
+, \newline
+\mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbabf55ba7b1fd4567def92e4fbfa40387a}{Dst\+Color}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbae000102101f7c9828e106c9162ddb69e}{One\+Minus\+Dst\+Color}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba8b0cabd5aa52557b385848b8055cb270}{Src\+Alpha}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbaf882a5496651c616d7f23cafc8eafe61}{One\+Minus\+Src\+Alpha}}
+, \newline
+\mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba3344b2d94959aa49f66797bf8046b15b}{Dst\+Alpha}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba6f0663bcd2a998b0bb03110fb691ff48}{One\+Minus\+Dst\+Alpha}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba65485893f4abfbf2ae7702f371e003c1}{Zero}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba45992876072f707d1565f2d08d6b5ed6}{One}}
+, \newline
+\mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbae3d90dc633cbb883554339e4303f0355}{Src\+Color}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbafc9454075ca0b0613f23c9d7d614dca4}{One\+Minus\+Src\+Color}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbabf55ba7b1fd4567def92e4fbfa40387a}{Dst\+Color}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbae000102101f7c9828e106c9162ddb69e}{One\+Minus\+Dst\+Color}}
+, \newline
+\mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba8b0cabd5aa52557b385848b8055cb270}{Src\+Alpha}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbaf882a5496651c616d7f23cafc8eafe61}{One\+Minus\+Src\+Alpha}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba3344b2d94959aa49f66797bf8046b15b}{Dst\+Alpha}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba6f0663bcd2a998b0bb03110fb691ff48}{One\+Minus\+Dst\+Alpha}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of the blending factors. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32}{Equation}} \{ \newline
+\mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32ada07390f79e829c0eeb83909d3b828dc}{Add}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32a1c1006d7453b982cb868d65ca439e75c}{Subtract}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32aae64991689dfb87f2b607706a1b11835}{Reverse\+Subtract}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32ada07390f79e829c0eeb83909d3b828dc}{Add}}
+, \newline
+\mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32a1c1006d7453b982cb868d65ca439e75c}{Subtract}}
+, \mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32aae64991689dfb87f2b607706a1b11835}{Reverse\+Subtract}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of the blending equations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structsf_1_1_blend_mode_a7faef75eae1fb47bbe93f45f38e3d345}{Blend\+Mode}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structsf_1_1_blend_mode_a23c7452cc8e9eb943c3aea6234ce4297}{Blend\+Mode}} (\mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}} source\+Factor, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}} destination\+Factor, \mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32}{Equation}} blend\+Equation=\mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32ada07390f79e829c0eeb83909d3b828dc}{Add}})
+\begin{DoxyCompactList}\small\item\em Construct the blend mode given the factors and equation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structsf_1_1_blend_mode_a69a12c596114e77126616e7e0f7d798b}{Blend\+Mode}} (\mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}} color\+Source\+Factor, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}} color\+Destination\+Factor, \mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32}{Equation}} color\+Blend\+Equation, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}} alpha\+Source\+Factor, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}} alpha\+Destination\+Factor, \mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32}{Equation}} alpha\+Blend\+Equation)
+\begin{DoxyCompactList}\small\item\em Construct the blend mode given the factors and equation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structsf_1_1_blend_mode_a7faef75eae1fb47bbe93f45f38e3d345}{Blend\+Mode}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structsf_1_1_blend_mode_a23c7452cc8e9eb943c3aea6234ce4297}{Blend\+Mode}} (\mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}} source\+Factor, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}} destination\+Factor, \mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32}{Equation}} blend\+Equation=\mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32ada07390f79e829c0eeb83909d3b828dc}{Add}})
+\begin{DoxyCompactList}\small\item\em Construct the blend mode given the factors and equation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structsf_1_1_blend_mode_a69a12c596114e77126616e7e0f7d798b}{Blend\+Mode}} (\mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}} color\+Source\+Factor, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}} color\+Destination\+Factor, \mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32}{Equation}} color\+Blend\+Equation, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}} alpha\+Source\+Factor, \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}} alpha\+Destination\+Factor, \mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32}{Equation}} alpha\+Blend\+Equation)
+\begin{DoxyCompactList}\small\item\em Construct the blend mode given the factors and equation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}} \mbox{\hyperlink{structsf_1_1_blend_mode_a32d1a55dbfada86a06d9b881dc8ccf7b}{color\+Src\+Factor}}
+\begin{DoxyCompactList}\small\item\em Source blending factor for the color channels. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}} \mbox{\hyperlink{structsf_1_1_blend_mode_adee68ee59e7f1bf71d12db03d251104d}{color\+Dst\+Factor}}
+\begin{DoxyCompactList}\small\item\em Destination blending factor for the color channels. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32}{Equation}} \mbox{\hyperlink{structsf_1_1_blend_mode_aed12f06eb7f50a1b95b892b0964857b1}{color\+Equation}}
+\begin{DoxyCompactList}\small\item\em Blending equation for the color channels. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}} \mbox{\hyperlink{structsf_1_1_blend_mode_aa94e44f8e1042a7357e8eff78c61a1be}{alpha\+Src\+Factor}}
+\begin{DoxyCompactList}\small\item\em Source blending factor for the alpha channel. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}} \mbox{\hyperlink{structsf_1_1_blend_mode_aaf85b6b7943181cc81745569c4851e4e}{alpha\+Dst\+Factor}}
+\begin{DoxyCompactList}\small\item\em Destination blending factor for the alpha channel. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32}{Equation}} \mbox{\hyperlink{structsf_1_1_blend_mode_a68f5a305e0912946f39ba6c9265710c4}{alpha\+Equation}}
+\begin{DoxyCompactList}\small\item\em Blending equation for the alpha channel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Related Functions}
+(Note that these are not member functions.) \begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_export_8hpp_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} bool \mbox{\hyperlink{structsf_1_1_blend_mode_ae13d2e80e55c5263eb9413fde7f74443}{operator==}} (const \mbox{\hyperlink{structsf_1_1_blend_mode}{Blend\+Mode}} \&left, const \mbox{\hyperlink{structsf_1_1_blend_mode}{Blend\+Mode}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of the == operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_export_8hpp_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} bool \mbox{\hyperlink{structsf_1_1_blend_mode_a0c08bfcb9b6911104dcc0c0cddde522a}{operator!=}} (const \mbox{\hyperlink{structsf_1_1_blend_mode}{Blend\+Mode}} \&left, const \mbox{\hyperlink{structsf_1_1_blend_mode}{Blend\+Mode}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of the != operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_export_8hpp_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} bool \mbox{\hyperlink{structsf_1_1_blend_mode_ae13d2e80e55c5263eb9413fde7f74443}{operator==}} (const \mbox{\hyperlink{structsf_1_1_blend_mode}{Blend\+Mode}} \&left, const \mbox{\hyperlink{structsf_1_1_blend_mode}{Blend\+Mode}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of the == operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_export_8hpp_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} bool \mbox{\hyperlink{structsf_1_1_blend_mode_a0c08bfcb9b6911104dcc0c0cddde522a}{operator!=}} (const \mbox{\hyperlink{structsf_1_1_blend_mode}{Blend\+Mode}} \&left, const \mbox{\hyperlink{structsf_1_1_blend_mode}{Blend\+Mode}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of the != operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Blending modes for drawing. 
+
+\mbox{\hyperlink{structsf_1_1_blend_mode}{sf\+::\+Blend\+Mode}} is a class that represents a blend mode.
+
+A blend mode determines how the colors of an object you draw are mixed with the colors that are already in the buffer.
+
+The class is composed of 6 components, each of which has its own public member variable\+: \begin{DoxyItemize}
+\item Color Source Factor (\mbox{\hyperlink{structsf_1_1_blend_mode_a32d1a55dbfada86a06d9b881dc8ccf7b}{color\+Src\+Factor}}) \item Color Destination Factor (\mbox{\hyperlink{structsf_1_1_blend_mode_adee68ee59e7f1bf71d12db03d251104d}{color\+Dst\+Factor}}) \item Color Blend Equation (\mbox{\hyperlink{structsf_1_1_blend_mode_aed12f06eb7f50a1b95b892b0964857b1}{color\+Equation}}) \item Alpha Source Factor (\mbox{\hyperlink{structsf_1_1_blend_mode_aa94e44f8e1042a7357e8eff78c61a1be}{alpha\+Src\+Factor}}) \item Alpha Destination Factor (\mbox{\hyperlink{structsf_1_1_blend_mode_aaf85b6b7943181cc81745569c4851e4e}{alpha\+Dst\+Factor}}) \item Alpha Blend Equation (\mbox{\hyperlink{structsf_1_1_blend_mode_a68f5a305e0912946f39ba6c9265710c4}{alpha\+Equation}})\end{DoxyItemize}
+The source factor specifies how the pixel you are drawing contributes to the final color. The destination factor specifies how the pixel already drawn in the buffer contributes to the final color.
+
+The color channels RGB (red, green, blue; simply referred to as color) and A (alpha; the transparency) can be treated separately. This separation can be useful for specific blend modes, but most often you won\textquotesingle{}t need it and will simply treat the color as a single unit.
+
+The blend factors and equations correspond to their Open\+GL equivalents. In general, the color of the resulting pixel is calculated according to the following formula ({\itshape src} is the color of the source pixel, {\itshape dst} the color of the destination pixel, the other variables correspond to the public members, with the equations being + or -\/ operators)\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{dst.rgb = \mbox{\hyperlink{structsf_1_1_blend_mode_a32d1a55dbfada86a06d9b881dc8ccf7b}{colorSrcFactor}} * src.rgb (\mbox{\hyperlink{structsf_1_1_blend_mode_aed12f06eb7f50a1b95b892b0964857b1}{colorEquation}}) \mbox{\hyperlink{structsf_1_1_blend_mode_adee68ee59e7f1bf71d12db03d251104d}{colorDstFactor}} * dst.rgb}
+\DoxyCodeLine{dst.a   = \mbox{\hyperlink{structsf_1_1_blend_mode_aa94e44f8e1042a7357e8eff78c61a1be}{alphaSrcFactor}} * src.a   (\mbox{\hyperlink{structsf_1_1_blend_mode_a68f5a305e0912946f39ba6c9265710c4}{alphaEquation}}) \mbox{\hyperlink{structsf_1_1_blend_mode_aaf85b6b7943181cc81745569c4851e4e}{alphaDstFactor}} * dst.a}
+
+\end{DoxyCode}
+ All factors and colors are represented as floating point numbers between 0 and 1. Where necessary, the result is clamped to fit in that range.
+
+The most common blending modes are defined as constants in the sf namespace\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structsf_1_1_blend_mode}{sf::BlendMode}} alphaBlending          = \mbox{\hyperlink{namespacesf_a7747d95d2e1f108142ea7c760c0b266c}{sf::BlendAlpha}};}
+\DoxyCodeLine{\mbox{\hyperlink{structsf_1_1_blend_mode}{sf::BlendMode}} additiveBlending       = \mbox{\hyperlink{namespacesf_a1be8c314242e6ed161af2aea08be543c}{sf::BlendAdd}};}
+\DoxyCodeLine{\mbox{\hyperlink{structsf_1_1_blend_mode}{sf::BlendMode}} multiplicativeBlending = \mbox{\hyperlink{namespacesf_ad8622674d06322d447de6ea0c95c83b4}{sf::BlendMultiply}};}
+\DoxyCodeLine{\mbox{\hyperlink{structsf_1_1_blend_mode}{sf::BlendMode}} noBlending             = \mbox{\hyperlink{namespacesf_aaa5511bd6fcf3573d61945b6d70a20ab}{sf::BlendNone}};}
+
+\end{DoxyCode}
+
+
+In SFML, a blend mode can be specified every time you draw a \mbox{\hyperlink{classsf_1_1_drawable}{sf\+::\+Drawable}} object to a render target. It is part of the \mbox{\hyperlink{classsf_1_1_render_states}{sf\+::\+Render\+States}} compound that is passed to the member function \mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{sf\+::\+Render\+Target\+::draw()}}.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_render_states}{sf\+::\+Render\+States}}, \mbox{\hyperlink{classsf_1_1_render_target}{sf\+::\+Render\+Target}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_blend_mode_8hpp_source_l00041}{41}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_blend_mode_8hpp_source}{Blend\+Mode.\+hpp}}.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32}\label{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32}} 
+\index{sf::BlendMode@{sf::BlendMode}!Equation@{Equation}}
+\index{Equation@{Equation}!sf::BlendMode@{sf::BlendMode}}
+\doxysubsubsection{\texorpdfstring{Equation}{Equation}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32}{sf\+::\+Blend\+Mode\+::\+Equation}}}
+
+
+
+Enumeration of the blending equations. 
+
+The equations are mapped directly to their Open\+GL equivalents, specified by gl\+Blend\+Equation() or gl\+Blend\+Equation\+Separate(). \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Add@{Add}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!Add@{Add}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32ada07390f79e829c0eeb83909d3b828dc}\label{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32ada07390f79e829c0eeb83909d3b828dc}} 
+Add&Pixel = Src $\ast$ Src\+Factor + Dst $\ast$ Dst\+Factor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Subtract@{Subtract}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!Subtract@{Subtract}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32a1c1006d7453b982cb868d65ca439e75c}\label{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32a1c1006d7453b982cb868d65ca439e75c}} 
+Subtract&Pixel = Src $\ast$ Src\+Factor -\/ Dst $\ast$ Dst\+Factor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ReverseSubtract@{ReverseSubtract}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!ReverseSubtract@{ReverseSubtract}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32aae64991689dfb87f2b607706a1b11835}\label{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32aae64991689dfb87f2b607706a1b11835}} 
+Reverse\+Subtract&Pixel = Dst $\ast$ Dst\+Factor -\/ Src $\ast$ Src\+Factor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Add@{Add}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!Add@{Add}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32ada07390f79e829c0eeb83909d3b828dc}\label{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32ada07390f79e829c0eeb83909d3b828dc}} 
+Add&Pixel = Src $\ast$ Src\+Factor + Dst $\ast$ Dst\+Factor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Subtract@{Subtract}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!Subtract@{Subtract}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32a1c1006d7453b982cb868d65ca439e75c}\label{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32a1c1006d7453b982cb868d65ca439e75c}} 
+Subtract&Pixel = Src $\ast$ Src\+Factor -\/ Dst $\ast$ Dst\+Factor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ReverseSubtract@{ReverseSubtract}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!ReverseSubtract@{ReverseSubtract}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32aae64991689dfb87f2b607706a1b11835}\label{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32aae64991689dfb87f2b607706a1b11835}} 
+Reverse\+Subtract&Pixel = Dst $\ast$ Dst\+Factor -\/ Src $\ast$ Src\+Factor. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_blend_mode_8hpp_source_l00069}{69}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_blend_mode_8hpp_source}{Blend\+Mode.\+hpp}}.
+
+\mbox{\Hypertarget{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32}\label{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32}} 
+\index{sf::BlendMode@{sf::BlendMode}!Equation@{Equation}}
+\index{Equation@{Equation}!sf::BlendMode@{sf::BlendMode}}
+\doxysubsubsection{\texorpdfstring{Equation}{Equation}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32}{sf\+::\+Blend\+Mode\+::\+Equation}}}
+
+
+
+Enumeration of the blending equations. 
+
+The equations are mapped directly to their Open\+GL equivalents, specified by gl\+Blend\+Equation() or gl\+Blend\+Equation\+Separate(). \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Add@{Add}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!Add@{Add}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32ada07390f79e829c0eeb83909d3b828dc}\label{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32ada07390f79e829c0eeb83909d3b828dc}} 
+Add&Pixel = Src $\ast$ Src\+Factor + Dst $\ast$ Dst\+Factor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Subtract@{Subtract}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!Subtract@{Subtract}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32a1c1006d7453b982cb868d65ca439e75c}\label{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32a1c1006d7453b982cb868d65ca439e75c}} 
+Subtract&Pixel = Src $\ast$ Src\+Factor -\/ Dst $\ast$ Dst\+Factor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ReverseSubtract@{ReverseSubtract}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!ReverseSubtract@{ReverseSubtract}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32aae64991689dfb87f2b607706a1b11835}\label{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32aae64991689dfb87f2b607706a1b11835}} 
+Reverse\+Subtract&Pixel = Dst $\ast$ Dst\+Factor -\/ Src $\ast$ Src\+Factor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Add@{Add}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!Add@{Add}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32ada07390f79e829c0eeb83909d3b828dc}\label{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32ada07390f79e829c0eeb83909d3b828dc}} 
+Add&Pixel = Src $\ast$ Src\+Factor + Dst $\ast$ Dst\+Factor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Subtract@{Subtract}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!Subtract@{Subtract}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32a1c1006d7453b982cb868d65ca439e75c}\label{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32a1c1006d7453b982cb868d65ca439e75c}} 
+Subtract&Pixel = Src $\ast$ Src\+Factor -\/ Dst $\ast$ Dst\+Factor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ReverseSubtract@{ReverseSubtract}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!ReverseSubtract@{ReverseSubtract}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32aae64991689dfb87f2b607706a1b11835}\label{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32aae64991689dfb87f2b607706a1b11835}} 
+Reverse\+Subtract&Pixel = Dst $\ast$ Dst\+Factor -\/ Src $\ast$ Src\+Factor. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_blend_mode_8hpp_source_l00069}{69}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_blend_mode_8hpp_source}{Blend\+Mode.\+hpp}}.
+
+\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}} 
+\index{sf::BlendMode@{sf::BlendMode}!Factor@{Factor}}
+\index{Factor@{Factor}!sf::BlendMode@{sf::BlendMode}}
+\doxysubsubsection{\texorpdfstring{Factor}{Factor}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{sf\+::\+Blend\+Mode\+::\+Factor}}}
+
+
+
+Enumeration of the blending factors. 
+
+The factors are mapped directly to their Open\+GL equivalents, specified by gl\+Blend\+Func() or gl\+Blend\+Func\+Separate(). \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Zero@{Zero}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!Zero@{Zero}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba65485893f4abfbf2ae7702f371e003c1}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba65485893f4abfbf2ae7702f371e003c1}} 
+Zero&(0, 0, 0, 0) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{One@{One}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!One@{One}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba45992876072f707d1565f2d08d6b5ed6}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba45992876072f707d1565f2d08d6b5ed6}} 
+One&(1, 1, 1, 1) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SrcColor@{SrcColor}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!SrcColor@{SrcColor}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbae3d90dc633cbb883554339e4303f0355}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbae3d90dc633cbb883554339e4303f0355}} 
+Src\+Color&(src.\+r, src.\+g, src.\+b, src.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OneMinusSrcColor@{OneMinusSrcColor}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!OneMinusSrcColor@{OneMinusSrcColor}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbafc9454075ca0b0613f23c9d7d614dca4}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbafc9454075ca0b0613f23c9d7d614dca4}} 
+One\+Minus\+Src\+Color&(1, 1, 1, 1) -\/ (src.\+r, src.\+g, src.\+b, src.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DstColor@{DstColor}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!DstColor@{DstColor}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbabf55ba7b1fd4567def92e4fbfa40387a}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbabf55ba7b1fd4567def92e4fbfa40387a}} 
+Dst\+Color&(dst.\+r, dst.\+g, dst.\+b, dst.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OneMinusDstColor@{OneMinusDstColor}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!OneMinusDstColor@{OneMinusDstColor}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbae000102101f7c9828e106c9162ddb69e}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbae000102101f7c9828e106c9162ddb69e}} 
+One\+Minus\+Dst\+Color&(1, 1, 1, 1) -\/ (dst.\+r, dst.\+g, dst.\+b, dst.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SrcAlpha@{SrcAlpha}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!SrcAlpha@{SrcAlpha}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba8b0cabd5aa52557b385848b8055cb270}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba8b0cabd5aa52557b385848b8055cb270}} 
+Src\+Alpha&(src.\+a, src.\+a, src.\+a, src.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OneMinusSrcAlpha@{OneMinusSrcAlpha}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!OneMinusSrcAlpha@{OneMinusSrcAlpha}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbaf882a5496651c616d7f23cafc8eafe61}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbaf882a5496651c616d7f23cafc8eafe61}} 
+One\+Minus\+Src\+Alpha&(1, 1, 1, 1) -\/ (src.\+a, src.\+a, src.\+a, src.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DstAlpha@{DstAlpha}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!DstAlpha@{DstAlpha}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba3344b2d94959aa49f66797bf8046b15b}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba3344b2d94959aa49f66797bf8046b15b}} 
+Dst\+Alpha&(dst.\+a, dst.\+a, dst.\+a, dst.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OneMinusDstAlpha@{OneMinusDstAlpha}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!OneMinusDstAlpha@{OneMinusDstAlpha}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba6f0663bcd2a998b0bb03110fb691ff48}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba6f0663bcd2a998b0bb03110fb691ff48}} 
+One\+Minus\+Dst\+Alpha&(1, 1, 1, 1) -\/ (dst.\+a, dst.\+a, dst.\+a, dst.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Zero@{Zero}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!Zero@{Zero}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba65485893f4abfbf2ae7702f371e003c1}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba65485893f4abfbf2ae7702f371e003c1}} 
+Zero&(0, 0, 0, 0) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{One@{One}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!One@{One}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba45992876072f707d1565f2d08d6b5ed6}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba45992876072f707d1565f2d08d6b5ed6}} 
+One&(1, 1, 1, 1) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SrcColor@{SrcColor}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!SrcColor@{SrcColor}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbae3d90dc633cbb883554339e4303f0355}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbae3d90dc633cbb883554339e4303f0355}} 
+Src\+Color&(src.\+r, src.\+g, src.\+b, src.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OneMinusSrcColor@{OneMinusSrcColor}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!OneMinusSrcColor@{OneMinusSrcColor}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbafc9454075ca0b0613f23c9d7d614dca4}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbafc9454075ca0b0613f23c9d7d614dca4}} 
+One\+Minus\+Src\+Color&(1, 1, 1, 1) -\/ (src.\+r, src.\+g, src.\+b, src.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DstColor@{DstColor}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!DstColor@{DstColor}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbabf55ba7b1fd4567def92e4fbfa40387a}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbabf55ba7b1fd4567def92e4fbfa40387a}} 
+Dst\+Color&(dst.\+r, dst.\+g, dst.\+b, dst.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OneMinusDstColor@{OneMinusDstColor}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!OneMinusDstColor@{OneMinusDstColor}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbae000102101f7c9828e106c9162ddb69e}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbae000102101f7c9828e106c9162ddb69e}} 
+One\+Minus\+Dst\+Color&(1, 1, 1, 1) -\/ (dst.\+r, dst.\+g, dst.\+b, dst.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SrcAlpha@{SrcAlpha}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!SrcAlpha@{SrcAlpha}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba8b0cabd5aa52557b385848b8055cb270}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba8b0cabd5aa52557b385848b8055cb270}} 
+Src\+Alpha&(src.\+a, src.\+a, src.\+a, src.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OneMinusSrcAlpha@{OneMinusSrcAlpha}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!OneMinusSrcAlpha@{OneMinusSrcAlpha}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbaf882a5496651c616d7f23cafc8eafe61}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbaf882a5496651c616d7f23cafc8eafe61}} 
+One\+Minus\+Src\+Alpha&(1, 1, 1, 1) -\/ (src.\+a, src.\+a, src.\+a, src.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DstAlpha@{DstAlpha}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!DstAlpha@{DstAlpha}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba3344b2d94959aa49f66797bf8046b15b}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba3344b2d94959aa49f66797bf8046b15b}} 
+Dst\+Alpha&(dst.\+a, dst.\+a, dst.\+a, dst.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OneMinusDstAlpha@{OneMinusDstAlpha}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!OneMinusDstAlpha@{OneMinusDstAlpha}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba6f0663bcd2a998b0bb03110fb691ff48}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba6f0663bcd2a998b0bb03110fb691ff48}} 
+One\+Minus\+Dst\+Alpha&(1, 1, 1, 1) -\/ (dst.\+a, dst.\+a, dst.\+a, dst.\+a) \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_blend_mode_8hpp_source_l00049}{49}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_blend_mode_8hpp_source}{Blend\+Mode.\+hpp}}.
+
+\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}} 
+\index{sf::BlendMode@{sf::BlendMode}!Factor@{Factor}}
+\index{Factor@{Factor}!sf::BlendMode@{sf::BlendMode}}
+\doxysubsubsection{\texorpdfstring{Factor}{Factor}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{sf\+::\+Blend\+Mode\+::\+Factor}}}
+
+
+
+Enumeration of the blending factors. 
+
+The factors are mapped directly to their Open\+GL equivalents, specified by gl\+Blend\+Func() or gl\+Blend\+Func\+Separate(). \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Zero@{Zero}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!Zero@{Zero}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba65485893f4abfbf2ae7702f371e003c1}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba65485893f4abfbf2ae7702f371e003c1}} 
+Zero&(0, 0, 0, 0) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{One@{One}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!One@{One}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba45992876072f707d1565f2d08d6b5ed6}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba45992876072f707d1565f2d08d6b5ed6}} 
+One&(1, 1, 1, 1) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SrcColor@{SrcColor}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!SrcColor@{SrcColor}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbae3d90dc633cbb883554339e4303f0355}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbae3d90dc633cbb883554339e4303f0355}} 
+Src\+Color&(src.\+r, src.\+g, src.\+b, src.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OneMinusSrcColor@{OneMinusSrcColor}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!OneMinusSrcColor@{OneMinusSrcColor}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbafc9454075ca0b0613f23c9d7d614dca4}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbafc9454075ca0b0613f23c9d7d614dca4}} 
+One\+Minus\+Src\+Color&(1, 1, 1, 1) -\/ (src.\+r, src.\+g, src.\+b, src.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DstColor@{DstColor}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!DstColor@{DstColor}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbabf55ba7b1fd4567def92e4fbfa40387a}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbabf55ba7b1fd4567def92e4fbfa40387a}} 
+Dst\+Color&(dst.\+r, dst.\+g, dst.\+b, dst.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OneMinusDstColor@{OneMinusDstColor}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!OneMinusDstColor@{OneMinusDstColor}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbae000102101f7c9828e106c9162ddb69e}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbae000102101f7c9828e106c9162ddb69e}} 
+One\+Minus\+Dst\+Color&(1, 1, 1, 1) -\/ (dst.\+r, dst.\+g, dst.\+b, dst.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SrcAlpha@{SrcAlpha}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!SrcAlpha@{SrcAlpha}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba8b0cabd5aa52557b385848b8055cb270}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba8b0cabd5aa52557b385848b8055cb270}} 
+Src\+Alpha&(src.\+a, src.\+a, src.\+a, src.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OneMinusSrcAlpha@{OneMinusSrcAlpha}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!OneMinusSrcAlpha@{OneMinusSrcAlpha}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbaf882a5496651c616d7f23cafc8eafe61}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbaf882a5496651c616d7f23cafc8eafe61}} 
+One\+Minus\+Src\+Alpha&(1, 1, 1, 1) -\/ (src.\+a, src.\+a, src.\+a, src.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DstAlpha@{DstAlpha}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!DstAlpha@{DstAlpha}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba3344b2d94959aa49f66797bf8046b15b}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba3344b2d94959aa49f66797bf8046b15b}} 
+Dst\+Alpha&(dst.\+a, dst.\+a, dst.\+a, dst.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OneMinusDstAlpha@{OneMinusDstAlpha}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!OneMinusDstAlpha@{OneMinusDstAlpha}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba6f0663bcd2a998b0bb03110fb691ff48}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba6f0663bcd2a998b0bb03110fb691ff48}} 
+One\+Minus\+Dst\+Alpha&(1, 1, 1, 1) -\/ (dst.\+a, dst.\+a, dst.\+a, dst.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Zero@{Zero}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!Zero@{Zero}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba65485893f4abfbf2ae7702f371e003c1}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba65485893f4abfbf2ae7702f371e003c1}} 
+Zero&(0, 0, 0, 0) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{One@{One}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!One@{One}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba45992876072f707d1565f2d08d6b5ed6}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba45992876072f707d1565f2d08d6b5ed6}} 
+One&(1, 1, 1, 1) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SrcColor@{SrcColor}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!SrcColor@{SrcColor}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbae3d90dc633cbb883554339e4303f0355}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbae3d90dc633cbb883554339e4303f0355}} 
+Src\+Color&(src.\+r, src.\+g, src.\+b, src.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OneMinusSrcColor@{OneMinusSrcColor}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!OneMinusSrcColor@{OneMinusSrcColor}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbafc9454075ca0b0613f23c9d7d614dca4}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbafc9454075ca0b0613f23c9d7d614dca4}} 
+One\+Minus\+Src\+Color&(1, 1, 1, 1) -\/ (src.\+r, src.\+g, src.\+b, src.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DstColor@{DstColor}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!DstColor@{DstColor}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbabf55ba7b1fd4567def92e4fbfa40387a}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbabf55ba7b1fd4567def92e4fbfa40387a}} 
+Dst\+Color&(dst.\+r, dst.\+g, dst.\+b, dst.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OneMinusDstColor@{OneMinusDstColor}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!OneMinusDstColor@{OneMinusDstColor}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbae000102101f7c9828e106c9162ddb69e}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbae000102101f7c9828e106c9162ddb69e}} 
+One\+Minus\+Dst\+Color&(1, 1, 1, 1) -\/ (dst.\+r, dst.\+g, dst.\+b, dst.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SrcAlpha@{SrcAlpha}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!SrcAlpha@{SrcAlpha}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba8b0cabd5aa52557b385848b8055cb270}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba8b0cabd5aa52557b385848b8055cb270}} 
+Src\+Alpha&(src.\+a, src.\+a, src.\+a, src.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OneMinusSrcAlpha@{OneMinusSrcAlpha}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!OneMinusSrcAlpha@{OneMinusSrcAlpha}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbaf882a5496651c616d7f23cafc8eafe61}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbbaf882a5496651c616d7f23cafc8eafe61}} 
+One\+Minus\+Src\+Alpha&(1, 1, 1, 1) -\/ (src.\+a, src.\+a, src.\+a, src.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DstAlpha@{DstAlpha}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!DstAlpha@{DstAlpha}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba3344b2d94959aa49f66797bf8046b15b}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba3344b2d94959aa49f66797bf8046b15b}} 
+Dst\+Alpha&(dst.\+a, dst.\+a, dst.\+a, dst.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OneMinusDstAlpha@{OneMinusDstAlpha}!sf::BlendMode@{sf::BlendMode}}\index{sf::BlendMode@{sf::BlendMode}!OneMinusDstAlpha@{OneMinusDstAlpha}}}\mbox{\Hypertarget{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba6f0663bcd2a998b0bb03110fb691ff48}\label{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbba6f0663bcd2a998b0bb03110fb691ff48}} 
+One\+Minus\+Dst\+Alpha&(1, 1, 1, 1) -\/ (dst.\+a, dst.\+a, dst.\+a, dst.\+a) \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_blend_mode_8hpp_source_l00049}{49}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_blend_mode_8hpp_source}{Blend\+Mode.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structsf_1_1_blend_mode_a7faef75eae1fb47bbe93f45f38e3d345}\label{structsf_1_1_blend_mode_a7faef75eae1fb47bbe93f45f38e3d345}} 
+\index{sf::BlendMode@{sf::BlendMode}!BlendMode@{BlendMode}}
+\index{BlendMode@{BlendMode}!sf::BlendMode@{sf::BlendMode}}
+\doxysubsubsection{\texorpdfstring{BlendMode()}{BlendMode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily sf\+::\+Blend\+Mode\+::\+Blend\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Constructs a blending mode that does alpha blending. \mbox{\Hypertarget{structsf_1_1_blend_mode_a23c7452cc8e9eb943c3aea6234ce4297}\label{structsf_1_1_blend_mode_a23c7452cc8e9eb943c3aea6234ce4297}} 
+\index{sf::BlendMode@{sf::BlendMode}!BlendMode@{BlendMode}}
+\index{BlendMode@{BlendMode}!sf::BlendMode@{sf::BlendMode}}
+\doxysubsubsection{\texorpdfstring{BlendMode()}{BlendMode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily sf\+::\+Blend\+Mode\+::\+Blend\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}}}]{source\+Factor,  }\item[{\mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}}}]{destination\+Factor,  }\item[{\mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32}{Equation}}}]{blend\+Equation = {\ttfamily \mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32ada07390f79e829c0eeb83909d3b828dc}{Add}}} }\end{DoxyParamCaption})}
+
+
+
+Construct the blend mode given the factors and equation. 
+
+This constructor uses the same factors and equation for both color and alpha components. It also defaults to the Add equation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em source\+Factor} & Specifies how to compute the source factor for the color and alpha channels. \\
+\hline
+{\em destination\+Factor} & Specifies how to compute the destination factor for the color and alpha channels. \\
+\hline
+{\em blend\+Equation} & Specifies how to combine the source and destination colors and alpha. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structsf_1_1_blend_mode_a69a12c596114e77126616e7e0f7d798b}\label{structsf_1_1_blend_mode_a69a12c596114e77126616e7e0f7d798b}} 
+\index{sf::BlendMode@{sf::BlendMode}!BlendMode@{BlendMode}}
+\index{BlendMode@{BlendMode}!sf::BlendMode@{sf::BlendMode}}
+\doxysubsubsection{\texorpdfstring{BlendMode()}{BlendMode()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily sf\+::\+Blend\+Mode\+::\+Blend\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}}}]{color\+Source\+Factor,  }\item[{\mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}}}]{color\+Destination\+Factor,  }\item[{\mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32}{Equation}}}]{color\+Blend\+Equation,  }\item[{\mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}}}]{alpha\+Source\+Factor,  }\item[{\mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}}}]{alpha\+Destination\+Factor,  }\item[{\mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32}{Equation}}}]{alpha\+Blend\+Equation }\end{DoxyParamCaption})}
+
+
+
+Construct the blend mode given the factors and equation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color\+Source\+Factor} & Specifies how to compute the source factor for the color channels. \\
+\hline
+{\em color\+Destination\+Factor} & Specifies how to compute the destination factor for the color channels. \\
+\hline
+{\em color\+Blend\+Equation} & Specifies how to combine the source and destination colors. \\
+\hline
+{\em alpha\+Source\+Factor} & Specifies how to compute the source factor. \\
+\hline
+{\em alpha\+Destination\+Factor} & Specifies how to compute the destination factor. \\
+\hline
+{\em alpha\+Blend\+Equation} & Specifies how to combine the source and destination alphas. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structsf_1_1_blend_mode_a7faef75eae1fb47bbe93f45f38e3d345}\label{structsf_1_1_blend_mode_a7faef75eae1fb47bbe93f45f38e3d345}} 
+\index{sf::BlendMode@{sf::BlendMode}!BlendMode@{BlendMode}}
+\index{BlendMode@{BlendMode}!sf::BlendMode@{sf::BlendMode}}
+\doxysubsubsection{\texorpdfstring{BlendMode()}{BlendMode()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily sf\+::\+Blend\+Mode\+::\+Blend\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Constructs a blending mode that does alpha blending. \mbox{\Hypertarget{structsf_1_1_blend_mode_a23c7452cc8e9eb943c3aea6234ce4297}\label{structsf_1_1_blend_mode_a23c7452cc8e9eb943c3aea6234ce4297}} 
+\index{sf::BlendMode@{sf::BlendMode}!BlendMode@{BlendMode}}
+\index{BlendMode@{BlendMode}!sf::BlendMode@{sf::BlendMode}}
+\doxysubsubsection{\texorpdfstring{BlendMode()}{BlendMode()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily sf\+::\+Blend\+Mode\+::\+Blend\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}}}]{source\+Factor,  }\item[{\mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}}}]{destination\+Factor,  }\item[{\mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32}{Equation}}}]{blend\+Equation = {\ttfamily \mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32ada07390f79e829c0eeb83909d3b828dc}{Add}}} }\end{DoxyParamCaption})}
+
+
+
+Construct the blend mode given the factors and equation. 
+
+This constructor uses the same factors and equation for both color and alpha components. It also defaults to the Add equation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em source\+Factor} & Specifies how to compute the source factor for the color and alpha channels. \\
+\hline
+{\em destination\+Factor} & Specifies how to compute the destination factor for the color and alpha channels. \\
+\hline
+{\em blend\+Equation} & Specifies how to combine the source and destination colors and alpha. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structsf_1_1_blend_mode_a69a12c596114e77126616e7e0f7d798b}\label{structsf_1_1_blend_mode_a69a12c596114e77126616e7e0f7d798b}} 
+\index{sf::BlendMode@{sf::BlendMode}!BlendMode@{BlendMode}}
+\index{BlendMode@{BlendMode}!sf::BlendMode@{sf::BlendMode}}
+\doxysubsubsection{\texorpdfstring{BlendMode()}{BlendMode()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily sf\+::\+Blend\+Mode\+::\+Blend\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}}}]{color\+Source\+Factor,  }\item[{\mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}}}]{color\+Destination\+Factor,  }\item[{\mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32}{Equation}}}]{color\+Blend\+Equation,  }\item[{\mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}}}]{alpha\+Source\+Factor,  }\item[{\mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}}}]{alpha\+Destination\+Factor,  }\item[{\mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32}{Equation}}}]{alpha\+Blend\+Equation }\end{DoxyParamCaption})}
+
+
+
+Construct the blend mode given the factors and equation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color\+Source\+Factor} & Specifies how to compute the source factor for the color channels. \\
+\hline
+{\em color\+Destination\+Factor} & Specifies how to compute the destination factor for the color channels. \\
+\hline
+{\em color\+Blend\+Equation} & Specifies how to combine the source and destination colors. \\
+\hline
+{\em alpha\+Source\+Factor} & Specifies how to compute the source factor. \\
+\hline
+{\em alpha\+Destination\+Factor} & Specifies how to compute the destination factor. \\
+\hline
+{\em alpha\+Blend\+Equation} & Specifies how to combine the source and destination alphas. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{structsf_1_1_blend_mode_a0c08bfcb9b6911104dcc0c0cddde522a}\label{structsf_1_1_blend_mode_a0c08bfcb9b6911104dcc0c0cddde522a}} 
+\index{sf::BlendMode@{sf::BlendMode}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!sf::BlendMode@{sf::BlendMode}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_export_8hpp_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsf_1_1_blend_mode}{Blend\+Mode}} \&}]{left,  }\item[{const \mbox{\hyperlink{structsf_1_1_blend_mode}{Blend\+Mode}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of the != operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand \\
+\hline
+{\em right} & Right operand\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if blending modes are different, false if they are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structsf_1_1_blend_mode_a0c08bfcb9b6911104dcc0c0cddde522a}\label{structsf_1_1_blend_mode_a0c08bfcb9b6911104dcc0c0cddde522a}} 
+\index{sf::BlendMode@{sf::BlendMode}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!sf::BlendMode@{sf::BlendMode}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_export_8hpp_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsf_1_1_blend_mode}{Blend\+Mode}} \&}]{left,  }\item[{const \mbox{\hyperlink{structsf_1_1_blend_mode}{Blend\+Mode}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of the != operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand \\
+\hline
+{\em right} & Right operand\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if blending modes are different, false if they are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structsf_1_1_blend_mode_ae13d2e80e55c5263eb9413fde7f74443}\label{structsf_1_1_blend_mode_ae13d2e80e55c5263eb9413fde7f74443}} 
+\index{sf::BlendMode@{sf::BlendMode}!operator==@{operator==}}
+\index{operator==@{operator==}!sf::BlendMode@{sf::BlendMode}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_export_8hpp_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsf_1_1_blend_mode}{Blend\+Mode}} \&}]{left,  }\item[{const \mbox{\hyperlink{structsf_1_1_blend_mode}{Blend\+Mode}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of the == operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand \\
+\hline
+{\em right} & Right operand\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if blending modes are equal, false if they are different 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structsf_1_1_blend_mode_ae13d2e80e55c5263eb9413fde7f74443}\label{structsf_1_1_blend_mode_ae13d2e80e55c5263eb9413fde7f74443}} 
+\index{sf::BlendMode@{sf::BlendMode}!operator==@{operator==}}
+\index{operator==@{operator==}!sf::BlendMode@{sf::BlendMode}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_export_8hpp_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsf_1_1_blend_mode}{Blend\+Mode}} \&}]{left,  }\item[{const \mbox{\hyperlink{structsf_1_1_blend_mode}{Blend\+Mode}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of the == operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand \\
+\hline
+{\em right} & Right operand\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if blending modes are equal, false if they are different 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structsf_1_1_blend_mode_aaf85b6b7943181cc81745569c4851e4e}\label{structsf_1_1_blend_mode_aaf85b6b7943181cc81745569c4851e4e}} 
+\index{sf::BlendMode@{sf::BlendMode}!alphaDstFactor@{alphaDstFactor}}
+\index{alphaDstFactor@{alphaDstFactor}!sf::BlendMode@{sf::BlendMode}}
+\doxysubsubsection{\texorpdfstring{alphaDstFactor}{alphaDstFactor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}} sf\+::\+Blend\+Mode\+::alpha\+Dst\+Factor}
+
+
+
+Destination blending factor for the alpha channel. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_blend_mode_8hpp_source_l00119}{119}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_blend_mode_8hpp_source}{Blend\+Mode.\+hpp}}.
+
+\mbox{\Hypertarget{structsf_1_1_blend_mode_a68f5a305e0912946f39ba6c9265710c4}\label{structsf_1_1_blend_mode_a68f5a305e0912946f39ba6c9265710c4}} 
+\index{sf::BlendMode@{sf::BlendMode}!alphaEquation@{alphaEquation}}
+\index{alphaEquation@{alphaEquation}!sf::BlendMode@{sf::BlendMode}}
+\doxysubsubsection{\texorpdfstring{alphaEquation}{alphaEquation}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32}{Equation}} sf\+::\+Blend\+Mode\+::alpha\+Equation}
+
+
+
+Blending equation for the alpha channel. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_blend_mode_8hpp_source_l00120}{120}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_blend_mode_8hpp_source}{Blend\+Mode.\+hpp}}.
+
+\mbox{\Hypertarget{structsf_1_1_blend_mode_aa94e44f8e1042a7357e8eff78c61a1be}\label{structsf_1_1_blend_mode_aa94e44f8e1042a7357e8eff78c61a1be}} 
+\index{sf::BlendMode@{sf::BlendMode}!alphaSrcFactor@{alphaSrcFactor}}
+\index{alphaSrcFactor@{alphaSrcFactor}!sf::BlendMode@{sf::BlendMode}}
+\doxysubsubsection{\texorpdfstring{alphaSrcFactor}{alphaSrcFactor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}} sf\+::\+Blend\+Mode\+::alpha\+Src\+Factor}
+
+
+
+Source blending factor for the alpha channel. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_blend_mode_8hpp_source_l00118}{118}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_blend_mode_8hpp_source}{Blend\+Mode.\+hpp}}.
+
+\mbox{\Hypertarget{structsf_1_1_blend_mode_adee68ee59e7f1bf71d12db03d251104d}\label{structsf_1_1_blend_mode_adee68ee59e7f1bf71d12db03d251104d}} 
+\index{sf::BlendMode@{sf::BlendMode}!colorDstFactor@{colorDstFactor}}
+\index{colorDstFactor@{colorDstFactor}!sf::BlendMode@{sf::BlendMode}}
+\doxysubsubsection{\texorpdfstring{colorDstFactor}{colorDstFactor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}} sf\+::\+Blend\+Mode\+::color\+Dst\+Factor}
+
+
+
+Destination blending factor for the color channels. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_blend_mode_8hpp_source_l00116}{116}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_blend_mode_8hpp_source}{Blend\+Mode.\+hpp}}.
+
+\mbox{\Hypertarget{structsf_1_1_blend_mode_aed12f06eb7f50a1b95b892b0964857b1}\label{structsf_1_1_blend_mode_aed12f06eb7f50a1b95b892b0964857b1}} 
+\index{sf::BlendMode@{sf::BlendMode}!colorEquation@{colorEquation}}
+\index{colorEquation@{colorEquation}!sf::BlendMode@{sf::BlendMode}}
+\doxysubsubsection{\texorpdfstring{colorEquation}{colorEquation}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structsf_1_1_blend_mode_a7bce470e2e384c4f9c8d9595faef7c32}{Equation}} sf\+::\+Blend\+Mode\+::color\+Equation}
+
+
+
+Blending equation for the color channels. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_blend_mode_8hpp_source_l00117}{117}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_blend_mode_8hpp_source}{Blend\+Mode.\+hpp}}.
+
+\mbox{\Hypertarget{structsf_1_1_blend_mode_a32d1a55dbfada86a06d9b881dc8ccf7b}\label{structsf_1_1_blend_mode_a32d1a55dbfada86a06d9b881dc8ccf7b}} 
+\index{sf::BlendMode@{sf::BlendMode}!colorSrcFactor@{colorSrcFactor}}
+\index{colorSrcFactor@{colorSrcFactor}!sf::BlendMode@{sf::BlendMode}}
+\doxysubsubsection{\texorpdfstring{colorSrcFactor}{colorSrcFactor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structsf_1_1_blend_mode_afb9852caf356b53bb0de460c58a9ebbb}{Factor}} sf\+::\+Blend\+Mode\+::color\+Src\+Factor}
+
+
+
+Source blending factor for the color channels. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_blend_mode_8hpp_source_l00115}{115}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_blend_mode_8hpp_source}{Blend\+Mode.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+SFML-\/2.\+5.\+1/include/\+SFML/\+Graphics/\mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_blend_mode_8hpp}{Blend\+Mode.\+hpp}}\item 
+Week14/\+SFML-\/2.\+5.\+1/include/\+SFML/\+Graphics/\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_blend_mode_8hpp}{Blend\+Mode.\+hpp}}\end{DoxyCompactItemize}

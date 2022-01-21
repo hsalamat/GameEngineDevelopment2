@@ -1,0 +1,34 @@
+\hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_utility_8hpp_source}{}\doxysection{Utility.\+hpp}
+\label{_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_utility_8hpp_source}\index{Week9-\/10/Week10-\/Demo3-\/UpdateHitpoints/Include/Utility.hpp@{Week9-\/10/Week10-\/Demo3-\/UpdateHitpoints/Include/Utility.hpp}}
+\mbox{\hyperlink{_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_utility_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_utility_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#ifndef BOOK\_UTILITY\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_utility_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#define BOOK\_UTILITY\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_utility_8hpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_utility_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include <SFML/Window/Keyboard.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_utility_8hpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_utility_8hpp_source_l00006}00006 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_utility_8hpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_utility_8hpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_utility_8hpp_source_l00009}00009 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacesf}{sf}}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_utility_8hpp_source_l00010}00010 \{}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_utility_8hpp_source_l00011}00011     \textcolor{keyword}{class }Sprite;}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_utility_8hpp_source_l00012}00012     \textcolor{keyword}{class }Text;}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_utility_8hpp_source_l00013}00013 \}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_utility_8hpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_utility_8hpp_source_l00015}00015 \textcolor{comment}{// Since std::to\_string doesn't work on MinGW we have to implement}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_utility_8hpp_source_l00016}00016 \textcolor{comment}{// our own to support all platforms.}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_utility_8hpp_source_l00017}00017 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_utility_8hpp_source_l00018}00018 std::string \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_a1e803cea7d2670ece91f5465281446ba}{toString}}(\textcolor{keyword}{const} T\& value);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_utility_8hpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_utility_8hpp_source_l00020}00020 \textcolor{comment}{// Convert enumerators to strings}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_utility_8hpp_source_l00021}00021 std::string \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_a1e803cea7d2670ece91f5465281446ba}{toString}}(\mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142}{sf::Keyboard::Key}} key);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_utility_8hpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_utility_8hpp_source_l00023}00023 \textcolor{comment}{// Call setOrigin() with the center of the object}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_utility_8hpp_source_l00024}00024 \textcolor{keywordtype}{void} \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_add3ffea68d586813ee6765c3bc796d35}{centerOrigin}}(\mbox{\hyperlink{classsf_1_1_sprite}{sf::Sprite}}\& sprite);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_utility_8hpp_source_l00025}00025 \textcolor{keywordtype}{void} \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_add3ffea68d586813ee6765c3bc796d35}{centerOrigin}}(\mbox{\hyperlink{classsf_1_1_text}{sf::Text}}\& text);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_utility_8hpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_utility_8hpp_source_l00027}00027 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_include_2_utility_8inl}{Utility.inl}}>}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_utility_8hpp_source_l00028}00028 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// BOOK\_UTILITY\_HPP}}
+
+\end{DoxyCode}

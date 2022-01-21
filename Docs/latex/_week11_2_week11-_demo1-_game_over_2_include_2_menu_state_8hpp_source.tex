@@ -1,0 +1,32 @@
+\hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_menu_state_8hpp_source}{}\doxysection{Menu\+State.\+hpp}
+\label{_week11_2_week11-_demo1-_game_over_2_include_2_menu_state_8hpp_source}\index{Week11/Week11-\/Demo1-\/GameOver/Include/MenuState.hpp@{Week11/Week11-\/Demo1-\/GameOver/Include/MenuState.hpp}}
+\mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_menu_state_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_menu_state_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#ifndef BOOK\_MENUSTATE\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_menu_state_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#define BOOK\_MENUSTATE\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_menu_state_8hpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_menu_state_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_include_2_state_8hpp}{State.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_menu_state_8hpp_source_l00005}00005 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_include_2_container_8hpp}{Container.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_menu_state_8hpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_menu_state_8hpp_source_l00007}00007 \textcolor{preprocessor}{\#include <SFML/Graphics/Sprite.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_menu_state_8hpp_source_l00008}00008 \textcolor{preprocessor}{\#include <SFML/Graphics/Text.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_menu_state_8hpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_menu_state_8hpp_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_menu_state_8hpp_source_l00011}\mbox{\hyperlink{class_menu_state}{00011}} \textcolor{keyword}{class }\mbox{\hyperlink{class_menu_state}{MenuState}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_state}{State}}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_menu_state_8hpp_source_l00012}00012 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_menu_state_8hpp_source_l00013}00013     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_menu_state_8hpp_source_l00014}00014                                 \mbox{\hyperlink{class_menu_state_a6e7034c57bf83f24aa8f4321d3d210a5}{MenuState}}(\mbox{\hyperlink{class_state_stack}{StateStack}}\& stack, \mbox{\hyperlink{struct_state_1_1_context}{Context}} context);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_menu_state_8hpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_menu_state_8hpp_source_l00016}00016         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}            \mbox{\hyperlink{class_menu_state_aa557d6c3bf06bb3107ed780913a6b47f}{draw}}();}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_menu_state_8hpp_source_l00017}00017         \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool}            \mbox{\hyperlink{class_menu_state_adac67748651bd33ddadb36a4f8a246da}{update}}(\mbox{\hyperlink{classsf_1_1_time}{sf::Time}} dt);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_menu_state_8hpp_source_l00018}00018         \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool}            \mbox{\hyperlink{class_menu_state_a04a21241cebf6a8f0fe8ee9ce895ef18}{handleEvent}}(\textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_event}{sf::Event}}\& event);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_menu_state_8hpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_menu_state_8hpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_menu_state_8hpp_source_l00021}00021     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_menu_state_8hpp_source_l00022}\mbox{\hyperlink{class_menu_state_a7c6855c2037ee7e4e1b07b7ce1fccd6c}{00022}}         \mbox{\hyperlink{classsf_1_1_sprite}{sf::Sprite}}                \mbox{\hyperlink{class_menu_state_a7c6855c2037ee7e4e1b07b7ce1fccd6c}{mBackgroundSprite}};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_menu_state_8hpp_source_l00023}\mbox{\hyperlink{class_menu_state_a5ceaa3414cf5e8e20bd05d8c8e0aa644}{00023}}         \mbox{\hyperlink{class_g_u_i_1_1_container}{GUI::Container}}            \mbox{\hyperlink{class_menu_state_a5ceaa3414cf5e8e20bd05d8c8e0aa644}{mGUIContainer}};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_menu_state_8hpp_source_l00024}00024 \};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_menu_state_8hpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_menu_state_8hpp_source_l00026}00026 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// BOOK\_MENUSTATE\_HPP}}
+
+\end{DoxyCode}

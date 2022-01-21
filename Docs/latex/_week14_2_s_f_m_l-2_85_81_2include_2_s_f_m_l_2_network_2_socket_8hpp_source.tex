@@ -1,0 +1,103 @@
+\hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source}{}\doxysection{Socket.\+hpp}
+\label{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source}\index{Week14/SFML-\/2.5.1/include/SFML/Network/Socket.hpp@{Week14/SFML-\/2.5.1/include/SFML/Network/Socket.hpp}}
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00002}00002 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00003}00003 \textcolor{comment}{// SFML -\/ Simple and Fast Multimedia Library}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00004}00004 \textcolor{comment}{// Copyright (C) 2007-\/2018 Laurent Gomila (laurent@sfml-\/dev.org)}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00005}00005 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00006}00006 \textcolor{comment}{// This software is provided 'as-\/is', without any express or implied warranty.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00007}00007 \textcolor{comment}{// In no event will the authors be held liable for any damages arising from the use of this software.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00008}00008 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00009}00009 \textcolor{comment}{// Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00010}00010 \textcolor{comment}{// including commercial applications, and to alter it and redistribute it freely,}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00011}00011 \textcolor{comment}{// subject to the following restrictions:}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00012}00012 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00013}00013 \textcolor{comment}{// 1. The origin of this software must not be misrepresented;}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00014}00014 \textcolor{comment}{//    you must not claim that you wrote the original software.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00015}00015 \textcolor{comment}{//    If you use this software in a product, an acknowledgment}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00016}00016 \textcolor{comment}{//    in the product documentation would be appreciated but is not required.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00017}00017 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00018}00018 \textcolor{comment}{// 2. Altered source versions must be plainly marked as such,}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00019}00019 \textcolor{comment}{//    and must not be misrepresented as being the original software.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00020}00020 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00021}00021 \textcolor{comment}{// 3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00022}00022 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00024}00024 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00025}00025 \textcolor{preprocessor}{\#ifndef SFML\_SOCKET\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00026}00026 \textcolor{preprocessor}{\#define SFML\_SOCKET\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00029}00029 \textcolor{comment}{// Headers}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00031}00031 \textcolor{comment}{}\textcolor{preprocessor}{\#include <SFML/Network/Export.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00032}00032 \textcolor{preprocessor}{\#include <SFML/Network/SocketHandle.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00033}00033 \textcolor{preprocessor}{\#include <SFML/System/NonCopyable.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00034}00034 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00037}00037 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacesf}{sf}}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00038}00038 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00039}00039 \textcolor{keyword}{class }SocketSelector;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00045}00045 \textcolor{keyword}{class }\mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_export_8hpp_ac5d46d4ffd98e947e28c54d051b338e7}{SFML\_NETWORK\_API}} Socket : NonCopyable}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00046}00046 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00047}00047 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00053}\mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{00053}}     \textcolor{keyword}{enum} \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{Status}}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00054}00054     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00055}00055         Done,         }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00056}00056         NotReady,     }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00057}00057         Partial,      }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00058}00058         Disconnected, }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00059}00059         Error         }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00060}00060     \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00066}00066     \textcolor{keyword}{enum}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00067}00067     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00068}00068         AnyPort = 0 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00069}00069     \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00071}00071 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00077}\mbox{\hyperlink{classsf_1_1_socket_a79a4b5918f0b34a2f8db449089694788}{00077}}     \textcolor{keyword}{virtual} \mbox{\hyperlink{classsf_1_1_socket_a79a4b5918f0b34a2f8db449089694788}{\string~Socket}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00096}\mbox{\hyperlink{classsf_1_1_socket_a165fc1423e281ea2714c70303d3a9782}{00096}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_socket_a165fc1423e281ea2714c70303d3a9782}{setBlocking}}(\textcolor{keywordtype}{bool} blocking);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00097}00097 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00106}\mbox{\hyperlink{classsf_1_1_socket_ab1ceca9ac114b8baeeda3b34a0aca468}{00106}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classsf_1_1_socket_ab1ceca9ac114b8baeeda3b34a0aca468}{isBlocking}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00107}00107 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00108}00108 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00109}00109 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00114}\mbox{\hyperlink{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8}{00114}}     \textcolor{keyword}{enum} \mbox{\hyperlink{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8}{Type}}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00115}00115     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00116}00116         Tcp, }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00117}00117         Udp  }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00118}00118     \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00119}00119 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00128}\mbox{\hyperlink{classsf_1_1_socket_a80ffb47ec0bafc83af019055d3e6a303}{00128}}     \mbox{\hyperlink{classsf_1_1_socket_a80ffb47ec0bafc83af019055d3e6a303}{Socket}}(\mbox{\hyperlink{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8}{Type}} type);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00129}00129 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00140}\mbox{\hyperlink{classsf_1_1_socket_a675457784284ae2f5640bbbe16729393}{00140}}     \mbox{\hyperlink{namespacesf_aefabb521d8f5eec9e6a9b521271d20d1}{SocketHandle}} \mbox{\hyperlink{classsf_1_1_socket_a675457784284ae2f5640bbbe16729393}{getHandle}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00141}00141 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00148}\mbox{\hyperlink{classsf_1_1_socket_aafbe140f4b1921e0d19e88cf7a61dcbc}{00148}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_socket_aafbe140f4b1921e0d19e88cf7a61dcbc}{create}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00149}00149 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00159}\mbox{\hyperlink{classsf_1_1_socket_af1dd898f7aa3ead7ff7b2d1c20e97781}{00159}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_socket_af1dd898f7aa3ead7ff7b2d1c20e97781}{create}}(\mbox{\hyperlink{namespacesf_aefabb521d8f5eec9e6a9b521271d20d1}{SocketHandle}} handle);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00160}00160 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00167}\mbox{\hyperlink{classsf_1_1_socket_a71f2f5c2aa99e01cafe824fee4c573be}{00167}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_socket_a71f2f5c2aa99e01cafe824fee4c573be}{close}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00168}00168 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00169}00169 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00170}00170 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00171}00171     \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classsf_1_1_socket_selector}{SocketSelector}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00172}00172 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00174}00174     \textcolor{comment}{// Member data}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00176}00176 \textcolor{comment}{}    \mbox{\hyperlink{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8}{Type}}         m\_type;       }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00177}00177     \mbox{\hyperlink{namespacesf_aefabb521d8f5eec9e6a9b521271d20d1}{SocketHandle}} m\_socket;     }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00178}00178     \textcolor{keywordtype}{bool}         m\_isBlocking; }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00179}00179 \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00180}00180 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00181}00181 \} \textcolor{comment}{// namespace sf}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00182}00182 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00183}00183 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00184}00184 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// SFML\_SOCKET\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00185}00185 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00186}00186 }
+
+\end{DoxyCode}

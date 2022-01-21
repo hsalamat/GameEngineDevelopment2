@@ -1,0 +1,101 @@
+\hypertarget{_week13-3-_m_f_stream_8cpp}{}\doxysection{Week13/\+Week13-\/3-\/\+MFStream.cpp File Reference}
+\label{_week13-3-_m_f_stream_8cpp}\index{Week13/Week13-\/3-\/MFStream.cpp@{Week13/Week13-\/3-\/MFStream.cpp}}
+{\ttfamily \#include $<$windows.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$wrl\textbackslash{}client.\+h$>$}\newline
+{\ttfamily \#include $<$objbase.\+h$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$mmreg.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}XAudio2\+Versions.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$mfidl.\+h$>$}\newline
+{\ttfamily \#include $<$mfapi.\+h$>$}\newline
+{\ttfamily \#include $<$mfreadwrite.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_streaming_voice_context}{Streaming\+Voice\+Context}}
+\item 
+struct \mbox{\hyperlink{struct_source_reader_context}{Source\+Reader\+Context}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_ac7bef5d85e3dcd73eef56ad39ffc84a9}{WIN32\+\_\+\+LEAN\+\_\+\+AND\+\_\+\+MEAN}}
+\item 
+\#define \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_a433048abeb218e08e3f423032b6c537c}{MAX\+\_\+\+BUFFER\+\_\+\+COUNT}}~3
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+HRESULT \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_a25be963d2bc80e09098536cb91aeb963}{Create\+MFReader}} (\+\_\+\+In\+\_\+z\+\_\+ const WCHAR $\ast$media\+File, \+\_\+\+In\+\_\+ IUnknown $\ast$async, \+\_\+\+Outptr\+\_\+ IMFSource\+Reader $\ast$$\ast$reader, \+\_\+\+Out\+\_\+ WAVEFORMATEX $\ast$wfx, \+\_\+\+In\+\_\+ size\+\_\+t maxwfx)
+\item 
+HRESULT \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_a349b6c149589c66ec69410e1036837f7}{Find\+Media\+File\+Cch}} (\+\_\+\+Out\+\_\+writes\+\_\+(cch\+Dest) WCHAR $\ast$str\+Dest\+Path, \+\_\+\+In\+\_\+ int cch\+Dest, \+\_\+\+In\+\_\+z\+\_\+ LPCWSTR str\+Filename)
+\item 
+int \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\item 
+\mbox{\hyperlink{_d_d_s_texture_loader_8h_a3150346626fcea3ad7afe5dfb4ce27d8}{\+\_\+\+Use\+\_\+decl\+\_\+annotations\+\_\+}} HRESULT \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_ad0895a6d9abe365dfbaccf3eb7fc0046}{Find\+Media\+File\+Cch}} (WCHAR $\ast$str\+Dest\+Path, int cch\+Dest, LPCWSTR str\+Filename)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_week13-3-_m_f_stream_8cpp_a433048abeb218e08e3f423032b6c537c}\label{_week13-3-_m_f_stream_8cpp_a433048abeb218e08e3f423032b6c537c}} 
+\index{Week13-\/3-\/MFStream.cpp@{Week13-\/3-\/MFStream.cpp}!MAX\_BUFFER\_COUNT@{MAX\_BUFFER\_COUNT}}
+\index{MAX\_BUFFER\_COUNT@{MAX\_BUFFER\_COUNT}!Week13-\/3-\/MFStream.cpp@{Week13-\/3-\/MFStream.cpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_BUFFER\_COUNT}{MAX\_BUFFER\_COUNT}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+BUFFER\+\_\+\+COUNT~3}
+
+
+
+Definition at line \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source}{Week13-\/3-\/\+MFStream.\+cpp}}.
+
+\mbox{\Hypertarget{_week13-3-_m_f_stream_8cpp_ac7bef5d85e3dcd73eef56ad39ffc84a9}\label{_week13-3-_m_f_stream_8cpp_ac7bef5d85e3dcd73eef56ad39ffc84a9}} 
+\index{Week13-\/3-\/MFStream.cpp@{Week13-\/3-\/MFStream.cpp}!WIN32\_LEAN\_AND\_MEAN@{WIN32\_LEAN\_AND\_MEAN}}
+\index{WIN32\_LEAN\_AND\_MEAN@{WIN32\_LEAN\_AND\_MEAN}!Week13-\/3-\/MFStream.cpp@{Week13-\/3-\/MFStream.cpp}}
+\doxysubsubsection{\texorpdfstring{WIN32\_LEAN\_AND\_MEAN}{WIN32\_LEAN\_AND\_MEAN}}
+{\footnotesize\ttfamily \#define WIN32\+\_\+\+LEAN\+\_\+\+AND\+\_\+\+MEAN}
+
+
+
+Definition at line \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source}{Week13-\/3-\/\+MFStream.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_week13-3-_m_f_stream_8cpp_a25be963d2bc80e09098536cb91aeb963}\label{_week13-3-_m_f_stream_8cpp_a25be963d2bc80e09098536cb91aeb963}} 
+\index{Week13-\/3-\/MFStream.cpp@{Week13-\/3-\/MFStream.cpp}!CreateMFReader@{CreateMFReader}}
+\index{CreateMFReader@{CreateMFReader}!Week13-\/3-\/MFStream.cpp@{Week13-\/3-\/MFStream.cpp}}
+\doxysubsubsection{\texorpdfstring{CreateMFReader()}{CreateMFReader()}}
+{\footnotesize\ttfamily HRESULT Create\+MFReader (\begin{DoxyParamCaption}\item[{\+\_\+\+In\+\_\+z\+\_\+ const WCHAR $\ast$}]{media\+File,  }\item[{\+\_\+\+In\+\_\+ IUnknown $\ast$}]{async,  }\item[{\+\_\+\+Outptr\+\_\+ IMFSource\+Reader $\ast$$\ast$}]{reader,  }\item[{\+\_\+\+Out\+\_\+ WAVEFORMATEX $\ast$}]{wfx,  }\item[{\+\_\+\+In\+\_\+ size\+\_\+t}]{maxwfx }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source_l00444}{444}} of file \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source}{Week13-\/3-\/\+MFStream.\+cpp}}.
+
+\mbox{\Hypertarget{_week13-3-_m_f_stream_8cpp_a349b6c149589c66ec69410e1036837f7}\label{_week13-3-_m_f_stream_8cpp_a349b6c149589c66ec69410e1036837f7}} 
+\index{Week13-\/3-\/MFStream.cpp@{Week13-\/3-\/MFStream.cpp}!FindMediaFileCch@{FindMediaFileCch}}
+\index{FindMediaFileCch@{FindMediaFileCch}!Week13-\/3-\/MFStream.cpp@{Week13-\/3-\/MFStream.cpp}}
+\doxysubsubsection{\texorpdfstring{FindMediaFileCch()}{FindMediaFileCch()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily HRESULT Find\+Media\+File\+Cch (\begin{DoxyParamCaption}\item[{\+\_\+\+Out\+\_\+writes\+\_\+(cch\+Dest) WCHAR $\ast$}]{str\+Dest\+Path,  }\item[{\+\_\+\+In\+\_\+ int}]{cch\+Dest,  }\item[{\+\_\+\+In\+\_\+z\+\_\+ LPCWSTR}]{str\+Filename }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_week13-3-_m_f_stream_8cpp_ad0895a6d9abe365dfbaccf3eb7fc0046}\label{_week13-3-_m_f_stream_8cpp_ad0895a6d9abe365dfbaccf3eb7fc0046}} 
+\index{Week13-\/3-\/MFStream.cpp@{Week13-\/3-\/MFStream.cpp}!FindMediaFileCch@{FindMediaFileCch}}
+\index{FindMediaFileCch@{FindMediaFileCch}!Week13-\/3-\/MFStream.cpp@{Week13-\/3-\/MFStream.cpp}}
+\doxysubsubsection{\texorpdfstring{FindMediaFileCch()}{FindMediaFileCch()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_d_d_s_texture_loader_8h_a3150346626fcea3ad7afe5dfb4ce27d8}{\+\_\+\+Use\+\_\+decl\+\_\+annotations\+\_\+}} HRESULT Find\+Media\+File\+Cch (\begin{DoxyParamCaption}\item[{WCHAR $\ast$}]{str\+Dest\+Path,  }\item[{int}]{cch\+Dest,  }\item[{LPCWSTR}]{str\+Filename }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source_l00518}{518}} of file \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source}{Week13-\/3-\/\+MFStream.\+cpp}}.
+
+\mbox{\Hypertarget{_week13-3-_m_f_stream_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{_week13-3-_m_f_stream_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{Week13-\/3-\/MFStream.cpp@{Week13-\/3-\/MFStream.cpp}!main@{main}}
+\index{main@{main}!Week13-\/3-\/MFStream.cpp@{Week13-\/3-\/MFStream.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source_l00191}{191}} of file \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_source}{Week13-\/3-\/\+MFStream.\+cpp}}.
+

@@ -1,0 +1,64 @@
+\hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source}{}\doxysection{WAVFile\+Reader.\+h}
+\label{_x_w_b_tool_2_w_a_v_file_reader_8h_source}\index{Week13/XWBTool/WAVFileReader.h@{Week13/XWBTool/WAVFileReader.h}}
+\mbox{\hyperlink{_x_w_b_tool_2_w_a_v_file_reader_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00001}00001 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00002}00002 \textcolor{comment}{// File: WAVFileReader.h}}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00003}00003 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00004}00004 \textcolor{comment}{// Functions for loading WAV audio files}}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00005}00005 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00006}00006 \textcolor{comment}{// Copyright (c) Microsoft Corporation. All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00007}00007 \textcolor{comment}{// Licensed under the MIT License.}}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00008}00008 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00009}00009 \textcolor{comment}{// http://go.microsoft.com/fwlink/?LinkId=248929}}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00010}00010 \textcolor{comment}{// http://go.microsoft.com/fwlink/?LinkID=615561}}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00011}00011 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00013}00013 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00015}00015 \textcolor{preprocessor}{\#include <objbase.h>}}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00017}00017 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00018}00018 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00019}00019 \textcolor{preprocessor}{\#include <mmreg.h>}}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00022}00022 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_direct_x}{DirectX}}}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00023}00023 \{}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00024}00024     HRESULT \mbox{\hyperlink{namespace_direct_x_a7c3aef7ede9bdebe5c569921bd910753}{LoadWAVAudioInMemory}}(}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00025}00025         \_In\_reads\_bytes\_(wavDataSize) \textcolor{keyword}{const} uint8\_t* wavData,}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00026}00026         \_In\_ \textcolor{keywordtype}{size\_t} wavDataSize,}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00027}00027         \_Outptr\_ \textcolor{keyword}{const} WAVEFORMATEX** wfx,}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00028}00028         \_Outptr\_ \textcolor{keyword}{const} uint8\_t** startAudio,}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00029}00029         \_Out\_ uint32\_t* audioBytes) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00031}00031     HRESULT \mbox{\hyperlink{namespace_direct_x_a2a62130f6dcc9c323458838ffe0d1f8a}{LoadWAVAudioFromFile}}(}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00032}00032         \_In\_z\_ \textcolor{keyword}{const} \textcolor{keywordtype}{wchar\_t}* szFileName,}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00033}00033         \_Inout\_ std::unique\_ptr<uint8\_t[]>\& wavData,}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00034}00034         \_Outptr\_ \textcolor{keyword}{const} WAVEFORMATEX** wfx,}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00035}00035         \_Outptr\_ \textcolor{keyword}{const} uint8\_t** startAudio,}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00036}00036         \_Out\_ uint32\_t* audioBytes) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00038}00038     \textcolor{keyword}{struct }WAVData}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00039}00039     \{}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00040}00040         \textcolor{keyword}{const} WAVEFORMATEX* \mbox{\hyperlink{struct_direct_x_1_1_w_a_v_data_a99e61196c19390fc26fe0caad9e10000}{wfx}};}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00041}00041         \textcolor{keyword}{const} uint8\_t* \mbox{\hyperlink{struct_direct_x_1_1_w_a_v_data_a75e5afa2eda94d9e140688e9a7191083}{startAudio}};}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00042}00042         uint32\_t \mbox{\hyperlink{struct_direct_x_1_1_w_a_v_data_ae0e08b7dde7767680ef9d9886b22f560}{audioBytes}};}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00043}00043         uint32\_t \mbox{\hyperlink{struct_direct_x_1_1_w_a_v_data_a2296927064d290b61b9b001f09c6d520}{loopStart}};}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00044}00044         uint32\_t \mbox{\hyperlink{struct_direct_x_1_1_w_a_v_data_af7d0f052fafbf5dbd843c70924e589e8}{loopLength}};}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00045}00045         \textcolor{keyword}{const} uint32\_t* \mbox{\hyperlink{struct_direct_x_1_1_w_a_v_data_a1093dfb7190fffeebfc523a07485e8d2}{seek}};       \textcolor{comment}{// Note: XMA Seek data is Big-\/Endian}}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00046}00046         uint32\_t \mbox{\hyperlink{struct_direct_x_1_1_w_a_v_data_aba2a74596c23419576b65750f8dce7d9}{seekCount}};}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00047}00047     \};}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00049}00049     HRESULT \mbox{\hyperlink{namespace_direct_x_a685875055eaed43fd822407cc40d973e}{LoadWAVAudioInMemoryEx}}(}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00050}00050         \_In\_reads\_bytes\_(wavDataSize) \textcolor{keyword}{const} uint8\_t* wavData,}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00051}00051         \_In\_ \textcolor{keywordtype}{size\_t} wavDataSize,}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00052}00052         \_Out\_ WAVData\& result) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00054}00054     HRESULT \mbox{\hyperlink{namespace_direct_x_aa35f921e8b5bb5f9fd94c00e5e2f91ef}{LoadWAVAudioFromFileEx}}(}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00055}00055         \_In\_z\_ \textcolor{keyword}{const} \textcolor{keywordtype}{wchar\_t}* szFileName,}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00056}00056         \_Inout\_ std::unique\_ptr<uint8\_t[]>\& wavData,}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00057}00057         \_Out\_ WAVData\& result) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{_x_w_b_tool_2_w_a_v_file_reader_8h_source_l00058}00058 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,41 @@
+\hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source}{}\doxysection{Entity.\+cpp}
+\label{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source}\index{Week6/Week6-\/Demo2-\/TitleState/Source/Entity.cpp@{Week6/Week6-\/Demo2-\/TitleState/Source/Entity.cpp}}
+\mbox{\hyperlink{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include <Entity.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00004}00004 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_a5bf79843c973eac1fdbebfd1fc83a1e8}{Entity::setVelocity}}(\mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}} velocity)}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00005}00005 \{}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00006}00006     \mbox{\hyperlink{class_entity_ae6c40df3cd7d4357c2fd9ee4924bfb14}{mVelocity}} = velocity;}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00007}00007 \}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00009}00009 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_a5bf79843c973eac1fdbebfd1fc83a1e8}{Entity::setVelocity}}(\textcolor{keywordtype}{float} vx, \textcolor{keywordtype}{float} vy)}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00010}00010 \{}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00011}00011     \mbox{\hyperlink{class_entity_ae6c40df3cd7d4357c2fd9ee4924bfb14}{mVelocity}}.\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}} = vx;}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00012}00012     \mbox{\hyperlink{class_entity_ae6c40df3cd7d4357c2fd9ee4924bfb14}{mVelocity}}.\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} = vy;}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00013}00013 \}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00015}00015 \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}} \mbox{\hyperlink{class_entity_ae7518a0181de088e0de2eacd1a13d656}{Entity::getVelocity}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00016}00016 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00017}00017     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_entity_ae6c40df3cd7d4357c2fd9ee4924bfb14}{mVelocity}};}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00018}00018 \}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00020}00020 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_a3d9ad14643b61864cf60ea7f0738146b}{Entity::updateCurrent}}(\mbox{\hyperlink{classsf_1_1_time}{sf::Time}} dt)}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00021}00021 \{   }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00022}00022     \mbox{\hyperlink{classsf_1_1_transformable_a86b461d6a941ad390c2ad8b6a4a20391}{move}}(\mbox{\hyperlink{class_entity_ae6c40df3cd7d4357c2fd9ee4924bfb14}{mVelocity}} * dt.\mbox{\hyperlink{classsf_1_1_time_aa3df2f992d0b0041b4eb02258d43f0e3}{asSeconds}}());}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00023}00023 \}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00025}00025 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_a80cdb89f11d47716781bc567efd2bcda}{Entity::accelerate}}(\mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}} velocity)}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00026}00026 \{}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00027}00027     \mbox{\hyperlink{class_entity_ae6c40df3cd7d4357c2fd9ee4924bfb14}{mVelocity}} += velocity;}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00028}00028 \}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00030}00030 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_a80cdb89f11d47716781bc567efd2bcda}{Entity::accelerate}}(\textcolor{keywordtype}{float} vx, \textcolor{keywordtype}{float} vy)}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00031}00031 \{}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00032}00032     \mbox{\hyperlink{class_entity_ae6c40df3cd7d4357c2fd9ee4924bfb14}{mVelocity}}.\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}} += vx;}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00033}00033     \mbox{\hyperlink{class_entity_ae6c40df3cd7d4357c2fd9ee4924bfb14}{mVelocity}}.\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} += vy;}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00034}00034 \}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo2-_title_state_2_source_2_entity_8cpp_source_l00035}00035 }
+
+\end{DoxyCode}

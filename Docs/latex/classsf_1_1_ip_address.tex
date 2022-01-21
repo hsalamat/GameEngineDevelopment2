@@ -1,0 +1,614 @@
+\hypertarget{classsf_1_1_ip_address}{}\doxysection{sf\+::Ip\+Address Class Reference}
+\label{classsf_1_1_ip_address}\index{sf::IpAddress@{sf::IpAddress}}
+
+
+Encapsulate an IPv4 network address.  
+
+
+
+
+{\ttfamily \#include $<$Ip\+Address.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsf_1_1_ip_address_af32a0574baa0f46e48deb2d83ca7658b}{Ip\+Address}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_ip_address_a656b7445ab04cabaa7398685bc09c3f7}{Ip\+Address}} (const std\+::string \&address)
+\begin{DoxyCompactList}\small\item\em Construct the address from a string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_ip_address_a92f2a9be74334a61b96c2fc79fe6eb78}{Ip\+Address}} (const char $\ast$address)
+\begin{DoxyCompactList}\small\item\em Construct the address from a string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_ip_address_a1d289dcb9ce7a64c600c6f84cba88cc6}{Ip\+Address}} (\mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} byte0, \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} byte1, \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} byte2, \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} byte3)
+\begin{DoxyCompactList}\small\item\em Construct the address from 4 bytes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_ip_address_a8ed34ba3a40d70eb9f09ac5ae779a162}{Ip\+Address}} (\mbox{\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} address)
+\begin{DoxyCompactList}\small\item\em Construct the address from a 32-\/bits integer. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsf_1_1_ip_address_a88507954142d7fc2176cce7f36422340}{to\+String}} () const
+\begin{DoxyCompactList}\small\item\em Get a string representation of the address. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} \mbox{\hyperlink{classsf_1_1_ip_address_ae7911c5ea9562f9602c3e29cd54b15e9}{to\+Integer}} () const
+\begin{DoxyCompactList}\small\item\em Get an integer representation of the address. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_ip_address_af32a0574baa0f46e48deb2d83ca7658b}{Ip\+Address}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_ip_address_a656b7445ab04cabaa7398685bc09c3f7}{Ip\+Address}} (const std\+::string \&address)
+\begin{DoxyCompactList}\small\item\em Construct the address from a string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_ip_address_a92f2a9be74334a61b96c2fc79fe6eb78}{Ip\+Address}} (const char $\ast$address)
+\begin{DoxyCompactList}\small\item\em Construct the address from a string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_ip_address_a1d289dcb9ce7a64c600c6f84cba88cc6}{Ip\+Address}} (\mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} byte0, \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} byte1, \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} byte2, \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} byte3)
+\begin{DoxyCompactList}\small\item\em Construct the address from 4 bytes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_ip_address_a8ed34ba3a40d70eb9f09ac5ae779a162}{Ip\+Address}} (\mbox{\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} address)
+\begin{DoxyCompactList}\small\item\em Construct the address from a 32-\/bits integer. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsf_1_1_ip_address_a88507954142d7fc2176cce7f36422340}{to\+String}} () const
+\begin{DoxyCompactList}\small\item\em Get a string representation of the address. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} \mbox{\hyperlink{classsf_1_1_ip_address_ae7911c5ea9562f9602c3e29cd54b15e9}{to\+Integer}} () const
+\begin{DoxyCompactList}\small\item\em Get an integer representation of the address. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} \mbox{\hyperlink{classsf_1_1_ip_address_a4c31622ad87edca48adbb8e8ed00ee4a}{get\+Local\+Address}} ()
+\begin{DoxyCompactList}\small\item\em Get the computer\textquotesingle{}s local address. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} \mbox{\hyperlink{classsf_1_1_ip_address_a5c5cbf67e4aacf23c24f2ad991df4c55}{get\+Public\+Address}} (\mbox{\hyperlink{classsf_1_1_time}{Time}} timeout=\mbox{\hyperlink{classsf_1_1_time_aa343e67f43a940e7b3b51aa10a495f2f}{Time\+::\+Zero}})
+\begin{DoxyCompactList}\small\item\em Get the computer\textquotesingle{}s public address. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} \mbox{\hyperlink{classsf_1_1_ip_address_a4c31622ad87edca48adbb8e8ed00ee4a}{get\+Local\+Address}} ()
+\begin{DoxyCompactList}\small\item\em Get the computer\textquotesingle{}s local address. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} \mbox{\hyperlink{classsf_1_1_ip_address_a5c5cbf67e4aacf23c24f2ad991df4c55}{get\+Public\+Address}} (\mbox{\hyperlink{classsf_1_1_time}{Time}} timeout=\mbox{\hyperlink{classsf_1_1_time_aa343e67f43a940e7b3b51aa10a495f2f}{Time\+::\+Zero}})
+\begin{DoxyCompactList}\small\item\em Get the computer\textquotesingle{}s public address. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} \mbox{\hyperlink{classsf_1_1_ip_address_af95b0353e632372b5266d6227bc0e3ec}{None}}
+\begin{DoxyCompactList}\small\item\em Value representing an empty/invalid address. \end{DoxyCompactList}\item 
+static const \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} \mbox{\hyperlink{classsf_1_1_ip_address_a55b612b404531068e4823d44f3fef308}{Any}}
+\begin{DoxyCompactList}\small\item\em Value representing any address (0.\+0.\+0.\+0) \end{DoxyCompactList}\item 
+static const \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} \mbox{\hyperlink{classsf_1_1_ip_address_ac545220c940d381c677113841a218bda}{Local\+Host}}
+\begin{DoxyCompactList}\small\item\em The \char`\"{}localhost\char`\"{} address (for connecting a computer to itself locally) \end{DoxyCompactList}\item 
+static const \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} \mbox{\hyperlink{classsf_1_1_ip_address_aefb978156901e01e2d9642815be10abe}{Broadcast}}
+\begin{DoxyCompactList}\small\item\em The \char`\"{}broadcast\char`\"{} address (for sending UDP messages to everyone on a local network) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsf_1_1_ip_address_aa6e114d1a8cb977aff6132d490e4a6b1}{resolve}} (const std\+::string \&address)
+\begin{DoxyCompactList}\small\item\em Resolve the given address string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_ip_address_aa6e114d1a8cb977aff6132d490e4a6b1}{resolve}} (const std\+::string \&address)
+\begin{DoxyCompactList}\small\item\em Resolve the given address string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} \mbox{\hyperlink{classsf_1_1_ip_address_ac8c48a38d66259b4f94f456664dc6511}{m\+\_\+address}}
+\begin{DoxyCompactList}\small\item\em Address stored as an unsigned 32 bits integer. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_ip_address_aa4640b45da3e619bad98ba3702f13395}{m\+\_\+valid}}
+\begin{DoxyCompactList}\small\item\em Is the address valid? \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_export_8hpp_ac5d46d4ffd98e947e28c54d051b338e7}{SFML\+\_\+\+NETWORK\+\_\+\+API}} bool \mbox{\hyperlink{classsf_1_1_ip_address_a1c4ae6b26e9df765ca57d2715e9a7885}{operator$<$}} (const \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} \&left, const \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of \texorpdfstring{$<$}{<} operator to compare two IP addresses. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_export_8hpp_ac5d46d4ffd98e947e28c54d051b338e7}{SFML\+\_\+\+NETWORK\+\_\+\+API}} bool \mbox{\hyperlink{classsf_1_1_ip_address_a1c4ae6b26e9df765ca57d2715e9a7885}{operator$<$}} (const \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} \&left, const \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of \texorpdfstring{$<$}{<} operator to compare two IP addresses. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Encapsulate an IPv4 network address. 
+
+\mbox{\hyperlink{classsf_1_1_ip_address}{sf\+::\+Ip\+Address}} is a utility class for manipulating network addresses.
+
+It provides a set a implicit constructors and conversion functions to easily build or transform an IP address from/to various representations.
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_ip_address}{sf::IpAddress}} a0;                                     \textcolor{comment}{// an invalid address}}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_ip_address}{sf::IpAddress}} a1 = \mbox{\hyperlink{classsf_1_1_ip_address_af95b0353e632372b5266d6227bc0e3ec}{sf::IpAddress::None}};               \textcolor{comment}{// an invalid address (same as a0)}}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_ip_address}{sf::IpAddress}} a2(\textcolor{stringliteral}{"{}127.0.0.1"{}});                        \textcolor{comment}{// the local host address}}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_ip_address}{sf::IpAddress}} a3 = \mbox{\hyperlink{classsf_1_1_ip_address_aefb978156901e01e2d9642815be10abe}{sf::IpAddress::Broadcast}};          \textcolor{comment}{// the broadcast address}}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_ip_address}{sf::IpAddress}} a4(192, 168, 1, 56);                    \textcolor{comment}{// a local address}}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_ip_address}{sf::IpAddress}} a5(\textcolor{stringliteral}{"{}my\_computer"{}});                      \textcolor{comment}{// a local address created from a network name}}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_ip_address}{sf::IpAddress}} a6(\textcolor{stringliteral}{"{}89.54.1.169"{}});                      \textcolor{comment}{// a distant address}}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_ip_address}{sf::IpAddress}} a7(\textcolor{stringliteral}{"{}www.google.com"{}});                   \textcolor{comment}{// a distant address created from a network name}}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_ip_address}{sf::IpAddress}} a8 = \mbox{\hyperlink{classsf_1_1_ip_address_a4c31622ad87edca48adbb8e8ed00ee4a}{sf::IpAddress::getLocalAddress}}();  \textcolor{comment}{// my address on the local network}}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_ip_address}{sf::IpAddress}} a9 = \mbox{\hyperlink{classsf_1_1_ip_address_a5c5cbf67e4aacf23c24f2ad991df4c55}{sf::IpAddress::getPublicAddress}}(); \textcolor{comment}{// my address on the internet}}
+
+\end{DoxyCode}
+
+
+Note that \mbox{\hyperlink{classsf_1_1_ip_address}{sf\+::\+Ip\+Address}} currently doesn\textquotesingle{}t support IPv6 nor other types of network addresses. 
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ip_address_8hpp_source_l00044}{44}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ip_address_8hpp_source}{Ip\+Address.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsf_1_1_ip_address_af32a0574baa0f46e48deb2d83ca7658b}\label{classsf_1_1_ip_address_af32a0574baa0f46e48deb2d83ca7658b}} 
+\index{sf::IpAddress@{sf::IpAddress}!IpAddress@{IpAddress}}
+\index{IpAddress@{IpAddress}!sf::IpAddress@{sf::IpAddress}}
+\doxysubsubsection{\texorpdfstring{IpAddress()}{IpAddress()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily sf\+::\+Ip\+Address\+::\+Ip\+Address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+This constructor creates an empty (invalid) address \mbox{\Hypertarget{classsf_1_1_ip_address_a656b7445ab04cabaa7398685bc09c3f7}\label{classsf_1_1_ip_address_a656b7445ab04cabaa7398685bc09c3f7}} 
+\index{sf::IpAddress@{sf::IpAddress}!IpAddress@{IpAddress}}
+\index{IpAddress@{IpAddress}!sf::IpAddress@{sf::IpAddress}}
+\doxysubsubsection{\texorpdfstring{IpAddress()}{IpAddress()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily sf\+::\+Ip\+Address\+::\+Ip\+Address (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{address }\end{DoxyParamCaption})}
+
+
+
+Construct the address from a string. 
+
+Here {\itshape address} can be either a decimal address (ex\+: \char`\"{}192.\+168.\+1.\+56\char`\"{}) or a network name (ex\+: \char`\"{}localhost\char`\"{}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & IP address or network name \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_ip_address_a92f2a9be74334a61b96c2fc79fe6eb78}\label{classsf_1_1_ip_address_a92f2a9be74334a61b96c2fc79fe6eb78}} 
+\index{sf::IpAddress@{sf::IpAddress}!IpAddress@{IpAddress}}
+\index{IpAddress@{IpAddress}!sf::IpAddress@{sf::IpAddress}}
+\doxysubsubsection{\texorpdfstring{IpAddress()}{IpAddress()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily sf\+::\+Ip\+Address\+::\+Ip\+Address (\begin{DoxyParamCaption}\item[{const char $\ast$}]{address }\end{DoxyParamCaption})}
+
+
+
+Construct the address from a string. 
+
+Here {\itshape address} can be either a decimal address (ex\+: \char`\"{}192.\+168.\+1.\+56\char`\"{}) or a network name (ex\+: \char`\"{}localhost\char`\"{}). This is equivalent to the constructor taking a std\+::string parameter, it is defined for convenience so that the implicit conversions from literal strings to \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} work.
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & IP address or network name \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_ip_address_a1d289dcb9ce7a64c600c6f84cba88cc6}\label{classsf_1_1_ip_address_a1d289dcb9ce7a64c600c6f84cba88cc6}} 
+\index{sf::IpAddress@{sf::IpAddress}!IpAddress@{IpAddress}}
+\index{IpAddress@{IpAddress}!sf::IpAddress@{sf::IpAddress}}
+\doxysubsubsection{\texorpdfstring{IpAddress()}{IpAddress()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily sf\+::\+Ip\+Address\+::\+Ip\+Address (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}}}]{byte0,  }\item[{\mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}}}]{byte1,  }\item[{\mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}}}]{byte2,  }\item[{\mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}}}]{byte3 }\end{DoxyParamCaption})}
+
+
+
+Construct the address from 4 bytes. 
+
+Calling Ip\+Address(a, b, c, d) is equivalent to calling \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}}(\char`\"{}a.\+b.\+c.\+d\char`\"{}), but safer as it doesn\textquotesingle{}t have to parse a string to get the address components.
+
+
+\begin{DoxyParams}{Parameters}
+{\em byte0} & First byte of the address \\
+\hline
+{\em byte1} & Second byte of the address \\
+\hline
+{\em byte2} & Third byte of the address \\
+\hline
+{\em byte3} & Fourth byte of the address \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_ip_address_a8ed34ba3a40d70eb9f09ac5ae779a162}\label{classsf_1_1_ip_address_a8ed34ba3a40d70eb9f09ac5ae779a162}} 
+\index{sf::IpAddress@{sf::IpAddress}!IpAddress@{IpAddress}}
+\index{IpAddress@{IpAddress}!sf::IpAddress@{sf::IpAddress}}
+\doxysubsubsection{\texorpdfstring{IpAddress()}{IpAddress()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily sf\+::\+Ip\+Address\+::\+Ip\+Address (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}}]{address }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct the address from a 32-\/bits integer. 
+
+This constructor uses the internal representation of the address directly. It should be used for optimization purposes, and only if you got that representation from \mbox{\hyperlink{classsf_1_1_ip_address_ae7911c5ea9562f9602c3e29cd54b15e9}{Ip\+Address\+::to\+Integer()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & 4 bytes of the address packed into a 32-\/bits integer\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_ip_address_ae7911c5ea9562f9602c3e29cd54b15e9}{to\+Integer}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_ip_address_af32a0574baa0f46e48deb2d83ca7658b}\label{classsf_1_1_ip_address_af32a0574baa0f46e48deb2d83ca7658b}} 
+\index{sf::IpAddress@{sf::IpAddress}!IpAddress@{IpAddress}}
+\index{IpAddress@{IpAddress}!sf::IpAddress@{sf::IpAddress}}
+\doxysubsubsection{\texorpdfstring{IpAddress()}{IpAddress()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily sf\+::\+Ip\+Address\+::\+Ip\+Address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+This constructor creates an empty (invalid) address \mbox{\Hypertarget{classsf_1_1_ip_address_a656b7445ab04cabaa7398685bc09c3f7}\label{classsf_1_1_ip_address_a656b7445ab04cabaa7398685bc09c3f7}} 
+\index{sf::IpAddress@{sf::IpAddress}!IpAddress@{IpAddress}}
+\index{IpAddress@{IpAddress}!sf::IpAddress@{sf::IpAddress}}
+\doxysubsubsection{\texorpdfstring{IpAddress()}{IpAddress()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily sf\+::\+Ip\+Address\+::\+Ip\+Address (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{address }\end{DoxyParamCaption})}
+
+
+
+Construct the address from a string. 
+
+Here {\itshape address} can be either a decimal address (ex\+: \char`\"{}192.\+168.\+1.\+56\char`\"{}) or a network name (ex\+: \char`\"{}localhost\char`\"{}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & IP address or network name \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_ip_address_a92f2a9be74334a61b96c2fc79fe6eb78}\label{classsf_1_1_ip_address_a92f2a9be74334a61b96c2fc79fe6eb78}} 
+\index{sf::IpAddress@{sf::IpAddress}!IpAddress@{IpAddress}}
+\index{IpAddress@{IpAddress}!sf::IpAddress@{sf::IpAddress}}
+\doxysubsubsection{\texorpdfstring{IpAddress()}{IpAddress()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily sf\+::\+Ip\+Address\+::\+Ip\+Address (\begin{DoxyParamCaption}\item[{const char $\ast$}]{address }\end{DoxyParamCaption})}
+
+
+
+Construct the address from a string. 
+
+Here {\itshape address} can be either a decimal address (ex\+: \char`\"{}192.\+168.\+1.\+56\char`\"{}) or a network name (ex\+: \char`\"{}localhost\char`\"{}). This is equivalent to the constructor taking a std\+::string parameter, it is defined for convenience so that the implicit conversions from literal strings to \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} work.
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & IP address or network name \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_ip_address_a1d289dcb9ce7a64c600c6f84cba88cc6}\label{classsf_1_1_ip_address_a1d289dcb9ce7a64c600c6f84cba88cc6}} 
+\index{sf::IpAddress@{sf::IpAddress}!IpAddress@{IpAddress}}
+\index{IpAddress@{IpAddress}!sf::IpAddress@{sf::IpAddress}}
+\doxysubsubsection{\texorpdfstring{IpAddress()}{IpAddress()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily sf\+::\+Ip\+Address\+::\+Ip\+Address (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}}}]{byte0,  }\item[{\mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}}}]{byte1,  }\item[{\mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}}}]{byte2,  }\item[{\mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}}}]{byte3 }\end{DoxyParamCaption})}
+
+
+
+Construct the address from 4 bytes. 
+
+Calling Ip\+Address(a, b, c, d) is equivalent to calling \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}}(\char`\"{}a.\+b.\+c.\+d\char`\"{}), but safer as it doesn\textquotesingle{}t have to parse a string to get the address components.
+
+
+\begin{DoxyParams}{Parameters}
+{\em byte0} & First byte of the address \\
+\hline
+{\em byte1} & Second byte of the address \\
+\hline
+{\em byte2} & Third byte of the address \\
+\hline
+{\em byte3} & Fourth byte of the address \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_ip_address_a8ed34ba3a40d70eb9f09ac5ae779a162}\label{classsf_1_1_ip_address_a8ed34ba3a40d70eb9f09ac5ae779a162}} 
+\index{sf::IpAddress@{sf::IpAddress}!IpAddress@{IpAddress}}
+\index{IpAddress@{IpAddress}!sf::IpAddress@{sf::IpAddress}}
+\doxysubsubsection{\texorpdfstring{IpAddress()}{IpAddress()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily sf\+::\+Ip\+Address\+::\+Ip\+Address (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}}]{address }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct the address from a 32-\/bits integer. 
+
+This constructor uses the internal representation of the address directly. It should be used for optimization purposes, and only if you got that representation from \mbox{\hyperlink{classsf_1_1_ip_address_ae7911c5ea9562f9602c3e29cd54b15e9}{Ip\+Address\+::to\+Integer()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & 4 bytes of the address packed into a 32-\/bits integer\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_ip_address_ae7911c5ea9562f9602c3e29cd54b15e9}{to\+Integer}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsf_1_1_ip_address_a4c31622ad87edca48adbb8e8ed00ee4a}\label{classsf_1_1_ip_address_a4c31622ad87edca48adbb8e8ed00ee4a}} 
+\index{sf::IpAddress@{sf::IpAddress}!getLocalAddress@{getLocalAddress}}
+\index{getLocalAddress@{getLocalAddress}!sf::IpAddress@{sf::IpAddress}}
+\doxysubsubsection{\texorpdfstring{getLocalAddress()}{getLocalAddress()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} sf\+::\+Ip\+Address\+::get\+Local\+Address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the computer\textquotesingle{}s local address. 
+
+The local address is the address of the computer from the LAN point of view, i.\+e. something like 192.\+168.\+1.\+56. It is meaningful only for communications over the local network. Unlike get\+Public\+Address, this function is fast and may be used safely anywhere.
+
+\begin{DoxyReturn}{Returns}
+Local IP address of the computer
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_ip_address_a5c5cbf67e4aacf23c24f2ad991df4c55}{get\+Public\+Address}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_ip_address_a4c31622ad87edca48adbb8e8ed00ee4a}\label{classsf_1_1_ip_address_a4c31622ad87edca48adbb8e8ed00ee4a}} 
+\index{sf::IpAddress@{sf::IpAddress}!getLocalAddress@{getLocalAddress}}
+\index{getLocalAddress@{getLocalAddress}!sf::IpAddress@{sf::IpAddress}}
+\doxysubsubsection{\texorpdfstring{getLocalAddress()}{getLocalAddress()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} sf\+::\+Ip\+Address\+::get\+Local\+Address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the computer\textquotesingle{}s local address. 
+
+The local address is the address of the computer from the LAN point of view, i.\+e. something like 192.\+168.\+1.\+56. It is meaningful only for communications over the local network. Unlike get\+Public\+Address, this function is fast and may be used safely anywhere.
+
+\begin{DoxyReturn}{Returns}
+Local IP address of the computer
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_ip_address_a5c5cbf67e4aacf23c24f2ad991df4c55}{get\+Public\+Address}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_ip_address_a5c5cbf67e4aacf23c24f2ad991df4c55}\label{classsf_1_1_ip_address_a5c5cbf67e4aacf23c24f2ad991df4c55}} 
+\index{sf::IpAddress@{sf::IpAddress}!getPublicAddress@{getPublicAddress}}
+\index{getPublicAddress@{getPublicAddress}!sf::IpAddress@{sf::IpAddress}}
+\doxysubsubsection{\texorpdfstring{getPublicAddress()}{getPublicAddress()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} sf\+::\+Ip\+Address\+::get\+Public\+Address (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{Time}}}]{timeout = {\ttfamily \mbox{\hyperlink{classsf_1_1_time_aa343e67f43a940e7b3b51aa10a495f2f}{Time\+::\+Zero}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the computer\textquotesingle{}s public address. 
+
+The public address is the address of the computer from the internet point of view, i.\+e. something like 89.\+54.\+1.\+169. It is necessary for communications over the world wide web. The only way to get a public address is to ask it to a distant website; as a consequence, this function depends on both your network connection and the server, and may be very slow. You should use it as few as possible. Because this function depends on the network connection and on a distant server, you may use a time limit if you don\textquotesingle{}t want your program to be possibly stuck waiting in case there is a problem; this limit is deactivated by default.
+
+
+\begin{DoxyParams}{Parameters}
+{\em timeout} & Maximum time to wait\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Public IP address of the computer
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_ip_address_a4c31622ad87edca48adbb8e8ed00ee4a}{get\+Local\+Address}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_ip_address_a5c5cbf67e4aacf23c24f2ad991df4c55}\label{classsf_1_1_ip_address_a5c5cbf67e4aacf23c24f2ad991df4c55}} 
+\index{sf::IpAddress@{sf::IpAddress}!getPublicAddress@{getPublicAddress}}
+\index{getPublicAddress@{getPublicAddress}!sf::IpAddress@{sf::IpAddress}}
+\doxysubsubsection{\texorpdfstring{getPublicAddress()}{getPublicAddress()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} sf\+::\+Ip\+Address\+::get\+Public\+Address (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{Time}}}]{timeout = {\ttfamily \mbox{\hyperlink{classsf_1_1_time_aa343e67f43a940e7b3b51aa10a495f2f}{Time\+::\+Zero}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the computer\textquotesingle{}s public address. 
+
+The public address is the address of the computer from the internet point of view, i.\+e. something like 89.\+54.\+1.\+169. It is necessary for communications over the world wide web. The only way to get a public address is to ask it to a distant website; as a consequence, this function depends on both your network connection and the server, and may be very slow. You should use it as few as possible. Because this function depends on the network connection and on a distant server, you may use a time limit if you don\textquotesingle{}t want your program to be possibly stuck waiting in case there is a problem; this limit is deactivated by default.
+
+
+\begin{DoxyParams}{Parameters}
+{\em timeout} & Maximum time to wait\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Public IP address of the computer
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_ip_address_a4c31622ad87edca48adbb8e8ed00ee4a}{get\+Local\+Address}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_ip_address_aa6e114d1a8cb977aff6132d490e4a6b1}\label{classsf_1_1_ip_address_aa6e114d1a8cb977aff6132d490e4a6b1}} 
+\index{sf::IpAddress@{sf::IpAddress}!resolve@{resolve}}
+\index{resolve@{resolve}!sf::IpAddress@{sf::IpAddress}}
+\doxysubsubsection{\texorpdfstring{resolve()}{resolve()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Ip\+Address\+::resolve (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{address }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Resolve the given address string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & Address string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_ip_address_aa6e114d1a8cb977aff6132d490e4a6b1}\label{classsf_1_1_ip_address_aa6e114d1a8cb977aff6132d490e4a6b1}} 
+\index{sf::IpAddress@{sf::IpAddress}!resolve@{resolve}}
+\index{resolve@{resolve}!sf::IpAddress@{sf::IpAddress}}
+\doxysubsubsection{\texorpdfstring{resolve()}{resolve()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Ip\+Address\+::resolve (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{address }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Resolve the given address string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & Address string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_ip_address_ae7911c5ea9562f9602c3e29cd54b15e9}\label{classsf_1_1_ip_address_ae7911c5ea9562f9602c3e29cd54b15e9}} 
+\index{sf::IpAddress@{sf::IpAddress}!toInteger@{toInteger}}
+\index{toInteger@{toInteger}!sf::IpAddress@{sf::IpAddress}}
+\doxysubsubsection{\texorpdfstring{toInteger()}{toInteger()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} sf\+::\+Ip\+Address\+::to\+Integer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get an integer representation of the address. 
+
+The returned number is the internal representation of the address, and should be used for optimization purposes only (like sending the address through a socket). The integer produced by this function can then be converted back to a \mbox{\hyperlink{classsf_1_1_ip_address}{sf\+::\+Ip\+Address}} with the proper constructor.
+
+\begin{DoxyReturn}{Returns}
+32-\/bits unsigned integer representation of the address
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_ip_address_a88507954142d7fc2176cce7f36422340}{to\+String}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_ip_address_ae7911c5ea9562f9602c3e29cd54b15e9}\label{classsf_1_1_ip_address_ae7911c5ea9562f9602c3e29cd54b15e9}} 
+\index{sf::IpAddress@{sf::IpAddress}!toInteger@{toInteger}}
+\index{toInteger@{toInteger}!sf::IpAddress@{sf::IpAddress}}
+\doxysubsubsection{\texorpdfstring{toInteger()}{toInteger()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} sf\+::\+Ip\+Address\+::to\+Integer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get an integer representation of the address. 
+
+The returned number is the internal representation of the address, and should be used for optimization purposes only (like sending the address through a socket). The integer produced by this function can then be converted back to a \mbox{\hyperlink{classsf_1_1_ip_address}{sf\+::\+Ip\+Address}} with the proper constructor.
+
+\begin{DoxyReturn}{Returns}
+32-\/bits unsigned integer representation of the address
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_ip_address_a88507954142d7fc2176cce7f36422340}{to\+String}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_ip_address_a88507954142d7fc2176cce7f36422340}\label{classsf_1_1_ip_address_a88507954142d7fc2176cce7f36422340}} 
+\index{sf::IpAddress@{sf::IpAddress}!toString@{toString}}
+\index{toString@{toString}!sf::IpAddress@{sf::IpAddress}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string sf\+::\+Ip\+Address\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get a string representation of the address. 
+
+The returned string is the decimal representation of the IP address (like \char`\"{}192.\+168.\+1.\+56\char`\"{}), even if it was constructed from a host name.
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classsf_1_1_string}{String}} representation of the address
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_ip_address_ae7911c5ea9562f9602c3e29cd54b15e9}{to\+Integer}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_ip_address_a88507954142d7fc2176cce7f36422340}\label{classsf_1_1_ip_address_a88507954142d7fc2176cce7f36422340}} 
+\index{sf::IpAddress@{sf::IpAddress}!toString@{toString}}
+\index{toString@{toString}!sf::IpAddress@{sf::IpAddress}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string sf\+::\+Ip\+Address\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get a string representation of the address. 
+
+The returned string is the decimal representation of the IP address (like \char`\"{}192.\+168.\+1.\+56\char`\"{}), even if it was constructed from a host name.
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classsf_1_1_string}{String}} representation of the address
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_ip_address_ae7911c5ea9562f9602c3e29cd54b15e9}{to\+Integer}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classsf_1_1_ip_address_a1c4ae6b26e9df765ca57d2715e9a7885}\label{classsf_1_1_ip_address_a1c4ae6b26e9df765ca57d2715e9a7885}} 
+\index{sf::IpAddress@{sf::IpAddress}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!sf::IpAddress@{sf::IpAddress}}
+\doxysubsubsection{\texorpdfstring{operator$<$}{operator<}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_export_8hpp_ac5d46d4ffd98e947e28c54d051b338e7}{SFML\+\_\+\+NETWORK\+\_\+\+API}} bool operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} \&}]{left,  }\item[{const \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Overload of \texorpdfstring{$<$}{<} operator to compare two IP addresses. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a IP address) \\
+\hline
+{\em right} & Right operand (a IP address)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is lesser than {\itshape right} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_ip_address_a1c4ae6b26e9df765ca57d2715e9a7885}\label{classsf_1_1_ip_address_a1c4ae6b26e9df765ca57d2715e9a7885}} 
+\index{sf::IpAddress@{sf::IpAddress}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!sf::IpAddress@{sf::IpAddress}}
+\doxysubsubsection{\texorpdfstring{operator$<$}{operator<}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_export_8hpp_ac5d46d4ffd98e947e28c54d051b338e7}{SFML\+\_\+\+NETWORK\+\_\+\+API}} bool operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} \&}]{left,  }\item[{const \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Overload of \texorpdfstring{$<$}{<} operator to compare two IP addresses. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a IP address) \\
+\hline
+{\em right} & Right operand (a IP address)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is lesser than {\itshape right} 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsf_1_1_ip_address_a55b612b404531068e4823d44f3fef308}\label{classsf_1_1_ip_address_a55b612b404531068e4823d44f3fef308}} 
+\index{sf::IpAddress@{sf::IpAddress}!Any@{Any}}
+\index{Any@{Any}!sf::IpAddress@{sf::IpAddress}}
+\doxysubsubsection{\texorpdfstring{Any}{Any}}
+{\footnotesize\ttfamily static const \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} sf\+::\+Ip\+Address\+::\+Any\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Value representing any address (0.\+0.\+0.\+0) 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ip_address_8hpp_source_l00185}{185}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ip_address_8hpp_source}{Ip\+Address.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_ip_address_aefb978156901e01e2d9642815be10abe}\label{classsf_1_1_ip_address_aefb978156901e01e2d9642815be10abe}} 
+\index{sf::IpAddress@{sf::IpAddress}!Broadcast@{Broadcast}}
+\index{Broadcast@{Broadcast}!sf::IpAddress@{sf::IpAddress}}
+\doxysubsubsection{\texorpdfstring{Broadcast}{Broadcast}}
+{\footnotesize\ttfamily static const \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} sf\+::\+Ip\+Address\+::\+Broadcast\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The \char`\"{}broadcast\char`\"{} address (for sending UDP messages to everyone on a local network) 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ip_address_8hpp_source_l00187}{187}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ip_address_8hpp_source}{Ip\+Address.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_ip_address_ac545220c940d381c677113841a218bda}\label{classsf_1_1_ip_address_ac545220c940d381c677113841a218bda}} 
+\index{sf::IpAddress@{sf::IpAddress}!LocalHost@{LocalHost}}
+\index{LocalHost@{LocalHost}!sf::IpAddress@{sf::IpAddress}}
+\doxysubsubsection{\texorpdfstring{LocalHost}{LocalHost}}
+{\footnotesize\ttfamily static const \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} sf\+::\+Ip\+Address\+::\+Local\+Host\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The \char`\"{}localhost\char`\"{} address (for connecting a computer to itself locally) 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ip_address_8hpp_source_l00186}{186}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ip_address_8hpp_source}{Ip\+Address.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_ip_address_ac8c48a38d66259b4f94f456664dc6511}\label{classsf_1_1_ip_address_ac8c48a38d66259b4f94f456664dc6511}} 
+\index{sf::IpAddress@{sf::IpAddress}!m\_address@{m\_address}}
+\index{m\_address@{m\_address}!sf::IpAddress@{sf::IpAddress}}
+\doxysubsubsection{\texorpdfstring{m\_address}{m\_address}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} sf\+::\+Ip\+Address\+::m\+\_\+address\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Address stored as an unsigned 32 bits integer. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ip_address_8hpp_source_l00204}{204}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ip_address_8hpp_source}{Ip\+Address.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_ip_address_aa4640b45da3e619bad98ba3702f13395}\label{classsf_1_1_ip_address_aa4640b45da3e619bad98ba3702f13395}} 
+\index{sf::IpAddress@{sf::IpAddress}!m\_valid@{m\_valid}}
+\index{m\_valid@{m\_valid}!sf::IpAddress@{sf::IpAddress}}
+\doxysubsubsection{\texorpdfstring{m\_valid}{m\_valid}}
+{\footnotesize\ttfamily bool sf\+::\+Ip\+Address\+::m\+\_\+valid\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Is the address valid? 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ip_address_8hpp_source_l00205}{205}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ip_address_8hpp_source}{Ip\+Address.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_ip_address_af95b0353e632372b5266d6227bc0e3ec}\label{classsf_1_1_ip_address_af95b0353e632372b5266d6227bc0e3ec}} 
+\index{sf::IpAddress@{sf::IpAddress}!None@{None}}
+\index{None@{None}!sf::IpAddress@{sf::IpAddress}}
+\doxysubsubsection{\texorpdfstring{None}{None}}
+{\footnotesize\ttfamily static const \mbox{\hyperlink{classsf_1_1_ip_address}{Ip\+Address}} sf\+::\+Ip\+Address\+::\+None\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Value representing an empty/invalid address. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ip_address_8hpp_source_l00184}{184}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ip_address_8hpp_source}{Ip\+Address.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+SFML-\/2.\+5.\+1/include/\+SFML/\+Network/\mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ip_address_8hpp}{Ip\+Address.\+hpp}}\item 
+Week14/\+SFML-\/2.\+5.\+1/include/\+SFML/\+Network/\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ip_address_8hpp}{Ip\+Address.\+hpp}}\end{DoxyCompactItemize}

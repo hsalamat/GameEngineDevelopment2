@@ -1,0 +1,56 @@
+\hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source}{}\doxysection{Emitter\+Node.\+cpp}
+\label{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source}\index{Week12/Week12-\/Demo2-\/SoundEffect/Source/EmitterNode.cpp@{Week12/Week12-\/Demo2-\/SoundEffect/Source/EmitterNode.cpp}}
+\mbox{\hyperlink{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include <EmitterNode.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <ParticleNode.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <CommandQueue.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <Command.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00007}00007 \mbox{\hyperlink{class_emitter_node_a8a6ba67d44a62d87448fab0959e15646}{EmitterNode::EmitterNode}}(\mbox{\hyperlink{struct_particle_aa27c7e68459c587570d108f511ea353e}{Particle::Type}} type)}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00008}00008 : \mbox{\hyperlink{class_scene_node}{SceneNode}}()}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00009}00009 , mAccumulatedTime(\mbox{\hyperlink{namespacesf}{sf}}::Time::Zero)}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00010}00010 , mType(type)}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00011}00011 , mParticleSystem(nullptr)}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00012}00012 \{}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00013}00013 \}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00015}00015 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_emitter_node_a4bfb774fba949847999f5aac6b2c4f41}{EmitterNode::updateCurrent}}(\mbox{\hyperlink{classsf_1_1_time}{sf::Time}} dt, \mbox{\hyperlink{class_command_queue}{CommandQueue}}\& commands)}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00016}00016 \{}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00017}00017     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_emitter_node_ad7af4e0c0aefb23f87420f01d5796ad5}{mParticleSystem}})}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00018}00018     \{}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00019}00019         \mbox{\hyperlink{class_emitter_node_a3c1ab4ddc676626e91ebcbd817a9521a}{emitParticles}}(dt);}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00020}00020     \}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00021}00021     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00022}00022     \{}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00023}00023         \textcolor{comment}{// Find particle node with the same type as emitter node}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00024}00024         \textcolor{keyword}{auto} finder = [\textcolor{keyword}{this}] (\mbox{\hyperlink{class_particle_node}{ParticleNode}}\& container, \mbox{\hyperlink{classsf_1_1_time}{sf::Time}})}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00025}00025         \{}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00026}00026             \textcolor{keywordflow}{if} (container.\mbox{\hyperlink{class_particle_node_aa0e084971d3c1649077cfeacc75faabd}{getParticleType}}() == \mbox{\hyperlink{class_emitter_node_a6c540c46433fb2a909b00153c10de094}{mType}})}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00027}00027                 \mbox{\hyperlink{class_emitter_node_ad7af4e0c0aefb23f87420f01d5796ad5}{mParticleSystem}} = \&container;}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00028}00028         \};}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00030}00030         \mbox{\hyperlink{struct_command}{Command}} command;}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00031}00031         command.\mbox{\hyperlink{struct_command_a1529e898c9e6dd47b1826b5b1eac09fb}{category}} = \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0af24660c722f331a3532c04477295998c}{Category::ParticleSystem}};}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00032}00032         command.\mbox{\hyperlink{struct_command_ac5473faf8b8b03ce83353838bc00c6dd}{action}} = derivedAction<ParticleNode>(finder);}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00034}00034         commands.\mbox{\hyperlink{class_command_queue_ad444e0d7af45d9e09b834f0cec1e1f43}{push}}(command);}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00035}00035     \}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00036}00036 \}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00038}00038 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_emitter_node_a3c1ab4ddc676626e91ebcbd817a9521a}{EmitterNode::emitParticles}}(\mbox{\hyperlink{classsf_1_1_time}{sf::Time}} dt)}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00039}00039 \{}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00040}00040     \textcolor{keyword}{const} \textcolor{keywordtype}{float} emissionRate = 30.f;}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00041}00041     \textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_time}{sf::Time}} interval = sf::seconds(1.f) / emissionRate;}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00043}00043     \mbox{\hyperlink{class_emitter_node_a87550296157e496215a5a0933aec027d}{mAccumulatedTime}} += dt;}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00045}00045     \textcolor{keywordflow}{while} (\mbox{\hyperlink{class_emitter_node_a87550296157e496215a5a0933aec027d}{mAccumulatedTime}} > interval)}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00046}00046     \{}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00047}00047         \mbox{\hyperlink{class_emitter_node_a87550296157e496215a5a0933aec027d}{mAccumulatedTime}} -\/= interval;}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00048}00048         \mbox{\hyperlink{class_emitter_node_ad7af4e0c0aefb23f87420f01d5796ad5}{mParticleSystem}}-\/>\mbox{\hyperlink{class_particle_node_aba35c74ce9a85194489726b82ab53f80}{addParticle}}(\mbox{\hyperlink{class_scene_node_a43061f972f26184b271e6c56723a29c2}{getWorldPosition}}());}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00049}00049     \}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_source_2_emitter_node_8cpp_source_l00050}00050 \}}
+
+\end{DoxyCode}

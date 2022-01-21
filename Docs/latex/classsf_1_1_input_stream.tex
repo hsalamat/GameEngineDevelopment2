@@ -1,0 +1,296 @@
+\hypertarget{classsf_1_1_input_stream}{}\doxysection{sf\+::Input\+Stream Class Reference}
+\label{classsf_1_1_input_stream}\index{sf::InputStream@{sf::InputStream}}
+
+
+Abstract class for custom file input streams.  
+
+
+
+
+{\ttfamily \#include $<$Input\+Stream.\+hpp$>$}
+
+Inheritance diagram for sf\+::Input\+Stream\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.891892cm]{classsf_1_1_input_stream}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classsf_1_1_input_stream_a4b2eb0f92323e630bd0542bc6191682e}{$\sim$\+Input\+Stream}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}} \mbox{\hyperlink{classsf_1_1_input_stream_a8dd89c74c1acb693203f50e750c6ae53}{read}} (void $\ast$data, \mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}} size)=0
+\begin{DoxyCompactList}\small\item\em Read data from the stream. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}} \mbox{\hyperlink{classsf_1_1_input_stream_a76aba8e5d5cf9b1c5902d5e04f7864fc}{seek}} (\mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}} position)=0
+\begin{DoxyCompactList}\small\item\em Change the current reading position. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}} \mbox{\hyperlink{classsf_1_1_input_stream_a599515b9ccdbddb6fef5a98424fd559c}{tell}} ()=0
+\begin{DoxyCompactList}\small\item\em Get the current reading position in the stream. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}} \mbox{\hyperlink{classsf_1_1_input_stream_a311eaaaa65d636728e5153b574b72d5d}{get\+Size}} ()=0
+\begin{DoxyCompactList}\small\item\em Return the size of the stream. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classsf_1_1_input_stream_a4b2eb0f92323e630bd0542bc6191682e}{$\sim$\+Input\+Stream}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}} \mbox{\hyperlink{classsf_1_1_input_stream_a8dd89c74c1acb693203f50e750c6ae53}{read}} (void $\ast$data, \mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}} size)=0
+\begin{DoxyCompactList}\small\item\em Read data from the stream. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}} \mbox{\hyperlink{classsf_1_1_input_stream_a76aba8e5d5cf9b1c5902d5e04f7864fc}{seek}} (\mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}} position)=0
+\begin{DoxyCompactList}\small\item\em Change the current reading position. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}} \mbox{\hyperlink{classsf_1_1_input_stream_a599515b9ccdbddb6fef5a98424fd559c}{tell}} ()=0
+\begin{DoxyCompactList}\small\item\em Get the current reading position in the stream. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}} \mbox{\hyperlink{classsf_1_1_input_stream_a311eaaaa65d636728e5153b574b72d5d}{get\+Size}} ()=0
+\begin{DoxyCompactList}\small\item\em Return the size of the stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract class for custom file input streams. 
+
+This class allows users to define their own file input sources from which SFML can load resources.
+
+SFML resource classes like \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} and \mbox{\hyperlink{classsf_1_1_sound_buffer}{sf\+::\+Sound\+Buffer}} provide load\+From\+File and load\+From\+Memory functions, which read data from conventional sources. However, if you have data coming from a different source (over a network, embedded, encrypted, compressed, etc) you can derive your own class from \mbox{\hyperlink{classsf_1_1_input_stream}{sf\+::\+Input\+Stream}} and load SFML resources with their load\+From\+Stream function.
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// custom stream class that reads from inside a zip file}}
+\DoxyCodeLine{\textcolor{keyword}{class }ZipStream : \textcolor{keyword}{public} \mbox{\hyperlink{classsf_1_1_input_stream}{sf::InputStream}}}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{}
+\DoxyCodeLine{    ZipStream(std::string archive);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} open(std::string filename);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}} \mbox{\hyperlink{classsf_1_1_input_stream_a8dd89c74c1acb693203f50e750c6ae53}{read}}(\textcolor{keywordtype}{void}* data, \mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}} size);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}} \mbox{\hyperlink{classsf_1_1_input_stream_a76aba8e5d5cf9b1c5902d5e04f7864fc}{seek}}(\mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}} position);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}} \mbox{\hyperlink{classsf_1_1_input_stream_a599515b9ccdbddb6fef5a98424fd559c}{tell}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}} \mbox{\hyperlink{classsf_1_1_input_stream_a311eaaaa65d636728e5153b574b72d5d}{getSize}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{private}:}
+\DoxyCodeLine{}
+\DoxyCodeLine{    ...}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// now you can load textures...}}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_texture}{sf::Texture}} texture;}
+\DoxyCodeLine{ZipStream stream(\textcolor{stringliteral}{"{}resources.zip"{}});}
+\DoxyCodeLine{stream.open(\textcolor{stringliteral}{"{}images/img.png"{}});}
+\DoxyCodeLine{texture.\mbox{\hyperlink{classsf_1_1_texture_a786b486a46b1c6d1c16ff4af61ecc601}{loadFromStream}}(stream);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// musics...}}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_music}{sf::Music}} music;}
+\DoxyCodeLine{ZipStream stream(\textcolor{stringliteral}{"{}resources.zip"{}});}
+\DoxyCodeLine{stream.open(\textcolor{stringliteral}{"{}musics/msc.ogg"{}});}
+\DoxyCodeLine{music.\mbox{\hyperlink{classsf_1_1_music_a4e55d1910a26858b44778c26b237d673}{openFromStream}}(stream);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// etc.}}
+
+\end{DoxyCode}
+ 
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_input_stream_8hpp_source_l00041}{41}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_input_stream_8hpp_source}{Input\+Stream.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsf_1_1_input_stream_a4b2eb0f92323e630bd0542bc6191682e}\label{classsf_1_1_input_stream_a4b2eb0f92323e630bd0542bc6191682e}} 
+\index{sf::InputStream@{sf::InputStream}!````~InputStream@{$\sim$InputStream}}
+\index{````~InputStream@{$\sim$InputStream}!sf::InputStream@{sf::InputStream}}
+\doxysubsubsection{\texorpdfstring{$\sim$InputStream()}{~InputStream()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual sf\+::\+Input\+Stream\+::$\sim$\+Input\+Stream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Virtual destructor. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_input_stream_8hpp_source_l00049}{49}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_input_stream_8hpp_source}{Input\+Stream.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_input_stream_a4b2eb0f92323e630bd0542bc6191682e}\label{classsf_1_1_input_stream_a4b2eb0f92323e630bd0542bc6191682e}} 
+\index{sf::InputStream@{sf::InputStream}!````~InputStream@{$\sim$InputStream}}
+\index{````~InputStream@{$\sim$InputStream}!sf::InputStream@{sf::InputStream}}
+\doxysubsubsection{\texorpdfstring{$\sim$InputStream()}{~InputStream()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual sf\+::\+Input\+Stream\+::$\sim$\+Input\+Stream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Virtual destructor. 
+
+
+
+Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_input_stream_8hpp_source_l00049}{49}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_input_stream_8hpp_source}{Input\+Stream.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsf_1_1_input_stream_a311eaaaa65d636728e5153b574b72d5d}\label{classsf_1_1_input_stream_a311eaaaa65d636728e5153b574b72d5d}} 
+\index{sf::InputStream@{sf::InputStream}!getSize@{getSize}}
+\index{getSize@{getSize}!sf::InputStream@{sf::InputStream}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}} sf\+::\+Input\+Stream\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Return the size of the stream. 
+
+\begin{DoxyReturn}{Returns}
+The total number of bytes available in the stream, or -\/1 on error 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classsf_1_1_file_input_stream_aabdcaa315e088e008eeb9711ecc796e8}{sf\+::\+File\+Input\+Stream}}, \mbox{\hyperlink{classsf_1_1_memory_input_stream_a6ade3ca45de361ffa0a718595f0b6763}{sf\+::\+Memory\+Input\+Stream}}, \mbox{\hyperlink{classsf_1_1_file_input_stream_aabdcaa315e088e008eeb9711ecc796e8}{sf\+::\+File\+Input\+Stream}}, and \mbox{\hyperlink{classsf_1_1_memory_input_stream_a6ade3ca45de361ffa0a718595f0b6763}{sf\+::\+Memory\+Input\+Stream}}.
+
+\mbox{\Hypertarget{classsf_1_1_input_stream_a311eaaaa65d636728e5153b574b72d5d}\label{classsf_1_1_input_stream_a311eaaaa65d636728e5153b574b72d5d}} 
+\index{sf::InputStream@{sf::InputStream}!getSize@{getSize}}
+\index{getSize@{getSize}!sf::InputStream@{sf::InputStream}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}} sf\+::\+Input\+Stream\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Return the size of the stream. 
+
+\begin{DoxyReturn}{Returns}
+The total number of bytes available in the stream, or -\/1 on error 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classsf_1_1_file_input_stream_aabdcaa315e088e008eeb9711ecc796e8}{sf\+::\+File\+Input\+Stream}}, \mbox{\hyperlink{classsf_1_1_memory_input_stream_a6ade3ca45de361ffa0a718595f0b6763}{sf\+::\+Memory\+Input\+Stream}}, \mbox{\hyperlink{classsf_1_1_file_input_stream_aabdcaa315e088e008eeb9711ecc796e8}{sf\+::\+File\+Input\+Stream}}, and \mbox{\hyperlink{classsf_1_1_memory_input_stream_a6ade3ca45de361ffa0a718595f0b6763}{sf\+::\+Memory\+Input\+Stream}}.
+
+\mbox{\Hypertarget{classsf_1_1_input_stream_a8dd89c74c1acb693203f50e750c6ae53}\label{classsf_1_1_input_stream_a8dd89c74c1acb693203f50e750c6ae53}} 
+\index{sf::InputStream@{sf::InputStream}!read@{read}}
+\index{read@{read}!sf::InputStream@{sf::InputStream}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}} sf\+::\+Input\+Stream\+::read (\begin{DoxyParamCaption}\item[{void $\ast$}]{data,  }\item[{\mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}}}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Read data from the stream. 
+
+After reading, the stream\textquotesingle{}s reading position must be advanced by the amount of bytes read.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Buffer where to copy the read data \\
+\hline
+{\em size} & Desired number of bytes to read\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes actually read, or -\/1 on error 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classsf_1_1_file_input_stream_ad1e94c4152429f485db224c44ee1eb50}{sf\+::\+File\+Input\+Stream}}, \mbox{\hyperlink{classsf_1_1_memory_input_stream_adff5270c521819639154d42d76fd4c34}{sf\+::\+Memory\+Input\+Stream}}, \mbox{\hyperlink{classsf_1_1_file_input_stream_ad1e94c4152429f485db224c44ee1eb50}{sf\+::\+File\+Input\+Stream}}, and \mbox{\hyperlink{classsf_1_1_memory_input_stream_adff5270c521819639154d42d76fd4c34}{sf\+::\+Memory\+Input\+Stream}}.
+
+\mbox{\Hypertarget{classsf_1_1_input_stream_a8dd89c74c1acb693203f50e750c6ae53}\label{classsf_1_1_input_stream_a8dd89c74c1acb693203f50e750c6ae53}} 
+\index{sf::InputStream@{sf::InputStream}!read@{read}}
+\index{read@{read}!sf::InputStream@{sf::InputStream}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}} sf\+::\+Input\+Stream\+::read (\begin{DoxyParamCaption}\item[{void $\ast$}]{data,  }\item[{\mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}}}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Read data from the stream. 
+
+After reading, the stream\textquotesingle{}s reading position must be advanced by the amount of bytes read.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Buffer where to copy the read data \\
+\hline
+{\em size} & Desired number of bytes to read\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes actually read, or -\/1 on error 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classsf_1_1_file_input_stream_ad1e94c4152429f485db224c44ee1eb50}{sf\+::\+File\+Input\+Stream}}, \mbox{\hyperlink{classsf_1_1_memory_input_stream_adff5270c521819639154d42d76fd4c34}{sf\+::\+Memory\+Input\+Stream}}, \mbox{\hyperlink{classsf_1_1_file_input_stream_ad1e94c4152429f485db224c44ee1eb50}{sf\+::\+File\+Input\+Stream}}, and \mbox{\hyperlink{classsf_1_1_memory_input_stream_adff5270c521819639154d42d76fd4c34}{sf\+::\+Memory\+Input\+Stream}}.
+
+\mbox{\Hypertarget{classsf_1_1_input_stream_a76aba8e5d5cf9b1c5902d5e04f7864fc}\label{classsf_1_1_input_stream_a76aba8e5d5cf9b1c5902d5e04f7864fc}} 
+\index{sf::InputStream@{sf::InputStream}!seek@{seek}}
+\index{seek@{seek}!sf::InputStream@{sf::InputStream}}
+\doxysubsubsection{\texorpdfstring{seek()}{seek()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}} sf\+::\+Input\+Stream\+::seek (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}}}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Change the current reading position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The position to seek to, from the beginning\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The position actually sought to, or -\/1 on error 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classsf_1_1_file_input_stream_abdaf5700d4e1de07568e7829106b4eb9}{sf\+::\+File\+Input\+Stream}}, \mbox{\hyperlink{classsf_1_1_memory_input_stream_aa2ac8fda2bdb4c95248ae90c71633034}{sf\+::\+Memory\+Input\+Stream}}, \mbox{\hyperlink{classsf_1_1_file_input_stream_abdaf5700d4e1de07568e7829106b4eb9}{sf\+::\+File\+Input\+Stream}}, and \mbox{\hyperlink{classsf_1_1_memory_input_stream_aa2ac8fda2bdb4c95248ae90c71633034}{sf\+::\+Memory\+Input\+Stream}}.
+
+\mbox{\Hypertarget{classsf_1_1_input_stream_a76aba8e5d5cf9b1c5902d5e04f7864fc}\label{classsf_1_1_input_stream_a76aba8e5d5cf9b1c5902d5e04f7864fc}} 
+\index{sf::InputStream@{sf::InputStream}!seek@{seek}}
+\index{seek@{seek}!sf::InputStream@{sf::InputStream}}
+\doxysubsubsection{\texorpdfstring{seek()}{seek()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}} sf\+::\+Input\+Stream\+::seek (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}}}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Change the current reading position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The position to seek to, from the beginning\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The position actually sought to, or -\/1 on error 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classsf_1_1_file_input_stream_abdaf5700d4e1de07568e7829106b4eb9}{sf\+::\+File\+Input\+Stream}}, \mbox{\hyperlink{classsf_1_1_memory_input_stream_aa2ac8fda2bdb4c95248ae90c71633034}{sf\+::\+Memory\+Input\+Stream}}, \mbox{\hyperlink{classsf_1_1_file_input_stream_abdaf5700d4e1de07568e7829106b4eb9}{sf\+::\+File\+Input\+Stream}}, and \mbox{\hyperlink{classsf_1_1_memory_input_stream_aa2ac8fda2bdb4c95248ae90c71633034}{sf\+::\+Memory\+Input\+Stream}}.
+
+\mbox{\Hypertarget{classsf_1_1_input_stream_a599515b9ccdbddb6fef5a98424fd559c}\label{classsf_1_1_input_stream_a599515b9ccdbddb6fef5a98424fd559c}} 
+\index{sf::InputStream@{sf::InputStream}!tell@{tell}}
+\index{tell@{tell}!sf::InputStream@{sf::InputStream}}
+\doxysubsubsection{\texorpdfstring{tell()}{tell()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}} sf\+::\+Input\+Stream\+::tell (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the current reading position in the stream. 
+
+\begin{DoxyReturn}{Returns}
+The current position, or -\/1 on error. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classsf_1_1_file_input_stream_a768c5fdb3be79e2d71d1bce911f8741c}{sf\+::\+File\+Input\+Stream}}, \mbox{\hyperlink{classsf_1_1_memory_input_stream_a7ad4bdf721f29de8f66421ff29e23ee4}{sf\+::\+Memory\+Input\+Stream}}, \mbox{\hyperlink{classsf_1_1_file_input_stream_a768c5fdb3be79e2d71d1bce911f8741c}{sf\+::\+File\+Input\+Stream}}, and \mbox{\hyperlink{classsf_1_1_memory_input_stream_a7ad4bdf721f29de8f66421ff29e23ee4}{sf\+::\+Memory\+Input\+Stream}}.
+
+\mbox{\Hypertarget{classsf_1_1_input_stream_a599515b9ccdbddb6fef5a98424fd559c}\label{classsf_1_1_input_stream_a599515b9ccdbddb6fef5a98424fd559c}} 
+\index{sf::InputStream@{sf::InputStream}!tell@{tell}}
+\index{tell@{tell}!sf::InputStream@{sf::InputStream}}
+\doxysubsubsection{\texorpdfstring{tell()}{tell()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}} sf\+::\+Input\+Stream\+::tell (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the current reading position in the stream. 
+
+\begin{DoxyReturn}{Returns}
+The current position, or -\/1 on error. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classsf_1_1_file_input_stream_a768c5fdb3be79e2d71d1bce911f8741c}{sf\+::\+File\+Input\+Stream}}, \mbox{\hyperlink{classsf_1_1_memory_input_stream_a7ad4bdf721f29de8f66421ff29e23ee4}{sf\+::\+Memory\+Input\+Stream}}, \mbox{\hyperlink{classsf_1_1_file_input_stream_a768c5fdb3be79e2d71d1bce911f8741c}{sf\+::\+File\+Input\+Stream}}, and \mbox{\hyperlink{classsf_1_1_memory_input_stream_a7ad4bdf721f29de8f66421ff29e23ee4}{sf\+::\+Memory\+Input\+Stream}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+SFML-\/2.\+5.\+1/include/\+SFML/\+System/\mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_input_stream_8hpp}{Input\+Stream.\+hpp}}\item 
+Week14/\+SFML-\/2.\+5.\+1/include/\+SFML/\+System/\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_input_stream_8hpp}{Input\+Stream.\+hpp}}\end{DoxyCompactItemize}

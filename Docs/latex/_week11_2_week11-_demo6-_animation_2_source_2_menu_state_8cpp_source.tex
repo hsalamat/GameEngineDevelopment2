@@ -1,0 +1,72 @@
+\hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source}{}\doxysection{Menu\+State.\+cpp}
+\label{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source}\index{Week11/Week11-\/Demo6-\/Animation/Source/MenuState.cpp@{Week11/Week11-\/Demo6-\/Animation/Source/MenuState.cpp}}
+\mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include <MenuState.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <Button.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <Utility.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <ResourceHolder.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <SFML/Graphics/RenderWindow.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include <SFML/Graphics/View.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00010}00010 \mbox{\hyperlink{class_menu_state_a6e7034c57bf83f24aa8f4321d3d210a5}{MenuState::MenuState}}(\mbox{\hyperlink{class_state_stack}{StateStack}}\& stack, Context context)}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00011}00011 : \mbox{\hyperlink{class_state}{State}}(stack, context)}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00012}00012 , mGUIContainer()}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00013}00013 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00014}00014     \mbox{\hyperlink{classsf_1_1_texture}{sf::Texture}}\& texture = context.textures-\/>get(\mbox{\hyperlink{namespace_textures_a2cfe2099537d4e80b08437b4978301a5aabc39828e8e6457efd234f73c73e5b8b}{Textures::TitleScreen}});}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00015}00015     mBackgroundSprite.setTexture(texture);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00017}00017     \textcolor{keyword}{auto} playButton = std::make\_shared<GUI::Button>(*context.fonts, *context.textures);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00018}00018     playButton-\/>setPosition(100, 300);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00019}00019     playButton-\/>setText(\textcolor{stringliteral}{"{}Play"{}});}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00020}00020     playButton-\/>setCallback([\textcolor{keyword}{this}] ()}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00021}00021     \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00022}00022         requestStackPop();}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00023}00023         requestStackPush(\mbox{\hyperlink{namespace_states_a571a0dc62822f97bb9511eb013d8e1c3a720905ab6d1564e1ef61cba9725a5318}{States::Game}});}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00024}00024     \});}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00026}00026     \textcolor{keyword}{auto} settingsButton = std::make\_shared<GUI::Button>(*context.fonts, *context.textures);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00027}00027     settingsButton-\/>setPosition(100, 350);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00028}00028     settingsButton-\/>setText(\textcolor{stringliteral}{"{}Settings"{}});}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00029}00029     settingsButton-\/>setCallback([\textcolor{keyword}{this}] ()}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00030}00030     \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00031}00031         requestStackPush(\mbox{\hyperlink{namespace_states_a571a0dc62822f97bb9511eb013d8e1c3ae53ad7802933dd2300dd10cab28d1aeb}{States::Settings}});}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00032}00032     \});}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00034}00034     \textcolor{keyword}{auto} exitButton = std::make\_shared<GUI::Button>(*context.fonts, *context.textures);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00035}00035     exitButton-\/>setPosition(100, 400);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00036}00036     exitButton-\/>setText(\textcolor{stringliteral}{"{}Exit"{}});}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00037}00037     exitButton-\/>setCallback([\textcolor{keyword}{this}] ()}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00038}00038     \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00039}00039         requestStackPop();}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00040}00040     \});}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00042}00042     mGUIContainer.pack(playButton);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00043}00043     mGUIContainer.pack(settingsButton);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00044}00044     mGUIContainer.pack(exitButton);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00045}00045 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00047}00047 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_menu_state_aa557d6c3bf06bb3107ed780913a6b47f}{MenuState::draw}}()}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00048}00048 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00049}00049     \mbox{\hyperlink{classsf_1_1_render_window}{sf::RenderWindow}}\& window = *\mbox{\hyperlink{class_state_a93a72915d1aad6d8f7eacc81094dc920}{getContext}}().\mbox{\hyperlink{struct_state_1_1_context_a2a03b5d8d2904b1808d87dc3437ad281}{window}};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00051}00051     window.\mbox{\hyperlink{classsf_1_1_render_target_a063db6dd0a14913504af30e50cb6d946}{setView}}(window.\mbox{\hyperlink{classsf_1_1_render_target_a7741129e3ef7ab4f0a40024fca13480c}{getDefaultView}}());}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00053}00053     window.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(\mbox{\hyperlink{class_menu_state_a7c6855c2037ee7e4e1b07b7ce1fccd6c}{mBackgroundSprite}});}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00054}00054     window.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(\mbox{\hyperlink{class_menu_state_a5ceaa3414cf5e8e20bd05d8c8e0aa644}{mGUIContainer}});}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00055}00055 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00057}00057 \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_menu_state_adac67748651bd33ddadb36a4f8a246da}{MenuState::update}}(\mbox{\hyperlink{classsf_1_1_time}{sf::Time}})}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00058}00058 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00059}00059     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00060}00060 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00062}00062 \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_menu_state_a04a21241cebf6a8f0fe8ee9ce895ef18}{MenuState::handleEvent}}(\textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_event}{sf::Event}}\& event)}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00063}00063 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00064}00064     \mbox{\hyperlink{class_menu_state_a5ceaa3414cf5e8e20bd05d8c8e0aa644}{mGUIContainer}}.\mbox{\hyperlink{class_g_u_i_1_1_container_af08db9d157a4e56f706493529901eb7f}{handleEvent}}(event);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00065}00065     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_menu_state_8cpp_source_l00066}00066 \}}
+
+\end{DoxyCode}

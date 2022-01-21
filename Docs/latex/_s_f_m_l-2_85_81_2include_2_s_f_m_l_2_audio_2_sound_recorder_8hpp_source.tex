@@ -1,0 +1,105 @@
+\hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source}{}\doxysection{Sound\+Recorder.\+hpp}
+\label{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source}\index{SFML-\/2.5.1/include/SFML/Audio/SoundRecorder.hpp@{SFML-\/2.5.1/include/SFML/Audio/SoundRecorder.hpp}}
+\mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00002}00002 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00003}00003 \textcolor{comment}{// SFML -\/ Simple and Fast Multimedia Library}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00004}00004 \textcolor{comment}{// Copyright (C) 2007-\/2018 Laurent Gomila (laurent@sfml-\/dev.org)}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00005}00005 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00006}00006 \textcolor{comment}{// This software is provided 'as-\/is', without any express or implied warranty.}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00007}00007 \textcolor{comment}{// In no event will the authors be held liable for any damages arising from the use of this software.}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00008}00008 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00009}00009 \textcolor{comment}{// Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00010}00010 \textcolor{comment}{// including commercial applications, and to alter it and redistribute it freely,}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00011}00011 \textcolor{comment}{// subject to the following restrictions:}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00012}00012 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00013}00013 \textcolor{comment}{// 1. The origin of this software must not be misrepresented;}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00014}00014 \textcolor{comment}{//    you must not claim that you wrote the original software.}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00015}00015 \textcolor{comment}{//    If you use this software in a product, an acknowledgment}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00016}00016 \textcolor{comment}{//    in the product documentation would be appreciated but is not required.}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00017}00017 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00018}00018 \textcolor{comment}{// 2. Altered source versions must be plainly marked as such,}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00019}00019 \textcolor{comment}{//    and must not be misrepresented as being the original software.}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00020}00020 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00021}00021 \textcolor{comment}{// 3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00022}00022 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00024}00024 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00025}00025 \textcolor{preprocessor}{\#ifndef SFML\_SOUNDRECORDER\_HPP}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00026}00026 \textcolor{preprocessor}{\#define SFML\_SOUNDRECORDER\_HPP}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00029}00029 \textcolor{comment}{// Headers}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00031}00031 \textcolor{comment}{}\textcolor{preprocessor}{\#include <SFML/Audio/Export.hpp>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00032}00032 \textcolor{preprocessor}{\#include <SFML/Audio/AlResource.hpp>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00033}00033 \textcolor{preprocessor}{\#include <SFML/System/Thread.hpp>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00034}00034 \textcolor{preprocessor}{\#include <SFML/System/Time.hpp>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00035}00035 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00036}00036 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00039}00039 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacesf}{sf}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00040}00040 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00045}\mbox{\hyperlink{classsf_1_1_sound_recorder}{00045}} \textcolor{keyword}{class }\mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_export_8hpp_a4d34c0f253824ac49bdd93545913eb89}{SFML\_AUDIO\_API}} \mbox{\hyperlink{classsf_1_1_sound_recorder}{SoundRecorder}} : \mbox{\hyperlink{classsf_1_1_al_resource}{AlResource}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00046}00046 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00047}00047 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00053}\mbox{\hyperlink{classsf_1_1_sound_recorder_acc599e61aaa47edaae88cf43f0a43549}{00053}}     \textcolor{keyword}{virtual} \mbox{\hyperlink{classsf_1_1_sound_recorder_acc599e61aaa47edaae88cf43f0a43549}{\string~SoundRecorder}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00077}\mbox{\hyperlink{classsf_1_1_sound_recorder_a715f0fd2f228c83d79aaedca562ae51f}{00077}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classsf_1_1_sound_recorder_a715f0fd2f228c83d79aaedca562ae51f}{start}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} sampleRate = 44100);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00085}\mbox{\hyperlink{classsf_1_1_sound_recorder_a8d9c8346aa9aa409cfed4a1101159c4c}{00085}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_sound_recorder_a8d9c8346aa9aa409cfed4a1101159c4c}{stop}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00097}\mbox{\hyperlink{classsf_1_1_sound_recorder_aed292c297a3e0d627db4eb5c18f58c44}{00097}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{classsf_1_1_sound_recorder_aed292c297a3e0d627db4eb5c18f58c44}{getSampleRate}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00098}00098 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00108}\mbox{\hyperlink{classsf_1_1_sound_recorder_a2a0a831148dcf3d979de42029ec0c280}{00108}}     \textcolor{keyword}{static} std::vector<std::string> \mbox{\hyperlink{classsf_1_1_sound_recorder_a2a0a831148dcf3d979de42029ec0c280}{getAvailableDevices}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00109}00109 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00120}\mbox{\hyperlink{classsf_1_1_sound_recorder_ad1d450a80642dab4b632999d72a1bf23}{00120}}     \textcolor{keyword}{static} std::string \mbox{\hyperlink{classsf_1_1_sound_recorder_ad1d450a80642dab4b632999d72a1bf23}{getDefaultDevice}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00121}00121 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00137}\mbox{\hyperlink{classsf_1_1_sound_recorder_a8eb3e473292c16e874322815836d3cd3}{00137}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classsf_1_1_sound_recorder_a8eb3e473292c16e874322815836d3cd3}{setDevice}}(\textcolor{keyword}{const} std::string\& name);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00138}00138 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00145}\mbox{\hyperlink{classsf_1_1_sound_recorder_a13d7d97b3ca67efa18f5ee0aa5884f1f}{00145}}     \textcolor{keyword}{const} std::string\& \mbox{\hyperlink{classsf_1_1_sound_recorder_a13d7d97b3ca67efa18f5ee0aa5884f1f}{getDevice}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00146}00146 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00160}\mbox{\hyperlink{classsf_1_1_sound_recorder_ae4e22ba67d12a74966eb05fad55a317c}{00160}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_sound_recorder_ae4e22ba67d12a74966eb05fad55a317c}{setChannelCount}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} channelCount);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00161}00161 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00173}\mbox{\hyperlink{classsf_1_1_sound_recorder_a610e98e7a73b316ce26b7c55234f86e9}{00173}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{classsf_1_1_sound_recorder_a610e98e7a73b316ce26b7c55234f86e9}{getChannelCount}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00174}00174 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00186}\mbox{\hyperlink{classsf_1_1_sound_recorder_aab2bd0fee9e48d6cfd449b1cb078ce5a}{00186}}     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classsf_1_1_sound_recorder_aab2bd0fee9e48d6cfd449b1cb078ce5a}{isAvailable}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00187}00187 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00188}00188 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00189}00189 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00196}\mbox{\hyperlink{classsf_1_1_sound_recorder_a50ebad413c4f157408a0fa49f23212a9}{00196}}     \mbox{\hyperlink{classsf_1_1_sound_recorder_a50ebad413c4f157408a0fa49f23212a9}{SoundRecorder}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00197}00197 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00214}\mbox{\hyperlink{classsf_1_1_sound_recorder_a85b7fb8a86c08b5084f8f142767bccf6}{00214}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_sound_recorder_a85b7fb8a86c08b5084f8f142767bccf6}{setProcessingInterval}}(\mbox{\hyperlink{classsf_1_1_time}{Time}} interval);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00215}00215 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00227}\mbox{\hyperlink{classsf_1_1_sound_recorder_a7af418fb036201d3f85745bef78ce77f}{00227}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classsf_1_1_sound_recorder_a7af418fb036201d3f85745bef78ce77f}{onStart}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00228}00228 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00243}\mbox{\hyperlink{classsf_1_1_sound_recorder_a2670124cbe7a87c7e46b4840807f4fd7}{00243}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classsf_1_1_sound_recorder_a2670124cbe7a87c7e46b4840807f4fd7}{onProcessSamples}}(\textcolor{keyword}{const} \mbox{\hyperlink{namespacesf_a3c8e10435e2a310a7741755e66b5c94e}{Int16}}* samples, std::size\_t sampleCount) = 0;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00244}00244 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00254}\mbox{\hyperlink{classsf_1_1_sound_recorder_aefc36138ca1e96c658301280e4a31b64}{00254}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_sound_recorder_aefc36138ca1e96c658301280e4a31b64}{onStop}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00255}00255 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00256}00256 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00257}00257 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00265}\mbox{\hyperlink{classsf_1_1_sound_recorder_ac7da8331c382707623dc3671094fc176}{00265}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_sound_recorder_ac7da8331c382707623dc3671094fc176}{record}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00266}00266 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00275}\mbox{\hyperlink{classsf_1_1_sound_recorder_ab1b7b105c79081d044bc79cc74753ddf}{00275}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_sound_recorder_ab1b7b105c79081d044bc79cc74753ddf}{processCapturedSamples}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00276}00276 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00283}\mbox{\hyperlink{classsf_1_1_sound_recorder_a4532acd98a33a6419e1d9f17d6a280e3}{00283}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_sound_recorder_a4532acd98a33a6419e1d9f17d6a280e3}{cleanup}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00284}00284 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00286}00286     \textcolor{comment}{// Member data}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00288}\mbox{\hyperlink{classsf_1_1_sound_recorder_aa61a5840d98b18e1f74a4dbd9e329cc3}{00288}} \textcolor{comment}{}    \mbox{\hyperlink{classsf_1_1_thread}{Thread}}             \mbox{\hyperlink{classsf_1_1_sound_recorder_aa61a5840d98b18e1f74a4dbd9e329cc3}{m\_thread}};             }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00289}\mbox{\hyperlink{classsf_1_1_sound_recorder_a8250299f33a8fa962b5f13e2719a10c9}{00289}}     std::vector<Int16> \mbox{\hyperlink{classsf_1_1_sound_recorder_a8250299f33a8fa962b5f13e2719a10c9}{m\_samples}};            }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00290}\mbox{\hyperlink{classsf_1_1_sound_recorder_a5b318ed67b9cdfdc35bbcbaf3e9ea6da}{00290}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}       \mbox{\hyperlink{classsf_1_1_sound_recorder_a5b318ed67b9cdfdc35bbcbaf3e9ea6da}{m\_sampleRate}};         }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00291}\mbox{\hyperlink{classsf_1_1_sound_recorder_a76d2b226244488bc92d870a1ba9c470a}{00291}}     \mbox{\hyperlink{classsf_1_1_time}{Time}}               \mbox{\hyperlink{classsf_1_1_sound_recorder_a76d2b226244488bc92d870a1ba9c470a}{m\_processingInterval}}; }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00292}\mbox{\hyperlink{classsf_1_1_sound_recorder_a245820535f8b81716a374bdd8dc726bb}{00292}}     \textcolor{keywordtype}{bool}               \mbox{\hyperlink{classsf_1_1_sound_recorder_a245820535f8b81716a374bdd8dc726bb}{m\_isCapturing}};        }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00293}\mbox{\hyperlink{classsf_1_1_sound_recorder_a109997f096cf270f6e8516d576b092a1}{00293}}     std::string        \mbox{\hyperlink{classsf_1_1_sound_recorder_a109997f096cf270f6e8516d576b092a1}{m\_deviceName}};         }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00294}\mbox{\hyperlink{classsf_1_1_sound_recorder_a91ceb1464386aa973f2aeeea82ef147c}{00294}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}       \mbox{\hyperlink{classsf_1_1_sound_recorder_a91ceb1464386aa973f2aeeea82ef147c}{m\_channelCount}};       }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00295}00295 \};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00296}00296 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00297}00297 \} \textcolor{comment}{// namespace sf}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00298}00298 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00299}00299 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00300}00300 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// SFML\_SOUNDRECORDER\_HPP}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00301}00301 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source_l00302}00302 }
+
+\end{DoxyCode}

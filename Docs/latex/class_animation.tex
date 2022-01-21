@@ -1,0 +1,1828 @@
+\hypertarget{class_animation}{}\doxysection{Animation Class Reference}
+\label{class_animation}\index{Animation@{Animation}}
+
+
+{\ttfamily \#include $<$Animation.\+hpp$>$}
+
+Inheritance diagram for Animation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{class_animation}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_animation_a83f0a16cef7117f187ad596de38dd9d6}{Animation}} ()
+\item 
+\mbox{\hyperlink{class_animation_a8f15adab6f0f4f37d0081c3902264334}{Animation}} (const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&texture)
+\item 
+void \mbox{\hyperlink{class_animation_a3d59fba435978a6531529041d355324b}{set\+Texture}} (const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&texture)
+\item 
+const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} $\ast$ \mbox{\hyperlink{class_animation_aceb713113fea1038752e2d0018d0e304}{get\+Texture}} () const
+\item 
+void \mbox{\hyperlink{class_animation_ad36304e4187bba21075bed5d57eb0025}{set\+Frame\+Size}} (\mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} \mbox{\hyperlink{class_animation_a399b47c8349fdeac924178d794b9cc3c}{m\+Frame\+Size}})
+\item 
+\mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} \mbox{\hyperlink{class_animation_ac94ce8b9abad85d686aec3ec8d05cd9f}{get\+Frame\+Size}} () const
+\item 
+void \mbox{\hyperlink{class_animation_aa056c5b431eb078bc7d36eacb12b299c}{set\+Num\+Frames}} (std\+::size\+\_\+t num\+Frames)
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{class_animation_a9248e3726c272391ffaf1331bb72c3bf}{get\+Num\+Frames}} () const
+\item 
+void \mbox{\hyperlink{class_animation_a168c112e11c1fe0040885cea8127dd83}{set\+Duration}} (\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} duration)
+\item 
+\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} \mbox{\hyperlink{class_animation_af8f00863383094851acb06d83f7a85e9}{get\+Duration}} () const
+\item 
+void \mbox{\hyperlink{class_animation_ac6e19fdb858aab0b2b2f7e37d6976438}{set\+Repeating}} (bool flag)
+\item 
+bool \mbox{\hyperlink{class_animation_aedcd2695ee980a41ff1fa65e0091f6a4}{is\+Repeating}} () const
+\item 
+void \mbox{\hyperlink{class_animation_a17f07570ce8e26928fd1d99cfd9c63f0}{restart}} ()
+\item 
+bool \mbox{\hyperlink{class_animation_a52f7a8449004b0248a3b7f8de9759cd0}{is\+Finished}} () const
+\item 
+\mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} \mbox{\hyperlink{class_animation_a677e525e6b1f187fd6719bc511253a2b}{get\+Local\+Bounds}} () const
+\item 
+\mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} \mbox{\hyperlink{class_animation_ad829ff72f859c44ea80b65aad5e7e5ae}{get\+Global\+Bounds}} () const
+\item 
+void \mbox{\hyperlink{class_animation_a250fabaf23dab62bd373daac39aa25d3}{update}} (\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} dt)
+\item 
+\mbox{\hyperlink{class_animation_a83f0a16cef7117f187ad596de38dd9d6}{Animation}} ()
+\item 
+\mbox{\hyperlink{class_animation_a8f15adab6f0f4f37d0081c3902264334}{Animation}} (const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&texture)
+\item 
+void \mbox{\hyperlink{class_animation_a3d59fba435978a6531529041d355324b}{set\+Texture}} (const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&texture)
+\item 
+const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} $\ast$ \mbox{\hyperlink{class_animation_aceb713113fea1038752e2d0018d0e304}{get\+Texture}} () const
+\item 
+void \mbox{\hyperlink{class_animation_ad36304e4187bba21075bed5d57eb0025}{set\+Frame\+Size}} (\mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} \mbox{\hyperlink{class_animation_a399b47c8349fdeac924178d794b9cc3c}{m\+Frame\+Size}})
+\item 
+\mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} \mbox{\hyperlink{class_animation_ac94ce8b9abad85d686aec3ec8d05cd9f}{get\+Frame\+Size}} () const
+\item 
+void \mbox{\hyperlink{class_animation_aa056c5b431eb078bc7d36eacb12b299c}{set\+Num\+Frames}} (std\+::size\+\_\+t num\+Frames)
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{class_animation_a9248e3726c272391ffaf1331bb72c3bf}{get\+Num\+Frames}} () const
+\item 
+void \mbox{\hyperlink{class_animation_a168c112e11c1fe0040885cea8127dd83}{set\+Duration}} (\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} duration)
+\item 
+\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} \mbox{\hyperlink{class_animation_af8f00863383094851acb06d83f7a85e9}{get\+Duration}} () const
+\item 
+void \mbox{\hyperlink{class_animation_ac6e19fdb858aab0b2b2f7e37d6976438}{set\+Repeating}} (bool flag)
+\item 
+bool \mbox{\hyperlink{class_animation_aedcd2695ee980a41ff1fa65e0091f6a4}{is\+Repeating}} () const
+\item 
+void \mbox{\hyperlink{class_animation_a17f07570ce8e26928fd1d99cfd9c63f0}{restart}} ()
+\item 
+bool \mbox{\hyperlink{class_animation_a52f7a8449004b0248a3b7f8de9759cd0}{is\+Finished}} () const
+\item 
+\mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} \mbox{\hyperlink{class_animation_a677e525e6b1f187fd6719bc511253a2b}{get\+Local\+Bounds}} () const
+\item 
+\mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} \mbox{\hyperlink{class_animation_ad829ff72f859c44ea80b65aad5e7e5ae}{get\+Global\+Bounds}} () const
+\item 
+void \mbox{\hyperlink{class_animation_a250fabaf23dab62bd373daac39aa25d3}{update}} (\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} dt)
+\item 
+\mbox{\hyperlink{class_animation_a83f0a16cef7117f187ad596de38dd9d6}{Animation}} ()
+\item 
+\mbox{\hyperlink{class_animation_a8f15adab6f0f4f37d0081c3902264334}{Animation}} (const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&texture)
+\item 
+void \mbox{\hyperlink{class_animation_a3d59fba435978a6531529041d355324b}{set\+Texture}} (const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&texture)
+\item 
+const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} $\ast$ \mbox{\hyperlink{class_animation_aceb713113fea1038752e2d0018d0e304}{get\+Texture}} () const
+\item 
+void \mbox{\hyperlink{class_animation_ad36304e4187bba21075bed5d57eb0025}{set\+Frame\+Size}} (\mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} \mbox{\hyperlink{class_animation_a399b47c8349fdeac924178d794b9cc3c}{m\+Frame\+Size}})
+\item 
+\mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} \mbox{\hyperlink{class_animation_ac94ce8b9abad85d686aec3ec8d05cd9f}{get\+Frame\+Size}} () const
+\item 
+void \mbox{\hyperlink{class_animation_aa056c5b431eb078bc7d36eacb12b299c}{set\+Num\+Frames}} (std\+::size\+\_\+t num\+Frames)
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{class_animation_a9248e3726c272391ffaf1331bb72c3bf}{get\+Num\+Frames}} () const
+\item 
+void \mbox{\hyperlink{class_animation_a168c112e11c1fe0040885cea8127dd83}{set\+Duration}} (\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} duration)
+\item 
+\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} \mbox{\hyperlink{class_animation_af8f00863383094851acb06d83f7a85e9}{get\+Duration}} () const
+\item 
+void \mbox{\hyperlink{class_animation_ac6e19fdb858aab0b2b2f7e37d6976438}{set\+Repeating}} (bool flag)
+\item 
+bool \mbox{\hyperlink{class_animation_aedcd2695ee980a41ff1fa65e0091f6a4}{is\+Repeating}} () const
+\item 
+void \mbox{\hyperlink{class_animation_a17f07570ce8e26928fd1d99cfd9c63f0}{restart}} ()
+\item 
+bool \mbox{\hyperlink{class_animation_a52f7a8449004b0248a3b7f8de9759cd0}{is\+Finished}} () const
+\item 
+\mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} \mbox{\hyperlink{class_animation_a677e525e6b1f187fd6719bc511253a2b}{get\+Local\+Bounds}} () const
+\item 
+\mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} \mbox{\hyperlink{class_animation_ad829ff72f859c44ea80b65aad5e7e5ae}{get\+Global\+Bounds}} () const
+\item 
+void \mbox{\hyperlink{class_animation_a250fabaf23dab62bd373daac39aa25d3}{update}} (\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} dt)
+\item 
+\mbox{\hyperlink{class_animation_a83f0a16cef7117f187ad596de38dd9d6}{Animation}} ()
+\item 
+\mbox{\hyperlink{class_animation_a8f15adab6f0f4f37d0081c3902264334}{Animation}} (const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&texture)
+\item 
+void \mbox{\hyperlink{class_animation_a3d59fba435978a6531529041d355324b}{set\+Texture}} (const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&texture)
+\item 
+const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} $\ast$ \mbox{\hyperlink{class_animation_aceb713113fea1038752e2d0018d0e304}{get\+Texture}} () const
+\item 
+void \mbox{\hyperlink{class_animation_ad36304e4187bba21075bed5d57eb0025}{set\+Frame\+Size}} (\mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} \mbox{\hyperlink{class_animation_a399b47c8349fdeac924178d794b9cc3c}{m\+Frame\+Size}})
+\item 
+\mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} \mbox{\hyperlink{class_animation_ac94ce8b9abad85d686aec3ec8d05cd9f}{get\+Frame\+Size}} () const
+\item 
+void \mbox{\hyperlink{class_animation_aa056c5b431eb078bc7d36eacb12b299c}{set\+Num\+Frames}} (std\+::size\+\_\+t num\+Frames)
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{class_animation_a9248e3726c272391ffaf1331bb72c3bf}{get\+Num\+Frames}} () const
+\item 
+void \mbox{\hyperlink{class_animation_a168c112e11c1fe0040885cea8127dd83}{set\+Duration}} (\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} duration)
+\item 
+\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} \mbox{\hyperlink{class_animation_af8f00863383094851acb06d83f7a85e9}{get\+Duration}} () const
+\item 
+void \mbox{\hyperlink{class_animation_ac6e19fdb858aab0b2b2f7e37d6976438}{set\+Repeating}} (bool flag)
+\item 
+bool \mbox{\hyperlink{class_animation_aedcd2695ee980a41ff1fa65e0091f6a4}{is\+Repeating}} () const
+\item 
+void \mbox{\hyperlink{class_animation_a17f07570ce8e26928fd1d99cfd9c63f0}{restart}} ()
+\item 
+bool \mbox{\hyperlink{class_animation_a52f7a8449004b0248a3b7f8de9759cd0}{is\+Finished}} () const
+\item 
+\mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} \mbox{\hyperlink{class_animation_a677e525e6b1f187fd6719bc511253a2b}{get\+Local\+Bounds}} () const
+\item 
+\mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} \mbox{\hyperlink{class_animation_ad829ff72f859c44ea80b65aad5e7e5ae}{get\+Global\+Bounds}} () const
+\item 
+void \mbox{\hyperlink{class_animation_a250fabaf23dab62bd373daac39aa25d3}{update}} (\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} dt)
+\item 
+\mbox{\hyperlink{class_animation_a83f0a16cef7117f187ad596de38dd9d6}{Animation}} ()
+\item 
+\mbox{\hyperlink{class_animation_a8f15adab6f0f4f37d0081c3902264334}{Animation}} (const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&texture)
+\item 
+void \mbox{\hyperlink{class_animation_a3d59fba435978a6531529041d355324b}{set\+Texture}} (const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&texture)
+\item 
+const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} $\ast$ \mbox{\hyperlink{class_animation_aceb713113fea1038752e2d0018d0e304}{get\+Texture}} () const
+\item 
+void \mbox{\hyperlink{class_animation_ad36304e4187bba21075bed5d57eb0025}{set\+Frame\+Size}} (\mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} \mbox{\hyperlink{class_animation_a399b47c8349fdeac924178d794b9cc3c}{m\+Frame\+Size}})
+\item 
+\mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} \mbox{\hyperlink{class_animation_ac94ce8b9abad85d686aec3ec8d05cd9f}{get\+Frame\+Size}} () const
+\item 
+void \mbox{\hyperlink{class_animation_aa056c5b431eb078bc7d36eacb12b299c}{set\+Num\+Frames}} (std\+::size\+\_\+t num\+Frames)
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{class_animation_a9248e3726c272391ffaf1331bb72c3bf}{get\+Num\+Frames}} () const
+\item 
+void \mbox{\hyperlink{class_animation_a168c112e11c1fe0040885cea8127dd83}{set\+Duration}} (\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} duration)
+\item 
+\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} \mbox{\hyperlink{class_animation_af8f00863383094851acb06d83f7a85e9}{get\+Duration}} () const
+\item 
+void \mbox{\hyperlink{class_animation_ac6e19fdb858aab0b2b2f7e37d6976438}{set\+Repeating}} (bool flag)
+\item 
+bool \mbox{\hyperlink{class_animation_aedcd2695ee980a41ff1fa65e0091f6a4}{is\+Repeating}} () const
+\item 
+void \mbox{\hyperlink{class_animation_a17f07570ce8e26928fd1d99cfd9c63f0}{restart}} ()
+\item 
+bool \mbox{\hyperlink{class_animation_a52f7a8449004b0248a3b7f8de9759cd0}{is\+Finished}} () const
+\item 
+\mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} \mbox{\hyperlink{class_animation_a677e525e6b1f187fd6719bc511253a2b}{get\+Local\+Bounds}} () const
+\item 
+\mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} \mbox{\hyperlink{class_animation_ad829ff72f859c44ea80b65aad5e7e5ae}{get\+Global\+Bounds}} () const
+\item 
+void \mbox{\hyperlink{class_animation_a250fabaf23dab62bd373daac39aa25d3}{update}} (\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} dt)
+\item 
+\mbox{\hyperlink{class_animation_a83f0a16cef7117f187ad596de38dd9d6}{Animation}} ()
+\item 
+\mbox{\hyperlink{class_animation_a8f15adab6f0f4f37d0081c3902264334}{Animation}} (const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&texture)
+\item 
+void \mbox{\hyperlink{class_animation_a3d59fba435978a6531529041d355324b}{set\+Texture}} (const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&texture)
+\item 
+const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} $\ast$ \mbox{\hyperlink{class_animation_aceb713113fea1038752e2d0018d0e304}{get\+Texture}} () const
+\item 
+void \mbox{\hyperlink{class_animation_ad36304e4187bba21075bed5d57eb0025}{set\+Frame\+Size}} (\mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} \mbox{\hyperlink{class_animation_a399b47c8349fdeac924178d794b9cc3c}{m\+Frame\+Size}})
+\item 
+\mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} \mbox{\hyperlink{class_animation_ac94ce8b9abad85d686aec3ec8d05cd9f}{get\+Frame\+Size}} () const
+\item 
+void \mbox{\hyperlink{class_animation_aa056c5b431eb078bc7d36eacb12b299c}{set\+Num\+Frames}} (std\+::size\+\_\+t num\+Frames)
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{class_animation_a9248e3726c272391ffaf1331bb72c3bf}{get\+Num\+Frames}} () const
+\item 
+void \mbox{\hyperlink{class_animation_a168c112e11c1fe0040885cea8127dd83}{set\+Duration}} (\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} duration)
+\item 
+\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} \mbox{\hyperlink{class_animation_af8f00863383094851acb06d83f7a85e9}{get\+Duration}} () const
+\item 
+void \mbox{\hyperlink{class_animation_ac6e19fdb858aab0b2b2f7e37d6976438}{set\+Repeating}} (bool flag)
+\item 
+bool \mbox{\hyperlink{class_animation_aedcd2695ee980a41ff1fa65e0091f6a4}{is\+Repeating}} () const
+\item 
+void \mbox{\hyperlink{class_animation_a17f07570ce8e26928fd1d99cfd9c63f0}{restart}} ()
+\item 
+bool \mbox{\hyperlink{class_animation_a52f7a8449004b0248a3b7f8de9759cd0}{is\+Finished}} () const
+\item 
+\mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} \mbox{\hyperlink{class_animation_a677e525e6b1f187fd6719bc511253a2b}{get\+Local\+Bounds}} () const
+\item 
+\mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} \mbox{\hyperlink{class_animation_ad829ff72f859c44ea80b65aad5e7e5ae}{get\+Global\+Bounds}} () const
+\item 
+void \mbox{\hyperlink{class_animation_a250fabaf23dab62bd373daac39aa25d3}{update}} (\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} dt)
+\item 
+\mbox{\hyperlink{class_animation_a83f0a16cef7117f187ad596de38dd9d6}{Animation}} ()
+\item 
+\mbox{\hyperlink{class_animation_a8f15adab6f0f4f37d0081c3902264334}{Animation}} (const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&texture)
+\item 
+void \mbox{\hyperlink{class_animation_a3d59fba435978a6531529041d355324b}{set\+Texture}} (const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&texture)
+\item 
+const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} $\ast$ \mbox{\hyperlink{class_animation_aceb713113fea1038752e2d0018d0e304}{get\+Texture}} () const
+\item 
+void \mbox{\hyperlink{class_animation_ad36304e4187bba21075bed5d57eb0025}{set\+Frame\+Size}} (\mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} \mbox{\hyperlink{class_animation_a399b47c8349fdeac924178d794b9cc3c}{m\+Frame\+Size}})
+\item 
+\mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} \mbox{\hyperlink{class_animation_ac94ce8b9abad85d686aec3ec8d05cd9f}{get\+Frame\+Size}} () const
+\item 
+void \mbox{\hyperlink{class_animation_aa056c5b431eb078bc7d36eacb12b299c}{set\+Num\+Frames}} (std\+::size\+\_\+t num\+Frames)
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{class_animation_a9248e3726c272391ffaf1331bb72c3bf}{get\+Num\+Frames}} () const
+\item 
+void \mbox{\hyperlink{class_animation_a168c112e11c1fe0040885cea8127dd83}{set\+Duration}} (\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} duration)
+\item 
+\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} \mbox{\hyperlink{class_animation_af8f00863383094851acb06d83f7a85e9}{get\+Duration}} () const
+\item 
+void \mbox{\hyperlink{class_animation_ac6e19fdb858aab0b2b2f7e37d6976438}{set\+Repeating}} (bool flag)
+\item 
+bool \mbox{\hyperlink{class_animation_aedcd2695ee980a41ff1fa65e0091f6a4}{is\+Repeating}} () const
+\item 
+void \mbox{\hyperlink{class_animation_a17f07570ce8e26928fd1d99cfd9c63f0}{restart}} ()
+\item 
+bool \mbox{\hyperlink{class_animation_a52f7a8449004b0248a3b7f8de9759cd0}{is\+Finished}} () const
+\item 
+\mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} \mbox{\hyperlink{class_animation_a677e525e6b1f187fd6719bc511253a2b}{get\+Local\+Bounds}} () const
+\item 
+\mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} \mbox{\hyperlink{class_animation_ad829ff72f859c44ea80b65aad5e7e5ae}{get\+Global\+Bounds}} () const
+\item 
+void \mbox{\hyperlink{class_animation_a250fabaf23dab62bd373daac39aa25d3}{update}} (\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} dt)
+\item 
+\mbox{\hyperlink{class_animation_a83f0a16cef7117f187ad596de38dd9d6}{Animation}} ()
+\item 
+\mbox{\hyperlink{class_animation_a8f15adab6f0f4f37d0081c3902264334}{Animation}} (const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&texture)
+\item 
+void \mbox{\hyperlink{class_animation_a3d59fba435978a6531529041d355324b}{set\+Texture}} (const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&texture)
+\item 
+const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} $\ast$ \mbox{\hyperlink{class_animation_aceb713113fea1038752e2d0018d0e304}{get\+Texture}} () const
+\item 
+void \mbox{\hyperlink{class_animation_ad36304e4187bba21075bed5d57eb0025}{set\+Frame\+Size}} (\mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} \mbox{\hyperlink{class_animation_a399b47c8349fdeac924178d794b9cc3c}{m\+Frame\+Size}})
+\item 
+\mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} \mbox{\hyperlink{class_animation_ac94ce8b9abad85d686aec3ec8d05cd9f}{get\+Frame\+Size}} () const
+\item 
+void \mbox{\hyperlink{class_animation_aa056c5b431eb078bc7d36eacb12b299c}{set\+Num\+Frames}} (std\+::size\+\_\+t num\+Frames)
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{class_animation_a9248e3726c272391ffaf1331bb72c3bf}{get\+Num\+Frames}} () const
+\item 
+void \mbox{\hyperlink{class_animation_a168c112e11c1fe0040885cea8127dd83}{set\+Duration}} (\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} duration)
+\item 
+\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} \mbox{\hyperlink{class_animation_af8f00863383094851acb06d83f7a85e9}{get\+Duration}} () const
+\item 
+void \mbox{\hyperlink{class_animation_ac6e19fdb858aab0b2b2f7e37d6976438}{set\+Repeating}} (bool flag)
+\item 
+bool \mbox{\hyperlink{class_animation_aedcd2695ee980a41ff1fa65e0091f6a4}{is\+Repeating}} () const
+\item 
+void \mbox{\hyperlink{class_animation_a17f07570ce8e26928fd1d99cfd9c63f0}{restart}} ()
+\item 
+bool \mbox{\hyperlink{class_animation_a52f7a8449004b0248a3b7f8de9759cd0}{is\+Finished}} () const
+\item 
+\mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} \mbox{\hyperlink{class_animation_a677e525e6b1f187fd6719bc511253a2b}{get\+Local\+Bounds}} () const
+\item 
+\mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} \mbox{\hyperlink{class_animation_ad829ff72f859c44ea80b65aad5e7e5ae}{get\+Global\+Bounds}} () const
+\item 
+void \mbox{\hyperlink{class_animation_a250fabaf23dab62bd373daac39aa25d3}{update}} (\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} dt)
+\item 
+\mbox{\hyperlink{class_animation_a83f0a16cef7117f187ad596de38dd9d6}{Animation}} ()
+\item 
+\mbox{\hyperlink{class_animation_a8f15adab6f0f4f37d0081c3902264334}{Animation}} (const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&texture)
+\item 
+void \mbox{\hyperlink{class_animation_a3d59fba435978a6531529041d355324b}{set\+Texture}} (const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&texture)
+\item 
+const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} $\ast$ \mbox{\hyperlink{class_animation_aceb713113fea1038752e2d0018d0e304}{get\+Texture}} () const
+\item 
+void \mbox{\hyperlink{class_animation_ad36304e4187bba21075bed5d57eb0025}{set\+Frame\+Size}} (\mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} \mbox{\hyperlink{class_animation_a399b47c8349fdeac924178d794b9cc3c}{m\+Frame\+Size}})
+\item 
+\mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} \mbox{\hyperlink{class_animation_ac94ce8b9abad85d686aec3ec8d05cd9f}{get\+Frame\+Size}} () const
+\item 
+void \mbox{\hyperlink{class_animation_aa056c5b431eb078bc7d36eacb12b299c}{set\+Num\+Frames}} (std\+::size\+\_\+t num\+Frames)
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{class_animation_a9248e3726c272391ffaf1331bb72c3bf}{get\+Num\+Frames}} () const
+\item 
+void \mbox{\hyperlink{class_animation_a168c112e11c1fe0040885cea8127dd83}{set\+Duration}} (\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} duration)
+\item 
+\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} \mbox{\hyperlink{class_animation_af8f00863383094851acb06d83f7a85e9}{get\+Duration}} () const
+\item 
+void \mbox{\hyperlink{class_animation_ac6e19fdb858aab0b2b2f7e37d6976438}{set\+Repeating}} (bool flag)
+\item 
+bool \mbox{\hyperlink{class_animation_aedcd2695ee980a41ff1fa65e0091f6a4}{is\+Repeating}} () const
+\item 
+void \mbox{\hyperlink{class_animation_a17f07570ce8e26928fd1d99cfd9c63f0}{restart}} ()
+\item 
+bool \mbox{\hyperlink{class_animation_a52f7a8449004b0248a3b7f8de9759cd0}{is\+Finished}} () const
+\item 
+\mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} \mbox{\hyperlink{class_animation_a677e525e6b1f187fd6719bc511253a2b}{get\+Local\+Bounds}} () const
+\item 
+\mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} \mbox{\hyperlink{class_animation_ad829ff72f859c44ea80b65aad5e7e5ae}{get\+Global\+Bounds}} () const
+\item 
+void \mbox{\hyperlink{class_animation_a250fabaf23dab62bd373daac39aa25d3}{update}} (\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} dt)
+\item 
+\mbox{\hyperlink{class_animation_a83f0a16cef7117f187ad596de38dd9d6}{Animation}} ()
+\item 
+\mbox{\hyperlink{class_animation_a8f15adab6f0f4f37d0081c3902264334}{Animation}} (const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&texture)
+\item 
+void \mbox{\hyperlink{class_animation_a3d59fba435978a6531529041d355324b}{set\+Texture}} (const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&texture)
+\item 
+const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} $\ast$ \mbox{\hyperlink{class_animation_aceb713113fea1038752e2d0018d0e304}{get\+Texture}} () const
+\item 
+void \mbox{\hyperlink{class_animation_ad36304e4187bba21075bed5d57eb0025}{set\+Frame\+Size}} (\mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} \mbox{\hyperlink{class_animation_a399b47c8349fdeac924178d794b9cc3c}{m\+Frame\+Size}})
+\item 
+\mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} \mbox{\hyperlink{class_animation_ac94ce8b9abad85d686aec3ec8d05cd9f}{get\+Frame\+Size}} () const
+\item 
+void \mbox{\hyperlink{class_animation_aa056c5b431eb078bc7d36eacb12b299c}{set\+Num\+Frames}} (std\+::size\+\_\+t num\+Frames)
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{class_animation_a9248e3726c272391ffaf1331bb72c3bf}{get\+Num\+Frames}} () const
+\item 
+void \mbox{\hyperlink{class_animation_a168c112e11c1fe0040885cea8127dd83}{set\+Duration}} (\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} duration)
+\item 
+\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} \mbox{\hyperlink{class_animation_af8f00863383094851acb06d83f7a85e9}{get\+Duration}} () const
+\item 
+void \mbox{\hyperlink{class_animation_ac6e19fdb858aab0b2b2f7e37d6976438}{set\+Repeating}} (bool flag)
+\item 
+bool \mbox{\hyperlink{class_animation_aedcd2695ee980a41ff1fa65e0091f6a4}{is\+Repeating}} () const
+\item 
+void \mbox{\hyperlink{class_animation_a17f07570ce8e26928fd1d99cfd9c63f0}{restart}} ()
+\item 
+bool \mbox{\hyperlink{class_animation_a52f7a8449004b0248a3b7f8de9759cd0}{is\+Finished}} () const
+\item 
+\mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} \mbox{\hyperlink{class_animation_a677e525e6b1f187fd6719bc511253a2b}{get\+Local\+Bounds}} () const
+\item 
+\mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} \mbox{\hyperlink{class_animation_ad829ff72f859c44ea80b65aad5e7e5ae}{get\+Global\+Bounds}} () const
+\item 
+void \mbox{\hyperlink{class_animation_a250fabaf23dab62bd373daac39aa25d3}{update}} (\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} dt)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_animation_a012ebbed7899dc6c860ef42e1215478b}{draw}} (\mbox{\hyperlink{classsf_1_1_render_target}{sf\+::\+Render\+Target}} \&target, \mbox{\hyperlink{classsf_1_1_render_states}{sf\+::\+Render\+States}} states) const
+\begin{DoxyCompactList}\small\item\em Draw the object to a render target. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_animation_a012ebbed7899dc6c860ef42e1215478b}{draw}} (\mbox{\hyperlink{classsf_1_1_render_target}{sf\+::\+Render\+Target}} \&target, \mbox{\hyperlink{classsf_1_1_render_states}{sf\+::\+Render\+States}} states) const
+\begin{DoxyCompactList}\small\item\em Draw the object to a render target. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_animation_a012ebbed7899dc6c860ef42e1215478b}{draw}} (\mbox{\hyperlink{classsf_1_1_render_target}{sf\+::\+Render\+Target}} \&target, \mbox{\hyperlink{classsf_1_1_render_states}{sf\+::\+Render\+States}} states) const
+\begin{DoxyCompactList}\small\item\em Draw the object to a render target. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_animation_a012ebbed7899dc6c860ef42e1215478b}{draw}} (\mbox{\hyperlink{classsf_1_1_render_target}{sf\+::\+Render\+Target}} \&target, \mbox{\hyperlink{classsf_1_1_render_states}{sf\+::\+Render\+States}} states) const
+\begin{DoxyCompactList}\small\item\em Draw the object to a render target. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_animation_a012ebbed7899dc6c860ef42e1215478b}{draw}} (\mbox{\hyperlink{classsf_1_1_render_target}{sf\+::\+Render\+Target}} \&target, \mbox{\hyperlink{classsf_1_1_render_states}{sf\+::\+Render\+States}} states) const
+\begin{DoxyCompactList}\small\item\em Draw the object to a render target. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_animation_a012ebbed7899dc6c860ef42e1215478b}{draw}} (\mbox{\hyperlink{classsf_1_1_render_target}{sf\+::\+Render\+Target}} \&target, \mbox{\hyperlink{classsf_1_1_render_states}{sf\+::\+Render\+States}} states) const
+\begin{DoxyCompactList}\small\item\em Draw the object to a render target. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_animation_a012ebbed7899dc6c860ef42e1215478b}{draw}} (\mbox{\hyperlink{classsf_1_1_render_target}{sf\+::\+Render\+Target}} \&target, \mbox{\hyperlink{classsf_1_1_render_states}{sf\+::\+Render\+States}} states) const
+\begin{DoxyCompactList}\small\item\em Draw the object to a render target. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_animation_a012ebbed7899dc6c860ef42e1215478b}{draw}} (\mbox{\hyperlink{classsf_1_1_render_target}{sf\+::\+Render\+Target}} \&target, \mbox{\hyperlink{classsf_1_1_render_states}{sf\+::\+Render\+States}} states) const
+\begin{DoxyCompactList}\small\item\em Draw the object to a render target. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_animation_a012ebbed7899dc6c860ef42e1215478b}{draw}} (\mbox{\hyperlink{classsf_1_1_render_target}{sf\+::\+Render\+Target}} \&target, \mbox{\hyperlink{classsf_1_1_render_states}{sf\+::\+Render\+States}} states) const
+\begin{DoxyCompactList}\small\item\em Draw the object to a render target. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_animation_a012ebbed7899dc6c860ef42e1215478b}{draw}} (\mbox{\hyperlink{classsf_1_1_render_target}{sf\+::\+Render\+Target}} \&target, \mbox{\hyperlink{classsf_1_1_render_states}{sf\+::\+Render\+States}} states) const
+\begin{DoxyCompactList}\small\item\em Draw the object to a render target. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsf_1_1_sprite}{sf\+::\+Sprite}} \mbox{\hyperlink{class_animation_a30eaffa8aa1c8e808a136162fb34fc25}{m\+Sprite}}
+\item 
+\mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} \mbox{\hyperlink{class_animation_a399b47c8349fdeac924178d794b9cc3c}{m\+Frame\+Size}}
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{class_animation_a5514f9410c20b598f6e11ae5823ef686}{m\+Num\+Frames}}
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{class_animation_a62a82a2b33023e7914efa3cc9d8fad60}{m\+Current\+Frame}}
+\item 
+\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} \mbox{\hyperlink{class_animation_a2c4c2260f51906a605cde4b00286b835}{m\+Duration}}
+\item 
+\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} \mbox{\hyperlink{class_animation_a35fa2590271ab4e0d2e6f0f78cb8f850}{m\+Elapsed\+Time}}
+\item 
+bool \mbox{\hyperlink{class_animation_ae6df2d9ed02da0baf44b299a9b95bced}{m\+Repeat}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_include_2_animation_8hpp_source_l00007}{7}} of file \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_include_2_animation_8hpp_source}{Animation.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_animation_a83f0a16cef7117f187ad596de38dd9d6}\label{class_animation_a83f0a16cef7117f187ad596de38dd9d6}} 
+\index{Animation@{Animation}!Animation@{Animation}}
+\index{Animation@{Animation}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{Animation()}{Animation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/20]}}
+{\footnotesize\ttfamily Animation\+::\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source}{Animation.\+cpp}}.
+
+\mbox{\Hypertarget{class_animation_a8f15adab6f0f4f37d0081c3902264334}\label{class_animation_a8f15adab6f0f4f37d0081c3902264334}} 
+\index{Animation@{Animation}!Animation@{Animation}}
+\index{Animation@{Animation}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{Animation()}{Animation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/20]}}
+{\footnotesize\ttfamily Animation\+::\+Animation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&}]{texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Definition at line \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source}{Animation.\+cpp}}.
+
+\mbox{\Hypertarget{class_animation_a83f0a16cef7117f187ad596de38dd9d6}\label{class_animation_a83f0a16cef7117f187ad596de38dd9d6}} 
+\index{Animation@{Animation}!Animation@{Animation}}
+\index{Animation@{Animation}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{Animation()}{Animation()}\hspace{0.1cm}{\footnotesize\ttfamily [3/20]}}
+{\footnotesize\ttfamily Animation\+::\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a8f15adab6f0f4f37d0081c3902264334}\label{class_animation_a8f15adab6f0f4f37d0081c3902264334}} 
+\index{Animation@{Animation}!Animation@{Animation}}
+\index{Animation@{Animation}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{Animation()}{Animation()}\hspace{0.1cm}{\footnotesize\ttfamily [4/20]}}
+{\footnotesize\ttfamily Animation\+::\+Animation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&}]{texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_animation_a83f0a16cef7117f187ad596de38dd9d6}\label{class_animation_a83f0a16cef7117f187ad596de38dd9d6}} 
+\index{Animation@{Animation}!Animation@{Animation}}
+\index{Animation@{Animation}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{Animation()}{Animation()}\hspace{0.1cm}{\footnotesize\ttfamily [5/20]}}
+{\footnotesize\ttfamily Animation\+::\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a8f15adab6f0f4f37d0081c3902264334}\label{class_animation_a8f15adab6f0f4f37d0081c3902264334}} 
+\index{Animation@{Animation}!Animation@{Animation}}
+\index{Animation@{Animation}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{Animation()}{Animation()}\hspace{0.1cm}{\footnotesize\ttfamily [6/20]}}
+{\footnotesize\ttfamily Animation\+::\+Animation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&}]{texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_animation_a83f0a16cef7117f187ad596de38dd9d6}\label{class_animation_a83f0a16cef7117f187ad596de38dd9d6}} 
+\index{Animation@{Animation}!Animation@{Animation}}
+\index{Animation@{Animation}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{Animation()}{Animation()}\hspace{0.1cm}{\footnotesize\ttfamily [7/20]}}
+{\footnotesize\ttfamily Animation\+::\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a8f15adab6f0f4f37d0081c3902264334}\label{class_animation_a8f15adab6f0f4f37d0081c3902264334}} 
+\index{Animation@{Animation}!Animation@{Animation}}
+\index{Animation@{Animation}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{Animation()}{Animation()}\hspace{0.1cm}{\footnotesize\ttfamily [8/20]}}
+{\footnotesize\ttfamily Animation\+::\+Animation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&}]{texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_animation_a83f0a16cef7117f187ad596de38dd9d6}\label{class_animation_a83f0a16cef7117f187ad596de38dd9d6}} 
+\index{Animation@{Animation}!Animation@{Animation}}
+\index{Animation@{Animation}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{Animation()}{Animation()}\hspace{0.1cm}{\footnotesize\ttfamily [9/20]}}
+{\footnotesize\ttfamily Animation\+::\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a8f15adab6f0f4f37d0081c3902264334}\label{class_animation_a8f15adab6f0f4f37d0081c3902264334}} 
+\index{Animation@{Animation}!Animation@{Animation}}
+\index{Animation@{Animation}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{Animation()}{Animation()}\hspace{0.1cm}{\footnotesize\ttfamily [10/20]}}
+{\footnotesize\ttfamily Animation\+::\+Animation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&}]{texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_animation_a83f0a16cef7117f187ad596de38dd9d6}\label{class_animation_a83f0a16cef7117f187ad596de38dd9d6}} 
+\index{Animation@{Animation}!Animation@{Animation}}
+\index{Animation@{Animation}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{Animation()}{Animation()}\hspace{0.1cm}{\footnotesize\ttfamily [11/20]}}
+{\footnotesize\ttfamily Animation\+::\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a8f15adab6f0f4f37d0081c3902264334}\label{class_animation_a8f15adab6f0f4f37d0081c3902264334}} 
+\index{Animation@{Animation}!Animation@{Animation}}
+\index{Animation@{Animation}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{Animation()}{Animation()}\hspace{0.1cm}{\footnotesize\ttfamily [12/20]}}
+{\footnotesize\ttfamily Animation\+::\+Animation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&}]{texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_animation_a83f0a16cef7117f187ad596de38dd9d6}\label{class_animation_a83f0a16cef7117f187ad596de38dd9d6}} 
+\index{Animation@{Animation}!Animation@{Animation}}
+\index{Animation@{Animation}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{Animation()}{Animation()}\hspace{0.1cm}{\footnotesize\ttfamily [13/20]}}
+{\footnotesize\ttfamily Animation\+::\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a8f15adab6f0f4f37d0081c3902264334}\label{class_animation_a8f15adab6f0f4f37d0081c3902264334}} 
+\index{Animation@{Animation}!Animation@{Animation}}
+\index{Animation@{Animation}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{Animation()}{Animation()}\hspace{0.1cm}{\footnotesize\ttfamily [14/20]}}
+{\footnotesize\ttfamily Animation\+::\+Animation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&}]{texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_animation_a83f0a16cef7117f187ad596de38dd9d6}\label{class_animation_a83f0a16cef7117f187ad596de38dd9d6}} 
+\index{Animation@{Animation}!Animation@{Animation}}
+\index{Animation@{Animation}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{Animation()}{Animation()}\hspace{0.1cm}{\footnotesize\ttfamily [15/20]}}
+{\footnotesize\ttfamily Animation\+::\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a8f15adab6f0f4f37d0081c3902264334}\label{class_animation_a8f15adab6f0f4f37d0081c3902264334}} 
+\index{Animation@{Animation}!Animation@{Animation}}
+\index{Animation@{Animation}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{Animation()}{Animation()}\hspace{0.1cm}{\footnotesize\ttfamily [16/20]}}
+{\footnotesize\ttfamily Animation\+::\+Animation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&}]{texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_animation_a83f0a16cef7117f187ad596de38dd9d6}\label{class_animation_a83f0a16cef7117f187ad596de38dd9d6}} 
+\index{Animation@{Animation}!Animation@{Animation}}
+\index{Animation@{Animation}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{Animation()}{Animation()}\hspace{0.1cm}{\footnotesize\ttfamily [17/20]}}
+{\footnotesize\ttfamily Animation\+::\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a8f15adab6f0f4f37d0081c3902264334}\label{class_animation_a8f15adab6f0f4f37d0081c3902264334}} 
+\index{Animation@{Animation}!Animation@{Animation}}
+\index{Animation@{Animation}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{Animation()}{Animation()}\hspace{0.1cm}{\footnotesize\ttfamily [18/20]}}
+{\footnotesize\ttfamily Animation\+::\+Animation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&}]{texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_animation_a83f0a16cef7117f187ad596de38dd9d6}\label{class_animation_a83f0a16cef7117f187ad596de38dd9d6}} 
+\index{Animation@{Animation}!Animation@{Animation}}
+\index{Animation@{Animation}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{Animation()}{Animation()}\hspace{0.1cm}{\footnotesize\ttfamily [19/20]}}
+{\footnotesize\ttfamily Animation\+::\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a8f15adab6f0f4f37d0081c3902264334}\label{class_animation_a8f15adab6f0f4f37d0081c3902264334}} 
+\index{Animation@{Animation}!Animation@{Animation}}
+\index{Animation@{Animation}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{Animation()}{Animation()}\hspace{0.1cm}{\footnotesize\ttfamily [20/20]}}
+{\footnotesize\ttfamily Animation\+::\+Animation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&}]{texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_animation_a012ebbed7899dc6c860ef42e1215478b}\label{class_animation_a012ebbed7899dc6c860ef42e1215478b}} 
+\index{Animation@{Animation}!draw@{draw}}
+\index{draw@{draw}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily void Animation\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_render_target}{sf\+::\+Render\+Target}} \&}]{target,  }\item[{\mbox{\hyperlink{classsf_1_1_render_states}{sf\+::\+Render\+States}}}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Draw the object to a render target. 
+
+This is a pure virtual function that has to be implemented by the derived class to define how the drawable should be drawn.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Render target to draw to \\
+\hline
+{\em states} & Current render states \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classsf_1_1_drawable_a90d2c88bba9b035a0844eccb380ef631}{sf\+::\+Drawable}}.
+
+
+
+Definition at line \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source_l00145}{145}} of file \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source}{Animation.\+cpp}}.
+
+\mbox{\Hypertarget{class_animation_a012ebbed7899dc6c860ef42e1215478b}\label{class_animation_a012ebbed7899dc6c860ef42e1215478b}} 
+\index{Animation@{Animation}!draw@{draw}}
+\index{draw@{draw}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily void Animation\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_render_target}{sf\+::\+Render\+Target}} \&}]{target,  }\item[{\mbox{\hyperlink{classsf_1_1_render_states}{sf\+::\+Render\+States}}}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Draw the object to a render target. 
+
+This is a pure virtual function that has to be implemented by the derived class to define how the drawable should be drawn.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Render target to draw to \\
+\hline
+{\em states} & Current render states \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classsf_1_1_drawable_a90d2c88bba9b035a0844eccb380ef631}{sf\+::\+Drawable}}.
+
+\mbox{\Hypertarget{class_animation_a012ebbed7899dc6c860ef42e1215478b}\label{class_animation_a012ebbed7899dc6c860ef42e1215478b}} 
+\index{Animation@{Animation}!draw@{draw}}
+\index{draw@{draw}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily void Animation\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_render_target}{sf\+::\+Render\+Target}} \&}]{target,  }\item[{\mbox{\hyperlink{classsf_1_1_render_states}{sf\+::\+Render\+States}}}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Draw the object to a render target. 
+
+This is a pure virtual function that has to be implemented by the derived class to define how the drawable should be drawn.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Render target to draw to \\
+\hline
+{\em states} & Current render states \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classsf_1_1_drawable_a90d2c88bba9b035a0844eccb380ef631}{sf\+::\+Drawable}}.
+
+\mbox{\Hypertarget{class_animation_a012ebbed7899dc6c860ef42e1215478b}\label{class_animation_a012ebbed7899dc6c860ef42e1215478b}} 
+\index{Animation@{Animation}!draw@{draw}}
+\index{draw@{draw}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily void Animation\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_render_target}{sf\+::\+Render\+Target}} \&}]{target,  }\item[{\mbox{\hyperlink{classsf_1_1_render_states}{sf\+::\+Render\+States}}}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Draw the object to a render target. 
+
+This is a pure virtual function that has to be implemented by the derived class to define how the drawable should be drawn.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Render target to draw to \\
+\hline
+{\em states} & Current render states \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classsf_1_1_drawable_a90d2c88bba9b035a0844eccb380ef631}{sf\+::\+Drawable}}.
+
+\mbox{\Hypertarget{class_animation_a012ebbed7899dc6c860ef42e1215478b}\label{class_animation_a012ebbed7899dc6c860ef42e1215478b}} 
+\index{Animation@{Animation}!draw@{draw}}
+\index{draw@{draw}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily void Animation\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_render_target}{sf\+::\+Render\+Target}} \&}]{target,  }\item[{\mbox{\hyperlink{classsf_1_1_render_states}{sf\+::\+Render\+States}}}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Draw the object to a render target. 
+
+This is a pure virtual function that has to be implemented by the derived class to define how the drawable should be drawn.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Render target to draw to \\
+\hline
+{\em states} & Current render states \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classsf_1_1_drawable_a90d2c88bba9b035a0844eccb380ef631}{sf\+::\+Drawable}}.
+
+\mbox{\Hypertarget{class_animation_a012ebbed7899dc6c860ef42e1215478b}\label{class_animation_a012ebbed7899dc6c860ef42e1215478b}} 
+\index{Animation@{Animation}!draw@{draw}}
+\index{draw@{draw}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily void Animation\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_render_target}{sf\+::\+Render\+Target}} \&}]{target,  }\item[{\mbox{\hyperlink{classsf_1_1_render_states}{sf\+::\+Render\+States}}}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Draw the object to a render target. 
+
+This is a pure virtual function that has to be implemented by the derived class to define how the drawable should be drawn.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Render target to draw to \\
+\hline
+{\em states} & Current render states \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classsf_1_1_drawable_a90d2c88bba9b035a0844eccb380ef631}{sf\+::\+Drawable}}.
+
+\mbox{\Hypertarget{class_animation_a012ebbed7899dc6c860ef42e1215478b}\label{class_animation_a012ebbed7899dc6c860ef42e1215478b}} 
+\index{Animation@{Animation}!draw@{draw}}
+\index{draw@{draw}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily void Animation\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_render_target}{sf\+::\+Render\+Target}} \&}]{target,  }\item[{\mbox{\hyperlink{classsf_1_1_render_states}{sf\+::\+Render\+States}}}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Draw the object to a render target. 
+
+This is a pure virtual function that has to be implemented by the derived class to define how the drawable should be drawn.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Render target to draw to \\
+\hline
+{\em states} & Current render states \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classsf_1_1_drawable_a90d2c88bba9b035a0844eccb380ef631}{sf\+::\+Drawable}}.
+
+\mbox{\Hypertarget{class_animation_a012ebbed7899dc6c860ef42e1215478b}\label{class_animation_a012ebbed7899dc6c860ef42e1215478b}} 
+\index{Animation@{Animation}!draw@{draw}}
+\index{draw@{draw}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily void Animation\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_render_target}{sf\+::\+Render\+Target}} \&}]{target,  }\item[{\mbox{\hyperlink{classsf_1_1_render_states}{sf\+::\+Render\+States}}}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Draw the object to a render target. 
+
+This is a pure virtual function that has to be implemented by the derived class to define how the drawable should be drawn.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Render target to draw to \\
+\hline
+{\em states} & Current render states \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classsf_1_1_drawable_a90d2c88bba9b035a0844eccb380ef631}{sf\+::\+Drawable}}.
+
+\mbox{\Hypertarget{class_animation_a012ebbed7899dc6c860ef42e1215478b}\label{class_animation_a012ebbed7899dc6c860ef42e1215478b}} 
+\index{Animation@{Animation}!draw@{draw}}
+\index{draw@{draw}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily void Animation\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_render_target}{sf\+::\+Render\+Target}} \&}]{target,  }\item[{\mbox{\hyperlink{classsf_1_1_render_states}{sf\+::\+Render\+States}}}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Draw the object to a render target. 
+
+This is a pure virtual function that has to be implemented by the derived class to define how the drawable should be drawn.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Render target to draw to \\
+\hline
+{\em states} & Current render states \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classsf_1_1_drawable_a90d2c88bba9b035a0844eccb380ef631}{sf\+::\+Drawable}}.
+
+\mbox{\Hypertarget{class_animation_a012ebbed7899dc6c860ef42e1215478b}\label{class_animation_a012ebbed7899dc6c860ef42e1215478b}} 
+\index{Animation@{Animation}!draw@{draw}}
+\index{draw@{draw}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily void Animation\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_render_target}{sf\+::\+Render\+Target}} \&}]{target,  }\item[{\mbox{\hyperlink{classsf_1_1_render_states}{sf\+::\+Render\+States}}}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Draw the object to a render target. 
+
+This is a pure virtual function that has to be implemented by the derived class to define how the drawable should be drawn.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Render target to draw to \\
+\hline
+{\em states} & Current render states \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classsf_1_1_drawable_a90d2c88bba9b035a0844eccb380ef631}{sf\+::\+Drawable}}.
+
+\mbox{\Hypertarget{class_animation_af8f00863383094851acb06d83f7a85e9}\label{class_animation_af8f00863383094851acb06d83f7a85e9}} 
+\index{Animation@{Animation}!getDuration@{getDuration}}
+\index{getDuration@{getDuration}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getDuration()}{getDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} Animation\+::get\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source_l00065}{65}} of file \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source}{Animation.\+cpp}}.
+
+\mbox{\Hypertarget{class_animation_af8f00863383094851acb06d83f7a85e9}\label{class_animation_af8f00863383094851acb06d83f7a85e9}} 
+\index{Animation@{Animation}!getDuration@{getDuration}}
+\index{getDuration@{getDuration}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getDuration()}{getDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} Animation\+::get\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_af8f00863383094851acb06d83f7a85e9}\label{class_animation_af8f00863383094851acb06d83f7a85e9}} 
+\index{Animation@{Animation}!getDuration@{getDuration}}
+\index{getDuration@{getDuration}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getDuration()}{getDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} Animation\+::get\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_af8f00863383094851acb06d83f7a85e9}\label{class_animation_af8f00863383094851acb06d83f7a85e9}} 
+\index{Animation@{Animation}!getDuration@{getDuration}}
+\index{getDuration@{getDuration}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getDuration()}{getDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} Animation\+::get\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_af8f00863383094851acb06d83f7a85e9}\label{class_animation_af8f00863383094851acb06d83f7a85e9}} 
+\index{Animation@{Animation}!getDuration@{getDuration}}
+\index{getDuration@{getDuration}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getDuration()}{getDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} Animation\+::get\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_af8f00863383094851acb06d83f7a85e9}\label{class_animation_af8f00863383094851acb06d83f7a85e9}} 
+\index{Animation@{Animation}!getDuration@{getDuration}}
+\index{getDuration@{getDuration}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getDuration()}{getDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} Animation\+::get\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_af8f00863383094851acb06d83f7a85e9}\label{class_animation_af8f00863383094851acb06d83f7a85e9}} 
+\index{Animation@{Animation}!getDuration@{getDuration}}
+\index{getDuration@{getDuration}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getDuration()}{getDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} Animation\+::get\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_af8f00863383094851acb06d83f7a85e9}\label{class_animation_af8f00863383094851acb06d83f7a85e9}} 
+\index{Animation@{Animation}!getDuration@{getDuration}}
+\index{getDuration@{getDuration}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getDuration()}{getDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} Animation\+::get\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_af8f00863383094851acb06d83f7a85e9}\label{class_animation_af8f00863383094851acb06d83f7a85e9}} 
+\index{Animation@{Animation}!getDuration@{getDuration}}
+\index{getDuration@{getDuration}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getDuration()}{getDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} Animation\+::get\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_af8f00863383094851acb06d83f7a85e9}\label{class_animation_af8f00863383094851acb06d83f7a85e9}} 
+\index{Animation@{Animation}!getDuration@{getDuration}}
+\index{getDuration@{getDuration}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getDuration()}{getDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} Animation\+::get\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_ac94ce8b9abad85d686aec3ec8d05cd9f}\label{class_animation_ac94ce8b9abad85d686aec3ec8d05cd9f}} 
+\index{Animation@{Animation}!getFrameSize@{getFrameSize}}
+\index{getFrameSize@{getFrameSize}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getFrameSize()}{getFrameSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} Animation\+::get\+Frame\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source}{Animation.\+cpp}}.
+
+\mbox{\Hypertarget{class_animation_ac94ce8b9abad85d686aec3ec8d05cd9f}\label{class_animation_ac94ce8b9abad85d686aec3ec8d05cd9f}} 
+\index{Animation@{Animation}!getFrameSize@{getFrameSize}}
+\index{getFrameSize@{getFrameSize}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getFrameSize()}{getFrameSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} Animation\+::get\+Frame\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_ac94ce8b9abad85d686aec3ec8d05cd9f}\label{class_animation_ac94ce8b9abad85d686aec3ec8d05cd9f}} 
+\index{Animation@{Animation}!getFrameSize@{getFrameSize}}
+\index{getFrameSize@{getFrameSize}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getFrameSize()}{getFrameSize()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} Animation\+::get\+Frame\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_ac94ce8b9abad85d686aec3ec8d05cd9f}\label{class_animation_ac94ce8b9abad85d686aec3ec8d05cd9f}} 
+\index{Animation@{Animation}!getFrameSize@{getFrameSize}}
+\index{getFrameSize@{getFrameSize}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getFrameSize()}{getFrameSize()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} Animation\+::get\+Frame\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_ac94ce8b9abad85d686aec3ec8d05cd9f}\label{class_animation_ac94ce8b9abad85d686aec3ec8d05cd9f}} 
+\index{Animation@{Animation}!getFrameSize@{getFrameSize}}
+\index{getFrameSize@{getFrameSize}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getFrameSize()}{getFrameSize()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} Animation\+::get\+Frame\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_ac94ce8b9abad85d686aec3ec8d05cd9f}\label{class_animation_ac94ce8b9abad85d686aec3ec8d05cd9f}} 
+\index{Animation@{Animation}!getFrameSize@{getFrameSize}}
+\index{getFrameSize@{getFrameSize}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getFrameSize()}{getFrameSize()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} Animation\+::get\+Frame\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_ac94ce8b9abad85d686aec3ec8d05cd9f}\label{class_animation_ac94ce8b9abad85d686aec3ec8d05cd9f}} 
+\index{Animation@{Animation}!getFrameSize@{getFrameSize}}
+\index{getFrameSize@{getFrameSize}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getFrameSize()}{getFrameSize()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} Animation\+::get\+Frame\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_ac94ce8b9abad85d686aec3ec8d05cd9f}\label{class_animation_ac94ce8b9abad85d686aec3ec8d05cd9f}} 
+\index{Animation@{Animation}!getFrameSize@{getFrameSize}}
+\index{getFrameSize@{getFrameSize}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getFrameSize()}{getFrameSize()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} Animation\+::get\+Frame\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_ac94ce8b9abad85d686aec3ec8d05cd9f}\label{class_animation_ac94ce8b9abad85d686aec3ec8d05cd9f}} 
+\index{Animation@{Animation}!getFrameSize@{getFrameSize}}
+\index{getFrameSize@{getFrameSize}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getFrameSize()}{getFrameSize()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} Animation\+::get\+Frame\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_ac94ce8b9abad85d686aec3ec8d05cd9f}\label{class_animation_ac94ce8b9abad85d686aec3ec8d05cd9f}} 
+\index{Animation@{Animation}!getFrameSize@{getFrameSize}}
+\index{getFrameSize@{getFrameSize}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getFrameSize()}{getFrameSize()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} Animation\+::get\+Frame\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_ad829ff72f859c44ea80b65aad5e7e5ae}\label{class_animation_ad829ff72f859c44ea80b65aad5e7e5ae}} 
+\index{Animation@{Animation}!getGlobalBounds@{getGlobalBounds}}
+\index{getGlobalBounds@{getGlobalBounds}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getGlobalBounds()}{getGlobalBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} Animation\+::get\+Global\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source_l00095}{95}} of file \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source}{Animation.\+cpp}}.
+
+\mbox{\Hypertarget{class_animation_ad829ff72f859c44ea80b65aad5e7e5ae}\label{class_animation_ad829ff72f859c44ea80b65aad5e7e5ae}} 
+\index{Animation@{Animation}!getGlobalBounds@{getGlobalBounds}}
+\index{getGlobalBounds@{getGlobalBounds}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getGlobalBounds()}{getGlobalBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} Animation\+::get\+Global\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_ad829ff72f859c44ea80b65aad5e7e5ae}\label{class_animation_ad829ff72f859c44ea80b65aad5e7e5ae}} 
+\index{Animation@{Animation}!getGlobalBounds@{getGlobalBounds}}
+\index{getGlobalBounds@{getGlobalBounds}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getGlobalBounds()}{getGlobalBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} Animation\+::get\+Global\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_ad829ff72f859c44ea80b65aad5e7e5ae}\label{class_animation_ad829ff72f859c44ea80b65aad5e7e5ae}} 
+\index{Animation@{Animation}!getGlobalBounds@{getGlobalBounds}}
+\index{getGlobalBounds@{getGlobalBounds}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getGlobalBounds()}{getGlobalBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} Animation\+::get\+Global\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_ad829ff72f859c44ea80b65aad5e7e5ae}\label{class_animation_ad829ff72f859c44ea80b65aad5e7e5ae}} 
+\index{Animation@{Animation}!getGlobalBounds@{getGlobalBounds}}
+\index{getGlobalBounds@{getGlobalBounds}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getGlobalBounds()}{getGlobalBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} Animation\+::get\+Global\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_ad829ff72f859c44ea80b65aad5e7e5ae}\label{class_animation_ad829ff72f859c44ea80b65aad5e7e5ae}} 
+\index{Animation@{Animation}!getGlobalBounds@{getGlobalBounds}}
+\index{getGlobalBounds@{getGlobalBounds}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getGlobalBounds()}{getGlobalBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} Animation\+::get\+Global\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_ad829ff72f859c44ea80b65aad5e7e5ae}\label{class_animation_ad829ff72f859c44ea80b65aad5e7e5ae}} 
+\index{Animation@{Animation}!getGlobalBounds@{getGlobalBounds}}
+\index{getGlobalBounds@{getGlobalBounds}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getGlobalBounds()}{getGlobalBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} Animation\+::get\+Global\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_ad829ff72f859c44ea80b65aad5e7e5ae}\label{class_animation_ad829ff72f859c44ea80b65aad5e7e5ae}} 
+\index{Animation@{Animation}!getGlobalBounds@{getGlobalBounds}}
+\index{getGlobalBounds@{getGlobalBounds}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getGlobalBounds()}{getGlobalBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} Animation\+::get\+Global\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_ad829ff72f859c44ea80b65aad5e7e5ae}\label{class_animation_ad829ff72f859c44ea80b65aad5e7e5ae}} 
+\index{Animation@{Animation}!getGlobalBounds@{getGlobalBounds}}
+\index{getGlobalBounds@{getGlobalBounds}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getGlobalBounds()}{getGlobalBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} Animation\+::get\+Global\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_ad829ff72f859c44ea80b65aad5e7e5ae}\label{class_animation_ad829ff72f859c44ea80b65aad5e7e5ae}} 
+\index{Animation@{Animation}!getGlobalBounds@{getGlobalBounds}}
+\index{getGlobalBounds@{getGlobalBounds}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getGlobalBounds()}{getGlobalBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} Animation\+::get\+Global\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_a677e525e6b1f187fd6719bc511253a2b}\label{class_animation_a677e525e6b1f187fd6719bc511253a2b}} 
+\index{Animation@{Animation}!getLocalBounds@{getLocalBounds}}
+\index{getLocalBounds@{getLocalBounds}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getLocalBounds()}{getLocalBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} Animation\+::get\+Local\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source_l00090}{90}} of file \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source}{Animation.\+cpp}}.
+
+\mbox{\Hypertarget{class_animation_a677e525e6b1f187fd6719bc511253a2b}\label{class_animation_a677e525e6b1f187fd6719bc511253a2b}} 
+\index{Animation@{Animation}!getLocalBounds@{getLocalBounds}}
+\index{getLocalBounds@{getLocalBounds}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getLocalBounds()}{getLocalBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} Animation\+::get\+Local\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_a677e525e6b1f187fd6719bc511253a2b}\label{class_animation_a677e525e6b1f187fd6719bc511253a2b}} 
+\index{Animation@{Animation}!getLocalBounds@{getLocalBounds}}
+\index{getLocalBounds@{getLocalBounds}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getLocalBounds()}{getLocalBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} Animation\+::get\+Local\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_a677e525e6b1f187fd6719bc511253a2b}\label{class_animation_a677e525e6b1f187fd6719bc511253a2b}} 
+\index{Animation@{Animation}!getLocalBounds@{getLocalBounds}}
+\index{getLocalBounds@{getLocalBounds}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getLocalBounds()}{getLocalBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} Animation\+::get\+Local\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_a677e525e6b1f187fd6719bc511253a2b}\label{class_animation_a677e525e6b1f187fd6719bc511253a2b}} 
+\index{Animation@{Animation}!getLocalBounds@{getLocalBounds}}
+\index{getLocalBounds@{getLocalBounds}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getLocalBounds()}{getLocalBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} Animation\+::get\+Local\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_a677e525e6b1f187fd6719bc511253a2b}\label{class_animation_a677e525e6b1f187fd6719bc511253a2b}} 
+\index{Animation@{Animation}!getLocalBounds@{getLocalBounds}}
+\index{getLocalBounds@{getLocalBounds}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getLocalBounds()}{getLocalBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} Animation\+::get\+Local\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_a677e525e6b1f187fd6719bc511253a2b}\label{class_animation_a677e525e6b1f187fd6719bc511253a2b}} 
+\index{Animation@{Animation}!getLocalBounds@{getLocalBounds}}
+\index{getLocalBounds@{getLocalBounds}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getLocalBounds()}{getLocalBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} Animation\+::get\+Local\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_a677e525e6b1f187fd6719bc511253a2b}\label{class_animation_a677e525e6b1f187fd6719bc511253a2b}} 
+\index{Animation@{Animation}!getLocalBounds@{getLocalBounds}}
+\index{getLocalBounds@{getLocalBounds}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getLocalBounds()}{getLocalBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} Animation\+::get\+Local\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_a677e525e6b1f187fd6719bc511253a2b}\label{class_animation_a677e525e6b1f187fd6719bc511253a2b}} 
+\index{Animation@{Animation}!getLocalBounds@{getLocalBounds}}
+\index{getLocalBounds@{getLocalBounds}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getLocalBounds()}{getLocalBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} Animation\+::get\+Local\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_a677e525e6b1f187fd6719bc511253a2b}\label{class_animation_a677e525e6b1f187fd6719bc511253a2b}} 
+\index{Animation@{Animation}!getLocalBounds@{getLocalBounds}}
+\index{getLocalBounds@{getLocalBounds}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getLocalBounds()}{getLocalBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{sf\+::\+Float\+Rect}} Animation\+::get\+Local\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_a9248e3726c272391ffaf1331bb72c3bf}\label{class_animation_a9248e3726c272391ffaf1331bb72c3bf}} 
+\index{Animation@{Animation}!getNumFrames@{getNumFrames}}
+\index{getNumFrames@{getNumFrames}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getNumFrames()}{getNumFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Animation\+::get\+Num\+Frames (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source_l00055}{55}} of file \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source}{Animation.\+cpp}}.
+
+\mbox{\Hypertarget{class_animation_a9248e3726c272391ffaf1331bb72c3bf}\label{class_animation_a9248e3726c272391ffaf1331bb72c3bf}} 
+\index{Animation@{Animation}!getNumFrames@{getNumFrames}}
+\index{getNumFrames@{getNumFrames}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getNumFrames()}{getNumFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Animation\+::get\+Num\+Frames (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_a9248e3726c272391ffaf1331bb72c3bf}\label{class_animation_a9248e3726c272391ffaf1331bb72c3bf}} 
+\index{Animation@{Animation}!getNumFrames@{getNumFrames}}
+\index{getNumFrames@{getNumFrames}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getNumFrames()}{getNumFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Animation\+::get\+Num\+Frames (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_a9248e3726c272391ffaf1331bb72c3bf}\label{class_animation_a9248e3726c272391ffaf1331bb72c3bf}} 
+\index{Animation@{Animation}!getNumFrames@{getNumFrames}}
+\index{getNumFrames@{getNumFrames}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getNumFrames()}{getNumFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Animation\+::get\+Num\+Frames (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_a9248e3726c272391ffaf1331bb72c3bf}\label{class_animation_a9248e3726c272391ffaf1331bb72c3bf}} 
+\index{Animation@{Animation}!getNumFrames@{getNumFrames}}
+\index{getNumFrames@{getNumFrames}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getNumFrames()}{getNumFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Animation\+::get\+Num\+Frames (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_a9248e3726c272391ffaf1331bb72c3bf}\label{class_animation_a9248e3726c272391ffaf1331bb72c3bf}} 
+\index{Animation@{Animation}!getNumFrames@{getNumFrames}}
+\index{getNumFrames@{getNumFrames}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getNumFrames()}{getNumFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Animation\+::get\+Num\+Frames (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_a9248e3726c272391ffaf1331bb72c3bf}\label{class_animation_a9248e3726c272391ffaf1331bb72c3bf}} 
+\index{Animation@{Animation}!getNumFrames@{getNumFrames}}
+\index{getNumFrames@{getNumFrames}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getNumFrames()}{getNumFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Animation\+::get\+Num\+Frames (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_a9248e3726c272391ffaf1331bb72c3bf}\label{class_animation_a9248e3726c272391ffaf1331bb72c3bf}} 
+\index{Animation@{Animation}!getNumFrames@{getNumFrames}}
+\index{getNumFrames@{getNumFrames}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getNumFrames()}{getNumFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Animation\+::get\+Num\+Frames (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_a9248e3726c272391ffaf1331bb72c3bf}\label{class_animation_a9248e3726c272391ffaf1331bb72c3bf}} 
+\index{Animation@{Animation}!getNumFrames@{getNumFrames}}
+\index{getNumFrames@{getNumFrames}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getNumFrames()}{getNumFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Animation\+::get\+Num\+Frames (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_a9248e3726c272391ffaf1331bb72c3bf}\label{class_animation_a9248e3726c272391ffaf1331bb72c3bf}} 
+\index{Animation@{Animation}!getNumFrames@{getNumFrames}}
+\index{getNumFrames@{getNumFrames}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getNumFrames()}{getNumFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Animation\+::get\+Num\+Frames (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_aceb713113fea1038752e2d0018d0e304}\label{class_animation_aceb713113fea1038752e2d0018d0e304}} 
+\index{Animation@{Animation}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getTexture()}{getTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} $\ast$ Animation\+::get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source_l00035}{35}} of file \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source}{Animation.\+cpp}}.
+
+\mbox{\Hypertarget{class_animation_aceb713113fea1038752e2d0018d0e304}\label{class_animation_aceb713113fea1038752e2d0018d0e304}} 
+\index{Animation@{Animation}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getTexture()}{getTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} $\ast$ Animation\+::get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_aceb713113fea1038752e2d0018d0e304}\label{class_animation_aceb713113fea1038752e2d0018d0e304}} 
+\index{Animation@{Animation}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getTexture()}{getTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} $\ast$ Animation\+::get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_aceb713113fea1038752e2d0018d0e304}\label{class_animation_aceb713113fea1038752e2d0018d0e304}} 
+\index{Animation@{Animation}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getTexture()}{getTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} $\ast$ Animation\+::get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_aceb713113fea1038752e2d0018d0e304}\label{class_animation_aceb713113fea1038752e2d0018d0e304}} 
+\index{Animation@{Animation}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getTexture()}{getTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} $\ast$ Animation\+::get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_aceb713113fea1038752e2d0018d0e304}\label{class_animation_aceb713113fea1038752e2d0018d0e304}} 
+\index{Animation@{Animation}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getTexture()}{getTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} $\ast$ Animation\+::get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_aceb713113fea1038752e2d0018d0e304}\label{class_animation_aceb713113fea1038752e2d0018d0e304}} 
+\index{Animation@{Animation}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getTexture()}{getTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} $\ast$ Animation\+::get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_aceb713113fea1038752e2d0018d0e304}\label{class_animation_aceb713113fea1038752e2d0018d0e304}} 
+\index{Animation@{Animation}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getTexture()}{getTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} $\ast$ Animation\+::get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_aceb713113fea1038752e2d0018d0e304}\label{class_animation_aceb713113fea1038752e2d0018d0e304}} 
+\index{Animation@{Animation}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getTexture()}{getTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} $\ast$ Animation\+::get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_aceb713113fea1038752e2d0018d0e304}\label{class_animation_aceb713113fea1038752e2d0018d0e304}} 
+\index{Animation@{Animation}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getTexture()}{getTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} $\ast$ Animation\+::get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_a52f7a8449004b0248a3b7f8de9759cd0}\label{class_animation_a52f7a8449004b0248a3b7f8de9759cd0}} 
+\index{Animation@{Animation}!isFinished@{isFinished}}
+\index{isFinished@{isFinished}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{isFinished()}{isFinished()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily bool Animation\+::is\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source_l00085}{85}} of file \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source}{Animation.\+cpp}}.
+
+\mbox{\Hypertarget{class_animation_a52f7a8449004b0248a3b7f8de9759cd0}\label{class_animation_a52f7a8449004b0248a3b7f8de9759cd0}} 
+\index{Animation@{Animation}!isFinished@{isFinished}}
+\index{isFinished@{isFinished}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{isFinished()}{isFinished()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily bool Animation\+::is\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_a52f7a8449004b0248a3b7f8de9759cd0}\label{class_animation_a52f7a8449004b0248a3b7f8de9759cd0}} 
+\index{Animation@{Animation}!isFinished@{isFinished}}
+\index{isFinished@{isFinished}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{isFinished()}{isFinished()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily bool Animation\+::is\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_a52f7a8449004b0248a3b7f8de9759cd0}\label{class_animation_a52f7a8449004b0248a3b7f8de9759cd0}} 
+\index{Animation@{Animation}!isFinished@{isFinished}}
+\index{isFinished@{isFinished}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{isFinished()}{isFinished()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily bool Animation\+::is\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_a52f7a8449004b0248a3b7f8de9759cd0}\label{class_animation_a52f7a8449004b0248a3b7f8de9759cd0}} 
+\index{Animation@{Animation}!isFinished@{isFinished}}
+\index{isFinished@{isFinished}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{isFinished()}{isFinished()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily bool Animation\+::is\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_a52f7a8449004b0248a3b7f8de9759cd0}\label{class_animation_a52f7a8449004b0248a3b7f8de9759cd0}} 
+\index{Animation@{Animation}!isFinished@{isFinished}}
+\index{isFinished@{isFinished}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{isFinished()}{isFinished()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily bool Animation\+::is\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_a52f7a8449004b0248a3b7f8de9759cd0}\label{class_animation_a52f7a8449004b0248a3b7f8de9759cd0}} 
+\index{Animation@{Animation}!isFinished@{isFinished}}
+\index{isFinished@{isFinished}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{isFinished()}{isFinished()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily bool Animation\+::is\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_a52f7a8449004b0248a3b7f8de9759cd0}\label{class_animation_a52f7a8449004b0248a3b7f8de9759cd0}} 
+\index{Animation@{Animation}!isFinished@{isFinished}}
+\index{isFinished@{isFinished}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{isFinished()}{isFinished()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily bool Animation\+::is\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_a52f7a8449004b0248a3b7f8de9759cd0}\label{class_animation_a52f7a8449004b0248a3b7f8de9759cd0}} 
+\index{Animation@{Animation}!isFinished@{isFinished}}
+\index{isFinished@{isFinished}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{isFinished()}{isFinished()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily bool Animation\+::is\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_a52f7a8449004b0248a3b7f8de9759cd0}\label{class_animation_a52f7a8449004b0248a3b7f8de9759cd0}} 
+\index{Animation@{Animation}!isFinished@{isFinished}}
+\index{isFinished@{isFinished}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{isFinished()}{isFinished()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily bool Animation\+::is\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_aedcd2695ee980a41ff1fa65e0091f6a4}\label{class_animation_aedcd2695ee980a41ff1fa65e0091f6a4}} 
+\index{Animation@{Animation}!isRepeating@{isRepeating}}
+\index{isRepeating@{isRepeating}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{isRepeating()}{isRepeating()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily bool Animation\+::is\+Repeating (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source_l00075}{75}} of file \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source}{Animation.\+cpp}}.
+
+\mbox{\Hypertarget{class_animation_aedcd2695ee980a41ff1fa65e0091f6a4}\label{class_animation_aedcd2695ee980a41ff1fa65e0091f6a4}} 
+\index{Animation@{Animation}!isRepeating@{isRepeating}}
+\index{isRepeating@{isRepeating}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{isRepeating()}{isRepeating()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily bool Animation\+::is\+Repeating (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_aedcd2695ee980a41ff1fa65e0091f6a4}\label{class_animation_aedcd2695ee980a41ff1fa65e0091f6a4}} 
+\index{Animation@{Animation}!isRepeating@{isRepeating}}
+\index{isRepeating@{isRepeating}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{isRepeating()}{isRepeating()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily bool Animation\+::is\+Repeating (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_aedcd2695ee980a41ff1fa65e0091f6a4}\label{class_animation_aedcd2695ee980a41ff1fa65e0091f6a4}} 
+\index{Animation@{Animation}!isRepeating@{isRepeating}}
+\index{isRepeating@{isRepeating}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{isRepeating()}{isRepeating()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily bool Animation\+::is\+Repeating (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_aedcd2695ee980a41ff1fa65e0091f6a4}\label{class_animation_aedcd2695ee980a41ff1fa65e0091f6a4}} 
+\index{Animation@{Animation}!isRepeating@{isRepeating}}
+\index{isRepeating@{isRepeating}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{isRepeating()}{isRepeating()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily bool Animation\+::is\+Repeating (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_aedcd2695ee980a41ff1fa65e0091f6a4}\label{class_animation_aedcd2695ee980a41ff1fa65e0091f6a4}} 
+\index{Animation@{Animation}!isRepeating@{isRepeating}}
+\index{isRepeating@{isRepeating}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{isRepeating()}{isRepeating()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily bool Animation\+::is\+Repeating (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_aedcd2695ee980a41ff1fa65e0091f6a4}\label{class_animation_aedcd2695ee980a41ff1fa65e0091f6a4}} 
+\index{Animation@{Animation}!isRepeating@{isRepeating}}
+\index{isRepeating@{isRepeating}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{isRepeating()}{isRepeating()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily bool Animation\+::is\+Repeating (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_aedcd2695ee980a41ff1fa65e0091f6a4}\label{class_animation_aedcd2695ee980a41ff1fa65e0091f6a4}} 
+\index{Animation@{Animation}!isRepeating@{isRepeating}}
+\index{isRepeating@{isRepeating}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{isRepeating()}{isRepeating()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily bool Animation\+::is\+Repeating (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_aedcd2695ee980a41ff1fa65e0091f6a4}\label{class_animation_aedcd2695ee980a41ff1fa65e0091f6a4}} 
+\index{Animation@{Animation}!isRepeating@{isRepeating}}
+\index{isRepeating@{isRepeating}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{isRepeating()}{isRepeating()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily bool Animation\+::is\+Repeating (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_aedcd2695ee980a41ff1fa65e0091f6a4}\label{class_animation_aedcd2695ee980a41ff1fa65e0091f6a4}} 
+\index{Animation@{Animation}!isRepeating@{isRepeating}}
+\index{isRepeating@{isRepeating}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{isRepeating()}{isRepeating()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily bool Animation\+::is\+Repeating (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_animation_a17f07570ce8e26928fd1d99cfd9c63f0}\label{class_animation_a17f07570ce8e26928fd1d99cfd9c63f0}} 
+\index{Animation@{Animation}!restart@{restart}}
+\index{restart@{restart}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{restart()}{restart()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily void Animation\+::restart (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source_l00080}{80}} of file \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source}{Animation.\+cpp}}.
+
+\mbox{\Hypertarget{class_animation_a17f07570ce8e26928fd1d99cfd9c63f0}\label{class_animation_a17f07570ce8e26928fd1d99cfd9c63f0}} 
+\index{Animation@{Animation}!restart@{restart}}
+\index{restart@{restart}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{restart()}{restart()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily void Animation\+::restart (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a17f07570ce8e26928fd1d99cfd9c63f0}\label{class_animation_a17f07570ce8e26928fd1d99cfd9c63f0}} 
+\index{Animation@{Animation}!restart@{restart}}
+\index{restart@{restart}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{restart()}{restart()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily void Animation\+::restart (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a17f07570ce8e26928fd1d99cfd9c63f0}\label{class_animation_a17f07570ce8e26928fd1d99cfd9c63f0}} 
+\index{Animation@{Animation}!restart@{restart}}
+\index{restart@{restart}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{restart()}{restart()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily void Animation\+::restart (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a17f07570ce8e26928fd1d99cfd9c63f0}\label{class_animation_a17f07570ce8e26928fd1d99cfd9c63f0}} 
+\index{Animation@{Animation}!restart@{restart}}
+\index{restart@{restart}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{restart()}{restart()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily void Animation\+::restart (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a17f07570ce8e26928fd1d99cfd9c63f0}\label{class_animation_a17f07570ce8e26928fd1d99cfd9c63f0}} 
+\index{Animation@{Animation}!restart@{restart}}
+\index{restart@{restart}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{restart()}{restart()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily void Animation\+::restart (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a17f07570ce8e26928fd1d99cfd9c63f0}\label{class_animation_a17f07570ce8e26928fd1d99cfd9c63f0}} 
+\index{Animation@{Animation}!restart@{restart}}
+\index{restart@{restart}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{restart()}{restart()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily void Animation\+::restart (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a17f07570ce8e26928fd1d99cfd9c63f0}\label{class_animation_a17f07570ce8e26928fd1d99cfd9c63f0}} 
+\index{Animation@{Animation}!restart@{restart}}
+\index{restart@{restart}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{restart()}{restart()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily void Animation\+::restart (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a17f07570ce8e26928fd1d99cfd9c63f0}\label{class_animation_a17f07570ce8e26928fd1d99cfd9c63f0}} 
+\index{Animation@{Animation}!restart@{restart}}
+\index{restart@{restart}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{restart()}{restart()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily void Animation\+::restart (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a17f07570ce8e26928fd1d99cfd9c63f0}\label{class_animation_a17f07570ce8e26928fd1d99cfd9c63f0}} 
+\index{Animation@{Animation}!restart@{restart}}
+\index{restart@{restart}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{restart()}{restart()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily void Animation\+::restart (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a168c112e11c1fe0040885cea8127dd83}\label{class_animation_a168c112e11c1fe0040885cea8127dd83}} 
+\index{Animation@{Animation}!setDuration@{setDuration}}
+\index{setDuration@{setDuration}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setDuration()}{setDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Duration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}}]{duration }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source_l00060}{60}} of file \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source}{Animation.\+cpp}}.
+
+\mbox{\Hypertarget{class_animation_a168c112e11c1fe0040885cea8127dd83}\label{class_animation_a168c112e11c1fe0040885cea8127dd83}} 
+\index{Animation@{Animation}!setDuration@{setDuration}}
+\index{setDuration@{setDuration}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setDuration()}{setDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Duration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}}]{duration }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a168c112e11c1fe0040885cea8127dd83}\label{class_animation_a168c112e11c1fe0040885cea8127dd83}} 
+\index{Animation@{Animation}!setDuration@{setDuration}}
+\index{setDuration@{setDuration}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setDuration()}{setDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Duration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}}]{duration }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a168c112e11c1fe0040885cea8127dd83}\label{class_animation_a168c112e11c1fe0040885cea8127dd83}} 
+\index{Animation@{Animation}!setDuration@{setDuration}}
+\index{setDuration@{setDuration}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setDuration()}{setDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Duration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}}]{duration }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a168c112e11c1fe0040885cea8127dd83}\label{class_animation_a168c112e11c1fe0040885cea8127dd83}} 
+\index{Animation@{Animation}!setDuration@{setDuration}}
+\index{setDuration@{setDuration}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setDuration()}{setDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Duration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}}]{duration }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a168c112e11c1fe0040885cea8127dd83}\label{class_animation_a168c112e11c1fe0040885cea8127dd83}} 
+\index{Animation@{Animation}!setDuration@{setDuration}}
+\index{setDuration@{setDuration}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setDuration()}{setDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Duration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}}]{duration }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a168c112e11c1fe0040885cea8127dd83}\label{class_animation_a168c112e11c1fe0040885cea8127dd83}} 
+\index{Animation@{Animation}!setDuration@{setDuration}}
+\index{setDuration@{setDuration}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setDuration()}{setDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Duration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}}]{duration }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a168c112e11c1fe0040885cea8127dd83}\label{class_animation_a168c112e11c1fe0040885cea8127dd83}} 
+\index{Animation@{Animation}!setDuration@{setDuration}}
+\index{setDuration@{setDuration}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setDuration()}{setDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Duration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}}]{duration }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a168c112e11c1fe0040885cea8127dd83}\label{class_animation_a168c112e11c1fe0040885cea8127dd83}} 
+\index{Animation@{Animation}!setDuration@{setDuration}}
+\index{setDuration@{setDuration}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setDuration()}{setDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Duration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}}]{duration }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a168c112e11c1fe0040885cea8127dd83}\label{class_animation_a168c112e11c1fe0040885cea8127dd83}} 
+\index{Animation@{Animation}!setDuration@{setDuration}}
+\index{setDuration@{setDuration}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setDuration()}{setDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Duration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}}]{duration }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_ad36304e4187bba21075bed5d57eb0025}\label{class_animation_ad36304e4187bba21075bed5d57eb0025}} 
+\index{Animation@{Animation}!setFrameSize@{setFrameSize}}
+\index{setFrameSize@{setFrameSize}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setFrameSize()}{setFrameSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Frame\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}}}]{m\+Frame\+Size }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source}{Animation.\+cpp}}.
+
+\mbox{\Hypertarget{class_animation_ad36304e4187bba21075bed5d57eb0025}\label{class_animation_ad36304e4187bba21075bed5d57eb0025}} 
+\index{Animation@{Animation}!setFrameSize@{setFrameSize}}
+\index{setFrameSize@{setFrameSize}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setFrameSize()}{setFrameSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Frame\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}}}]{m\+Frame\+Size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_ad36304e4187bba21075bed5d57eb0025}\label{class_animation_ad36304e4187bba21075bed5d57eb0025}} 
+\index{Animation@{Animation}!setFrameSize@{setFrameSize}}
+\index{setFrameSize@{setFrameSize}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setFrameSize()}{setFrameSize()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Frame\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}}}]{m\+Frame\+Size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_ad36304e4187bba21075bed5d57eb0025}\label{class_animation_ad36304e4187bba21075bed5d57eb0025}} 
+\index{Animation@{Animation}!setFrameSize@{setFrameSize}}
+\index{setFrameSize@{setFrameSize}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setFrameSize()}{setFrameSize()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Frame\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}}}]{m\+Frame\+Size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_ad36304e4187bba21075bed5d57eb0025}\label{class_animation_ad36304e4187bba21075bed5d57eb0025}} 
+\index{Animation@{Animation}!setFrameSize@{setFrameSize}}
+\index{setFrameSize@{setFrameSize}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setFrameSize()}{setFrameSize()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Frame\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}}}]{m\+Frame\+Size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_ad36304e4187bba21075bed5d57eb0025}\label{class_animation_ad36304e4187bba21075bed5d57eb0025}} 
+\index{Animation@{Animation}!setFrameSize@{setFrameSize}}
+\index{setFrameSize@{setFrameSize}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setFrameSize()}{setFrameSize()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Frame\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}}}]{m\+Frame\+Size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_ad36304e4187bba21075bed5d57eb0025}\label{class_animation_ad36304e4187bba21075bed5d57eb0025}} 
+\index{Animation@{Animation}!setFrameSize@{setFrameSize}}
+\index{setFrameSize@{setFrameSize}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setFrameSize()}{setFrameSize()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Frame\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}}}]{m\+Frame\+Size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_ad36304e4187bba21075bed5d57eb0025}\label{class_animation_ad36304e4187bba21075bed5d57eb0025}} 
+\index{Animation@{Animation}!setFrameSize@{setFrameSize}}
+\index{setFrameSize@{setFrameSize}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setFrameSize()}{setFrameSize()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Frame\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}}}]{m\+Frame\+Size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_ad36304e4187bba21075bed5d57eb0025}\label{class_animation_ad36304e4187bba21075bed5d57eb0025}} 
+\index{Animation@{Animation}!setFrameSize@{setFrameSize}}
+\index{setFrameSize@{setFrameSize}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setFrameSize()}{setFrameSize()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Frame\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}}}]{m\+Frame\+Size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_ad36304e4187bba21075bed5d57eb0025}\label{class_animation_ad36304e4187bba21075bed5d57eb0025}} 
+\index{Animation@{Animation}!setFrameSize@{setFrameSize}}
+\index{setFrameSize@{setFrameSize}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setFrameSize()}{setFrameSize()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Frame\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}}}]{m\+Frame\+Size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_aa056c5b431eb078bc7d36eacb12b299c}\label{class_animation_aa056c5b431eb078bc7d36eacb12b299c}} 
+\index{Animation@{Animation}!setNumFrames@{setNumFrames}}
+\index{setNumFrames@{setNumFrames}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setNumFrames()}{setNumFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Num\+Frames (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{num\+Frames }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source_l00050}{50}} of file \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source}{Animation.\+cpp}}.
+
+\mbox{\Hypertarget{class_animation_aa056c5b431eb078bc7d36eacb12b299c}\label{class_animation_aa056c5b431eb078bc7d36eacb12b299c}} 
+\index{Animation@{Animation}!setNumFrames@{setNumFrames}}
+\index{setNumFrames@{setNumFrames}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setNumFrames()}{setNumFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Num\+Frames (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{num\+Frames }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_aa056c5b431eb078bc7d36eacb12b299c}\label{class_animation_aa056c5b431eb078bc7d36eacb12b299c}} 
+\index{Animation@{Animation}!setNumFrames@{setNumFrames}}
+\index{setNumFrames@{setNumFrames}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setNumFrames()}{setNumFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Num\+Frames (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{num\+Frames }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_aa056c5b431eb078bc7d36eacb12b299c}\label{class_animation_aa056c5b431eb078bc7d36eacb12b299c}} 
+\index{Animation@{Animation}!setNumFrames@{setNumFrames}}
+\index{setNumFrames@{setNumFrames}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setNumFrames()}{setNumFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Num\+Frames (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{num\+Frames }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_aa056c5b431eb078bc7d36eacb12b299c}\label{class_animation_aa056c5b431eb078bc7d36eacb12b299c}} 
+\index{Animation@{Animation}!setNumFrames@{setNumFrames}}
+\index{setNumFrames@{setNumFrames}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setNumFrames()}{setNumFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Num\+Frames (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{num\+Frames }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_aa056c5b431eb078bc7d36eacb12b299c}\label{class_animation_aa056c5b431eb078bc7d36eacb12b299c}} 
+\index{Animation@{Animation}!setNumFrames@{setNumFrames}}
+\index{setNumFrames@{setNumFrames}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setNumFrames()}{setNumFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Num\+Frames (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{num\+Frames }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_aa056c5b431eb078bc7d36eacb12b299c}\label{class_animation_aa056c5b431eb078bc7d36eacb12b299c}} 
+\index{Animation@{Animation}!setNumFrames@{setNumFrames}}
+\index{setNumFrames@{setNumFrames}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setNumFrames()}{setNumFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Num\+Frames (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{num\+Frames }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_aa056c5b431eb078bc7d36eacb12b299c}\label{class_animation_aa056c5b431eb078bc7d36eacb12b299c}} 
+\index{Animation@{Animation}!setNumFrames@{setNumFrames}}
+\index{setNumFrames@{setNumFrames}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setNumFrames()}{setNumFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Num\+Frames (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{num\+Frames }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_aa056c5b431eb078bc7d36eacb12b299c}\label{class_animation_aa056c5b431eb078bc7d36eacb12b299c}} 
+\index{Animation@{Animation}!setNumFrames@{setNumFrames}}
+\index{setNumFrames@{setNumFrames}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setNumFrames()}{setNumFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Num\+Frames (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{num\+Frames }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_aa056c5b431eb078bc7d36eacb12b299c}\label{class_animation_aa056c5b431eb078bc7d36eacb12b299c}} 
+\index{Animation@{Animation}!setNumFrames@{setNumFrames}}
+\index{setNumFrames@{setNumFrames}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setNumFrames()}{setNumFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Num\+Frames (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{num\+Frames }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_ac6e19fdb858aab0b2b2f7e37d6976438}\label{class_animation_ac6e19fdb858aab0b2b2f7e37d6976438}} 
+\index{Animation@{Animation}!setRepeating@{setRepeating}}
+\index{setRepeating@{setRepeating}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setRepeating()}{setRepeating()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Repeating (\begin{DoxyParamCaption}\item[{bool}]{flag }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source_l00070}{70}} of file \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source}{Animation.\+cpp}}.
+
+\mbox{\Hypertarget{class_animation_ac6e19fdb858aab0b2b2f7e37d6976438}\label{class_animation_ac6e19fdb858aab0b2b2f7e37d6976438}} 
+\index{Animation@{Animation}!setRepeating@{setRepeating}}
+\index{setRepeating@{setRepeating}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setRepeating()}{setRepeating()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Repeating (\begin{DoxyParamCaption}\item[{bool}]{flag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_ac6e19fdb858aab0b2b2f7e37d6976438}\label{class_animation_ac6e19fdb858aab0b2b2f7e37d6976438}} 
+\index{Animation@{Animation}!setRepeating@{setRepeating}}
+\index{setRepeating@{setRepeating}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setRepeating()}{setRepeating()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Repeating (\begin{DoxyParamCaption}\item[{bool}]{flag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_ac6e19fdb858aab0b2b2f7e37d6976438}\label{class_animation_ac6e19fdb858aab0b2b2f7e37d6976438}} 
+\index{Animation@{Animation}!setRepeating@{setRepeating}}
+\index{setRepeating@{setRepeating}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setRepeating()}{setRepeating()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Repeating (\begin{DoxyParamCaption}\item[{bool}]{flag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_ac6e19fdb858aab0b2b2f7e37d6976438}\label{class_animation_ac6e19fdb858aab0b2b2f7e37d6976438}} 
+\index{Animation@{Animation}!setRepeating@{setRepeating}}
+\index{setRepeating@{setRepeating}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setRepeating()}{setRepeating()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Repeating (\begin{DoxyParamCaption}\item[{bool}]{flag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_ac6e19fdb858aab0b2b2f7e37d6976438}\label{class_animation_ac6e19fdb858aab0b2b2f7e37d6976438}} 
+\index{Animation@{Animation}!setRepeating@{setRepeating}}
+\index{setRepeating@{setRepeating}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setRepeating()}{setRepeating()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Repeating (\begin{DoxyParamCaption}\item[{bool}]{flag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_ac6e19fdb858aab0b2b2f7e37d6976438}\label{class_animation_ac6e19fdb858aab0b2b2f7e37d6976438}} 
+\index{Animation@{Animation}!setRepeating@{setRepeating}}
+\index{setRepeating@{setRepeating}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setRepeating()}{setRepeating()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Repeating (\begin{DoxyParamCaption}\item[{bool}]{flag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_ac6e19fdb858aab0b2b2f7e37d6976438}\label{class_animation_ac6e19fdb858aab0b2b2f7e37d6976438}} 
+\index{Animation@{Animation}!setRepeating@{setRepeating}}
+\index{setRepeating@{setRepeating}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setRepeating()}{setRepeating()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Repeating (\begin{DoxyParamCaption}\item[{bool}]{flag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_ac6e19fdb858aab0b2b2f7e37d6976438}\label{class_animation_ac6e19fdb858aab0b2b2f7e37d6976438}} 
+\index{Animation@{Animation}!setRepeating@{setRepeating}}
+\index{setRepeating@{setRepeating}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setRepeating()}{setRepeating()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Repeating (\begin{DoxyParamCaption}\item[{bool}]{flag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_ac6e19fdb858aab0b2b2f7e37d6976438}\label{class_animation_ac6e19fdb858aab0b2b2f7e37d6976438}} 
+\index{Animation@{Animation}!setRepeating@{setRepeating}}
+\index{setRepeating@{setRepeating}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setRepeating()}{setRepeating()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Repeating (\begin{DoxyParamCaption}\item[{bool}]{flag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a3d59fba435978a6531529041d355324b}\label{class_animation_a3d59fba435978a6531529041d355324b}} 
+\index{Animation@{Animation}!setTexture@{setTexture}}
+\index{setTexture@{setTexture}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setTexture()}{setTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Texture (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&}]{texture }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source}{Animation.\+cpp}}.
+
+\mbox{\Hypertarget{class_animation_a3d59fba435978a6531529041d355324b}\label{class_animation_a3d59fba435978a6531529041d355324b}} 
+\index{Animation@{Animation}!setTexture@{setTexture}}
+\index{setTexture@{setTexture}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setTexture()}{setTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Texture (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&}]{texture }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a3d59fba435978a6531529041d355324b}\label{class_animation_a3d59fba435978a6531529041d355324b}} 
+\index{Animation@{Animation}!setTexture@{setTexture}}
+\index{setTexture@{setTexture}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setTexture()}{setTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Texture (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&}]{texture }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a3d59fba435978a6531529041d355324b}\label{class_animation_a3d59fba435978a6531529041d355324b}} 
+\index{Animation@{Animation}!setTexture@{setTexture}}
+\index{setTexture@{setTexture}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setTexture()}{setTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Texture (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&}]{texture }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a3d59fba435978a6531529041d355324b}\label{class_animation_a3d59fba435978a6531529041d355324b}} 
+\index{Animation@{Animation}!setTexture@{setTexture}}
+\index{setTexture@{setTexture}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setTexture()}{setTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Texture (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&}]{texture }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a3d59fba435978a6531529041d355324b}\label{class_animation_a3d59fba435978a6531529041d355324b}} 
+\index{Animation@{Animation}!setTexture@{setTexture}}
+\index{setTexture@{setTexture}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setTexture()}{setTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Texture (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&}]{texture }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a3d59fba435978a6531529041d355324b}\label{class_animation_a3d59fba435978a6531529041d355324b}} 
+\index{Animation@{Animation}!setTexture@{setTexture}}
+\index{setTexture@{setTexture}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setTexture()}{setTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Texture (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&}]{texture }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a3d59fba435978a6531529041d355324b}\label{class_animation_a3d59fba435978a6531529041d355324b}} 
+\index{Animation@{Animation}!setTexture@{setTexture}}
+\index{setTexture@{setTexture}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setTexture()}{setTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Texture (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&}]{texture }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a3d59fba435978a6531529041d355324b}\label{class_animation_a3d59fba435978a6531529041d355324b}} 
+\index{Animation@{Animation}!setTexture@{setTexture}}
+\index{setTexture@{setTexture}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setTexture()}{setTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Texture (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&}]{texture }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a3d59fba435978a6531529041d355324b}\label{class_animation_a3d59fba435978a6531529041d355324b}} 
+\index{Animation@{Animation}!setTexture@{setTexture}}
+\index{setTexture@{setTexture}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{setTexture()}{setTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily void Animation\+::set\+Texture (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} \&}]{texture }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a250fabaf23dab62bd373daac39aa25d3}\label{class_animation_a250fabaf23dab62bd373daac39aa25d3}} 
+\index{Animation@{Animation}!update@{update}}
+\index{update@{update}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily void Animation\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}}]{dt }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source_l00100}{100}} of file \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp_source}{Animation.\+cpp}}.
+
+\mbox{\Hypertarget{class_animation_a250fabaf23dab62bd373daac39aa25d3}\label{class_animation_a250fabaf23dab62bd373daac39aa25d3}} 
+\index{Animation@{Animation}!update@{update}}
+\index{update@{update}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily void Animation\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}}]{dt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a250fabaf23dab62bd373daac39aa25d3}\label{class_animation_a250fabaf23dab62bd373daac39aa25d3}} 
+\index{Animation@{Animation}!update@{update}}
+\index{update@{update}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily void Animation\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}}]{dt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a250fabaf23dab62bd373daac39aa25d3}\label{class_animation_a250fabaf23dab62bd373daac39aa25d3}} 
+\index{Animation@{Animation}!update@{update}}
+\index{update@{update}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily void Animation\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}}]{dt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a250fabaf23dab62bd373daac39aa25d3}\label{class_animation_a250fabaf23dab62bd373daac39aa25d3}} 
+\index{Animation@{Animation}!update@{update}}
+\index{update@{update}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily void Animation\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}}]{dt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a250fabaf23dab62bd373daac39aa25d3}\label{class_animation_a250fabaf23dab62bd373daac39aa25d3}} 
+\index{Animation@{Animation}!update@{update}}
+\index{update@{update}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily void Animation\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}}]{dt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a250fabaf23dab62bd373daac39aa25d3}\label{class_animation_a250fabaf23dab62bd373daac39aa25d3}} 
+\index{Animation@{Animation}!update@{update}}
+\index{update@{update}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily void Animation\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}}]{dt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a250fabaf23dab62bd373daac39aa25d3}\label{class_animation_a250fabaf23dab62bd373daac39aa25d3}} 
+\index{Animation@{Animation}!update@{update}}
+\index{update@{update}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily void Animation\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}}]{dt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a250fabaf23dab62bd373daac39aa25d3}\label{class_animation_a250fabaf23dab62bd373daac39aa25d3}} 
+\index{Animation@{Animation}!update@{update}}
+\index{update@{update}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily void Animation\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}}]{dt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_animation_a250fabaf23dab62bd373daac39aa25d3}\label{class_animation_a250fabaf23dab62bd373daac39aa25d3}} 
+\index{Animation@{Animation}!update@{update}}
+\index{update@{update}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily void Animation\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}}]{dt }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_animation_a62a82a2b33023e7914efa3cc9d8fad60}\label{class_animation_a62a82a2b33023e7914efa3cc9d8fad60}} 
+\index{Animation@{Animation}!mCurrentFrame@{mCurrentFrame}}
+\index{mCurrentFrame@{mCurrentFrame}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{mCurrentFrame}{mCurrentFrame}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Animation\+::m\+Current\+Frame\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_include_2_animation_8hpp_source_l00045}{45}} of file \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_include_2_animation_8hpp_source}{Animation.\+hpp}}.
+
+\mbox{\Hypertarget{class_animation_a2c4c2260f51906a605cde4b00286b835}\label{class_animation_a2c4c2260f51906a605cde4b00286b835}} 
+\index{Animation@{Animation}!mDuration@{mDuration}}
+\index{mDuration@{mDuration}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{mDuration}{mDuration}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} Animation\+::m\+Duration\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_include_2_animation_8hpp_source_l00046}{46}} of file \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_include_2_animation_8hpp_source}{Animation.\+hpp}}.
+
+\mbox{\Hypertarget{class_animation_a35fa2590271ab4e0d2e6f0f78cb8f850}\label{class_animation_a35fa2590271ab4e0d2e6f0f78cb8f850}} 
+\index{Animation@{Animation}!mElapsedTime@{mElapsedTime}}
+\index{mElapsedTime@{mElapsedTime}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{mElapsedTime}{mElapsedTime}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} Animation\+::m\+Elapsed\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_include_2_animation_8hpp_source_l00047}{47}} of file \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_include_2_animation_8hpp_source}{Animation.\+hpp}}.
+
+\mbox{\Hypertarget{class_animation_a399b47c8349fdeac924178d794b9cc3c}\label{class_animation_a399b47c8349fdeac924178d794b9cc3c}} 
+\index{Animation@{Animation}!mFrameSize@{mFrameSize}}
+\index{mFrameSize@{mFrameSize}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{mFrameSize}{mFrameSize}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} Animation\+::m\+Frame\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_include_2_animation_8hpp_source_l00043}{43}} of file \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_include_2_animation_8hpp_source}{Animation.\+hpp}}.
+
+\mbox{\Hypertarget{class_animation_a5514f9410c20b598f6e11ae5823ef686}\label{class_animation_a5514f9410c20b598f6e11ae5823ef686}} 
+\index{Animation@{Animation}!mNumFrames@{mNumFrames}}
+\index{mNumFrames@{mNumFrames}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{mNumFrames}{mNumFrames}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Animation\+::m\+Num\+Frames\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_include_2_animation_8hpp_source_l00044}{44}} of file \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_include_2_animation_8hpp_source}{Animation.\+hpp}}.
+
+\mbox{\Hypertarget{class_animation_ae6df2d9ed02da0baf44b299a9b95bced}\label{class_animation_ae6df2d9ed02da0baf44b299a9b95bced}} 
+\index{Animation@{Animation}!mRepeat@{mRepeat}}
+\index{mRepeat@{mRepeat}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{mRepeat}{mRepeat}}
+{\footnotesize\ttfamily bool Animation\+::m\+Repeat\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_include_2_animation_8hpp_source_l00048}{48}} of file \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_include_2_animation_8hpp_source}{Animation.\+hpp}}.
+
+\mbox{\Hypertarget{class_animation_a30eaffa8aa1c8e808a136162fb34fc25}\label{class_animation_a30eaffa8aa1c8e808a136162fb34fc25}} 
+\index{Animation@{Animation}!mSprite@{mSprite}}
+\index{mSprite@{mSprite}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{mSprite}{mSprite}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_sprite}{sf\+::\+Sprite}} Animation\+::m\+Sprite\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_include_2_animation_8hpp_source_l00042}{42}} of file \mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_include_2_animation_8hpp_source}{Animation.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Week11/\+Week11-\/\+Demo6-\/\+Animation/\+Include/\mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_include_2_animation_8hpp}{Animation.\+hpp}}\item 
+Week11/\+Week11-\/\+Demo9-\/\+Post\+Effect/\+Include/\mbox{\hyperlink{_week11_2_week11-_demo9-_post_effect_2_include_2_animation_8hpp}{Animation.\+hpp}}\item 
+Week12/\+Week12-\/\+Demo0-\/\+Post\+Effect/\+Include/\mbox{\hyperlink{_week12_2_week12-_demo0-_post_effect_2_include_2_animation_8hpp}{Animation.\+hpp}}\item 
+Week12/\+Week12-\/\+Demo1-\/\+Music\+Player/\+Include/\mbox{\hyperlink{_week12_2_week12-_demo1-_music_player_2_include_2_animation_8hpp}{Animation.\+hpp}}\item 
+Week12/\+Week12-\/\+Demo2-\/\+Sound\+Effect/\+Include/\mbox{\hyperlink{_week12_2_week12-_demo2-_sound_effect_2_include_2_animation_8hpp}{Animation.\+hpp}}\item 
+Week12/\+Week12-\/\+Demo3-\/3\+DSound/\+Include/\mbox{\hyperlink{_week12_2_week12-_demo3-3_d_sound_2_include_2_animation_8hpp}{Animation.\+hpp}}\item 
+Week14/\+SFML-\/2.\+5.\+1/include/\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_animation_8hpp}{Animation.\+hpp}}\item 
+Week14/\+Week14-\/\+Demo0-\/3\+DSound/\+Include/\mbox{\hyperlink{_week14_2_week14-_demo0-3_d_sound_2_include_2_animation_8hpp}{Animation.\+hpp}}\item 
+Week14/\+Week14-\/\+Demo1-\/\+Multiplayer/\+Include/\mbox{\hyperlink{_week14_2_week14-_demo1-_multiplayer_2_include_2_animation_8hpp}{Animation.\+hpp}}\item 
+Week14/\+Week14-\/\+Demo1-\/\+Player2/\+Include/\mbox{\hyperlink{_week14_2_week14-_demo1-_player2_2_include_2_animation_8hpp}{Animation.\+hpp}}\item 
+Week11/\+Week11-\/\+Demo6-\/\+Animation/\+Source/\mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_animation_8cpp}{Animation.\+cpp}}\item 
+Week11/\+Week11-\/\+Demo9-\/\+Post\+Effect/\+Source/\mbox{\hyperlink{_week11_2_week11-_demo9-_post_effect_2_source_2_animation_8cpp}{Animation.\+cpp}}\item 
+Week12/\+Week12-\/\+Demo0-\/\+Post\+Effect/\+Source/\mbox{\hyperlink{_week12_2_week12-_demo0-_post_effect_2_source_2_animation_8cpp}{Animation.\+cpp}}\item 
+Week12/\+Week12-\/\+Demo1-\/\+Music\+Player/\+Source/\mbox{\hyperlink{_week12_2_week12-_demo1-_music_player_2_source_2_animation_8cpp}{Animation.\+cpp}}\item 
+Week12/\+Week12-\/\+Demo2-\/\+Sound\+Effect/\+Source/\mbox{\hyperlink{_week12_2_week12-_demo2-_sound_effect_2_source_2_animation_8cpp}{Animation.\+cpp}}\item 
+Week12/\+Week12-\/\+Demo3-\/3\+DSound/\+Source/\mbox{\hyperlink{_week12_2_week12-_demo3-3_d_sound_2_source_2_animation_8cpp}{Animation.\+cpp}}\item 
+Week14/\+SFML-\/2.\+5.\+1/\+Source/\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2_source_2_animation_8cpp}{Animation.\+cpp}}\item 
+Week14/\+Week14-\/\+Demo0-\/3\+DSound/\+Source/\mbox{\hyperlink{_week14_2_week14-_demo0-3_d_sound_2_source_2_animation_8cpp}{Animation.\+cpp}}\item 
+Week14/\+Week14-\/\+Demo1-\/\+Multiplayer/\+Source/\mbox{\hyperlink{_week14_2_week14-_demo1-_multiplayer_2_source_2_animation_8cpp}{Animation.\+cpp}}\item 
+Week14/\+Week14-\/\+Demo1-\/\+Player2/\+Source/\mbox{\hyperlink{_week14_2_week14-_demo1-_player2_2_source_2_animation_8cpp}{Animation.\+cpp}}\end{DoxyCompactItemize}

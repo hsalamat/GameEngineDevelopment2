@@ -1,0 +1,64 @@
+\hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp}{}\doxysection{SFML-\/2.5.1/examples/voip/\+Server.cpp File Reference}
+\label{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp}\index{SFML-\/2.5.1/examples/voip/Server.cpp@{SFML-\/2.5.1/examples/voip/Server.cpp}}
+{\ttfamily \#include $<$SFML/\+Audio.\+hpp$>$}\newline
+{\ttfamily \#include $<$SFML/\+Network.\+hpp$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_network_audio_stream}{Network\+Audio\+Stream}}
+\begin{DoxyCompactList}\small\item\em Customized sound stream for acquiring audio data from the network. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_a0d60c59dae5c971031d008a6b81afff3}{do\+Server}} (unsigned short port)
+\begin{DoxyCompactList}\small\item\em Launch a server and wait for incoming audio data from a connected client. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{sf\+::\+Uint8}} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_af0c73c991a246dd292263c32ee190547}{audio\+Data}} = 1
+\item 
+const \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{sf\+::\+Uint8}} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_aa87d7c0acaf7e7354fee28a093fc3176}{end\+Of\+Stream}} = 2
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_a0d60c59dae5c971031d008a6b81afff3}\label{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_a0d60c59dae5c971031d008a6b81afff3}} 
+\index{Server.cpp@{Server.cpp}!doServer@{doServer}}
+\index{doServer@{doServer}!Server.cpp@{Server.cpp}}
+\doxysubsubsection{\texorpdfstring{doServer()}{doServer()}}
+{\footnotesize\ttfamily void do\+Server (\begin{DoxyParamCaption}\item[{unsigned short}]{port }\end{DoxyParamCaption})}
+
+
+
+Launch a server and wait for incoming audio data from a connected client. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00172}{172}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source}{Server.\+cpp}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_af0c73c991a246dd292263c32ee190547}\label{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_af0c73c991a246dd292263c32ee190547}} 
+\index{Server.cpp@{Server.cpp}!audioData@{audioData}}
+\index{audioData@{audioData}!Server.cpp@{Server.cpp}}
+\doxysubsubsection{\texorpdfstring{audioData}{audioData}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{sf\+::\+Uint8}} audio\+Data = 1}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source}{Server.\+cpp}}.
+
+\mbox{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_aa87d7c0acaf7e7354fee28a093fc3176}\label{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_aa87d7c0acaf7e7354fee28a093fc3176}} 
+\index{Server.cpp@{Server.cpp}!endOfStream@{endOfStream}}
+\index{endOfStream@{endOfStream}!Server.cpp@{Server.cpp}}
+\doxysubsubsection{\texorpdfstring{endOfStream}{endOfStream}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{sf\+::\+Uint8}} end\+Of\+Stream = 2}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source}{Server.\+cpp}}.
+

@@ -1,0 +1,109 @@
+\hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source}{}\doxysection{Button.\+cpp}
+\label{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source}\index{Week9-\/10/Week10-\/Demo3-\/UpdateHitpoints/Source/Button.cpp@{Week9-\/10/Week10-\/Demo3-\/UpdateHitpoints/Source/Button.cpp}}
+\mbox{\hyperlink{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include <Button.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <Utility.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <SFML/Window/Event.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include <SFML/Graphics/RenderStates.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <SFML/Graphics/RenderTarget.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00009}00009 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_u_i}{GUI}}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00010}00010 \{}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00012}00012 \mbox{\hyperlink{class_g_u_i_1_1_button_aa624162ff8bee4bd4523428c3ea2150b}{Button::Button}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_resource_holder}{FontHolder}}\& fonts, \textcolor{keyword}{const} \mbox{\hyperlink{class_texture_holder}{TextureHolder}}\& textures)}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00013}00013 : mCallback()}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00014}00014 , mNormalTexture(textures.get(\mbox{\hyperlink{namespace_textures}{Textures}}::\mbox{\hyperlink{namespace_textures_a2cfe2099537d4e80b08437b4978301a5afcf4e9236477a5558479ab41c99801c3}{ButtonNormal}}))}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00015}00015 , mSelectedTexture(textures.get(\mbox{\hyperlink{namespace_textures}{Textures}}::\mbox{\hyperlink{namespace_textures_a2cfe2099537d4e80b08437b4978301a5a5cdea0aa19de71fc3c79c63341c6dfbc}{ButtonSelected}}))}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00016}00016 , mPressedTexture(textures.get(\mbox{\hyperlink{namespace_textures}{Textures}}::\mbox{\hyperlink{namespace_textures_a2cfe2099537d4e80b08437b4978301a5a505b04971831bc2910c1e03175301ae6}{ButtonPressed}}))}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00017}00017 , mSprite()}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00018}00018 , mText(\textcolor{stringliteral}{"{}"{}}, fonts.get(\mbox{\hyperlink{namespace_fonts}{Fonts}}::\mbox{\hyperlink{namespace_fonts_a240717ec0dc75e98501af734a02c396da9e5a008b88415e37d30b922f06c8eabc}{Main}}), 16)}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00019}00019 , mIsToggle(false)}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00020}00020 \{}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00021}00021     mSprite.setTexture(mNormalTexture);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00023}00023     \mbox{\hyperlink{classsf_1_1_rect}{sf::FloatRect}} bounds = mSprite.getLocalBounds();}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00024}00024     mText.setPosition(bounds.\mbox{\hyperlink{classsf_1_1_rect_a4dd5b9d4333bebbc51bd309298fd500f}{width}} / 2.f, bounds.\mbox{\hyperlink{classsf_1_1_rect_a6fa0fc7de1636d78cae1a1b54eef95cd}{height}} / 2.f);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00025}00025 \}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00027}00027 \textcolor{keywordtype}{void} Button::setCallback(Callback callback)}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00028}00028 \{}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00029}00029     mCallback = std::move(callback);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00030}00030 \}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00032}00032 \textcolor{keywordtype}{void} Button::setText(\textcolor{keyword}{const} std::string\& text)}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00033}00033 \{}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00034}00034     mText.setString(text);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00035}00035     \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_add3ffea68d586813ee6765c3bc796d35}{centerOrigin}}(mText);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00036}00036 \}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00038}00038 \textcolor{keywordtype}{void} Button::setToggle(\textcolor{keywordtype}{bool} flag)}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00039}00039 \{}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00040}00040     mIsToggle = flag;}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00041}00041 \}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00043}00043 \textcolor{keywordtype}{bool} Button::isSelectable()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00044}00044 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00045}00045     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00046}00046 \}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00048}00048 \textcolor{keywordtype}{void} Button::select()}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00049}00049 \{}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00050}00050     Component::select();}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00052}00052     mSprite.setTexture(mSelectedTexture);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00053}00053 \}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00055}00055 \textcolor{keywordtype}{void} Button::deselect()}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00056}00056 \{}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00057}00057     Component::deselect();}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00059}00059     mSprite.setTexture(mNormalTexture);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00060}00060 \}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00062}00062 \textcolor{keywordtype}{void} Button::activate()}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00063}00063 \{}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00064}00064     Component::activate();}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00066}00066     \textcolor{comment}{// If we are toggle then we should show that the button is pressed and thus "{}toggled"{}.}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00067}00067     \textcolor{keywordflow}{if} (mIsToggle)}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00068}00068         mSprite.setTexture(mPressedTexture);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00070}00070     \textcolor{keywordflow}{if} (mCallback)}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00071}00071         mCallback();}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00073}00073     \textcolor{comment}{// If we are not a toggle then deactivate the button since we are just momentarily activated.}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00074}00074     \textcolor{keywordflow}{if} (!mIsToggle)}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00075}00075         deactivate();}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00076}00076 \}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00078}00078 \textcolor{keywordtype}{void} Button::deactivate()}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00079}00079 \{}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00080}00080     Component::deactivate();}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00082}00082     \textcolor{keywordflow}{if} (mIsToggle)}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00083}00083     \{}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00084}00084         \textcolor{comment}{// Reset texture to right one depending on if we are selected or not.}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00085}00085         \textcolor{keywordflow}{if} (isSelected())}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00086}00086             mSprite.setTexture(mSelectedTexture);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00087}00087         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00088}00088             mSprite.setTexture(mNormalTexture);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00089}00089     \}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00090}00090 \}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00092}00092 \textcolor{keywordtype}{void} Button::handleEvent(\textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_event}{sf::Event}}\&)}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00093}00093 \{}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00094}00094 \}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00096}00096 \textcolor{keywordtype}{void} Button::draw(\mbox{\hyperlink{classsf_1_1_render_target}{sf::RenderTarget}}\& target, \mbox{\hyperlink{classsf_1_1_render_states}{sf::RenderStates}} states)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00097}00097 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00098}00098     states.\mbox{\hyperlink{classsf_1_1_render_states_a1f737981a0f2f0d4bb8dac866a8d1149}{transform}} *= getTransform();}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00099}00099     target.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(mSprite, states);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00100}00100     target.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(mText, states);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00101}00101 \}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo3-_update_hitpoints_2_source_2_button_8cpp_source_l00103}00103 \}}
+
+\end{DoxyCode}

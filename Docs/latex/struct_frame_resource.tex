@@ -1,0 +1,134 @@
+\hypertarget{struct_frame_resource}{}\doxysection{Frame\+Resource Struct Reference}
+\label{struct_frame_resource}\index{FrameResource@{FrameResource}}
+
+
+{\ttfamily \#include $<$Frame\+Resource.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_frame_resource_a496fdce5ab50522a3dcbf9260be6e86c}{Frame\+Resource}} (ID3\+D12\+Device $\ast$device, UINT pass\+Count, UINT object\+Count, UINT material\+Count)
+\item 
+\mbox{\hyperlink{struct_frame_resource_a847d99ad6c492fd988ab52623e56aed5}{Frame\+Resource}} (const \mbox{\hyperlink{struct_frame_resource}{Frame\+Resource}} \&rhs)=delete
+\item 
+\mbox{\hyperlink{struct_frame_resource}{Frame\+Resource}} \& \mbox{\hyperlink{struct_frame_resource_a4d75d2a5a7bca5a0bd70a15b449c5776}{operator=}} (const \mbox{\hyperlink{struct_frame_resource}{Frame\+Resource}} \&rhs)=delete
+\item 
+\mbox{\hyperlink{struct_frame_resource_a93d669d1d4db3b4ed5cd6f0f6b921809}{$\sim$\+Frame\+Resource}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Microsoft\+::\+WRL\+::\+Com\+Ptr$<$ ID3\+D12\+Command\+Allocator $>$ \mbox{\hyperlink{struct_frame_resource_a2c0624d447e7fe7697b37a91275066d1}{Cmd\+List\+Alloc}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_upload_buffer}{Upload\+Buffer}}$<$ \mbox{\hyperlink{struct_pass_constants}{Pass\+Constants}} $>$ $>$ \mbox{\hyperlink{struct_frame_resource_a2a301e2320545cc025551247f9f60df5}{Pass\+CB}} = nullptr
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_upload_buffer}{Upload\+Buffer}}$<$ \mbox{\hyperlink{struct_material_constants}{Material\+Constants}} $>$ $>$ \mbox{\hyperlink{struct_frame_resource_a502a3bd044ed30d31280f4382cc07570}{Material\+CB}} = nullptr
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_upload_buffer}{Upload\+Buffer}}$<$ \mbox{\hyperlink{struct_object_constants}{Object\+Constants}} $>$ $>$ \mbox{\hyperlink{struct_frame_resource_adec81cdfb788278fac8ad38066e6c18f}{Object\+CB}} = nullptr
+\item 
+UINT64 \mbox{\hyperlink{struct_frame_resource_aa90bdd44edbdbebf156b7cdb01437b8a}{Fence}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_frame_resource_8h_source_l00049}{49}} of file \mbox{\hyperlink{_frame_resource_8h_source}{Frame\+Resource.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_frame_resource_a496fdce5ab50522a3dcbf9260be6e86c}\label{struct_frame_resource_a496fdce5ab50522a3dcbf9260be6e86c}} 
+\index{FrameResource@{FrameResource}!FrameResource@{FrameResource}}
+\index{FrameResource@{FrameResource}!FrameResource@{FrameResource}}
+\doxysubsubsection{\texorpdfstring{FrameResource()}{FrameResource()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Frame\+Resource\+::\+Frame\+Resource (\begin{DoxyParamCaption}\item[{ID3\+D12\+Device $\ast$}]{device,  }\item[{UINT}]{pass\+Count,  }\item[{UINT}]{object\+Count,  }\item[{UINT}]{material\+Count }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_frame_resource_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_frame_resource_8cpp_source}{Frame\+Resource.\+cpp}}.
+
+\mbox{\Hypertarget{struct_frame_resource_a847d99ad6c492fd988ab52623e56aed5}\label{struct_frame_resource_a847d99ad6c492fd988ab52623e56aed5}} 
+\index{FrameResource@{FrameResource}!FrameResource@{FrameResource}}
+\index{FrameResource@{FrameResource}!FrameResource@{FrameResource}}
+\doxysubsubsection{\texorpdfstring{FrameResource()}{FrameResource()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Frame\+Resource\+::\+Frame\+Resource (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_frame_resource}{Frame\+Resource}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{struct_frame_resource_a93d669d1d4db3b4ed5cd6f0f6b921809}\label{struct_frame_resource_a93d669d1d4db3b4ed5cd6f0f6b921809}} 
+\index{FrameResource@{FrameResource}!````~FrameResource@{$\sim$FrameResource}}
+\index{````~FrameResource@{$\sim$FrameResource}!FrameResource@{FrameResource}}
+\doxysubsubsection{\texorpdfstring{$\sim$FrameResource()}{~FrameResource()}}
+{\footnotesize\ttfamily Frame\+Resource\+::$\sim$\+Frame\+Resource (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_frame_resource_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{_frame_resource_8cpp_source}{Frame\+Resource.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_frame_resource_a4d75d2a5a7bca5a0bd70a15b449c5776}\label{struct_frame_resource_a4d75d2a5a7bca5a0bd70a15b449c5776}} 
+\index{FrameResource@{FrameResource}!operator=@{operator=}}
+\index{operator=@{operator=}!FrameResource@{FrameResource}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_frame_resource}{Frame\+Resource}} \& Frame\+Resource\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_frame_resource}{Frame\+Resource}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_frame_resource_a2c0624d447e7fe7697b37a91275066d1}\label{struct_frame_resource_a2c0624d447e7fe7697b37a91275066d1}} 
+\index{FrameResource@{FrameResource}!CmdListAlloc@{CmdListAlloc}}
+\index{CmdListAlloc@{CmdListAlloc}!FrameResource@{FrameResource}}
+\doxysubsubsection{\texorpdfstring{CmdListAlloc}{CmdListAlloc}}
+{\footnotesize\ttfamily Microsoft\+::\+WRL\+::\+Com\+Ptr$<$ID3\+D12\+Command\+Allocator$>$ Frame\+Resource\+::\+Cmd\+List\+Alloc}
+
+
+
+Definition at line \mbox{\hyperlink{_frame_resource_8h_source_l00060}{60}} of file \mbox{\hyperlink{_frame_resource_8h_source}{Frame\+Resource.\+h}}.
+
+\mbox{\Hypertarget{struct_frame_resource_aa90bdd44edbdbebf156b7cdb01437b8a}\label{struct_frame_resource_aa90bdd44edbdbebf156b7cdb01437b8a}} 
+\index{FrameResource@{FrameResource}!Fence@{Fence}}
+\index{Fence@{Fence}!FrameResource@{FrameResource}}
+\doxysubsubsection{\texorpdfstring{Fence}{Fence}}
+{\footnotesize\ttfamily UINT64 Frame\+Resource\+::\+Fence = 0}
+
+
+
+Definition at line \mbox{\hyperlink{_frame_resource_8h_source_l00071}{71}} of file \mbox{\hyperlink{_frame_resource_8h_source}{Frame\+Resource.\+h}}.
+
+\mbox{\Hypertarget{struct_frame_resource_a502a3bd044ed30d31280f4382cc07570}\label{struct_frame_resource_a502a3bd044ed30d31280f4382cc07570}} 
+\index{FrameResource@{FrameResource}!MaterialCB@{MaterialCB}}
+\index{MaterialCB@{MaterialCB}!FrameResource@{FrameResource}}
+\doxysubsubsection{\texorpdfstring{MaterialCB}{MaterialCB}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_upload_buffer}{Upload\+Buffer}}$<$\mbox{\hyperlink{struct_material_constants}{Material\+Constants}}$>$ $>$ Frame\+Resource\+::\+Material\+CB = nullptr}
+
+
+
+Definition at line \mbox{\hyperlink{_frame_resource_8h_source_l00066}{66}} of file \mbox{\hyperlink{_frame_resource_8h_source}{Frame\+Resource.\+h}}.
+
+\mbox{\Hypertarget{struct_frame_resource_adec81cdfb788278fac8ad38066e6c18f}\label{struct_frame_resource_adec81cdfb788278fac8ad38066e6c18f}} 
+\index{FrameResource@{FrameResource}!ObjectCB@{ObjectCB}}
+\index{ObjectCB@{ObjectCB}!FrameResource@{FrameResource}}
+\doxysubsubsection{\texorpdfstring{ObjectCB}{ObjectCB}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_upload_buffer}{Upload\+Buffer}}$<$\mbox{\hyperlink{struct_object_constants}{Object\+Constants}}$>$ $>$ Frame\+Resource\+::\+Object\+CB = nullptr}
+
+
+
+Definition at line \mbox{\hyperlink{_frame_resource_8h_source_l00067}{67}} of file \mbox{\hyperlink{_frame_resource_8h_source}{Frame\+Resource.\+h}}.
+
+\mbox{\Hypertarget{struct_frame_resource_a2a301e2320545cc025551247f9f60df5}\label{struct_frame_resource_a2a301e2320545cc025551247f9f60df5}} 
+\index{FrameResource@{FrameResource}!PassCB@{PassCB}}
+\index{PassCB@{PassCB}!FrameResource@{FrameResource}}
+\doxysubsubsection{\texorpdfstring{PassCB}{PassCB}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_upload_buffer}{Upload\+Buffer}}$<$\mbox{\hyperlink{struct_pass_constants}{Pass\+Constants}}$>$ $>$ Frame\+Resource\+::\+Pass\+CB = nullptr}
+
+
+
+Definition at line \mbox{\hyperlink{_frame_resource_8h_source_l00065}{65}} of file \mbox{\hyperlink{_frame_resource_8h_source}{Frame\+Resource.\+h}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Week4/\+Crate/\mbox{\hyperlink{_frame_resource_8h}{Frame\+Resource.\+h}}\item 
+Week4/\+Crate/\mbox{\hyperlink{_frame_resource_8cpp}{Frame\+Resource.\+cpp}}\end{DoxyCompactItemize}

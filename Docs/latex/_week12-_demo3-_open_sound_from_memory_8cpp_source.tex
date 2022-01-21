@@ -1,0 +1,37 @@
+\hypertarget{_week12-_demo3-_open_sound_from_memory_8cpp_source}{}\doxysection{Week12-\/\+Demo3-\/\+Open\+Sound\+From\+Memory.cpp}
+\label{_week12-_demo3-_open_sound_from_memory_8cpp_source}\index{Week12/Week12-\/Sound/Source/Week12-\/Demo3-\/OpenSoundFromMemory.cpp@{Week12/Week12-\/Sound/Source/Week12-\/Demo3-\/OpenSoundFromMemory.cpp}}
+\mbox{\hyperlink{_week12-_demo3-_open_sound_from_memory_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week12-_demo3-_open_sound_from_memory_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}Windows.h"{}}  \textcolor{comment}{//for sleep function}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo3-_open_sound_from_memory_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <SFML/Audio.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo3-_open_sound_from_memory_8cpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo3-_open_sound_from_memory_8cpp_source_l00004}\mbox{\hyperlink{_week12-_demo3-_open_sound_from_memory_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00004}} \textcolor{keywordtype}{int} \mbox{\hyperlink{_week12-_demo3-_open_sound_from_memory_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{_week12-_demo3-_open_sound_from_memory_8cpp_source_l00005}00005 \{}
+\DoxyCodeLine{\Hypertarget{_week12-_demo3-_open_sound_from_memory_8cpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo3-_open_sound_from_memory_8cpp_source_l00007}00007     \mbox{\hyperlink{classsf_1_1_sound_buffer}{sf::SoundBuffer}} buffer;}
+\DoxyCodeLine{\Hypertarget{_week12-_demo3-_open_sound_from_memory_8cpp_source_l00008}00008     \textcolor{keywordflow}{if} (!buffer.\mbox{\hyperlink{classsf_1_1_sound_buffer_a2be6a8025c97eb622a7dff6cf2594394}{loadFromFile}}(\textcolor{stringliteral}{"{}Media/Sound/Explosion1.wav"{}}))}
+\DoxyCodeLine{\Hypertarget{_week12-_demo3-_open_sound_from_memory_8cpp_source_l00009}00009         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{\Hypertarget{_week12-_demo3-_open_sound_from_memory_8cpp_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo3-_open_sound_from_memory_8cpp_source_l00011}00011     \textcolor{comment}{// You can also load a sound buffer directly from an array of samples, in the case they originate from another source:}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo3-_open_sound_from_memory_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo3-_open_sound_from_memory_8cpp_source_l00013}00013     \mbox{\hyperlink{classsf_1_1_sound_buffer}{sf::SoundBuffer}} buffer2;}
+\DoxyCodeLine{\Hypertarget{_week12-_demo3-_open_sound_from_memory_8cpp_source_l00014}00014     \textcolor{keyword}{const} \mbox{\hyperlink{namespacesf_a3c8e10435e2a310a7741755e66b5c94e}{sf::Int16}}* samples = buffer.\mbox{\hyperlink{classsf_1_1_sound_buffer_a3d5571a5231d3aea0d2cea933c38cc9e}{getSamples}}();}
+\DoxyCodeLine{\Hypertarget{_week12-_demo3-_open_sound_from_memory_8cpp_source_l00015}00015     \textcolor{keywordtype}{int} fileSize = buffer.\mbox{\hyperlink{classsf_1_1_sound_buffer_aebe2a4bdbfbd9249353748da3f6a4fa1}{getSampleCount}}();}
+\DoxyCodeLine{\Hypertarget{_week12-_demo3-_open_sound_from_memory_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo3-_open_sound_from_memory_8cpp_source_l00017}00017     buffer2.\mbox{\hyperlink{classsf_1_1_sound_buffer_a42d51ce4bb3b60c7ea06f63c273fd063}{loadFromSamples}}(\&samples[0], fileSize, 1, 44100);}
+\DoxyCodeLine{\Hypertarget{_week12-_demo3-_open_sound_from_memory_8cpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo3-_open_sound_from_memory_8cpp_source_l00019}00019     \mbox{\hyperlink{classsf_1_1_sound}{sf::Sound}} sound;}
+\DoxyCodeLine{\Hypertarget{_week12-_demo3-_open_sound_from_memory_8cpp_source_l00020}00020     sound.\mbox{\hyperlink{classsf_1_1_sound_a8b395e9713d0efa48a18628c8ec1972e}{setBuffer}}(buffer2);}
+\DoxyCodeLine{\Hypertarget{_week12-_demo3-_open_sound_from_memory_8cpp_source_l00021}00021     sound.\mbox{\hyperlink{classsf_1_1_sound_source_a2f192f2b49fb8e2b82f3498d3663fcc2}{setVolume}}(50.f);}
+\DoxyCodeLine{\Hypertarget{_week12-_demo3-_open_sound_from_memory_8cpp_source_l00022}00022     sound.\mbox{\hyperlink{classsf_1_1_sound_af23ab4f78f975bbabac031102321612b}{setLoop}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_week12-_demo3-_open_sound_from_memory_8cpp_source_l00023}00023     sound.\mbox{\hyperlink{classsf_1_1_sound_a2953ffe632536e72e696fd880ced2532}{play}}();}
+\DoxyCodeLine{\Hypertarget{_week12-_demo3-_open_sound_from_memory_8cpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo3-_open_sound_from_memory_8cpp_source_l00025}00025     Sleep(50000);}
+\DoxyCodeLine{\Hypertarget{_week12-_demo3-_open_sound_from_memory_8cpp_source_l00026}00026     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_week12-_demo3-_open_sound_from_memory_8cpp_source_l00027}00027 \}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo3-_open_sound_from_memory_8cpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo3-_open_sound_from_memory_8cpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo3-_open_sound_from_memory_8cpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo3-_open_sound_from_memory_8cpp_source_l00031}00031 }
+
+\end{DoxyCode}

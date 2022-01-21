@@ -1,0 +1,169 @@
+\hypertarget{classsf_1_1_clock}{}\doxysection{sf\+::Clock Class Reference}
+\label{classsf_1_1_clock}\index{sf::Clock@{sf::Clock}}
+
+
+Utility class that measures the elapsed time.  
+
+
+
+
+{\ttfamily \#include $<$Clock.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsf_1_1_clock_abbc959c7830ca7c3a4da133cb506d3fd}{Clock}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_time}{Time}} \mbox{\hyperlink{classsf_1_1_clock_abe889b42a65bcd8eefc16419645d08a7}{get\+Elapsed\+Time}} () const
+\begin{DoxyCompactList}\small\item\em Get the elapsed time. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_time}{Time}} \mbox{\hyperlink{classsf_1_1_clock_a123e2627f2943e5ecaa1db0c7df3231b}{restart}} ()
+\begin{DoxyCompactList}\small\item\em Restart the clock. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_clock_abbc959c7830ca7c3a4da133cb506d3fd}{Clock}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_time}{Time}} \mbox{\hyperlink{classsf_1_1_clock_abe889b42a65bcd8eefc16419645d08a7}{get\+Elapsed\+Time}} () const
+\begin{DoxyCompactList}\small\item\em Get the elapsed time. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_time}{Time}} \mbox{\hyperlink{classsf_1_1_clock_a123e2627f2943e5ecaa1db0c7df3231b}{restart}} ()
+\begin{DoxyCompactList}\small\item\em Restart the clock. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsf_1_1_time}{Time}} \mbox{\hyperlink{classsf_1_1_clock_a8843eb0a9762787cecfecde181e0f337}{m\+\_\+start\+Time}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsf_1_1_time}{Time}} of last reset, in microseconds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Utility class that measures the elapsed time. 
+
+\mbox{\hyperlink{classsf_1_1_clock}{sf\+::\+Clock}} is a lightweight class for measuring time.
+
+Its provides the most precise time that the underlying OS can achieve (generally microseconds or nanoseconds). It also ensures monotonicity, which means that the returned time can never go backward, even if the system time is changed.
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_clock}{sf::Clock}} clock;}
+\DoxyCodeLine{...}
+\DoxyCodeLine{Time time1 = clock.\mbox{\hyperlink{classsf_1_1_clock_abe889b42a65bcd8eefc16419645d08a7}{getElapsedTime}}();}
+\DoxyCodeLine{...}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_time_acba0cfbc49e3a09a22a8e079eb67a05c}{Time}} time2 = clock.\mbox{\hyperlink{classsf_1_1_clock_a123e2627f2943e5ecaa1db0c7df3231b}{restart}}();}
+
+\end{DoxyCode}
+
+
+The \mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} value returned by the clock can then be converted to a number of seconds, milliseconds or even microseconds.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_clock_8hpp_source_l00041}{41}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_clock_8hpp_source}{Clock.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsf_1_1_clock_abbc959c7830ca7c3a4da133cb506d3fd}\label{classsf_1_1_clock_abbc959c7830ca7c3a4da133cb506d3fd}} 
+\index{sf::Clock@{sf::Clock}!Clock@{Clock}}
+\index{Clock@{Clock}!sf::Clock@{sf::Clock}}
+\doxysubsubsection{\texorpdfstring{Clock()}{Clock()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily sf\+::\+Clock\+::\+Clock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+The clock starts automatically after being constructed. \mbox{\Hypertarget{classsf_1_1_clock_abbc959c7830ca7c3a4da133cb506d3fd}\label{classsf_1_1_clock_abbc959c7830ca7c3a4da133cb506d3fd}} 
+\index{sf::Clock@{sf::Clock}!Clock@{Clock}}
+\index{Clock@{Clock}!sf::Clock@{sf::Clock}}
+\doxysubsubsection{\texorpdfstring{Clock()}{Clock()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sf\+::\+Clock\+::\+Clock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+The clock starts automatically after being constructed. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsf_1_1_clock_abe889b42a65bcd8eefc16419645d08a7}\label{classsf_1_1_clock_abe889b42a65bcd8eefc16419645d08a7}} 
+\index{sf::Clock@{sf::Clock}!getElapsedTime@{getElapsedTime}}
+\index{getElapsedTime@{getElapsedTime}!sf::Clock@{sf::Clock}}
+\doxysubsubsection{\texorpdfstring{getElapsedTime()}{getElapsedTime()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_time}{Time}} sf\+::\+Clock\+::get\+Elapsed\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the elapsed time. 
+
+This function returns the time elapsed since the last call to \mbox{\hyperlink{classsf_1_1_clock_a123e2627f2943e5ecaa1db0c7df3231b}{restart()}} (or the construction of the instance if \mbox{\hyperlink{classsf_1_1_clock_a123e2627f2943e5ecaa1db0c7df3231b}{restart()}} has not been called).
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classsf_1_1_time}{Time}} elapsed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_clock_abe889b42a65bcd8eefc16419645d08a7}\label{classsf_1_1_clock_abe889b42a65bcd8eefc16419645d08a7}} 
+\index{sf::Clock@{sf::Clock}!getElapsedTime@{getElapsedTime}}
+\index{getElapsedTime@{getElapsedTime}!sf::Clock@{sf::Clock}}
+\doxysubsubsection{\texorpdfstring{getElapsedTime()}{getElapsedTime()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_time}{Time}} sf\+::\+Clock\+::get\+Elapsed\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the elapsed time. 
+
+This function returns the time elapsed since the last call to \mbox{\hyperlink{classsf_1_1_clock_a123e2627f2943e5ecaa1db0c7df3231b}{restart()}} (or the construction of the instance if \mbox{\hyperlink{classsf_1_1_clock_a123e2627f2943e5ecaa1db0c7df3231b}{restart()}} has not been called).
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classsf_1_1_time}{Time}} elapsed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_clock_a123e2627f2943e5ecaa1db0c7df3231b}\label{classsf_1_1_clock_a123e2627f2943e5ecaa1db0c7df3231b}} 
+\index{sf::Clock@{sf::Clock}!restart@{restart}}
+\index{restart@{restart}!sf::Clock@{sf::Clock}}
+\doxysubsubsection{\texorpdfstring{restart()}{restart()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_time}{Time}} sf\+::\+Clock\+::restart (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Restart the clock. 
+
+This function puts the time counter back to zero. It also returns the time elapsed since the clock was started.
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classsf_1_1_time}{Time}} elapsed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_clock_a123e2627f2943e5ecaa1db0c7df3231b}\label{classsf_1_1_clock_a123e2627f2943e5ecaa1db0c7df3231b}} 
+\index{sf::Clock@{sf::Clock}!restart@{restart}}
+\index{restart@{restart}!sf::Clock@{sf::Clock}}
+\doxysubsubsection{\texorpdfstring{restart()}{restart()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_time}{Time}} sf\+::\+Clock\+::restart (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Restart the clock. 
+
+This function puts the time counter back to zero. It also returns the time elapsed since the clock was started.
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classsf_1_1_time}{Time}} elapsed 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsf_1_1_clock_a8843eb0a9762787cecfecde181e0f337}\label{classsf_1_1_clock_a8843eb0a9762787cecfecde181e0f337}} 
+\index{sf::Clock@{sf::Clock}!m\_startTime@{m\_startTime}}
+\index{m\_startTime@{m\_startTime}!sf::Clock@{sf::Clock}}
+\doxysubsubsection{\texorpdfstring{m\_startTime}{m\_startTime}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_time}{Time}} sf\+::\+Clock\+::m\+\_\+start\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{classsf_1_1_time}{Time}} of last reset, in microseconds. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_clock_8hpp_source_l00081}{81}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_clock_8hpp_source}{Clock.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+SFML-\/2.\+5.\+1/include/\+SFML/\+System/\mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_clock_8hpp}{Clock.\+hpp}}\item 
+Week14/\+SFML-\/2.\+5.\+1/include/\+SFML/\+System/\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_clock_8hpp}{Clock.\+hpp}}\end{DoxyCompactItemize}

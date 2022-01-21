@@ -1,0 +1,101 @@
+\hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source}{}\doxysection{Projectile.\+cpp}
+\label{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source}\index{Week14/Week14-\/Demo1-\/Multiplayer/Source/Projectile.cpp@{Week14/Week14-\/Demo1-\/Multiplayer/Source/Projectile.cpp}}
+\mbox{\hyperlink{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include <Projectile.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <EmitterNode.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <DataTables.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <Utility.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include <ResourceHolder.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include <SFML/Graphics/RenderTarget.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#include <SFML/Graphics/RenderStates.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00010}00010 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00011}00011 \textcolor{preprocessor}{\#include <cassert>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00014}00014 \textcolor{keyword}{namespace}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00015}00015 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00016}00016     \textcolor{keyword}{const} std::vector<ProjectileData> Table = \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_data_tables_8hpp_ac84be17dd214f21d3281cc83791b5f72}{initializeProjectileData}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00017}00017 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00019}00019 \mbox{\hyperlink{class_projectile_a3cc3cae5a10d2ba896788e48d2decca8}{Projectile::Projectile}}(\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0}{Type}} type, \textcolor{keyword}{const} \mbox{\hyperlink{class_texture_holder}{TextureHolder}}\& textures)}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00020}00020 : \mbox{\hyperlink{class_entity}{Entity}}(1)}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00021}00021 , mType(type)}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00022}00022 , mSprite(textures.get(Table[type].texture), Table[type].textureRect)}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00023}00023 , mTargetDirection()}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00024}00024 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00025}00025     \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_add3ffea68d586813ee6765c3bc796d35}{centerOrigin}}(mSprite);}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00027}00027     \textcolor{comment}{// Add particle system for missiles}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00028}00028     \textcolor{keywordflow}{if} (isGuided())}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00029}00029     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00030}00030         std::unique\_ptr<EmitterNode> smoke(\textcolor{keyword}{new} \mbox{\hyperlink{class_emitter_node}{EmitterNode}}(\mbox{\hyperlink{struct_particle_aa27c7e68459c587570d108f511ea353ea5e71fbcef60d0f60654b39a36755bd64}{Particle::Smoke}}));}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00031}00031         smoke-\/>setPosition(0.f, getBoundingRect().height / 2.f);}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00032}00032         attachChild(std::move(smoke));}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00034}00034         std::unique\_ptr<EmitterNode> propellant(\textcolor{keyword}{new} \mbox{\hyperlink{class_emitter_node}{EmitterNode}}(\mbox{\hyperlink{struct_particle_aa27c7e68459c587570d108f511ea353ea844ab5bfafca3638acbd634e1ee1be28}{Particle::Propellant}}));}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00035}00035         propellant-\/>setPosition(0.f, getBoundingRect().height / 2.f);}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00036}00036         attachChild(std::move(propellant));}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00038}00038     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00039}00039 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00041}00041 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_projectile_a00dad6aba348a7c0c5cf006dee7f98b2}{Projectile::guideTowards}}(\mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}} position)}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00042}00042 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00043}00043     assert(\mbox{\hyperlink{class_projectile_af72470e40dde23c80ab7b3b739d4023d}{isGuided}}());}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00044}00044     \mbox{\hyperlink{class_projectile_a74dfc9711367692b0acc6872adf92420}{mTargetDirection}} = \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_a7628de502bf3e224f8d294d31ccda209}{unitVector}}(position -\/ \mbox{\hyperlink{class_scene_node_a43061f972f26184b271e6c56723a29c2}{getWorldPosition}}());}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00045}00045 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00047}00047 \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_projectile_af72470e40dde23c80ab7b3b739d4023d}{Projectile::isGuided}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00048}00048 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00049}00049     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_projectile_a0410d3ba12fc277985f9c6a142564c7a}{mType}} == \mbox{\hyperlink{class_projectile_ae0d6ce4b663618b4105d2f3a483ff2eba4ace24c3115396d6d9da8d27dede56c9}{Missile}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00050}00050 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00052}00052 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_projectile_a2acfc0683481554287485a054244df9e}{Projectile::updateCurrent}}(\mbox{\hyperlink{classsf_1_1_time}{sf::Time}} dt, \mbox{\hyperlink{class_command_queue}{CommandQueue}}\& commands)}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00053}00053 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00054}00054     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_projectile_af72470e40dde23c80ab7b3b739d4023d}{isGuided}}())}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00055}00055     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00056}00056         \textcolor{keyword}{const} \textcolor{keywordtype}{float} approachRate = 200.f;}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00058}00058         \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}} newVelocity = \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_a7628de502bf3e224f8d294d31ccda209}{unitVector}}(approachRate * dt.\mbox{\hyperlink{classsf_1_1_time_aa3df2f992d0b0041b4eb02258d43f0e3}{asSeconds}}() * \mbox{\hyperlink{class_projectile_a74dfc9711367692b0acc6872adf92420}{mTargetDirection}} + \mbox{\hyperlink{class_entity_ae7518a0181de088e0de2eacd1a13d656}{getVelocity}}());}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00059}00059         newVelocity *= \mbox{\hyperlink{class_projectile_a2e15585a30093e0cd03c5ecbf14e4f1f}{getMaxSpeed}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00060}00060         \textcolor{keywordtype}{float} angle = std::atan2(newVelocity.\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}}, newVelocity.\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00062}00062         \mbox{\hyperlink{classsf_1_1_transformable_a32baf2bf1a74699b03bf8c95030a38ed}{setRotation}}(\mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_a7f31bacf5d96c36956449854f3e18715}{toDegree}}(angle) + 90.f);}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00063}00063         \mbox{\hyperlink{class_entity_a5bf79843c973eac1fdbebfd1fc83a1e8}{setVelocity}}(newVelocity);}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00064}00064     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00066}00066     \mbox{\hyperlink{class_entity_a3d9ad14643b61864cf60ea7f0738146b}{Entity::updateCurrent}}(dt, commands);}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00067}00067 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00069}00069 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_projectile_ae2ceeb333f5f595e820ab308b3e872ad}{Projectile::drawCurrent}}(\mbox{\hyperlink{classsf_1_1_render_target}{sf::RenderTarget}}\& target, \mbox{\hyperlink{classsf_1_1_render_states}{sf::RenderStates}} states)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00070}00070 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00071}00071     target.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(\mbox{\hyperlink{class_projectile_a80b39a5cd6092e183f071a782458907c}{mSprite}}, states);}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00072}00072 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00074}00074 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_projectile_a434138083867a7a499192ebdafc97441}{Projectile::getCategory}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00075}00075 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00076}00076     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_projectile_a0410d3ba12fc277985f9c6a142564c7a}{mType}} == \mbox{\hyperlink{class_projectile_ae0d6ce4b663618b4105d2f3a483ff2ebacc4b99a5fd2688afeb13fed7b8cd1311}{EnemyBullet}})}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00077}00077         \textcolor{keywordflow}{return} \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3b385196e06446e787a62538ad5cf62a}{Category::EnemyProjectile}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00078}00078     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00079}00079         \textcolor{keywordflow}{return} \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a22af8279b8f0012c359543fed7ceaf65}{Category::AlliedProjectile}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00080}00080 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00082}00082 \mbox{\hyperlink{classsf_1_1_rect}{sf::FloatRect}} \mbox{\hyperlink{class_projectile_a7f17ca6a688522892fd543229a047a03}{Projectile::getBoundingRect}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00083}00083 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00084}00084     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_scene_node_aedae712e618334745fea3c934d51a390}{getWorldTransform}}().\mbox{\hyperlink{classsf_1_1_transform_a3824a20505d81a94bc22be1ffee57d3d}{transformRect}}(\mbox{\hyperlink{class_projectile_a80b39a5cd6092e183f071a782458907c}{mSprite}}.\mbox{\hyperlink{classsf_1_1_sprite_aa795483096b90745b2e799532963e271}{getGlobalBounds}}());}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00085}00085 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00087}00087 \textcolor{keywordtype}{float} \mbox{\hyperlink{class_projectile_a2e15585a30093e0cd03c5ecbf14e4f1f}{Projectile::getMaxSpeed}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00088}00088 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00089}00089     \textcolor{keywordflow}{return} Table[\mbox{\hyperlink{class_projectile_a0410d3ba12fc277985f9c6a142564c7a}{mType}}].speed;}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00090}00090 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00092}00092 \textcolor{keywordtype}{int} \mbox{\hyperlink{class_projectile_af5cd30772ad4cb3894629ca76c6b8f79}{Projectile::getDamage}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00093}00093 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00094}00094     \textcolor{keywordflow}{return} Table[\mbox{\hyperlink{class_projectile_a0410d3ba12fc277985f9c6a142564c7a}{mType}}].damage;}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_projectile_8cpp_source_l00095}00095 \}}
+
+\end{DoxyCode}

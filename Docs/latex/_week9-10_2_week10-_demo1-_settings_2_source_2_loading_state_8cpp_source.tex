@@ -1,0 +1,77 @@
+\hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source}{}\doxysection{Loading\+State.\+cpp}
+\label{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source}\index{Week9-\/10/Week10-\/Demo1-\/Settings/Source/LoadingState.cpp@{Week9-\/10/Week10-\/Demo1-\/Settings/Source/LoadingState.cpp}}
+\mbox{\hyperlink{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include <LoadingState.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <Utility.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <ResourceHolder.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include <SFML/Graphics/RenderWindow.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <SFML/Graphics/View.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00009}00009 \mbox{\hyperlink{class_loading_state_a6830cacada1f9c215f913d31aa1805cf}{LoadingState::LoadingState}}(\mbox{\hyperlink{class_state_stack}{StateStack}}\& stack, Context context)}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00010}00010 : \mbox{\hyperlink{class_state}{State}}(stack, context)}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00011}00011 \{}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00012}00012     \mbox{\hyperlink{classsf_1_1_render_window}{sf::RenderWindow}}\& window = *getContext().window;}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00013}00013     \mbox{\hyperlink{classsf_1_1_font}{sf::Font}}\& font = context.fonts-\/>get(\mbox{\hyperlink{namespace_fonts_a240717ec0dc75e98501af734a02c396da9e5a008b88415e37d30b922f06c8eabc}{Fonts::Main}});}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00014}00014     \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}} viewSize = window.\mbox{\hyperlink{classsf_1_1_render_target_adbf8dc5a1f4abbe15a3fbb915844c7ea}{getView}}().\mbox{\hyperlink{classsf_1_1_view_a57e4a87cf0d724678675d22a0093719a}{getSize}}();}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00016}00016     mLoadingText.setFont(font);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00017}00017     mLoadingText.setString(\textcolor{stringliteral}{"{}Loading Resources"{}});}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00018}00018     \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_add3ffea68d586813ee6765c3bc796d35}{centerOrigin}}(mLoadingText);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00019}00019     mLoadingText.setPosition(viewSize.\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}} / 2.f, viewSize.\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} / 2.f + 50.f);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00021}00021     mProgressBarBackground.setFillColor(\mbox{\hyperlink{classsf_1_1_color_abd9695b00da63b890ea40f74629237c0}{sf::Color::White}});}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00022}00022     mProgressBarBackground.setSize(\mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}}(viewSize.\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}} -\/ 20, 10));}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00023}00023     mProgressBarBackground.setPosition(10, mLoadingText.getPosition().y + 40);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00025}00025     mProgressBar.setFillColor(\mbox{\hyperlink{classsf_1_1_color}{sf::Color}}(100,100,100));}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00026}00026     mProgressBar.setSize(\mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}}(200, 10));}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00027}00027     mProgressBar.setPosition(10, mLoadingText.getPosition().y + 40);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00029}00029     setCompletion(0.f);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00031}00031     mLoadingTask.execute();}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00032}00032 \}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00034}00034 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_loading_state_adfe2c002c52cc2c49967ba3ace4aa73b}{LoadingState::draw}}()}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00035}00035 \{}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00036}00036     \mbox{\hyperlink{classsf_1_1_render_window}{sf::RenderWindow}}\& window = *\mbox{\hyperlink{class_state_a93a72915d1aad6d8f7eacc81094dc920}{getContext}}().\mbox{\hyperlink{struct_state_1_1_context_a2a03b5d8d2904b1808d87dc3437ad281}{window}};}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00038}00038     window.\mbox{\hyperlink{classsf_1_1_render_target_a063db6dd0a14913504af30e50cb6d946}{setView}}(window.\mbox{\hyperlink{classsf_1_1_render_target_a7741129e3ef7ab4f0a40024fca13480c}{getDefaultView}}());}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00040}00040     window.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(\mbox{\hyperlink{class_loading_state_ac780b12d873881bd86e2a7e1e29c9bb3}{mLoadingText}});}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00041}00041     window.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(\mbox{\hyperlink{class_loading_state_a159c4bfc07ec13cb88bfd3c1e64d020a}{mProgressBarBackground}});}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00042}00042     window.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(\mbox{\hyperlink{class_loading_state_a6aeae8b8cae8cc80ea304ebcb225a225}{mProgressBar}});}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00043}00043 \}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00045}00045 \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_loading_state_a8f2f50523c1f35e011ddd0839aa66ee4}{LoadingState::update}}(\mbox{\hyperlink{classsf_1_1_time}{sf::Time}})}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00046}00046 \{}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00047}00047     \textcolor{comment}{// Update the progress bar from the remote task or finish it}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00048}00048     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_loading_state_aac9710902986a85fa6a749053fafef91}{mLoadingTask}}.\mbox{\hyperlink{class_parallel_task_a1a67f547aa382fac2087184b2eb19148}{isFinished}}())}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00049}00049     \{}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00050}00050         \mbox{\hyperlink{class_state_aa418660892d6161772c907bd8d70f910}{requestStackPop}}();}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00051}00051         \mbox{\hyperlink{class_state_a6763de833ceb9c23df45aff163a4a1cd}{requestStackPush}}(\mbox{\hyperlink{namespace_states_a571a0dc62822f97bb9511eb013d8e1c3a720905ab6d1564e1ef61cba9725a5318}{States::Game}});}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00052}00052     \}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00053}00053     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00054}00054     \{}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00055}00055         \mbox{\hyperlink{class_loading_state_a28bee93e7f9818084af8be6b31ee0ba4}{setCompletion}}(\mbox{\hyperlink{class_loading_state_aac9710902986a85fa6a749053fafef91}{mLoadingTask}}.\mbox{\hyperlink{class_parallel_task_ada45e4db1aa8a89f20ab0b8662c6dabc}{getCompletion}}());}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00056}00056     \}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00057}00057     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00058}00058 \}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00060}00060 \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_loading_state_a37da243eeeca36460bac2f32cef3e368}{LoadingState::handleEvent}}(\textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_event}{sf::Event}}\& event)}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00061}00061 \{}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00062}00062     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00063}00063 \}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00065}00065 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_loading_state_a28bee93e7f9818084af8be6b31ee0ba4}{LoadingState::setCompletion}}(\textcolor{keywordtype}{float} percent)}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00066}00066 \{}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00067}00067     \textcolor{keywordflow}{if} (percent > 1.f) \textcolor{comment}{// clamp}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00068}00068         percent = 1.f;}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00070}00070     \mbox{\hyperlink{class_loading_state_a6aeae8b8cae8cc80ea304ebcb225a225}{mProgressBar}}.\mbox{\hyperlink{classsf_1_1_rectangle_shape_a5c65d374d4a259dfdc24efdd24a5dbec}{setSize}}(\mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}}(\mbox{\hyperlink{class_loading_state_a159c4bfc07ec13cb88bfd3c1e64d020a}{mProgressBarBackground}}.\mbox{\hyperlink{classsf_1_1_rectangle_shape_af6819a7b842b83863f21e7a9c63097e7}{getSize}}().\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}} * percent, \mbox{\hyperlink{class_loading_state_a6aeae8b8cae8cc80ea304ebcb225a225}{mProgressBar}}.\mbox{\hyperlink{classsf_1_1_rectangle_shape_af6819a7b842b83863f21e7a9c63097e7}{getSize}}().\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}}));}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo1-_settings_2_source_2_loading_state_8cpp_source_l00071}00071 \}}
+
+\end{DoxyCode}

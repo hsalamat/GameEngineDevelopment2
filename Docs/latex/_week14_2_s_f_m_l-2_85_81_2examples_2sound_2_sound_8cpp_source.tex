@@ -1,0 +1,91 @@
+\hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source}{}\doxysection{Sound.\+cpp}
+\label{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source}\index{Week14/SFML-\/2.5.1/examples/sound/Sound.cpp@{Week14/SFML-\/2.5.1/examples/sound/Sound.cpp}}
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00003}00003 \textcolor{comment}{// Headers}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00005}00005 \textcolor{comment}{}\textcolor{preprocessor}{\#include <SFML/Audio.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00014}\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_ad43013e2a3efe3bae11ef06683ffe326}{00014}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_ad43013e2a3efe3bae11ef06683ffe326}{playSound}}()}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00015}00015 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00016}00016     \textcolor{comment}{// Load a sound buffer from a wav file}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00017}00017     \mbox{\hyperlink{classsf_1_1_sound_buffer}{sf::SoundBuffer}} buffer;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00018}00018     \textcolor{keywordflow}{if} (!buffer.\mbox{\hyperlink{classsf_1_1_sound_buffer_a2be6a8025c97eb622a7dff6cf2594394}{loadFromFile}}(\textcolor{stringliteral}{"{}resources/canary.wav"{}}))}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00019}00019         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00021}00021     \textcolor{comment}{// Display sound informations}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00022}00022     std::cout << \textcolor{stringliteral}{"{}canary.wav:"{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00023}00023     std::cout << \textcolor{stringliteral}{"{} "{}} << buffer.\mbox{\hyperlink{classsf_1_1_sound_buffer_a280a581d9b360fd16121714c51fc8261}{getDuration}}().\mbox{\hyperlink{classsf_1_1_time_aa3df2f992d0b0041b4eb02258d43f0e3}{asSeconds}}() << \textcolor{stringliteral}{"{} seconds"{}}       << std::endl;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00024}00024     std::cout << \textcolor{stringliteral}{"{} "{}} << buffer.\mbox{\hyperlink{classsf_1_1_sound_buffer_a2c2cf0078ce0549246ecc4a1646212b4}{getSampleRate}}()           << \textcolor{stringliteral}{"{} samples / sec"{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00025}00025     std::cout << \textcolor{stringliteral}{"{} "{}} << buffer.\mbox{\hyperlink{classsf_1_1_sound_buffer_a127707b831d875ed790eef1aa2b9fcc3}{getChannelCount}}()         << \textcolor{stringliteral}{"{} channels"{}}      << std::endl;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00027}00027     \textcolor{comment}{// Create a sound instance and play it}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00028}00028     \mbox{\hyperlink{classsf_1_1_sound}{sf::Sound}} sound(buffer);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00029}00029     sound.\mbox{\hyperlink{classsf_1_1_sound_a2953ffe632536e72e696fd880ced2532}{play}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00031}00031     \textcolor{comment}{// Loop while the sound is playing}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00032}00032     \textcolor{keywordflow}{while} (sound.\mbox{\hyperlink{classsf_1_1_sound_a406fc363594a7718a53ebef49a870f51}{getStatus}}() == \mbox{\hyperlink{classsf_1_1_sound_source_ac43af72c98c077500b239bc75b812f03aeafcb1f70be0ee33ea28dc2dcbca3f1b}{sf::Sound::Playing}})}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00033}00033     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00034}00034         \textcolor{comment}{// Leave some CPU time for other processes}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00035}00035         \mbox{\hyperlink{group__system_ga2f2620831533dee0ed432ed982342e09}{sf::sleep}}(sf::milliseconds(100));}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00037}00037         \textcolor{comment}{// Display the playing position}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00038}00038         std::cout << \textcolor{stringliteral}{"{}\(\backslash\)rPlaying... "{}} << sound.\mbox{\hyperlink{classsf_1_1_sound_a559bc3aea581107bcb380fdbe523aa08}{getPlayingOffset}}().\mbox{\hyperlink{classsf_1_1_time_aa3df2f992d0b0041b4eb02258d43f0e3}{asSeconds}}() << \textcolor{stringliteral}{"{} sec        "{}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00039}00039         std::cout << std::flush;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00040}00040     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00041}00041     std::cout << std::endl << std::endl;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00042}00042 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00049}\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_a8157f6109eef2df7d5dcc58e5c37d1ba}{00049}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_a8157f6109eef2df7d5dcc58e5c37d1ba}{playMusic}}(\textcolor{keyword}{const} std::string\& filename)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00050}00050 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00051}00051     \textcolor{comment}{// Load an ogg music file}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00052}00052     \mbox{\hyperlink{classsf_1_1_music}{sf::Music}} music;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00053}00053     \textcolor{keywordflow}{if} (!music.\mbox{\hyperlink{classsf_1_1_music_a3edc66e5f5b3f11e84b90eaec9c7d7c0}{openFromFile}}(\textcolor{stringliteral}{"{}resources/"{}} + filename))}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00054}00054         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00056}00056     \textcolor{comment}{// Display music informations}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00057}00057     std::cout << filename << \textcolor{stringliteral}{"{}:"{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00058}00058     std::cout << \textcolor{stringliteral}{"{} "{}} << music.\mbox{\hyperlink{classsf_1_1_music_a288ef6f552a136b0e56952dcada3d672}{getDuration}}().\mbox{\hyperlink{classsf_1_1_time_aa3df2f992d0b0041b4eb02258d43f0e3}{asSeconds}}() << \textcolor{stringliteral}{"{} seconds"{}}       << std::endl;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00059}00059     std::cout << \textcolor{stringliteral}{"{} "{}} << music.\mbox{\hyperlink{classsf_1_1_sound_stream_a7da448dc40d81a33b8dc555fbf0d3fbf}{getSampleRate}}()           << \textcolor{stringliteral}{"{} samples / sec"{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00060}00060     std::cout << \textcolor{stringliteral}{"{} "{}} << music.\mbox{\hyperlink{classsf_1_1_sound_stream_a1f70933912dd9498f4dc99feefed27f3}{getChannelCount}}()         << \textcolor{stringliteral}{"{} channels"{}}      << std::endl;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00062}00062     \textcolor{comment}{// Play it}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00063}00063     music.\mbox{\hyperlink{classsf_1_1_sound_stream_afdc08b69cab5f243d9324940a85a1144}{play}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00065}00065     \textcolor{comment}{// Loop while the music is playing}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00066}00066     \textcolor{keywordflow}{while} (music.\mbox{\hyperlink{classsf_1_1_sound_stream_a64a8193ed728da37c115c65de015849f}{getStatus}}() == \mbox{\hyperlink{classsf_1_1_sound_source_ac43af72c98c077500b239bc75b812f03aeafcb1f70be0ee33ea28dc2dcbca3f1b}{sf::Music::Playing}})}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00067}00067     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00068}00068         \textcolor{comment}{// Leave some CPU time for other processes}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00069}00069         \mbox{\hyperlink{group__system_ga2f2620831533dee0ed432ed982342e09}{sf::sleep}}(sf::milliseconds(100));}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00071}00071         \textcolor{comment}{// Display the playing position}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00072}00072         std::cout << \textcolor{stringliteral}{"{}\(\backslash\)rPlaying... "{}} << music.\mbox{\hyperlink{classsf_1_1_sound_stream_ae288f3c72edbad9cc7ee938ce5b907c1}{getPlayingOffset}}().\mbox{\hyperlink{classsf_1_1_time_aa3df2f992d0b0041b4eb02258d43f0e3}{asSeconds}}() << \textcolor{stringliteral}{"{} sec        "{}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00073}00073         std::cout << std::flush;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00074}00074     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00075}00075     std::cout << std::endl << std::endl;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00076}00076 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00085}\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00085}} \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00086}00086 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00087}00087     \textcolor{comment}{// Play a sound}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00088}00088     \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_ad43013e2a3efe3bae11ef06683ffe326}{playSound}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00090}00090     \textcolor{comment}{// Play music from an ogg file}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00091}00091     \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_a8157f6109eef2df7d5dcc58e5c37d1ba}{playMusic}}(\textcolor{stringliteral}{"{}orchestral.ogg"{}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00093}00093     \textcolor{comment}{// Play music from a flac file}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00094}00094     \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_a8157f6109eef2df7d5dcc58e5c37d1ba}{playMusic}}(\textcolor{stringliteral}{"{}ding.flac"{}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00096}00096     \textcolor{comment}{// Wait until the user presses 'enter' key}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00097}00097     std::cout << \textcolor{stringliteral}{"{}Press enter to exit..."{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00098}00098     std::cin.ignore(10000, \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00100}00100     \textcolor{keywordflow}{return} EXIT\_SUCCESS;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound_2_sound_8cpp_source_l00101}00101 \}}
+
+\end{DoxyCode}

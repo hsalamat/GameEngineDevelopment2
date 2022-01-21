@@ -1,0 +1,50 @@
+\hypertarget{_week12-_demo5-_listener_8cpp_source}{}\doxysection{Week12-\/\+Demo5-\/\+Listener.cpp}
+\label{_week12-_demo5-_listener_8cpp_source}\index{Week12/Week12-\/Sound/Source/Week12-\/Demo5-\/Listener.cpp@{Week12/Week12-\/Sound/Source/Week12-\/Demo5-\/Listener.cpp}}
+\mbox{\hyperlink{_week12-_demo5-_listener_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00001}00001 \textcolor{comment}{//All the soundsand music in your audio environment will be heard by a single actor : the listener.}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00002}00002 \textcolor{comment}{//What is output from your speakers is determined by what the listener hears.}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00003}00003 \textcolor{comment}{//The class which defines the listener's properties is sf::Listener. }}
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00004}00004 \textcolor{comment}{//Since the listener is unique in the environment, this class only contains static functions and is not meant to be instantiated.}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include "{}Windows.h"{}}  \textcolor{comment}{//for sleep function}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#include <SFML/Audio.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00010}\mbox{\hyperlink{_week12-_demo5-_listener_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00010}} \textcolor{keywordtype}{int} \mbox{\hyperlink{_week12-_demo5-_listener_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00011}00011 \{}
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00013}00013     \textcolor{comment}{//First, you can set the listener's position in the scene:}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00014}00014     \textcolor{comment}{//If you have a 2D world you can just use the same Y value everywhere, usually 0.}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00015}00015     \mbox{\hyperlink{classsf_1_1_listener_a5bc2d8d18ea2d8f339d23cbf17678564}{sf::Listener::setPosition}}(0.f, 0.f, 0.f);    }
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00016}00016     \textcolor{comment}{//sf::Listener::setPosition(10.f, 0.f, 0.f);  //you should hear from your left  ear}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00017}00017     \textcolor{comment}{//sf::Listener::setPosition(-\/10.f, 0.f, 0.f);  //you should hear from your right  ear}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00018}00018     \textcolor{comment}{//sf::Listener::setPosition(0.f, 0.f, 100.f);  //you should hear the sound from far}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00019}00019     \textcolor{comment}{//sf::Listener::setPosition(0.f, 0.f, -\/100.f);  //you should hear the sound from far}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00020}00020     \textcolor{comment}{//sf::Listener::setPosition(0.f, -\/100.f, 0.f);  //you should hear the sound from far}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00022}00022     \textcolor{comment}{//sf::Music music;}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00023}00023     \textcolor{comment}{//if (!music.openFromFile("{}Media/Music/MissionTheme.ogg"{}))}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00024}00024     \textcolor{comment}{//    return -\/1; // error}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00025}00025     \textcolor{comment}{//music.setVolume(10.f);}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00026}00026     \textcolor{comment}{//music.setLoop(true);}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00027}00027     \textcolor{comment}{//music.play();}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00032}00032     \mbox{\hyperlink{classsf_1_1_sound_buffer}{sf::SoundBuffer}} buffer;}
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00033}00033     \textcolor{keywordflow}{if} (!buffer.\mbox{\hyperlink{classsf_1_1_sound_buffer_a2be6a8025c97eb622a7dff6cf2594394}{loadFromFile}}(\textcolor{stringliteral}{"{}Media/Sound/Explosion1.wav"{}}))}
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00034}00034         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00036}00036     \mbox{\hyperlink{classsf_1_1_sound}{sf::Sound}} sound;}
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00037}00037     sound.\mbox{\hyperlink{classsf_1_1_sound_a8b395e9713d0efa48a18628c8ec1972e}{setBuffer}}(buffer);}
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00038}00038     sound.\mbox{\hyperlink{classsf_1_1_sound_source_a2f192f2b49fb8e2b82f3498d3663fcc2}{setVolume}}(100.f);}
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00039}00039     sound.\mbox{\hyperlink{classsf_1_1_sound_af23ab4f78f975bbabac031102321612b}{setLoop}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00040}00040     sound.\mbox{\hyperlink{classsf_1_1_sound_a2953ffe632536e72e696fd880ced2532}{play}}();}
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00041}00041     }
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00042}00042     Sleep(50000);}
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00043}00043     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_week12-_demo5-_listener_8cpp_source_l00044}00044 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,596 @@
+\hypertarget{_week13-3-_m_f_stream_8cpp_source}{}\doxysection{Week13-\/3-\/\+MFStream.cpp}
+\label{_week13-3-_m_f_stream_8cpp_source}\index{Week13/Week13-\/3-\/MFStream.cpp@{Week13/Week13-\/3-\/MFStream.cpp}}
+\mbox{\hyperlink{_week13-3-_m_f_stream_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00001}00001 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00002}00002 \textcolor{comment}{// File: XAudio2MFStream.cpp}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00003}00003 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00004}00004 \textcolor{comment}{// Use Microsoft Media Foundation to read WMA files (WMA is an acronym for Windows Media Audio)}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00005}00005 \textcolor{comment}{// You have to add Media Foundation Headers and Libraries}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00006}00006 \textcolor{comment}{// Add mfuuid.lib to Linker -\/-\/> Input -\/-\/> Additional Dependencies}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00007}00007 \textcolor{comment}{// Streaming from a media file, using Media Foundation to decompress the data}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00008}00008 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00009}00009 \textcolor{comment}{// Note: If you add \_WIN32\_WINNT=0x0601 Preprocessor Definition, }}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00010}00010 \textcolor{comment}{//  This sample will run on windows 8 N or KN editions of Windows }}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00011}00011 \textcolor{comment}{//  You will have to install XAudio2 via Nuget Manager}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00012}00012 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00013}00013 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00015}\mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_ac7bef5d85e3dcd73eef56ad39ffc84a9}{00015}} \textcolor{preprocessor}{\#define WIN32\_LEAN\_AND\_MEAN}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00016}00016 \textcolor{preprocessor}{\#include <windows.h>}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00017}00017 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00018}00018 \textcolor{preprocessor}{\#include <assert.h>}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00019}00019 \textcolor{preprocessor}{\#include <mutex>}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00021}00021 \textcolor{preprocessor}{\#include <wrl\(\backslash\)client.h>}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00023}00023 \textcolor{preprocessor}{\#include <objbase.h>}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00024}00024 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00025}00025 \textcolor{preprocessor}{\#include <mmreg.h>}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00027}00027 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_x_audio2_versions_8h}{XAudio2Versions.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00029}00029 \textcolor{preprocessor}{\#include <mfidl.h>}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00030}00030 \textcolor{preprocessor}{\#include <mfapi.h>}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00031}00031 \textcolor{preprocessor}{\#include <mfreadwrite.h>}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00032}00032 \textcolor{preprocessor}{\#pragma comment(lib,"{}mfplat.lib"{}})}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00033}00033 \textcolor{preprocessor}{\#pragma comment(lib,"{}mfreadwrite.lib"{}})}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00035}00035 \textcolor{keyword}{using} Microsoft::WRL::ComPtr;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00038}00038 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00039}\mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_a433048abeb218e08e3f423032b6c537c}{00039}} \textcolor{preprocessor}{\#define MAX\_BUFFER\_COUNT 3}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00042}00042 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00043}00043 \textcolor{comment}{// Callback structures}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00044}00044 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00045}\mbox{\hyperlink{struct_streaming_voice_context}{00045}} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_streaming_voice_context}{StreamingVoiceContext}} : \textcolor{keyword}{public} IXAudio2VoiceCallback}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00046}00046 \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00047}\mbox{\hyperlink{struct_streaming_voice_context_ad4837344d20e3e4c111550054ca8d139}{00047}}     \mbox{\hyperlink{struct_streaming_voice_context_ad4837344d20e3e4c111550054ca8d139}{STDMETHOD\_}}(\textcolor{keywordtype}{void}, OnVoiceProcessingPassStart)(UINT32) \textcolor{keyword}{override}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00048}00048     \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00049}00049     \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00050}\mbox{\hyperlink{struct_streaming_voice_context_aebecac71b2955198d273e87acf0d79ed}{00050}}     \mbox{\hyperlink{struct_streaming_voice_context_aebecac71b2955198d273e87acf0d79ed}{STDMETHOD\_}}(\textcolor{keywordtype}{void}, OnVoiceProcessingPassEnd)() \textcolor{keyword}{override}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00051}00051     \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00052}00052     \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00053}\mbox{\hyperlink{struct_streaming_voice_context_a0bca7fb1200c41a866a4869affd745de}{00053}}     \mbox{\hyperlink{struct_streaming_voice_context_a0bca7fb1200c41a866a4869affd745de}{STDMETHOD\_}}(\textcolor{keywordtype}{void}, OnStreamEnd)() \textcolor{keyword}{override}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00054}00054     \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00055}00055     \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00056}\mbox{\hyperlink{struct_streaming_voice_context_a303a3429bfbec117a11ca153b8fd2034}{00056}}     \mbox{\hyperlink{struct_streaming_voice_context_a303a3429bfbec117a11ca153b8fd2034}{STDMETHOD\_}}(\textcolor{keywordtype}{void}, OnBufferStart)(\textcolor{keywordtype}{void}*) \textcolor{keyword}{override}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00057}00057     \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00058}00058     \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00059}\mbox{\hyperlink{struct_streaming_voice_context_a1f7871b0ef7319209af74a7bbb680483}{00059}}     \mbox{\hyperlink{struct_streaming_voice_context_a1f7871b0ef7319209af74a7bbb680483}{STDMETHOD\_}}(\textcolor{keywordtype}{void}, OnBufferEnd)(\textcolor{keywordtype}{void}*) \textcolor{keyword}{override}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00060}00060     \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00061}00061         SetEvent(hBufferEndEvent);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00062}00062     \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00063}\mbox{\hyperlink{struct_streaming_voice_context_aac9cd642e0e542717674c4d4f263c2c5}{00063}}     \mbox{\hyperlink{struct_streaming_voice_context_aac9cd642e0e542717674c4d4f263c2c5}{STDMETHOD\_}}(\textcolor{keywordtype}{void}, OnLoopEnd)(\textcolor{keywordtype}{void}*) \textcolor{keyword}{override}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00064}00064     \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00065}00065     \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00066}\mbox{\hyperlink{struct_streaming_voice_context_a91ed3d71a11877ab1cb9d4b027b9890a}{00066}}     \mbox{\hyperlink{struct_streaming_voice_context_ad4837344d20e3e4c111550054ca8d139}{STDMETHOD\_}}(\textcolor{keywordtype}{void}, OnVoiceError)(\textcolor{keywordtype}{void}*, HRESULT) \textcolor{keyword}{override}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00067}00067     \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00068}00068     \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00070}00070     HANDLE hBufferEndEvent;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00072}\mbox{\hyperlink{struct_streaming_voice_context_a8f88e99eac0e59bb039885274499a925}{00072}}     \mbox{\hyperlink{struct_streaming_voice_context_a8f88e99eac0e59bb039885274499a925}{StreamingVoiceContext}}() :}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00073}00073 \#if (\_WIN32\_WINNT >= \_WIN32\_WINNT\_VISTA)}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00074}00074         hBufferEndEvent(CreateEventEx(nullptr, nullptr, 0, EVENT\_MODIFY\_STATE | SYNCHRONIZE))}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00075}00075 \#else}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00076}00076         hBufferEndEvent(CreateEvent(nullptr, FALSE, FALSE, nullptr))}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00077}00077 \#endif}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00078}00078     \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00079}00079     \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00080}\mbox{\hyperlink{struct_streaming_voice_context_abb3dd8940111285d383145cd375c6ad5}{00080}}     \textcolor{keyword}{virtual} \mbox{\hyperlink{struct_streaming_voice_context_abb3dd8940111285d383145cd375c6ad5}{\string~StreamingVoiceContext}}()}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00081}00081     \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00082}00082         CloseHandle(hBufferEndEvent);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00083}00083     \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00084}00084 \};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00086}\mbox{\hyperlink{struct_source_reader_context}{00086}} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_source_reader_context}{SourceReaderContext}} : \textcolor{keyword}{public} IMFSourceReaderCallback}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00087}00087 \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00088}\mbox{\hyperlink{struct_source_reader_context_a97f791f4caf1d0787daf8f197e56d9e2}{00088}}     STDMETHOD(\mbox{\hyperlink{struct_source_reader_context_a97f791f4caf1d0787daf8f197e56d9e2}{QueryInterface}}) (REFIID iid, \_COM\_Outptr\_ \textcolor{keywordtype}{void}** ppv) \textcolor{keyword}{override}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00089}00089     \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00090}00090         \textcolor{keywordflow}{if} (!ppv)}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00091}00091             \textcolor{keywordflow}{return} E\_POINTER;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00093}00093         \textcolor{keywordflow}{if} (\_uuidof(IMFSourceReaderCallback) == iid)}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00094}00094         \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00095}00095             *ppv = \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00096}00096             \textcolor{keywordflow}{return} S\_OK;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00097}00097         \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00098}00098 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00099}00099         *ppv = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00100}00100         \textcolor{keywordflow}{return} E\_NOINTERFACE;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00101}00101     \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00103}\mbox{\hyperlink{struct_source_reader_context_a195d6c8c7f0e7a652a52112209b469f6}{00103}}     \mbox{\hyperlink{struct_source_reader_context_a195d6c8c7f0e7a652a52112209b469f6}{STDMETHOD\_}}(ULONG, AddRef)() \textcolor{keyword}{override}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00104}00104     \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00105}00105         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00106}00106     \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00107}00107 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00108}\mbox{\hyperlink{struct_source_reader_context_afd7160e859e080d741f194760a3434c1}{00108}}     \mbox{\hyperlink{struct_source_reader_context_afd7160e859e080d741f194760a3434c1}{STDMETHOD\_}}(ULONG, Release)() \textcolor{keyword}{override}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00109}00109     \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00110}00110         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00111}00111     \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00112}00112 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00113}\mbox{\hyperlink{struct_source_reader_context_ad6788614303d5fd53fb1bdba28615491}{00113}}     STDMETHOD(\mbox{\hyperlink{struct_source_reader_context_ad6788614303d5fd53fb1bdba28615491}{OnReadSample}})(\_In\_ HRESULT hrStatus, \_In\_ DWORD dwStreamIndex, \_In\_ DWORD dwStreamFlags, \_In\_ LONGLONG llTimestamp, \_In\_opt\_ IMFSample* pSample) \textcolor{keyword}{override}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00114}00114     \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00115}00115         UNREFERENCED\_PARAMETER(dwStreamIndex);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00116}00116 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00117}00117         std::lock\_guard<std::mutex> lock(\mbox{\hyperlink{struct_source_reader_context_a98f362d33b27fe053fb5676ebe6f5a4b}{guard}});}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00118}00118 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00119}00119         \textcolor{keywordflow}{if} (SUCCEEDED(hrStatus))}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00120}00120         \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00121}00121             \textcolor{keywordflow}{if} (pSample)}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00122}00122             \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00123}00123                 \mbox{\hyperlink{struct_source_reader_context_ab82a19a93fca575f55845b605a2f959d}{sample}} = pSample;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00124}00124             \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00125}00125         \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00126}00126 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00127}00127         \textcolor{keywordflow}{if} (dwStreamFlags \& MF\_SOURCE\_READERF\_ENDOFSTREAM)}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00128}00128         \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00129}00129             \mbox{\hyperlink{struct_source_reader_context_ad263c2cc821a86842faafe210816c003}{endOfStream}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00130}00130         \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00131}00131 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00132}00132         \mbox{\hyperlink{struct_source_reader_context_ac60667f793769f8005c364fde74802fb}{status}} = hrStatus;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00133}00133 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00134}00134         SetEvent(\mbox{\hyperlink{struct_source_reader_context_ad9b1ba7be7966da6f919cb48609b551f}{hReadSample}});}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00135}00135 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00136}00136         \textcolor{keywordflow}{return} S\_OK;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00137}00137     \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00138}00138 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00139}\mbox{\hyperlink{struct_source_reader_context_a6bf3f633e072f6697c16cd2950dc6fbc}{00139}}     STDMETHOD(\mbox{\hyperlink{struct_source_reader_context_a6bf3f633e072f6697c16cd2950dc6fbc}{OnFlush}})(\_In\_ DWORD) \textcolor{keyword}{override}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00140}00140     \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00141}00141         \textcolor{keywordflow}{return} S\_OK;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00142}00142     \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00143}00143 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00144}\mbox{\hyperlink{struct_source_reader_context_a05ab6d201b2c773a8e646b069869ac1a}{00144}}     STDMETHOD(\mbox{\hyperlink{struct_source_reader_context_a05ab6d201b2c773a8e646b069869ac1a}{OnEvent}})(\_In\_ DWORD, \_In\_ IMFMediaEvent*) \textcolor{keyword}{override}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00145}00145     \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00146}00146         \textcolor{keywordflow}{return} S\_OK;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00147}00147     \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00148}00148 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00149}\mbox{\hyperlink{struct_source_reader_context_ae926cdda528102dd3b52ab43f1d8affc}{00149}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_source_reader_context_ae926cdda528102dd3b52ab43f1d8affc}{Restart}}()}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00150}00150     \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00151}00151         std::lock\_guard<std::mutex> lock(\mbox{\hyperlink{struct_source_reader_context_a98f362d33b27fe053fb5676ebe6f5a4b}{guard}});}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00152}00152         \mbox{\hyperlink{struct_source_reader_context_ad263c2cc821a86842faafe210816c003}{endOfStream}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00153}00153         \mbox{\hyperlink{struct_source_reader_context_ab82a19a93fca575f55845b605a2f959d}{sample}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00154}00154     \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00155}00155 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00156}\mbox{\hyperlink{struct_source_reader_context_ad9b1ba7be7966da6f919cb48609b551f}{00156}}     HANDLE              \mbox{\hyperlink{struct_source_reader_context_ad9b1ba7be7966da6f919cb48609b551f}{hReadSample}};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00157}\mbox{\hyperlink{struct_source_reader_context_ad263c2cc821a86842faafe210816c003}{00157}}     \textcolor{keywordtype}{bool}                \mbox{\hyperlink{struct_source_reader_context_ad263c2cc821a86842faafe210816c003}{endOfStream}};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00158}\mbox{\hyperlink{struct_source_reader_context_ac60667f793769f8005c364fde74802fb}{00158}}     HRESULT             \mbox{\hyperlink{struct_source_reader_context_ac60667f793769f8005c364fde74802fb}{status}};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00159}\mbox{\hyperlink{struct_source_reader_context_a98f362d33b27fe053fb5676ebe6f5a4b}{00159}}     std::mutex          \mbox{\hyperlink{struct_source_reader_context_a98f362d33b27fe053fb5676ebe6f5a4b}{guard}};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00160}\mbox{\hyperlink{struct_source_reader_context_ab82a19a93fca575f55845b605a2f959d}{00160}}     ComPtr<IMFSample>   \mbox{\hyperlink{struct_source_reader_context_ab82a19a93fca575f55845b605a2f959d}{sample}};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00161}00161 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00162}\mbox{\hyperlink{struct_source_reader_context_a9a8b73ffea851d45aefb6ed9d88c12f6}{00162}}     \mbox{\hyperlink{struct_source_reader_context_a9a8b73ffea851d45aefb6ed9d88c12f6}{SourceReaderContext}}() :}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00163}00163 \#if (\_WIN32\_WINNT >= \_WIN32\_WINNT\_VISTA)}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00164}00164         \mbox{\hyperlink{struct_source_reader_context_ad9b1ba7be7966da6f919cb48609b551f}{hReadSample}}(CreateEventEx(nullptr, nullptr, 0, EVENT\_MODIFY\_STATE | SYNCHRONIZE)),}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00165}00165 \#else}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00166}00166         \mbox{\hyperlink{struct_source_reader_context_ad9b1ba7be7966da6f919cb48609b551f}{hReadSample}}(CreateEvent(nullptr, FALSE, FALSE, nullptr)),}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00167}00167 \#endif}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00168}00168         \mbox{\hyperlink{struct_source_reader_context_ad263c2cc821a86842faafe210816c003}{endOfStream}}(false),}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00169}00169         \mbox{\hyperlink{struct_source_reader_context_ac60667f793769f8005c364fde74802fb}{status}}(S\_OK)}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00170}00170     \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00171}00171     \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00172}\mbox{\hyperlink{struct_source_reader_context_aae052cdea59ac8b328653a7a61e654f7}{00172}}     \textcolor{keyword}{virtual} \mbox{\hyperlink{struct_source_reader_context_aae052cdea59ac8b328653a7a61e654f7}{\string~SourceReaderContext}}()}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00173}00173     \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00174}00174         CloseHandle(\mbox{\hyperlink{struct_source_reader_context_ad9b1ba7be7966da6f919cb48609b551f}{hReadSample}});}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00175}00175     \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00176}00176 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00177}00177 \};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00178}00178 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00179}00179 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00180}00180 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00181}00181 \textcolor{comment}{// Forward declaration}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00182}00182 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00183}00183 HRESULT \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_a25be963d2bc80e09098536cb91aeb963}{CreateMFReader}}(\_In\_z\_ \textcolor{keyword}{const} WCHAR* mediaFile, \_In\_ IUnknown* async, \_Outptr\_ IMFSourceReader** reader, \_Out\_ WAVEFORMATEX* wfx, \_In\_ \textcolor{keywordtype}{size\_t} maxwfx);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00184}00184 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00185}\mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_a349b6c149589c66ec69410e1036837f7}{00185}} HRESULT \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_a349b6c149589c66ec69410e1036837f7}{FindMediaFileCch}}(\_Out\_writes\_(cchDest) WCHAR* strDestPath, \_In\_ \textcolor{keywordtype}{int} cchDest, \_In\_z\_ LPCWSTR strFilename);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00186}00186 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00187}00187 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00188}00188 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00189}00189 \textcolor{comment}{// Entry point to the program}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00190}00190 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00191}\mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00191}} \textcolor{keywordtype}{int} \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00192}00192 \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00193}00193     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00194}00194     \textcolor{comment}{// Initialize XAudio2}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00195}00195     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00196}00196     HRESULT hr = CoInitializeEx(\textcolor{keyword}{nullptr}, COINIT\_MULTITHREADED);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00197}00197     \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00198}00198     \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00199}00199         wprintf(L\textcolor{stringliteral}{"{}Failed to init COM: \%\#X\(\backslash\)n"{}}, hr);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00200}00200         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00201}00201     \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00202}00202 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00203}00203 \textcolor{preprocessor}{\#ifdef USING\_XAUDIO2\_7\_DIRECTX}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00204}00204     \textcolor{comment}{// Workaround for XAudio 2.7 known issue}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00205}00205 \textcolor{preprocessor}{\#ifdef \_DEBUG}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00206}00206     HMODULE mXAudioDLL = LoadLibraryExW(L\textcolor{stringliteral}{"{}XAudioD2\_7.DLL"{}}, \textcolor{keyword}{nullptr}, 0x00000800 \textcolor{comment}{/* LOAD\_LIBRARY\_SEARCH\_SYSTEM32 */});}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00207}00207 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00208}00208     HMODULE mXAudioDLL = LoadLibraryExW(L\textcolor{stringliteral}{"{}XAudio2\_7.DLL"{}}, \textcolor{keyword}{nullptr}, 0x00000800 \textcolor{comment}{/* LOAD\_LIBRARY\_SEARCH\_SYSTEM32 */});}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00209}00209 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00210}00210     \textcolor{keywordflow}{if} (!mXAudioDLL)}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00211}00211     \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00212}00212         wprintf(L\textcolor{stringliteral}{"{}Failed to find XAudio 2.7 DLL"{}});}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00213}00213         CoUninitialize();}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00214}00214         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00215}00215     \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00216}00216 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00217}00217 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00218}00218     UINT32 flags = 0;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00219}00219 \textcolor{preprocessor}{\#if defined(USING\_XAUDIO2\_7\_DIRECTX) \&\& defined(\_DEBUG)}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00220}00220     flags |= XAUDIO2\_DEBUG\_ENGINE;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00221}00221 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00222}00222     ComPtr<IXAudio2> pXAudio2;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00223}00223     hr = XAudio2Create(pXAudio2.GetAddressOf(), flags);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00224}00224     \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00225}00225     \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00226}00226         wprintf(L\textcolor{stringliteral}{"{}Failed to init XAudio2 engine: \%\#X\(\backslash\)n"{}}, hr);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00227}00227         CoUninitialize();}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00228}00228         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00229}00229     \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00230}00230 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00231}00231 \textcolor{preprocessor}{\#if !defined(USING\_XAUDIO2\_7\_DIRECTX) \&\& defined(\_DEBUG)}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00232}00232     \textcolor{comment}{// To see the trace output, you need to view ETW logs for this application:}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00233}00233     \textcolor{comment}{//    Go to Control Panel, Administrative Tools, Event Viewer.}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00234}00234     \textcolor{comment}{//    View-\/>Show Analytic and Debug Logs.}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00235}00235     \textcolor{comment}{//    Applications and Services Logs / Microsoft / Windows / XAudio2. }}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00236}00236     \textcolor{comment}{//    Right click on Microsoft Windows XAudio2 debug logging, Properties, then Enable Logging, and hit OK }}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00237}00237     XAUDIO2\_DEBUG\_CONFIGURATION debug = \{ 0 \};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00238}00238     debug.TraceMask = XAUDIO2\_LOG\_ERRORS | XAUDIO2\_LOG\_WARNINGS;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00239}00239     debug.BreakMask = XAUDIO2\_LOG\_ERRORS;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00240}00240     pXAudio2-\/>SetDebugConfiguration(\&debug, 0);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00241}00241 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00242}00242 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00243}00243     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00244}00244     \textcolor{comment}{// Create a mastering voice}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00245}00245     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00246}00246     IXAudio2MasteringVoice* pMasteringVoice = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00247}00247 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00248}00248     \textcolor{keywordflow}{if} (FAILED(hr = pXAudio2-\/>CreateMasteringVoice(\&pMasteringVoice)))}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00249}00249     \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00250}00250         wprintf(L\textcolor{stringliteral}{"{}Failed creating mastering voice: \%\#X\(\backslash\)n"{}}, hr);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00251}00251         pXAudio2.Reset();}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00252}00252         CoUninitialize();}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00253}00253         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00254}00254     \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00255}00255 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00256}00256     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00257}00257     \textcolor{comment}{// Find our media file}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00258}00258     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00259}00259     WCHAR mediaFile[MAX\_PATH];}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00260}00260 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00261}00261     \textcolor{keywordflow}{if} (FAILED(hr = \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_a349b6c149589c66ec69410e1036837f7}{FindMediaFileCch}}(mediaFile, MAX\_PATH, L\textcolor{stringliteral}{"{}Media\(\backslash\)\(\backslash\)Wavs\(\backslash\)\(\backslash\)becky.wma"{}})))}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00262}00262     \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00263}00263         wprintf(L\textcolor{stringliteral}{"{}Failed to find media file (\%\#X)\(\backslash\)n"{}}, hr);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00264}00264         pXAudio2.Reset();}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00265}00265         CoUninitialize();}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00266}00266         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00267}00267     \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00268}00268 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00269}00269     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00270}00270     \textcolor{comment}{// Start up Media Foundation}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00271}00271     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00272}00272     hr = MFStartup(MF\_VERSION);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00273}00273     \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00274}00274     \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00275}00275         wprintf(L\textcolor{stringliteral}{"{}Failed to initialize Media Foundation (\%\#X)\(\backslash\)n"{}}, hr);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00276}00276         pXAudio2.Reset();}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00277}00277         CoUninitialize();}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00278}00278         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00279}00279     \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00280}00280 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00281}00281     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00282}00282     \textcolor{comment}{// Create MF reader for our media file}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00283}00283     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00284}00284     \mbox{\hyperlink{struct_source_reader_context}{SourceReaderContext}} readerContext;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00285}00285     ComPtr<IMFSourceReader> reader;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00286}00286     WAVEFORMATEX wfx;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00287}00287     hr = \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_a25be963d2bc80e09098536cb91aeb963}{CreateMFReader}}(mediaFile, \&readerContext, reader.GetAddressOf(), \&wfx, \textcolor{keyword}{sizeof}(wfx));}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00288}00288     \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00289}00289     \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00290}00290         wprintf(L\textcolor{stringliteral}{"{}Failed to create media reader (\%\#X)\(\backslash\)n"{}}, hr);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00291}00291         pXAudio2.Reset();}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00292}00292         CoUninitialize();}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00293}00293         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00294}00294     \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00295}00295 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00296}00296     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00297}00297     \textcolor{comment}{// Create the source voice}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00298}00298     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00299}00299     \mbox{\hyperlink{struct_streaming_voice_context}{StreamingVoiceContext}} voiceContext;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00300}00300 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00301}00301     IXAudio2SourceVoice* pSourceVoice;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00302}00302     hr = pXAudio2-\/>CreateSourceVoice(\&pSourceVoice, \&wfx, 0, 1.0f, \&voiceContext);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00303}00303     \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00304}00304     \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00305}00305         wprintf(L\textcolor{stringliteral}{"{}Error \%\#X creating source voice\(\backslash\)n"{}}, hr);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00306}00306         pXAudio2.Reset();}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00307}00307         CoUninitialize();}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00308}00308         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00309}00309     \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00310}00310     pSourceVoice-\/>Start(0, 0);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00311}00311 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00312}00312     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00313}00313     \textcolor{comment}{// This loop continously updates the audio stream. Within an application, this should be handled}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00314}00314     \textcolor{comment}{// on a worker thread rather than the main thread.}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00315}00315     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00316}00316     wprintf(L\textcolor{stringliteral}{"{}Press <ESC> to exit.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00317}00317     wprintf(L\textcolor{stringliteral}{"{}Now playing \%s"{}}, mediaFile);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00318}00318 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00319}00319     DWORD currentStreamBuffer = 0;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00320}00320 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00321}00321     hr = S\_OK;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00322}00322 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00323}00323     \textcolor{keywordtype}{size\_t} bufferSize[\mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_a433048abeb218e08e3f423032b6c537c}{MAX\_BUFFER\_COUNT}}] = \{ 0 \};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00324}00324     std::unique\_ptr<uint8\_t[]> buffers[\mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_a433048abeb218e08e3f423032b6c537c}{MAX\_BUFFER\_COUNT}}];}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00325}00325 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00326}00326     \textcolor{keywordflow}{for} (;;)}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00327}00327     \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00328}00328         wprintf(L\textcolor{stringliteral}{"{}."{}});}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00329}00329 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00330}00330         \textcolor{keywordflow}{if} (GetAsyncKeyState(VK\_ESCAPE))}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00331}00331         \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00332}00332             \textcolor{keywordflow}{while} (GetAsyncKeyState(VK\_ESCAPE))}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00333}00333                 Sleep(10);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00334}00334 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00335}00335             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00336}00336         \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00337}00337 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00338}00338         DWORD flags = 0;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00339}00339         hr = reader-\/>ReadSample(MF\_SOURCE\_READER\_FIRST\_AUDIO\_STREAM, 0, \textcolor{keyword}{nullptr}, \textcolor{keyword}{nullptr}, \textcolor{keyword}{nullptr}, \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00340}00340         \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00341}00341             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00342}00342 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00343}00343         WaitForSingleObject(readerContext.\mbox{\hyperlink{struct_source_reader_context_ad9b1ba7be7966da6f919cb48609b551f}{hReadSample}}, INFINITE);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00344}00344 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00345}00345         \textcolor{keywordflow}{if} (readerContext.\mbox{\hyperlink{struct_source_reader_context_ad263c2cc821a86842faafe210816c003}{endOfStream}})}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00346}00346         \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00347}00347             wprintf(L\textcolor{stringliteral}{"{}restart streaming.."{}});}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00348}00348             readerContext.\mbox{\hyperlink{struct_source_reader_context_ae926cdda528102dd3b52ab43f1d8affc}{Restart}}();}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00349}00349 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00350}00350             \textcolor{comment}{// Restart loop}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00351}00351             PROPVARIANT var = \{ 0 \};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00352}00352             var.vt = VT\_I8;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00353}00353 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00354}00354             hr = reader-\/>SetCurrentPosition(GUID\_NULL, var);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00355}00355             \textcolor{keywordflow}{if} (SUCCEEDED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00356}00356                 \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00357}00357             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00358}00358                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00359}00359         \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00360}00360 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00361}00361         ComPtr<IMFMediaBuffer> mediaBuffer;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00362}00362         hr = readerContext.\mbox{\hyperlink{struct_source_reader_context_ab82a19a93fca575f55845b605a2f959d}{sample}}-\/>ConvertToContiguousBuffer(mediaBuffer.GetAddressOf());}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00363}00363         \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00364}00364             \textcolor{keywordflow}{return} hr;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00365}00365 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00366}00366         BYTE* \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_af0c73c991a246dd292263c32ee190547}{audioData}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00367}00367         DWORD sampleBufferLength = 0;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00368}00368 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00369}00369         hr = mediaBuffer-\/>Lock(\&\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_af0c73c991a246dd292263c32ee190547}{audioData}}, \textcolor{keyword}{nullptr}, \&sampleBufferLength);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00370}00370         \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00371}00371             \textcolor{keywordflow}{return} hr;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00372}00372 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00373}00373         \textcolor{keywordflow}{if} (bufferSize[currentStreamBuffer] < sampleBufferLength)}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00374}00374         \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00375}00375             buffers[currentStreamBuffer].reset(\textcolor{keyword}{new} uint8\_t[sampleBufferLength]);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00376}00376             bufferSize[currentStreamBuffer] = sampleBufferLength;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00377}00377         \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00378}00378 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00379}00379         memcpy\_s(buffers[currentStreamBuffer].get(), sampleBufferLength, \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_af0c73c991a246dd292263c32ee190547}{audioData}}, sampleBufferLength);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00380}00380 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00381}00381         hr = mediaBuffer-\/>Unlock();}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00382}00382         \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00383}00383             \textcolor{keywordflow}{return} hr;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00384}00384 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00385}00385         \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00386}00386         \textcolor{comment}{// Wait to se if our XAudio2 source voice has played enough data for us to give}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00387}00387         \textcolor{comment}{// it another buffer full of audio. We'd like to keep no more than MAX\_BUFFER\_COUNT -\/ 1}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00388}00388         \textcolor{comment}{// buffers on the queue, so that one buffer is always free for the MF streamer}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00389}00389         \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00390}00390         XAUDIO2\_VOICE\_STATE state;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00391}00391         \textcolor{keywordflow}{for} (;; )}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00392}00392         \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00393}00393             pSourceVoice-\/>GetState(\&state);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00394}00394             \textcolor{keywordflow}{if} (state.BuffersQueued < \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_a433048abeb218e08e3f423032b6c537c}{MAX\_BUFFER\_COUNT}} -\/ 1)}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00395}00395                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00396}00396 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00397}00397             WaitForSingleObject(voiceContext.hBufferEndEvent, INFINITE);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00398}00398         \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00399}00399 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00400}00400         XAUDIO2\_BUFFER buf = \{ 0 \};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00401}00401         buf.AudioBytes = sampleBufferLength;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00402}00402         buf.pAudioData = buffers[currentStreamBuffer].get();}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00403}00403         pSourceVoice-\/>SubmitSourceBuffer(\&buf);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00404}00404 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00405}00405         currentStreamBuffer++;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00406}00406         currentStreamBuffer \%= \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_a433048abeb218e08e3f423032b6c537c}{MAX\_BUFFER\_COUNT}};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00407}00407     \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00408}00408 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00409}00409     \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00410}00410     \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00411}00411         wprintf(L\textcolor{stringliteral}{"{}\(\backslash\)nError \%\#X during playback!\(\backslash\)n"{}}, hr);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00412}00412     \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00413}00413 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00414}00414     reader-\/>Flush(MF\_SOURCE\_READER\_FIRST\_AUDIO\_STREAM);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00415}00415 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00416}00416     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00417}00417     \textcolor{comment}{// Cleanup XAudio2}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00418}00418     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00419}00419 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00420}00420     \textcolor{comment}{// All XAudio2 interfaces are released when the engine is destroyed, but being tidy}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00421}00421     pSourceVoice-\/>DestroyVoice();}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00422}00422     pMasteringVoice-\/>DestroyVoice();}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00423}00423 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00424}00424     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00425}00425     \textcolor{comment}{// Cleanup Media Foundation}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00426}00426     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00427}00427     reader = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00428}00428     MFShutdown();}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00429}00429 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00430}00430     pXAudio2.Reset();}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00431}00431 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00432}00432 \textcolor{preprocessor}{\#ifdef USING\_XAUDIO2\_7\_DIRECTX}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00433}00433     \textcolor{keywordflow}{if} (mXAudioDLL)}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00434}00434         FreeLibrary(mXAudioDLL);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00435}00435 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00436}00436 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00437}00437     CoUninitialize();}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00438}00438 \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00439}00439 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00440}00440 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00441}00441 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00442}00442 \textcolor{comment}{// Helper for setting up the MF source reader}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00443}00443 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00444}\mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_a25be963d2bc80e09098536cb91aeb963}{00444}} HRESULT \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_a25be963d2bc80e09098536cb91aeb963}{CreateMFReader}}(\_In\_z\_ \textcolor{keyword}{const} WCHAR* mediaFile, \_In\_ IUnknown* async, \_Outptr\_ IMFSourceReader** reader, \_Out\_ WAVEFORMATEX* wfx, \_In\_ \textcolor{keywordtype}{size\_t} maxwfx)}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00445}00445 \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00446}00446     \textcolor{keywordflow}{if} (!mediaFile || !reader || !wfx)}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00447}00447         \textcolor{keywordflow}{return} E\_INVALIDARG;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00448}00448 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00449}00449     HRESULT hr;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00450}00450     ComPtr<IMFAttributes> attr;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00451}00451 \textcolor{preprocessor}{\#if (\_WIN32\_WINNT >= 0x0602 }\textcolor{comment}{/*\_WIN32\_WINNT\_WIN8*/}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00452}00452     hr = MFCreateAttributes(attr.GetAddressOf(), 2);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00453}00453     \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00454}00454         \textcolor{keywordflow}{return} hr;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00455}00455 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00456}00456     hr = attr-\/>SetUINT32(MF\_LOW\_LATENCY, TRUE);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00457}00457 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00458}00458     hr = MFCreateAttributes(attr.GetAddressOf(), 1);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00459}00459 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00460}00460     \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00461}00461         \textcolor{keywordflow}{return} hr;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00462}00462 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00463}00463     hr = attr-\/>SetUnknown(MF\_SOURCE\_READER\_ASYNC\_CALLBACK, async);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00464}00464     \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00465}00465         \textcolor{keywordflow}{return} hr;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00466}00466 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00467}00467     hr = MFCreateSourceReaderFromURL(mediaFile, attr.Get(), reader);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00468}00468     \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00469}00469         \textcolor{keywordflow}{return} hr;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00470}00470 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00471}00471     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00472}00472     \textcolor{comment}{// Make the output from Media Foundation PCM so XAudio2 can consume it}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00473}00473     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00474}00474 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00475}00475     ComPtr<IMFMediaType> mediaType;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00476}00476     hr = MFCreateMediaType(mediaType.GetAddressOf());}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00477}00477     \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00478}00478         \textcolor{keywordflow}{return} hr;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00479}00479 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00480}00480     hr = mediaType-\/>SetGUID(MF\_MT\_MAJOR\_TYPE, MFMediaType\_Audio);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00481}00481     \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00482}00482         \textcolor{keywordflow}{return} hr;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00483}00483 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00484}00484     hr = mediaType-\/>SetGUID(MF\_MT\_SUBTYPE, MFAudioFormat\_PCM);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00485}00485     \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00486}00486         \textcolor{keywordflow}{return} hr;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00487}00487 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00488}00488     hr = (*reader)-\/>SetCurrentMediaType(MF\_SOURCE\_READER\_FIRST\_AUDIO\_STREAM, 0, mediaType.Get());}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00489}00489     \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00490}00490         \textcolor{keywordflow}{return} hr;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00491}00491 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00492}00492     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00493}00493     \textcolor{comment}{// Get the wave format}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00494}00494     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00495}00495 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00496}00496     ComPtr<IMFMediaType> outputMediaType;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00497}00497     hr = (*reader)-\/>GetCurrentMediaType(MF\_SOURCE\_READER\_FIRST\_AUDIO\_STREAM, outputMediaType.GetAddressOf());}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00498}00498     \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00499}00499         \textcolor{keywordflow}{return} hr;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00500}00500 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00501}00501     UINT32 waveFormatSize = 0;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00502}00502     WAVEFORMATEX* waveFormat = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00503}00503     hr = MFCreateWaveFormatExFromMFMediaType(outputMediaType.Get(), \&waveFormat, \&waveFormatSize);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00504}00504     \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00505}00505         \textcolor{keywordflow}{return} hr;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00506}00506 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00507}00507     memcpy\_s(wfx, maxwfx, waveFormat, waveFormatSize);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00508}00508     CoTaskMemFree(waveFormat);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00509}00509 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00510}00510     \textcolor{keywordflow}{return} S\_OK;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00511}00511 \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00512}00512 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00513}00513 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00514}00514 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00515}00515 \textcolor{comment}{// Helper function to try to find the location of a media file}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00516}00516 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00517}00517 \mbox{\hyperlink{_d_d_s_texture_loader_8h_a3150346626fcea3ad7afe5dfb4ce27d8}{\_Use\_decl\_annotations\_}}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00518}\mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_ad0895a6d9abe365dfbaccf3eb7fc0046}{00518}} HRESULT \mbox{\hyperlink{_week13-3-_m_f_stream_8cpp_a349b6c149589c66ec69410e1036837f7}{FindMediaFileCch}}(WCHAR* strDestPath, \textcolor{keywordtype}{int} cchDest, LPCWSTR strFilename)}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00519}00519 \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00520}00520     \textcolor{keywordtype}{bool} bFound = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00521}00521 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00522}00522     \textcolor{keywordflow}{if} (!strFilename || strFilename[0] == 0 || !strDestPath || cchDest < 10)}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00523}00523         \textcolor{keywordflow}{return} E\_INVALIDARG;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00524}00524 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00525}00525     \textcolor{comment}{// Get the exe name, and exe path}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00526}00526     WCHAR strExePath[MAX\_PATH] = \{ 0 \};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00527}00527     WCHAR strExeName[MAX\_PATH] = \{ 0 \};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00528}00528     WCHAR* strLastSlash = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00529}00529     GetModuleFileName(\textcolor{keyword}{nullptr}, strExePath, MAX\_PATH);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00530}00530     strExePath[MAX\_PATH -\/ 1] = 0;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00531}00531     strLastSlash = wcsrchr(strExePath, TEXT(\textcolor{charliteral}{'\(\backslash\)\(\backslash\)'}));}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00532}00532     \textcolor{keywordflow}{if} (strLastSlash)}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00533}00533     \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00534}00534         wcscpy\_s(strExeName, MAX\_PATH, \&strLastSlash[1]);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00535}00535 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00536}00536         \textcolor{comment}{// Chop the exe name from the exe path}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00537}00537         *strLastSlash = 0;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00538}00538 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00539}00539         \textcolor{comment}{// Chop the .exe from the exe name}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00540}00540         strLastSlash = wcsrchr(strExeName, TEXT(\textcolor{charliteral}{'.'}));}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00541}00541         \textcolor{keywordflow}{if} (strLastSlash)}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00542}00542             *strLastSlash = 0;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00543}00543     \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00544}00544 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00545}00545     wcscpy\_s(strDestPath, cchDest, strFilename);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00546}00546     \textcolor{keywordflow}{if} (GetFileAttributes(strDestPath) != 0xFFFFFFFF)}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00547}00547         \textcolor{keywordflow}{return} S\_OK;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00548}00548 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00549}00549     \textcolor{comment}{// Search all parent directories starting at .\(\backslash\) and using strFilename as the leaf name}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00550}00550     WCHAR strLeafName[MAX\_PATH] = \{ 0 \};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00551}00551     wcscpy\_s(strLeafName, MAX\_PATH, strFilename);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00552}00552 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00553}00553     WCHAR strFullPath[MAX\_PATH] = \{ 0 \};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00554}00554     WCHAR strFullFileName[MAX\_PATH] = \{ 0 \};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00555}00555     WCHAR strSearch[MAX\_PATH] = \{ 0 \};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00556}00556     WCHAR* strFilePart = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00557}00557 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00558}00558     GetFullPathName(L\textcolor{stringliteral}{"{}."{}}, MAX\_PATH, strFullPath, \&strFilePart);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00559}00559     \textcolor{keywordflow}{if} (!strFilePart)}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00560}00560         \textcolor{keywordflow}{return} E\_FAIL;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00561}00561 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00562}00562     \textcolor{keywordflow}{while} (strFilePart \&\& *strFilePart != \textcolor{charliteral}{'\(\backslash\)0'})}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00563}00563     \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00564}00564         swprintf\_s(strFullFileName, MAX\_PATH, L\textcolor{stringliteral}{"{}\%s\(\backslash\)\(\backslash\)\%s"{}}, strFullPath, strLeafName);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00565}00565         \textcolor{keywordflow}{if} (GetFileAttributes(strFullFileName) != 0xFFFFFFFF)}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00566}00566         \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00567}00567             wcscpy\_s(strDestPath, cchDest, strFullFileName);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00568}00568             bFound = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00569}00569             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00570}00570         \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00571}00571 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00572}00572         swprintf\_s(strFullFileName, MAX\_PATH, L\textcolor{stringliteral}{"{}\%s\(\backslash\)\(\backslash\)\%s\(\backslash\)\(\backslash\)\%s"{}}, strFullPath, strExeName, strLeafName);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00573}00573         \textcolor{keywordflow}{if} (GetFileAttributes(strFullFileName) != 0xFFFFFFFF)}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00574}00574         \{}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00575}00575             wcscpy\_s(strDestPath, cchDest, strFullFileName);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00576}00576             bFound = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00577}00577             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00578}00578         \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00579}00579 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00580}00580         swprintf\_s(strSearch, MAX\_PATH, L\textcolor{stringliteral}{"{}\%s\(\backslash\)\(\backslash\).."{}}, strFullPath);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00581}00581         GetFullPathName(strSearch, MAX\_PATH, strFullPath, \&strFilePart);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00582}00582     \}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00583}00583     \textcolor{keywordflow}{if} (bFound)}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00584}00584         \textcolor{keywordflow}{return} S\_OK;}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00585}00585 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00586}00586     \textcolor{comment}{// On failure, return the file as the path but also return an error code}}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00587}00587     wcscpy\_s(strDestPath, cchDest, strFilename);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00588}00588 }
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00589}00589     \textcolor{keywordflow}{return} HRESULT\_FROM\_WIN32(ERROR\_FILE\_NOT\_FOUND);}
+\DoxyCodeLine{\Hypertarget{_week13-3-_m_f_stream_8cpp_source_l00590}00590 \}}
+
+\end{DoxyCode}

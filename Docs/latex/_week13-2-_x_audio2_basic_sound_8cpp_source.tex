@@ -1,0 +1,368 @@
+\hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source}{}\doxysection{Week13-\/2-\/\+XAudio2\+Basic\+Sound.cpp}
+\label{_week13-2-_x_audio2_basic_sound_8cpp_source}\index{Week13/Week13-\/2-\/XAudio2BasicSound.cpp@{Week13/Week13-\/2-\/XAudio2BasicSound.cpp}}
+\mbox{\hyperlink{_week13-2-_x_audio2_basic_sound_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00001}00001 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00002}00002 \textcolor{comment}{// File: XAudio2BasicSound.cpp}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00003}00003 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00004}00004 \textcolor{comment}{// Simple playback of a .WAV file using XAudio2}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00005}00005 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00006}00006 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00008}\mbox{\hyperlink{_week13-2-_x_audio2_basic_sound_8cpp_ac7bef5d85e3dcd73eef56ad39ffc84a9}{00008}} \textcolor{preprocessor}{\#define WIN32\_LEAN\_AND\_MEAN}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#include <windows.h>}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00010}00010 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00012}00012 \textcolor{preprocessor}{\#include <wrl\(\backslash\)client.h>}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00014}00014 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_x_audio2_versions_8h}{XAudio2Versions.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00015}00015 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_x_w_b_tool_2_w_a_v_file_reader_8h}{WAVFileReader.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00017}00017 \textcolor{keyword}{using} Microsoft::WRL::ComPtr;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00019}00019 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00020}00020 \textcolor{comment}{// Forward declaration}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00021}00021 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00022}\mbox{\hyperlink{_week13-2-_x_audio2_basic_sound_8cpp_ab288b84491421af1fe678aefcfd2e182}{00022}} HRESULT \mbox{\hyperlink{_week13-2-_x_audio2_basic_sound_8cpp_ab288b84491421af1fe678aefcfd2e182}{PlayWave}}( \_In\_ IXAudio2* pXaudio2, \_In\_z\_ LPCWSTR szFilename );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00023}\mbox{\hyperlink{_week13-2-_x_audio2_basic_sound_8cpp_a349b6c149589c66ec69410e1036837f7}{00023}} HRESULT \mbox{\hyperlink{_week13-2-_x_audio2_basic_sound_8cpp_a349b6c149589c66ec69410e1036837f7}{FindMediaFileCch}}( \_Out\_writes\_(cchDest) WCHAR* strDestPath, \_In\_ \textcolor{keywordtype}{int} cchDest, \_In\_z\_ LPCWSTR strFilename );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00026}00026 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00027}00027 \textcolor{comment}{// Entry point to the program}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00028}00028 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00029}\mbox{\hyperlink{_week13-2-_x_audio2_basic_sound_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00029}} \textcolor{keywordtype}{int} \mbox{\hyperlink{_week13-2-_x_audio2_basic_sound_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00030}00030 \{}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00031}00031     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00032}00032     \textcolor{comment}{// Initialize XAudio2}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00033}00033     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00034}00034     HRESULT hr = CoInitializeEx( \textcolor{keyword}{nullptr}, COINIT\_MULTITHREADED );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00035}00035     \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00036}00036     \{}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00037}00037         wprintf(L\textcolor{stringliteral}{"{}Failed to init COM: \%\#X\(\backslash\)n"{}}, hr);}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00038}00038         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00039}00039     \}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00041}00041 \textcolor{preprocessor}{\#ifdef USING\_XAUDIO2\_7\_DIRECTX}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00042}00042     \textcolor{comment}{// Workaround for XAudio 2.7 known issue}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00043}00043 \textcolor{preprocessor}{\#ifdef \_DEBUG}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00044}00044     HMODULE mXAudioDLL = LoadLibraryExW(L\textcolor{stringliteral}{"{}XAudioD2\_7.DLL"{}}, \textcolor{keyword}{nullptr}, 0x00000800 \textcolor{comment}{/* LOAD\_LIBRARY\_SEARCH\_SYSTEM32 */});}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00045}00045 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00046}00046     HMODULE mXAudioDLL = LoadLibraryExW(L\textcolor{stringliteral}{"{}XAudio2\_7.DLL"{}}, \textcolor{keyword}{nullptr}, 0x00000800 \textcolor{comment}{/* LOAD\_LIBRARY\_SEARCH\_SYSTEM32 */});}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00047}00047 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00048}00048     \textcolor{keywordflow}{if} (!mXAudioDLL)}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00049}00049     \{}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00050}00050         wprintf(L\textcolor{stringliteral}{"{}Failed to find XAudio 2.7 DLL"{}});}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00051}00051         CoUninitialize();}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00052}00052         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00053}00053     \}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00054}00054 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// USING\_XAUDIO2\_7\_DIRECTX}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00056}00056     UINT32 flags = 0;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00057}00057 \textcolor{preprocessor}{\#if defined(USING\_XAUDIO2\_7\_DIRECTX) \&\& defined(\_DEBUG)}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00058}00058     flags |= XAUDIO2\_DEBUG\_ENGINE;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00059}00059 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00060}00060     ComPtr<IXAudio2> pXAudio2;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00061}00061     hr = XAudio2Create( pXAudio2.GetAddressOf(), flags );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00062}00062     \textcolor{keywordflow}{if}( FAILED( hr ) )}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00063}00063     \{}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00064}00064         wprintf( L\textcolor{stringliteral}{"{}Failed to init XAudio2 engine: \%\#X\(\backslash\)n"{}}, hr );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00065}00065         CoUninitialize();}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00066}00066         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00067}00067     \}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00069}00069 \textcolor{preprocessor}{\#if !defined(USING\_XAUDIO2\_7\_DIRECTX) \&\& defined(\_DEBUG)}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00070}00070     \textcolor{comment}{// To see the trace output, you need to view ETW logs for this application:}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00071}00071     \textcolor{comment}{//    Go to Control Panel, Administrative Tools, Event Viewer.}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00072}00072     \textcolor{comment}{//    View-\/>Show Analytic and Debug Logs.}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00073}00073     \textcolor{comment}{//    Applications and Services Logs / Microsoft / Windows / XAudio2. }}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00074}00074     \textcolor{comment}{//    Right click on Microsoft Windows XAudio2 debug logging, Properties, then Enable Logging, and hit OK }}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00075}00075     XAUDIO2\_DEBUG\_CONFIGURATION debug =\{0\};}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00076}00076     debug.TraceMask = XAUDIO2\_LOG\_ERRORS | XAUDIO2\_LOG\_WARNINGS;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00077}00077     debug.BreakMask = XAUDIO2\_LOG\_ERRORS;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00078}00078     pXAudio2-\/>SetDebugConfiguration( \&debug, 0 );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00079}00079 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00081}00081     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00082}00082     \textcolor{comment}{// Create a mastering voice}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00083}00083     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00084}00084     IXAudio2MasteringVoice* pMasteringVoice = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00086}00086     \textcolor{keywordflow}{if}( FAILED( hr = pXAudio2-\/>CreateMasteringVoice( \&pMasteringVoice ) ) )}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00087}00087     \{}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00088}00088         wprintf( L\textcolor{stringliteral}{"{}Failed creating mastering voice: \%\#X\(\backslash\)n"{}}, hr );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00089}00089         pXAudio2.Reset();}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00090}00090         CoUninitialize();}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00091}00091         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00092}00092     \}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00094}00094     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00095}00095     \textcolor{comment}{// Play a PCM wave file}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00096}00096     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00097}00097     wprintf( L\textcolor{stringliteral}{"{}Playing mono WAV PCM file..."{}} );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00098}00098     \textcolor{keywordflow}{if}( FAILED( hr = \mbox{\hyperlink{_week13-2-_x_audio2_basic_sound_8cpp_ab288b84491421af1fe678aefcfd2e182}{PlayWave}}( pXAudio2.Get(), L\textcolor{stringliteral}{"{}Media\(\backslash\)\(\backslash\)Wavs\(\backslash\)\(\backslash\)MusicMono.wav"{}} ) ) )        }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00099}00099     \{}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00100}00100         wprintf( L\textcolor{stringliteral}{"{}Failed creating source voice: \%\#X\(\backslash\)n"{}}, hr );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00101}00101         pXAudio2.Reset();}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00102}00102         CoUninitialize();}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00103}00103         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00104}00104     \}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00106}00106     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00107}00107     \textcolor{comment}{// Play an ADPCM wave file}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00108}00108     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00109}00109     wprintf( L\textcolor{stringliteral}{"{}\(\backslash\)nPlaying mono WAV ADPCM file (loops twice)..."{}} );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00110}00110     \textcolor{keywordflow}{if}( FAILED( hr = \mbox{\hyperlink{_week13-2-_x_audio2_basic_sound_8cpp_ab288b84491421af1fe678aefcfd2e182}{PlayWave}}( pXAudio2.Get(), L\textcolor{stringliteral}{"{}Media\(\backslash\)\(\backslash\)Wavs\(\backslash\)\(\backslash\)MusicMono\_adpcm.wav"{}} ) ) )}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00111}00111     \{}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00112}00112         wprintf( L\textcolor{stringliteral}{"{}Failed creating source voice: \%\#X\(\backslash\)n"{}}, hr );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00113}00113         pXAudio2.Reset();}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00114}00114         CoUninitialize();}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00115}00115         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00116}00116     \}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00117}00117 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00118}00118     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00119}00119     \textcolor{comment}{// Play a 5.1 PCM wave extensible file}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00120}00120     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00121}00121     wprintf( L\textcolor{stringliteral}{"{}\(\backslash\)nPlaying 5.1 WAV PCM file..."{}} );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00122}00122     \textcolor{keywordflow}{if}( FAILED( hr = \mbox{\hyperlink{_week13-2-_x_audio2_basic_sound_8cpp_ab288b84491421af1fe678aefcfd2e182}{PlayWave}}( pXAudio2.Get(), L\textcolor{stringliteral}{"{}Media\(\backslash\)\(\backslash\)Wavs\(\backslash\)\(\backslash\)MusicSurround.wav"{}} ) ) )}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00123}00123     \{}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00124}00124         wprintf( L\textcolor{stringliteral}{"{}Failed creating source voice: \%\#X\(\backslash\)n"{}}, hr );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00125}00125         pXAudio2.Reset();}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00126}00126         CoUninitialize();}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00127}00127         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00128}00128     \}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00129}00129 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00130}00130 \textcolor{preprocessor}{\#if defined(USING\_XAUDIO2\_7\_DIRECTX) || defined(USING\_XAUDIO2\_9)}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00131}00131 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00132}00132     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00133}00133     \textcolor{comment}{// Play a mono xWMA wave file}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00134}00134     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00135}00135     wprintf( L\textcolor{stringliteral}{"{}\(\backslash\)nPlaying mono xWMA file..."{}} );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00136}00136     \textcolor{keywordflow}{if}( FAILED( hr = \mbox{\hyperlink{_week13-2-_x_audio2_basic_sound_8cpp_ab288b84491421af1fe678aefcfd2e182}{PlayWave}}( pXAudio2.Get(), L\textcolor{stringliteral}{"{}Media\(\backslash\)\(\backslash\)Wavs\(\backslash\)\(\backslash\)MusicMono\_xwma.wav"{}} ) ) )}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00137}00137     \{}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00138}00138         wprintf( L\textcolor{stringliteral}{"{}Failed creating source voice: \%\#X\(\backslash\)n"{}}, hr );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00139}00139         pXAudio2.Reset();}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00140}00140         CoUninitialize();}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00141}00141         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00142}00142     \}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00143}00143 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00144}00144     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00145}00145     \textcolor{comment}{// Play a 5.1 xWMA wave file}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00146}00146     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00147}00147     wprintf( L\textcolor{stringliteral}{"{}\(\backslash\)nPlaying 5.1 xWMA file..."{}} );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00148}00148     \textcolor{keywordflow}{if}( FAILED( hr = \mbox{\hyperlink{_week13-2-_x_audio2_basic_sound_8cpp_ab288b84491421af1fe678aefcfd2e182}{PlayWave}}( pXAudio2.Get(), L\textcolor{stringliteral}{"{}Media\(\backslash\)\(\backslash\)Wavs\(\backslash\)\(\backslash\)MusicSurround\_xwma.wav"{}} ) ) )}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00149}00149     \{}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00150}00150         wprintf( L\textcolor{stringliteral}{"{}Failed creating source voice: \%\#X\(\backslash\)n"{}}, hr );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00151}00151         pXAudio2.Reset();}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00152}00152         CoUninitialize();}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00153}00153         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00154}00154     \}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00155}00155 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00156}00156 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00157}00157 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00158}00158     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00159}00159     \textcolor{comment}{// Cleanup XAudio2}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00160}00160     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00161}00161     wprintf( L\textcolor{stringliteral}{"{}\(\backslash\)nFinished playing\(\backslash\)n"{}} );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00162}00162 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00163}00163     \textcolor{comment}{// All XAudio2 interfaces are released when the engine is destroyed, but being tidy}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00164}00164     pMasteringVoice-\/>DestroyVoice();}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00165}00165 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00166}00166     pXAudio2.Reset();}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00167}00167 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00168}00168 \textcolor{preprocessor}{\#ifdef USING\_XAUDIO2\_7\_DIRECTX}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00169}00169     \textcolor{keywordflow}{if} (mXAudioDLL)}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00170}00170         FreeLibrary(mXAudioDLL);}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00171}00171 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00172}00172 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00173}00173     CoUninitialize();}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00174}00174 \}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00175}00175 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00176}00176 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00177}00177 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00178}00178 \textcolor{comment}{// Name: PlayWave}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00179}00179 \textcolor{comment}{// Desc: Plays a wave and blocks until the wave finishes playing}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00180}00180 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00181}00181 \mbox{\hyperlink{_d_d_s_texture_loader_8h_a3150346626fcea3ad7afe5dfb4ce27d8}{\_Use\_decl\_annotations\_}}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00182}\mbox{\hyperlink{_week13-2-_x_audio2_basic_sound_8cpp_ad4def5b723443d0f6ff5e0b6e6e35498}{00182}} HRESULT \mbox{\hyperlink{_week13-2-_x_audio2_basic_sound_8cpp_ab288b84491421af1fe678aefcfd2e182}{PlayWave}}( IXAudio2* pXaudio2, LPCWSTR szFilename )}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00183}00183 \{}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00184}00184     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00185}00185     \textcolor{comment}{// Locate the wave file}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00186}00186     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00187}00187     WCHAR strFilePath[MAX\_PATH];}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00188}00188     HRESULT hr = \mbox{\hyperlink{_week13-2-_x_audio2_basic_sound_8cpp_a349b6c149589c66ec69410e1036837f7}{FindMediaFileCch}}( strFilePath, MAX\_PATH, szFilename );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00189}00189     \textcolor{keywordflow}{if}( FAILED( hr ) )}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00190}00190     \{}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00191}00191         wprintf( L\textcolor{stringliteral}{"{}Failed to find media file: \%s\(\backslash\)n"{}}, szFilename );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00192}00192         \textcolor{keywordflow}{return} hr;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00193}00193     \}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00194}00194 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00195}00195     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00196}00196     \textcolor{comment}{// Read in the wave file}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00197}00197     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00198}00198     std::unique\_ptr<uint8\_t[]> waveFile;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00199}00199     \mbox{\hyperlink{struct_direct_x_1_1_w_a_v_data}{DirectX::WAVData}} waveData;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00200}00200     \textcolor{keywordflow}{if} ( FAILED( hr = \mbox{\hyperlink{namespace_direct_x_aa35f921e8b5bb5f9fd94c00e5e2f91ef}{DirectX::LoadWAVAudioFromFileEx}}( strFilePath, waveFile, waveData ) ) )}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00201}00201     \{}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00202}00202         wprintf( L\textcolor{stringliteral}{"{}Failed reading WAV file: \%\#X (\%s)\(\backslash\)n"{}}, hr, strFilePath );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00203}00203         \textcolor{keywordflow}{return} hr;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00204}00204     \}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00205}00205 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00206}00206     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00207}00207     \textcolor{comment}{// Play the wave using a XAudio2SourceVoice}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00208}00208     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00209}00209 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00210}00210     \textcolor{comment}{// Create the source voice}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00211}00211     IXAudio2SourceVoice* pSourceVoice;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00212}00212     \textcolor{keywordflow}{if}( FAILED( hr = pXaudio2-\/>CreateSourceVoice( \&pSourceVoice, waveData.\mbox{\hyperlink{struct_direct_x_1_1_w_a_v_data_a99e61196c19390fc26fe0caad9e10000}{wfx}} ) ) )}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00213}00213     \{}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00214}00214         wprintf( L\textcolor{stringliteral}{"{}Error \%\#X creating source voice\(\backslash\)n"{}}, hr );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00215}00215         \textcolor{keywordflow}{return} hr;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00216}00216     \}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00217}00217 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00218}00218     \textcolor{comment}{// Submit the wave sample data using an XAUDIO2\_BUFFER structure}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00219}00219     XAUDIO2\_BUFFER buffer = \{0\};}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00220}00220     buffer.pAudioData = waveData.\mbox{\hyperlink{struct_direct_x_1_1_w_a_v_data_a75e5afa2eda94d9e140688e9a7191083}{startAudio}};}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00221}00221     buffer.Flags = XAUDIO2\_END\_OF\_STREAM;  \textcolor{comment}{// tell the source voice not to expect any data after this buffer}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00222}00222     buffer.AudioBytes = waveData.\mbox{\hyperlink{struct_direct_x_1_1_w_a_v_data_ae0e08b7dde7767680ef9d9886b22f560}{audioBytes}};}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00223}00223 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00224}00224     \textcolor{keywordflow}{if} ( waveData.\mbox{\hyperlink{struct_direct_x_1_1_w_a_v_data_af7d0f052fafbf5dbd843c70924e589e8}{loopLength}} > 0 )}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00225}00225     \{}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00226}00226         buffer.LoopBegin = waveData.\mbox{\hyperlink{struct_direct_x_1_1_w_a_v_data_a2296927064d290b61b9b001f09c6d520}{loopStart}};}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00227}00227         buffer.LoopLength = waveData.\mbox{\hyperlink{struct_direct_x_1_1_w_a_v_data_af7d0f052fafbf5dbd843c70924e589e8}{loopLength}};}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00228}00228         buffer.LoopCount = 1; \textcolor{comment}{// We'll just assume we play the loop twice}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00229}00229     \}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00230}00230 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00231}00231 \textcolor{preprocessor}{\#if defined(USING\_XAUDIO2\_7\_DIRECTX) || defined(USING\_XAUDIO2\_9)}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00232}00232     \textcolor{keywordflow}{if} ( waveData.\mbox{\hyperlink{struct_direct_x_1_1_w_a_v_data_a1093dfb7190fffeebfc523a07485e8d2}{seek}} )}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00233}00233     \{}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00234}00234         XAUDIO2\_BUFFER\_WMA xwmaBuffer = \{0\};}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00235}00235         xwmaBuffer.pDecodedPacketCumulativeBytes = waveData.\mbox{\hyperlink{struct_direct_x_1_1_w_a_v_data_a1093dfb7190fffeebfc523a07485e8d2}{seek}};}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00236}00236         xwmaBuffer.PacketCount = waveData.\mbox{\hyperlink{struct_direct_x_1_1_w_a_v_data_aba2a74596c23419576b65750f8dce7d9}{seekCount}};}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00237}00237         \textcolor{keywordflow}{if}( FAILED( hr = pSourceVoice-\/>SubmitSourceBuffer( \&buffer, \&xwmaBuffer ) ) )}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00238}00238         \{}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00239}00239             wprintf( L\textcolor{stringliteral}{"{}Error \%\#X submitting source buffer (xWMA)\(\backslash\)n"{}}, hr );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00240}00240             pSourceVoice-\/>DestroyVoice();}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00241}00241             \textcolor{keywordflow}{return} hr;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00242}00242         \}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00243}00243     \}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00244}00244 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00245}00245     \textcolor{keywordflow}{if} ( waveData.\mbox{\hyperlink{struct_direct_x_1_1_w_a_v_data_a1093dfb7190fffeebfc523a07485e8d2}{seek}} )}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00246}00246     \{}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00247}00247         wprintf( L\textcolor{stringliteral}{"{}This platform does not support xWMA or XMA2\(\backslash\)n"{}} );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00248}00248         pSourceVoice-\/>DestroyVoice();}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00249}00249         \textcolor{keywordflow}{return} hr;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00250}00250     \}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00251}00251 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00252}00252     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( FAILED( hr = pSourceVoice-\/>SubmitSourceBuffer( \&buffer ) ) )}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00253}00253     \{}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00254}00254         wprintf( L\textcolor{stringliteral}{"{}Error \%\#X submitting source buffer\(\backslash\)n"{}}, hr );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00255}00255         pSourceVoice-\/>DestroyVoice();}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00256}00256         \textcolor{keywordflow}{return} hr;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00257}00257     \}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00258}00258 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00259}00259     hr = pSourceVoice-\/>Start( 0 );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00260}00260 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00261}00261     \textcolor{comment}{// Let the sound play}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00262}00262     BOOL isRunning = TRUE;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00263}00263     \textcolor{keywordflow}{while}( SUCCEEDED( hr ) \&\& isRunning )}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00264}00264     \{}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00265}00265         XAUDIO2\_VOICE\_STATE state;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00266}00266         pSourceVoice-\/>GetState( \&state );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00267}00267         isRunning = ( state.BuffersQueued > 0 ) != 0;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00268}00268 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00269}00269         \textcolor{comment}{// Wait till the escape key is pressed}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00270}00270         \textcolor{keywordflow}{if}( GetAsyncKeyState( VK\_ESCAPE ) )}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00271}00271             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00272}00272 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00273}00273         Sleep( 10 );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00274}00274     \}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00275}00275 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00276}00276     \textcolor{comment}{// Wait till the escape key is released}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00277}00277     \textcolor{keywordflow}{while}( GetAsyncKeyState( VK\_ESCAPE ) )}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00278}00278         Sleep( 10 );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00279}00279 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00280}00280     pSourceVoice-\/>DestroyVoice();}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00281}00281 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00282}00282     \textcolor{keywordflow}{return} hr;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00283}00283 \}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00284}00284 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00285}00285 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00286}00286 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00287}00287 \textcolor{comment}{// Helper function to try to find the location of a media file}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00288}00288 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00289}00289 \mbox{\hyperlink{_d_d_s_texture_loader_8h_a3150346626fcea3ad7afe5dfb4ce27d8}{\_Use\_decl\_annotations\_}}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00290}\mbox{\hyperlink{_week13-2-_x_audio2_basic_sound_8cpp_ad0895a6d9abe365dfbaccf3eb7fc0046}{00290}} HRESULT \mbox{\hyperlink{_week13-2-_x_audio2_basic_sound_8cpp_a349b6c149589c66ec69410e1036837f7}{FindMediaFileCch}}( WCHAR* strDestPath, \textcolor{keywordtype}{int} cchDest, LPCWSTR strFilename )}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00291}00291 \{}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00292}00292     \textcolor{keywordtype}{bool} bFound = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00293}00293 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00294}00294     \textcolor{keywordflow}{if}( !strFilename || strFilename[0] == 0 || !strDestPath || cchDest < 10 )}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00295}00295         \textcolor{keywordflow}{return} E\_INVALIDARG;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00296}00296 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00297}00297     \textcolor{comment}{// Get the exe name, and exe path}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00298}00298     WCHAR strExePath[MAX\_PATH] = \{0\};}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00299}00299     WCHAR strExeName[MAX\_PATH] = \{0\};}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00300}00300     WCHAR* strLastSlash = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00301}00301     GetModuleFileName( \textcolor{keyword}{nullptr}, strExePath, MAX\_PATH );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00302}00302     strExePath[MAX\_PATH -\/ 1] = 0;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00303}00303     strLastSlash = wcsrchr( strExePath, TEXT( \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'} ) );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00304}00304     \textcolor{keywordflow}{if}( strLastSlash )}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00305}00305     \{}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00306}00306         wcscpy\_s( strExeName, MAX\_PATH, \&strLastSlash[1] );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00307}00307 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00308}00308         \textcolor{comment}{// Chop the exe name from the exe path}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00309}00309         *strLastSlash = 0;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00310}00310 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00311}00311         \textcolor{comment}{// Chop the .exe from the exe name}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00312}00312         strLastSlash = wcsrchr( strExeName, TEXT( \textcolor{charliteral}{'.'} ) );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00313}00313         \textcolor{keywordflow}{if}( strLastSlash )}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00314}00314             *strLastSlash = 0;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00315}00315     \}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00316}00316 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00317}00317     wcscpy\_s( strDestPath, cchDest, strFilename );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00318}00318     \textcolor{keywordflow}{if}( GetFileAttributes( strDestPath ) != 0xFFFFFFFF )}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00319}00319         \textcolor{keywordflow}{return} S\_OK;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00320}00320 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00321}00321     \textcolor{comment}{// Search all parent directories starting at .\(\backslash\) and using strFilename as the leaf name}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00322}00322     WCHAR strLeafName[MAX\_PATH] = \{0\};}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00323}00323     wcscpy\_s( strLeafName, MAX\_PATH, strFilename );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00324}00324 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00325}00325     WCHAR strFullPath[MAX\_PATH] = \{0\};}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00326}00326     WCHAR strFullFileName[MAX\_PATH] = \{0\};}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00327}00327     WCHAR strSearch[MAX\_PATH] = \{0\};}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00328}00328     WCHAR* strFilePart = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00329}00329 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00330}00330     GetFullPathName( L\textcolor{stringliteral}{"{}."{}}, MAX\_PATH, strFullPath, \&strFilePart );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00331}00331     \textcolor{keywordflow}{if}( !strFilePart )}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00332}00332         \textcolor{keywordflow}{return} E\_FAIL;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00333}00333 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00334}00334     \textcolor{keywordflow}{while}( strFilePart \&\& *strFilePart != \textcolor{charliteral}{'\(\backslash\)0'} )}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00335}00335     \{}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00336}00336         swprintf\_s( strFullFileName, MAX\_PATH, L\textcolor{stringliteral}{"{}\%s\(\backslash\)\(\backslash\)\%s"{}}, strFullPath, strLeafName );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00337}00337         \textcolor{keywordflow}{if}( GetFileAttributes( strFullFileName ) != 0xFFFFFFFF )}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00338}00338         \{}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00339}00339             wcscpy\_s( strDestPath, cchDest, strFullFileName );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00340}00340             bFound = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00341}00341             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00342}00342         \}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00343}00343 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00344}00344         swprintf\_s( strFullFileName, MAX\_PATH, L\textcolor{stringliteral}{"{}\%s\(\backslash\)\(\backslash\)\%s\(\backslash\)\(\backslash\)\%s"{}}, strFullPath, strExeName, strLeafName );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00345}00345         \textcolor{keywordflow}{if}( GetFileAttributes( strFullFileName ) != 0xFFFFFFFF )}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00346}00346         \{}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00347}00347             wcscpy\_s( strDestPath, cchDest, strFullFileName );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00348}00348             bFound = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00349}00349             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00350}00350         \}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00351}00351 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00352}00352         swprintf\_s( strSearch, MAX\_PATH, L\textcolor{stringliteral}{"{}\%s\(\backslash\)\(\backslash\).."{}}, strFullPath );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00353}00353         GetFullPathName( strSearch, MAX\_PATH, strFullPath, \&strFilePart );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00354}00354     \}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00355}00355     \textcolor{keywordflow}{if}( bFound )}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00356}00356         \textcolor{keywordflow}{return} S\_OK;}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00357}00357 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00358}00358     \textcolor{comment}{// On failure, return the file as the path but also return an error code}}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00359}00359     wcscpy\_s( strDestPath, cchDest, strFilename );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00360}00360 }
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00361}00361     \textcolor{keywordflow}{return} HRESULT\_FROM\_WIN32( ERROR\_FILE\_NOT\_FOUND );}
+\DoxyCodeLine{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_source_l00362}00362 \}}
+
+\end{DoxyCode}

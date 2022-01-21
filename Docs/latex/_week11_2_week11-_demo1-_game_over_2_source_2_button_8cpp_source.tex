@@ -1,0 +1,109 @@
+\hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source}{}\doxysection{Button.\+cpp}
+\label{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source}\index{Week11/Week11-\/Demo1-\/GameOver/Source/Button.cpp@{Week11/Week11-\/Demo1-\/GameOver/Source/Button.cpp}}
+\mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include <Button.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <Utility.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <SFML/Window/Event.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include <SFML/Graphics/RenderStates.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <SFML/Graphics/RenderTarget.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00009}00009 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_u_i}{GUI}}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00010}00010 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00012}\mbox{\hyperlink{class_g_u_i_1_1_button_aa624162ff8bee4bd4523428c3ea2150b}{00012}} \mbox{\hyperlink{class_g_u_i_1_1_button_aa624162ff8bee4bd4523428c3ea2150b}{Button::Button}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_resource_holder}{FontHolder}}\& fonts, \textcolor{keyword}{const} \mbox{\hyperlink{class_texture_holder}{TextureHolder}}\& textures)}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00013}00013 : mCallback()}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00014}00014 , mNormalTexture(textures.get(\mbox{\hyperlink{namespace_textures}{Textures}}::\mbox{\hyperlink{namespace_textures_a2cfe2099537d4e80b08437b4978301a5afcf4e9236477a5558479ab41c99801c3}{ButtonNormal}}))}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00015}00015 , mSelectedTexture(textures.get(\mbox{\hyperlink{namespace_textures}{Textures}}::\mbox{\hyperlink{namespace_textures_a2cfe2099537d4e80b08437b4978301a5a5cdea0aa19de71fc3c79c63341c6dfbc}{ButtonSelected}}))}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00016}00016 , mPressedTexture(textures.get(\mbox{\hyperlink{namespace_textures}{Textures}}::\mbox{\hyperlink{namespace_textures_a2cfe2099537d4e80b08437b4978301a5a505b04971831bc2910c1e03175301ae6}{ButtonPressed}}))}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00017}00017 , mSprite()}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00018}00018 , mText(\textcolor{stringliteral}{"{}"{}}, fonts.get(\mbox{\hyperlink{namespace_fonts}{Fonts}}::\mbox{\hyperlink{namespace_fonts_a240717ec0dc75e98501af734a02c396da9e5a008b88415e37d30b922f06c8eabc}{Main}}), 16)}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00019}00019 , mIsToggle(false)}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00020}00020 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00021}00021     \mbox{\hyperlink{class_g_u_i_1_1_button_aaafdc875a6e9c4ba27578a50b0de95a8}{mSprite}}.\mbox{\hyperlink{classsf_1_1_sprite_a3729c88d88ac38c19317c18e87242560}{setTexture}}(\mbox{\hyperlink{class_g_u_i_1_1_button_afeb4ad3f31c3a6753808a318f7d5e789}{mNormalTexture}});}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00023}00023     \mbox{\hyperlink{classsf_1_1_rect}{sf::FloatRect}} bounds = \mbox{\hyperlink{class_g_u_i_1_1_button_aaafdc875a6e9c4ba27578a50b0de95a8}{mSprite}}.\mbox{\hyperlink{classsf_1_1_sprite_ab2f4c781464da6f8a52b1df6058a48b8}{getLocalBounds}}();}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00024}00024     \mbox{\hyperlink{class_g_u_i_1_1_button_a59b5447a51954de6964eff90548bcb35}{mText}}.\mbox{\hyperlink{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{setPosition}}(bounds.\mbox{\hyperlink{classsf_1_1_rect_a4dd5b9d4333bebbc51bd309298fd500f}{width}} / 2.f, bounds.\mbox{\hyperlink{classsf_1_1_rect_a6fa0fc7de1636d78cae1a1b54eef95cd}{height}} / 2.f);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00025}00025 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00027}\mbox{\hyperlink{class_g_u_i_1_1_button_ae5ac54c7429eaa482eb7069d0efdb79f}{00027}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_g_u_i_1_1_button_ae5ac54c7429eaa482eb7069d0efdb79f}{Button::setCallback}}(\mbox{\hyperlink{class_g_u_i_1_1_button_a2d7e2cb4d20f8789a779a4133fe4c678}{Callback}} callback)}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00028}00028 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00029}00029     \mbox{\hyperlink{class_g_u_i_1_1_button_a8d3e55c335176887879eda34b5d15b1e}{mCallback}} = std::move(callback);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00030}00030 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00032}\mbox{\hyperlink{class_g_u_i_1_1_button_a89e964d353192135d6a77aeff33bbc41}{00032}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_g_u_i_1_1_button_a89e964d353192135d6a77aeff33bbc41}{Button::setText}}(\textcolor{keyword}{const} std::string\& text)}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00033}00033 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00034}00034     \mbox{\hyperlink{class_g_u_i_1_1_button_a59b5447a51954de6964eff90548bcb35}{mText}}.\mbox{\hyperlink{classsf_1_1_text_a7d3b3359f286fd9503d1ced25b7b6c33}{setString}}(text);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00035}00035     \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_add3ffea68d586813ee6765c3bc796d35}{centerOrigin}}(\mbox{\hyperlink{class_g_u_i_1_1_button_a59b5447a51954de6964eff90548bcb35}{mText}});}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00036}00036 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00038}\mbox{\hyperlink{class_g_u_i_1_1_button_a8198052cf4fe5823c9f5513e778ca94d}{00038}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_g_u_i_1_1_button_a8198052cf4fe5823c9f5513e778ca94d}{Button::setToggle}}(\textcolor{keywordtype}{bool} flag)}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00039}00039 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00040}00040     \mbox{\hyperlink{class_g_u_i_1_1_button_a1228794f977d80d7758840fb94450b49}{mIsToggle}} = flag;}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00041}00041 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00043}\mbox{\hyperlink{class_g_u_i_1_1_button_a3a8cf4907161a7cc75a9353dd48c4f12}{00043}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_g_u_i_1_1_button_a3a8cf4907161a7cc75a9353dd48c4f12}{Button::isSelectable}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00044}00044 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00045}00045     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00046}00046 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00048}\mbox{\hyperlink{class_g_u_i_1_1_button_a8f141129acb9c068ba6b8d19974d8291}{00048}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_g_u_i_1_1_button_a8f141129acb9c068ba6b8d19974d8291}{Button::select}}()}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00049}00049 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00050}00050     \mbox{\hyperlink{class_g_u_i_1_1_component_ad0f7d6cc692edf2b0e426bfbd584be45}{Component::select}}();}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00052}00052     \mbox{\hyperlink{class_g_u_i_1_1_button_aaafdc875a6e9c4ba27578a50b0de95a8}{mSprite}}.\mbox{\hyperlink{classsf_1_1_sprite_a3729c88d88ac38c19317c18e87242560}{setTexture}}(\mbox{\hyperlink{class_g_u_i_1_1_button_a3e1e45011501773ed142288ec31f178d}{mSelectedTexture}});}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00053}00053 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00055}\mbox{\hyperlink{class_g_u_i_1_1_button_a6fd040a471dc3ae48ad59cacd93c7292}{00055}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_g_u_i_1_1_button_a6fd040a471dc3ae48ad59cacd93c7292}{Button::deselect}}()}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00056}00056 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00057}00057     \mbox{\hyperlink{class_g_u_i_1_1_component_aa37424b238293bb308d357cf3b35c81f}{Component::deselect}}();}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00059}00059     \mbox{\hyperlink{class_g_u_i_1_1_button_aaafdc875a6e9c4ba27578a50b0de95a8}{mSprite}}.\mbox{\hyperlink{classsf_1_1_sprite_a3729c88d88ac38c19317c18e87242560}{setTexture}}(\mbox{\hyperlink{class_g_u_i_1_1_button_afeb4ad3f31c3a6753808a318f7d5e789}{mNormalTexture}});}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00060}00060 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00062}\mbox{\hyperlink{class_g_u_i_1_1_button_ad711a129863e0301c52b896911996123}{00062}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_g_u_i_1_1_button_ad711a129863e0301c52b896911996123}{Button::activate}}()}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00063}00063 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00064}00064     \mbox{\hyperlink{class_g_u_i_1_1_component_a965823e0e62612a7e532eb8c0b98861d}{Component::activate}}();}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00066}00066     \textcolor{comment}{// If we are toggle then we should show that the button is pressed and thus "{}toggled"{}.}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00067}00067     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_g_u_i_1_1_button_a1228794f977d80d7758840fb94450b49}{mIsToggle}})}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00068}00068         \mbox{\hyperlink{class_g_u_i_1_1_button_aaafdc875a6e9c4ba27578a50b0de95a8}{mSprite}}.\mbox{\hyperlink{classsf_1_1_sprite_a3729c88d88ac38c19317c18e87242560}{setTexture}}(\mbox{\hyperlink{class_g_u_i_1_1_button_a186519051cd56f617c6148a1f3582ba3}{mPressedTexture}});}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00070}00070     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_g_u_i_1_1_button_a8d3e55c335176887879eda34b5d15b1e}{mCallback}})}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00071}00071         \mbox{\hyperlink{class_g_u_i_1_1_button_a8d3e55c335176887879eda34b5d15b1e}{mCallback}}();}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00073}00073     \textcolor{comment}{// If we are not a toggle then deactivate the button since we are just momentarily activated.}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00074}00074     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_g_u_i_1_1_button_a1228794f977d80d7758840fb94450b49}{mIsToggle}})}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00075}00075         \mbox{\hyperlink{class_g_u_i_1_1_button_ab0a1773817447712b17ab1ad6da767da}{deactivate}}();}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00076}00076 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00078}\mbox{\hyperlink{class_g_u_i_1_1_button_ab0a1773817447712b17ab1ad6da767da}{00078}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_g_u_i_1_1_button_ab0a1773817447712b17ab1ad6da767da}{Button::deactivate}}()}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00079}00079 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00080}00080     \mbox{\hyperlink{class_g_u_i_1_1_component_a8964087afef859c015fb8188e619aa81}{Component::deactivate}}();}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00082}00082     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_g_u_i_1_1_button_a1228794f977d80d7758840fb94450b49}{mIsToggle}})}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00083}00083     \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00084}00084         \textcolor{comment}{// Reset texture to right one depending on if we are selected or not.}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00085}00085         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_g_u_i_1_1_component_a456e20a33a9ee778b0eda2641147724e}{isSelected}}())}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00086}00086             \mbox{\hyperlink{class_g_u_i_1_1_button_aaafdc875a6e9c4ba27578a50b0de95a8}{mSprite}}.\mbox{\hyperlink{classsf_1_1_sprite_a3729c88d88ac38c19317c18e87242560}{setTexture}}(\mbox{\hyperlink{class_g_u_i_1_1_button_a3e1e45011501773ed142288ec31f178d}{mSelectedTexture}});}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00087}00087         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00088}00088             \mbox{\hyperlink{class_g_u_i_1_1_button_aaafdc875a6e9c4ba27578a50b0de95a8}{mSprite}}.\mbox{\hyperlink{classsf_1_1_sprite_a3729c88d88ac38c19317c18e87242560}{setTexture}}(\mbox{\hyperlink{class_g_u_i_1_1_button_afeb4ad3f31c3a6753808a318f7d5e789}{mNormalTexture}});}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00089}00089     \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00090}00090 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00092}\mbox{\hyperlink{class_g_u_i_1_1_button_a4d30e4caedd4c4373567ef452acd1fb1}{00092}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_g_u_i_1_1_button_a4d30e4caedd4c4373567ef452acd1fb1}{Button::handleEvent}}(\textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_event}{sf::Event}}\&)}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00093}00093 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00094}00094 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00096}\mbox{\hyperlink{class_g_u_i_1_1_button_a85381689221d309cb05154c711a72f3b}{00096}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_g_u_i_1_1_button_a85381689221d309cb05154c711a72f3b}{Button::draw}}(\mbox{\hyperlink{classsf_1_1_render_target}{sf::RenderTarget}}\& target, \mbox{\hyperlink{classsf_1_1_render_states}{sf::RenderStates}} states)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00097}00097 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00098}00098     states.\mbox{\hyperlink{classsf_1_1_render_states_a1f737981a0f2f0d4bb8dac866a8d1149}{transform}} *= \mbox{\hyperlink{classsf_1_1_transformable_a3e1b4772a451ec66ac7e6af655726154}{getTransform}}();}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00099}00099     target.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(\mbox{\hyperlink{class_g_u_i_1_1_button_aaafdc875a6e9c4ba27578a50b0de95a8}{mSprite}}, states);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00100}00100     target.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(\mbox{\hyperlink{class_g_u_i_1_1_button_a59b5447a51954de6964eff90548bcb35}{mText}}, states);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00101}00101 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_source_2_button_8cpp_source_l00103}00103 \}}
+
+\end{DoxyCode}

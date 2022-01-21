@@ -1,0 +1,50 @@
+\hypertarget{_wave_bank_reader_8cpp}{}\doxysection{Week13/\+Wave\+Bank\+Reader.cpp File Reference}
+\label{_wave_bank_reader_8cpp}\index{Week13/WaveBankReader.cpp@{Week13/WaveBankReader.cpp}}
+{\ttfamily \#include $<$Windows.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Wave\+Bank\+Reader.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_wave_bank_reader_1_1_impl}{Direct\+X\+::\+Wave\+Bank\+Reader\+::\+Impl}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_wave_bank_reader_8cpp_ac7bef5d85e3dcd73eef56ad39ffc84a9}{WIN32\+\_\+\+LEAN\+\_\+\+AND\+\_\+\+MEAN}}
+\item 
+\#define \mbox{\hyperlink{_wave_bank_reader_8cpp_a706a9d1784b228428ecc412848c32d83}{MAKEFOURCC}}(ch0,  ch1,  ch2,  ch3)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_wave_bank_reader_8cpp_a706a9d1784b228428ecc412848c32d83}\label{_wave_bank_reader_8cpp_a706a9d1784b228428ecc412848c32d83}} 
+\index{WaveBankReader.cpp@{WaveBankReader.cpp}!MAKEFOURCC@{MAKEFOURCC}}
+\index{MAKEFOURCC@{MAKEFOURCC}!WaveBankReader.cpp@{WaveBankReader.cpp}}
+\doxysubsubsection{\texorpdfstring{MAKEFOURCC}{MAKEFOURCC}}
+{\footnotesize\ttfamily \#define MAKEFOURCC(\begin{DoxyParamCaption}\item[{}]{ch0,  }\item[{}]{ch1,  }\item[{}]{ch2,  }\item[{}]{ch3 }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                (\textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(ch0)) \(\backslash\)}
+\DoxyCodeLine{                | (\textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(ch1)) << 8) \(\backslash\)}
+\DoxyCodeLine{                | (\textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(ch2)) << 16) \(\backslash\)}
+\DoxyCodeLine{                | (\textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(ch3)) << 24))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{_wave_bank_reader_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{_wave_bank_reader_8cpp_source}{Wave\+Bank\+Reader.\+cpp}}.
+
+\mbox{\Hypertarget{_wave_bank_reader_8cpp_ac7bef5d85e3dcd73eef56ad39ffc84a9}\label{_wave_bank_reader_8cpp_ac7bef5d85e3dcd73eef56ad39ffc84a9}} 
+\index{WaveBankReader.cpp@{WaveBankReader.cpp}!WIN32\_LEAN\_AND\_MEAN@{WIN32\_LEAN\_AND\_MEAN}}
+\index{WIN32\_LEAN\_AND\_MEAN@{WIN32\_LEAN\_AND\_MEAN}!WaveBankReader.cpp@{WaveBankReader.cpp}}
+\doxysubsubsection{\texorpdfstring{WIN32\_LEAN\_AND\_MEAN}{WIN32\_LEAN\_AND\_MEAN}}
+{\footnotesize\ttfamily \#define WIN32\+\_\+\+LEAN\+\_\+\+AND\+\_\+\+MEAN}
+
+
+
+Definition at line \mbox{\hyperlink{_wave_bank_reader_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{_wave_bank_reader_8cpp_source}{Wave\+Bank\+Reader.\+cpp}}.
+

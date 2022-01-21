@@ -57,12 +57,12 @@ Game::Game()
 
 	mMusic.openFromFile("Media/Sound/nice_music.ogg");
 
-	//change some parameters
-	mMusic.setPosition(0, 0, 0); //change its 3D position - the default position is (0,0,0)
-	mMusic.setPitch(2); //increase the pitch - pitch represents the perceived fundamental frequency of a sound such as modifying the playing speed of the sound
-	mMusic.setVolume(50); //reduce the volume
-	mMusic.setAttenuation(100); //an attenuation value of 100 will make the sound fade out very quicky as it gets further from the listener - default value is 1
-	mMusic.setLoop(true); //make it loop
+	//! change Music parameters
+	mMusic.setPosition(0, 0, 0); //! @param setPosition: change its 3D position - the default position is (0,0,0)
+	mMusic.setPitch(2); //! @param setPitch: increase the pitch - pitch represents the perceived fundamental frequency of a sound such as modifying the playing speed of the sound
+	mMusic.setVolume(50); //! @param setVolume: reduce the volume
+	mMusic.setAttenuation(100); //! @param setAttenuation: an attenuation value of 100 will make the sound fade out very quicky as it gets further from the listener - default value is 1
+	mMusic.setLoop(true); //! @param setLoop: make it loop
 	//Play the music
 	//mMusic.play();
 

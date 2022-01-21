@@ -1,0 +1,1562 @@
+\hypertarget{classsf_1_1_text}{}\doxysection{sf\+::Text Class Reference}
+\label{classsf_1_1_text}\index{sf::Text@{sf::Text}}
+
+
+Graphical text that can be drawn to a render target.  
+
+
+
+
+{\ttfamily \#include $<$Text.\+hpp$>$}
+
+Inheritance diagram for sf\+::Text\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsf_1_1_text}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82}{Style}} \{ \newline
+\mbox{\hyperlink{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a65dbbdd9d938efe1eea1e2f3b7d7c944}{Regular}} = 0
+, \mbox{\hyperlink{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a140bf2d7252e8ec458eca939783c0c5c}{Bold}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82af3e10eb0fa68aa746fbbdfcecbf352c9}{Italic}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a1b5023b3374ff2d13d3e281fb286a952}{Underlined}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \newline
+\mbox{\hyperlink{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a1f73626739a892db5b5fa0fc4f904132}{Strike\+Through}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \mbox{\hyperlink{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a65dbbdd9d938efe1eea1e2f3b7d7c944}{Regular}} = 0
+, \mbox{\hyperlink{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a140bf2d7252e8ec458eca939783c0c5c}{Bold}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82af3e10eb0fa68aa746fbbdfcecbf352c9}{Italic}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \newline
+\mbox{\hyperlink{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a1b5023b3374ff2d13d3e281fb286a952}{Underlined}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a1f73626739a892db5b5fa0fc4f904132}{Strike\+Through}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of the string drawing styles. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82}{Style}} \{ \newline
+\mbox{\hyperlink{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a65dbbdd9d938efe1eea1e2f3b7d7c944}{Regular}} = 0
+, \mbox{\hyperlink{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a140bf2d7252e8ec458eca939783c0c5c}{Bold}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82af3e10eb0fa68aa746fbbdfcecbf352c9}{Italic}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a1b5023b3374ff2d13d3e281fb286a952}{Underlined}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \newline
+\mbox{\hyperlink{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a1f73626739a892db5b5fa0fc4f904132}{Strike\+Through}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \mbox{\hyperlink{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a65dbbdd9d938efe1eea1e2f3b7d7c944}{Regular}} = 0
+, \mbox{\hyperlink{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a140bf2d7252e8ec458eca939783c0c5c}{Bold}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82af3e10eb0fa68aa746fbbdfcecbf352c9}{Italic}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \newline
+\mbox{\hyperlink{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a1b5023b3374ff2d13d3e281fb286a952}{Underlined}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a1f73626739a892db5b5fa0fc4f904132}{Strike\+Through}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of the string drawing styles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsf_1_1_text_aff7cab6a92e5948c9d1481cb2d87eb84}{Text}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_text_a614019e0b5c0ed39a99d32483a51f2c5}{Text}} (const \mbox{\hyperlink{classsf_1_1_string}{String}} \&string, const \mbox{\hyperlink{classsf_1_1_font}{Font}} \&font, unsigned int character\+Size=30)
+\begin{DoxyCompactList}\small\item\em Construct the text from a string, font and size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_text_a7d3b3359f286fd9503d1ced25b7b6c33}{set\+String}} (const \mbox{\hyperlink{classsf_1_1_string}{String}} \&string)
+\begin{DoxyCompactList}\small\item\em Set the text\textquotesingle{}s string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_text_a2927805d1ae92d57f15034ea34756b81}{set\+Font}} (const \mbox{\hyperlink{classsf_1_1_font}{Font}} \&font)
+\begin{DoxyCompactList}\small\item\em Set the text\textquotesingle{}s font. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_text_ae96f835fc1bff858f8a23c5b01eaaf7e}{set\+Character\+Size}} (unsigned int size)
+\begin{DoxyCompactList}\small\item\em Set the character size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_text_af6505688f79e2e2d90bd68f4d767e965}{set\+Line\+Spacing}} (float spacing\+Factor)
+\begin{DoxyCompactList}\small\item\em Set the line spacing factor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_text_ab516110605edb0191a7873138ac42af2}{set\+Letter\+Spacing}} (float spacing\+Factor)
+\begin{DoxyCompactList}\small\item\em Set the letter spacing factor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_text_ad791702bc2d1b6590a1719aa60635edf}{set\+Style}} (\mbox{\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} style)
+\begin{DoxyCompactList}\small\item\em Set the text\textquotesingle{}s style. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void \mbox{\hyperlink{classsf_1_1_text_a6ce65272d6d63ed01118366e92c68132}{set\+Color}} (const \mbox{\hyperlink{classsf_1_1_color}{Color}} \&color)
+\begin{DoxyCompactList}\small\item\em Set the fill color of the text. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_text_ab7bb3babac5a6da1802b2c3e1a3e6dcc}{set\+Fill\+Color}} (const \mbox{\hyperlink{classsf_1_1_color}{Color}} \&color)
+\begin{DoxyCompactList}\small\item\em Set the fill color of the text. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_text_aa19ec69c3b894e963602a6804ca68fe4}{set\+Outline\+Color}} (const \mbox{\hyperlink{classsf_1_1_color}{Color}} \&color)
+\begin{DoxyCompactList}\small\item\em Set the outline color of the text. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_text_ab0e6be3b40124557bf53737fe6a6ce77}{set\+Outline\+Thickness}} (float thickness)
+\begin{DoxyCompactList}\small\item\em Set the thickness of the text\textquotesingle{}s outline. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classsf_1_1_string}{String}} \& \mbox{\hyperlink{classsf_1_1_text_ab334881845307db46ccf344191aa819c}{get\+String}} () const
+\begin{DoxyCompactList}\small\item\em Get the text\textquotesingle{}s string. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classsf_1_1_font}{Font}} $\ast$ \mbox{\hyperlink{classsf_1_1_text_ad947a43bddaddf54d008df600699599b}{get\+Font}} () const
+\begin{DoxyCompactList}\small\item\em Get the text\textquotesingle{}s font. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classsf_1_1_text_a46d1d7f1d513bb8d434e985a93ea5224}{get\+Character\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Get the character size. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classsf_1_1_text_a028fc6e561bd9a0671254419b498b889}{get\+Letter\+Spacing}} () const
+\begin{DoxyCompactList}\small\item\em Get the size of the letter spacing factor. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classsf_1_1_text_a670622e1c299dfd6518afe289c7cd248}{get\+Line\+Spacing}} () const
+\begin{DoxyCompactList}\small\item\em Get the size of the line spacing factor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} \mbox{\hyperlink{classsf_1_1_text_a0da79b0c057f4bb51592465a205c35d7}{get\+Style}} () const
+\begin{DoxyCompactList}\small\item\em Get the text\textquotesingle{}s style. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} const \mbox{\hyperlink{classsf_1_1_color}{Color}} \& \mbox{\hyperlink{classsf_1_1_text_a810cc4aa8eb5998f9eb9d02b1c099660}{get\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Get the fill color of the text. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classsf_1_1_color}{Color}} \& \mbox{\hyperlink{classsf_1_1_text_a10400757492ec7fa97454488314ca39b}{get\+Fill\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Get the fill color of the text. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classsf_1_1_color}{Color}} \& \mbox{\hyperlink{classsf_1_1_text_ade9256ff9d43c9481fcf5f4003fe0141}{get\+Outline\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Get the outline color of the text. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classsf_1_1_text_af6bf01c23189edf52c8b38708db6f3f6}{get\+Outline\+Thickness}} () const
+\begin{DoxyCompactList}\small\item\em Get the outline thickness of the text. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}} \mbox{\hyperlink{classsf_1_1_text_a2e252d8dcae3eb61c6c962c0bc674b12}{find\+Character\+Pos}} (std\+::size\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em Return the position of the {\itshape index-\/th} character. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{Float\+Rect}} \mbox{\hyperlink{classsf_1_1_text_a3e6b3b298827f853b41165eee2cbbc66}{get\+Local\+Bounds}} () const
+\begin{DoxyCompactList}\small\item\em Get the local bounding rectangle of the entity. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{Float\+Rect}} \mbox{\hyperlink{classsf_1_1_text_ad33ed96ce9fbe99610f7f8b6874a16b4}{get\+Global\+Bounds}} () const
+\begin{DoxyCompactList}\small\item\em Get the global bounding rectangle of the entity. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_text_aff7cab6a92e5948c9d1481cb2d87eb84}{Text}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_text_a614019e0b5c0ed39a99d32483a51f2c5}{Text}} (const \mbox{\hyperlink{classsf_1_1_string}{String}} \&string, const \mbox{\hyperlink{classsf_1_1_font}{Font}} \&font, unsigned int character\+Size=30)
+\begin{DoxyCompactList}\small\item\em Construct the text from a string, font and size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_text_a7d3b3359f286fd9503d1ced25b7b6c33}{set\+String}} (const \mbox{\hyperlink{classsf_1_1_string}{String}} \&string)
+\begin{DoxyCompactList}\small\item\em Set the text\textquotesingle{}s string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_text_a2927805d1ae92d57f15034ea34756b81}{set\+Font}} (const \mbox{\hyperlink{classsf_1_1_font}{Font}} \&font)
+\begin{DoxyCompactList}\small\item\em Set the text\textquotesingle{}s font. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_text_ae96f835fc1bff858f8a23c5b01eaaf7e}{set\+Character\+Size}} (unsigned int size)
+\begin{DoxyCompactList}\small\item\em Set the character size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_text_af6505688f79e2e2d90bd68f4d767e965}{set\+Line\+Spacing}} (float spacing\+Factor)
+\begin{DoxyCompactList}\small\item\em Set the line spacing factor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_text_ab516110605edb0191a7873138ac42af2}{set\+Letter\+Spacing}} (float spacing\+Factor)
+\begin{DoxyCompactList}\small\item\em Set the letter spacing factor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_text_ad791702bc2d1b6590a1719aa60635edf}{set\+Style}} (\mbox{\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} style)
+\begin{DoxyCompactList}\small\item\em Set the text\textquotesingle{}s style. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void \mbox{\hyperlink{classsf_1_1_text_a6ce65272d6d63ed01118366e92c68132}{set\+Color}} (const \mbox{\hyperlink{classsf_1_1_color}{Color}} \&color)
+\begin{DoxyCompactList}\small\item\em Set the fill color of the text. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_text_ab7bb3babac5a6da1802b2c3e1a3e6dcc}{set\+Fill\+Color}} (const \mbox{\hyperlink{classsf_1_1_color}{Color}} \&color)
+\begin{DoxyCompactList}\small\item\em Set the fill color of the text. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_text_aa19ec69c3b894e963602a6804ca68fe4}{set\+Outline\+Color}} (const \mbox{\hyperlink{classsf_1_1_color}{Color}} \&color)
+\begin{DoxyCompactList}\small\item\em Set the outline color of the text. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_text_ab0e6be3b40124557bf53737fe6a6ce77}{set\+Outline\+Thickness}} (float thickness)
+\begin{DoxyCompactList}\small\item\em Set the thickness of the text\textquotesingle{}s outline. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classsf_1_1_string}{String}} \& \mbox{\hyperlink{classsf_1_1_text_ab334881845307db46ccf344191aa819c}{get\+String}} () const
+\begin{DoxyCompactList}\small\item\em Get the text\textquotesingle{}s string. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classsf_1_1_font}{Font}} $\ast$ \mbox{\hyperlink{classsf_1_1_text_ad947a43bddaddf54d008df600699599b}{get\+Font}} () const
+\begin{DoxyCompactList}\small\item\em Get the text\textquotesingle{}s font. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classsf_1_1_text_a46d1d7f1d513bb8d434e985a93ea5224}{get\+Character\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Get the character size. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classsf_1_1_text_a028fc6e561bd9a0671254419b498b889}{get\+Letter\+Spacing}} () const
+\begin{DoxyCompactList}\small\item\em Get the size of the letter spacing factor. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classsf_1_1_text_a670622e1c299dfd6518afe289c7cd248}{get\+Line\+Spacing}} () const
+\begin{DoxyCompactList}\small\item\em Get the size of the line spacing factor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} \mbox{\hyperlink{classsf_1_1_text_a0da79b0c057f4bb51592465a205c35d7}{get\+Style}} () const
+\begin{DoxyCompactList}\small\item\em Get the text\textquotesingle{}s style. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} const \mbox{\hyperlink{classsf_1_1_color}{Color}} \& \mbox{\hyperlink{classsf_1_1_text_a810cc4aa8eb5998f9eb9d02b1c099660}{get\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Get the fill color of the text. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classsf_1_1_color}{Color}} \& \mbox{\hyperlink{classsf_1_1_text_a10400757492ec7fa97454488314ca39b}{get\+Fill\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Get the fill color of the text. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classsf_1_1_color}{Color}} \& \mbox{\hyperlink{classsf_1_1_text_ade9256ff9d43c9481fcf5f4003fe0141}{get\+Outline\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Get the outline color of the text. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classsf_1_1_text_af6bf01c23189edf52c8b38708db6f3f6}{get\+Outline\+Thickness}} () const
+\begin{DoxyCompactList}\small\item\em Get the outline thickness of the text. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}} \mbox{\hyperlink{classsf_1_1_text_a2e252d8dcae3eb61c6c962c0bc674b12}{find\+Character\+Pos}} (std\+::size\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em Return the position of the {\itshape index-\/th} character. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{Float\+Rect}} \mbox{\hyperlink{classsf_1_1_text_a3e6b3b298827f853b41165eee2cbbc66}{get\+Local\+Bounds}} () const
+\begin{DoxyCompactList}\small\item\em Get the local bounding rectangle of the entity. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{Float\+Rect}} \mbox{\hyperlink{classsf_1_1_text_ad33ed96ce9fbe99610f7f8b6874a16b4}{get\+Global\+Bounds}} () const
+\begin{DoxyCompactList}\small\item\em Get the global bounding rectangle of the entity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classsf_1_1_text_a42f0cd394f76f4c0998114918cb3f11c}{draw}} (\mbox{\hyperlink{classsf_1_1_render_target}{Render\+Target}} \&target, \mbox{\hyperlink{classsf_1_1_render_states}{Render\+States}} states) const
+\begin{DoxyCompactList}\small\item\em Draw the text to a render target. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_text_a4cd48624a76df98f048eaaee69cfb0ad}{ensure\+Geometry\+Update}} () const
+\begin{DoxyCompactList}\small\item\em Make sure the text\textquotesingle{}s geometry is updated. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classsf_1_1_text_a42f0cd394f76f4c0998114918cb3f11c}{draw}} (\mbox{\hyperlink{classsf_1_1_render_target}{Render\+Target}} \&target, \mbox{\hyperlink{classsf_1_1_render_states}{Render\+States}} states) const
+\begin{DoxyCompactList}\small\item\em Draw the text to a render target. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_text_a4cd48624a76df98f048eaaee69cfb0ad}{ensure\+Geometry\+Update}} () const
+\begin{DoxyCompactList}\small\item\em Make sure the text\textquotesingle{}s geometry is updated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsf_1_1_string}{String}} \mbox{\hyperlink{classsf_1_1_text_a10080b61057e2f76e2c2dc2a61633130}{m\+\_\+string}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsf_1_1_string}{String}} to display. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classsf_1_1_font}{Font}} $\ast$ \mbox{\hyperlink{classsf_1_1_text_a26afd30fcb82c0474c15501e86ff0344}{m\+\_\+font}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsf_1_1_font}{Font}} used to display the string. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classsf_1_1_text_a5a066742cdc44db9f2c871fdb03f2ad6}{m\+\_\+character\+Size}}
+\begin{DoxyCompactList}\small\item\em Base size of characters, in pixels. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classsf_1_1_text_afb9a3c69064eaae9a61232f1a3339b27}{m\+\_\+letter\+Spacing\+Factor}}
+\begin{DoxyCompactList}\small\item\em Spacing factor between letters. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classsf_1_1_text_a56893f600ec4c6018f35345c39349344}{m\+\_\+line\+Spacing\+Factor}}
+\begin{DoxyCompactList}\small\item\em Spacing factor between lines. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} \mbox{\hyperlink{classsf_1_1_text_aaf9d652e6ea1bb3f1fdedb041b2f85ae}{m\+\_\+style}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsf_1_1_text}{Text}} style (see \mbox{\hyperlink{namespacesf_1_1_style}{Style}} enum) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_color}{Color}} \mbox{\hyperlink{classsf_1_1_text_a5fdc28e0b845d72204225237f1af6473}{m\+\_\+fill\+Color}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsf_1_1_text}{Text}} fill color. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_color}{Color}} \mbox{\hyperlink{classsf_1_1_text_ad50d23c5c38bf11250c28b43e0cc3da2}{m\+\_\+outline\+Color}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsf_1_1_text}{Text}} outline color. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classsf_1_1_text_abf2a59406720c1a4cff8d0f8d9bfb7a8}{m\+\_\+outline\+Thickness}}
+\begin{DoxyCompactList}\small\item\em Thickness of the text\textquotesingle{}s outline. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_vertex_array}{Vertex\+Array}} \mbox{\hyperlink{classsf_1_1_text_aaafa2ed1db18952c9ded3ef1ceeee32e}{m\+\_\+vertices}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsf_1_1_vertex}{Vertex}} array containing the fill geometry. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_vertex_array}{Vertex\+Array}} \mbox{\hyperlink{classsf_1_1_text_a7e58a0f2e2be3c6988cfc7956c7f6c7c}{m\+\_\+outline\+Vertices}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsf_1_1_vertex}{Vertex}} array containing the outline geometry. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{Float\+Rect}} \mbox{\hyperlink{classsf_1_1_text_a73d20a8736e2a402859afe77f085a226}{m\+\_\+bounds}}
+\begin{DoxyCompactList}\small\item\em Bounding rectangle of the text (in local coordinates) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_text_a29af9fa585a8fcb7ef3cf53d0a6baf17}{m\+\_\+geometry\+Need\+Update}}
+\begin{DoxyCompactList}\small\item\em Does the geometry need to be recomputed? \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} \mbox{\hyperlink{classsf_1_1_text_a97c0049579b10d545118298b23f78f30}{m\+\_\+font\+Texture\+Id}}
+\begin{DoxyCompactList}\small\item\em The font texture id. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Graphical text that can be drawn to a render target. 
+
+\mbox{\hyperlink{classsf_1_1_text}{sf\+::\+Text}} is a drawable class that allows to easily display some text with custom style and color on a render target.
+
+It inherits all the functions from \mbox{\hyperlink{classsf_1_1_transformable}{sf\+::\+Transformable}}\+: position, rotation, scale, origin. It also adds text-\/specific properties such as the font to use, the character size, the font style (bold, italic, underlined and strike through), the text color, the outline thickness, the outline color, the character spacing, the line spacing and the text to display of course. It also provides convenience functions to calculate the graphical size of the text, or to get the global position of a given character.
+
+\mbox{\hyperlink{classsf_1_1_text}{sf\+::\+Text}} works in combination with the \mbox{\hyperlink{classsf_1_1_font}{sf\+::\+Font}} class, which loads and provides the glyphs (visual characters) of a given font.
+
+The separation of \mbox{\hyperlink{classsf_1_1_font}{sf\+::\+Font}} and \mbox{\hyperlink{classsf_1_1_text}{sf\+::\+Text}} allows more flexibility and better performances\+: indeed a \mbox{\hyperlink{classsf_1_1_font}{sf\+::\+Font}} is a heavy resource, and any operation on it is slow (often too slow for real-\/time applications). On the other side, a \mbox{\hyperlink{classsf_1_1_text}{sf\+::\+Text}} is a lightweight object which can combine the glyphs data and metrics of a \mbox{\hyperlink{classsf_1_1_font}{sf\+::\+Font}} to display any text on a render target.
+
+It is important to note that the \mbox{\hyperlink{classsf_1_1_text}{sf\+::\+Text}} instance doesn\textquotesingle{}t copy the font that it uses, it only keeps a reference to it. Thus, a \mbox{\hyperlink{classsf_1_1_font}{sf\+::\+Font}} must not be destructed while it is used by a \mbox{\hyperlink{classsf_1_1_text}{sf\+::\+Text}} (i.\+e. never write a function that uses a local \mbox{\hyperlink{classsf_1_1_font}{sf\+::\+Font}} instance for creating a text).
+
+See also the note on coordinates and undistorted rendering in \mbox{\hyperlink{classsf_1_1_transformable}{sf\+::\+Transformable}}.
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Declare and load a font}}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_font}{sf::Font}} font;}
+\DoxyCodeLine{font.\mbox{\hyperlink{classsf_1_1_font_ab020052ef4e01f6c749a85571c0f3fd1}{loadFromFile}}(\textcolor{stringliteral}{"{}arial.ttf"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Create a text}}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_text}{sf::Text}} text(\textcolor{stringliteral}{"{}hello"{}}, font);}
+\DoxyCodeLine{text.setCharacterSize(30);}
+\DoxyCodeLine{text.setStyle(\mbox{\hyperlink{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a140bf2d7252e8ec458eca939783c0c5c}{sf::Text::Bold}});}
+\DoxyCodeLine{text.setFillColor(\mbox{\hyperlink{classsf_1_1_color_a7052b1c5408a953e25f9691e0e828c9d}{sf::Color::Red}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Draw it}}
+\DoxyCodeLine{window.draw(text);}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_font}{sf\+::\+Font}}, \mbox{\hyperlink{classsf_1_1_transformable}{sf\+::\+Transformable}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source_l00048}{48}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source}{Text.\+hpp}}.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82}\label{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82}} 
+\index{sf::Text@{sf::Text}!Style@{Style}}
+\index{Style@{Style}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{Style}{Style}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82}{sf\+::\+Text\+::\+Style}}}
+
+
+
+Enumeration of the string drawing styles. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Regular@{Regular}!sf::Text@{sf::Text}}\index{sf::Text@{sf::Text}!Regular@{Regular}}}\mbox{\Hypertarget{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a65dbbdd9d938efe1eea1e2f3b7d7c944}\label{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a65dbbdd9d938efe1eea1e2f3b7d7c944}} 
+Regular&Regular characters, no style. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Bold@{Bold}!sf::Text@{sf::Text}}\index{sf::Text@{sf::Text}!Bold@{Bold}}}\mbox{\Hypertarget{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a140bf2d7252e8ec458eca939783c0c5c}\label{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a140bf2d7252e8ec458eca939783c0c5c}} 
+Bold&Bold characters. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Italic@{Italic}!sf::Text@{sf::Text}}\index{sf::Text@{sf::Text}!Italic@{Italic}}}\mbox{\Hypertarget{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82af3e10eb0fa68aa746fbbdfcecbf352c9}\label{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82af3e10eb0fa68aa746fbbdfcecbf352c9}} 
+Italic&Italic characters. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Underlined@{Underlined}!sf::Text@{sf::Text}}\index{sf::Text@{sf::Text}!Underlined@{Underlined}}}\mbox{\Hypertarget{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a1b5023b3374ff2d13d3e281fb286a952}\label{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a1b5023b3374ff2d13d3e281fb286a952}} 
+Underlined&Underlined characters. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{StrikeThrough@{StrikeThrough}!sf::Text@{sf::Text}}\index{sf::Text@{sf::Text}!StrikeThrough@{StrikeThrough}}}\mbox{\Hypertarget{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a1f73626739a892db5b5fa0fc4f904132}\label{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a1f73626739a892db5b5fa0fc4f904132}} 
+Strike\+Through&Strike through characters. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Regular@{Regular}!sf::Text@{sf::Text}}\index{sf::Text@{sf::Text}!Regular@{Regular}}}\mbox{\Hypertarget{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a65dbbdd9d938efe1eea1e2f3b7d7c944}\label{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a65dbbdd9d938efe1eea1e2f3b7d7c944}} 
+Regular&Regular characters, no style. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Bold@{Bold}!sf::Text@{sf::Text}}\index{sf::Text@{sf::Text}!Bold@{Bold}}}\mbox{\Hypertarget{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a140bf2d7252e8ec458eca939783c0c5c}\label{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a140bf2d7252e8ec458eca939783c0c5c}} 
+Bold&Bold characters. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Italic@{Italic}!sf::Text@{sf::Text}}\index{sf::Text@{sf::Text}!Italic@{Italic}}}\mbox{\Hypertarget{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82af3e10eb0fa68aa746fbbdfcecbf352c9}\label{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82af3e10eb0fa68aa746fbbdfcecbf352c9}} 
+Italic&Italic characters. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Underlined@{Underlined}!sf::Text@{sf::Text}}\index{sf::Text@{sf::Text}!Underlined@{Underlined}}}\mbox{\Hypertarget{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a1b5023b3374ff2d13d3e281fb286a952}\label{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a1b5023b3374ff2d13d3e281fb286a952}} 
+Underlined&Underlined characters. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{StrikeThrough@{StrikeThrough}!sf::Text@{sf::Text}}\index{sf::Text@{sf::Text}!StrikeThrough@{StrikeThrough}}}\mbox{\Hypertarget{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a1f73626739a892db5b5fa0fc4f904132}\label{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a1f73626739a892db5b5fa0fc4f904132}} 
+Strike\+Through&Strike through characters. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source_l00056}{56}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source}{Text.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82}\label{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82}} 
+\index{sf::Text@{sf::Text}!Style@{Style}}
+\index{Style@{Style}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{Style}{Style}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82}{sf\+::\+Text\+::\+Style}}}
+
+
+
+Enumeration of the string drawing styles. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Regular@{Regular}!sf::Text@{sf::Text}}\index{sf::Text@{sf::Text}!Regular@{Regular}}}\mbox{\Hypertarget{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a65dbbdd9d938efe1eea1e2f3b7d7c944}\label{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a65dbbdd9d938efe1eea1e2f3b7d7c944}} 
+Regular&Regular characters, no style. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Bold@{Bold}!sf::Text@{sf::Text}}\index{sf::Text@{sf::Text}!Bold@{Bold}}}\mbox{\Hypertarget{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a140bf2d7252e8ec458eca939783c0c5c}\label{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a140bf2d7252e8ec458eca939783c0c5c}} 
+Bold&Bold characters. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Italic@{Italic}!sf::Text@{sf::Text}}\index{sf::Text@{sf::Text}!Italic@{Italic}}}\mbox{\Hypertarget{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82af3e10eb0fa68aa746fbbdfcecbf352c9}\label{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82af3e10eb0fa68aa746fbbdfcecbf352c9}} 
+Italic&Italic characters. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Underlined@{Underlined}!sf::Text@{sf::Text}}\index{sf::Text@{sf::Text}!Underlined@{Underlined}}}\mbox{\Hypertarget{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a1b5023b3374ff2d13d3e281fb286a952}\label{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a1b5023b3374ff2d13d3e281fb286a952}} 
+Underlined&Underlined characters. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{StrikeThrough@{StrikeThrough}!sf::Text@{sf::Text}}\index{sf::Text@{sf::Text}!StrikeThrough@{StrikeThrough}}}\mbox{\Hypertarget{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a1f73626739a892db5b5fa0fc4f904132}\label{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a1f73626739a892db5b5fa0fc4f904132}} 
+Strike\+Through&Strike through characters. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Regular@{Regular}!sf::Text@{sf::Text}}\index{sf::Text@{sf::Text}!Regular@{Regular}}}\mbox{\Hypertarget{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a65dbbdd9d938efe1eea1e2f3b7d7c944}\label{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a65dbbdd9d938efe1eea1e2f3b7d7c944}} 
+Regular&Regular characters, no style. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Bold@{Bold}!sf::Text@{sf::Text}}\index{sf::Text@{sf::Text}!Bold@{Bold}}}\mbox{\Hypertarget{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a140bf2d7252e8ec458eca939783c0c5c}\label{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a140bf2d7252e8ec458eca939783c0c5c}} 
+Bold&Bold characters. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Italic@{Italic}!sf::Text@{sf::Text}}\index{sf::Text@{sf::Text}!Italic@{Italic}}}\mbox{\Hypertarget{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82af3e10eb0fa68aa746fbbdfcecbf352c9}\label{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82af3e10eb0fa68aa746fbbdfcecbf352c9}} 
+Italic&Italic characters. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Underlined@{Underlined}!sf::Text@{sf::Text}}\index{sf::Text@{sf::Text}!Underlined@{Underlined}}}\mbox{\Hypertarget{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a1b5023b3374ff2d13d3e281fb286a952}\label{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a1b5023b3374ff2d13d3e281fb286a952}} 
+Underlined&Underlined characters. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{StrikeThrough@{StrikeThrough}!sf::Text@{sf::Text}}\index{sf::Text@{sf::Text}!StrikeThrough@{StrikeThrough}}}\mbox{\Hypertarget{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a1f73626739a892db5b5fa0fc4f904132}\label{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a1f73626739a892db5b5fa0fc4f904132}} 
+Strike\+Through&Strike through characters. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source_l00056}{56}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source}{Text.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsf_1_1_text_aff7cab6a92e5948c9d1481cb2d87eb84}\label{classsf_1_1_text_aff7cab6a92e5948c9d1481cb2d87eb84}} 
+\index{sf::Text@{sf::Text}!Text@{Text}}
+\index{Text@{Text}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{Text()}{Text()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily sf\+::\+Text\+::\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Creates an empty text. \mbox{\Hypertarget{classsf_1_1_text_a614019e0b5c0ed39a99d32483a51f2c5}\label{classsf_1_1_text_a614019e0b5c0ed39a99d32483a51f2c5}} 
+\index{sf::Text@{sf::Text}!Text@{Text}}
+\index{Text@{Text}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{Text()}{Text()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily sf\+::\+Text\+::\+Text (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_string}{String}} \&}]{string,  }\item[{const \mbox{\hyperlink{classsf_1_1_font}{Font}} \&}]{font,  }\item[{unsigned int}]{character\+Size = {\ttfamily 30} }\end{DoxyParamCaption})}
+
+
+
+Construct the text from a string, font and size. 
+
+Note that if the used font is a bitmap font, it is not scalable, thus not all requested sizes will be available to use. This needs to be taken into consideration when setting the character size. If you need to display text of a certain size, make sure the corresponding bitmap font that supports that size is used.
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & \mbox{\hyperlink{classsf_1_1_text}{Text}} assigned to the string \\
+\hline
+{\em font} & \mbox{\hyperlink{classsf_1_1_font}{Font}} used to draw the string \\
+\hline
+{\em character\+Size} & Base size of characters, in pixels \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_text_aff7cab6a92e5948c9d1481cb2d87eb84}\label{classsf_1_1_text_aff7cab6a92e5948c9d1481cb2d87eb84}} 
+\index{sf::Text@{sf::Text}!Text@{Text}}
+\index{Text@{Text}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{Text()}{Text()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily sf\+::\+Text\+::\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Creates an empty text. \mbox{\Hypertarget{classsf_1_1_text_a614019e0b5c0ed39a99d32483a51f2c5}\label{classsf_1_1_text_a614019e0b5c0ed39a99d32483a51f2c5}} 
+\index{sf::Text@{sf::Text}!Text@{Text}}
+\index{Text@{Text}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{Text()}{Text()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily sf\+::\+Text\+::\+Text (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_string}{String}} \&}]{string,  }\item[{const \mbox{\hyperlink{classsf_1_1_font}{Font}} \&}]{font,  }\item[{unsigned int}]{character\+Size = {\ttfamily 30} }\end{DoxyParamCaption})}
+
+
+
+Construct the text from a string, font and size. 
+
+Note that if the used font is a bitmap font, it is not scalable, thus not all requested sizes will be available to use. This needs to be taken into consideration when setting the character size. If you need to display text of a certain size, make sure the corresponding bitmap font that supports that size is used.
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & \mbox{\hyperlink{classsf_1_1_text}{Text}} assigned to the string \\
+\hline
+{\em font} & \mbox{\hyperlink{classsf_1_1_font}{Font}} used to draw the string \\
+\hline
+{\em character\+Size} & Base size of characters, in pixels \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsf_1_1_text_a42f0cd394f76f4c0998114918cb3f11c}\label{classsf_1_1_text_a42f0cd394f76f4c0998114918cb3f11c}} 
+\index{sf::Text@{sf::Text}!draw@{draw}}
+\index{draw@{draw}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void sf\+::\+Text\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_render_target}{Render\+Target}} \&}]{target,  }\item[{\mbox{\hyperlink{classsf_1_1_render_states}{Render\+States}}}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Draw the text to a render target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Render target to draw to \\
+\hline
+{\em states} & Current render states \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classsf_1_1_drawable_a90d2c88bba9b035a0844eccb380ef631}{sf\+::\+Drawable}}.
+
+\mbox{\Hypertarget{classsf_1_1_text_a42f0cd394f76f4c0998114918cb3f11c}\label{classsf_1_1_text_a42f0cd394f76f4c0998114918cb3f11c}} 
+\index{sf::Text@{sf::Text}!draw@{draw}}
+\index{draw@{draw}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void sf\+::\+Text\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_render_target}{Render\+Target}} \&}]{target,  }\item[{\mbox{\hyperlink{classsf_1_1_render_states}{Render\+States}}}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Draw the text to a render target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Render target to draw to \\
+\hline
+{\em states} & Current render states \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classsf_1_1_drawable_a90d2c88bba9b035a0844eccb380ef631}{sf\+::\+Drawable}}.
+
+\mbox{\Hypertarget{classsf_1_1_text_a4cd48624a76df98f048eaaee69cfb0ad}\label{classsf_1_1_text_a4cd48624a76df98f048eaaee69cfb0ad}} 
+\index{sf::Text@{sf::Text}!ensureGeometryUpdate@{ensureGeometryUpdate}}
+\index{ensureGeometryUpdate@{ensureGeometryUpdate}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{ensureGeometryUpdate()}{ensureGeometryUpdate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Text\+::ensure\+Geometry\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Make sure the text\textquotesingle{}s geometry is updated. 
+
+All the attributes related to rendering are cached, such that the geometry is only updated when necessary. \mbox{\Hypertarget{classsf_1_1_text_a4cd48624a76df98f048eaaee69cfb0ad}\label{classsf_1_1_text_a4cd48624a76df98f048eaaee69cfb0ad}} 
+\index{sf::Text@{sf::Text}!ensureGeometryUpdate@{ensureGeometryUpdate}}
+\index{ensureGeometryUpdate@{ensureGeometryUpdate}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{ensureGeometryUpdate()}{ensureGeometryUpdate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Text\+::ensure\+Geometry\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Make sure the text\textquotesingle{}s geometry is updated. 
+
+All the attributes related to rendering are cached, such that the geometry is only updated when necessary. \mbox{\Hypertarget{classsf_1_1_text_a2e252d8dcae3eb61c6c962c0bc674b12}\label{classsf_1_1_text_a2e252d8dcae3eb61c6c962c0bc674b12}} 
+\index{sf::Text@{sf::Text}!findCharacterPos@{findCharacterPos}}
+\index{findCharacterPos@{findCharacterPos}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{findCharacterPos()}{findCharacterPos()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}} sf\+::\+Text\+::find\+Character\+Pos (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Return the position of the {\itshape index-\/th} character. 
+
+This function computes the visual position of a character from its index in the string. The returned position is in global coordinates (translation, rotation, scale and origin are applied). If {\itshape index} is out of range, the position of the end of the string is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the character\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Position of the character 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_text_a2e252d8dcae3eb61c6c962c0bc674b12}\label{classsf_1_1_text_a2e252d8dcae3eb61c6c962c0bc674b12}} 
+\index{sf::Text@{sf::Text}!findCharacterPos@{findCharacterPos}}
+\index{findCharacterPos@{findCharacterPos}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{findCharacterPos()}{findCharacterPos()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}} sf\+::\+Text\+::find\+Character\+Pos (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Return the position of the {\itshape index-\/th} character. 
+
+This function computes the visual position of a character from its index in the string. The returned position is in global coordinates (translation, rotation, scale and origin are applied). If {\itshape index} is out of range, the position of the end of the string is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the character\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Position of the character 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_text_a46d1d7f1d513bb8d434e985a93ea5224}\label{classsf_1_1_text_a46d1d7f1d513bb8d434e985a93ea5224}} 
+\index{sf::Text@{sf::Text}!getCharacterSize@{getCharacterSize}}
+\index{getCharacterSize@{getCharacterSize}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getCharacterSize()}{getCharacterSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Text\+::get\+Character\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the character size. 
+
+\begin{DoxyReturn}{Returns}
+Size of the characters, in pixels
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_ae96f835fc1bff858f8a23c5b01eaaf7e}{set\+Character\+Size}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_a46d1d7f1d513bb8d434e985a93ea5224}\label{classsf_1_1_text_a46d1d7f1d513bb8d434e985a93ea5224}} 
+\index{sf::Text@{sf::Text}!getCharacterSize@{getCharacterSize}}
+\index{getCharacterSize@{getCharacterSize}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getCharacterSize()}{getCharacterSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Text\+::get\+Character\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the character size. 
+
+\begin{DoxyReturn}{Returns}
+Size of the characters, in pixels
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_ae96f835fc1bff858f8a23c5b01eaaf7e}{set\+Character\+Size}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_a810cc4aa8eb5998f9eb9d02b1c099660}\label{classsf_1_1_text_a810cc4aa8eb5998f9eb9d02b1c099660}} 
+\index{sf::Text@{sf::Text}!getColor@{getColor}}
+\index{getColor@{getColor}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} const \mbox{\hyperlink{classsf_1_1_color}{Color}} \& sf\+::\+Text\+::get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the fill color of the text. 
+
+\begin{DoxyReturn}{Returns}
+Fill color of the text
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_ab7bb3babac5a6da1802b2c3e1a3e6dcc}{set\+Fill\+Color}}
+\end{DoxySeeAlso}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000017}{Deprecated}}]There is now fill and outline colors instead of a single global color. Use \mbox{\hyperlink{classsf_1_1_text_a10400757492ec7fa97454488314ca39b}{get\+Fill\+Color()}} or \mbox{\hyperlink{classsf_1_1_text_ade9256ff9d43c9481fcf5f4003fe0141}{get\+Outline\+Color()}} instead.\end{DoxyRefDesc}
+\mbox{\Hypertarget{classsf_1_1_text_a810cc4aa8eb5998f9eb9d02b1c099660}\label{classsf_1_1_text_a810cc4aa8eb5998f9eb9d02b1c099660}} 
+\index{sf::Text@{sf::Text}!getColor@{getColor}}
+\index{getColor@{getColor}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} const \mbox{\hyperlink{classsf_1_1_color}{Color}} \& sf\+::\+Text\+::get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the fill color of the text. 
+
+\begin{DoxyReturn}{Returns}
+Fill color of the text
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_ab7bb3babac5a6da1802b2c3e1a3e6dcc}{set\+Fill\+Color}}
+\end{DoxySeeAlso}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000040}{Deprecated}}]There is now fill and outline colors instead of a single global color. Use \mbox{\hyperlink{classsf_1_1_text_a10400757492ec7fa97454488314ca39b}{get\+Fill\+Color()}} or \mbox{\hyperlink{classsf_1_1_text_ade9256ff9d43c9481fcf5f4003fe0141}{get\+Outline\+Color()}} instead.\end{DoxyRefDesc}
+\mbox{\Hypertarget{classsf_1_1_text_a10400757492ec7fa97454488314ca39b}\label{classsf_1_1_text_a10400757492ec7fa97454488314ca39b}} 
+\index{sf::Text@{sf::Text}!getFillColor@{getFillColor}}
+\index{getFillColor@{getFillColor}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getFillColor()}{getFillColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classsf_1_1_color}{Color}} \& sf\+::\+Text\+::get\+Fill\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the fill color of the text. 
+
+\begin{DoxyReturn}{Returns}
+Fill color of the text
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_ab7bb3babac5a6da1802b2c3e1a3e6dcc}{set\+Fill\+Color}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_a10400757492ec7fa97454488314ca39b}\label{classsf_1_1_text_a10400757492ec7fa97454488314ca39b}} 
+\index{sf::Text@{sf::Text}!getFillColor@{getFillColor}}
+\index{getFillColor@{getFillColor}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getFillColor()}{getFillColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classsf_1_1_color}{Color}} \& sf\+::\+Text\+::get\+Fill\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the fill color of the text. 
+
+\begin{DoxyReturn}{Returns}
+Fill color of the text
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_ab7bb3babac5a6da1802b2c3e1a3e6dcc}{set\+Fill\+Color}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_ad947a43bddaddf54d008df600699599b}\label{classsf_1_1_text_ad947a43bddaddf54d008df600699599b}} 
+\index{sf::Text@{sf::Text}!getFont@{getFont}}
+\index{getFont@{getFont}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getFont()}{getFont()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classsf_1_1_font}{Font}} $\ast$ sf\+::\+Text\+::get\+Font (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the text\textquotesingle{}s font. 
+
+If the text has no font attached, a NULL pointer is returned. The returned pointer is const, which means that you cannot modify the font when you get it from this function.
+
+\begin{DoxyReturn}{Returns}
+Pointer to the text\textquotesingle{}s font
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_a2927805d1ae92d57f15034ea34756b81}{set\+Font}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_ad947a43bddaddf54d008df600699599b}\label{classsf_1_1_text_ad947a43bddaddf54d008df600699599b}} 
+\index{sf::Text@{sf::Text}!getFont@{getFont}}
+\index{getFont@{getFont}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getFont()}{getFont()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classsf_1_1_font}{Font}} $\ast$ sf\+::\+Text\+::get\+Font (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the text\textquotesingle{}s font. 
+
+If the text has no font attached, a NULL pointer is returned. The returned pointer is const, which means that you cannot modify the font when you get it from this function.
+
+\begin{DoxyReturn}{Returns}
+Pointer to the text\textquotesingle{}s font
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_a2927805d1ae92d57f15034ea34756b81}{set\+Font}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_ad33ed96ce9fbe99610f7f8b6874a16b4}\label{classsf_1_1_text_ad33ed96ce9fbe99610f7f8b6874a16b4}} 
+\index{sf::Text@{sf::Text}!getGlobalBounds@{getGlobalBounds}}
+\index{getGlobalBounds@{getGlobalBounds}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getGlobalBounds()}{getGlobalBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{Float\+Rect}} sf\+::\+Text\+::get\+Global\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the global bounding rectangle of the entity. 
+
+The returned rectangle is in global coordinates, which means that it takes into account the transformations (translation, rotation, scale, ...) that are applied to the entity. In other words, this function returns the bounds of the text in the global 2D world\textquotesingle{}s coordinate system.
+
+\begin{DoxyReturn}{Returns}
+Global bounding rectangle of the entity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_text_ad33ed96ce9fbe99610f7f8b6874a16b4}\label{classsf_1_1_text_ad33ed96ce9fbe99610f7f8b6874a16b4}} 
+\index{sf::Text@{sf::Text}!getGlobalBounds@{getGlobalBounds}}
+\index{getGlobalBounds@{getGlobalBounds}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getGlobalBounds()}{getGlobalBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{Float\+Rect}} sf\+::\+Text\+::get\+Global\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the global bounding rectangle of the entity. 
+
+The returned rectangle is in global coordinates, which means that it takes into account the transformations (translation, rotation, scale, ...) that are applied to the entity. In other words, this function returns the bounds of the text in the global 2D world\textquotesingle{}s coordinate system.
+
+\begin{DoxyReturn}{Returns}
+Global bounding rectangle of the entity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_text_a028fc6e561bd9a0671254419b498b889}\label{classsf_1_1_text_a028fc6e561bd9a0671254419b498b889}} 
+\index{sf::Text@{sf::Text}!getLetterSpacing@{getLetterSpacing}}
+\index{getLetterSpacing@{getLetterSpacing}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getLetterSpacing()}{getLetterSpacing()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float sf\+::\+Text\+::get\+Letter\+Spacing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the size of the letter spacing factor. 
+
+\begin{DoxyReturn}{Returns}
+Size of the letter spacing factor
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_ab516110605edb0191a7873138ac42af2}{set\+Letter\+Spacing}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_a028fc6e561bd9a0671254419b498b889}\label{classsf_1_1_text_a028fc6e561bd9a0671254419b498b889}} 
+\index{sf::Text@{sf::Text}!getLetterSpacing@{getLetterSpacing}}
+\index{getLetterSpacing@{getLetterSpacing}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getLetterSpacing()}{getLetterSpacing()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float sf\+::\+Text\+::get\+Letter\+Spacing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the size of the letter spacing factor. 
+
+\begin{DoxyReturn}{Returns}
+Size of the letter spacing factor
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_ab516110605edb0191a7873138ac42af2}{set\+Letter\+Spacing}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_a670622e1c299dfd6518afe289c7cd248}\label{classsf_1_1_text_a670622e1c299dfd6518afe289c7cd248}} 
+\index{sf::Text@{sf::Text}!getLineSpacing@{getLineSpacing}}
+\index{getLineSpacing@{getLineSpacing}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getLineSpacing()}{getLineSpacing()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float sf\+::\+Text\+::get\+Line\+Spacing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the size of the line spacing factor. 
+
+\begin{DoxyReturn}{Returns}
+Size of the line spacing factor
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_af6505688f79e2e2d90bd68f4d767e965}{set\+Line\+Spacing}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_a670622e1c299dfd6518afe289c7cd248}\label{classsf_1_1_text_a670622e1c299dfd6518afe289c7cd248}} 
+\index{sf::Text@{sf::Text}!getLineSpacing@{getLineSpacing}}
+\index{getLineSpacing@{getLineSpacing}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getLineSpacing()}{getLineSpacing()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float sf\+::\+Text\+::get\+Line\+Spacing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the size of the line spacing factor. 
+
+\begin{DoxyReturn}{Returns}
+Size of the line spacing factor
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_af6505688f79e2e2d90bd68f4d767e965}{set\+Line\+Spacing}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_a3e6b3b298827f853b41165eee2cbbc66}\label{classsf_1_1_text_a3e6b3b298827f853b41165eee2cbbc66}} 
+\index{sf::Text@{sf::Text}!getLocalBounds@{getLocalBounds}}
+\index{getLocalBounds@{getLocalBounds}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getLocalBounds()}{getLocalBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{Float\+Rect}} sf\+::\+Text\+::get\+Local\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the local bounding rectangle of the entity. 
+
+The returned rectangle is in local coordinates, which means that it ignores the transformations (translation, rotation, scale, ...) that are applied to the entity. In other words, this function returns the bounds of the entity in the entity\textquotesingle{}s coordinate system.
+
+\begin{DoxyReturn}{Returns}
+Local bounding rectangle of the entity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_text_a3e6b3b298827f853b41165eee2cbbc66}\label{classsf_1_1_text_a3e6b3b298827f853b41165eee2cbbc66}} 
+\index{sf::Text@{sf::Text}!getLocalBounds@{getLocalBounds}}
+\index{getLocalBounds@{getLocalBounds}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getLocalBounds()}{getLocalBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{Float\+Rect}} sf\+::\+Text\+::get\+Local\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the local bounding rectangle of the entity. 
+
+The returned rectangle is in local coordinates, which means that it ignores the transformations (translation, rotation, scale, ...) that are applied to the entity. In other words, this function returns the bounds of the entity in the entity\textquotesingle{}s coordinate system.
+
+\begin{DoxyReturn}{Returns}
+Local bounding rectangle of the entity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_text_ade9256ff9d43c9481fcf5f4003fe0141}\label{classsf_1_1_text_ade9256ff9d43c9481fcf5f4003fe0141}} 
+\index{sf::Text@{sf::Text}!getOutlineColor@{getOutlineColor}}
+\index{getOutlineColor@{getOutlineColor}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getOutlineColor()}{getOutlineColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classsf_1_1_color}{Color}} \& sf\+::\+Text\+::get\+Outline\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the outline color of the text. 
+
+\begin{DoxyReturn}{Returns}
+Outline color of the text
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_aa19ec69c3b894e963602a6804ca68fe4}{set\+Outline\+Color}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_ade9256ff9d43c9481fcf5f4003fe0141}\label{classsf_1_1_text_ade9256ff9d43c9481fcf5f4003fe0141}} 
+\index{sf::Text@{sf::Text}!getOutlineColor@{getOutlineColor}}
+\index{getOutlineColor@{getOutlineColor}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getOutlineColor()}{getOutlineColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classsf_1_1_color}{Color}} \& sf\+::\+Text\+::get\+Outline\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the outline color of the text. 
+
+\begin{DoxyReturn}{Returns}
+Outline color of the text
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_aa19ec69c3b894e963602a6804ca68fe4}{set\+Outline\+Color}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_af6bf01c23189edf52c8b38708db6f3f6}\label{classsf_1_1_text_af6bf01c23189edf52c8b38708db6f3f6}} 
+\index{sf::Text@{sf::Text}!getOutlineThickness@{getOutlineThickness}}
+\index{getOutlineThickness@{getOutlineThickness}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getOutlineThickness()}{getOutlineThickness()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float sf\+::\+Text\+::get\+Outline\+Thickness (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the outline thickness of the text. 
+
+\begin{DoxyReturn}{Returns}
+Outline thickness of the text, in pixels
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_ab0e6be3b40124557bf53737fe6a6ce77}{set\+Outline\+Thickness}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_af6bf01c23189edf52c8b38708db6f3f6}\label{classsf_1_1_text_af6bf01c23189edf52c8b38708db6f3f6}} 
+\index{sf::Text@{sf::Text}!getOutlineThickness@{getOutlineThickness}}
+\index{getOutlineThickness@{getOutlineThickness}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getOutlineThickness()}{getOutlineThickness()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float sf\+::\+Text\+::get\+Outline\+Thickness (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the outline thickness of the text. 
+
+\begin{DoxyReturn}{Returns}
+Outline thickness of the text, in pixels
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_ab0e6be3b40124557bf53737fe6a6ce77}{set\+Outline\+Thickness}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_ab334881845307db46ccf344191aa819c}\label{classsf_1_1_text_ab334881845307db46ccf344191aa819c}} 
+\index{sf::Text@{sf::Text}!getString@{getString}}
+\index{getString@{getString}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getString()}{getString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classsf_1_1_string}{String}} \& sf\+::\+Text\+::get\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the text\textquotesingle{}s string. 
+
+The returned string is a \mbox{\hyperlink{classsf_1_1_string}{sf\+::\+String}}, which can automatically be converted to standard string types. So, the following lines of code are all valid\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_string}{sf::String}}   s1 = text.getString();}
+\DoxyCodeLine{std::string  s2 = text.getString();}
+\DoxyCodeLine{std::wstring s3 = text.getString();}
+
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classsf_1_1_text}{Text}}\textquotesingle{}s string
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_a7d3b3359f286fd9503d1ced25b7b6c33}{set\+String}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_ab334881845307db46ccf344191aa819c}\label{classsf_1_1_text_ab334881845307db46ccf344191aa819c}} 
+\index{sf::Text@{sf::Text}!getString@{getString}}
+\index{getString@{getString}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getString()}{getString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classsf_1_1_string}{String}} \& sf\+::\+Text\+::get\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the text\textquotesingle{}s string. 
+
+The returned string is a \mbox{\hyperlink{classsf_1_1_string}{sf\+::\+String}}, which can automatically be converted to standard string types. So, the following lines of code are all valid\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_string}{sf::String}}   s1 = text.getString();}
+\DoxyCodeLine{std::string  s2 = text.getString();}
+\DoxyCodeLine{std::wstring s3 = text.getString();}
+
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classsf_1_1_text}{Text}}\textquotesingle{}s string
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_a7d3b3359f286fd9503d1ced25b7b6c33}{set\+String}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_a0da79b0c057f4bb51592465a205c35d7}\label{classsf_1_1_text_a0da79b0c057f4bb51592465a205c35d7}} 
+\index{sf::Text@{sf::Text}!getStyle@{getStyle}}
+\index{getStyle@{getStyle}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getStyle()}{getStyle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} sf\+::\+Text\+::get\+Style (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the text\textquotesingle{}s style. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classsf_1_1_text}{Text}}\textquotesingle{}s style
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_ad791702bc2d1b6590a1719aa60635edf}{set\+Style}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_a0da79b0c057f4bb51592465a205c35d7}\label{classsf_1_1_text_a0da79b0c057f4bb51592465a205c35d7}} 
+\index{sf::Text@{sf::Text}!getStyle@{getStyle}}
+\index{getStyle@{getStyle}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getStyle()}{getStyle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} sf\+::\+Text\+::get\+Style (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the text\textquotesingle{}s style. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classsf_1_1_text}{Text}}\textquotesingle{}s style
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_ad791702bc2d1b6590a1719aa60635edf}{set\+Style}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_ae96f835fc1bff858f8a23c5b01eaaf7e}\label{classsf_1_1_text_ae96f835fc1bff858f8a23c5b01eaaf7e}} 
+\index{sf::Text@{sf::Text}!setCharacterSize@{setCharacterSize}}
+\index{setCharacterSize@{setCharacterSize}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setCharacterSize()}{setCharacterSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Text\+::set\+Character\+Size (\begin{DoxyParamCaption}\item[{unsigned int}]{size }\end{DoxyParamCaption})}
+
+
+
+Set the character size. 
+
+The default size is 30.
+
+Note that if the used font is a bitmap font, it is not scalable, thus not all requested sizes will be available to use. This needs to be taken into consideration when setting the character size. If you need to display text of a certain size, make sure the corresponding bitmap font that supports that size is used.
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & New character size, in pixels\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_a46d1d7f1d513bb8d434e985a93ea5224}{get\+Character\+Size}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_ae96f835fc1bff858f8a23c5b01eaaf7e}\label{classsf_1_1_text_ae96f835fc1bff858f8a23c5b01eaaf7e}} 
+\index{sf::Text@{sf::Text}!setCharacterSize@{setCharacterSize}}
+\index{setCharacterSize@{setCharacterSize}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setCharacterSize()}{setCharacterSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Text\+::set\+Character\+Size (\begin{DoxyParamCaption}\item[{unsigned int}]{size }\end{DoxyParamCaption})}
+
+
+
+Set the character size. 
+
+The default size is 30.
+
+Note that if the used font is a bitmap font, it is not scalable, thus not all requested sizes will be available to use. This needs to be taken into consideration when setting the character size. If you need to display text of a certain size, make sure the corresponding bitmap font that supports that size is used.
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & New character size, in pixels\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_a46d1d7f1d513bb8d434e985a93ea5224}{get\+Character\+Size}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_a6ce65272d6d63ed01118366e92c68132}\label{classsf_1_1_text_a6ce65272d6d63ed01118366e92c68132}} 
+\index{sf::Text@{sf::Text}!setColor@{setColor}}
+\index{setColor@{setColor}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setColor()}{setColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void sf\+::\+Text\+::set\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_color}{Color}} \&}]{color }\end{DoxyParamCaption})}
+
+
+
+Set the fill color of the text. 
+
+By default, the text\textquotesingle{}s fill color is opaque white. Setting the fill color to a transparent color with an outline will cause the outline to be displayed in the fill area of the text.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & New fill color of the text\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_a10400757492ec7fa97454488314ca39b}{get\+Fill\+Color}}
+\end{DoxySeeAlso}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000016}{Deprecated}}]There is now fill and outline colors instead of a single global color. Use \mbox{\hyperlink{classsf_1_1_text_ab7bb3babac5a6da1802b2c3e1a3e6dcc}{set\+Fill\+Color()}} or \mbox{\hyperlink{classsf_1_1_text_aa19ec69c3b894e963602a6804ca68fe4}{set\+Outline\+Color()}} instead.\end{DoxyRefDesc}
+\mbox{\Hypertarget{classsf_1_1_text_a6ce65272d6d63ed01118366e92c68132}\label{classsf_1_1_text_a6ce65272d6d63ed01118366e92c68132}} 
+\index{sf::Text@{sf::Text}!setColor@{setColor}}
+\index{setColor@{setColor}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setColor()}{setColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void sf\+::\+Text\+::set\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_color}{Color}} \&}]{color }\end{DoxyParamCaption})}
+
+
+
+Set the fill color of the text. 
+
+By default, the text\textquotesingle{}s fill color is opaque white. Setting the fill color to a transparent color with an outline will cause the outline to be displayed in the fill area of the text.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & New fill color of the text\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_a10400757492ec7fa97454488314ca39b}{get\+Fill\+Color}}
+\end{DoxySeeAlso}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000039}{Deprecated}}]There is now fill and outline colors instead of a single global color. Use \mbox{\hyperlink{classsf_1_1_text_ab7bb3babac5a6da1802b2c3e1a3e6dcc}{set\+Fill\+Color()}} or \mbox{\hyperlink{classsf_1_1_text_aa19ec69c3b894e963602a6804ca68fe4}{set\+Outline\+Color()}} instead.\end{DoxyRefDesc}
+\mbox{\Hypertarget{classsf_1_1_text_ab7bb3babac5a6da1802b2c3e1a3e6dcc}\label{classsf_1_1_text_ab7bb3babac5a6da1802b2c3e1a3e6dcc}} 
+\index{sf::Text@{sf::Text}!setFillColor@{setFillColor}}
+\index{setFillColor@{setFillColor}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setFillColor()}{setFillColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Text\+::set\+Fill\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_color}{Color}} \&}]{color }\end{DoxyParamCaption})}
+
+
+
+Set the fill color of the text. 
+
+By default, the text\textquotesingle{}s fill color is opaque white. Setting the fill color to a transparent color with an outline will cause the outline to be displayed in the fill area of the text.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & New fill color of the text\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_a10400757492ec7fa97454488314ca39b}{get\+Fill\+Color}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_ab7bb3babac5a6da1802b2c3e1a3e6dcc}\label{classsf_1_1_text_ab7bb3babac5a6da1802b2c3e1a3e6dcc}} 
+\index{sf::Text@{sf::Text}!setFillColor@{setFillColor}}
+\index{setFillColor@{setFillColor}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setFillColor()}{setFillColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Text\+::set\+Fill\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_color}{Color}} \&}]{color }\end{DoxyParamCaption})}
+
+
+
+Set the fill color of the text. 
+
+By default, the text\textquotesingle{}s fill color is opaque white. Setting the fill color to a transparent color with an outline will cause the outline to be displayed in the fill area of the text.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & New fill color of the text\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_a10400757492ec7fa97454488314ca39b}{get\+Fill\+Color}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_a2927805d1ae92d57f15034ea34756b81}\label{classsf_1_1_text_a2927805d1ae92d57f15034ea34756b81}} 
+\index{sf::Text@{sf::Text}!setFont@{setFont}}
+\index{setFont@{setFont}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setFont()}{setFont()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Text\+::set\+Font (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_font}{Font}} \&}]{font }\end{DoxyParamCaption})}
+
+
+
+Set the text\textquotesingle{}s font. 
+
+The {\itshape font} argument refers to a font that must exist as long as the text uses it. Indeed, the text doesn\textquotesingle{}t store its own copy of the font, but rather keeps a pointer to the one that you passed to this function. If the font is destroyed and the text tries to use it, the behavior is undefined.
+
+
+\begin{DoxyParams}{Parameters}
+{\em font} & New font\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_ad947a43bddaddf54d008df600699599b}{get\+Font}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_a2927805d1ae92d57f15034ea34756b81}\label{classsf_1_1_text_a2927805d1ae92d57f15034ea34756b81}} 
+\index{sf::Text@{sf::Text}!setFont@{setFont}}
+\index{setFont@{setFont}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setFont()}{setFont()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Text\+::set\+Font (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_font}{Font}} \&}]{font }\end{DoxyParamCaption})}
+
+
+
+Set the text\textquotesingle{}s font. 
+
+The {\itshape font} argument refers to a font that must exist as long as the text uses it. Indeed, the text doesn\textquotesingle{}t store its own copy of the font, but rather keeps a pointer to the one that you passed to this function. If the font is destroyed and the text tries to use it, the behavior is undefined.
+
+
+\begin{DoxyParams}{Parameters}
+{\em font} & New font\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_ad947a43bddaddf54d008df600699599b}{get\+Font}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_ab516110605edb0191a7873138ac42af2}\label{classsf_1_1_text_ab516110605edb0191a7873138ac42af2}} 
+\index{sf::Text@{sf::Text}!setLetterSpacing@{setLetterSpacing}}
+\index{setLetterSpacing@{setLetterSpacing}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setLetterSpacing()}{setLetterSpacing()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Text\+::set\+Letter\+Spacing (\begin{DoxyParamCaption}\item[{float}]{spacing\+Factor }\end{DoxyParamCaption})}
+
+
+
+Set the letter spacing factor. 
+
+The default spacing between letters is defined by the font. This factor doesn\textquotesingle{}t directly apply to the existing spacing between each character, it rather adds a fixed space between them which is calculated from the font metrics and the character size. Note that factors below 1 (including negative numbers) bring characters closer to each other. By default the letter spacing factor is 1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em spacing\+Factor} & New letter spacing factor\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_a028fc6e561bd9a0671254419b498b889}{get\+Letter\+Spacing}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_ab516110605edb0191a7873138ac42af2}\label{classsf_1_1_text_ab516110605edb0191a7873138ac42af2}} 
+\index{sf::Text@{sf::Text}!setLetterSpacing@{setLetterSpacing}}
+\index{setLetterSpacing@{setLetterSpacing}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setLetterSpacing()}{setLetterSpacing()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Text\+::set\+Letter\+Spacing (\begin{DoxyParamCaption}\item[{float}]{spacing\+Factor }\end{DoxyParamCaption})}
+
+
+
+Set the letter spacing factor. 
+
+The default spacing between letters is defined by the font. This factor doesn\textquotesingle{}t directly apply to the existing spacing between each character, it rather adds a fixed space between them which is calculated from the font metrics and the character size. Note that factors below 1 (including negative numbers) bring characters closer to each other. By default the letter spacing factor is 1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em spacing\+Factor} & New letter spacing factor\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_a028fc6e561bd9a0671254419b498b889}{get\+Letter\+Spacing}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_af6505688f79e2e2d90bd68f4d767e965}\label{classsf_1_1_text_af6505688f79e2e2d90bd68f4d767e965}} 
+\index{sf::Text@{sf::Text}!setLineSpacing@{setLineSpacing}}
+\index{setLineSpacing@{setLineSpacing}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setLineSpacing()}{setLineSpacing()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Text\+::set\+Line\+Spacing (\begin{DoxyParamCaption}\item[{float}]{spacing\+Factor }\end{DoxyParamCaption})}
+
+
+
+Set the line spacing factor. 
+
+The default spacing between lines is defined by the font. This method enables you to set a factor for the spacing between lines. By default the line spacing factor is 1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em spacing\+Factor} & New line spacing factor\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_a670622e1c299dfd6518afe289c7cd248}{get\+Line\+Spacing}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_af6505688f79e2e2d90bd68f4d767e965}\label{classsf_1_1_text_af6505688f79e2e2d90bd68f4d767e965}} 
+\index{sf::Text@{sf::Text}!setLineSpacing@{setLineSpacing}}
+\index{setLineSpacing@{setLineSpacing}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setLineSpacing()}{setLineSpacing()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Text\+::set\+Line\+Spacing (\begin{DoxyParamCaption}\item[{float}]{spacing\+Factor }\end{DoxyParamCaption})}
+
+
+
+Set the line spacing factor. 
+
+The default spacing between lines is defined by the font. This method enables you to set a factor for the spacing between lines. By default the line spacing factor is 1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em spacing\+Factor} & New line spacing factor\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_a670622e1c299dfd6518afe289c7cd248}{get\+Line\+Spacing}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_aa19ec69c3b894e963602a6804ca68fe4}\label{classsf_1_1_text_aa19ec69c3b894e963602a6804ca68fe4}} 
+\index{sf::Text@{sf::Text}!setOutlineColor@{setOutlineColor}}
+\index{setOutlineColor@{setOutlineColor}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setOutlineColor()}{setOutlineColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Text\+::set\+Outline\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_color}{Color}} \&}]{color }\end{DoxyParamCaption})}
+
+
+
+Set the outline color of the text. 
+
+By default, the text\textquotesingle{}s outline color is opaque black.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & New outline color of the text\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_ade9256ff9d43c9481fcf5f4003fe0141}{get\+Outline\+Color}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_aa19ec69c3b894e963602a6804ca68fe4}\label{classsf_1_1_text_aa19ec69c3b894e963602a6804ca68fe4}} 
+\index{sf::Text@{sf::Text}!setOutlineColor@{setOutlineColor}}
+\index{setOutlineColor@{setOutlineColor}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setOutlineColor()}{setOutlineColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Text\+::set\+Outline\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_color}{Color}} \&}]{color }\end{DoxyParamCaption})}
+
+
+
+Set the outline color of the text. 
+
+By default, the text\textquotesingle{}s outline color is opaque black.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & New outline color of the text\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_ade9256ff9d43c9481fcf5f4003fe0141}{get\+Outline\+Color}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_ab0e6be3b40124557bf53737fe6a6ce77}\label{classsf_1_1_text_ab0e6be3b40124557bf53737fe6a6ce77}} 
+\index{sf::Text@{sf::Text}!setOutlineThickness@{setOutlineThickness}}
+\index{setOutlineThickness@{setOutlineThickness}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setOutlineThickness()}{setOutlineThickness()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Text\+::set\+Outline\+Thickness (\begin{DoxyParamCaption}\item[{float}]{thickness }\end{DoxyParamCaption})}
+
+
+
+Set the thickness of the text\textquotesingle{}s outline. 
+
+By default, the outline thickness is 0.
+
+Be aware that using a negative value for the outline thickness will cause distorted rendering.
+
+
+\begin{DoxyParams}{Parameters}
+{\em thickness} & New outline thickness, in pixels\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_af6bf01c23189edf52c8b38708db6f3f6}{get\+Outline\+Thickness}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_ab0e6be3b40124557bf53737fe6a6ce77}\label{classsf_1_1_text_ab0e6be3b40124557bf53737fe6a6ce77}} 
+\index{sf::Text@{sf::Text}!setOutlineThickness@{setOutlineThickness}}
+\index{setOutlineThickness@{setOutlineThickness}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setOutlineThickness()}{setOutlineThickness()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Text\+::set\+Outline\+Thickness (\begin{DoxyParamCaption}\item[{float}]{thickness }\end{DoxyParamCaption})}
+
+
+
+Set the thickness of the text\textquotesingle{}s outline. 
+
+By default, the outline thickness is 0.
+
+Be aware that using a negative value for the outline thickness will cause distorted rendering.
+
+
+\begin{DoxyParams}{Parameters}
+{\em thickness} & New outline thickness, in pixels\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_af6bf01c23189edf52c8b38708db6f3f6}{get\+Outline\+Thickness}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_a7d3b3359f286fd9503d1ced25b7b6c33}\label{classsf_1_1_text_a7d3b3359f286fd9503d1ced25b7b6c33}} 
+\index{sf::Text@{sf::Text}!setString@{setString}}
+\index{setString@{setString}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setString()}{setString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Text\+::set\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_string}{String}} \&}]{string }\end{DoxyParamCaption})}
+
+
+
+Set the text\textquotesingle{}s string. 
+
+The {\itshape string} argument is a \mbox{\hyperlink{classsf_1_1_string}{sf\+::\+String}}, which can automatically be constructed from standard string types. So, the following calls are all valid\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{text.setString(\textcolor{stringliteral}{"{}hello"{}});}
+\DoxyCodeLine{text.setString(L\textcolor{stringliteral}{"{}hello"{}});}
+\DoxyCodeLine{text.setString(std::string(\textcolor{stringliteral}{"{}hello"{}}));}
+\DoxyCodeLine{text.setString(std::wstring(L\textcolor{stringliteral}{"{}hello"{}}));}
+
+\end{DoxyCode}
+ A text\textquotesingle{}s string is empty by default.
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & New string\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_ab334881845307db46ccf344191aa819c}{get\+String}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_a7d3b3359f286fd9503d1ced25b7b6c33}\label{classsf_1_1_text_a7d3b3359f286fd9503d1ced25b7b6c33}} 
+\index{sf::Text@{sf::Text}!setString@{setString}}
+\index{setString@{setString}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setString()}{setString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Text\+::set\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_string}{String}} \&}]{string }\end{DoxyParamCaption})}
+
+
+
+Set the text\textquotesingle{}s string. 
+
+The {\itshape string} argument is a \mbox{\hyperlink{classsf_1_1_string}{sf\+::\+String}}, which can automatically be constructed from standard string types. So, the following calls are all valid\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{text.setString(\textcolor{stringliteral}{"{}hello"{}});}
+\DoxyCodeLine{text.setString(L\textcolor{stringliteral}{"{}hello"{}});}
+\DoxyCodeLine{text.setString(std::string(\textcolor{stringliteral}{"{}hello"{}}));}
+\DoxyCodeLine{text.setString(std::wstring(L\textcolor{stringliteral}{"{}hello"{}}));}
+
+\end{DoxyCode}
+ A text\textquotesingle{}s string is empty by default.
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & New string\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_ab334881845307db46ccf344191aa819c}{get\+String}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_ad791702bc2d1b6590a1719aa60635edf}\label{classsf_1_1_text_ad791702bc2d1b6590a1719aa60635edf}} 
+\index{sf::Text@{sf::Text}!setStyle@{setStyle}}
+\index{setStyle@{setStyle}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setStyle()}{setStyle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Text\+::set\+Style (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}}]{style }\end{DoxyParamCaption})}
+
+
+
+Set the text\textquotesingle{}s style. 
+
+You can pass a combination of one or more styles, for example \mbox{\hyperlink{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a140bf2d7252e8ec458eca939783c0c5c}{sf\+::\+Text\+::\+Bold}} $\vert$ \mbox{\hyperlink{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82af3e10eb0fa68aa746fbbdfcecbf352c9}{sf\+::\+Text\+::\+Italic}}. The default style is \mbox{\hyperlink{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a65dbbdd9d938efe1eea1e2f3b7d7c944}{sf\+::\+Text\+::\+Regular}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em style} & New style\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_a0da79b0c057f4bb51592465a205c35d7}{get\+Style}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_text_ad791702bc2d1b6590a1719aa60635edf}\label{classsf_1_1_text_ad791702bc2d1b6590a1719aa60635edf}} 
+\index{sf::Text@{sf::Text}!setStyle@{setStyle}}
+\index{setStyle@{setStyle}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setStyle()}{setStyle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Text\+::set\+Style (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}}]{style }\end{DoxyParamCaption})}
+
+
+
+Set the text\textquotesingle{}s style. 
+
+You can pass a combination of one or more styles, for example \mbox{\hyperlink{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a140bf2d7252e8ec458eca939783c0c5c}{sf\+::\+Text\+::\+Bold}} $\vert$ \mbox{\hyperlink{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82af3e10eb0fa68aa746fbbdfcecbf352c9}{sf\+::\+Text\+::\+Italic}}. The default style is \mbox{\hyperlink{classsf_1_1_text_aa8add4aef484c6e6b20faff07452bd82a65dbbdd9d938efe1eea1e2f3b7d7c944}{sf\+::\+Text\+::\+Regular}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em style} & New style\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_text_a0da79b0c057f4bb51592465a205c35d7}{get\+Style}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsf_1_1_text_a73d20a8736e2a402859afe77f085a226}\label{classsf_1_1_text_a73d20a8736e2a402859afe77f085a226}} 
+\index{sf::Text@{sf::Text}!m\_bounds@{m\_bounds}}
+\index{m\_bounds@{m\_bounds}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_bounds}{m\_bounds}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{Float\+Rect}} sf\+::\+Text\+::m\+\_\+bounds\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+
+
+Bounding rectangle of the text (in local coordinates) 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source_l00449}{449}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source}{Text.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_text_a5a066742cdc44db9f2c871fdb03f2ad6}\label{classsf_1_1_text_a5a066742cdc44db9f2c871fdb03f2ad6}} 
+\index{sf::Text@{sf::Text}!m\_characterSize@{m\_characterSize}}
+\index{m\_characterSize@{m\_characterSize}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_characterSize}{m\_characterSize}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Text\+::m\+\_\+character\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Base size of characters, in pixels. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source_l00440}{440}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source}{Text.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_text_a5fdc28e0b845d72204225237f1af6473}\label{classsf_1_1_text_a5fdc28e0b845d72204225237f1af6473}} 
+\index{sf::Text@{sf::Text}!m\_fillColor@{m\_fillColor}}
+\index{m\_fillColor@{m\_fillColor}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_fillColor}{m\_fillColor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_color}{Color}} sf\+::\+Text\+::m\+\_\+fill\+Color\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{classsf_1_1_text}{Text}} fill color. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source_l00444}{444}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source}{Text.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_text_a26afd30fcb82c0474c15501e86ff0344}\label{classsf_1_1_text_a26afd30fcb82c0474c15501e86ff0344}} 
+\index{sf::Text@{sf::Text}!m\_font@{m\_font}}
+\index{m\_font@{m\_font}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_font}{m\_font}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classsf_1_1_font}{Font}} $\ast$ sf\+::\+Text\+::m\+\_\+font\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{classsf_1_1_font}{Font}} used to display the string. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source_l00439}{439}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source}{Text.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_text_a97c0049579b10d545118298b23f78f30}\label{classsf_1_1_text_a97c0049579b10d545118298b23f78f30}} 
+\index{sf::Text@{sf::Text}!m\_fontTextureId@{m\_fontTextureId}}
+\index{m\_fontTextureId@{m\_fontTextureId}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_fontTextureId}{m\_fontTextureId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} sf\+::\+Text\+::m\+\_\+font\+Texture\+Id\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+
+
+The font texture id. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source_l00451}{451}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source}{Text.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_text_a29af9fa585a8fcb7ef3cf53d0a6baf17}\label{classsf_1_1_text_a29af9fa585a8fcb7ef3cf53d0a6baf17}} 
+\index{sf::Text@{sf::Text}!m\_geometryNeedUpdate@{m\_geometryNeedUpdate}}
+\index{m\_geometryNeedUpdate@{m\_geometryNeedUpdate}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_geometryNeedUpdate}{m\_geometryNeedUpdate}}
+{\footnotesize\ttfamily bool sf\+::\+Text\+::m\+\_\+geometry\+Need\+Update\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+
+
+Does the geometry need to be recomputed? 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source_l00450}{450}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source}{Text.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_text_afb9a3c69064eaae9a61232f1a3339b27}\label{classsf_1_1_text_afb9a3c69064eaae9a61232f1a3339b27}} 
+\index{sf::Text@{sf::Text}!m\_letterSpacingFactor@{m\_letterSpacingFactor}}
+\index{m\_letterSpacingFactor@{m\_letterSpacingFactor}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_letterSpacingFactor}{m\_letterSpacingFactor}}
+{\footnotesize\ttfamily float sf\+::\+Text\+::m\+\_\+letter\+Spacing\+Factor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Spacing factor between letters. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source_l00441}{441}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source}{Text.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_text_a56893f600ec4c6018f35345c39349344}\label{classsf_1_1_text_a56893f600ec4c6018f35345c39349344}} 
+\index{sf::Text@{sf::Text}!m\_lineSpacingFactor@{m\_lineSpacingFactor}}
+\index{m\_lineSpacingFactor@{m\_lineSpacingFactor}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_lineSpacingFactor}{m\_lineSpacingFactor}}
+{\footnotesize\ttfamily float sf\+::\+Text\+::m\+\_\+line\+Spacing\+Factor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Spacing factor between lines. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source_l00442}{442}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source}{Text.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_text_ad50d23c5c38bf11250c28b43e0cc3da2}\label{classsf_1_1_text_ad50d23c5c38bf11250c28b43e0cc3da2}} 
+\index{sf::Text@{sf::Text}!m\_outlineColor@{m\_outlineColor}}
+\index{m\_outlineColor@{m\_outlineColor}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_outlineColor}{m\_outlineColor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_color}{Color}} sf\+::\+Text\+::m\+\_\+outline\+Color\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{classsf_1_1_text}{Text}} outline color. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source_l00445}{445}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source}{Text.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_text_abf2a59406720c1a4cff8d0f8d9bfb7a8}\label{classsf_1_1_text_abf2a59406720c1a4cff8d0f8d9bfb7a8}} 
+\index{sf::Text@{sf::Text}!m\_outlineThickness@{m\_outlineThickness}}
+\index{m\_outlineThickness@{m\_outlineThickness}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_outlineThickness}{m\_outlineThickness}}
+{\footnotesize\ttfamily float sf\+::\+Text\+::m\+\_\+outline\+Thickness\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Thickness of the text\textquotesingle{}s outline. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source_l00446}{446}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source}{Text.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_text_a7e58a0f2e2be3c6988cfc7956c7f6c7c}\label{classsf_1_1_text_a7e58a0f2e2be3c6988cfc7956c7f6c7c}} 
+\index{sf::Text@{sf::Text}!m\_outlineVertices@{m\_outlineVertices}}
+\index{m\_outlineVertices@{m\_outlineVertices}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_outlineVertices}{m\_outlineVertices}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_vertex_array}{Vertex\+Array}} sf\+::\+Text\+::m\+\_\+outline\+Vertices\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{classsf_1_1_vertex}{Vertex}} array containing the outline geometry. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source_l00448}{448}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source}{Text.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_text_a10080b61057e2f76e2c2dc2a61633130}\label{classsf_1_1_text_a10080b61057e2f76e2c2dc2a61633130}} 
+\index{sf::Text@{sf::Text}!m\_string@{m\_string}}
+\index{m\_string@{m\_string}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_string}{m\_string}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_string}{String}} sf\+::\+Text\+::m\+\_\+string\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{classsf_1_1_string}{String}} to display. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source_l00438}{438}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source}{Text.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_text_aaf9d652e6ea1bb3f1fdedb041b2f85ae}\label{classsf_1_1_text_aaf9d652e6ea1bb3f1fdedb041b2f85ae}} 
+\index{sf::Text@{sf::Text}!m\_style@{m\_style}}
+\index{m\_style@{m\_style}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_style}{m\_style}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} sf\+::\+Text\+::m\+\_\+style\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{classsf_1_1_text}{Text}} style (see \mbox{\hyperlink{namespacesf_1_1_style}{Style}} enum) 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source_l00443}{443}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source}{Text.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_text_aaafa2ed1db18952c9ded3ef1ceeee32e}\label{classsf_1_1_text_aaafa2ed1db18952c9ded3ef1ceeee32e}} 
+\index{sf::Text@{sf::Text}!m\_vertices@{m\_vertices}}
+\index{m\_vertices@{m\_vertices}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_vertices}{m\_vertices}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_vertex_array}{Vertex\+Array}} sf\+::\+Text\+::m\+\_\+vertices\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{classsf_1_1_vertex}{Vertex}} array containing the fill geometry. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source_l00447}{447}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp_source}{Text.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+SFML-\/2.\+5.\+1/include/\+SFML/\+Graphics/\mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp}{Text.\+hpp}}\item 
+Week14/\+SFML-\/2.\+5.\+1/include/\+SFML/\+Graphics/\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_text_8hpp}{Text.\+hpp}}\end{DoxyCompactItemize}

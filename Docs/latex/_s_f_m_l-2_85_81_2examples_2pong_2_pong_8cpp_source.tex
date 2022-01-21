@@ -1,0 +1,240 @@
+\hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source}{}\doxysection{Pong.\+cpp}
+\label{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source}\index{SFML-\/2.5.1/examples/pong/Pong.cpp@{SFML-\/2.5.1/examples/pong/Pong.cpp}}
+\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00003}00003 \textcolor{comment}{// Headers}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00005}00005 \textcolor{comment}{}\textcolor{preprocessor}{\#include <SFML/Graphics.hpp>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <SFML/Audio.hpp>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#include <ctime>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#include <cstdlib>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00018}\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00018}} \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00019}00019 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00020}00020     std::srand(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\textcolor{keyword}{>}(std::time(NULL)));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00022}00022     \textcolor{comment}{// Define some constants}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00023}00023     \textcolor{keyword}{const} \textcolor{keywordtype}{float} pi = 3.14159f;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00024}00024     \textcolor{keyword}{const} \textcolor{keywordtype}{int} gameWidth = 800;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00025}00025     \textcolor{keyword}{const} \textcolor{keywordtype}{int} gameHeight = 600;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00026}00026     \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}} paddleSize(25, 100);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00027}00027     \textcolor{keywordtype}{float} ballRadius = 10.f;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00029}00029     \textcolor{comment}{// Create the window of the application}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00030}00030     \mbox{\hyperlink{classsf_1_1_render_window}{sf::RenderWindow}} window(\mbox{\hyperlink{classsf_1_1_video_mode}{sf::VideoMode}}(gameWidth, gameHeight, 32), \textcolor{stringliteral}{"{}SFML Pong"{}},}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00031}00031                             \mbox{\hyperlink{group__window_ggaa75e94f0d3f52da8a61ed467ffd6d6e8abf046c6fcae63075c651812c6774e389}{sf::Style::Titlebar}} | \mbox{\hyperlink{group__window_ggaa75e94f0d3f52da8a61ed467ffd6d6e8a76bbd82b28e359cc0feec9e5ec123b40}{sf::Style::Close}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00032}00032     window.\mbox{\hyperlink{classsf_1_1_window_a59041c4556e0351048f8aff366034f61}{setVerticalSyncEnabled}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00034}00034     \textcolor{comment}{// Load the sounds used in the game}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00035}00035     \mbox{\hyperlink{classsf_1_1_sound_buffer}{sf::SoundBuffer}} ballSoundBuffer;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00036}00036     \textcolor{keywordflow}{if} (!ballSoundBuffer.\mbox{\hyperlink{classsf_1_1_sound_buffer_a2be6a8025c97eb622a7dff6cf2594394}{loadFromFile}}(\textcolor{stringliteral}{"{}resources/ball.wav"{}}))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00037}00037         \textcolor{keywordflow}{return} EXIT\_FAILURE;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00038}00038     \mbox{\hyperlink{classsf_1_1_sound}{sf::Sound}} ballSound(ballSoundBuffer);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00040}00040     \textcolor{comment}{// Create the left paddle}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00041}00041     \mbox{\hyperlink{classsf_1_1_rectangle_shape}{sf::RectangleShape}} leftPaddle;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00042}00042     leftPaddle.\mbox{\hyperlink{classsf_1_1_rectangle_shape_a5c65d374d4a259dfdc24efdd24a5dbec}{setSize}}(paddleSize -\/ \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}}(3, 3));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00043}00043     leftPaddle.\mbox{\hyperlink{classsf_1_1_shape_a5ad336ad74fc1f567fce3b7e44cf87dc}{setOutlineThickness}}(3);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00044}00044     leftPaddle.\mbox{\hyperlink{classsf_1_1_shape_a5978f41ee349ac3c52942996dcb184f7}{setOutlineColor}}(\mbox{\hyperlink{classsf_1_1_color_a25bf5208c8c7668f1a3836acbbb23986}{sf::Color::Black}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00045}00045     leftPaddle.\mbox{\hyperlink{classsf_1_1_shape_a3506f9b5d916fec14d583d16f23c2485}{setFillColor}}(\mbox{\hyperlink{classsf_1_1_color}{sf::Color}}(100, 100, 200));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00046}00046     leftPaddle.\mbox{\hyperlink{classsf_1_1_transformable_a56c67bd80aae8418d13fb96c034d25ec}{setOrigin}}(paddleSize / 2.f);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00048}00048     \textcolor{comment}{// Create the right paddle}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00049}00049     \mbox{\hyperlink{classsf_1_1_rectangle_shape}{sf::RectangleShape}} rightPaddle;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00050}00050     rightPaddle.\mbox{\hyperlink{classsf_1_1_rectangle_shape_a5c65d374d4a259dfdc24efdd24a5dbec}{setSize}}(paddleSize -\/ \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}}(3, 3));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00051}00051     rightPaddle.\mbox{\hyperlink{classsf_1_1_shape_a5ad336ad74fc1f567fce3b7e44cf87dc}{setOutlineThickness}}(3);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00052}00052     rightPaddle.\mbox{\hyperlink{classsf_1_1_shape_a5978f41ee349ac3c52942996dcb184f7}{setOutlineColor}}(\mbox{\hyperlink{classsf_1_1_color_a25bf5208c8c7668f1a3836acbbb23986}{sf::Color::Black}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00053}00053     rightPaddle.\mbox{\hyperlink{classsf_1_1_shape_a3506f9b5d916fec14d583d16f23c2485}{setFillColor}}(\mbox{\hyperlink{classsf_1_1_color}{sf::Color}}(200, 100, 100));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00054}00054     rightPaddle.\mbox{\hyperlink{classsf_1_1_transformable_a56c67bd80aae8418d13fb96c034d25ec}{setOrigin}}(paddleSize / 2.f);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00056}00056     \textcolor{comment}{// Create the ball}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00057}00057     \mbox{\hyperlink{classsf_1_1_circle_shape}{sf::CircleShape}} ball;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00058}00058     ball.\mbox{\hyperlink{classsf_1_1_circle_shape_a21cdf85fc2f201e10222a241af864be0}{setRadius}}(ballRadius -\/ 3);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00059}00059     ball.\mbox{\hyperlink{classsf_1_1_shape_a5ad336ad74fc1f567fce3b7e44cf87dc}{setOutlineThickness}}(3);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00060}00060     ball.\mbox{\hyperlink{classsf_1_1_shape_a5978f41ee349ac3c52942996dcb184f7}{setOutlineColor}}(\mbox{\hyperlink{classsf_1_1_color_a25bf5208c8c7668f1a3836acbbb23986}{sf::Color::Black}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00061}00061     ball.\mbox{\hyperlink{classsf_1_1_shape_a3506f9b5d916fec14d583d16f23c2485}{setFillColor}}(\mbox{\hyperlink{classsf_1_1_color_abd9695b00da63b890ea40f74629237c0}{sf::Color::White}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00062}00062     ball.\mbox{\hyperlink{classsf_1_1_transformable_a56c67bd80aae8418d13fb96c034d25ec}{setOrigin}}(ballRadius / 2, ballRadius / 2);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00064}00064     \textcolor{comment}{// Load the text font}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00065}00065     \mbox{\hyperlink{classsf_1_1_font}{sf::Font}} font;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00066}00066     \textcolor{keywordflow}{if} (!font.\mbox{\hyperlink{classsf_1_1_font_ab020052ef4e01f6c749a85571c0f3fd1}{loadFromFile}}(\textcolor{stringliteral}{"{}resources/sansation.ttf"{}}))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00067}00067         \textcolor{keywordflow}{return} EXIT\_FAILURE;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00069}00069     \textcolor{comment}{// Initialize the pause message}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00070}00070     \mbox{\hyperlink{classsf_1_1_text}{sf::Text}} pauseMessage;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00071}00071     pauseMessage.\mbox{\hyperlink{classsf_1_1_text_a2927805d1ae92d57f15034ea34756b81}{setFont}}(font);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00072}00072     pauseMessage.\mbox{\hyperlink{classsf_1_1_text_ae96f835fc1bff858f8a23c5b01eaaf7e}{setCharacterSize}}(40);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00073}00073     pauseMessage.\mbox{\hyperlink{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{setPosition}}(170.f, 150.f);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00074}00074     pauseMessage.\mbox{\hyperlink{classsf_1_1_text_ab7bb3babac5a6da1802b2c3e1a3e6dcc}{setFillColor}}(\mbox{\hyperlink{classsf_1_1_color_abd9695b00da63b890ea40f74629237c0}{sf::Color::White}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00075}00075     pauseMessage.\mbox{\hyperlink{classsf_1_1_text_a7d3b3359f286fd9503d1ced25b7b6c33}{setString}}(\textcolor{stringliteral}{"{}Welcome to SFML pong!\(\backslash\)nPress space to start the game"{}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00077}00077     \textcolor{comment}{// Define the paddles properties}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00078}00078     \mbox{\hyperlink{classsf_1_1_clock}{sf::Clock}} AITimer;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00079}00079     \textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_time}{sf::Time}} AITime   = sf::seconds(0.1f);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00080}00080     \textcolor{keyword}{const} \textcolor{keywordtype}{float} paddleSpeed = 400.f;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00081}00081     \textcolor{keywordtype}{float} rightPaddleSpeed  = 0.f;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00082}00082     \textcolor{keyword}{const} \textcolor{keywordtype}{float} ballSpeed   = 400.f;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00083}00083     \textcolor{keywordtype}{float} ballAngle         = 0.f; \textcolor{comment}{// to be changed later}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00085}00085     \mbox{\hyperlink{classsf_1_1_clock}{sf::Clock}} clock;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00086}00086     \textcolor{keywordtype}{bool} isPlaying = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00087}00087     \textcolor{keywordflow}{while} (window.\mbox{\hyperlink{classsf_1_1_window_ae873503db7d48157bb9cbf6129562bce}{isOpen}}())}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00088}00088     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00089}00089         \textcolor{comment}{// Handle events}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00090}00090         \mbox{\hyperlink{classsf_1_1_event}{sf::Event}} event;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00091}00091         \textcolor{keywordflow}{while} (window.\mbox{\hyperlink{classsf_1_1_window_a338e996585faf82e93069858e3b531b7}{pollEvent}}(event))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00092}00092         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00093}00093             \textcolor{comment}{// Window closed or escape key pressed: exit}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00094}00094             \textcolor{keywordflow}{if} ((event.\mbox{\hyperlink{classsf_1_1_event_adf2f8044f713fd9d6019077b0d1ffe0a}{type}} == \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa4f718a7f43b0f2d46be222fe23198d9e}{sf::Event::Closed}}) ||}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00095}00095                ((event.\mbox{\hyperlink{classsf_1_1_event_adf2f8044f713fd9d6019077b0d1ffe0a}{type}} == \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4}{sf::Event::KeyPressed}}) \&\& (event.\mbox{\hyperlink{classsf_1_1_event_a45b92fc6757ca7c193f06b302e424ab0}{key}}.\mbox{\hyperlink{structsf_1_1_event_1_1_key_event_a2879fdab8a68cb1c6ecc45730a2d0e61}{code}} == \mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142a72019ff9ecb145a9d3910177a49c757a}{sf::Keyboard::Escape}})))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00096}00096             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00097}00097                 window.\mbox{\hyperlink{classsf_1_1_window_a99d1e030387b0c26f5995670504fe7b5}{close}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00098}00098                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00099}00099             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00100}00100 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00101}00101             \textcolor{comment}{// Space key pressed: play}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00102}00102             \textcolor{keywordflow}{if} ((event.\mbox{\hyperlink{classsf_1_1_event_adf2f8044f713fd9d6019077b0d1ffe0a}{type}} == \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4}{sf::Event::KeyPressed}}) \&\& (event.\mbox{\hyperlink{classsf_1_1_event_a45b92fc6757ca7c193f06b302e424ab0}{key}}.\mbox{\hyperlink{structsf_1_1_event_1_1_key_event_a2879fdab8a68cb1c6ecc45730a2d0e61}{code}} == \mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142a4a730305a8a8d016ab3ceb5e239cc3cb}{sf::Keyboard::Space}}))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00103}00103             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00104}00104                 \textcolor{keywordflow}{if} (!isPlaying)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00105}00105                 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00106}00106                     \textcolor{comment}{// (re)start the game}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00107}00107                     isPlaying = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00108}00108                     clock.\mbox{\hyperlink{classsf_1_1_clock_a123e2627f2943e5ecaa1db0c7df3231b}{restart}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00109}00109 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00110}00110                     \textcolor{comment}{// Reset the position of the paddles and ball}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00111}00111                     leftPaddle.\mbox{\hyperlink{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{setPosition}}(10 + paddleSize.\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}} / 2, gameHeight / 2);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00112}00112                     rightPaddle.\mbox{\hyperlink{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{setPosition}}(gameWidth -\/ 10 -\/ paddleSize.\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}} / 2, gameHeight / 2);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00113}00113                     ball.\mbox{\hyperlink{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{setPosition}}(gameWidth / 2, gameHeight / 2);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00115}00115                     \textcolor{comment}{// Reset the ball angle}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00116}00116                     \textcolor{keywordflow}{do}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00117}00117                     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00118}00118                         \textcolor{comment}{// Make sure the ball initial angle is not too much vertical}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00119}00119                         ballAngle = (std::rand() \% 360) * 2 * pi / 360;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00120}00120                     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00121}00121                     \textcolor{keywordflow}{while} (std::abs(std::cos(ballAngle)) < 0.7f);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00122}00122                 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00123}00123             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00124}00124         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00125}00125 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00126}00126         \textcolor{keywordflow}{if} (isPlaying)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00127}00127         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00128}00128             \textcolor{keywordtype}{float} deltaTime = clock.\mbox{\hyperlink{classsf_1_1_clock_a123e2627f2943e5ecaa1db0c7df3231b}{restart}}().\mbox{\hyperlink{classsf_1_1_time_aa3df2f992d0b0041b4eb02258d43f0e3}{asSeconds}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00129}00129 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00130}00130             \textcolor{comment}{// Move the player's paddle}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00131}00131             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classsf_1_1_keyboard_a80a04b2f53005886957f49eee3531599}{sf::Keyboard::isKeyPressed}}(\mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142aa0cd0ee9f2d03294d7ca25b21068fa22}{sf::Keyboard::Up}}) \&\&}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00132}00132                (leftPaddle.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} -\/ paddleSize.\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} / 2 > 5.f))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00133}00133             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00134}00134                 leftPaddle.\mbox{\hyperlink{classsf_1_1_transformable_a86b461d6a941ad390c2ad8b6a4a20391}{move}}(0.f, -\/paddleSpeed * deltaTime);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00135}00135             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00136}00136             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classsf_1_1_keyboard_a80a04b2f53005886957f49eee3531599}{sf::Keyboard::isKeyPressed}}(\mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142a4c156edb237453ea7e9070b8178333ad}{sf::Keyboard::Down}}) \&\&}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00137}00137                (leftPaddle.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} + paddleSize.\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} / 2 < gameHeight -\/ 5.f))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00138}00138             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00139}00139                 leftPaddle.\mbox{\hyperlink{classsf_1_1_transformable_a86b461d6a941ad390c2ad8b6a4a20391}{move}}(0.f, paddleSpeed * deltaTime);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00140}00140             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00141}00141 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00142}00142             \textcolor{comment}{// Move the computer's paddle}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00143}00143             \textcolor{keywordflow}{if} (((rightPaddleSpeed < 0.f) \&\& (rightPaddle.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} -\/ paddleSize.\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} / 2 > 5.f)) ||}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00144}00144                 ((rightPaddleSpeed > 0.f) \&\& (rightPaddle.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} + paddleSize.\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} / 2 < gameHeight -\/ 5.f)))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00145}00145             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00146}00146                 rightPaddle.\mbox{\hyperlink{classsf_1_1_transformable_a86b461d6a941ad390c2ad8b6a4a20391}{move}}(0.f, rightPaddleSpeed * deltaTime);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00147}00147             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00148}00148 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00149}00149             \textcolor{comment}{// Update the computer's paddle direction according to the ball position}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00150}00150             \textcolor{keywordflow}{if} (AITimer.\mbox{\hyperlink{classsf_1_1_clock_abe889b42a65bcd8eefc16419645d08a7}{getElapsedTime}}() > AITime)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00151}00151             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00152}00152                 AITimer.\mbox{\hyperlink{classsf_1_1_clock_a123e2627f2943e5ecaa1db0c7df3231b}{restart}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00153}00153                 \textcolor{keywordflow}{if} (ball.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} + ballRadius > rightPaddle.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} + paddleSize.\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} / 2)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00154}00154                     rightPaddleSpeed = paddleSpeed;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00155}00155                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ball.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} -\/ ballRadius < rightPaddle.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} -\/ paddleSize.\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} / 2)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00156}00156                     rightPaddleSpeed = -\/paddleSpeed;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00157}00157                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00158}00158                     rightPaddleSpeed = 0.f;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00159}00159             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00160}00160 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00161}00161             \textcolor{comment}{// Move the ball}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00162}00162             \textcolor{keywordtype}{float} factor = ballSpeed * deltaTime;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00163}00163             ball.\mbox{\hyperlink{classsf_1_1_transformable_a86b461d6a941ad390c2ad8b6a4a20391}{move}}(std::cos(ballAngle) * factor, std::sin(ballAngle) * factor);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00164}00164 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00165}00165             \textcolor{comment}{// Check collisions between the ball and the screen}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00166}00166             \textcolor{keywordflow}{if} (ball.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}} -\/ ballRadius < 0.f)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00167}00167             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00168}00168                 isPlaying = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00169}00169                 pauseMessage.\mbox{\hyperlink{classsf_1_1_text_a7d3b3359f286fd9503d1ced25b7b6c33}{setString}}(\textcolor{stringliteral}{"{}You lost!\(\backslash\)nPress space to restart or\(\backslash\)nescape to exit"{}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00170}00170             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00171}00171             \textcolor{keywordflow}{if} (ball.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}} + ballRadius > gameWidth)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00172}00172             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00173}00173                 isPlaying = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00174}00174                 pauseMessage.\mbox{\hyperlink{classsf_1_1_text_a7d3b3359f286fd9503d1ced25b7b6c33}{setString}}(\textcolor{stringliteral}{"{}You won!\(\backslash\)nPress space to restart or\(\backslash\)nescape to exit"{}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00175}00175             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00176}00176             \textcolor{keywordflow}{if} (ball.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} -\/ ballRadius < 0.f)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00177}00177             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00178}00178                 ballSound.\mbox{\hyperlink{classsf_1_1_sound_a2953ffe632536e72e696fd880ced2532}{play}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00179}00179                 ballAngle = -\/ballAngle;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00180}00180                 ball.\mbox{\hyperlink{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{setPosition}}(ball.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}}, ballRadius + 0.1f);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00181}00181             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00182}00182             \textcolor{keywordflow}{if} (ball.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} + ballRadius > gameHeight)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00183}00183             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00184}00184                 ballSound.\mbox{\hyperlink{classsf_1_1_sound_a2953ffe632536e72e696fd880ced2532}{play}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00185}00185                 ballAngle = -\/ballAngle;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00186}00186                 ball.\mbox{\hyperlink{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{setPosition}}(ball.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}}, gameHeight -\/ ballRadius -\/ 0.1f);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00187}00187             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00188}00188 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00189}00189             \textcolor{comment}{// Check the collisions between the ball and the paddles}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00190}00190             \textcolor{comment}{// Left Paddle}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00191}00191             \textcolor{keywordflow}{if} (ball.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}} -\/ ballRadius < leftPaddle.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}} + paddleSize.\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}} / 2 \&\&}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00192}00192                 ball.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}} -\/ ballRadius > leftPaddle.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}} \&\&}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00193}00193                 ball.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} + ballRadius >= leftPaddle.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} -\/ paddleSize.\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} / 2 \&\&}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00194}00194                 ball.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} -\/ ballRadius <= leftPaddle.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} + paddleSize.\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} / 2)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00195}00195             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00196}00196                 \textcolor{keywordflow}{if} (ball.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} > leftPaddle.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00197}00197                     ballAngle = pi -\/ ballAngle + (std::rand() \% 20) * pi / 180;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00198}00198                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00199}00199                     ballAngle = pi -\/ ballAngle -\/ (std::rand() \% 20) * pi / 180;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00200}00200 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00201}00201                 ballSound.\mbox{\hyperlink{classsf_1_1_sound_a2953ffe632536e72e696fd880ced2532}{play}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00202}00202                 ball.\mbox{\hyperlink{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{setPosition}}(leftPaddle.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}} + ballRadius + paddleSize.\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}} / 2 + 0.1f, ball.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00203}00203             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00204}00204 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00205}00205             \textcolor{comment}{// Right Paddle}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00206}00206             \textcolor{keywordflow}{if} (ball.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}} + ballRadius > rightPaddle.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}} -\/ paddleSize.\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}} / 2 \&\&}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00207}00207                 ball.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}} + ballRadius < rightPaddle.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}} \&\&}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00208}00208                 ball.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} + ballRadius >= rightPaddle.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} -\/ paddleSize.\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} / 2 \&\&}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00209}00209                 ball.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} -\/ ballRadius <= rightPaddle.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} + paddleSize.\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} / 2)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00210}00210             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00211}00211                 \textcolor{keywordflow}{if} (ball.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} > rightPaddle.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00212}00212                     ballAngle = pi -\/ ballAngle + (std::rand() \% 20) * pi / 180;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00213}00213                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00214}00214                     ballAngle = pi -\/ ballAngle -\/ (std::rand() \% 20) * pi / 180;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00215}00215 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00216}00216                 ballSound.\mbox{\hyperlink{classsf_1_1_sound_a2953ffe632536e72e696fd880ced2532}{play}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00217}00217                 ball.\mbox{\hyperlink{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{setPosition}}(rightPaddle.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}} -\/ ballRadius -\/ paddleSize.\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}} / 2 -\/ 0.1f, ball.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00218}00218             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00219}00219         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00220}00220 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00221}00221         \textcolor{comment}{// Clear the window}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00222}00222         window.\mbox{\hyperlink{classsf_1_1_render_target_a6bb6f0ba348f2b1e2f46114aeaf60f26}{clear}}(\mbox{\hyperlink{classsf_1_1_color}{sf::Color}}(50, 200, 50));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00223}00223 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00224}00224         \textcolor{keywordflow}{if} (isPlaying)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00225}00225         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00226}00226             \textcolor{comment}{// Draw the paddles and the ball}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00227}00227             window.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(leftPaddle);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00228}00228             window.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(rightPaddle);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00229}00229             window.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(ball);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00230}00230         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00231}00231         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00232}00232         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00233}00233             \textcolor{comment}{// Draw the pause message}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00234}00234             window.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(pauseMessage);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00235}00235         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00236}00236 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00237}00237         \textcolor{comment}{// Display things on screen}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00238}00238         window.\mbox{\hyperlink{classsf_1_1_window_adabf839cb103ac96cfc82f781638772a}{display}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00239}00239     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00240}00240 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00241}00241     \textcolor{keywordflow}{return} EXIT\_SUCCESS;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2pong_2_pong_8cpp_source_l00242}00242 \}}
+
+\end{DoxyCode}

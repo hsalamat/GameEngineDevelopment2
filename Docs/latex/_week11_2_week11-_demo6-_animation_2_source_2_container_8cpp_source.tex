@@ -1,0 +1,115 @@
+\hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source}{}\doxysection{Container.\+cpp}
+\label{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source}\index{Week11/Week11-\/Demo6-\/Animation/Source/Container.cpp@{Week11/Week11-\/Demo6-\/Animation/Source/Container.cpp}}
+\mbox{\hyperlink{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include <Container.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <SFML/Window/Event.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <SFML/Graphics/RenderStates.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <SFML/Graphics/RenderTarget.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00007}00007 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_u_i}{GUI}}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00008}00008 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00010}00010 \mbox{\hyperlink{class_g_u_i_1_1_container_a29ad430d6a9f0bebfea8567c91de1095}{Container::Container}}()}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00011}00011 : mChildren()}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00012}00012 , mSelectedChild(-\/1)}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00013}00013 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00014}00014 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00016}00016 \textcolor{keywordtype}{void} Container::pack(Component::Ptr component)}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00017}00017 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00018}00018     mChildren.push\_back(component);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00020}00020     \textcolor{keywordflow}{if} (!hasSelection() \&\& component-\/>isSelectable())}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00021}00021         select(mChildren.size() -\/ 1);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00022}00022 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00024}00024 \textcolor{keywordtype}{bool} Container::isSelectable()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00025}00025 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00026}00026     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00027}00027 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00029}00029 \textcolor{keywordtype}{void} Container::handleEvent(\textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_event}{sf::Event}}\& event)}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00030}00030 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00031}00031     \textcolor{comment}{// If we have selected a child then give it events}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00032}00032     \textcolor{keywordflow}{if} (hasSelection() \&\& mChildren[mSelectedChild]-\/>isActive())}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00033}00033     \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00034}00034         mChildren[mSelectedChild]-\/>handleEvent(event);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00035}00035     \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00036}00036     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (event.\mbox{\hyperlink{classsf_1_1_event_adf2f8044f713fd9d6019077b0d1ffe0a}{type}} == \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa1df4a1c59bf3a4613f3d577ce137b8f1}{sf::Event::KeyReleased}})}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00037}00037     \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00038}00038         \textcolor{keywordflow}{if} (event.\mbox{\hyperlink{classsf_1_1_event_a45b92fc6757ca7c193f06b302e424ab0}{key}}.\mbox{\hyperlink{structsf_1_1_event_1_1_key_event_a2879fdab8a68cb1c6ecc45730a2d0e61}{code}} == \mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142ab374aa3b7462ee8b918f4a94452f1043}{sf::Keyboard::W}} || event.\mbox{\hyperlink{classsf_1_1_event_a45b92fc6757ca7c193f06b302e424ab0}{key}}.\mbox{\hyperlink{structsf_1_1_event_1_1_key_event_a2879fdab8a68cb1c6ecc45730a2d0e61}{code}} == \mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142aa0cd0ee9f2d03294d7ca25b21068fa22}{sf::Keyboard::Up}})}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00039}00039         \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00040}00040             selectPrevious();}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00041}00041         \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00042}00042         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (event.\mbox{\hyperlink{classsf_1_1_event_a45b92fc6757ca7c193f06b302e424ab0}{key}}.\mbox{\hyperlink{structsf_1_1_event_1_1_key_event_a2879fdab8a68cb1c6ecc45730a2d0e61}{code}} == \mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142af8f2db5757f45a0576f1e299347fc88f}{sf::Keyboard::S}} || event.\mbox{\hyperlink{classsf_1_1_event_a45b92fc6757ca7c193f06b302e424ab0}{key}}.\mbox{\hyperlink{structsf_1_1_event_1_1_key_event_a2879fdab8a68cb1c6ecc45730a2d0e61}{code}} == \mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142a4c156edb237453ea7e9070b8178333ad}{sf::Keyboard::Down}})}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00043}00043         \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00044}00044             selectNext();}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00045}00045         \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00046}00046         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (event.\mbox{\hyperlink{classsf_1_1_event_a45b92fc6757ca7c193f06b302e424ab0}{key}}.\mbox{\hyperlink{structsf_1_1_event_1_1_key_event_a2879fdab8a68cb1c6ecc45730a2d0e61}{code}} == \mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142a45990e46db316fb01b760bce6b5fcf32}{sf::Keyboard::Return}} || event.\mbox{\hyperlink{classsf_1_1_event_a45b92fc6757ca7c193f06b302e424ab0}{key}}.\mbox{\hyperlink{structsf_1_1_event_1_1_key_event_a2879fdab8a68cb1c6ecc45730a2d0e61}{code}} == \mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142a4a730305a8a8d016ab3ceb5e239cc3cb}{sf::Keyboard::Space}})}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00047}00047         \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00048}00048             \textcolor{keywordflow}{if} (hasSelection())}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00049}00049                 mChildren[mSelectedChild]-\/>activate();}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00050}00050         \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00051}00051     \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00052}00052 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00054}00054 \textcolor{keywordtype}{void} Container::draw(\mbox{\hyperlink{classsf_1_1_render_target}{sf::RenderTarget}}\& target, \mbox{\hyperlink{classsf_1_1_render_states}{sf::RenderStates}} states)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00055}00055 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00056}00056     states.\mbox{\hyperlink{classsf_1_1_render_states_a1f737981a0f2f0d4bb8dac866a8d1149}{transform}} *= getTransform();}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00058}00058     \textcolor{keywordflow}{for}(\textcolor{keyword}{const} Component::Ptr\& child: mChildren)}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00059}00059         target.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(*child, states);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00060}00060 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00062}00062 \textcolor{keywordtype}{bool} Container::hasSelection()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00063}00063 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00064}00064     \textcolor{keywordflow}{return} mSelectedChild >= 0;}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00065}00065 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00067}00067 \textcolor{keywordtype}{void} Container::select(std::size\_t index)}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00068}00068 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00069}00069     \textcolor{keywordflow}{if} (mChildren[index]-\/>isSelectable())}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00070}00070     \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00071}00071         \textcolor{keywordflow}{if} (hasSelection())}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00072}00072             mChildren[mSelectedChild]-\/>deselect();}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00074}00074         mChildren[index]-\/>select();}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00075}00075         mSelectedChild = index;}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00076}00076     \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00077}00077 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00079}00079 \textcolor{keywordtype}{void} Container::selectNext()}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00080}00080 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00081}00081     \textcolor{keywordflow}{if} (!hasSelection())}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00082}00082         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00084}00084     \textcolor{comment}{// Search next component that is selectable, wrap around if necessary}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00085}00085     \textcolor{keywordtype}{int} next = mSelectedChild;}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00086}00086     \textcolor{keywordflow}{do}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00087}00087         next = (next + 1) \% mChildren.size();}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00088}00088     \textcolor{keywordflow}{while} (!mChildren[next]-\/>isSelectable());}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00090}00090     \textcolor{comment}{// Select that component}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00091}00091     select(next);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00092}00092 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00094}00094 \textcolor{keywordtype}{void} Container::selectPrevious()}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00095}00095 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00096}00096     \textcolor{keywordflow}{if} (!hasSelection())}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00097}00097         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00098}00098 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00099}00099     \textcolor{comment}{// Search previous component that is selectable, wrap around if necessary}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00100}00100     \textcolor{keywordtype}{int} prev = mSelectedChild;}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00101}00101     \textcolor{keywordflow}{do}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00102}00102         prev = (prev + mChildren.size() -\/ 1) \% mChildren.size();}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00103}00103     \textcolor{keywordflow}{while} (!mChildren[prev]-\/>isSelectable());}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00104}00104 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00105}00105     \textcolor{comment}{// Select that component}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00106}00106     select(prev);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00107}00107 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00108}00108 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo6-_animation_2_source_2_container_8cpp_source_l00109}00109 \}}
+
+\end{DoxyCode}

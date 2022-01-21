@@ -1,0 +1,256 @@
+\hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source}{}\doxysection{Open\+GL.\+cpp}
+\label{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source}\index{SFML-\/2.5.1/examples/opengl/OpenGL.cpp@{SFML-\/2.5.1/examples/opengl/OpenGL.cpp}}
+\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00003}00003 \textcolor{comment}{// Headers}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00005}00005 \textcolor{comment}{}\textcolor{preprocessor}{\#include <SFML/Graphics.hpp>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <SFML/OpenGL.hpp>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#ifndef GL\_SRGB8\_ALPHA8}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00009}\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_a770a8348ad2322d8017b3c561bdc2a92}{00009}} \textcolor{preprocessor}{\#define GL\_SRGB8\_ALPHA8 0x8C43}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00010}00010 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00019}\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00019}} \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00020}00020 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00021}00021     \textcolor{keywordtype}{bool} exit = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00022}00022     \textcolor{keywordtype}{bool} sRgb = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00024}00024     \textcolor{keywordflow}{while} (!exit)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00025}00025     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00026}00026         \textcolor{comment}{// Request a 24-\/bits depth buffer when creating the window}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00027}00027         \mbox{\hyperlink{structsf_1_1_context_settings}{sf::ContextSettings}} contextSettings;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00028}00028         contextSettings.\mbox{\hyperlink{structsf_1_1_context_settings_a4809e22089c2af7276b8809b5aede7bb}{depthBits}} = 24;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00029}00029         contextSettings.\mbox{\hyperlink{structsf_1_1_context_settings_ac93b041bfb6cbd36034997797708a0a3}{sRgbCapable}} = sRgb;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00031}00031         \textcolor{comment}{// Create the main window}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00032}00032         \mbox{\hyperlink{classsf_1_1_render_window}{sf::RenderWindow}} window(\mbox{\hyperlink{classsf_1_1_video_mode}{sf::VideoMode}}(800, 600), \textcolor{stringliteral}{"{}SFML graphics with OpenGL"{}}, \mbox{\hyperlink{group__window_ggaa75e94f0d3f52da8a61ed467ffd6d6e8aaf73ca9c9fa787f9da9c1d7527d42734}{sf::Style::Default}}, contextSettings);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00033}00033         window.\mbox{\hyperlink{classsf_1_1_window_a59041c4556e0351048f8aff366034f61}{setVerticalSyncEnabled}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00035}00035         \textcolor{comment}{// Create a sprite for the background}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00036}00036         \mbox{\hyperlink{classsf_1_1_texture}{sf::Texture}} backgroundTexture;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00037}00037         backgroundTexture.\mbox{\hyperlink{classsf_1_1_texture_af8a38872c50a33ff074bd0865db19dd4}{setSrgb}}(sRgb);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00038}00038         \textcolor{keywordflow}{if} (!backgroundTexture.\mbox{\hyperlink{classsf_1_1_texture_a8e1b56eabfe33e2e0e1cb03712c7fcc7}{loadFromFile}}(\textcolor{stringliteral}{"{}resources/background.jpg"{}}))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00039}00039             \textcolor{keywordflow}{return} EXIT\_FAILURE;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00040}00040         \mbox{\hyperlink{classsf_1_1_sprite}{sf::Sprite}} background(backgroundTexture);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00042}00042         \textcolor{comment}{// Create some text to draw on top of our OpenGL object}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00043}00043         \mbox{\hyperlink{classsf_1_1_font}{sf::Font}} font;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00044}00044         \textcolor{keywordflow}{if} (!font.\mbox{\hyperlink{classsf_1_1_font_ab020052ef4e01f6c749a85571c0f3fd1}{loadFromFile}}(\textcolor{stringliteral}{"{}resources/sansation.ttf"{}}))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00045}00045             \textcolor{keywordflow}{return} EXIT\_FAILURE;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00046}00046         \mbox{\hyperlink{classsf_1_1_text}{sf::Text}} text(\textcolor{stringliteral}{"{}SFML / OpenGL demo"{}}, font);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00047}00047         \mbox{\hyperlink{classsf_1_1_text}{sf::Text}} sRgbInstructions(\textcolor{stringliteral}{"{}Press space to toggle sRGB conversion"{}}, font);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00048}00048         \mbox{\hyperlink{classsf_1_1_text}{sf::Text}} mipmapInstructions(\textcolor{stringliteral}{"{}Press return to toggle mipmapping"{}}, font);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00049}00049         text.\mbox{\hyperlink{classsf_1_1_text_ab7bb3babac5a6da1802b2c3e1a3e6dcc}{setFillColor}}(\mbox{\hyperlink{classsf_1_1_color}{sf::Color}}(255, 255, 255, 170));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00050}00050         sRgbInstructions.\mbox{\hyperlink{classsf_1_1_text_ab7bb3babac5a6da1802b2c3e1a3e6dcc}{setFillColor}}(\mbox{\hyperlink{classsf_1_1_color}{sf::Color}}(255, 255, 255, 170));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00051}00051         mipmapInstructions.\mbox{\hyperlink{classsf_1_1_text_ab7bb3babac5a6da1802b2c3e1a3e6dcc}{setFillColor}}(\mbox{\hyperlink{classsf_1_1_color}{sf::Color}}(255, 255, 255, 170));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00052}00052         text.\mbox{\hyperlink{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{setPosition}}(250.f, 450.f);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00053}00053         sRgbInstructions.\mbox{\hyperlink{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{setPosition}}(150.f, 500.f);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00054}00054         mipmapInstructions.\mbox{\hyperlink{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{setPosition}}(180.f, 550.f);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00056}00056         \textcolor{comment}{// Load a texture to apply to our 3D cube}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00057}00057         \mbox{\hyperlink{classsf_1_1_texture}{sf::Texture}} texture;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00058}00058         \textcolor{keywordflow}{if} (!texture.\mbox{\hyperlink{classsf_1_1_texture_a8e1b56eabfe33e2e0e1cb03712c7fcc7}{loadFromFile}}(\textcolor{stringliteral}{"{}resources/texture.jpg"{}}))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00059}00059             \textcolor{keywordflow}{return} EXIT\_FAILURE;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00061}00061         \textcolor{comment}{// Attempt to generate a mipmap for our cube texture}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00062}00062         \textcolor{comment}{// We don't check the return value here since}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00063}00063         \textcolor{comment}{// mipmapping is purely optional in this example}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00064}00064         texture.\mbox{\hyperlink{classsf_1_1_texture_a7779a75c0324b5faff77602f871710a9}{generateMipmap}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00066}00066         \textcolor{comment}{// Make the window the active window for OpenGL calls}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00067}00067         window.\mbox{\hyperlink{classsf_1_1_render_window_aee6c53eced675e885931eb3e91f11155}{setActive}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00069}00069         \textcolor{comment}{// Enable Z-\/buffer read and write}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00070}00070         glEnable(GL\_DEPTH\_TEST);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00071}00071         glDepthMask(GL\_TRUE);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00072}00072         glClearDepth(1.f);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00074}00074         \textcolor{comment}{// Disable lighting}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00075}00075         glDisable(GL\_LIGHTING);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00077}00077         \textcolor{comment}{// Configure the viewport (the same size as the window)}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00078}00078         glViewport(0, 0, window.\mbox{\hyperlink{classsf_1_1_render_window_ae3eacf93661c8068fca7a78d57dc7e14}{getSize}}().\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}}, window.\mbox{\hyperlink{classsf_1_1_render_window_ae3eacf93661c8068fca7a78d57dc7e14}{getSize}}().\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00080}00080         \textcolor{comment}{// Setup a perspective projection}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00081}00081         glMatrixMode(GL\_PROJECTION);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00082}00082         glLoadIdentity();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00083}00083         GLfloat ratio = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(window.\mbox{\hyperlink{classsf_1_1_render_window_ae3eacf93661c8068fca7a78d57dc7e14}{getSize}}().\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}}) / window.\mbox{\hyperlink{classsf_1_1_render_window_ae3eacf93661c8068fca7a78d57dc7e14}{getSize}}().\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00084}00084         glFrustum(-\/ratio, ratio, -\/1.f, 1.f, 1.f, 500.f);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00086}00086         \textcolor{comment}{// Bind the texture}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00087}00087         glEnable(GL\_TEXTURE\_2D);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00088}00088         \mbox{\hyperlink{classsf_1_1_texture_ae9a4274e7b95ebf7244d09c7445833b0}{sf::Texture::bind}}(\&texture);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00090}00090         \textcolor{comment}{// Define a 3D cube (6 faces made of 2 triangles composed by 3 vertices)}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00091}00091         \textcolor{keyword}{static} \textcolor{keyword}{const} GLfloat cube[] =}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00092}00092         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00093}00093             \textcolor{comment}{// positions    // texture coordinates}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00094}00094             -\/20, -\/20, -\/20,  0, 0,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00095}00095             -\/20,  20, -\/20,  1, 0,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00096}00096             -\/20, -\/20,  20,  0, 1,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00097}00097             -\/20, -\/20,  20,  0, 1,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00098}00098             -\/20,  20, -\/20,  1, 0,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00099}00099             -\/20,  20,  20,  1, 1,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00100}00100 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00101}00101              20, -\/20, -\/20,  0, 0,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00102}00102              20,  20, -\/20,  1, 0,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00103}00103              20, -\/20,  20,  0, 1,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00104}00104              20, -\/20,  20,  0, 1,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00105}00105              20,  20, -\/20,  1, 0,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00106}00106              20,  20,  20,  1, 1,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00107}00107 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00108}00108             -\/20, -\/20, -\/20,  0, 0,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00109}00109              20, -\/20, -\/20,  1, 0,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00110}00110             -\/20, -\/20,  20,  0, 1,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00111}00111             -\/20, -\/20,  20,  0, 1,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00112}00112              20, -\/20, -\/20,  1, 0,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00113}00113              20, -\/20,  20,  1, 1,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00115}00115             -\/20,  20, -\/20,  0, 0,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00116}00116              20,  20, -\/20,  1, 0,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00117}00117             -\/20,  20,  20,  0, 1,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00118}00118             -\/20,  20,  20,  0, 1,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00119}00119              20,  20, -\/20,  1, 0,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00120}00120              20,  20,  20,  1, 1,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00121}00121 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00122}00122             -\/20, -\/20, -\/20,  0, 0,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00123}00123              20, -\/20, -\/20,  1, 0,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00124}00124             -\/20,  20, -\/20,  0, 1,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00125}00125             -\/20,  20, -\/20,  0, 1,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00126}00126              20, -\/20, -\/20,  1, 0,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00127}00127              20,  20, -\/20,  1, 1,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00128}00128 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00129}00129             -\/20, -\/20,  20,  0, 0,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00130}00130              20, -\/20,  20,  1, 0,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00131}00131             -\/20,  20,  20,  0, 1,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00132}00132             -\/20,  20,  20,  0, 1,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00133}00133              20, -\/20,  20,  1, 0,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00134}00134              20,  20,  20,  1, 1}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00135}00135         \};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00136}00136 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00137}00137         \textcolor{comment}{// Enable position and texture coordinates vertex components}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00138}00138         glEnableClientState(GL\_VERTEX\_ARRAY);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00139}00139         glEnableClientState(GL\_TEXTURE\_COORD\_ARRAY);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00140}00140         glVertexPointer(3, GL\_FLOAT, 5 * \textcolor{keyword}{sizeof}(GLfloat), cube);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00141}00141         glTexCoordPointer(2, GL\_FLOAT, 5 * \textcolor{keyword}{sizeof}(GLfloat), cube + 3);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00142}00142 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00143}00143         \textcolor{comment}{// Disable normal and color vertex components}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00144}00144         glDisableClientState(GL\_NORMAL\_ARRAY);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00145}00145         glDisableClientState(GL\_COLOR\_ARRAY);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00146}00146 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00147}00147         \textcolor{comment}{// Make the window no longer the active window for OpenGL calls}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00148}00148         window.\mbox{\hyperlink{classsf_1_1_render_window_aee6c53eced675e885931eb3e91f11155}{setActive}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00149}00149 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00150}00150         \textcolor{comment}{// Create a clock for measuring the time elapsed}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00151}00151         \mbox{\hyperlink{classsf_1_1_clock}{sf::Clock}} clock;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00152}00152 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00153}00153         \textcolor{comment}{// Flag to track whether mipmapping is currently enabled}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00154}00154         \textcolor{keywordtype}{bool} mipmapEnabled = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00155}00155 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00156}00156         \textcolor{comment}{// Start game loop}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00157}00157         \textcolor{keywordflow}{while} (window.\mbox{\hyperlink{classsf_1_1_window_ae873503db7d48157bb9cbf6129562bce}{isOpen}}())}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00158}00158         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00159}00159             \textcolor{comment}{// Process events}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00160}00160             \mbox{\hyperlink{classsf_1_1_event}{sf::Event}} event;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00161}00161             \textcolor{keywordflow}{while} (window.\mbox{\hyperlink{classsf_1_1_window_a338e996585faf82e93069858e3b531b7}{pollEvent}}(event))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00162}00162             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00163}00163                 \textcolor{comment}{// Close window: exit}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00164}00164                 \textcolor{keywordflow}{if} (event.\mbox{\hyperlink{classsf_1_1_event_adf2f8044f713fd9d6019077b0d1ffe0a}{type}} == \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa4f718a7f43b0f2d46be222fe23198d9e}{sf::Event::Closed}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00165}00165                 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00166}00166                     exit = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00167}00167                     window.\mbox{\hyperlink{classsf_1_1_window_a99d1e030387b0c26f5995670504fe7b5}{close}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00168}00168                 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00169}00169 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00170}00170                 \textcolor{comment}{// Escape key: exit}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00171}00171                 \textcolor{keywordflow}{if} ((event.\mbox{\hyperlink{classsf_1_1_event_adf2f8044f713fd9d6019077b0d1ffe0a}{type}} == \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4}{sf::Event::KeyPressed}}) \&\& (event.\mbox{\hyperlink{classsf_1_1_event_a45b92fc6757ca7c193f06b302e424ab0}{key}}.\mbox{\hyperlink{structsf_1_1_event_1_1_key_event_a2879fdab8a68cb1c6ecc45730a2d0e61}{code}} == \mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142a72019ff9ecb145a9d3910177a49c757a}{sf::Keyboard::Escape}}))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00172}00172                 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00173}00173                     exit = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00174}00174                     window.\mbox{\hyperlink{classsf_1_1_window_a99d1e030387b0c26f5995670504fe7b5}{close}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00175}00175                 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00176}00176 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00177}00177                 \textcolor{comment}{// Return key: toggle mipmapping}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00178}00178                 \textcolor{keywordflow}{if} ((event.\mbox{\hyperlink{classsf_1_1_event_adf2f8044f713fd9d6019077b0d1ffe0a}{type}} == \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4}{sf::Event::KeyPressed}}) \&\& (event.\mbox{\hyperlink{classsf_1_1_event_a45b92fc6757ca7c193f06b302e424ab0}{key}}.\mbox{\hyperlink{structsf_1_1_event_1_1_key_event_a2879fdab8a68cb1c6ecc45730a2d0e61}{code}} == \mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142a4a72a56dd2ffcd100d6eec32fdc456b7}{sf::Keyboard::Enter}}))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00179}00179                 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00180}00180                     \textcolor{keywordflow}{if} (mipmapEnabled)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00181}00181                     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00182}00182                         \textcolor{comment}{// We simply reload the texture to disable mipmapping}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00183}00183                         \textcolor{keywordflow}{if} (!texture.\mbox{\hyperlink{classsf_1_1_texture_a8e1b56eabfe33e2e0e1cb03712c7fcc7}{loadFromFile}}(\textcolor{stringliteral}{"{}resources/texture.jpg"{}}))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00184}00184                             \textcolor{keywordflow}{return} EXIT\_FAILURE;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00185}00185 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00186}00186                         mipmapEnabled = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00187}00187                     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00188}00188                     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00189}00189                     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00190}00190                         texture.\mbox{\hyperlink{classsf_1_1_texture_a7779a75c0324b5faff77602f871710a9}{generateMipmap}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00191}00191 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00192}00192                         mipmapEnabled = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00193}00193                     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00194}00194                 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00195}00195 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00196}00196                 \textcolor{comment}{// Space key: toggle sRGB conversion}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00197}00197                 \textcolor{keywordflow}{if} ((event.\mbox{\hyperlink{classsf_1_1_event_adf2f8044f713fd9d6019077b0d1ffe0a}{type}} == \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4}{sf::Event::KeyPressed}}) \&\& (event.\mbox{\hyperlink{classsf_1_1_event_a45b92fc6757ca7c193f06b302e424ab0}{key}}.\mbox{\hyperlink{structsf_1_1_event_1_1_key_event_a2879fdab8a68cb1c6ecc45730a2d0e61}{code}} == \mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142a4a730305a8a8d016ab3ceb5e239cc3cb}{sf::Keyboard::Space}}))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00198}00198                 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00199}00199                     sRgb = !sRgb;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00200}00200                     window.\mbox{\hyperlink{classsf_1_1_window_a99d1e030387b0c26f5995670504fe7b5}{close}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00201}00201                 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00202}00202 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00203}00203                 \textcolor{comment}{// Adjust the viewport when the window is resized}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00204}00204                 \textcolor{keywordflow}{if} (event.\mbox{\hyperlink{classsf_1_1_event_adf2f8044f713fd9d6019077b0d1ffe0a}{type}} == \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aac5a9f3d76cbf4a577fa982623f3198eb}{sf::Event::Resized}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00205}00205                 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00206}00206                     \textcolor{comment}{// Make the window the active window for OpenGL calls}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00207}00207                     window.\mbox{\hyperlink{classsf_1_1_render_window_aee6c53eced675e885931eb3e91f11155}{setActive}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00208}00208 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00209}00209                     glViewport(0, 0, event.\mbox{\hyperlink{classsf_1_1_event_a85dae56a377eeffd39183c3f6fc96cb9}{size}}.\mbox{\hyperlink{structsf_1_1_event_1_1_size_event_a20ea1b78c9bb1604432f8f0067bbfd94}{width}}, event.\mbox{\hyperlink{classsf_1_1_event_a85dae56a377eeffd39183c3f6fc96cb9}{size}}.\mbox{\hyperlink{structsf_1_1_event_1_1_size_event_af0f76a599d5f48189cb8d78d4e5facdb}{height}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00210}00210 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00211}00211                     \textcolor{comment}{// Make the window no longer the active window for OpenGL calls}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00212}00212                     window.\mbox{\hyperlink{classsf_1_1_render_window_aee6c53eced675e885931eb3e91f11155}{setActive}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00213}00213                 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00214}00214             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00215}00215 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00216}00216             \textcolor{comment}{// Draw the background}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00217}00217             window.\mbox{\hyperlink{classsf_1_1_render_target_a8d1998464ccc54e789aaf990242b47f7}{pushGLStates}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00218}00218             window.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(background);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00219}00219             window.\mbox{\hyperlink{classsf_1_1_render_target_ad5a98401113df931ddcd54c080f7aa8e}{popGLStates}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00220}00220 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00221}00221             \textcolor{comment}{// Make the window the active window for OpenGL calls}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00222}00222             window.\mbox{\hyperlink{classsf_1_1_render_window_aee6c53eced675e885931eb3e91f11155}{setActive}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00223}00223 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00224}00224             \textcolor{comment}{// Clear the depth buffer}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00225}00225             glClear(GL\_DEPTH\_BUFFER\_BIT);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00226}00226 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00227}00227             \textcolor{comment}{// We get the position of the mouse cursor, so that we can move the box accordingly}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00228}00228             \textcolor{keywordtype}{float} x =  \mbox{\hyperlink{classsf_1_1_mouse_ac368680f797b7f6e4f50b5b7928c1387}{sf::Mouse::getPosition}}(window).\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}} * 200.f / window.\mbox{\hyperlink{classsf_1_1_render_window_ae3eacf93661c8068fca7a78d57dc7e14}{getSize}}().\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}} -\/ 100.f;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00229}00229             \textcolor{keywordtype}{float} y = -\/\mbox{\hyperlink{classsf_1_1_mouse_ac368680f797b7f6e4f50b5b7928c1387}{sf::Mouse::getPosition}}(window).\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} * 200.f / window.\mbox{\hyperlink{classsf_1_1_render_window_ae3eacf93661c8068fca7a78d57dc7e14}{getSize}}().\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} + 100.f;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00230}00230 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00231}00231             \textcolor{comment}{// Apply some transformations}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00232}00232             glMatrixMode(GL\_MODELVIEW);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00233}00233             glLoadIdentity();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00234}00234             glTranslatef(x, y, -\/100.f);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00235}00235             glRotatef(clock.\mbox{\hyperlink{classsf_1_1_clock_abe889b42a65bcd8eefc16419645d08a7}{getElapsedTime}}().\mbox{\hyperlink{classsf_1_1_time_aa3df2f992d0b0041b4eb02258d43f0e3}{asSeconds}}() * 50.f, 1.f, 0.f, 0.f);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00236}00236             glRotatef(clock.\mbox{\hyperlink{classsf_1_1_clock_abe889b42a65bcd8eefc16419645d08a7}{getElapsedTime}}().\mbox{\hyperlink{classsf_1_1_time_aa3df2f992d0b0041b4eb02258d43f0e3}{asSeconds}}() * 30.f, 0.f, 1.f, 0.f);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00237}00237             glRotatef(clock.\mbox{\hyperlink{classsf_1_1_clock_abe889b42a65bcd8eefc16419645d08a7}{getElapsedTime}}().\mbox{\hyperlink{classsf_1_1_time_aa3df2f992d0b0041b4eb02258d43f0e3}{asSeconds}}() * 90.f, 0.f, 0.f, 1.f);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00238}00238 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00239}00239             \textcolor{comment}{// Draw the cube}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00240}00240             glDrawArrays(GL\_TRIANGLES, 0, 36);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00241}00241 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00242}00242             \textcolor{comment}{// Make the window no longer the active window for OpenGL calls}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00243}00243             window.\mbox{\hyperlink{classsf_1_1_render_window_aee6c53eced675e885931eb3e91f11155}{setActive}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00244}00244 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00245}00245             \textcolor{comment}{// Draw some text on top of our OpenGL object}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00246}00246             window.\mbox{\hyperlink{classsf_1_1_render_target_a8d1998464ccc54e789aaf990242b47f7}{pushGLStates}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00247}00247             window.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(text);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00248}00248             window.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(sRgbInstructions);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00249}00249             window.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(mipmapInstructions);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00250}00250             window.\mbox{\hyperlink{classsf_1_1_render_target_ad5a98401113df931ddcd54c080f7aa8e}{popGLStates}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00251}00251 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00252}00252             \textcolor{comment}{// Finally, display the rendered frame on screen}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00253}00253             window.\mbox{\hyperlink{classsf_1_1_window_adabf839cb103ac96cfc82f781638772a}{display}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00254}00254         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00255}00255     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00256}00256 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00257}00257     \textcolor{keywordflow}{return} EXIT\_SUCCESS;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00258}00258 \}}
+
+\end{DoxyCode}

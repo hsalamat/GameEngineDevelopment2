@@ -1,0 +1,143 @@
+\hypertarget{struct_matrix}{}\doxysection{Matrix\texorpdfstring{$<$}{<} Columns, Rows \texorpdfstring{$>$}{>} Struct Template Reference}
+\label{struct_matrix}\index{Matrix$<$ Columns, Rows $>$@{Matrix$<$ Columns, Rows $>$}}
+
+
+\mbox{\hyperlink{struct_matrix}{Matrix}} type, used to set uniforms in GLSL.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_matrix_ad40da72f526bcd6854d83496d2f62e01}{Matrix}} (const float $\ast$pointer)
+\begin{DoxyCompactList}\small\item\em Construct from raw data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_matrix_acc8ec3ddfe33a01f9ae7970d8fed9855}{Matrix}} (const Transform \&transform)
+\begin{DoxyCompactList}\small\item\em Construct implicitly from SFML transform. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_matrix_ad40da72f526bcd6854d83496d2f62e01}{Matrix}} (const float $\ast$pointer)
+\begin{DoxyCompactList}\small\item\em Construct from raw data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_matrix_acc8ec3ddfe33a01f9ae7970d8fed9855}{Matrix}} (const Transform \&transform)
+\begin{DoxyCompactList}\small\item\em Construct implicitly from SFML transform. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{struct_matrix_a2c386192c23f49d40d51121ea3aebfe2}{array}} \mbox{[}Columns $\ast$Rows\mbox{]}
+\begin{DoxyCompactList}\small\item\em Array holding matrix data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$std\+::size\+\_\+t Columns, std\+::size\+\_\+t Rows$>$\newline
+struct Matrix$<$ Columns, Rows $>$}
+\mbox{\hyperlink{struct_matrix}{Matrix}} type, used to set uniforms in GLSL. 
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl_source_l00055}{55}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl_source}{Glsl.\+inl}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_matrix_ad40da72f526bcd6854d83496d2f62e01}\label{struct_matrix_ad40da72f526bcd6854d83496d2f62e01}} 
+\index{Matrix$<$ Columns, Rows $>$@{Matrix$<$ Columns, Rows $>$}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix$<$ Columns, Rows $>$@{Matrix$<$ Columns, Rows $>$}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t Columns, std\+::size\+\_\+t Rows$>$ \\
+\mbox{\hyperlink{struct_matrix}{Matrix}}$<$ Columns, Rows $>$\+::\mbox{\hyperlink{struct_matrix}{Matrix}} (\begin{DoxyParamCaption}\item[{const float $\ast$}]{pointer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct from raw data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pointer} & Points to the beginning of an array that has the size of the matrix. The elements are copied to the instance. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl_source_l00065}{65}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl_source}{Glsl.\+inl}}.
+
+\mbox{\Hypertarget{struct_matrix_acc8ec3ddfe33a01f9ae7970d8fed9855}\label{struct_matrix_acc8ec3ddfe33a01f9ae7970d8fed9855}} 
+\index{Matrix$<$ Columns, Rows $>$@{Matrix$<$ Columns, Rows $>$}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix$<$ Columns, Rows $>$@{Matrix$<$ Columns, Rows $>$}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t Columns, std\+::size\+\_\+t Rows$>$ \\
+\mbox{\hyperlink{struct_matrix}{Matrix}}$<$ Columns, Rows $>$\+::\mbox{\hyperlink{struct_matrix}{Matrix}} (\begin{DoxyParamCaption}\item[{const Transform \&}]{transform }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct implicitly from SFML transform. 
+
+This constructor is only supported for 3x3 and 4x4 matrices.
+
+
+\begin{DoxyParams}{Parameters}
+{\em transform} & Object containing a transform. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl_source_l00079}{79}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl_source}{Glsl.\+inl}}.
+
+\mbox{\Hypertarget{struct_matrix_ad40da72f526bcd6854d83496d2f62e01}\label{struct_matrix_ad40da72f526bcd6854d83496d2f62e01}} 
+\index{Matrix$<$ Columns, Rows $>$@{Matrix$<$ Columns, Rows $>$}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix$<$ Columns, Rows $>$@{Matrix$<$ Columns, Rows $>$}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t Columns, std\+::size\+\_\+t Rows$>$ \\
+\mbox{\hyperlink{struct_matrix}{Matrix}}$<$ Columns, Rows $>$\+::\mbox{\hyperlink{struct_matrix}{Matrix}} (\begin{DoxyParamCaption}\item[{const float $\ast$}]{pointer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct from raw data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pointer} & Points to the beginning of an array that has the size of the matrix. The elements are copied to the instance. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl_source_l00065}{65}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl_source}{Glsl.\+inl}}.
+
+\mbox{\Hypertarget{struct_matrix_acc8ec3ddfe33a01f9ae7970d8fed9855}\label{struct_matrix_acc8ec3ddfe33a01f9ae7970d8fed9855}} 
+\index{Matrix$<$ Columns, Rows $>$@{Matrix$<$ Columns, Rows $>$}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix$<$ Columns, Rows $>$@{Matrix$<$ Columns, Rows $>$}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t Columns, std\+::size\+\_\+t Rows$>$ \\
+\mbox{\hyperlink{struct_matrix}{Matrix}}$<$ Columns, Rows $>$\+::\mbox{\hyperlink{struct_matrix}{Matrix}} (\begin{DoxyParamCaption}\item[{const Transform \&}]{transform }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct implicitly from SFML transform. 
+
+This constructor is only supported for 3x3 and 4x4 matrices.
+
+
+\begin{DoxyParams}{Parameters}
+{\em transform} & Object containing a transform. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl_source_l00079}{79}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl_source}{Glsl.\+inl}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_matrix_a2c386192c23f49d40d51121ea3aebfe2}\label{struct_matrix_a2c386192c23f49d40d51121ea3aebfe2}} 
+\index{Matrix$<$ Columns, Rows $>$@{Matrix$<$ Columns, Rows $>$}!array@{array}}
+\index{array@{array}!Matrix$<$ Columns, Rows $>$@{Matrix$<$ Columns, Rows $>$}}
+\doxysubsubsection{\texorpdfstring{array}{array}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t Columns, std\+::size\+\_\+t Rows$>$ \\
+float \mbox{\hyperlink{struct_matrix}{Matrix}}$<$ Columns, Rows $>$\+::array}
+
+
+
+Array holding matrix data. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl_source_l00084}{84}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl_source}{Glsl.\+inl}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+SFML-\/2.\+5.\+1/include/\+SFML/\+Graphics/\mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl}{Glsl.\+inl}}\item 
+Week14/\+SFML-\/2.\+5.\+1/include/\+SFML/\+Graphics/\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl}{Glsl.\+inl}}\end{DoxyCompactItemize}

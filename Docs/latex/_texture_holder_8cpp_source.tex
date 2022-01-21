@@ -1,0 +1,29 @@
+\hypertarget{_texture_holder_8cpp_source}{}\doxysection{Texture\+Holder.\+cpp}
+\label{_texture_holder_8cpp_source}\index{Week2/Week2-\/Demo5/Source/TextureHolder.cpp@{Week2/Week2-\/Demo5/Source/TextureHolder.cpp}}
+\mbox{\hyperlink{_texture_holder_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_texture_holder_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_texture_holder_8hpp}{TextureHolder.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{_texture_holder_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_texture_holder_8cpp_source_l00003}\mbox{\hyperlink{class_texture_holder_aa1ec510a83a94c5ce8490574eaffb13f}{00003}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_texture_holder_aa1ec510a83a94c5ce8490574eaffb13f}{TextureHolder::load}}(\mbox{\hyperlink{namespace_textures_a2cfe2099537d4e80b08437b4978301a5}{Textures::ID}} \textcolor{keywordtype}{id}, std::string filename)}
+\DoxyCodeLine{\Hypertarget{_texture_holder_8cpp_source_l00004}00004 \{}
+\DoxyCodeLine{\Hypertarget{_texture_holder_8cpp_source_l00005}00005     \mbox{\hyperlink{classsf_1_1_texture}{sf::Texture}} mTexture;}
+\DoxyCodeLine{\Hypertarget{_texture_holder_8cpp_source_l00006}00006     mTexture.\mbox{\hyperlink{classsf_1_1_texture_a8e1b56eabfe33e2e0e1cb03712c7fcc7}{loadFromFile}}(filename);}
+\DoxyCodeLine{\Hypertarget{_texture_holder_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_texture_holder_8cpp_source_l00008}00008     std::pair<Textures::ID, sf::Texture> mPair(\textcolor{keywordtype}{id},mTexture);}
+\DoxyCodeLine{\Hypertarget{_texture_holder_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_texture_holder_8cpp_source_l00010}00010     \mbox{\hyperlink{class_texture_holder_a540df7ec34515d6f0640dda074473810}{mTextureMap}}.insert(mPair);}
+\DoxyCodeLine{\Hypertarget{_texture_holder_8cpp_source_l00011}00011 \}}
+\DoxyCodeLine{\Hypertarget{_texture_holder_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_texture_holder_8cpp_source_l00013}\mbox{\hyperlink{class_texture_holder_a1f1276ddaeb6000ecdf3192b22543d7b}{00013}} \mbox{\hyperlink{classsf_1_1_texture}{sf::Texture}} \mbox{\hyperlink{class_texture_holder_a1f1276ddaeb6000ecdf3192b22543d7b}{TextureHolder::get}}(\mbox{\hyperlink{namespace_textures_a2cfe2099537d4e80b08437b4978301a5}{Textures::ID}} \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{_texture_holder_8cpp_source_l00014}00014 \{}
+\DoxyCodeLine{\Hypertarget{_texture_holder_8cpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_texture_holder_8cpp_source_l00016}00016     \textcolor{comment}{//in ideal situation}}
+\DoxyCodeLine{\Hypertarget{_texture_holder_8cpp_source_l00017}00017     \textcolor{comment}{//return mTextureMap.find(id)-\/>second;}}
+\DoxyCodeLine{\Hypertarget{_texture_holder_8cpp_source_l00018}00018     std::map<Textures::ID, sf::Texture>::iterator it;}
+\DoxyCodeLine{\Hypertarget{_texture_holder_8cpp_source_l00019}00019     it= \mbox{\hyperlink{class_texture_holder_a540df7ec34515d6f0640dda074473810}{mTextureMap}}.find(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{_texture_holder_8cpp_source_l00020}00020     \textcolor{keywordflow}{if} (it != \mbox{\hyperlink{class_texture_holder_a540df7ec34515d6f0640dda074473810}{mTextureMap}}.end())}
+\DoxyCodeLine{\Hypertarget{_texture_holder_8cpp_source_l00021}00021         \textcolor{keywordflow}{return} it-\/>second;}
+\DoxyCodeLine{\Hypertarget{_texture_holder_8cpp_source_l00022}00022     \textcolor{keywordflow}{return} \mbox{\hyperlink{classsf_1_1_texture}{sf::Texture}}();}
+\DoxyCodeLine{\Hypertarget{_texture_holder_8cpp_source_l00023}00023 \}}
+
+\end{DoxyCode}

@@ -1,7 +1,4 @@
 #include <Game.hpp>
-#include <StringHelpers.hpp>
-#include <iostream>
-
 
 const float Game::PlayerSpeed = 100.f;
 const sf::Time Game::TimePerFrame = sf::seconds(1.f / 60.f);
@@ -34,6 +31,9 @@ Game::Game()
 #pragma region step 6	
 	mAirplaneTexture = textures.get(Textures::Airplane);
 	airplane.setTexture(mAirplaneTexture);
+	//!@ note you cannot use the following "yet"
+	//!airplane.setTexture(textures.get(Textures::Airplane));
+
 	airplane.setPosition(100.f, 100.f);
 
 	if (!mFont.loadFromFile("Media/Sansation.ttf")) return;
@@ -123,8 +123,8 @@ void Game::updateStatistics(sf::Time elapsedTime)
 	if (mStatisticsUpdateTime >= sf::seconds(1.0f))
 	{
 		mStatisticsText.setString(
-			"Frames / Second = " + toString(mStatisticsNumFrames) + "\n" +
-			"Time / Update = " + toString(mStatisticsUpdateTime.asMicroseconds() / mStatisticsNumFrames) + "us");
+			"Frames / Second = " + std::to_string(mStatisticsNumFrames) + "\n" +
+			"Time / Update = " + std::to_string(mStatisticsUpdateTime.asMicroseconds() / mStatisticsNumFrames) + "us");
 
 		mStatisticsUpdateTime -= sf::seconds(1.0f);
 		mStatisticsNumFrames = 0;

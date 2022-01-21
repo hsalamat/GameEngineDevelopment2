@@ -1,0 +1,173 @@
+\hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source}{}\doxysection{Server.\+cpp}
+\label{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source}\index{SFML-\/2.5.1/examples/voip/Server.cpp@{SFML-\/2.5.1/examples/voip/Server.cpp}}
+\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00003}00003 \textcolor{comment}{// Headers}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00005}00005 \textcolor{comment}{}\textcolor{preprocessor}{\#include <SFML/Audio.hpp>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <SFML/Network.hpp>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#include <iterator>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00012}\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_af0c73c991a246dd292263c32ee190547}{00012}} \textcolor{keyword}{const} \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{sf::Uint8}} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_af0c73c991a246dd292263c32ee190547}{audioData}}   = 1;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00013}\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_aa87d7c0acaf7e7354fee28a093fc3176}{00013}} \textcolor{keyword}{const} \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{sf::Uint8}} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_aa87d7c0acaf7e7354fee28a093fc3176}{endOfStream}} = 2;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00020}\mbox{\hyperlink{class_network_audio_stream}{00020}} \textcolor{keyword}{class }\mbox{\hyperlink{class_network_audio_stream}{NetworkAudioStream}} : \textcolor{keyword}{public} \mbox{\hyperlink{classsf_1_1_sound_stream}{sf::SoundStream}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00021}00021 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00022}00022 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00028}\mbox{\hyperlink{class_network_audio_stream_a16b7eba2911135401c404d67035206a8}{00028}}     \mbox{\hyperlink{class_network_audio_stream_a16b7eba2911135401c404d67035206a8}{NetworkAudioStream}}() :}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00029}00029     \mbox{\hyperlink{class_network_audio_stream_aa68563c14d3976a7272f3bb86ef8313a}{m\_offset}}     (0),}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00030}00030     \mbox{\hyperlink{class_network_audio_stream_af50dfbf591997fe64fbb67022c490824}{m\_hasFinished}}(false)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00031}00031     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00032}00032         \textcolor{comment}{// Set the sound parameters}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00033}00033         \mbox{\hyperlink{classsf_1_1_sound_stream_a9c351711198ee1aa77c2fefd3ced4d2c}{initialize}}(1, 44100);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00034}00034     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00040}\mbox{\hyperlink{class_network_audio_stream_a5c698fc66d35fe30ae5e0148c03766e3}{00040}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_network_audio_stream_a5c698fc66d35fe30ae5e0148c03766e3}{start}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} port)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00041}00041     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00042}00042         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_network_audio_stream_af50dfbf591997fe64fbb67022c490824}{m\_hasFinished}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00043}00043         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00044}00044             \textcolor{comment}{// Listen to the given port for incoming connections}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00045}00045             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_network_audio_stream_a047ee9c1b8f162cd6a4f6c329aad8955}{m\_listener}}.\mbox{\hyperlink{classsf_1_1_tcp_listener_a9504758ea3570e62cb20b209c11776a1}{listen}}(port) != \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca6b3d5ba897b6df8ebda86c823b30348a}{sf::Socket::Done}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00046}00046                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00047}00047             std::cout << \textcolor{stringliteral}{"{}Server is listening to port "{}} << port << \textcolor{stringliteral}{"{}, waiting for connections... "{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00049}00049             \textcolor{comment}{// Wait for a connection}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00050}00050             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_network_audio_stream_a047ee9c1b8f162cd6a4f6c329aad8955}{m\_listener}}.\mbox{\hyperlink{classsf_1_1_tcp_listener_ae2c83ce5a64d50b68180c46bef0a7346}{accept}}(\mbox{\hyperlink{class_network_audio_stream_a19d8783e7d3e4ca5b7e504eebac01402}{m\_client}}) != \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca6b3d5ba897b6df8ebda86c823b30348a}{sf::Socket::Done}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00051}00051                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00052}00052             std::cout << \textcolor{stringliteral}{"{}Client connected: "{}} << \mbox{\hyperlink{class_network_audio_stream_a19d8783e7d3e4ca5b7e504eebac01402}{m\_client}}.\mbox{\hyperlink{classsf_1_1_tcp_socket_aa8579c203b1fd21beb74d7f76444a94c}{getRemoteAddress}}() << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00054}00054             \textcolor{comment}{// Start playback}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00055}00055             \mbox{\hyperlink{classsf_1_1_sound_stream_afdc08b69cab5f243d9324940a85a1144}{play}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00057}00057             \textcolor{comment}{// Start receiving audio data}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00058}00058             \mbox{\hyperlink{class_network_audio_stream_a2b9ef1966a48b1b63af77e759b41d37e}{receiveLoop}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00059}00059         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00060}00060         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00061}00061         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00062}00062             \textcolor{comment}{// Start playback}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00063}00063             \mbox{\hyperlink{classsf_1_1_sound_stream_afdc08b69cab5f243d9324940a85a1144}{play}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00064}00064         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00065}00065     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00067}00067 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00073}\mbox{\hyperlink{class_network_audio_stream_a7a2a574aec42b199788346ad6acd7914}{00073}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_network_audio_stream_a7a2a574aec42b199788346ad6acd7914}{onGetData}}(\mbox{\hyperlink{structsf_1_1_sound_stream_1_1_chunk}{sf::SoundStream::Chunk}}\& data)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00074}00074     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00075}00075         \textcolor{comment}{// We have reached the end of the buffer and all audio data have been played: we can stop playback}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00076}00076         \textcolor{keywordflow}{if} ((\mbox{\hyperlink{class_network_audio_stream_aa68563c14d3976a7272f3bb86ef8313a}{m\_offset}} >= \mbox{\hyperlink{class_network_audio_stream_a11072449c6ba6ba1f946a8b120ab8216}{m\_samples}}.size()) \&\& \mbox{\hyperlink{class_network_audio_stream_af50dfbf591997fe64fbb67022c490824}{m\_hasFinished}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00077}00077             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00079}00079         \textcolor{comment}{// No new data has arrived since last update: wait until we get some}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00080}00080         \textcolor{keywordflow}{while} ((\mbox{\hyperlink{class_network_audio_stream_aa68563c14d3976a7272f3bb86ef8313a}{m\_offset}} >= \mbox{\hyperlink{class_network_audio_stream_a11072449c6ba6ba1f946a8b120ab8216}{m\_samples}}.size()) \&\& !\mbox{\hyperlink{class_network_audio_stream_af50dfbf591997fe64fbb67022c490824}{m\_hasFinished}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00081}00081             \mbox{\hyperlink{group__system_ga2f2620831533dee0ed432ed982342e09}{sf::sleep}}(sf::milliseconds(10));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00083}00083         \textcolor{comment}{// Copy samples into a local buffer to avoid synchronization problems}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00084}00084         \textcolor{comment}{// (don't forget that we run in two separate threads)}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00085}00085         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00086}00086             \mbox{\hyperlink{classsf_1_1_lock}{sf::Lock}} lock(\mbox{\hyperlink{class_network_audio_stream_aec34e0d6d55c2ca64009362f4ab301a2}{m\_mutex}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00087}00087             \mbox{\hyperlink{class_network_audio_stream_ad861eca779886b37a3fefc583f5d7575}{m\_tempBuffer}}.assign(\mbox{\hyperlink{class_network_audio_stream_a11072449c6ba6ba1f946a8b120ab8216}{m\_samples}}.begin() + \mbox{\hyperlink{class_network_audio_stream_aa68563c14d3976a7272f3bb86ef8313a}{m\_offset}}, \mbox{\hyperlink{class_network_audio_stream_a11072449c6ba6ba1f946a8b120ab8216}{m\_samples}}.end());}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00088}00088         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00090}00090         \textcolor{comment}{// Fill audio data to pass to the stream}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00091}00091         data.\mbox{\hyperlink{structsf_1_1_sound_stream_1_1_chunk_ae0b301e2bdfc530a6dc9efeac7e8a2e7}{samples}}     = \&\mbox{\hyperlink{class_network_audio_stream_ad861eca779886b37a3fefc583f5d7575}{m\_tempBuffer}}[0];}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00092}00092         data.\mbox{\hyperlink{structsf_1_1_sound_stream_1_1_chunk_af47f5d94012acf8b11f056ba77aff97a}{sampleCount}} = \mbox{\hyperlink{class_network_audio_stream_ad861eca779886b37a3fefc583f5d7575}{m\_tempBuffer}}.size();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00094}00094         \textcolor{comment}{// Update the playing offset}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00095}00095         \mbox{\hyperlink{class_network_audio_stream_aa68563c14d3976a7272f3bb86ef8313a}{m\_offset}} += \mbox{\hyperlink{class_network_audio_stream_ad861eca779886b37a3fefc583f5d7575}{m\_tempBuffer}}.size();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00097}00097         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00098}00098     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00104}\mbox{\hyperlink{class_network_audio_stream_adab7ec817f075ee5c9d403d641ab5c78}{00104}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_network_audio_stream_adab7ec817f075ee5c9d403d641ab5c78}{onSeek}}(\mbox{\hyperlink{classsf_1_1_time}{sf::Time}} timeOffset)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00105}00105     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00106}00106         \mbox{\hyperlink{class_network_audio_stream_aa68563c14d3976a7272f3bb86ef8313a}{m\_offset}} = timeOffset.\mbox{\hyperlink{classsf_1_1_time_aa16858ca030a07eb18958c321f256e5a}{asMilliseconds}}() * \mbox{\hyperlink{classsf_1_1_sound_stream_a7da448dc40d81a33b8dc555fbf0d3fbf}{getSampleRate}}() * \mbox{\hyperlink{classsf_1_1_sound_stream_a1f70933912dd9498f4dc99feefed27f3}{getChannelCount}}() / 1000;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00107}00107     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00108}00108 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00113}\mbox{\hyperlink{class_network_audio_stream_a2b9ef1966a48b1b63af77e759b41d37e}{00113}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_network_audio_stream_a2b9ef1966a48b1b63af77e759b41d37e}{receiveLoop}}()}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00114}00114     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00115}00115         \textcolor{keywordflow}{while} (!\mbox{\hyperlink{class_network_audio_stream_af50dfbf591997fe64fbb67022c490824}{m\_hasFinished}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00116}00116         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00117}00117             \textcolor{comment}{// Get waiting audio data from the network}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00118}00118             \mbox{\hyperlink{classsf_1_1_packet}{sf::Packet}} packet;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00119}00119             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_network_audio_stream_a19d8783e7d3e4ca5b7e504eebac01402}{m\_client}}.\mbox{\hyperlink{classsf_1_1_tcp_socket_a90ce50811ea61d4f00efc62bb99ae1af}{receive}}(packet) != \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca6b3d5ba897b6df8ebda86c823b30348a}{sf::Socket::Done}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00120}00120                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00121}00121 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00122}00122             \textcolor{comment}{// Extract the message ID}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00123}00123             \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{sf::Uint8}} id;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00124}00124             packet >> id;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00125}00125 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00126}00126             \textcolor{keywordflow}{if} (\textcolor{keywordtype}{id} == \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_af0c73c991a246dd292263c32ee190547}{audioData}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00127}00127             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00128}00128                 \textcolor{comment}{// Extract audio samples from the packet, and append it to our samples buffer}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00129}00129                 \textcolor{keyword}{const} \mbox{\hyperlink{namespacesf_a3c8e10435e2a310a7741755e66b5c94e}{sf::Int16}}* samples     = \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }\mbox{\hyperlink{namespacesf_a3c8e10435e2a310a7741755e66b5c94e}{sf::Int16}}*\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(packet.\mbox{\hyperlink{classsf_1_1_packet_a998b70df024bee4792e2ecdc915ae46e}{getData}}()) + 1);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00130}00130                 std::size\_t      sampleCount = (packet.\mbox{\hyperlink{classsf_1_1_packet_a0fae6eccf2ca704fc5099cd90a9f56f7}{getDataSize}}() -\/ 1) / \textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespacesf_a3c8e10435e2a310a7741755e66b5c94e}{sf::Int16}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00131}00131 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00132}00132                 \textcolor{comment}{// Don't forget that the other thread can access the sample array at any time}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00133}00133                 \textcolor{comment}{// (so we protect any operation on it with the mutex)}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00134}00134                 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00135}00135                     \mbox{\hyperlink{classsf_1_1_lock}{sf::Lock}} lock(\mbox{\hyperlink{class_network_audio_stream_aec34e0d6d55c2ca64009362f4ab301a2}{m\_mutex}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00136}00136                     std::copy(samples, samples + sampleCount, std::back\_inserter(\mbox{\hyperlink{class_network_audio_stream_a11072449c6ba6ba1f946a8b120ab8216}{m\_samples}}));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00137}00137                 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00138}00138             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00139}00139             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\textcolor{keywordtype}{id} == \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_aa87d7c0acaf7e7354fee28a093fc3176}{endOfStream}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00140}00140             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00141}00141                 \textcolor{comment}{// End of stream reached: we stop receiving audio data}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00142}00142                 std::cout << \textcolor{stringliteral}{"{}Audio data has been 100\% received!"{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00143}00143                 \mbox{\hyperlink{class_network_audio_stream_af50dfbf591997fe64fbb67022c490824}{m\_hasFinished}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00144}00144             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00145}00145             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00146}00146             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00147}00147                 \textcolor{comment}{// Something's wrong...}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00148}00148                 std::cout << \textcolor{stringliteral}{"{}Invalid packet received..."{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00149}00149                 \mbox{\hyperlink{class_network_audio_stream_af50dfbf591997fe64fbb67022c490824}{m\_hasFinished}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00150}00150             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00151}00151         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00152}00152     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00153}00153 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00155}00155     \textcolor{comment}{// Member data}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00157}\mbox{\hyperlink{class_network_audio_stream_a047ee9c1b8f162cd6a4f6c329aad8955}{00157}} \textcolor{comment}{}    \mbox{\hyperlink{classsf_1_1_tcp_listener}{sf::TcpListener}}        \mbox{\hyperlink{class_network_audio_stream_a047ee9c1b8f162cd6a4f6c329aad8955}{m\_listener}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00158}\mbox{\hyperlink{class_network_audio_stream_a19d8783e7d3e4ca5b7e504eebac01402}{00158}}     \mbox{\hyperlink{classsf_1_1_tcp_socket}{sf::TcpSocket}}          \mbox{\hyperlink{class_network_audio_stream_a19d8783e7d3e4ca5b7e504eebac01402}{m\_client}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00159}\mbox{\hyperlink{class_network_audio_stream_aec34e0d6d55c2ca64009362f4ab301a2}{00159}}     \mbox{\hyperlink{classsf_1_1_mutex}{sf::Mutex}}              \mbox{\hyperlink{class_network_audio_stream_aec34e0d6d55c2ca64009362f4ab301a2}{m\_mutex}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00160}\mbox{\hyperlink{class_network_audio_stream_a11072449c6ba6ba1f946a8b120ab8216}{00160}}     std::vector<sf::Int16> \mbox{\hyperlink{class_network_audio_stream_a11072449c6ba6ba1f946a8b120ab8216}{m\_samples}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00161}\mbox{\hyperlink{class_network_audio_stream_ad861eca779886b37a3fefc583f5d7575}{00161}}     std::vector<sf::Int16> \mbox{\hyperlink{class_network_audio_stream_ad861eca779886b37a3fefc583f5d7575}{m\_tempBuffer}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00162}\mbox{\hyperlink{class_network_audio_stream_aa68563c14d3976a7272f3bb86ef8313a}{00162}}     std::size\_t            \mbox{\hyperlink{class_network_audio_stream_aa68563c14d3976a7272f3bb86ef8313a}{m\_offset}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00163}\mbox{\hyperlink{class_network_audio_stream_af50dfbf591997fe64fbb67022c490824}{00163}}     \textcolor{keywordtype}{bool}                   \mbox{\hyperlink{class_network_audio_stream_af50dfbf591997fe64fbb67022c490824}{m\_hasFinished}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00164}00164 \};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00165}00165 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00166}00166 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00172}\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_a0d60c59dae5c971031d008a6b81afff3}{00172}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_a0d60c59dae5c971031d008a6b81afff3}{doServer}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} port)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00173}00173 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00174}00174     \textcolor{comment}{// Build an audio stream to play sound data as it is received through the network}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00175}00175     \mbox{\hyperlink{class_network_audio_stream}{NetworkAudioStream}} audioStream;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00176}00176     audioStream.\mbox{\hyperlink{class_network_audio_stream_a5c698fc66d35fe30ae5e0148c03766e3}{start}}(port);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00177}00177 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00178}00178     \textcolor{comment}{// Loop until the sound playback is finished}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00179}00179     \textcolor{keywordflow}{while} (audioStream.\mbox{\hyperlink{classsf_1_1_sound_stream_a64a8193ed728da37c115c65de015849f}{getStatus}}() != \mbox{\hyperlink{classsf_1_1_sound_source_ac43af72c98c077500b239bc75b812f03ad00854a77b49463ac52454a98f1ba0ed}{sf::SoundStream::Stopped}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00180}00180     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00181}00181         \textcolor{comment}{// Leave some CPU time for other threads}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00182}00182         \mbox{\hyperlink{group__system_ga2f2620831533dee0ed432ed982342e09}{sf::sleep}}(sf::milliseconds(100));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00183}00183     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00184}00184 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00185}00185     std::cin.ignore(10000, \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00186}00186 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00187}00187     \textcolor{comment}{// Wait until the user presses 'enter' key}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00188}00188     std::cout << \textcolor{stringliteral}{"{}Press enter to replay the sound..."{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00189}00189     std::cin.ignore(10000, \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00190}00190 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00191}00191     \textcolor{comment}{// Replay the sound (just to make sure replaying the received data is OK)}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00192}00192     audioStream.\mbox{\hyperlink{classsf_1_1_sound_stream_afdc08b69cab5f243d9324940a85a1144}{play}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00193}00193 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00194}00194     \textcolor{comment}{// Loop until the sound playback is finished}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00195}00195     \textcolor{keywordflow}{while} (audioStream.\mbox{\hyperlink{classsf_1_1_sound_stream_a64a8193ed728da37c115c65de015849f}{getStatus}}() != \mbox{\hyperlink{classsf_1_1_sound_source_ac43af72c98c077500b239bc75b812f03ad00854a77b49463ac52454a98f1ba0ed}{sf::SoundStream::Stopped}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00196}00196     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00197}00197         \textcolor{comment}{// Leave some CPU time for other threads}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00198}00198         \mbox{\hyperlink{group__system_ga2f2620831533dee0ed432ed982342e09}{sf::sleep}}(sf::milliseconds(100));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00199}00199     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00200}00200 \}}
+
+\end{DoxyCode}

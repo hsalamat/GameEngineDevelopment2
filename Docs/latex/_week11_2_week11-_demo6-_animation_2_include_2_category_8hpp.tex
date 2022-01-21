@@ -1,0 +1,355 @@
+\hypertarget{_week11_2_week11-_demo6-_animation_2_include_2_category_8hpp}{}\doxysection{Week11/\+Week11-\/\+Demo6-\/\+Animation/\+Include/\+Category.hpp File Reference}
+\label{_week11_2_week11-_demo6-_animation_2_include_2_category_8hpp}\index{Week11/Week11-\/Demo6-\/Animation/Include/Category.hpp@{Week11/Week11-\/Demo6-\/Animation/Include/Category.hpp}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_category}{Category}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0}{Category\+::\+Type}} \{ \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3cc647fb6d7abbbffbf353a596f42112}{Category\+::\+None}} = 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a1588522bcecf9cbd0bf9526cf11e6461}{Category\+::\+Scene\+Air\+Layer}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category\+::\+Player\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a53d2ecd208dd1e4d85ff5ed071d408d2}{Category\+::\+Allied\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category\+::\+Enemy\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0adf22ba361f388b8f0a1747f65bd42ecc}{Category\+::\+Pickup}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a22af8279b8f0012c359543fed7ceaf65}{Category\+::\+Allied\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 5
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3b385196e06446e787a62538ad5cf62a}{Category\+::\+Enemy\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 6
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a0f7dafe8960292b715b8b6c85cc68793}{Category\+::\+Aircraft}} = Player\+Aircraft $\vert$ Allied\+Aircraft $\vert$ Enemy\+Aircraft
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a8f56bceae53a7f352a3a3c41adb56b37}{Category\+::\+Projectile}} = Allied\+Projectile $\vert$ Enemy\+Projectile
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3cc647fb6d7abbbffbf353a596f42112}{Category\+::\+None}} = 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a1588522bcecf9cbd0bf9526cf11e6461}{Category\+::\+Scene\+Air\+Layer}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category\+::\+Player\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a53d2ecd208dd1e4d85ff5ed071d408d2}{Category\+::\+Allied\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category\+::\+Enemy\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0adf22ba361f388b8f0a1747f65bd42ecc}{Category\+::\+Pickup}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a22af8279b8f0012c359543fed7ceaf65}{Category\+::\+Allied\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 5
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3b385196e06446e787a62538ad5cf62a}{Category\+::\+Enemy\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 6
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a0f7dafe8960292b715b8b6c85cc68793}{Category\+::\+Aircraft}} = Player\+Aircraft $\vert$ Allied\+Aircraft $\vert$ Enemy\+Aircraft
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a8f56bceae53a7f352a3a3c41adb56b37}{Category\+::\+Projectile}} = Allied\+Projectile $\vert$ Enemy\+Projectile
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3cc647fb6d7abbbffbf353a596f42112}{Category\+::\+None}} = 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a1588522bcecf9cbd0bf9526cf11e6461}{Category\+::\+Scene\+Air\+Layer}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category\+::\+Player\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a53d2ecd208dd1e4d85ff5ed071d408d2}{Category\+::\+Allied\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category\+::\+Enemy\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0adf22ba361f388b8f0a1747f65bd42ecc}{Category\+::\+Pickup}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a22af8279b8f0012c359543fed7ceaf65}{Category\+::\+Allied\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 5
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3b385196e06446e787a62538ad5cf62a}{Category\+::\+Enemy\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 6
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0af24660c722f331a3532c04477295998c}{Category\+::\+Particle\+System}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 7
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a0f7dafe8960292b715b8b6c85cc68793}{Category\+::\+Aircraft}} = Player\+Aircraft $\vert$ Allied\+Aircraft $\vert$ Enemy\+Aircraft
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a8f56bceae53a7f352a3a3c41adb56b37}{Category\+::\+Projectile}} = Allied\+Projectile $\vert$ Enemy\+Projectile
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3cc647fb6d7abbbffbf353a596f42112}{Category\+::\+None}} = 0
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a1588522bcecf9cbd0bf9526cf11e6461}{Category\+::\+Scene\+Air\+Layer}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category\+::\+Player\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a53d2ecd208dd1e4d85ff5ed071d408d2}{Category\+::\+Allied\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category\+::\+Enemy\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0adf22ba361f388b8f0a1747f65bd42ecc}{Category\+::\+Pickup}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a22af8279b8f0012c359543fed7ceaf65}{Category\+::\+Allied\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 5
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3b385196e06446e787a62538ad5cf62a}{Category\+::\+Enemy\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 6
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0af24660c722f331a3532c04477295998c}{Category\+::\+Particle\+System}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 7
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a0f7dafe8960292b715b8b6c85cc68793}{Category\+::\+Aircraft}} = Player\+Aircraft $\vert$ Allied\+Aircraft $\vert$ Enemy\+Aircraft
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a8f56bceae53a7f352a3a3c41adb56b37}{Category\+::\+Projectile}} = Allied\+Projectile $\vert$ Enemy\+Projectile
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3cc647fb6d7abbbffbf353a596f42112}{Category\+::\+None}} = 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a1588522bcecf9cbd0bf9526cf11e6461}{Category\+::\+Scene\+Air\+Layer}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category\+::\+Player\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a53d2ecd208dd1e4d85ff5ed071d408d2}{Category\+::\+Allied\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category\+::\+Enemy\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0adf22ba361f388b8f0a1747f65bd42ecc}{Category\+::\+Pickup}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a22af8279b8f0012c359543fed7ceaf65}{Category\+::\+Allied\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 5
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3b385196e06446e787a62538ad5cf62a}{Category\+::\+Enemy\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 6
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0af24660c722f331a3532c04477295998c}{Category\+::\+Particle\+System}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 7
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a0f7dafe8960292b715b8b6c85cc68793}{Category\+::\+Aircraft}} = Player\+Aircraft $\vert$ Allied\+Aircraft $\vert$ Enemy\+Aircraft
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a8f56bceae53a7f352a3a3c41adb56b37}{Category\+::\+Projectile}} = Allied\+Projectile $\vert$ Enemy\+Projectile
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3cc647fb6d7abbbffbf353a596f42112}{Category\+::\+None}} = 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a1588522bcecf9cbd0bf9526cf11e6461}{Category\+::\+Scene\+Air\+Layer}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category\+::\+Player\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a53d2ecd208dd1e4d85ff5ed071d408d2}{Category\+::\+Allied\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category\+::\+Enemy\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0adf22ba361f388b8f0a1747f65bd42ecc}{Category\+::\+Pickup}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a22af8279b8f0012c359543fed7ceaf65}{Category\+::\+Allied\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 5
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3b385196e06446e787a62538ad5cf62a}{Category\+::\+Enemy\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 6
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0af24660c722f331a3532c04477295998c}{Category\+::\+Particle\+System}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 7
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a0f7dafe8960292b715b8b6c85cc68793}{Category\+::\+Aircraft}} = Player\+Aircraft $\vert$ Allied\+Aircraft $\vert$ Enemy\+Aircraft
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a8f56bceae53a7f352a3a3c41adb56b37}{Category\+::\+Projectile}} = Allied\+Projectile $\vert$ Enemy\+Projectile
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3cc647fb6d7abbbffbf353a596f42112}{Category\+::\+None}} = 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a1588522bcecf9cbd0bf9526cf11e6461}{Category\+::\+Scene\+Air\+Layer}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category\+::\+Player\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a53d2ecd208dd1e4d85ff5ed071d408d2}{Category\+::\+Allied\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category\+::\+Enemy\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0adf22ba361f388b8f0a1747f65bd42ecc}{Category\+::\+Pickup}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a22af8279b8f0012c359543fed7ceaf65}{Category\+::\+Allied\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 5
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3b385196e06446e787a62538ad5cf62a}{Category\+::\+Enemy\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 6
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0af24660c722f331a3532c04477295998c}{Category\+::\+Particle\+System}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 7
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a0f7dafe8960292b715b8b6c85cc68793}{Category\+::\+Aircraft}} = Player\+Aircraft $\vert$ Allied\+Aircraft $\vert$ Enemy\+Aircraft
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a8f56bceae53a7f352a3a3c41adb56b37}{Category\+::\+Projectile}} = Allied\+Projectile $\vert$ Enemy\+Projectile
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3cc647fb6d7abbbffbf353a596f42112}{Category\+::\+None}} = 0
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a1588522bcecf9cbd0bf9526cf11e6461}{Category\+::\+Scene\+Air\+Layer}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category\+::\+Player\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a53d2ecd208dd1e4d85ff5ed071d408d2}{Category\+::\+Allied\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category\+::\+Enemy\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0adf22ba361f388b8f0a1747f65bd42ecc}{Category\+::\+Pickup}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a22af8279b8f0012c359543fed7ceaf65}{Category\+::\+Allied\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 5
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3b385196e06446e787a62538ad5cf62a}{Category\+::\+Enemy\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 6
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0af24660c722f331a3532c04477295998c}{Category\+::\+Particle\+System}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 7
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a0f7dafe8960292b715b8b6c85cc68793}{Category\+::\+Aircraft}} = Player\+Aircraft $\vert$ Allied\+Aircraft $\vert$ Enemy\+Aircraft
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a8f56bceae53a7f352a3a3c41adb56b37}{Category\+::\+Projectile}} = Allied\+Projectile $\vert$ Enemy\+Projectile
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3cc647fb6d7abbbffbf353a596f42112}{Category\+::\+None}} = 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a1588522bcecf9cbd0bf9526cf11e6461}{Category\+::\+Scene\+Air\+Layer}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category\+::\+Player\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a53d2ecd208dd1e4d85ff5ed071d408d2}{Category\+::\+Allied\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category\+::\+Enemy\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0adf22ba361f388b8f0a1747f65bd42ecc}{Category\+::\+Pickup}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a22af8279b8f0012c359543fed7ceaf65}{Category\+::\+Allied\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 5
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3b385196e06446e787a62538ad5cf62a}{Category\+::\+Enemy\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 6
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0af24660c722f331a3532c04477295998c}{Category\+::\+Particle\+System}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 7
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0af2d299c2c389cc2273d27b5fea986449}{Category\+::\+Sound\+Effect}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 8
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a0f7dafe8960292b715b8b6c85cc68793}{Category\+::\+Aircraft}} = Player\+Aircraft $\vert$ Allied\+Aircraft $\vert$ Enemy\+Aircraft
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a8f56bceae53a7f352a3a3c41adb56b37}{Category\+::\+Projectile}} = Allied\+Projectile $\vert$ Enemy\+Projectile
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3cc647fb6d7abbbffbf353a596f42112}{Category\+::\+None}} = 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a1588522bcecf9cbd0bf9526cf11e6461}{Category\+::\+Scene\+Air\+Layer}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category\+::\+Player\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a53d2ecd208dd1e4d85ff5ed071d408d2}{Category\+::\+Allied\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category\+::\+Enemy\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0adf22ba361f388b8f0a1747f65bd42ecc}{Category\+::\+Pickup}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a22af8279b8f0012c359543fed7ceaf65}{Category\+::\+Allied\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 5
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3b385196e06446e787a62538ad5cf62a}{Category\+::\+Enemy\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 6
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0af24660c722f331a3532c04477295998c}{Category\+::\+Particle\+System}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 7
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0af2d299c2c389cc2273d27b5fea986449}{Category\+::\+Sound\+Effect}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 8
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a2ffca533b60b8f001f163badb78416f3}{Category\+::\+Network}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 9
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a0f7dafe8960292b715b8b6c85cc68793}{Category\+::\+Aircraft}} = Player\+Aircraft $\vert$ Allied\+Aircraft $\vert$ Enemy\+Aircraft
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a8f56bceae53a7f352a3a3c41adb56b37}{Category\+::\+Projectile}} = Allied\+Projectile $\vert$ Enemy\+Projectile
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3cc647fb6d7abbbffbf353a596f42112}{Category\+::\+None}} = 0
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a1588522bcecf9cbd0bf9526cf11e6461}{Category\+::\+Scene\+Air\+Layer}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category\+::\+Player\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a53d2ecd208dd1e4d85ff5ed071d408d2}{Category\+::\+Allied\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category\+::\+Enemy\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0adf22ba361f388b8f0a1747f65bd42ecc}{Category\+::\+Pickup}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a22af8279b8f0012c359543fed7ceaf65}{Category\+::\+Allied\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 5
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3b385196e06446e787a62538ad5cf62a}{Category\+::\+Enemy\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 6
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0af24660c722f331a3532c04477295998c}{Category\+::\+Particle\+System}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 7
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0af2d299c2c389cc2273d27b5fea986449}{Category\+::\+Sound\+Effect}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 8
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a0f7dafe8960292b715b8b6c85cc68793}{Category\+::\+Aircraft}} = Player\+Aircraft $\vert$ Allied\+Aircraft $\vert$ Enemy\+Aircraft
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a8f56bceae53a7f352a3a3c41adb56b37}{Category\+::\+Projectile}} = Allied\+Projectile $\vert$ Enemy\+Projectile
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3cc647fb6d7abbbffbf353a596f42112}{Category\+::\+None}} = 0
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a1588522bcecf9cbd0bf9526cf11e6461}{Category\+::\+Scene\+Air\+Layer}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category\+::\+Player\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a53d2ecd208dd1e4d85ff5ed071d408d2}{Category\+::\+Allied\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category\+::\+Enemy\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0adf22ba361f388b8f0a1747f65bd42ecc}{Category\+::\+Pickup}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a22af8279b8f0012c359543fed7ceaf65}{Category\+::\+Allied\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 5
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3b385196e06446e787a62538ad5cf62a}{Category\+::\+Enemy\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 6
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0af24660c722f331a3532c04477295998c}{Category\+::\+Particle\+System}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 7
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0af2d299c2c389cc2273d27b5fea986449}{Category\+::\+Sound\+Effect}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 8
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a2ffca533b60b8f001f163badb78416f3}{Category\+::\+Network}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 9
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a0f7dafe8960292b715b8b6c85cc68793}{Category\+::\+Aircraft}} = Player\+Aircraft $\vert$ Allied\+Aircraft $\vert$ Enemy\+Aircraft
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a8f56bceae53a7f352a3a3c41adb56b37}{Category\+::\+Projectile}} = Allied\+Projectile $\vert$ Enemy\+Projectile
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3cc647fb6d7abbbffbf353a596f42112}{Category\+::\+None}} = 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a1588522bcecf9cbd0bf9526cf11e6461}{Category\+::\+Scene\+Air\+Layer}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category\+::\+Player\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a53d2ecd208dd1e4d85ff5ed071d408d2}{Category\+::\+Allied\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category\+::\+Enemy\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0adf22ba361f388b8f0a1747f65bd42ecc}{Category\+::\+Pickup}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a22af8279b8f0012c359543fed7ceaf65}{Category\+::\+Allied\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 5
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3b385196e06446e787a62538ad5cf62a}{Category\+::\+Enemy\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 6
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0af24660c722f331a3532c04477295998c}{Category\+::\+Particle\+System}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 7
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0af2d299c2c389cc2273d27b5fea986449}{Category\+::\+Sound\+Effect}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 8
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a2ffca533b60b8f001f163badb78416f3}{Category\+::\+Network}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 9
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a0f7dafe8960292b715b8b6c85cc68793}{Category\+::\+Aircraft}} = Player\+Aircraft $\vert$ Allied\+Aircraft $\vert$ Enemy\+Aircraft
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a8f56bceae53a7f352a3a3c41adb56b37}{Category\+::\+Projectile}} = Allied\+Projectile $\vert$ Enemy\+Projectile
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3cc647fb6d7abbbffbf353a596f42112}{Category\+::\+None}} = 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a80fa735fe5ed2b0b0075d9c4c00b7dc8}{Category\+::\+Scene}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category\+::\+Player\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a53d2ecd208dd1e4d85ff5ed071d408d2}{Category\+::\+Allied\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category\+::\+Enemy\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3cc647fb6d7abbbffbf353a596f42112}{Category\+::\+None}} = 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a80fa735fe5ed2b0b0075d9c4c00b7dc8}{Category\+::\+Scene}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category\+::\+Player\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a53d2ecd208dd1e4d85ff5ed071d408d2}{Category\+::\+Allied\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category\+::\+Enemy\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3cc647fb6d7abbbffbf353a596f42112}{Category\+::\+None}} = 0
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a80fa735fe5ed2b0b0075d9c4c00b7dc8}{Category\+::\+Scene}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category\+::\+Player\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a53d2ecd208dd1e4d85ff5ed071d408d2}{Category\+::\+Allied\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category\+::\+Enemy\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3cc647fb6d7abbbffbf353a596f42112}{Category\+::\+None}} = 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a80fa735fe5ed2b0b0075d9c4c00b7dc8}{Category\+::\+Scene}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category\+::\+Player\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a53d2ecd208dd1e4d85ff5ed071d408d2}{Category\+::\+Allied\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category\+::\+Enemy\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3cc647fb6d7abbbffbf353a596f42112}{Category\+::\+None}} = 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a80fa735fe5ed2b0b0075d9c4c00b7dc8}{Category\+::\+Scene}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category\+::\+Player\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a53d2ecd208dd1e4d85ff5ed071d408d2}{Category\+::\+Allied\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category\+::\+Enemy\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3cc647fb6d7abbbffbf353a596f42112}{Category\+::\+None}} = 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a80fa735fe5ed2b0b0075d9c4c00b7dc8}{Category\+::\+Scene}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category\+::\+Player\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a53d2ecd208dd1e4d85ff5ed071d408d2}{Category\+::\+Allied\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category\+::\+Enemy\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3cc647fb6d7abbbffbf353a596f42112}{Category\+::\+None}} = 0
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a80fa735fe5ed2b0b0075d9c4c00b7dc8}{Category\+::\+Scene}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category\+::\+Player\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a53d2ecd208dd1e4d85ff5ed071d408d2}{Category\+::\+Allied\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category\+::\+Enemy\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3cc647fb6d7abbbffbf353a596f42112}{Category\+::\+None}} = 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a80fa735fe5ed2b0b0075d9c4c00b7dc8}{Category\+::\+Scene}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category\+::\+Player\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a53d2ecd208dd1e4d85ff5ed071d408d2}{Category\+::\+Allied\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category\+::\+Enemy\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3cc647fb6d7abbbffbf353a596f42112}{Category\+::\+None}} = 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a80fa735fe5ed2b0b0075d9c4c00b7dc8}{Category\+::\+Scene}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category\+::\+Player\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a53d2ecd208dd1e4d85ff5ed071d408d2}{Category\+::\+Allied\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category\+::\+Enemy\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3cc647fb6d7abbbffbf353a596f42112}{Category\+::\+None}} = 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a80fa735fe5ed2b0b0075d9c4c00b7dc8}{Category\+::\+Scene}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category\+::\+Player\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a53d2ecd208dd1e4d85ff5ed071d408d2}{Category\+::\+Allied\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category\+::\+Enemy\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3cc647fb6d7abbbffbf353a596f42112}{Category\+::\+None}} = 0
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a80fa735fe5ed2b0b0075d9c4c00b7dc8}{Category\+::\+Scene}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category\+::\+Player\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a53d2ecd208dd1e4d85ff5ed071d408d2}{Category\+::\+Allied\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category\+::\+Enemy\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3cc647fb6d7abbbffbf353a596f42112}{Category\+::\+None}} = 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a80fa735fe5ed2b0b0075d9c4c00b7dc8}{Category\+::\+Scene}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category\+::\+Player\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a53d2ecd208dd1e4d85ff5ed071d408d2}{Category\+::\+Allied\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category\+::\+Enemy\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3cc647fb6d7abbbffbf353a596f42112}{Category\+::\+None}} = 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a80fa735fe5ed2b0b0075d9c4c00b7dc8}{Category\+::\+Scene}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category\+::\+Player\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a53d2ecd208dd1e4d85ff5ed071d408d2}{Category\+::\+Allied\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category\+::\+Enemy\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3cc647fb6d7abbbffbf353a596f42112}{Category\+::\+None}} = 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a80fa735fe5ed2b0b0075d9c4c00b7dc8}{Category\+::\+Scene}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category\+::\+Player\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a53d2ecd208dd1e4d85ff5ed071d408d2}{Category\+::\+Allied\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category\+::\+Enemy\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3cc647fb6d7abbbffbf353a596f42112}{Category\+::\+None}} = 0
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a80fa735fe5ed2b0b0075d9c4c00b7dc8}{Category\+::\+Scene}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category\+::\+Player\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a53d2ecd208dd1e4d85ff5ed071d408d2}{Category\+::\+Allied\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category\+::\+Enemy\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3cc647fb6d7abbbffbf353a596f42112}{Category\+::\+None}} = 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a1588522bcecf9cbd0bf9526cf11e6461}{Category\+::\+Scene\+Air\+Layer}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category\+::\+Player\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a53d2ecd208dd1e4d85ff5ed071d408d2}{Category\+::\+Allied\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category\+::\+Enemy\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0adf22ba361f388b8f0a1747f65bd42ecc}{Category\+::\+Pickup}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a22af8279b8f0012c359543fed7ceaf65}{Category\+::\+Allied\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 5
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3b385196e06446e787a62538ad5cf62a}{Category\+::\+Enemy\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 6
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a0f7dafe8960292b715b8b6c85cc68793}{Category\+::\+Aircraft}} = Player\+Aircraft $\vert$ Allied\+Aircraft $\vert$ Enemy\+Aircraft
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a8f56bceae53a7f352a3a3c41adb56b37}{Category\+::\+Projectile}} = Allied\+Projectile $\vert$ Enemy\+Projectile
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3cc647fb6d7abbbffbf353a596f42112}{Category\+::\+None}} = 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a1588522bcecf9cbd0bf9526cf11e6461}{Category\+::\+Scene\+Air\+Layer}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category\+::\+Player\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a53d2ecd208dd1e4d85ff5ed071d408d2}{Category\+::\+Allied\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category\+::\+Enemy\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0adf22ba361f388b8f0a1747f65bd42ecc}{Category\+::\+Pickup}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a22af8279b8f0012c359543fed7ceaf65}{Category\+::\+Allied\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 5
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3b385196e06446e787a62538ad5cf62a}{Category\+::\+Enemy\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 6
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a0f7dafe8960292b715b8b6c85cc68793}{Category\+::\+Aircraft}} = Player\+Aircraft $\vert$ Allied\+Aircraft $\vert$ Enemy\+Aircraft
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a8f56bceae53a7f352a3a3c41adb56b37}{Category\+::\+Projectile}} = Allied\+Projectile $\vert$ Enemy\+Projectile
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3cc647fb6d7abbbffbf353a596f42112}{Category\+::\+None}} = 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a1588522bcecf9cbd0bf9526cf11e6461}{Category\+::\+Scene\+Air\+Layer}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category\+::\+Player\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a53d2ecd208dd1e4d85ff5ed071d408d2}{Category\+::\+Allied\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category\+::\+Enemy\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0adf22ba361f388b8f0a1747f65bd42ecc}{Category\+::\+Pickup}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a22af8279b8f0012c359543fed7ceaf65}{Category\+::\+Allied\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 5
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3b385196e06446e787a62538ad5cf62a}{Category\+::\+Enemy\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 6
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a0f7dafe8960292b715b8b6c85cc68793}{Category\+::\+Aircraft}} = Player\+Aircraft $\vert$ Allied\+Aircraft $\vert$ Enemy\+Aircraft
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a8f56bceae53a7f352a3a3c41adb56b37}{Category\+::\+Projectile}} = Allied\+Projectile $\vert$ Enemy\+Projectile
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3cc647fb6d7abbbffbf353a596f42112}{Category\+::\+None}} = 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a1588522bcecf9cbd0bf9526cf11e6461}{Category\+::\+Scene\+Air\+Layer}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category\+::\+Player\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a53d2ecd208dd1e4d85ff5ed071d408d2}{Category\+::\+Allied\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category\+::\+Enemy\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0adf22ba361f388b8f0a1747f65bd42ecc}{Category\+::\+Pickup}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a22af8279b8f0012c359543fed7ceaf65}{Category\+::\+Allied\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 5
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3b385196e06446e787a62538ad5cf62a}{Category\+::\+Enemy\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 6
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a0f7dafe8960292b715b8b6c85cc68793}{Category\+::\+Aircraft}} = Player\+Aircraft $\vert$ Allied\+Aircraft $\vert$ Enemy\+Aircraft
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a8f56bceae53a7f352a3a3c41adb56b37}{Category\+::\+Projectile}} = Allied\+Projectile $\vert$ Enemy\+Projectile
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3cc647fb6d7abbbffbf353a596f42112}{Category\+::\+None}} = 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a1588522bcecf9cbd0bf9526cf11e6461}{Category\+::\+Scene\+Air\+Layer}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category\+::\+Player\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a53d2ecd208dd1e4d85ff5ed071d408d2}{Category\+::\+Allied\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category\+::\+Enemy\+Aircraft}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0adf22ba361f388b8f0a1747f65bd42ecc}{Category\+::\+Pickup}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a22af8279b8f0012c359543fed7ceaf65}{Category\+::\+Allied\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 5
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3b385196e06446e787a62538ad5cf62a}{Category\+::\+Enemy\+Projectile}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 6
+, \newline
+\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a0f7dafe8960292b715b8b6c85cc68793}{Category\+::\+Aircraft}} = Player\+Aircraft $\vert$ Allied\+Aircraft $\vert$ Enemy\+Aircraft
+, \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a8f56bceae53a7f352a3a3c41adb56b37}{Category\+::\+Projectile}} = Allied\+Projectile $\vert$ Enemy\+Projectile
+ \}
+\end{DoxyCompactItemize}

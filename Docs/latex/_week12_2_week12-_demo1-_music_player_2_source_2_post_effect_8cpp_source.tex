@@ -1,0 +1,38 @@
+\hypertarget{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source}{}\doxysection{Post\+Effect.\+cpp}
+\label{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source}\index{Week12/Week12-\/Demo1-\/MusicPlayer/Source/PostEffect.cpp@{Week12/Week12-\/Demo1-\/MusicPlayer/Source/PostEffect.cpp}}
+\mbox{\hyperlink{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include <PostEffect.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <SFML/Graphics/Shader.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <SFML/Graphics/RenderTarget.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include <SFML/Graphics/VertexArray.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source_l00008}00008 \mbox{\hyperlink{class_post_effect_a32f18bcd9c45994f86ce402a82285172}{PostEffect::\string~PostEffect}}()}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source_l00009}00009 \{}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source_l00010}00010 \}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source_l00012}00012 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_post_effect_a919143d710145618fdebf3f1337e17ef}{PostEffect::applyShader}}(\textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_shader}{sf::Shader}}\& shader, \mbox{\hyperlink{classsf_1_1_render_target}{sf::RenderTarget}}\& output)}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source_l00013}00013 \{}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source_l00014}00014     \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}} outputSize = \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}}\textcolor{keyword}{>}(output.\mbox{\hyperlink{classsf_1_1_render_target_a2e5ade2457d9fb4c4907ae5b3d9e94a5}{getSize}}());}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source_l00016}00016     \mbox{\hyperlink{classsf_1_1_vertex_array}{sf::VertexArray}} vertices(\mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1baf5ef0ffa5d13f9ea3e0eb18a2a8da7fb}{sf::TrianglesStrip}}, 4);}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source_l00017}00017     vertices[0] = \mbox{\hyperlink{classsf_1_1_vertex}{sf::Vertex}}(\mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}}(0, 0),            \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}}(0, 1));}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source_l00018}00018     vertices[1] = \mbox{\hyperlink{classsf_1_1_vertex}{sf::Vertex}}(\mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}}(outputSize.\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}}, 0), \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}}(1, 1));}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source_l00019}00019     vertices[2] = \mbox{\hyperlink{classsf_1_1_vertex}{sf::Vertex}}(\mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}}(0, outputSize.\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}}), \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}}(0, 0));}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source_l00020}00020     vertices[3] = \mbox{\hyperlink{classsf_1_1_vertex}{sf::Vertex}}(\mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}}(outputSize),      \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}}(1, 0));}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source_l00022}00022     \mbox{\hyperlink{classsf_1_1_render_states}{sf::RenderStates}} states;}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source_l00023}00023     states.\mbox{\hyperlink{classsf_1_1_render_states_a30e00c9f28ca246ae73119975255ebd0}{shader}}      = \&shader;}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source_l00024}00024     states.\mbox{\hyperlink{classsf_1_1_render_states_ad6ac87f1b5006dae7ebfee4b5d40f5a8}{blendMode}} = \mbox{\hyperlink{namespacesf_aaa5511bd6fcf3573d61945b6d70a20ab}{sf::BlendNone}};}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source_l00026}00026     output.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(vertices, states);}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source_l00027}00027 \}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source_l00029}00029 \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_post_effect_a2fd17f2ecf85d27716dd056cd543ed32}{PostEffect::isSupported}}()}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source_l00030}00030 \{}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source_l00031}00031     \textcolor{keywordflow}{return} \mbox{\hyperlink{classsf_1_1_shader_ad22474690bafe4a305c1b9826b1bd86a}{sf::Shader::isAvailable}}();}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo1-_music_player_2_source_2_post_effect_8cpp_source_l00032}00032 \}}
+
+\end{DoxyCode}

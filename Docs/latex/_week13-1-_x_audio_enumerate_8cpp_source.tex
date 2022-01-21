@@ -1,0 +1,384 @@
+\hypertarget{_week13-1-_x_audio_enumerate_8cpp_source}{}\doxysection{Week13-\/1-\/\+XAudio\+Enumerate.cpp}
+\label{_week13-1-_x_audio_enumerate_8cpp_source}\index{Week13/Week13-\/1-\/XAudioEnumerate.cpp@{Week13/Week13-\/1-\/XAudioEnumerate.cpp}}
+\mbox{\hyperlink{_week13-1-_x_audio_enumerate_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00001}00001 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00002}00002 \textcolor{comment}{// File: XAudio2Enumerate.cpp}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00003}00003 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00004}00004 \textcolor{comment}{// Demonstrates enumerating audio devices and creating a XAudio2 mastering voice for them}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00005}00005 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00006}00006 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00008}\mbox{\hyperlink{_week13-1-_x_audio_enumerate_8cpp_ac7bef5d85e3dcd73eef56ad39ffc84a9}{00008}} \textcolor{preprocessor}{\#define WIN32\_LEAN\_AND\_MEAN}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#include <windows.h>}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00010}00010 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00012}00012 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00013}00013 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00015}00015 \textcolor{preprocessor}{\#include <wrl\(\backslash\)client.h>}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00017}00017 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_x_audio2_versions_8h}{XAudio2Versions.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00019}00019 \textcolor{preprocessor}{\#ifndef USING\_XAUDIO2\_7\_DIRECTX}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00020}00020 \textcolor{preprocessor}{\#pragma comment(lib,"{}runtimeobject.lib"{}})}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00021}00021 \textcolor{preprocessor}{\#include <Windows.Devices.Enumeration.h>}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00022}00022 \textcolor{preprocessor}{\#include <wrl.h>}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00023}00023 \textcolor{preprocessor}{\#include <ppltasks.h>}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00024}00024 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00026}00026 \textcolor{preprocessor}{\#ifdef USING\_XAUDIO2\_REDIST}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00027}00027 \textcolor{preprocessor}{\#include <mmdeviceapi.h>}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00028}00028 \textcolor{preprocessor}{\#include <Functiondiscoverykeys\_devpkey.h>}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00029}00029 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00031}00031 \textcolor{keyword}{using} Microsoft::WRL::ComPtr;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00033}00033 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00034}00034 \textcolor{comment}{// Forward declaration}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00035}00035 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00036}\mbox{\hyperlink{struct_audio_device}{00036}} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_audio_device}{AudioDevice}}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00037}00037 \{}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00038}\mbox{\hyperlink{struct_audio_device_afb68b9b2f5de556329903cd382e6c850}{00038}}     std::wstring \mbox{\hyperlink{struct_audio_device_afb68b9b2f5de556329903cd382e6c850}{deviceId}};}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00039}\mbox{\hyperlink{struct_audio_device_a91dd5ec744fdbc69f16d3870e9380b10}{00039}}     std::wstring \mbox{\hyperlink{struct_audio_device_a91dd5ec744fdbc69f16d3870e9380b10}{description}};}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00040}00040 \};}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00042}00042 HRESULT \mbox{\hyperlink{_week13-1-_x_audio_enumerate_8cpp_afed03ca0dba9bf25cbf0e8e892894413}{EnumerateAudio}}(\_In\_ IXAudio2* pXaudio2, \_Inout\_ std::vector<AudioDevice>\& list);}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00045}00045 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00046}00046 \textcolor{comment}{// Entry point to the program}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00047}00047 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00048}\mbox{\hyperlink{_week13-1-_x_audio_enumerate_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00048}} \textcolor{keywordtype}{int} \mbox{\hyperlink{_week13-1-_x_audio_enumerate_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00049}00049 \{}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00050}00050     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00051}00051     \textcolor{comment}{// Initialize XAudio2}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00052}00052     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00053}00053     HRESULT hr = CoInitializeEx(\textcolor{keyword}{nullptr}, COINIT\_MULTITHREADED);}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00054}00054     \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00055}00055     \{}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00056}00056         wprintf(L\textcolor{stringliteral}{"{}Failed to init COM: \%\#X\(\backslash\)n"{}}, hr);}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00057}00057         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00058}00058     \}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00060}00060 \textcolor{preprocessor}{\#ifdef USING\_XAUDIO2\_7\_DIRECTX}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00061}00061     \textcolor{comment}{// Workaround for XAudio 2.7 known issue}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00062}00062 \textcolor{preprocessor}{\#ifdef \_DEBUG}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00063}00063     HMODULE mXAudioDLL = LoadLibraryExW(L\textcolor{stringliteral}{"{}XAudioD2\_7.DLL"{}}, \textcolor{keyword}{nullptr}, 0x00000800 \textcolor{comment}{/* LOAD\_LIBRARY\_SEARCH\_SYSTEM32 */});}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00064}00064 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00065}00065     HMODULE mXAudioDLL = LoadLibraryExW(L\textcolor{stringliteral}{"{}XAudio2\_7.DLL"{}}, \textcolor{keyword}{nullptr}, 0x00000800 \textcolor{comment}{/* LOAD\_LIBRARY\_SEARCH\_SYSTEM32 */});}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00066}00066 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00067}00067     \textcolor{keywordflow}{if} (!mXAudioDLL)}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00068}00068     \{}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00069}00069         wprintf(L\textcolor{stringliteral}{"{}Failed to find XAudio 2.7 DLL"{}});}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00070}00070         CoUninitialize();}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00071}00071         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00072}00072     \}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00073}00073 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00075}00075     UINT32 flags = 0;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00076}00076 \textcolor{preprocessor}{\#if defined(USING\_XAUDIO2\_7\_DIRECTX) \&\& defined(\_DEBUG)}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00077}00077     flags |= XAUDIO2\_DEBUG\_ENGINE;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00078}00078 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00079}00079     ComPtr<IXAudio2> pXAudio2;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00080}00080     hr = XAudio2Create(pXAudio2.GetAddressOf(), flags);}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00081}00081     \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00082}00082     \{}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00083}00083         wprintf(L\textcolor{stringliteral}{"{}Failed to init XAudio2 engine: \%\#X\(\backslash\)n"{}}, hr);}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00084}00084         CoUninitialize();}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00085}00085         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00086}00086     \}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00087}00087 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00088}00088 \textcolor{preprocessor}{\#if !defined(USING\_XAUDIO2\_7\_DIRECTX) \&\& defined(\_DEBUG)}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00089}00089     \textcolor{comment}{// To see the trace output, you need to view ETW logs for this application:}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00090}00090     \textcolor{comment}{//    Go to Control Panel, Administrative Tools, Event Viewer.}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00091}00091     \textcolor{comment}{//    View-\/>Show Analytic and Debug Logs.}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00092}00092     \textcolor{comment}{//    Applications and Services Logs / Microsoft / Windows / XAudio2. }}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00093}00093     \textcolor{comment}{//    Right click on Microsoft Windows XAudio2 debug logging, Properties, then Enable Logging, and hit OK }}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00094}00094     XAUDIO2\_DEBUG\_CONFIGURATION debug = \{ 0 \};}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00095}00095     debug.TraceMask = XAUDIO2\_LOG\_ERRORS | XAUDIO2\_LOG\_WARNINGS;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00096}00096     debug.BreakMask = XAUDIO2\_LOG\_ERRORS;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00097}00097     pXAudio2-\/>SetDebugConfiguration(\&debug, 0);}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00098}00098 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00100}00100     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00101}00101     \textcolor{comment}{// Enumerate and display audio devices on the system}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00102}00102     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00103}00103     std::vector<AudioDevice> list;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00104}00104     hr = \mbox{\hyperlink{_week13-1-_x_audio_enumerate_8cpp_afed03ca0dba9bf25cbf0e8e892894413}{EnumerateAudio}}(pXAudio2.Get(), list);}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00105}00105     \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00106}00106     \{}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00107}00107         wprintf(L\textcolor{stringliteral}{"{}Failed to enumerate audio devices: \%\#X\(\backslash\)n"{}}, hr);}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00108}00108         CoUninitialize();}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00109}00109         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00110}00110     \}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00111}00111 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00112}00112     \textcolor{keywordflow}{if} (hr == S\_FALSE)}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00113}00113     \{}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00114}00114         wprintf(L\textcolor{stringliteral}{"{}No audio devices found\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00115}00115         CoUninitialize();}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00116}00116         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00117}00117     \}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00118}00118 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00119}00119     UINT32 devcount = 0;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00120}00120     UINT32 devindex = -\/1;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00121}00121     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = list.cbegin(); it != list.cend(); ++it, ++devcount)}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00122}00122     \{}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00123}00123         wprintf(L\textcolor{stringliteral}{"{}\(\backslash\)nDevice \%u\(\backslash\)n\(\backslash\)tID = \(\backslash\)"{}\%s\(\backslash\)"{}\(\backslash\)n\(\backslash\)tDescription = \(\backslash\)"{}\%s\(\backslash\)"{}\(\backslash\)n"{}},}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00124}00124             devcount,}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00125}00125             it-\/>deviceId.c\_str(),}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00126}00126             it-\/>description.c\_str());}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00127}00127 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00128}00128         \textcolor{comment}{// Simple selection criteria of just picking the first one}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00129}00129         \textcolor{keywordflow}{if} (devindex == -\/1)}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00130}00130         \{}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00131}00131             devindex = devcount;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00132}00132         \}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00133}00133     \}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00134}00134 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00135}00135     wprintf(L\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00136}00136 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00137}00137     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00138}00138     \textcolor{comment}{// Create a mastering voice}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00139}00139     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00140}00140     IXAudio2MasteringVoice* pMasteringVoice = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00141}00141 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00142}00142 \textcolor{preprocessor}{\#ifndef USING\_XAUDIO2\_7\_DIRECTX}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00143}00143     \textcolor{keywordflow}{if} (FAILED(hr = pXAudio2-\/>CreateMasteringVoice(\&pMasteringVoice,}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00144}00144         XAUDIO2\_DEFAULT\_CHANNELS, XAUDIO2\_DEFAULT\_SAMPLERATE, 0,}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00145}00145         list[devindex].deviceId.c\_str())))}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00146}00146 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00147}00147     \textcolor{keywordflow}{if} (FAILED(hr = pXAudio2-\/>CreateMasteringVoice(\&pMasteringVoice,}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00148}00148         XAUDIO2\_DEFAULT\_CHANNELS,}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00149}00149         XAUDIO2\_DEFAULT\_SAMPLERATE, 0,}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00150}00150         devindex)))}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00151}00151 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00152}00152     \{}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00153}00153         wprintf(L\textcolor{stringliteral}{"{}Failed creating mastering voice: \%\#X\(\backslash\)n"{}}, hr);}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00154}00154         pXAudio2.Reset();}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00155}00155         CoUninitialize();}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00156}00156         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00157}00157     \}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00158}00158 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00159}00159     XAUDIO2\_VOICE\_DETAILS details;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00160}00160     pMasteringVoice-\/>GetVoiceDetails(\&details);}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00161}00161 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00162}00162     wprintf(L\textcolor{stringliteral}{"{}Mastering voice created with \%u input channels, \%u sample rate\(\backslash\)n"{}}, details.InputChannels, details.InputSampleRate);}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00163}00163 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00164}00164     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00165}00165     \textcolor{comment}{// Cleanup XAudio2}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00166}00166     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00167}00167     \textcolor{comment}{// All XAudio2 interfaces are released when the engine is destroyed, but being tidy}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00168}00168     pMasteringVoice-\/>DestroyVoice();}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00169}00169 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00170}00170 \textcolor{preprocessor}{\#ifdef USING\_XAUDIO2\_7\_DIRECTX}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00171}00171     \textcolor{keywordflow}{if} (mXAudioDLL)}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00172}00172         FreeLibrary(mXAudioDLL);}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00173}00173 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00174}00174 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00175}00175     pXAudio2.Reset();}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00176}00176     CoUninitialize();}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00177}00177 \}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00178}00178 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00179}00179 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00180}00180 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00181}00181 \textcolor{comment}{// Enumerate audio end-\/points}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00182}00182 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00183}\mbox{\hyperlink{_week13-1-_x_audio_enumerate_8cpp_afed03ca0dba9bf25cbf0e8e892894413}{00183}} HRESULT \mbox{\hyperlink{_week13-1-_x_audio_enumerate_8cpp_afed03ca0dba9bf25cbf0e8e892894413}{EnumerateAudio}}(\_In\_ IXAudio2* pXaudio2, \_Inout\_ std::vector<AudioDevice>\& list)}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00184}00184 \{}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00185}00185 \textcolor{preprocessor}{\#if (\_WIN32\_WINNT >= 0x0602 }\textcolor{comment}{/*\_WIN32\_WINNT\_WIN8*/}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00186}00186 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00187}00187     UNREFERENCED\_PARAMETER(pXaudio2);}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00188}00188 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00189}00189 \textcolor{preprocessor}{\#if defined(\_\_cplusplus\_winrt )}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00190}00190 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00191}00191     \textcolor{comment}{// Enumerating with WinRT using C++/CX}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00192}00192     \textcolor{keyword}{using namespace }concurrency;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00193}00193     \textcolor{keyword}{using} Windows::Devices::Enumeration::DeviceClass;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00194}00194     \textcolor{keyword}{using} Windows::Devices::Enumeration::DeviceInformation;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00195}00195     \textcolor{keyword}{using} Windows::Devices::Enumeration::DeviceInformationCollection;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00196}00196 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00197}00197     \textcolor{keyword}{auto} operation = DeviceInformation::FindAllAsync(DeviceClass::AudioRender);}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00198}00198 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00199}00199     \textcolor{keyword}{auto} task = create\_task(operation);}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00200}00200 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00201}00201     task.then([\&list](DeviceInformationCollection\string^ devices)}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00202}00202         \{}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00203}00203             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} i = 0; i < devices-\/>Size; ++i)}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00204}00204             \{}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00205}00205                 \textcolor{keyword}{using} Windows::Devices::Enumeration::DeviceInformation;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00206}00206 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00207}00207                 DeviceInformation\string^ d = devices-\/>GetAt(i);}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00208}00208 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00209}00209                 \mbox{\hyperlink{struct_audio_device}{AudioDevice}} device;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00210}00210                 device.\mbox{\hyperlink{struct_audio_device_afb68b9b2f5de556329903cd382e6c850}{deviceId}} = d-\/>Id-\/>Data();}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00211}00211                 device.\mbox{\hyperlink{struct_audio_device_a91dd5ec744fdbc69f16d3870e9380b10}{description}} = d-\/>Name-\/>Data();}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00212}00212                 list.emplace\_back(device);}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00213}00213             \}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00214}00214         \});}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00215}00215 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00216}00216     task.wait();}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00217}00217 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00218}00218     \textcolor{keywordflow}{if} (list.empty())}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00219}00219         \textcolor{keywordflow}{return} S\_FALSE;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00220}00220 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00221}00221 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00222}00222 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00223}00223     \textcolor{comment}{// Enumerating with WinRT using WRL}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00224}00224     \textcolor{keyword}{using namespace }Microsoft::WRL;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00225}00225     \textcolor{keyword}{using namespace }Microsoft::WRL::Wrappers;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00226}00226     \textcolor{keyword}{using namespace }ABI::Windows::Foundation;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00227}00227     \textcolor{keyword}{using namespace }ABI::Windows::Foundation::Collections;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00228}00228     \textcolor{keyword}{using namespace }ABI::Windows::Devices::Enumeration;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00229}00229 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00230}00230     RoInitializeWrapper initialize(RO\_INIT\_MULTITHREADED);}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00231}00231     HRESULT hr = initialize;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00232}00232     \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00233}00233         \textcolor{keywordflow}{return} hr;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00234}00234 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00235}00235     Microsoft::WRL::ComPtr<IDeviceInformationStatics> diFactory;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00236}00236     hr = ABI::Windows::Foundation::GetActivationFactory(HStringReference(RuntimeClass\_Windows\_Devices\_Enumeration\_DeviceInformation).Get(), \&diFactory);}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00237}00237     \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00238}00238         \textcolor{keywordflow}{return} hr;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00239}00239 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00240}00240     Event findCompleted(CreateEventEx(\textcolor{keyword}{nullptr}, \textcolor{keyword}{nullptr}, CREATE\_EVENT\_MANUAL\_RESET, WRITE\_OWNER | EVENT\_ALL\_ACCESS));}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00241}00241     \textcolor{keywordflow}{if} (!findCompleted.IsValid())}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00242}00242         \textcolor{keywordflow}{return} HRESULT\_FROM\_WIN32(GetLastError());}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00243}00243 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00244}00244     \textcolor{keyword}{auto} callback = Callback<IAsyncOperationCompletedHandler<DeviceInformationCollection*>>(}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00245}00245         [\&findCompleted, list](IAsyncOperation<DeviceInformationCollection*>* aDevices, AsyncStatus status) -\/> HRESULT}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00246}00246         \{}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00247}00247             SetEvent(findCompleted.Get());}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00248}00248             \textcolor{keywordflow}{return} S\_OK;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00249}00249         \});}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00250}00250 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00251}00251     ComPtr<IAsyncOperation<DeviceInformationCollection*>> operation;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00252}00252     hr = diFactory-\/>FindAllAsyncDeviceClass(DeviceClass\_AudioRender, operation.GetAddressOf());}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00253}00253     \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00254}00254         \textcolor{keywordflow}{return} hr;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00255}00255 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00256}00256     operation-\/>put\_Completed(callback.Get());}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00257}00257 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00258}00258     WaitForSingleObject(findCompleted.Get(), INFINITE);}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00259}00259 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00260}00260     ComPtr<IVectorView<DeviceInformation*>> devices;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00261}00261     operation-\/>GetResults(devices.GetAddressOf());}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00262}00262 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00263}00263     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} count = 0;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00264}00264     hr = devices-\/>get\_Size(\&count);}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00265}00265     \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00266}00266         \textcolor{keywordflow}{return} hr;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00267}00267 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00268}00268     \textcolor{keywordflow}{if} (!count)}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00269}00269         \textcolor{keywordflow}{return} S\_FALSE;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00270}00270 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00271}00271     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0; j < count; ++j)}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00272}00272     \{}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00273}00273         ComPtr<IDeviceInformation> deviceInfo;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00274}00274         hr = devices-\/>GetAt(j, deviceInfo.GetAddressOf());}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00275}00275         \textcolor{keywordflow}{if} (SUCCEEDED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00276}00276         \{}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00277}00277             HString id;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00278}00278             deviceInfo-\/>get\_Id(\textcolor{keywordtype}{id}.GetAddressOf());}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00279}00279 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00280}00280             HString name;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00281}00281             deviceInfo-\/>get\_Name(name.GetAddressOf());}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00282}00282 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00283}00283             \mbox{\hyperlink{struct_audio_device}{AudioDevice}} device;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00284}00284             device.\mbox{\hyperlink{struct_audio_device_afb68b9b2f5de556329903cd382e6c850}{deviceId}} = \textcolor{keywordtype}{id}.GetRawBuffer(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00285}00285             device.\mbox{\hyperlink{struct_audio_device_a91dd5ec744fdbc69f16d3870e9380b10}{description}} = name.GetRawBuffer(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00286}00286             list.emplace\_back(device);}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00287}00287         \}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00288}00288     \}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00289}00289 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00290}00290     \textcolor{keywordflow}{return} S\_OK;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00291}00291 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00292}00292 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00293}00293 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00294}00294 \textcolor{preprocessor}{\#elif defined(USING\_XAUDIO2\_REDIST)}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00295}00295 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00296}00296     \textcolor{comment}{// Enumeration for XAudio 2.9 down-\/level on Windows 7}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00297}00297     ComPtr<IMMDeviceEnumerator> devEnum;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00298}00298     HRESULT hr = CoCreateInstance(\_\_uuidof(MMDeviceEnumerator), \textcolor{keyword}{nullptr}, CLSCTX\_INPROC\_SERVER, IID\_PPV\_ARGS(devEnum.GetAddressOf()));}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00299}00299     \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00300}00300         \textcolor{keywordflow}{return} hr;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00301}00301 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00302}00302     ComPtr<IMMDeviceCollection> devices;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00303}00303     hr = devEnum-\/>EnumAudioEndpoints(eRender, DEVICE\_STATE\_ACTIVE, \&devices);}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00304}00304     \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00305}00305         \textcolor{keywordflow}{return} hr;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00306}00306 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00307}00307     UINT count = 0;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00308}00308     hr = devices-\/>GetCount(\&count);}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00309}00309     \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00310}00310         \textcolor{keywordflow}{return} hr;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00311}00311 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00312}00312     \textcolor{keywordflow}{if} (!count)}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00313}00313         \textcolor{keywordflow}{return} S\_FALSE;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00314}00314 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00315}00315     \textcolor{keywordflow}{for} (UINT j = 0; j < count; ++j)}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00316}00316     \{}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00317}00317         ComPtr<IMMDevice> endpoint;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00318}00318         hr = devices-\/>Item(j, endpoint.GetAddressOf());}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00319}00319         \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00320}00320             \textcolor{keywordflow}{return} hr;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00321}00321 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00322}00322         LPWSTR \textcolor{keywordtype}{id} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00323}00323         hr = endpoint-\/>GetId(\&\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00324}00324         \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00325}00325             \textcolor{keywordflow}{return} hr;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00326}00326 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00327}00327         \mbox{\hyperlink{struct_audio_device}{AudioDevice}} device;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00328}00328         device.\mbox{\hyperlink{struct_audio_device_afb68b9b2f5de556329903cd382e6c850}{deviceId}} = id;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00329}00329         CoTaskMemFree(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00330}00330 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00331}00331         ComPtr<IPropertyStore> props;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00332}00332         hr = endpoint-\/>OpenPropertyStore(STGM\_READ, props.GetAddressOf());}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00333}00333         \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00334}00334             \textcolor{keywordflow}{return} hr;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00335}00335 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00336}00336         PROPVARIANT var;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00337}00337         PropVariantInit(\&var);}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00338}00338 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00339}00339         hr = props-\/>GetValue(PKEY\_Device\_FriendlyName, \&var);}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00340}00340         \textcolor{keywordflow}{if} (FAILED(hr) || var.vt != VT\_LPWSTR)}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00341}00341             \textcolor{keywordflow}{return} hr;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00342}00342 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00343}00343         device.\mbox{\hyperlink{struct_audio_device_a91dd5ec744fdbc69f16d3870e9380b10}{description}} = var.pwszVal;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00344}00344         PropVariantClear(\&var);}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00345}00345 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00346}00346         list.emplace\_back(device);}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00347}00347     \}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00348}00348 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00349}00349 \textcolor{preprocessor}{\#else }\textcolor{comment}{// USING\_XAUDIO2\_7\_DIRECTX}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00350}00350 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00351}00351     \textcolor{comment}{// Enumerating with XAudio 2.7}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00352}00352     UINT32 count = 0;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00353}00353     HRESULT hr = pXaudio2-\/>GetDeviceCount(\&count);}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00354}00354     \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00355}00355         \textcolor{keywordflow}{return} hr;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00356}00356 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00357}00357     \textcolor{keywordflow}{if} (!count)}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00358}00358         \textcolor{keywordflow}{return} S\_FALSE;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00359}00359 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00360}00360     list.reserve(count);}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00361}00361 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00362}00362     \textcolor{keywordflow}{for} (UINT32 j = 0; j < count; ++j)}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00363}00363     \{}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00364}00364         XAUDIO2\_DEVICE\_DETAILS details;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00365}00365         hr = pXaudio2-\/>GetDeviceDetails(j, \&details);}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00366}00366         \textcolor{keywordflow}{if} (SUCCEEDED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00367}00367         \{}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00368}00368             \mbox{\hyperlink{struct_audio_device}{AudioDevice}} device;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00369}00369             device.\mbox{\hyperlink{struct_audio_device_afb68b9b2f5de556329903cd382e6c850}{deviceId}} = details.DeviceID;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00370}00370             device.\mbox{\hyperlink{struct_audio_device_a91dd5ec744fdbc69f16d3870e9380b10}{description}} = details.DisplayName;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00371}00371             list.emplace\_back(device);}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00372}00372         \}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00373}00373     \}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00374}00374 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00375}00375 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00376}00376 }
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00377}00377     \textcolor{keywordflow}{return} S\_OK;}
+\DoxyCodeLine{\Hypertarget{_week13-1-_x_audio_enumerate_8cpp_source_l00378}00378 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,34 @@
+\hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source}{}\doxysection{Title\+State.\+hpp}
+\label{_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source}\index{Week11/Week11-\/Demo1-\/GameOver/Include/TitleState.hpp@{Week11/Week11-\/Demo1-\/GameOver/Include/TitleState.hpp}}
+\mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#ifndef BOOK\_TITLESTATE\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#define BOOK\_TITLESTATE\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_include_2_state_8hpp}{State.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source_l00006}00006 \textcolor{preprocessor}{\#include <SFML/Graphics/Sprite.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source_l00007}00007 \textcolor{preprocessor}{\#include <SFML/Graphics/Text.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source_l00010}\mbox{\hyperlink{class_title_state}{00010}} \textcolor{keyword}{class }\mbox{\hyperlink{class_title_state}{TitleState}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_state}{State}}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source_l00011}00011 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source_l00012}00012     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source_l00013}00013                             \mbox{\hyperlink{class_title_state_a9fb6569d8ed77db85dcf8af2890c112c}{TitleState}}(\mbox{\hyperlink{class_state_stack}{StateStack}}\& stack, \mbox{\hyperlink{struct_state_1_1_context}{Context}} context);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source_l00015}00015         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}        \mbox{\hyperlink{class_title_state_ae12beafe5aad6929a56089942de1220e}{draw}}();}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source_l00016}00016         \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool}        \mbox{\hyperlink{class_title_state_aa282ac0c6e22267cb6a7054973d75fdf}{update}}(\mbox{\hyperlink{classsf_1_1_time}{sf::Time}} dt);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source_l00017}00017         \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool}        \mbox{\hyperlink{class_title_state_a91c6ab4d741fe7445d88ed603001971a}{handleEvent}}(\textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_event}{sf::Event}}\& event);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source_l00020}00020     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source_l00021}\mbox{\hyperlink{class_title_state_afca87e4a291c9dc13c1c3ae43161f3e5}{00021}}         \mbox{\hyperlink{classsf_1_1_sprite}{sf::Sprite}}            \mbox{\hyperlink{class_title_state_afca87e4a291c9dc13c1c3ae43161f3e5}{mBackgroundSprite}};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source_l00022}\mbox{\hyperlink{class_title_state_a73b7c3e01214d0fff03d0d2a96df8421}{00022}}         \mbox{\hyperlink{classsf_1_1_text}{sf::Text}}            \mbox{\hyperlink{class_title_state_a73b7c3e01214d0fff03d0d2a96df8421}{mText}};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source_l00024}\mbox{\hyperlink{class_title_state_a39ca2d577793818b9417017247d5c98c}{00024}}         \textcolor{keywordtype}{bool}                \mbox{\hyperlink{class_title_state_a39ca2d577793818b9417017247d5c98c}{mShowText}};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source_l00025}\mbox{\hyperlink{class_title_state_a2250b3d758d7c303b4da2824c5571454}{00025}}         \mbox{\hyperlink{classsf_1_1_time}{sf::Time}}            \mbox{\hyperlink{class_title_state_a2250b3d758d7c303b4da2824c5571454}{mTextEffectTime}};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source_l00026}00026 \};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source_l00028}00028 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// BOOK\_TITLESTATE\_HPP}}
+
+\end{DoxyCode}

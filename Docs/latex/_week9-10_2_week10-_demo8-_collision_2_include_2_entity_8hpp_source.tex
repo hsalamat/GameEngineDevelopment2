@@ -1,0 +1,40 @@
+\hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source}{}\doxysection{Entity.\+hpp}
+\label{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source}\index{Week9-\/10/Week10-\/Demo8-\/Collision/Include/Entity.hpp@{Week9-\/10/Week10-\/Demo8-\/Collision/Include/Entity.hpp}}
+\mbox{\hyperlink{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#ifndef BOOK\_ENTITY\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#define BOOK\_ENTITY\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_include_2_scene_node_8hpp}{SceneNode.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00007}00007 \textcolor{keyword}{class }\mbox{\hyperlink{class_entity}{Entity}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_scene_node}{SceneNode}}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00008}00008 \{}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00009}00009     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00010}\mbox{\hyperlink{class_entity_a305ac3dd729c288ab23db531fa3fb7e6}{00010}}         \textcolor{keyword}{explicit}            \mbox{\hyperlink{class_entity_a305ac3dd729c288ab23db531fa3fb7e6}{Entity}}(\textcolor{keywordtype}{int} hitpoints);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00012}\mbox{\hyperlink{class_entity_a5bf79843c973eac1fdbebfd1fc83a1e8}{00012}}         \textcolor{keywordtype}{void}                \mbox{\hyperlink{class_entity_a5bf79843c973eac1fdbebfd1fc83a1e8}{setVelocity}}(\mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}} velocity);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00013}\mbox{\hyperlink{class_entity_a7873fbd61cf1a742d4492ec438a9ac9f}{00013}}         \textcolor{keywordtype}{void}                \mbox{\hyperlink{class_entity_a7873fbd61cf1a742d4492ec438a9ac9f}{setVelocity}}(\textcolor{keywordtype}{float} vx, \textcolor{keywordtype}{float} vy);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00014}\mbox{\hyperlink{class_entity_a80cdb89f11d47716781bc567efd2bcda}{00014}}         \textcolor{keywordtype}{void}                \mbox{\hyperlink{class_entity_a80cdb89f11d47716781bc567efd2bcda}{accelerate}}(\mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}} velocity);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00015}\mbox{\hyperlink{class_entity_a2ff2403c455f15b3fe5d04e922b3943d}{00015}}         \textcolor{keywordtype}{void}                \mbox{\hyperlink{class_entity_a2ff2403c455f15b3fe5d04e922b3943d}{accelerate}}(\textcolor{keywordtype}{float} vx, \textcolor{keywordtype}{float} vy);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00016}\mbox{\hyperlink{class_entity_ae7518a0181de088e0de2eacd1a13d656}{00016}}         \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}}        \mbox{\hyperlink{class_entity_ae7518a0181de088e0de2eacd1a13d656}{getVelocity}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00018}\mbox{\hyperlink{class_entity_ade4af3619c02f07429981259bacc881b}{00018}}         \textcolor{keywordtype}{int}                 \mbox{\hyperlink{class_entity_ade4af3619c02f07429981259bacc881b}{getHitpoints}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00019}\mbox{\hyperlink{class_entity_a354ea9f771b0758f8e70bdfac9a740b4}{00019}}         \textcolor{keywordtype}{void}                \mbox{\hyperlink{class_entity_a354ea9f771b0758f8e70bdfac9a740b4}{repair}}(\textcolor{keywordtype}{int} points);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00020}\mbox{\hyperlink{class_entity_a15660fa13012dbca80c8047e2cc6f1f5}{00020}}         \textcolor{keywordtype}{void}                \mbox{\hyperlink{class_entity_a15660fa13012dbca80c8047e2cc6f1f5}{damage}}(\textcolor{keywordtype}{int} points);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00021}\mbox{\hyperlink{class_entity_a691dbe5f9ec930c27af2af0b97907a9e}{00021}}         \textcolor{keywordtype}{void}                \mbox{\hyperlink{class_entity_a691dbe5f9ec930c27af2af0b97907a9e}{destroy}}();}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00022}\mbox{\hyperlink{class_entity_ac51115aa45bb22eb2e450fe5eecd9a91}{00022}}         \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool}        \mbox{\hyperlink{class_entity_ac51115aa45bb22eb2e450fe5eecd9a91}{isDestroyed}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00025}00025     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00026}\mbox{\hyperlink{class_entity_a4ebebbbb20fcac7024fb3a9985ed2eff}{00026}}         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}        \mbox{\hyperlink{class_entity_a4ebebbbb20fcac7024fb3a9985ed2eff}{updateCurrent}}(\mbox{\hyperlink{classsf_1_1_time}{sf::Time}} dt, \mbox{\hyperlink{class_command_queue}{CommandQueue}}\& commands);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00029}00029     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00030}00030         \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}}        \mbox{\hyperlink{class_entity_ae6c40df3cd7d4357c2fd9ee4924bfb14}{mVelocity}};}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00031}00031         \textcolor{keywordtype}{int}                 \mbox{\hyperlink{class_entity_a1d394931fe49170aadf8d098fd048988}{mHitpoints}};}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00032}00032 \};}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo8-_collision_2_include_2_entity_8hpp_source_l00034}00034 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// BOOK\_ENTITY\_HPP}}
+
+\end{DoxyCode}

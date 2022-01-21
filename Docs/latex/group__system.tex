@@ -1,0 +1,123 @@
+\hypertarget{group__system}{}\doxysection{System module}
+\label{group__system}\index{System module@{System module}}
+
+
+Base module of SFML, defining various utilities.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsf_1_1_clock}{sf\+::\+Clock}}
+\begin{DoxyCompactList}\small\item\em Utility class that measures the elapsed time. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_file_input_stream}{sf\+::\+File\+Input\+Stream}}
+\begin{DoxyCompactList}\small\item\em Implementation of input stream based on a file. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_input_stream}{sf\+::\+Input\+Stream}}
+\begin{DoxyCompactList}\small\item\em Abstract class for custom file input streams. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_lock}{sf\+::\+Lock}}
+\begin{DoxyCompactList}\small\item\em Automatic wrapper for locking and unlocking mutexes. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_memory_input_stream}{sf\+::\+Memory\+Input\+Stream}}
+\begin{DoxyCompactList}\small\item\em Implementation of input stream based on a memory chunk. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_mutex}{sf\+::\+Mutex}}
+\begin{DoxyCompactList}\small\item\em Blocks concurrent access to shared resources from multiple threads. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_non_copyable}{sf\+::\+Non\+Copyable}}
+\begin{DoxyCompactList}\small\item\em Utility class that makes any derived class non-\/copyable. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_string}{sf\+::\+String}}
+\begin{DoxyCompactList}\small\item\em Utility string class that automatically handles conversions between types and encodings. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_thread}{sf\+::\+Thread}}
+\begin{DoxyCompactList}\small\item\em Utility class to manipulate threads. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_thread_local}{sf\+::\+Thread\+Local}}
+\begin{DoxyCompactList}\small\item\em Defines variables with thread-\/local storage. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_thread_local_ptr}{sf\+::\+Thread\+Local\+Ptr$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Pointer to a thread-\/local variable. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}
+\begin{DoxyCompactList}\small\item\em Represents a time value. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_utf}{sf\+::\+Utf$<$ N $>$}}
+\begin{DoxyCompactList}\small\item\em Utility class providing generic functions for UTF conversions. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_vector2}{sf\+::\+Vector2$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Utility template class for manipulating 2-\/dimensional vectors. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsf_1_1_vector3}{sf\+::\+Vector3$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Utility template class for manipulating 3-\/dimensional vectors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_export_8hpp_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} ANative\+Activity $\ast$ \mbox{\hyperlink{group__system_gabdf6d6135fca64627093a9906183c8e3}{sf\+::get\+Native\+Activity}} ()
+\begin{DoxyCompactList}\small\item\em Return a pointer to the Android native activity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_export_8hpp_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{group__system_ga2f2620831533dee0ed432ed982342e09}{sf\+::sleep}} (\mbox{\hyperlink{classsf_1_1_time}{Time}} duration)
+\begin{DoxyCompactList}\small\item\em Make the current thread sleep for a given duration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_export_8hpp_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} std\+::ostream \& \mbox{\hyperlink{group__system_ga7fe7f475639e26334606b5142c29551f}{sf\+::err}} ()
+\begin{DoxyCompactList}\small\item\em Standard stream used by SFML to output warnings and errors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base module of SFML, defining various utilities. 
+
+It provides vector classes, Unicode strings and conversion functions, threads and mutexes, timing classes. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__system_ga7fe7f475639e26334606b5142c29551f}\label{group__system_ga7fe7f475639e26334606b5142c29551f}} 
+\index{System module@{System module}!err@{err}}
+\index{err@{err}!System module@{System module}}
+\doxysubsubsection{\texorpdfstring{err()}{err()}}
+{\footnotesize\ttfamily sf\+::err (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Standard stream used by SFML to output warnings and errors. 
+
+By default, \mbox{\hyperlink{group__system_ga7fe7f475639e26334606b5142c29551f}{sf\+::err()}} outputs to the same location as std\+::cerr, (-\/\texorpdfstring{$>$}{>} the stderr descriptor) which is the console if there\textquotesingle{}s one available.
+
+It is a standard std\+::ostream instance, so it supports all the insertion operations defined by the STL (operator \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}, manipulators, etc.).
+
+\mbox{\hyperlink{group__system_ga7fe7f475639e26334606b5142c29551f}{sf\+::err()}} can be redirected to write to another output, independently of std\+::cerr, by using the rdbuf() function provided by the std\+::ostream class.
+
+Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Redirect to a file}}
+\DoxyCodeLine{std::ofstream file(\textcolor{stringliteral}{"{}sfml-\/log.txt"{}});}
+\DoxyCodeLine{std::streambuf* previous = \mbox{\hyperlink{group__system_ga7fe7f475639e26334606b5142c29551f}{sf::err}}().rdbuf(file.rdbuf());}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Redirect to nothing}}
+\DoxyCodeLine{\mbox{\hyperlink{group__system_ga7fe7f475639e26334606b5142c29551f}{sf::err}}().rdbuf(NULL);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Restore the original output}}
+\DoxyCodeLine{\mbox{\hyperlink{group__system_ga7fe7f475639e26334606b5142c29551f}{sf::err}}().rdbuf(previous);}
+
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Reference to std\+::ostream representing the SFML error stream 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__system_gabdf6d6135fca64627093a9906183c8e3}\label{group__system_gabdf6d6135fca64627093a9906183c8e3}} 
+\index{System module@{System module}!getNativeActivity@{getNativeActivity}}
+\index{getNativeActivity@{getNativeActivity}!System module@{System module}}
+\doxysubsubsection{\texorpdfstring{getNativeActivity()}{getNativeActivity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_export_8hpp_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} ANative\+Activity $\ast$ sf\+::get\+Native\+Activity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Return a pointer to the Android native activity. 
+
+You shouldn\textquotesingle{}t have to use this function, unless you want to implement very specific details, that SFML doesn\textquotesingle{}t support, or to use a workaround for a known issue.
+
+\begin{DoxyReturn}{Returns}
+Pointer to Android native activity structure
+\end{DoxyReturn}
+\textbackslash{}sfplatform\{Android,SFML/\+System/\+Native\+Activity.\+hpp\} \mbox{\Hypertarget{group__system_ga2f2620831533dee0ed432ed982342e09}\label{group__system_ga2f2620831533dee0ed432ed982342e09}} 
+\index{System module@{System module}!sleep@{sleep}}
+\index{sleep@{sleep}!System module@{System module}}
+\doxysubsubsection{\texorpdfstring{sleep()}{sleep()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_export_8hpp_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} sf\+::sleep (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{Time}}}]{duration }\end{DoxyParamCaption})}
+
+
+
+Make the current thread sleep for a given duration. 
+
+\mbox{\hyperlink{group__system_ga2f2620831533dee0ed432ed982342e09}{sf\+::sleep}} is the best way to block a program or one of its threads, as it doesn\textquotesingle{}t consume any CPU power.
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration} & \mbox{\hyperlink{classsf_1_1_time}{Time}} to sleep \\
+\hline
+\end{DoxyParams}

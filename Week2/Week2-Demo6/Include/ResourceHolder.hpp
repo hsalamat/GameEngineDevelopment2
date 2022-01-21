@@ -1,7 +1,6 @@
-#pragma region Step1
+#pragma once
 
-#ifndef BOOK_RESOURCEHOLDER_HPP
-#define BOOK_RESOURCEHOLDER_HPP
+#pragma region Step1
 
 #include <map>
 #include <string>
@@ -39,6 +38,5 @@ private:
 };
 
 #include "ResourceHolder.inl"
-#endif // BOOK_RESOURCEHOLDER_HPP
 
 #pragma endregion

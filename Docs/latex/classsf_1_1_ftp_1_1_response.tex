@@ -1,0 +1,1159 @@
+\hypertarget{classsf_1_1_ftp_1_1_response}{}\doxysection{sf\+::Ftp\+::Response Class Reference}
+\label{classsf_1_1_ftp_1_1_response}\index{sf::Ftp::Response@{sf::Ftp::Response}}
+
+
+Define a FTP response.  
+
+
+
+
+{\ttfamily \#include $<$Ftp.\+hpp$>$}
+
+Inheritance diagram for sf\+::Ftp\+::Response\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.666667cm]{classsf_1_1_ftp_1_1_response}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3b}{Status}} \{ \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba9c0f2a9ad7404aa610eb835ba06724a4}{Restart\+Marker\+Reply}} = 110
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba68f0497585e490250bc2985edb4201d3}{Service\+Ready\+Soon}} = 120
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac40df58b564d1256c9dc7cbdaede9ad2}{Data\+Connection\+Already\+Opened}} = 125
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab31a5cb621b4097247dfd59565ae8b98}{Opening\+Data\+Connection}} = 150
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac4a1be25f02eef9d4c28755d40e73fcc}{Ok}} = 200
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4c9c5b2f0c45843fb21139636ac65334}{Pointless\+Command}} = 202
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa179c6310d607c920b23a2d6ce2d61a7}{System\+Status}} = 211
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba01821e4dc199adbf69ef65df4f949da7}{Directory\+Status}} = 212
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba5b006cb170dda08ade062b4fe1929927}{File\+Status}} = 213
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba90cc40f06a165f2eef3036f5a63ccad4}{Help\+Message}} = 214
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baf9f5fd830fbc98405658fcdd1ed4b958}{System\+Type}} = 215
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba94cd5a9201b7ebf0c10739860614e38a}{Service\+Ready}} = 220
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bae070a7c775b991e22bbc94164c06a3e1}{Closing\+Connection}} = 221
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baca24974cc31d5076fb34effeb7c37459}{Data\+Connection\+Opened}} = 225
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba326e2020413f73ab20d96e1425dc6c61}{Closing\+Data\+Connection}} = 226
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba772b171084e6352b039a3190edd49d47}{Entering\+Passive\+Mode}} = 227
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baed6a77a3599d7d2c99261e8fd67ddc02}{Logged\+In}} = 230
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba533ecde0d9d9fb8ced97451dafe478f4}{File\+Action\+Ok}} = 250
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba469897826bb8b8139df17bc60e584df1}{Directory\+Ok}} = 257
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baeb7f26cf02a13fc05d9e1d8a323b1dde}{Need\+Password}} = 331
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa8c41b24d7fba52b82600c74929a7d8c}{Need\+Account\+To\+Log\+In}} = 332
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba3e7c902cae306df22540129d1b9c3731}{Need\+Information}} = 350
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba831d98246d1bf42ce95e7f75bb34d485}{Service\+Unavailable}} = 421
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba0b82e3e39aa5ce3e9b3115abd04c74cf}{Data\+Connection\+Unavailable}} = 425
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba05e7e2eb62bf7d8709f5f6d37dbde7cb}{Transfer\+Aborted}} = 426
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba2d2f79c754ef2257e4e3ad96985506b4}{File\+Action\+Aborted}} = 450
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba5400391612ec91f15e64255a4c55b3c3}{Local\+Error}} = 451
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac5e00c7cb975030504b2afb86e47fa68}{Insufficient\+Storage\+Space}} = 452
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4ccd31337b9478c6cf5089523e16b540}{Command\+Unknown}} = 500
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba00a8672a96112ad00dc2f1117e1146ac}{Parameters\+Unknown}} = 501
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac91eba896240e927206c386f5bf8e32e}{Command\+Not\+Implemented}} = 502
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba0547dfb381e953f77b7c5a2733c40613}{Bad\+Command\+Sequence}} = 503
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba91b4fde3e5e13d59a08c06310b29028d}{Parameter\+Not\+Implemented}} = 504
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4d55199035de3c613fff260681ca762e}{Not\+Logged\+In}} = 530
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa19655e1a74e69425758933af91d0c65}{Need\+Account\+To\+Store}} = 532
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab1baeceb935584402decd35925a4e443}{File\+Unavailable}} = 550
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba54368544faf2ec0bfde88dded6920dfc}{Page\+Type\+Unknown}} = 551
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab65332f3729d28c9f2551dfa2827dc0c}{Not\+Enough\+Memory}} = 552
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba84de438a2c6c6bf461c1bc2f79eba577}{Filename\+Not\+Allowed}} = 553
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba2832369b24738d47a832361b09fef964}{Invalid\+Response}} = 1000
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba099e88e94cf51258fd901177a37f7bb7}{Connection\+Failed}} = 1001
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baf84c1847c12fe7216eca9a49af1b0cd7}{Connection\+Closed}} = 1002
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba94f4054b5814eb4fe0fc6d576376503a}{Invalid\+File}} = 1003
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba9c0f2a9ad7404aa610eb835ba06724a4}{Restart\+Marker\+Reply}} = 110
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba68f0497585e490250bc2985edb4201d3}{Service\+Ready\+Soon}} = 120
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac40df58b564d1256c9dc7cbdaede9ad2}{Data\+Connection\+Already\+Opened}} = 125
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab31a5cb621b4097247dfd59565ae8b98}{Opening\+Data\+Connection}} = 150
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac4a1be25f02eef9d4c28755d40e73fcc}{Ok}} = 200
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4c9c5b2f0c45843fb21139636ac65334}{Pointless\+Command}} = 202
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa179c6310d607c920b23a2d6ce2d61a7}{System\+Status}} = 211
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba01821e4dc199adbf69ef65df4f949da7}{Directory\+Status}} = 212
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba5b006cb170dda08ade062b4fe1929927}{File\+Status}} = 213
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba90cc40f06a165f2eef3036f5a63ccad4}{Help\+Message}} = 214
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baf9f5fd830fbc98405658fcdd1ed4b958}{System\+Type}} = 215
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba94cd5a9201b7ebf0c10739860614e38a}{Service\+Ready}} = 220
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bae070a7c775b991e22bbc94164c06a3e1}{Closing\+Connection}} = 221
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baca24974cc31d5076fb34effeb7c37459}{Data\+Connection\+Opened}} = 225
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba326e2020413f73ab20d96e1425dc6c61}{Closing\+Data\+Connection}} = 226
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba772b171084e6352b039a3190edd49d47}{Entering\+Passive\+Mode}} = 227
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baed6a77a3599d7d2c99261e8fd67ddc02}{Logged\+In}} = 230
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba533ecde0d9d9fb8ced97451dafe478f4}{File\+Action\+Ok}} = 250
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba469897826bb8b8139df17bc60e584df1}{Directory\+Ok}} = 257
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baeb7f26cf02a13fc05d9e1d8a323b1dde}{Need\+Password}} = 331
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa8c41b24d7fba52b82600c74929a7d8c}{Need\+Account\+To\+Log\+In}} = 332
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba3e7c902cae306df22540129d1b9c3731}{Need\+Information}} = 350
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba831d98246d1bf42ce95e7f75bb34d485}{Service\+Unavailable}} = 421
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba0b82e3e39aa5ce3e9b3115abd04c74cf}{Data\+Connection\+Unavailable}} = 425
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba05e7e2eb62bf7d8709f5f6d37dbde7cb}{Transfer\+Aborted}} = 426
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba2d2f79c754ef2257e4e3ad96985506b4}{File\+Action\+Aborted}} = 450
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba5400391612ec91f15e64255a4c55b3c3}{Local\+Error}} = 451
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac5e00c7cb975030504b2afb86e47fa68}{Insufficient\+Storage\+Space}} = 452
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4ccd31337b9478c6cf5089523e16b540}{Command\+Unknown}} = 500
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba00a8672a96112ad00dc2f1117e1146ac}{Parameters\+Unknown}} = 501
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac91eba896240e927206c386f5bf8e32e}{Command\+Not\+Implemented}} = 502
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba0547dfb381e953f77b7c5a2733c40613}{Bad\+Command\+Sequence}} = 503
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba91b4fde3e5e13d59a08c06310b29028d}{Parameter\+Not\+Implemented}} = 504
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4d55199035de3c613fff260681ca762e}{Not\+Logged\+In}} = 530
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa19655e1a74e69425758933af91d0c65}{Need\+Account\+To\+Store}} = 532
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab1baeceb935584402decd35925a4e443}{File\+Unavailable}} = 550
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba54368544faf2ec0bfde88dded6920dfc}{Page\+Type\+Unknown}} = 551
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab65332f3729d28c9f2551dfa2827dc0c}{Not\+Enough\+Memory}} = 552
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba84de438a2c6c6bf461c1bc2f79eba577}{Filename\+Not\+Allowed}} = 553
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba2832369b24738d47a832361b09fef964}{Invalid\+Response}} = 1000
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba099e88e94cf51258fd901177a37f7bb7}{Connection\+Failed}} = 1001
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baf84c1847c12fe7216eca9a49af1b0cd7}{Connection\+Closed}} = 1002
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba94f4054b5814eb4fe0fc6d576376503a}{Invalid\+File}} = 1003
+ \}
+\begin{DoxyCompactList}\small\item\em Status codes possibly returned by a FTP response. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3b}{Status}} \{ \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba9c0f2a9ad7404aa610eb835ba06724a4}{Restart\+Marker\+Reply}} = 110
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba68f0497585e490250bc2985edb4201d3}{Service\+Ready\+Soon}} = 120
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac40df58b564d1256c9dc7cbdaede9ad2}{Data\+Connection\+Already\+Opened}} = 125
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab31a5cb621b4097247dfd59565ae8b98}{Opening\+Data\+Connection}} = 150
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac4a1be25f02eef9d4c28755d40e73fcc}{Ok}} = 200
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4c9c5b2f0c45843fb21139636ac65334}{Pointless\+Command}} = 202
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa179c6310d607c920b23a2d6ce2d61a7}{System\+Status}} = 211
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba01821e4dc199adbf69ef65df4f949da7}{Directory\+Status}} = 212
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba5b006cb170dda08ade062b4fe1929927}{File\+Status}} = 213
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba90cc40f06a165f2eef3036f5a63ccad4}{Help\+Message}} = 214
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baf9f5fd830fbc98405658fcdd1ed4b958}{System\+Type}} = 215
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba94cd5a9201b7ebf0c10739860614e38a}{Service\+Ready}} = 220
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bae070a7c775b991e22bbc94164c06a3e1}{Closing\+Connection}} = 221
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baca24974cc31d5076fb34effeb7c37459}{Data\+Connection\+Opened}} = 225
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba326e2020413f73ab20d96e1425dc6c61}{Closing\+Data\+Connection}} = 226
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba772b171084e6352b039a3190edd49d47}{Entering\+Passive\+Mode}} = 227
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baed6a77a3599d7d2c99261e8fd67ddc02}{Logged\+In}} = 230
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba533ecde0d9d9fb8ced97451dafe478f4}{File\+Action\+Ok}} = 250
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba469897826bb8b8139df17bc60e584df1}{Directory\+Ok}} = 257
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baeb7f26cf02a13fc05d9e1d8a323b1dde}{Need\+Password}} = 331
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa8c41b24d7fba52b82600c74929a7d8c}{Need\+Account\+To\+Log\+In}} = 332
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba3e7c902cae306df22540129d1b9c3731}{Need\+Information}} = 350
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba831d98246d1bf42ce95e7f75bb34d485}{Service\+Unavailable}} = 421
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba0b82e3e39aa5ce3e9b3115abd04c74cf}{Data\+Connection\+Unavailable}} = 425
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba05e7e2eb62bf7d8709f5f6d37dbde7cb}{Transfer\+Aborted}} = 426
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba2d2f79c754ef2257e4e3ad96985506b4}{File\+Action\+Aborted}} = 450
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba5400391612ec91f15e64255a4c55b3c3}{Local\+Error}} = 451
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac5e00c7cb975030504b2afb86e47fa68}{Insufficient\+Storage\+Space}} = 452
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4ccd31337b9478c6cf5089523e16b540}{Command\+Unknown}} = 500
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba00a8672a96112ad00dc2f1117e1146ac}{Parameters\+Unknown}} = 501
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac91eba896240e927206c386f5bf8e32e}{Command\+Not\+Implemented}} = 502
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba0547dfb381e953f77b7c5a2733c40613}{Bad\+Command\+Sequence}} = 503
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba91b4fde3e5e13d59a08c06310b29028d}{Parameter\+Not\+Implemented}} = 504
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4d55199035de3c613fff260681ca762e}{Not\+Logged\+In}} = 530
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa19655e1a74e69425758933af91d0c65}{Need\+Account\+To\+Store}} = 532
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab1baeceb935584402decd35925a4e443}{File\+Unavailable}} = 550
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba54368544faf2ec0bfde88dded6920dfc}{Page\+Type\+Unknown}} = 551
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab65332f3729d28c9f2551dfa2827dc0c}{Not\+Enough\+Memory}} = 552
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba84de438a2c6c6bf461c1bc2f79eba577}{Filename\+Not\+Allowed}} = 553
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba2832369b24738d47a832361b09fef964}{Invalid\+Response}} = 1000
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba099e88e94cf51258fd901177a37f7bb7}{Connection\+Failed}} = 1001
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baf84c1847c12fe7216eca9a49af1b0cd7}{Connection\+Closed}} = 1002
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba94f4054b5814eb4fe0fc6d576376503a}{Invalid\+File}} = 1003
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba9c0f2a9ad7404aa610eb835ba06724a4}{Restart\+Marker\+Reply}} = 110
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba68f0497585e490250bc2985edb4201d3}{Service\+Ready\+Soon}} = 120
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac40df58b564d1256c9dc7cbdaede9ad2}{Data\+Connection\+Already\+Opened}} = 125
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab31a5cb621b4097247dfd59565ae8b98}{Opening\+Data\+Connection}} = 150
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac4a1be25f02eef9d4c28755d40e73fcc}{Ok}} = 200
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4c9c5b2f0c45843fb21139636ac65334}{Pointless\+Command}} = 202
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa179c6310d607c920b23a2d6ce2d61a7}{System\+Status}} = 211
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba01821e4dc199adbf69ef65df4f949da7}{Directory\+Status}} = 212
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba5b006cb170dda08ade062b4fe1929927}{File\+Status}} = 213
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba90cc40f06a165f2eef3036f5a63ccad4}{Help\+Message}} = 214
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baf9f5fd830fbc98405658fcdd1ed4b958}{System\+Type}} = 215
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba94cd5a9201b7ebf0c10739860614e38a}{Service\+Ready}} = 220
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bae070a7c775b991e22bbc94164c06a3e1}{Closing\+Connection}} = 221
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baca24974cc31d5076fb34effeb7c37459}{Data\+Connection\+Opened}} = 225
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba326e2020413f73ab20d96e1425dc6c61}{Closing\+Data\+Connection}} = 226
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba772b171084e6352b039a3190edd49d47}{Entering\+Passive\+Mode}} = 227
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baed6a77a3599d7d2c99261e8fd67ddc02}{Logged\+In}} = 230
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba533ecde0d9d9fb8ced97451dafe478f4}{File\+Action\+Ok}} = 250
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba469897826bb8b8139df17bc60e584df1}{Directory\+Ok}} = 257
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baeb7f26cf02a13fc05d9e1d8a323b1dde}{Need\+Password}} = 331
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa8c41b24d7fba52b82600c74929a7d8c}{Need\+Account\+To\+Log\+In}} = 332
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba3e7c902cae306df22540129d1b9c3731}{Need\+Information}} = 350
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba831d98246d1bf42ce95e7f75bb34d485}{Service\+Unavailable}} = 421
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba0b82e3e39aa5ce3e9b3115abd04c74cf}{Data\+Connection\+Unavailable}} = 425
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba05e7e2eb62bf7d8709f5f6d37dbde7cb}{Transfer\+Aborted}} = 426
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba2d2f79c754ef2257e4e3ad96985506b4}{File\+Action\+Aborted}} = 450
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba5400391612ec91f15e64255a4c55b3c3}{Local\+Error}} = 451
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac5e00c7cb975030504b2afb86e47fa68}{Insufficient\+Storage\+Space}} = 452
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4ccd31337b9478c6cf5089523e16b540}{Command\+Unknown}} = 500
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba00a8672a96112ad00dc2f1117e1146ac}{Parameters\+Unknown}} = 501
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac91eba896240e927206c386f5bf8e32e}{Command\+Not\+Implemented}} = 502
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba0547dfb381e953f77b7c5a2733c40613}{Bad\+Command\+Sequence}} = 503
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba91b4fde3e5e13d59a08c06310b29028d}{Parameter\+Not\+Implemented}} = 504
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4d55199035de3c613fff260681ca762e}{Not\+Logged\+In}} = 530
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa19655e1a74e69425758933af91d0c65}{Need\+Account\+To\+Store}} = 532
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab1baeceb935584402decd35925a4e443}{File\+Unavailable}} = 550
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba54368544faf2ec0bfde88dded6920dfc}{Page\+Type\+Unknown}} = 551
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab65332f3729d28c9f2551dfa2827dc0c}{Not\+Enough\+Memory}} = 552
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba84de438a2c6c6bf461c1bc2f79eba577}{Filename\+Not\+Allowed}} = 553
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba2832369b24738d47a832361b09fef964}{Invalid\+Response}} = 1000
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba099e88e94cf51258fd901177a37f7bb7}{Connection\+Failed}} = 1001
+, \newline
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baf84c1847c12fe7216eca9a49af1b0cd7}{Connection\+Closed}} = 1002
+, \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba94f4054b5814eb4fe0fc6d576376503a}{Invalid\+File}} = 1003
+ \}
+\begin{DoxyCompactList}\small\item\em Status codes possibly returned by a FTP response. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af300fffd4862774102f978eb22f85d9b}{Response}} (\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3b}{Status}} code=\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba2832369b24738d47a832361b09fef964}{Invalid\+Response}}, const std\+::string \&message=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_a5102552955a2652c1a39e9046e617b36}{is\+Ok}} () const
+\begin{DoxyCompactList}\small\item\em Check if the status code means a success. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3b}{Status}} \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_a52bbca9fbf5451157bc055e3d8430c25}{get\+Status}} () const
+\begin{DoxyCompactList}\small\item\em Get the status code of the response. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_adc2890c93c9f8ee997b828fcbef82c97}{get\+Message}} () const
+\begin{DoxyCompactList}\small\item\em Get the full message contained in the response. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af300fffd4862774102f978eb22f85d9b}{Response}} (\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3b}{Status}} code=\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba2832369b24738d47a832361b09fef964}{Invalid\+Response}}, const std\+::string \&message=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_a5102552955a2652c1a39e9046e617b36}{is\+Ok}} () const
+\begin{DoxyCompactList}\small\item\em Check if the status code means a success. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3b}{Status}} \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_a52bbca9fbf5451157bc055e3d8430c25}{get\+Status}} () const
+\begin{DoxyCompactList}\small\item\em Get the status code of the response. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_adc2890c93c9f8ee997b828fcbef82c97}{get\+Message}} () const
+\begin{DoxyCompactList}\small\item\em Get the full message contained in the response. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3b}{Status}} \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af3a8918ddd408ff8fbcce5c0beda11d4}{m\+\_\+status}}
+\begin{DoxyCompactList}\small\item\em Status code returned from the server. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_aaf692d0df6066d4a1f4d0677869b8f7b}{m\+\_\+message}}
+\begin{DoxyCompactList}\small\item\em Last message received from the server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Define a FTP response. 
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ftp_8hpp_source_l00066}{66}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ftp_8hpp_source}{Ftp.\+hpp}}.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3b}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3b}} 
+\index{sf::Ftp::Response@{sf::Ftp::Response}!Status@{Status}}
+\index{Status@{Status}!sf::Ftp::Response@{sf::Ftp::Response}}
+\doxysubsubsection{\texorpdfstring{Status}{Status}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3b}{sf\+::\+Ftp\+::\+Response\+::\+Status}}}
+
+
+
+Status codes possibly returned by a FTP response. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RestartMarkerReply@{RestartMarkerReply}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!RestartMarkerReply@{RestartMarkerReply}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba9c0f2a9ad7404aa610eb835ba06724a4}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba9c0f2a9ad7404aa610eb835ba06724a4}} 
+Restart\+Marker\+Reply&Restart marker reply. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ServiceReadySoon@{ServiceReadySoon}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ServiceReadySoon@{ServiceReadySoon}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba68f0497585e490250bc2985edb4201d3}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba68f0497585e490250bc2985edb4201d3}} 
+Service\+Ready\+Soon&Service ready in N minutes. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DataConnectionAlreadyOpened@{DataConnectionAlreadyOpened}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!DataConnectionAlreadyOpened@{DataConnectionAlreadyOpened}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac40df58b564d1256c9dc7cbdaede9ad2}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac40df58b564d1256c9dc7cbdaede9ad2}} 
+Data\+Connection\+Already\+Opened&Data connection already opened, transfer starting. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OpeningDataConnection@{OpeningDataConnection}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!OpeningDataConnection@{OpeningDataConnection}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab31a5cb621b4097247dfd59565ae8b98}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab31a5cb621b4097247dfd59565ae8b98}} 
+Opening\+Data\+Connection&File status ok, about to open data connection. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Ok@{Ok}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!Ok@{Ok}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac4a1be25f02eef9d4c28755d40e73fcc}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac4a1be25f02eef9d4c28755d40e73fcc}} 
+Ok&\mbox{\hyperlink{struct_command}{Command}} ok. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PointlessCommand@{PointlessCommand}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!PointlessCommand@{PointlessCommand}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4c9c5b2f0c45843fb21139636ac65334}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4c9c5b2f0c45843fb21139636ac65334}} 
+Pointless\+Command&\mbox{\hyperlink{struct_command}{Command}} not implemented. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SystemStatus@{SystemStatus}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!SystemStatus@{SystemStatus}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa179c6310d607c920b23a2d6ce2d61a7}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa179c6310d607c920b23a2d6ce2d61a7}} 
+System\+Status&System status, or system help reply. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DirectoryStatus@{DirectoryStatus}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!DirectoryStatus@{DirectoryStatus}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba01821e4dc199adbf69ef65df4f949da7}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba01821e4dc199adbf69ef65df4f949da7}} 
+Directory\+Status&Directory status. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FileStatus@{FileStatus}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!FileStatus@{FileStatus}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba5b006cb170dda08ade062b4fe1929927}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba5b006cb170dda08ade062b4fe1929927}} 
+File\+Status&File status. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HelpMessage@{HelpMessage}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!HelpMessage@{HelpMessage}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba90cc40f06a165f2eef3036f5a63ccad4}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba90cc40f06a165f2eef3036f5a63ccad4}} 
+Help\+Message&Help message. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SystemType@{SystemType}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!SystemType@{SystemType}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baf9f5fd830fbc98405658fcdd1ed4b958}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baf9f5fd830fbc98405658fcdd1ed4b958}} 
+System\+Type&NAME system type, where NAME is an official system name from the list in the Assigned Numbers document. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ServiceReady@{ServiceReady}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ServiceReady@{ServiceReady}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba94cd5a9201b7ebf0c10739860614e38a}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba94cd5a9201b7ebf0c10739860614e38a}} 
+Service\+Ready&Service ready for new user. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ClosingConnection@{ClosingConnection}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ClosingConnection@{ClosingConnection}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bae070a7c775b991e22bbc94164c06a3e1}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bae070a7c775b991e22bbc94164c06a3e1}} 
+Closing\+Connection&Service closing control connection. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DataConnectionOpened@{DataConnectionOpened}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!DataConnectionOpened@{DataConnectionOpened}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baca24974cc31d5076fb34effeb7c37459}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baca24974cc31d5076fb34effeb7c37459}} 
+Data\+Connection\+Opened&Data connection open, no transfer in progress. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ClosingDataConnection@{ClosingDataConnection}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ClosingDataConnection@{ClosingDataConnection}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba326e2020413f73ab20d96e1425dc6c61}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba326e2020413f73ab20d96e1425dc6c61}} 
+Closing\+Data\+Connection&Closing data connection, requested file action successful. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EnteringPassiveMode@{EnteringPassiveMode}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!EnteringPassiveMode@{EnteringPassiveMode}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba772b171084e6352b039a3190edd49d47}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba772b171084e6352b039a3190edd49d47}} 
+Entering\+Passive\+Mode&Entering passive mode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LoggedIn@{LoggedIn}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!LoggedIn@{LoggedIn}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baed6a77a3599d7d2c99261e8fd67ddc02}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baed6a77a3599d7d2c99261e8fd67ddc02}} 
+Logged\+In&User logged in, proceed. Logged out if appropriate. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FileActionOk@{FileActionOk}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!FileActionOk@{FileActionOk}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba533ecde0d9d9fb8ced97451dafe478f4}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba533ecde0d9d9fb8ced97451dafe478f4}} 
+File\+Action\+Ok&Requested file action ok. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DirectoryOk@{DirectoryOk}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!DirectoryOk@{DirectoryOk}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba469897826bb8b8139df17bc60e584df1}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba469897826bb8b8139df17bc60e584df1}} 
+Directory\+Ok&PATHNAME created. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NeedPassword@{NeedPassword}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!NeedPassword@{NeedPassword}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baeb7f26cf02a13fc05d9e1d8a323b1dde}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baeb7f26cf02a13fc05d9e1d8a323b1dde}} 
+Need\+Password&User name ok, need password. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NeedAccountToLogIn@{NeedAccountToLogIn}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!NeedAccountToLogIn@{NeedAccountToLogIn}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa8c41b24d7fba52b82600c74929a7d8c}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa8c41b24d7fba52b82600c74929a7d8c}} 
+Need\+Account\+To\+Log\+In&Need account for login. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NeedInformation@{NeedInformation}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!NeedInformation@{NeedInformation}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba3e7c902cae306df22540129d1b9c3731}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba3e7c902cae306df22540129d1b9c3731}} 
+Need\+Information&Requested file action pending further information. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ServiceUnavailable@{ServiceUnavailable}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ServiceUnavailable@{ServiceUnavailable}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba831d98246d1bf42ce95e7f75bb34d485}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba831d98246d1bf42ce95e7f75bb34d485}} 
+Service\+Unavailable&Service not available, closing control connection. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DataConnectionUnavailable@{DataConnectionUnavailable}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!DataConnectionUnavailable@{DataConnectionUnavailable}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba0b82e3e39aa5ce3e9b3115abd04c74cf}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba0b82e3e39aa5ce3e9b3115abd04c74cf}} 
+Data\+Connection\+Unavailable&Can\textquotesingle{}t open data connection. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TransferAborted@{TransferAborted}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!TransferAborted@{TransferAborted}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba05e7e2eb62bf7d8709f5f6d37dbde7cb}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba05e7e2eb62bf7d8709f5f6d37dbde7cb}} 
+Transfer\+Aborted&Connection closed, transfer aborted. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FileActionAborted@{FileActionAborted}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!FileActionAborted@{FileActionAborted}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba2d2f79c754ef2257e4e3ad96985506b4}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba2d2f79c754ef2257e4e3ad96985506b4}} 
+File\+Action\+Aborted&Requested file action not taken. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LocalError@{LocalError}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!LocalError@{LocalError}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba5400391612ec91f15e64255a4c55b3c3}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba5400391612ec91f15e64255a4c55b3c3}} 
+Local\+Error&Requested action aborted, local error in processing. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InsufficientStorageSpace@{InsufficientStorageSpace}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!InsufficientStorageSpace@{InsufficientStorageSpace}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac5e00c7cb975030504b2afb86e47fa68}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac5e00c7cb975030504b2afb86e47fa68}} 
+Insufficient\+Storage\+Space&Requested action not taken; insufficient storage space in system, file unavailable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CommandUnknown@{CommandUnknown}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!CommandUnknown@{CommandUnknown}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4ccd31337b9478c6cf5089523e16b540}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4ccd31337b9478c6cf5089523e16b540}} 
+Command\+Unknown&Syntax error, command unrecognized. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ParametersUnknown@{ParametersUnknown}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ParametersUnknown@{ParametersUnknown}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba00a8672a96112ad00dc2f1117e1146ac}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba00a8672a96112ad00dc2f1117e1146ac}} 
+Parameters\+Unknown&Syntax error in parameters or arguments. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CommandNotImplemented@{CommandNotImplemented}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!CommandNotImplemented@{CommandNotImplemented}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac91eba896240e927206c386f5bf8e32e}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac91eba896240e927206c386f5bf8e32e}} 
+Command\+Not\+Implemented&\mbox{\hyperlink{struct_command}{Command}} not implemented. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BadCommandSequence@{BadCommandSequence}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!BadCommandSequence@{BadCommandSequence}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba0547dfb381e953f77b7c5a2733c40613}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba0547dfb381e953f77b7c5a2733c40613}} 
+Bad\+Command\+Sequence&Bad sequence of commands. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ParameterNotImplemented@{ParameterNotImplemented}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ParameterNotImplemented@{ParameterNotImplemented}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba91b4fde3e5e13d59a08c06310b29028d}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba91b4fde3e5e13d59a08c06310b29028d}} 
+Parameter\+Not\+Implemented&\mbox{\hyperlink{struct_command}{Command}} not implemented for that parameter. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NotLoggedIn@{NotLoggedIn}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!NotLoggedIn@{NotLoggedIn}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4d55199035de3c613fff260681ca762e}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4d55199035de3c613fff260681ca762e}} 
+Not\+Logged\+In&Not logged in. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NeedAccountToStore@{NeedAccountToStore}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!NeedAccountToStore@{NeedAccountToStore}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa19655e1a74e69425758933af91d0c65}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa19655e1a74e69425758933af91d0c65}} 
+Need\+Account\+To\+Store&Need account for storing files. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FileUnavailable@{FileUnavailable}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!FileUnavailable@{FileUnavailable}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab1baeceb935584402decd35925a4e443}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab1baeceb935584402decd35925a4e443}} 
+File\+Unavailable&Requested action not taken, file unavailable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PageTypeUnknown@{PageTypeUnknown}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!PageTypeUnknown@{PageTypeUnknown}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba54368544faf2ec0bfde88dded6920dfc}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba54368544faf2ec0bfde88dded6920dfc}} 
+Page\+Type\+Unknown&Requested action aborted, page type unknown. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NotEnoughMemory@{NotEnoughMemory}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!NotEnoughMemory@{NotEnoughMemory}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab65332f3729d28c9f2551dfa2827dc0c}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab65332f3729d28c9f2551dfa2827dc0c}} 
+Not\+Enough\+Memory&Requested file action aborted, exceeded storage allocation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FilenameNotAllowed@{FilenameNotAllowed}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!FilenameNotAllowed@{FilenameNotAllowed}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba84de438a2c6c6bf461c1bc2f79eba577}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba84de438a2c6c6bf461c1bc2f79eba577}} 
+Filename\+Not\+Allowed&Requested action not taken, file name not allowed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InvalidResponse@{InvalidResponse}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!InvalidResponse@{InvalidResponse}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba2832369b24738d47a832361b09fef964}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba2832369b24738d47a832361b09fef964}} 
+Invalid\+Response&Not part of the FTP standard, generated by SFML when a received response cannot be parsed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ConnectionFailed@{ConnectionFailed}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ConnectionFailed@{ConnectionFailed}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba099e88e94cf51258fd901177a37f7bb7}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba099e88e94cf51258fd901177a37f7bb7}} 
+Connection\+Failed&Not part of the FTP standard, generated by SFML when the low-\/level socket connection with the server fails. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ConnectionClosed@{ConnectionClosed}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ConnectionClosed@{ConnectionClosed}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baf84c1847c12fe7216eca9a49af1b0cd7}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baf84c1847c12fe7216eca9a49af1b0cd7}} 
+Connection\+Closed&Not part of the FTP standard, generated by SFML when the low-\/level socket connection is unexpectedly closed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InvalidFile@{InvalidFile}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!InvalidFile@{InvalidFile}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba94f4054b5814eb4fe0fc6d576376503a}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba94f4054b5814eb4fe0fc6d576376503a}} 
+Invalid\+File&Not part of the FTP standard, generated by SFML when a local file cannot be read or written. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RestartMarkerReply@{RestartMarkerReply}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!RestartMarkerReply@{RestartMarkerReply}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba9c0f2a9ad7404aa610eb835ba06724a4}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba9c0f2a9ad7404aa610eb835ba06724a4}} 
+Restart\+Marker\+Reply&Restart marker reply. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ServiceReadySoon@{ServiceReadySoon}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ServiceReadySoon@{ServiceReadySoon}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba68f0497585e490250bc2985edb4201d3}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba68f0497585e490250bc2985edb4201d3}} 
+Service\+Ready\+Soon&Service ready in N minutes. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DataConnectionAlreadyOpened@{DataConnectionAlreadyOpened}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!DataConnectionAlreadyOpened@{DataConnectionAlreadyOpened}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac40df58b564d1256c9dc7cbdaede9ad2}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac40df58b564d1256c9dc7cbdaede9ad2}} 
+Data\+Connection\+Already\+Opened&Data connection already opened, transfer starting. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OpeningDataConnection@{OpeningDataConnection}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!OpeningDataConnection@{OpeningDataConnection}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab31a5cb621b4097247dfd59565ae8b98}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab31a5cb621b4097247dfd59565ae8b98}} 
+Opening\+Data\+Connection&File status ok, about to open data connection. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Ok@{Ok}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!Ok@{Ok}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac4a1be25f02eef9d4c28755d40e73fcc}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac4a1be25f02eef9d4c28755d40e73fcc}} 
+Ok&\mbox{\hyperlink{struct_command}{Command}} ok. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PointlessCommand@{PointlessCommand}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!PointlessCommand@{PointlessCommand}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4c9c5b2f0c45843fb21139636ac65334}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4c9c5b2f0c45843fb21139636ac65334}} 
+Pointless\+Command&\mbox{\hyperlink{struct_command}{Command}} not implemented. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SystemStatus@{SystemStatus}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!SystemStatus@{SystemStatus}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa179c6310d607c920b23a2d6ce2d61a7}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa179c6310d607c920b23a2d6ce2d61a7}} 
+System\+Status&System status, or system help reply. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DirectoryStatus@{DirectoryStatus}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!DirectoryStatus@{DirectoryStatus}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba01821e4dc199adbf69ef65df4f949da7}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba01821e4dc199adbf69ef65df4f949da7}} 
+Directory\+Status&Directory status. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FileStatus@{FileStatus}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!FileStatus@{FileStatus}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba5b006cb170dda08ade062b4fe1929927}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba5b006cb170dda08ade062b4fe1929927}} 
+File\+Status&File status. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HelpMessage@{HelpMessage}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!HelpMessage@{HelpMessage}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba90cc40f06a165f2eef3036f5a63ccad4}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba90cc40f06a165f2eef3036f5a63ccad4}} 
+Help\+Message&Help message. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SystemType@{SystemType}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!SystemType@{SystemType}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baf9f5fd830fbc98405658fcdd1ed4b958}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baf9f5fd830fbc98405658fcdd1ed4b958}} 
+System\+Type&NAME system type, where NAME is an official system name from the list in the Assigned Numbers document. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ServiceReady@{ServiceReady}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ServiceReady@{ServiceReady}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba94cd5a9201b7ebf0c10739860614e38a}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba94cd5a9201b7ebf0c10739860614e38a}} 
+Service\+Ready&Service ready for new user. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ClosingConnection@{ClosingConnection}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ClosingConnection@{ClosingConnection}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bae070a7c775b991e22bbc94164c06a3e1}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bae070a7c775b991e22bbc94164c06a3e1}} 
+Closing\+Connection&Service closing control connection. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DataConnectionOpened@{DataConnectionOpened}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!DataConnectionOpened@{DataConnectionOpened}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baca24974cc31d5076fb34effeb7c37459}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baca24974cc31d5076fb34effeb7c37459}} 
+Data\+Connection\+Opened&Data connection open, no transfer in progress. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ClosingDataConnection@{ClosingDataConnection}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ClosingDataConnection@{ClosingDataConnection}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba326e2020413f73ab20d96e1425dc6c61}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba326e2020413f73ab20d96e1425dc6c61}} 
+Closing\+Data\+Connection&Closing data connection, requested file action successful. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EnteringPassiveMode@{EnteringPassiveMode}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!EnteringPassiveMode@{EnteringPassiveMode}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba772b171084e6352b039a3190edd49d47}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba772b171084e6352b039a3190edd49d47}} 
+Entering\+Passive\+Mode&Entering passive mode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LoggedIn@{LoggedIn}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!LoggedIn@{LoggedIn}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baed6a77a3599d7d2c99261e8fd67ddc02}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baed6a77a3599d7d2c99261e8fd67ddc02}} 
+Logged\+In&User logged in, proceed. Logged out if appropriate. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FileActionOk@{FileActionOk}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!FileActionOk@{FileActionOk}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba533ecde0d9d9fb8ced97451dafe478f4}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba533ecde0d9d9fb8ced97451dafe478f4}} 
+File\+Action\+Ok&Requested file action ok. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DirectoryOk@{DirectoryOk}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!DirectoryOk@{DirectoryOk}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba469897826bb8b8139df17bc60e584df1}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba469897826bb8b8139df17bc60e584df1}} 
+Directory\+Ok&PATHNAME created. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NeedPassword@{NeedPassword}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!NeedPassword@{NeedPassword}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baeb7f26cf02a13fc05d9e1d8a323b1dde}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baeb7f26cf02a13fc05d9e1d8a323b1dde}} 
+Need\+Password&User name ok, need password. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NeedAccountToLogIn@{NeedAccountToLogIn}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!NeedAccountToLogIn@{NeedAccountToLogIn}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa8c41b24d7fba52b82600c74929a7d8c}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa8c41b24d7fba52b82600c74929a7d8c}} 
+Need\+Account\+To\+Log\+In&Need account for login. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NeedInformation@{NeedInformation}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!NeedInformation@{NeedInformation}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba3e7c902cae306df22540129d1b9c3731}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba3e7c902cae306df22540129d1b9c3731}} 
+Need\+Information&Requested file action pending further information. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ServiceUnavailable@{ServiceUnavailable}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ServiceUnavailable@{ServiceUnavailable}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba831d98246d1bf42ce95e7f75bb34d485}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba831d98246d1bf42ce95e7f75bb34d485}} 
+Service\+Unavailable&Service not available, closing control connection. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DataConnectionUnavailable@{DataConnectionUnavailable}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!DataConnectionUnavailable@{DataConnectionUnavailable}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba0b82e3e39aa5ce3e9b3115abd04c74cf}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba0b82e3e39aa5ce3e9b3115abd04c74cf}} 
+Data\+Connection\+Unavailable&Can\textquotesingle{}t open data connection. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TransferAborted@{TransferAborted}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!TransferAborted@{TransferAborted}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba05e7e2eb62bf7d8709f5f6d37dbde7cb}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba05e7e2eb62bf7d8709f5f6d37dbde7cb}} 
+Transfer\+Aborted&Connection closed, transfer aborted. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FileActionAborted@{FileActionAborted}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!FileActionAborted@{FileActionAborted}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba2d2f79c754ef2257e4e3ad96985506b4}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba2d2f79c754ef2257e4e3ad96985506b4}} 
+File\+Action\+Aborted&Requested file action not taken. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LocalError@{LocalError}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!LocalError@{LocalError}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba5400391612ec91f15e64255a4c55b3c3}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba5400391612ec91f15e64255a4c55b3c3}} 
+Local\+Error&Requested action aborted, local error in processing. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InsufficientStorageSpace@{InsufficientStorageSpace}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!InsufficientStorageSpace@{InsufficientStorageSpace}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac5e00c7cb975030504b2afb86e47fa68}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac5e00c7cb975030504b2afb86e47fa68}} 
+Insufficient\+Storage\+Space&Requested action not taken; insufficient storage space in system, file unavailable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CommandUnknown@{CommandUnknown}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!CommandUnknown@{CommandUnknown}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4ccd31337b9478c6cf5089523e16b540}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4ccd31337b9478c6cf5089523e16b540}} 
+Command\+Unknown&Syntax error, command unrecognized. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ParametersUnknown@{ParametersUnknown}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ParametersUnknown@{ParametersUnknown}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba00a8672a96112ad00dc2f1117e1146ac}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba00a8672a96112ad00dc2f1117e1146ac}} 
+Parameters\+Unknown&Syntax error in parameters or arguments. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CommandNotImplemented@{CommandNotImplemented}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!CommandNotImplemented@{CommandNotImplemented}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac91eba896240e927206c386f5bf8e32e}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac91eba896240e927206c386f5bf8e32e}} 
+Command\+Not\+Implemented&\mbox{\hyperlink{struct_command}{Command}} not implemented. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BadCommandSequence@{BadCommandSequence}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!BadCommandSequence@{BadCommandSequence}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba0547dfb381e953f77b7c5a2733c40613}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba0547dfb381e953f77b7c5a2733c40613}} 
+Bad\+Command\+Sequence&Bad sequence of commands. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ParameterNotImplemented@{ParameterNotImplemented}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ParameterNotImplemented@{ParameterNotImplemented}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba91b4fde3e5e13d59a08c06310b29028d}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba91b4fde3e5e13d59a08c06310b29028d}} 
+Parameter\+Not\+Implemented&\mbox{\hyperlink{struct_command}{Command}} not implemented for that parameter. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NotLoggedIn@{NotLoggedIn}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!NotLoggedIn@{NotLoggedIn}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4d55199035de3c613fff260681ca762e}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4d55199035de3c613fff260681ca762e}} 
+Not\+Logged\+In&Not logged in. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NeedAccountToStore@{NeedAccountToStore}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!NeedAccountToStore@{NeedAccountToStore}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa19655e1a74e69425758933af91d0c65}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa19655e1a74e69425758933af91d0c65}} 
+Need\+Account\+To\+Store&Need account for storing files. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FileUnavailable@{FileUnavailable}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!FileUnavailable@{FileUnavailable}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab1baeceb935584402decd35925a4e443}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab1baeceb935584402decd35925a4e443}} 
+File\+Unavailable&Requested action not taken, file unavailable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PageTypeUnknown@{PageTypeUnknown}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!PageTypeUnknown@{PageTypeUnknown}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba54368544faf2ec0bfde88dded6920dfc}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba54368544faf2ec0bfde88dded6920dfc}} 
+Page\+Type\+Unknown&Requested action aborted, page type unknown. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NotEnoughMemory@{NotEnoughMemory}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!NotEnoughMemory@{NotEnoughMemory}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab65332f3729d28c9f2551dfa2827dc0c}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab65332f3729d28c9f2551dfa2827dc0c}} 
+Not\+Enough\+Memory&Requested file action aborted, exceeded storage allocation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FilenameNotAllowed@{FilenameNotAllowed}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!FilenameNotAllowed@{FilenameNotAllowed}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba84de438a2c6c6bf461c1bc2f79eba577}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba84de438a2c6c6bf461c1bc2f79eba577}} 
+Filename\+Not\+Allowed&Requested action not taken, file name not allowed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InvalidResponse@{InvalidResponse}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!InvalidResponse@{InvalidResponse}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba2832369b24738d47a832361b09fef964}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba2832369b24738d47a832361b09fef964}} 
+Invalid\+Response&Not part of the FTP standard, generated by SFML when a received response cannot be parsed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ConnectionFailed@{ConnectionFailed}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ConnectionFailed@{ConnectionFailed}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba099e88e94cf51258fd901177a37f7bb7}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba099e88e94cf51258fd901177a37f7bb7}} 
+Connection\+Failed&Not part of the FTP standard, generated by SFML when the low-\/level socket connection with the server fails. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ConnectionClosed@{ConnectionClosed}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ConnectionClosed@{ConnectionClosed}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baf84c1847c12fe7216eca9a49af1b0cd7}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baf84c1847c12fe7216eca9a49af1b0cd7}} 
+Connection\+Closed&Not part of the FTP standard, generated by SFML when the low-\/level socket connection is unexpectedly closed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InvalidFile@{InvalidFile}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!InvalidFile@{InvalidFile}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba94f4054b5814eb4fe0fc6d576376503a}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba94f4054b5814eb4fe0fc6d576376503a}} 
+Invalid\+File&Not part of the FTP standard, generated by SFML when a local file cannot be read or written. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ftp_8hpp_source_l00074}{74}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ftp_8hpp_source}{Ftp.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3b}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3b}} 
+\index{sf::Ftp::Response@{sf::Ftp::Response}!Status@{Status}}
+\index{Status@{Status}!sf::Ftp::Response@{sf::Ftp::Response}}
+\doxysubsubsection{\texorpdfstring{Status}{Status}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3b}{sf\+::\+Ftp\+::\+Response\+::\+Status}}}
+
+
+
+Status codes possibly returned by a FTP response. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RestartMarkerReply@{RestartMarkerReply}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!RestartMarkerReply@{RestartMarkerReply}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba9c0f2a9ad7404aa610eb835ba06724a4}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba9c0f2a9ad7404aa610eb835ba06724a4}} 
+Restart\+Marker\+Reply&Restart marker reply. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ServiceReadySoon@{ServiceReadySoon}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ServiceReadySoon@{ServiceReadySoon}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba68f0497585e490250bc2985edb4201d3}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba68f0497585e490250bc2985edb4201d3}} 
+Service\+Ready\+Soon&Service ready in N minutes. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DataConnectionAlreadyOpened@{DataConnectionAlreadyOpened}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!DataConnectionAlreadyOpened@{DataConnectionAlreadyOpened}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac40df58b564d1256c9dc7cbdaede9ad2}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac40df58b564d1256c9dc7cbdaede9ad2}} 
+Data\+Connection\+Already\+Opened&Data connection already opened, transfer starting. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OpeningDataConnection@{OpeningDataConnection}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!OpeningDataConnection@{OpeningDataConnection}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab31a5cb621b4097247dfd59565ae8b98}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab31a5cb621b4097247dfd59565ae8b98}} 
+Opening\+Data\+Connection&File status ok, about to open data connection. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Ok@{Ok}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!Ok@{Ok}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac4a1be25f02eef9d4c28755d40e73fcc}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac4a1be25f02eef9d4c28755d40e73fcc}} 
+Ok&\mbox{\hyperlink{struct_command}{Command}} ok. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PointlessCommand@{PointlessCommand}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!PointlessCommand@{PointlessCommand}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4c9c5b2f0c45843fb21139636ac65334}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4c9c5b2f0c45843fb21139636ac65334}} 
+Pointless\+Command&\mbox{\hyperlink{struct_command}{Command}} not implemented. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SystemStatus@{SystemStatus}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!SystemStatus@{SystemStatus}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa179c6310d607c920b23a2d6ce2d61a7}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa179c6310d607c920b23a2d6ce2d61a7}} 
+System\+Status&System status, or system help reply. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DirectoryStatus@{DirectoryStatus}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!DirectoryStatus@{DirectoryStatus}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba01821e4dc199adbf69ef65df4f949da7}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba01821e4dc199adbf69ef65df4f949da7}} 
+Directory\+Status&Directory status. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FileStatus@{FileStatus}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!FileStatus@{FileStatus}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba5b006cb170dda08ade062b4fe1929927}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba5b006cb170dda08ade062b4fe1929927}} 
+File\+Status&File status. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HelpMessage@{HelpMessage}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!HelpMessage@{HelpMessage}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba90cc40f06a165f2eef3036f5a63ccad4}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba90cc40f06a165f2eef3036f5a63ccad4}} 
+Help\+Message&Help message. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SystemType@{SystemType}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!SystemType@{SystemType}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baf9f5fd830fbc98405658fcdd1ed4b958}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baf9f5fd830fbc98405658fcdd1ed4b958}} 
+System\+Type&NAME system type, where NAME is an official system name from the list in the Assigned Numbers document. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ServiceReady@{ServiceReady}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ServiceReady@{ServiceReady}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba94cd5a9201b7ebf0c10739860614e38a}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba94cd5a9201b7ebf0c10739860614e38a}} 
+Service\+Ready&Service ready for new user. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ClosingConnection@{ClosingConnection}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ClosingConnection@{ClosingConnection}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bae070a7c775b991e22bbc94164c06a3e1}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bae070a7c775b991e22bbc94164c06a3e1}} 
+Closing\+Connection&Service closing control connection. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DataConnectionOpened@{DataConnectionOpened}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!DataConnectionOpened@{DataConnectionOpened}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baca24974cc31d5076fb34effeb7c37459}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baca24974cc31d5076fb34effeb7c37459}} 
+Data\+Connection\+Opened&Data connection open, no transfer in progress. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ClosingDataConnection@{ClosingDataConnection}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ClosingDataConnection@{ClosingDataConnection}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba326e2020413f73ab20d96e1425dc6c61}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba326e2020413f73ab20d96e1425dc6c61}} 
+Closing\+Data\+Connection&Closing data connection, requested file action successful. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EnteringPassiveMode@{EnteringPassiveMode}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!EnteringPassiveMode@{EnteringPassiveMode}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba772b171084e6352b039a3190edd49d47}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba772b171084e6352b039a3190edd49d47}} 
+Entering\+Passive\+Mode&Entering passive mode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LoggedIn@{LoggedIn}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!LoggedIn@{LoggedIn}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baed6a77a3599d7d2c99261e8fd67ddc02}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baed6a77a3599d7d2c99261e8fd67ddc02}} 
+Logged\+In&User logged in, proceed. Logged out if appropriate. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FileActionOk@{FileActionOk}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!FileActionOk@{FileActionOk}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba533ecde0d9d9fb8ced97451dafe478f4}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba533ecde0d9d9fb8ced97451dafe478f4}} 
+File\+Action\+Ok&Requested file action ok. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DirectoryOk@{DirectoryOk}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!DirectoryOk@{DirectoryOk}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba469897826bb8b8139df17bc60e584df1}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba469897826bb8b8139df17bc60e584df1}} 
+Directory\+Ok&PATHNAME created. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NeedPassword@{NeedPassword}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!NeedPassword@{NeedPassword}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baeb7f26cf02a13fc05d9e1d8a323b1dde}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baeb7f26cf02a13fc05d9e1d8a323b1dde}} 
+Need\+Password&User name ok, need password. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NeedAccountToLogIn@{NeedAccountToLogIn}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!NeedAccountToLogIn@{NeedAccountToLogIn}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa8c41b24d7fba52b82600c74929a7d8c}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa8c41b24d7fba52b82600c74929a7d8c}} 
+Need\+Account\+To\+Log\+In&Need account for login. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NeedInformation@{NeedInformation}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!NeedInformation@{NeedInformation}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba3e7c902cae306df22540129d1b9c3731}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba3e7c902cae306df22540129d1b9c3731}} 
+Need\+Information&Requested file action pending further information. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ServiceUnavailable@{ServiceUnavailable}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ServiceUnavailable@{ServiceUnavailable}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba831d98246d1bf42ce95e7f75bb34d485}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba831d98246d1bf42ce95e7f75bb34d485}} 
+Service\+Unavailable&Service not available, closing control connection. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DataConnectionUnavailable@{DataConnectionUnavailable}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!DataConnectionUnavailable@{DataConnectionUnavailable}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba0b82e3e39aa5ce3e9b3115abd04c74cf}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba0b82e3e39aa5ce3e9b3115abd04c74cf}} 
+Data\+Connection\+Unavailable&Can\textquotesingle{}t open data connection. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TransferAborted@{TransferAborted}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!TransferAborted@{TransferAborted}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba05e7e2eb62bf7d8709f5f6d37dbde7cb}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba05e7e2eb62bf7d8709f5f6d37dbde7cb}} 
+Transfer\+Aborted&Connection closed, transfer aborted. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FileActionAborted@{FileActionAborted}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!FileActionAborted@{FileActionAborted}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba2d2f79c754ef2257e4e3ad96985506b4}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba2d2f79c754ef2257e4e3ad96985506b4}} 
+File\+Action\+Aborted&Requested file action not taken. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LocalError@{LocalError}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!LocalError@{LocalError}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba5400391612ec91f15e64255a4c55b3c3}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba5400391612ec91f15e64255a4c55b3c3}} 
+Local\+Error&Requested action aborted, local error in processing. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InsufficientStorageSpace@{InsufficientStorageSpace}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!InsufficientStorageSpace@{InsufficientStorageSpace}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac5e00c7cb975030504b2afb86e47fa68}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac5e00c7cb975030504b2afb86e47fa68}} 
+Insufficient\+Storage\+Space&Requested action not taken; insufficient storage space in system, file unavailable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CommandUnknown@{CommandUnknown}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!CommandUnknown@{CommandUnknown}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4ccd31337b9478c6cf5089523e16b540}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4ccd31337b9478c6cf5089523e16b540}} 
+Command\+Unknown&Syntax error, command unrecognized. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ParametersUnknown@{ParametersUnknown}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ParametersUnknown@{ParametersUnknown}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba00a8672a96112ad00dc2f1117e1146ac}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba00a8672a96112ad00dc2f1117e1146ac}} 
+Parameters\+Unknown&Syntax error in parameters or arguments. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CommandNotImplemented@{CommandNotImplemented}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!CommandNotImplemented@{CommandNotImplemented}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac91eba896240e927206c386f5bf8e32e}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac91eba896240e927206c386f5bf8e32e}} 
+Command\+Not\+Implemented&\mbox{\hyperlink{struct_command}{Command}} not implemented. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BadCommandSequence@{BadCommandSequence}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!BadCommandSequence@{BadCommandSequence}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba0547dfb381e953f77b7c5a2733c40613}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba0547dfb381e953f77b7c5a2733c40613}} 
+Bad\+Command\+Sequence&Bad sequence of commands. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ParameterNotImplemented@{ParameterNotImplemented}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ParameterNotImplemented@{ParameterNotImplemented}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba91b4fde3e5e13d59a08c06310b29028d}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba91b4fde3e5e13d59a08c06310b29028d}} 
+Parameter\+Not\+Implemented&\mbox{\hyperlink{struct_command}{Command}} not implemented for that parameter. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NotLoggedIn@{NotLoggedIn}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!NotLoggedIn@{NotLoggedIn}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4d55199035de3c613fff260681ca762e}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4d55199035de3c613fff260681ca762e}} 
+Not\+Logged\+In&Not logged in. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NeedAccountToStore@{NeedAccountToStore}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!NeedAccountToStore@{NeedAccountToStore}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa19655e1a74e69425758933af91d0c65}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa19655e1a74e69425758933af91d0c65}} 
+Need\+Account\+To\+Store&Need account for storing files. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FileUnavailable@{FileUnavailable}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!FileUnavailable@{FileUnavailable}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab1baeceb935584402decd35925a4e443}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab1baeceb935584402decd35925a4e443}} 
+File\+Unavailable&Requested action not taken, file unavailable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PageTypeUnknown@{PageTypeUnknown}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!PageTypeUnknown@{PageTypeUnknown}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba54368544faf2ec0bfde88dded6920dfc}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba54368544faf2ec0bfde88dded6920dfc}} 
+Page\+Type\+Unknown&Requested action aborted, page type unknown. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NotEnoughMemory@{NotEnoughMemory}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!NotEnoughMemory@{NotEnoughMemory}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab65332f3729d28c9f2551dfa2827dc0c}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab65332f3729d28c9f2551dfa2827dc0c}} 
+Not\+Enough\+Memory&Requested file action aborted, exceeded storage allocation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FilenameNotAllowed@{FilenameNotAllowed}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!FilenameNotAllowed@{FilenameNotAllowed}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba84de438a2c6c6bf461c1bc2f79eba577}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba84de438a2c6c6bf461c1bc2f79eba577}} 
+Filename\+Not\+Allowed&Requested action not taken, file name not allowed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InvalidResponse@{InvalidResponse}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!InvalidResponse@{InvalidResponse}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba2832369b24738d47a832361b09fef964}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba2832369b24738d47a832361b09fef964}} 
+Invalid\+Response&Not part of the FTP standard, generated by SFML when a received response cannot be parsed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ConnectionFailed@{ConnectionFailed}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ConnectionFailed@{ConnectionFailed}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba099e88e94cf51258fd901177a37f7bb7}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba099e88e94cf51258fd901177a37f7bb7}} 
+Connection\+Failed&Not part of the FTP standard, generated by SFML when the low-\/level socket connection with the server fails. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ConnectionClosed@{ConnectionClosed}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ConnectionClosed@{ConnectionClosed}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baf84c1847c12fe7216eca9a49af1b0cd7}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baf84c1847c12fe7216eca9a49af1b0cd7}} 
+Connection\+Closed&Not part of the FTP standard, generated by SFML when the low-\/level socket connection is unexpectedly closed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InvalidFile@{InvalidFile}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!InvalidFile@{InvalidFile}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba94f4054b5814eb4fe0fc6d576376503a}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba94f4054b5814eb4fe0fc6d576376503a}} 
+Invalid\+File&Not part of the FTP standard, generated by SFML when a local file cannot be read or written. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RestartMarkerReply@{RestartMarkerReply}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!RestartMarkerReply@{RestartMarkerReply}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba9c0f2a9ad7404aa610eb835ba06724a4}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba9c0f2a9ad7404aa610eb835ba06724a4}} 
+Restart\+Marker\+Reply&Restart marker reply. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ServiceReadySoon@{ServiceReadySoon}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ServiceReadySoon@{ServiceReadySoon}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba68f0497585e490250bc2985edb4201d3}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba68f0497585e490250bc2985edb4201d3}} 
+Service\+Ready\+Soon&Service ready in N minutes. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DataConnectionAlreadyOpened@{DataConnectionAlreadyOpened}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!DataConnectionAlreadyOpened@{DataConnectionAlreadyOpened}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac40df58b564d1256c9dc7cbdaede9ad2}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac40df58b564d1256c9dc7cbdaede9ad2}} 
+Data\+Connection\+Already\+Opened&Data connection already opened, transfer starting. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OpeningDataConnection@{OpeningDataConnection}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!OpeningDataConnection@{OpeningDataConnection}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab31a5cb621b4097247dfd59565ae8b98}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab31a5cb621b4097247dfd59565ae8b98}} 
+Opening\+Data\+Connection&File status ok, about to open data connection. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Ok@{Ok}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!Ok@{Ok}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac4a1be25f02eef9d4c28755d40e73fcc}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac4a1be25f02eef9d4c28755d40e73fcc}} 
+Ok&\mbox{\hyperlink{struct_command}{Command}} ok. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PointlessCommand@{PointlessCommand}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!PointlessCommand@{PointlessCommand}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4c9c5b2f0c45843fb21139636ac65334}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4c9c5b2f0c45843fb21139636ac65334}} 
+Pointless\+Command&\mbox{\hyperlink{struct_command}{Command}} not implemented. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SystemStatus@{SystemStatus}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!SystemStatus@{SystemStatus}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa179c6310d607c920b23a2d6ce2d61a7}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa179c6310d607c920b23a2d6ce2d61a7}} 
+System\+Status&System status, or system help reply. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DirectoryStatus@{DirectoryStatus}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!DirectoryStatus@{DirectoryStatus}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba01821e4dc199adbf69ef65df4f949da7}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba01821e4dc199adbf69ef65df4f949da7}} 
+Directory\+Status&Directory status. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FileStatus@{FileStatus}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!FileStatus@{FileStatus}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba5b006cb170dda08ade062b4fe1929927}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba5b006cb170dda08ade062b4fe1929927}} 
+File\+Status&File status. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HelpMessage@{HelpMessage}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!HelpMessage@{HelpMessage}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba90cc40f06a165f2eef3036f5a63ccad4}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba90cc40f06a165f2eef3036f5a63ccad4}} 
+Help\+Message&Help message. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SystemType@{SystemType}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!SystemType@{SystemType}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baf9f5fd830fbc98405658fcdd1ed4b958}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baf9f5fd830fbc98405658fcdd1ed4b958}} 
+System\+Type&NAME system type, where NAME is an official system name from the list in the Assigned Numbers document. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ServiceReady@{ServiceReady}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ServiceReady@{ServiceReady}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba94cd5a9201b7ebf0c10739860614e38a}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba94cd5a9201b7ebf0c10739860614e38a}} 
+Service\+Ready&Service ready for new user. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ClosingConnection@{ClosingConnection}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ClosingConnection@{ClosingConnection}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bae070a7c775b991e22bbc94164c06a3e1}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bae070a7c775b991e22bbc94164c06a3e1}} 
+Closing\+Connection&Service closing control connection. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DataConnectionOpened@{DataConnectionOpened}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!DataConnectionOpened@{DataConnectionOpened}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baca24974cc31d5076fb34effeb7c37459}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baca24974cc31d5076fb34effeb7c37459}} 
+Data\+Connection\+Opened&Data connection open, no transfer in progress. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ClosingDataConnection@{ClosingDataConnection}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ClosingDataConnection@{ClosingDataConnection}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba326e2020413f73ab20d96e1425dc6c61}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba326e2020413f73ab20d96e1425dc6c61}} 
+Closing\+Data\+Connection&Closing data connection, requested file action successful. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EnteringPassiveMode@{EnteringPassiveMode}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!EnteringPassiveMode@{EnteringPassiveMode}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba772b171084e6352b039a3190edd49d47}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba772b171084e6352b039a3190edd49d47}} 
+Entering\+Passive\+Mode&Entering passive mode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LoggedIn@{LoggedIn}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!LoggedIn@{LoggedIn}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baed6a77a3599d7d2c99261e8fd67ddc02}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baed6a77a3599d7d2c99261e8fd67ddc02}} 
+Logged\+In&User logged in, proceed. Logged out if appropriate. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FileActionOk@{FileActionOk}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!FileActionOk@{FileActionOk}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba533ecde0d9d9fb8ced97451dafe478f4}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba533ecde0d9d9fb8ced97451dafe478f4}} 
+File\+Action\+Ok&Requested file action ok. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DirectoryOk@{DirectoryOk}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!DirectoryOk@{DirectoryOk}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba469897826bb8b8139df17bc60e584df1}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba469897826bb8b8139df17bc60e584df1}} 
+Directory\+Ok&PATHNAME created. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NeedPassword@{NeedPassword}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!NeedPassword@{NeedPassword}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baeb7f26cf02a13fc05d9e1d8a323b1dde}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baeb7f26cf02a13fc05d9e1d8a323b1dde}} 
+Need\+Password&User name ok, need password. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NeedAccountToLogIn@{NeedAccountToLogIn}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!NeedAccountToLogIn@{NeedAccountToLogIn}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa8c41b24d7fba52b82600c74929a7d8c}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa8c41b24d7fba52b82600c74929a7d8c}} 
+Need\+Account\+To\+Log\+In&Need account for login. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NeedInformation@{NeedInformation}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!NeedInformation@{NeedInformation}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba3e7c902cae306df22540129d1b9c3731}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba3e7c902cae306df22540129d1b9c3731}} 
+Need\+Information&Requested file action pending further information. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ServiceUnavailable@{ServiceUnavailable}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ServiceUnavailable@{ServiceUnavailable}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba831d98246d1bf42ce95e7f75bb34d485}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba831d98246d1bf42ce95e7f75bb34d485}} 
+Service\+Unavailable&Service not available, closing control connection. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DataConnectionUnavailable@{DataConnectionUnavailable}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!DataConnectionUnavailable@{DataConnectionUnavailable}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba0b82e3e39aa5ce3e9b3115abd04c74cf}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba0b82e3e39aa5ce3e9b3115abd04c74cf}} 
+Data\+Connection\+Unavailable&Can\textquotesingle{}t open data connection. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TransferAborted@{TransferAborted}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!TransferAborted@{TransferAborted}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba05e7e2eb62bf7d8709f5f6d37dbde7cb}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba05e7e2eb62bf7d8709f5f6d37dbde7cb}} 
+Transfer\+Aborted&Connection closed, transfer aborted. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FileActionAborted@{FileActionAborted}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!FileActionAborted@{FileActionAborted}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba2d2f79c754ef2257e4e3ad96985506b4}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba2d2f79c754ef2257e4e3ad96985506b4}} 
+File\+Action\+Aborted&Requested file action not taken. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LocalError@{LocalError}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!LocalError@{LocalError}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba5400391612ec91f15e64255a4c55b3c3}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba5400391612ec91f15e64255a4c55b3c3}} 
+Local\+Error&Requested action aborted, local error in processing. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InsufficientStorageSpace@{InsufficientStorageSpace}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!InsufficientStorageSpace@{InsufficientStorageSpace}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac5e00c7cb975030504b2afb86e47fa68}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac5e00c7cb975030504b2afb86e47fa68}} 
+Insufficient\+Storage\+Space&Requested action not taken; insufficient storage space in system, file unavailable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CommandUnknown@{CommandUnknown}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!CommandUnknown@{CommandUnknown}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4ccd31337b9478c6cf5089523e16b540}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4ccd31337b9478c6cf5089523e16b540}} 
+Command\+Unknown&Syntax error, command unrecognized. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ParametersUnknown@{ParametersUnknown}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ParametersUnknown@{ParametersUnknown}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba00a8672a96112ad00dc2f1117e1146ac}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba00a8672a96112ad00dc2f1117e1146ac}} 
+Parameters\+Unknown&Syntax error in parameters or arguments. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CommandNotImplemented@{CommandNotImplemented}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!CommandNotImplemented@{CommandNotImplemented}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac91eba896240e927206c386f5bf8e32e}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bac91eba896240e927206c386f5bf8e32e}} 
+Command\+Not\+Implemented&\mbox{\hyperlink{struct_command}{Command}} not implemented. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BadCommandSequence@{BadCommandSequence}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!BadCommandSequence@{BadCommandSequence}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba0547dfb381e953f77b7c5a2733c40613}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba0547dfb381e953f77b7c5a2733c40613}} 
+Bad\+Command\+Sequence&Bad sequence of commands. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ParameterNotImplemented@{ParameterNotImplemented}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ParameterNotImplemented@{ParameterNotImplemented}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba91b4fde3e5e13d59a08c06310b29028d}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba91b4fde3e5e13d59a08c06310b29028d}} 
+Parameter\+Not\+Implemented&\mbox{\hyperlink{struct_command}{Command}} not implemented for that parameter. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NotLoggedIn@{NotLoggedIn}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!NotLoggedIn@{NotLoggedIn}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4d55199035de3c613fff260681ca762e}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba4d55199035de3c613fff260681ca762e}} 
+Not\+Logged\+In&Not logged in. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NeedAccountToStore@{NeedAccountToStore}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!NeedAccountToStore@{NeedAccountToStore}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa19655e1a74e69425758933af91d0c65}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baa19655e1a74e69425758933af91d0c65}} 
+Need\+Account\+To\+Store&Need account for storing files. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FileUnavailable@{FileUnavailable}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!FileUnavailable@{FileUnavailable}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab1baeceb935584402decd35925a4e443}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab1baeceb935584402decd35925a4e443}} 
+File\+Unavailable&Requested action not taken, file unavailable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PageTypeUnknown@{PageTypeUnknown}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!PageTypeUnknown@{PageTypeUnknown}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba54368544faf2ec0bfde88dded6920dfc}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba54368544faf2ec0bfde88dded6920dfc}} 
+Page\+Type\+Unknown&Requested action aborted, page type unknown. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NotEnoughMemory@{NotEnoughMemory}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!NotEnoughMemory@{NotEnoughMemory}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab65332f3729d28c9f2551dfa2827dc0c}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3bab65332f3729d28c9f2551dfa2827dc0c}} 
+Not\+Enough\+Memory&Requested file action aborted, exceeded storage allocation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FilenameNotAllowed@{FilenameNotAllowed}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!FilenameNotAllowed@{FilenameNotAllowed}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba84de438a2c6c6bf461c1bc2f79eba577}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba84de438a2c6c6bf461c1bc2f79eba577}} 
+Filename\+Not\+Allowed&Requested action not taken, file name not allowed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InvalidResponse@{InvalidResponse}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!InvalidResponse@{InvalidResponse}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba2832369b24738d47a832361b09fef964}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba2832369b24738d47a832361b09fef964}} 
+Invalid\+Response&Not part of the FTP standard, generated by SFML when a received response cannot be parsed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ConnectionFailed@{ConnectionFailed}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ConnectionFailed@{ConnectionFailed}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba099e88e94cf51258fd901177a37f7bb7}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba099e88e94cf51258fd901177a37f7bb7}} 
+Connection\+Failed&Not part of the FTP standard, generated by SFML when the low-\/level socket connection with the server fails. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ConnectionClosed@{ConnectionClosed}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!ConnectionClosed@{ConnectionClosed}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baf84c1847c12fe7216eca9a49af1b0cd7}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3baf84c1847c12fe7216eca9a49af1b0cd7}} 
+Connection\+Closed&Not part of the FTP standard, generated by SFML when the low-\/level socket connection is unexpectedly closed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InvalidFile@{InvalidFile}!sf::Ftp::Response@{sf::Ftp::Response}}\index{sf::Ftp::Response@{sf::Ftp::Response}!InvalidFile@{InvalidFile}}}\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba94f4054b5814eb4fe0fc6d576376503a}\label{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba94f4054b5814eb4fe0fc6d576376503a}} 
+Invalid\+File&Not part of the FTP standard, generated by SFML when a local file cannot be read or written. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ftp_8hpp_source_l00074}{74}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ftp_8hpp_source}{Ftp.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af300fffd4862774102f978eb22f85d9b}\label{classsf_1_1_ftp_1_1_response_af300fffd4862774102f978eb22f85d9b}} 
+\index{sf::Ftp::Response@{sf::Ftp::Response}!Response@{Response}}
+\index{Response@{Response}!sf::Ftp::Response@{sf::Ftp::Response}}
+\doxysubsubsection{\texorpdfstring{Response()}{Response()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily sf\+::\+Ftp\+::\+Response\+::\+Response (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3b}{Status}}}]{code = {\ttfamily \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba2832369b24738d47a832361b09fef964}{Invalid\+Response}}},  }\item[{const std\+::string \&}]{message = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Default constructor. 
+
+This constructor is used by the FTP client to build the response.
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & \mbox{\hyperlink{classsf_1_1_ftp_1_1_response}{Response}} status code \\
+\hline
+{\em message} & \mbox{\hyperlink{classsf_1_1_ftp_1_1_response}{Response}} message \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af300fffd4862774102f978eb22f85d9b}\label{classsf_1_1_ftp_1_1_response_af300fffd4862774102f978eb22f85d9b}} 
+\index{sf::Ftp::Response@{sf::Ftp::Response}!Response@{Response}}
+\index{Response@{Response}!sf::Ftp::Response@{sf::Ftp::Response}}
+\doxysubsubsection{\texorpdfstring{Response()}{Response()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sf\+::\+Ftp\+::\+Response\+::\+Response (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3b}{Status}}}]{code = {\ttfamily \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3ba2832369b24738d47a832361b09fef964}{Invalid\+Response}}},  }\item[{const std\+::string \&}]{message = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Default constructor. 
+
+This constructor is used by the FTP client to build the response.
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & \mbox{\hyperlink{classsf_1_1_ftp_1_1_response}{Response}} status code \\
+\hline
+{\em message} & \mbox{\hyperlink{classsf_1_1_ftp_1_1_response}{Response}} message \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_adc2890c93c9f8ee997b828fcbef82c97}\label{classsf_1_1_ftp_1_1_response_adc2890c93c9f8ee997b828fcbef82c97}} 
+\index{sf::Ftp::Response@{sf::Ftp::Response}!getMessage@{getMessage}}
+\index{getMessage@{getMessage}!sf::Ftp::Response@{sf::Ftp::Response}}
+\doxysubsubsection{\texorpdfstring{getMessage()}{getMessage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const std\+::string \& sf\+::\+Ftp\+::\+Response\+::get\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the full message contained in the response. 
+
+\begin{DoxyReturn}{Returns}
+The response message 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_adc2890c93c9f8ee997b828fcbef82c97}\label{classsf_1_1_ftp_1_1_response_adc2890c93c9f8ee997b828fcbef82c97}} 
+\index{sf::Ftp::Response@{sf::Ftp::Response}!getMessage@{getMessage}}
+\index{getMessage@{getMessage}!sf::Ftp::Response@{sf::Ftp::Response}}
+\doxysubsubsection{\texorpdfstring{getMessage()}{getMessage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const std\+::string \& sf\+::\+Ftp\+::\+Response\+::get\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the full message contained in the response. 
+
+\begin{DoxyReturn}{Returns}
+The response message 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_a52bbca9fbf5451157bc055e3d8430c25}\label{classsf_1_1_ftp_1_1_response_a52bbca9fbf5451157bc055e3d8430c25}} 
+\index{sf::Ftp::Response@{sf::Ftp::Response}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!sf::Ftp::Response@{sf::Ftp::Response}}
+\doxysubsubsection{\texorpdfstring{getStatus()}{getStatus()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3b}{Status}} sf\+::\+Ftp\+::\+Response\+::get\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the status code of the response. 
+
+\begin{DoxyReturn}{Returns}
+Status code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_a52bbca9fbf5451157bc055e3d8430c25}\label{classsf_1_1_ftp_1_1_response_a52bbca9fbf5451157bc055e3d8430c25}} 
+\index{sf::Ftp::Response@{sf::Ftp::Response}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!sf::Ftp::Response@{sf::Ftp::Response}}
+\doxysubsubsection{\texorpdfstring{getStatus()}{getStatus()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3b}{Status}} sf\+::\+Ftp\+::\+Response\+::get\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the status code of the response. 
+
+\begin{DoxyReturn}{Returns}
+Status code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_a5102552955a2652c1a39e9046e617b36}\label{classsf_1_1_ftp_1_1_response_a5102552955a2652c1a39e9046e617b36}} 
+\index{sf::Ftp::Response@{sf::Ftp::Response}!isOk@{isOk}}
+\index{isOk@{isOk}!sf::Ftp::Response@{sf::Ftp::Response}}
+\doxysubsubsection{\texorpdfstring{isOk()}{isOk()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool sf\+::\+Ftp\+::\+Response\+::is\+Ok (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if the status code means a success. 
+
+This function is defined for convenience, it is equivalent to testing if the status code is \texorpdfstring{$<$}{<} 400.
+
+\begin{DoxyReturn}{Returns}
+True if the status is a success, false if it is a failure 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_a5102552955a2652c1a39e9046e617b36}\label{classsf_1_1_ftp_1_1_response_a5102552955a2652c1a39e9046e617b36}} 
+\index{sf::Ftp::Response@{sf::Ftp::Response}!isOk@{isOk}}
+\index{isOk@{isOk}!sf::Ftp::Response@{sf::Ftp::Response}}
+\doxysubsubsection{\texorpdfstring{isOk()}{isOk()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool sf\+::\+Ftp\+::\+Response\+::is\+Ok (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if the status code means a success. 
+
+This function is defined for convenience, it is equivalent to testing if the status code is \texorpdfstring{$<$}{<} 400.
+
+\begin{DoxyReturn}{Returns}
+True if the status is a success, false if it is a failure 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_aaf692d0df6066d4a1f4d0677869b8f7b}\label{classsf_1_1_ftp_1_1_response_aaf692d0df6066d4a1f4d0677869b8f7b}} 
+\index{sf::Ftp::Response@{sf::Ftp::Response}!m\_message@{m\_message}}
+\index{m\_message@{m\_message}!sf::Ftp::Response@{sf::Ftp::Response}}
+\doxysubsubsection{\texorpdfstring{m\_message}{m\_message}}
+{\footnotesize\ttfamily std\+::string sf\+::\+Ftp\+::\+Response\+::m\+\_\+message\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Last message received from the server. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ftp_8hpp_source_l00181}{181}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ftp_8hpp_source}{Ftp.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_ftp_1_1_response_af3a8918ddd408ff8fbcce5c0beda11d4}\label{classsf_1_1_ftp_1_1_response_af3a8918ddd408ff8fbcce5c0beda11d4}} 
+\index{sf::Ftp::Response@{sf::Ftp::Response}!m\_status@{m\_status}}
+\index{m\_status@{m\_status}!sf::Ftp::Response@{sf::Ftp::Response}}
+\doxysubsubsection{\texorpdfstring{m\_status}{m\_status}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_ftp_1_1_response_af81738f06b6f571761696291276acb3b}{Status}} sf\+::\+Ftp\+::\+Response\+::m\+\_\+status\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Status code returned from the server. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ftp_8hpp_source_l00180}{180}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ftp_8hpp_source}{Ftp.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+SFML-\/2.\+5.\+1/include/\+SFML/\+Network/\mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ftp_8hpp}{Ftp.\+hpp}}\item 
+Week14/\+SFML-\/2.\+5.\+1/include/\+SFML/\+Network/\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ftp_8hpp}{Ftp.\+hpp}}\end{DoxyCompactItemize}

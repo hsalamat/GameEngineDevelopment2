@@ -1,0 +1,305 @@
+\hypertarget{class_network_audio_stream}{}\doxysection{Network\+Audio\+Stream Class Reference}
+\label{class_network_audio_stream}\index{NetworkAudioStream@{NetworkAudioStream}}
+
+
+Customized sound stream for acquiring audio data from the network.  
+
+
+Inheritance diagram for Network\+Audio\+Stream\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.536232cm]{class_network_audio_stream}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_network_audio_stream_a16b7eba2911135401c404d67035206a8}{Network\+Audio\+Stream}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_network_audio_stream_a5c698fc66d35fe30ae5e0148c03766e3}{start}} (unsigned short port)
+\begin{DoxyCompactList}\small\item\em Run the server, stream audio data from the client. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_network_audio_stream_a16b7eba2911135401c404d67035206a8}{Network\+Audio\+Stream}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_network_audio_stream_a5c698fc66d35fe30ae5e0148c03766e3}{start}} (unsigned short port)
+\begin{DoxyCompactList}\small\item\em Run the server, stream audio data from the client. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{class_network_audio_stream_a7a2a574aec42b199788346ad6acd7914}{on\+Get\+Data}} (\mbox{\hyperlink{structsf_1_1_sound_stream_1_1_chunk}{sf\+::\+Sound\+Stream\+::\+Chunk}} \&data)
+\begin{DoxyCompactList}\small\item\em /see Sound\+Stream\+::\+On\+Get\+Data \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_network_audio_stream_adab7ec817f075ee5c9d403d641ab5c78}{on\+Seek}} (\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} time\+Offset)
+\begin{DoxyCompactList}\small\item\em /see Sound\+Stream\+::\+On\+Seek \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_network_audio_stream_a2b9ef1966a48b1b63af77e759b41d37e}{receive\+Loop}} ()
+\begin{DoxyCompactList}\small\item\em Get audio data from the client until playback is stopped. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_network_audio_stream_a7a2a574aec42b199788346ad6acd7914}{on\+Get\+Data}} (\mbox{\hyperlink{structsf_1_1_sound_stream_1_1_chunk}{sf\+::\+Sound\+Stream\+::\+Chunk}} \&data)
+\begin{DoxyCompactList}\small\item\em /see Sound\+Stream\+::\+On\+Get\+Data \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_network_audio_stream_adab7ec817f075ee5c9d403d641ab5c78}{on\+Seek}} (\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} time\+Offset)
+\begin{DoxyCompactList}\small\item\em /see Sound\+Stream\+::\+On\+Seek \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_network_audio_stream_a2b9ef1966a48b1b63af77e759b41d37e}{receive\+Loop}} ()
+\begin{DoxyCompactList}\small\item\em Get audio data from the client until playback is stopped. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsf_1_1_tcp_listener}{sf\+::\+Tcp\+Listener}} \mbox{\hyperlink{class_network_audio_stream_a047ee9c1b8f162cd6a4f6c329aad8955}{m\+\_\+listener}}
+\item 
+\mbox{\hyperlink{classsf_1_1_tcp_socket}{sf\+::\+Tcp\+Socket}} \mbox{\hyperlink{class_network_audio_stream_a19d8783e7d3e4ca5b7e504eebac01402}{m\+\_\+client}}
+\item 
+\mbox{\hyperlink{classsf_1_1_mutex}{sf\+::\+Mutex}} \mbox{\hyperlink{class_network_audio_stream_aec34e0d6d55c2ca64009362f4ab301a2}{m\+\_\+mutex}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{namespacesf_a3c8e10435e2a310a7741755e66b5c94e}{sf\+::\+Int16}} $>$ \mbox{\hyperlink{class_network_audio_stream_a11072449c6ba6ba1f946a8b120ab8216}{m\+\_\+samples}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{namespacesf_a3c8e10435e2a310a7741755e66b5c94e}{sf\+::\+Int16}} $>$ \mbox{\hyperlink{class_network_audio_stream_ad861eca779886b37a3fefc583f5d7575}{m\+\_\+temp\+Buffer}}
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{class_network_audio_stream_aa68563c14d3976a7272f3bb86ef8313a}{m\+\_\+offset}}
+\item 
+bool \mbox{\hyperlink{class_network_audio_stream_af50dfbf591997fe64fbb67022c490824}{m\+\_\+has\+Finished}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Customized sound stream for acquiring audio data from the network. 
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source}{Server.\+cpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_network_audio_stream_a16b7eba2911135401c404d67035206a8}\label{class_network_audio_stream_a16b7eba2911135401c404d67035206a8}} 
+\index{NetworkAudioStream@{NetworkAudioStream}!NetworkAudioStream@{NetworkAudioStream}}
+\index{NetworkAudioStream@{NetworkAudioStream}!NetworkAudioStream@{NetworkAudioStream}}
+\doxysubsubsection{\texorpdfstring{NetworkAudioStream()}{NetworkAudioStream()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Network\+Audio\+Stream\+::\+Network\+Audio\+Stream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source}{Server.\+cpp}}.
+
+\mbox{\Hypertarget{class_network_audio_stream_a16b7eba2911135401c404d67035206a8}\label{class_network_audio_stream_a16b7eba2911135401c404d67035206a8}} 
+\index{NetworkAudioStream@{NetworkAudioStream}!NetworkAudioStream@{NetworkAudioStream}}
+\index{NetworkAudioStream@{NetworkAudioStream}!NetworkAudioStream@{NetworkAudioStream}}
+\doxysubsubsection{\texorpdfstring{NetworkAudioStream()}{NetworkAudioStream()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Network\+Audio\+Stream\+::\+Network\+Audio\+Stream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor. 
+
+
+
+Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source}{Server.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_network_audio_stream_a7a2a574aec42b199788346ad6acd7914}\label{class_network_audio_stream_a7a2a574aec42b199788346ad6acd7914}} 
+\index{NetworkAudioStream@{NetworkAudioStream}!onGetData@{onGetData}}
+\index{onGetData@{onGetData}!NetworkAudioStream@{NetworkAudioStream}}
+\doxysubsubsection{\texorpdfstring{onGetData()}{onGetData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool Network\+Audio\+Stream\+::on\+Get\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsf_1_1_sound_stream_1_1_chunk}{sf\+::\+Sound\+Stream\+::\+Chunk}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+/see Sound\+Stream\+::\+On\+Get\+Data 
+
+
+
+Implements \mbox{\hyperlink{classsf_1_1_sound_stream_a968ec024a6e45490962c8a1121cb7c5f}{sf\+::\+Sound\+Stream}}.
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00073}{73}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source}{Server.\+cpp}}.
+
+\mbox{\Hypertarget{class_network_audio_stream_a7a2a574aec42b199788346ad6acd7914}\label{class_network_audio_stream_a7a2a574aec42b199788346ad6acd7914}} 
+\index{NetworkAudioStream@{NetworkAudioStream}!onGetData@{onGetData}}
+\index{onGetData@{onGetData}!NetworkAudioStream@{NetworkAudioStream}}
+\doxysubsubsection{\texorpdfstring{onGetData()}{onGetData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool Network\+Audio\+Stream\+::on\+Get\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsf_1_1_sound_stream_1_1_chunk}{sf\+::\+Sound\+Stream\+::\+Chunk}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+/see Sound\+Stream\+::\+On\+Get\+Data 
+
+
+
+Implements \mbox{\hyperlink{classsf_1_1_sound_stream_a968ec024a6e45490962c8a1121cb7c5f}{sf\+::\+Sound\+Stream}}.
+
+
+
+Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00073}{73}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source}{Server.\+cpp}}.
+
+\mbox{\Hypertarget{class_network_audio_stream_adab7ec817f075ee5c9d403d641ab5c78}\label{class_network_audio_stream_adab7ec817f075ee5c9d403d641ab5c78}} 
+\index{NetworkAudioStream@{NetworkAudioStream}!onSeek@{onSeek}}
+\index{onSeek@{onSeek}!NetworkAudioStream@{NetworkAudioStream}}
+\doxysubsubsection{\texorpdfstring{onSeek()}{onSeek()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Network\+Audio\+Stream\+::on\+Seek (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}}]{time\+Offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+/see Sound\+Stream\+::\+On\+Seek 
+
+
+
+Implements \mbox{\hyperlink{classsf_1_1_sound_stream_a907036dd2ca7d3af5ead316e54b75997}{sf\+::\+Sound\+Stream}}.
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00104}{104}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source}{Server.\+cpp}}.
+
+\mbox{\Hypertarget{class_network_audio_stream_adab7ec817f075ee5c9d403d641ab5c78}\label{class_network_audio_stream_adab7ec817f075ee5c9d403d641ab5c78}} 
+\index{NetworkAudioStream@{NetworkAudioStream}!onSeek@{onSeek}}
+\index{onSeek@{onSeek}!NetworkAudioStream@{NetworkAudioStream}}
+\doxysubsubsection{\texorpdfstring{onSeek()}{onSeek()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Network\+Audio\+Stream\+::on\+Seek (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}}]{time\+Offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+/see Sound\+Stream\+::\+On\+Seek 
+
+
+
+Implements \mbox{\hyperlink{classsf_1_1_sound_stream_a907036dd2ca7d3af5ead316e54b75997}{sf\+::\+Sound\+Stream}}.
+
+
+
+Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00104}{104}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source}{Server.\+cpp}}.
+
+\mbox{\Hypertarget{class_network_audio_stream_a2b9ef1966a48b1b63af77e759b41d37e}\label{class_network_audio_stream_a2b9ef1966a48b1b63af77e759b41d37e}} 
+\index{NetworkAudioStream@{NetworkAudioStream}!receiveLoop@{receiveLoop}}
+\index{receiveLoop@{receiveLoop}!NetworkAudioStream@{NetworkAudioStream}}
+\doxysubsubsection{\texorpdfstring{receiveLoop()}{receiveLoop()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Network\+Audio\+Stream\+::receive\+Loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Get audio data from the client until playback is stopped. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00113}{113}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source}{Server.\+cpp}}.
+
+\mbox{\Hypertarget{class_network_audio_stream_a2b9ef1966a48b1b63af77e759b41d37e}\label{class_network_audio_stream_a2b9ef1966a48b1b63af77e759b41d37e}} 
+\index{NetworkAudioStream@{NetworkAudioStream}!receiveLoop@{receiveLoop}}
+\index{receiveLoop@{receiveLoop}!NetworkAudioStream@{NetworkAudioStream}}
+\doxysubsubsection{\texorpdfstring{receiveLoop()}{receiveLoop()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Network\+Audio\+Stream\+::receive\+Loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Get audio data from the client until playback is stopped. 
+
+
+
+Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00113}{113}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source}{Server.\+cpp}}.
+
+\mbox{\Hypertarget{class_network_audio_stream_a5c698fc66d35fe30ae5e0148c03766e3}\label{class_network_audio_stream_a5c698fc66d35fe30ae5e0148c03766e3}} 
+\index{NetworkAudioStream@{NetworkAudioStream}!start@{start}}
+\index{start@{start}!NetworkAudioStream@{NetworkAudioStream}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Network\+Audio\+Stream\+::start (\begin{DoxyParamCaption}\item[{unsigned short}]{port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Run the server, stream audio data from the client. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source}{Server.\+cpp}}.
+
+\mbox{\Hypertarget{class_network_audio_stream_a5c698fc66d35fe30ae5e0148c03766e3}\label{class_network_audio_stream_a5c698fc66d35fe30ae5e0148c03766e3}} 
+\index{NetworkAudioStream@{NetworkAudioStream}!start@{start}}
+\index{start@{start}!NetworkAudioStream@{NetworkAudioStream}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Network\+Audio\+Stream\+::start (\begin{DoxyParamCaption}\item[{unsigned short}]{port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Run the server, stream audio data from the client. 
+
+
+
+Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source}{Server.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_network_audio_stream_a19d8783e7d3e4ca5b7e504eebac01402}\label{class_network_audio_stream_a19d8783e7d3e4ca5b7e504eebac01402}} 
+\index{NetworkAudioStream@{NetworkAudioStream}!m\_client@{m\_client}}
+\index{m\_client@{m\_client}!NetworkAudioStream@{NetworkAudioStream}}
+\doxysubsubsection{\texorpdfstring{m\_client}{m\_client}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_tcp_socket}{sf\+::\+Tcp\+Socket}} Network\+Audio\+Stream\+::m\+\_\+client\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00158}{158}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source}{Server.\+cpp}}.
+
+\mbox{\Hypertarget{class_network_audio_stream_af50dfbf591997fe64fbb67022c490824}\label{class_network_audio_stream_af50dfbf591997fe64fbb67022c490824}} 
+\index{NetworkAudioStream@{NetworkAudioStream}!m\_hasFinished@{m\_hasFinished}}
+\index{m\_hasFinished@{m\_hasFinished}!NetworkAudioStream@{NetworkAudioStream}}
+\doxysubsubsection{\texorpdfstring{m\_hasFinished}{m\_hasFinished}}
+{\footnotesize\ttfamily bool Network\+Audio\+Stream\+::m\+\_\+has\+Finished\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00163}{163}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source}{Server.\+cpp}}.
+
+\mbox{\Hypertarget{class_network_audio_stream_a047ee9c1b8f162cd6a4f6c329aad8955}\label{class_network_audio_stream_a047ee9c1b8f162cd6a4f6c329aad8955}} 
+\index{NetworkAudioStream@{NetworkAudioStream}!m\_listener@{m\_listener}}
+\index{m\_listener@{m\_listener}!NetworkAudioStream@{NetworkAudioStream}}
+\doxysubsubsection{\texorpdfstring{m\_listener}{m\_listener}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_tcp_listener}{sf\+::\+Tcp\+Listener}} Network\+Audio\+Stream\+::m\+\_\+listener\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00157}{157}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source}{Server.\+cpp}}.
+
+\mbox{\Hypertarget{class_network_audio_stream_aec34e0d6d55c2ca64009362f4ab301a2}\label{class_network_audio_stream_aec34e0d6d55c2ca64009362f4ab301a2}} 
+\index{NetworkAudioStream@{NetworkAudioStream}!m\_mutex@{m\_mutex}}
+\index{m\_mutex@{m\_mutex}!NetworkAudioStream@{NetworkAudioStream}}
+\doxysubsubsection{\texorpdfstring{m\_mutex}{m\_mutex}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_mutex}{sf\+::\+Mutex}} Network\+Audio\+Stream\+::m\+\_\+mutex\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00159}{159}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source}{Server.\+cpp}}.
+
+\mbox{\Hypertarget{class_network_audio_stream_aa68563c14d3976a7272f3bb86ef8313a}\label{class_network_audio_stream_aa68563c14d3976a7272f3bb86ef8313a}} 
+\index{NetworkAudioStream@{NetworkAudioStream}!m\_offset@{m\_offset}}
+\index{m\_offset@{m\_offset}!NetworkAudioStream@{NetworkAudioStream}}
+\doxysubsubsection{\texorpdfstring{m\_offset}{m\_offset}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Network\+Audio\+Stream\+::m\+\_\+offset\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00162}{162}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source}{Server.\+cpp}}.
+
+\mbox{\Hypertarget{class_network_audio_stream_a11072449c6ba6ba1f946a8b120ab8216}\label{class_network_audio_stream_a11072449c6ba6ba1f946a8b120ab8216}} 
+\index{NetworkAudioStream@{NetworkAudioStream}!m\_samples@{m\_samples}}
+\index{m\_samples@{m\_samples}!NetworkAudioStream@{NetworkAudioStream}}
+\doxysubsubsection{\texorpdfstring{m\_samples}{m\_samples}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{namespacesf_a3c8e10435e2a310a7741755e66b5c94e}{sf\+::\+Int16}} $>$ Network\+Audio\+Stream\+::m\+\_\+samples\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00160}{160}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source}{Server.\+cpp}}.
+
+\mbox{\Hypertarget{class_network_audio_stream_ad861eca779886b37a3fefc583f5d7575}\label{class_network_audio_stream_ad861eca779886b37a3fefc583f5d7575}} 
+\index{NetworkAudioStream@{NetworkAudioStream}!m\_tempBuffer@{m\_tempBuffer}}
+\index{m\_tempBuffer@{m\_tempBuffer}!NetworkAudioStream@{NetworkAudioStream}}
+\doxysubsubsection{\texorpdfstring{m\_tempBuffer}{m\_tempBuffer}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{namespacesf_a3c8e10435e2a310a7741755e66b5c94e}{sf\+::\+Int16}} $>$ Network\+Audio\+Stream\+::m\+\_\+temp\+Buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source_l00161}{161}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp_source}{Server.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+SFML-\/2.\+5.\+1/examples/voip/\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp}{Server.\+cpp}}\item 
+Week14/\+SFML-\/2.\+5.\+1/examples/voip/\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_server_8cpp}{Server.\+cpp}}\end{DoxyCompactItemize}

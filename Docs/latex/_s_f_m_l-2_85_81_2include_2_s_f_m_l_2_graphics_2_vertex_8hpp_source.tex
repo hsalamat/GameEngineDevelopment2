@@ -1,0 +1,66 @@
+\hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source}{}\doxysection{Vertex.\+hpp}
+\label{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source}\index{SFML-\/2.5.1/include/SFML/Graphics/Vertex.hpp@{SFML-\/2.5.1/include/SFML/Graphics/Vertex.hpp}}
+\mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00002}00002 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00003}00003 \textcolor{comment}{// SFML -\/ Simple and Fast Multimedia Library}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00004}00004 \textcolor{comment}{// Copyright (C) 2007-\/2018 Laurent Gomila (laurent@sfml-\/dev.org)}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00005}00005 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00006}00006 \textcolor{comment}{// This software is provided 'as-\/is', without any express or implied warranty.}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00007}00007 \textcolor{comment}{// In no event will the authors be held liable for any damages arising from the use of this software.}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00008}00008 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00009}00009 \textcolor{comment}{// Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00010}00010 \textcolor{comment}{// including commercial applications, and to alter it and redistribute it freely,}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00011}00011 \textcolor{comment}{// subject to the following restrictions:}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00012}00012 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00013}00013 \textcolor{comment}{// 1. The origin of this software must not be misrepresented;}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00014}00014 \textcolor{comment}{//    you must not claim that you wrote the original software.}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00015}00015 \textcolor{comment}{//    If you use this software in a product, an acknowledgment}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00016}00016 \textcolor{comment}{//    in the product documentation would be appreciated but is not required.}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00017}00017 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00018}00018 \textcolor{comment}{// 2. Altered source versions must be plainly marked as such,}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00019}00019 \textcolor{comment}{//    and must not be misrepresented as being the original software.}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00020}00020 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00021}00021 \textcolor{comment}{// 3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00022}00022 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00024}00024 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00025}00025 \textcolor{preprocessor}{\#ifndef SFML\_VERTEX\_HPP}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00026}00026 \textcolor{preprocessor}{\#define SFML\_VERTEX\_HPP}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00029}00029 \textcolor{comment}{// Headers}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00031}00031 \textcolor{comment}{}\textcolor{preprocessor}{\#include <SFML/Graphics/Export.hpp>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00032}00032 \textcolor{preprocessor}{\#include <SFML/Graphics/Color.hpp>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00033}00033 \textcolor{preprocessor}{\#include <SFML/System/Vector2.hpp>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00036}00036 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacesf}{sf}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00037}00037 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00042}\mbox{\hyperlink{classsf_1_1_vertex}{00042}} \textcolor{keyword}{class }\mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_export_8hpp_ab84c9f1035e146917de3bc0f98d72b35}{SFML\_GRAPHICS\_API}} \mbox{\hyperlink{classsf_1_1_vertex}{Vertex}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00043}00043 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00044}00044 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00050}\mbox{\hyperlink{classsf_1_1_vertex_a6b4c79cd69f7ec1296fede536f39e9c8}{00050}}     \mbox{\hyperlink{classsf_1_1_vertex_a6b4c79cd69f7ec1296fede536f39e9c8}{Vertex}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00060}\mbox{\hyperlink{classsf_1_1_vertex_a4dccc5c351b73b6fac169fe442535b40}{00060}}     \mbox{\hyperlink{classsf_1_1_vertex_a4dccc5c351b73b6fac169fe442535b40}{Vertex}}(\textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_vector2}{Vector2f}}\& thePosition);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00071}\mbox{\hyperlink{classsf_1_1_vertex_a70b0679b4ec531d5bd1a7d0225c7321a}{00071}}     \mbox{\hyperlink{classsf_1_1_vertex_a70b0679b4ec531d5bd1a7d0225c7321a}{Vertex}}(\textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_vector2}{Vector2f}}\& thePosition, \textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_color}{Color}}\& theColor);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00082}\mbox{\hyperlink{classsf_1_1_vertex_ab9bf849c4c0d82d09bf5bece23d2456a}{00082}}     \mbox{\hyperlink{classsf_1_1_vertex_ab9bf849c4c0d82d09bf5bece23d2456a}{Vertex}}(\textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_vector2}{Vector2f}}\& thePosition, \textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_vector2}{Vector2f}}\& theTexCoords);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00092}\mbox{\hyperlink{classsf_1_1_vertex_ad5943f2b3cbc64b6e714bb37ccaf4960}{00092}}     \mbox{\hyperlink{classsf_1_1_vertex_ad5943f2b3cbc64b6e714bb37ccaf4960}{Vertex}}(\textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_vector2}{Vector2f}}\& thePosition, \textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_color}{Color}}\& theColor, \textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_vector2}{Vector2f}}\& theTexCoords);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00095}00095     \textcolor{comment}{// Member data}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00097}\mbox{\hyperlink{classsf_1_1_vertex_ac627e9567757147f1894b85f6e771060}{00097}} \textcolor{comment}{}    \mbox{\hyperlink{classsf_1_1_vector2}{Vector2f}}  \mbox{\hyperlink{classsf_1_1_vertex_ac627e9567757147f1894b85f6e771060}{position}};  }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00098}\mbox{\hyperlink{classsf_1_1_vertex_a3a3ff3f6cf46b1848795991e8159b922}{00098}}     \mbox{\hyperlink{classsf_1_1_color}{Color}}     \mbox{\hyperlink{classsf_1_1_vertex_a3a3ff3f6cf46b1848795991e8159b922}{color}};     }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00099}\mbox{\hyperlink{classsf_1_1_vertex_af12ae740bed18b6efbdf56c3c304284d}{00099}}     \mbox{\hyperlink{classsf_1_1_vector2}{Vector2f}}  \mbox{\hyperlink{classsf_1_1_vertex_af12ae740bed18b6efbdf56c3c304284d}{texCoords}}; }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00100}00100 \};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00101}00101 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00102}00102 \} \textcolor{comment}{// namespace sf}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00103}00103 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00104}00104 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00105}00105 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// SFML\_VERTEX\_HPP}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00106}00106 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_8hpp_source_l00107}00107 }
+
+\end{DoxyCode}

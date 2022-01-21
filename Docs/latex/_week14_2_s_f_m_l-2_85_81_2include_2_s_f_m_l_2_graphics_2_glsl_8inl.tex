@@ -1,0 +1,67 @@
+\hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl}{}\doxysection{Week14/\+SFML-\/2.5.1/include/\+SFML/\+Graphics/\+Glsl.inl File Reference}
+\label{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl}\index{Week14/SFML-\/2.5.1/include/SFML/Graphics/Glsl.inl@{Week14/SFML-\/2.5.1/include/SFML/Graphics/Glsl.inl}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_matrix}{Matrix$<$ Columns, Rows $>$}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_matrix}{Matrix}} type, used to set uniforms in GLSL. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_vector4}{Vector4$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em 4D vector type, used to set uniforms in GLSL \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_export_8hpp_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl_aad1baaf4188242e642326ce2230aaa74}{copy\+Matrix}} (const Transform \&source, \mbox{\hyperlink{struct_matrix}{Matrix}}$<$ 3, 3 $>$ \&dest)
+\begin{DoxyCompactList}\small\item\em Helper functions to copy \mbox{\hyperlink{classsf_1_1_transform}{sf\+::\+Transform}} to \mbox{\hyperlink{namespacesf_1_1_glsl_a5740f2f47b1bea944dd94045af397e39}{sf\+::\+Glsl\+::\+Mat3}}/4. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_export_8hpp_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl_a6b1fb08aee1f3eb5f03b9305ac86b315}{copy\+Matrix}} (const Transform \&source, \mbox{\hyperlink{struct_matrix}{Matrix}}$<$ 4, 4 $>$ \&dest)
+\item 
+void \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_export_8hpp_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl_ad7522005ab0c281c82e885693abe1ee4}{copy\+Matrix}} (const float $\ast$source, std\+::size\+\_\+t elements, float $\ast$dest)
+\begin{DoxyCompactList}\small\item\em Copy array-\/based matrix with given number of elements. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_export_8hpp_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl_ab1bc299570e63d80e79c69e572cda030}{copy\+Vector}} (const Color \&source, \mbox{\hyperlink{struct_vector4}{Vector4}}$<$ float $>$ \&dest)
+\begin{DoxyCompactList}\small\item\em Helper functions to copy \mbox{\hyperlink{classsf_1_1_color}{sf\+::\+Color}} to \mbox{\hyperlink{namespacesf_1_1_glsl_a1370d4e28095744e9e5271eb34bae8d4}{sf\+::\+Glsl\+::\+Vec4}}/\+Ivec4. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_export_8hpp_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl_ac6b9cce1ecf6143f69b4417bf73f2883}{copy\+Vector}} (const Color \&source, \mbox{\hyperlink{struct_vector4}{Vector4}}$<$ int $>$ \&dest)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl_ad7522005ab0c281c82e885693abe1ee4}\label{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl_ad7522005ab0c281c82e885693abe1ee4}} 
+\index{Glsl.inl@{Glsl.inl}!copyMatrix@{copyMatrix}}
+\index{copyMatrix@{copyMatrix}!Glsl.inl@{Glsl.inl}}
+\doxysubsubsection{\texorpdfstring{copyMatrix()}{copyMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_export_8hpp_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} copy\+Matrix (\begin{DoxyParamCaption}\item[{const float $\ast$}]{source,  }\item[{std\+::size\+\_\+t}]{elements,  }\item[{float $\ast$}]{dest }\end{DoxyParamCaption})}
+
+
+
+Copy array-\/based matrix with given number of elements. 
+
+Indirection to std\+::copy() to avoid inclusion of $<$algorithm$>$ and MSVC\textquotesingle{}s annoying 4996 warning in header \mbox{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl_aad1baaf4188242e642326ce2230aaa74}\label{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl_aad1baaf4188242e642326ce2230aaa74}} 
+\index{Glsl.inl@{Glsl.inl}!copyMatrix@{copyMatrix}}
+\index{copyMatrix@{copyMatrix}!Glsl.inl@{Glsl.inl}}
+\doxysubsubsection{\texorpdfstring{copyMatrix()}{copyMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_export_8hpp_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} copy\+Matrix (\begin{DoxyParamCaption}\item[{const Transform \&}]{source,  }\item[{\mbox{\hyperlink{struct_matrix}{Matrix}}$<$ 3, 3 $>$ \&}]{dest }\end{DoxyParamCaption})}
+
+
+
+Helper functions to copy \mbox{\hyperlink{classsf_1_1_transform}{sf\+::\+Transform}} to \mbox{\hyperlink{namespacesf_1_1_glsl_a5740f2f47b1bea944dd94045af397e39}{sf\+::\+Glsl\+::\+Mat3}}/4. 
+
+\mbox{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl_a6b1fb08aee1f3eb5f03b9305ac86b315}\label{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl_a6b1fb08aee1f3eb5f03b9305ac86b315}} 
+\index{Glsl.inl@{Glsl.inl}!copyMatrix@{copyMatrix}}
+\index{copyMatrix@{copyMatrix}!Glsl.inl@{Glsl.inl}}
+\doxysubsubsection{\texorpdfstring{copyMatrix()}{copyMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_export_8hpp_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} copy\+Matrix (\begin{DoxyParamCaption}\item[{const Transform \&}]{source,  }\item[{\mbox{\hyperlink{struct_matrix}{Matrix}}$<$ 4, 4 $>$ \&}]{dest }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl_ab1bc299570e63d80e79c69e572cda030}\label{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl_ab1bc299570e63d80e79c69e572cda030}} 
+\index{Glsl.inl@{Glsl.inl}!copyVector@{copyVector}}
+\index{copyVector@{copyVector}!Glsl.inl@{Glsl.inl}}
+\doxysubsubsection{\texorpdfstring{copyVector()}{copyVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_export_8hpp_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} copy\+Vector (\begin{DoxyParamCaption}\item[{const Color \&}]{source,  }\item[{\mbox{\hyperlink{struct_vector4}{Vector4}}$<$ float $>$ \&}]{dest }\end{DoxyParamCaption})}
+
+
+
+Helper functions to copy \mbox{\hyperlink{classsf_1_1_color}{sf\+::\+Color}} to \mbox{\hyperlink{namespacesf_1_1_glsl_a1370d4e28095744e9e5271eb34bae8d4}{sf\+::\+Glsl\+::\+Vec4}}/\+Ivec4. 
+
+\mbox{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl_ac6b9cce1ecf6143f69b4417bf73f2883}\label{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl_ac6b9cce1ecf6143f69b4417bf73f2883}} 
+\index{Glsl.inl@{Glsl.inl}!copyVector@{copyVector}}
+\index{copyVector@{copyVector}!Glsl.inl@{Glsl.inl}}
+\doxysubsubsection{\texorpdfstring{copyVector()}{copyVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_export_8hpp_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} copy\+Vector (\begin{DoxyParamCaption}\item[{const Color \&}]{source,  }\item[{\mbox{\hyperlink{struct_vector4}{Vector4}}$<$ int $>$ \&}]{dest }\end{DoxyParamCaption})}
+

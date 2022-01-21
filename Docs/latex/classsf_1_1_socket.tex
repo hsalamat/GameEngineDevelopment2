@@ -1,0 +1,661 @@
+\hypertarget{classsf_1_1_socket}{}\doxysection{sf\+::Socket Class Reference}
+\label{classsf_1_1_socket}\index{sf::Socket@{sf::Socket}}
+
+
+Base class for all the socket types.  
+
+
+
+
+{\ttfamily \#include $<$Socket.\+hpp$>$}
+
+Inheritance diagram for sf\+::Socket\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.477876cm]{classsf_1_1_socket}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{Status}} \{ \newline
+\mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca6b3d5ba897b6df8ebda86c823b30348a}{Done}}
+, \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca412bf3512c20bfcbcd511858d55acfbd}{Not\+Ready}}
+, \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca1c852ba07a30478851e563336d86042e}{Partial}}
+, \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca4cbfeb4c26392f23efa26ae6900ae164}{Disconnected}}
+, \newline
+\mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca28b7d8d7de8cf854287b67003316dfbe}{Error}}
+, \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca6b3d5ba897b6df8ebda86c823b30348a}{Done}}
+, \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca412bf3512c20bfcbcd511858d55acfbd}{Not\+Ready}}
+, \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca1c852ba07a30478851e563336d86042e}{Partial}}
+, \newline
+\mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca4cbfeb4c26392f23efa26ae6900ae164}{Disconnected}}
+, \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca28b7d8d7de8cf854287b67003316dfbe}{Error}}
+ \}
+\begin{DoxyCompactList}\small\item\em Status codes that may be returned by socket functions. \end{DoxyCompactList}\item 
+enum \{ \mbox{\hyperlink{classsf_1_1_socket_aa4a89a300ab96e173ae5e829d12a3aefadee98ca77e6cde0b3d818eb1341e3db0}{Any\+Port}} = 0
+ \}
+\begin{DoxyCompactList}\small\item\em Some special values used by sockets. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{Status}} \{ \newline
+\mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca6b3d5ba897b6df8ebda86c823b30348a}{Done}}
+, \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca412bf3512c20bfcbcd511858d55acfbd}{Not\+Ready}}
+, \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca1c852ba07a30478851e563336d86042e}{Partial}}
+, \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca4cbfeb4c26392f23efa26ae6900ae164}{Disconnected}}
+, \newline
+\mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca28b7d8d7de8cf854287b67003316dfbe}{Error}}
+, \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca6b3d5ba897b6df8ebda86c823b30348a}{Done}}
+, \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca412bf3512c20bfcbcd511858d55acfbd}{Not\+Ready}}
+, \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca1c852ba07a30478851e563336d86042e}{Partial}}
+, \newline
+\mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca4cbfeb4c26392f23efa26ae6900ae164}{Disconnected}}
+, \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca28b7d8d7de8cf854287b67003316dfbe}{Error}}
+ \}
+\begin{DoxyCompactList}\small\item\em Status codes that may be returned by socket functions. \end{DoxyCompactList}\item 
+enum \{ \mbox{\hyperlink{classsf_1_1_socket_aa4a89a300ab96e173ae5e829d12a3aefadee98ca77e6cde0b3d818eb1341e3db0}{Any\+Port}} = 0
+ \}
+\begin{DoxyCompactList}\small\item\em Some special values used by sockets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classsf_1_1_socket_a79a4b5918f0b34a2f8db449089694788}{$\sim$\+Socket}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_socket_a165fc1423e281ea2714c70303d3a9782}{set\+Blocking}} (bool blocking)
+\begin{DoxyCompactList}\small\item\em Set the blocking state of the socket. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_socket_ab1ceca9ac114b8baeeda3b34a0aca468}{is\+Blocking}} () const
+\begin{DoxyCompactList}\small\item\em Tell whether the socket is in blocking or non-\/blocking mode. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classsf_1_1_socket_a79a4b5918f0b34a2f8db449089694788}{$\sim$\+Socket}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_socket_a165fc1423e281ea2714c70303d3a9782}{set\+Blocking}} (bool blocking)
+\begin{DoxyCompactList}\small\item\em Set the blocking state of the socket. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_socket_ab1ceca9ac114b8baeeda3b34a0aca468}{is\+Blocking}} () const
+\begin{DoxyCompactList}\small\item\em Tell whether the socket is in blocking or non-\/blocking mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8}{Type}} \{ \mbox{\hyperlink{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8a61b0d1d657709c3d1412b46d001ea17b}{Tcp}}
+, \mbox{\hyperlink{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8a63a22585eabe16c71a78322695e9c1de}{Udp}}
+, \mbox{\hyperlink{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8a61b0d1d657709c3d1412b46d001ea17b}{Tcp}}
+, \mbox{\hyperlink{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8a63a22585eabe16c71a78322695e9c1de}{Udp}}
+ \}
+\begin{DoxyCompactList}\small\item\em Types of protocols that the socket can use. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8}{Type}} \{ \mbox{\hyperlink{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8a61b0d1d657709c3d1412b46d001ea17b}{Tcp}}
+, \mbox{\hyperlink{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8a63a22585eabe16c71a78322695e9c1de}{Udp}}
+, \mbox{\hyperlink{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8a61b0d1d657709c3d1412b46d001ea17b}{Tcp}}
+, \mbox{\hyperlink{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8a63a22585eabe16c71a78322695e9c1de}{Udp}}
+ \}
+\begin{DoxyCompactList}\small\item\em Types of protocols that the socket can use. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsf_1_1_socket_a80ffb47ec0bafc83af019055d3e6a303}{Socket}} (\mbox{\hyperlink{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8}{Type}} type)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesf_aefabb521d8f5eec9e6a9b521271d20d1}{Socket\+Handle}} \mbox{\hyperlink{classsf_1_1_socket_a675457784284ae2f5640bbbe16729393}{get\+Handle}} () const
+\begin{DoxyCompactList}\small\item\em Return the internal handle of the socket. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_socket_aafbe140f4b1921e0d19e88cf7a61dcbc}{create}} ()
+\begin{DoxyCompactList}\small\item\em Create the internal representation of the socket. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_socket_af1dd898f7aa3ead7ff7b2d1c20e97781}{create}} (\mbox{\hyperlink{namespacesf_aefabb521d8f5eec9e6a9b521271d20d1}{Socket\+Handle}} handle)
+\begin{DoxyCompactList}\small\item\em Create the internal representation of the socket from a socket handle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_socket_a71f2f5c2aa99e01cafe824fee4c573be}{close}} ()
+\begin{DoxyCompactList}\small\item\em Close the socket gracefully. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_socket_a80ffb47ec0bafc83af019055d3e6a303}{Socket}} (\mbox{\hyperlink{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8}{Type}} type)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesf_aefabb521d8f5eec9e6a9b521271d20d1}{Socket\+Handle}} \mbox{\hyperlink{classsf_1_1_socket_a675457784284ae2f5640bbbe16729393}{get\+Handle}} () const
+\begin{DoxyCompactList}\small\item\em Return the internal handle of the socket. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_socket_aafbe140f4b1921e0d19e88cf7a61dcbc}{create}} ()
+\begin{DoxyCompactList}\small\item\em Create the internal representation of the socket. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_socket_af1dd898f7aa3ead7ff7b2d1c20e97781}{create}} (\mbox{\hyperlink{namespacesf_aefabb521d8f5eec9e6a9b521271d20d1}{Socket\+Handle}} handle)
+\begin{DoxyCompactList}\small\item\em Create the internal representation of the socket from a socket handle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_socket_a71f2f5c2aa99e01cafe824fee4c573be}{close}} ()
+\begin{DoxyCompactList}\small\item\em Close the socket gracefully. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8}{Type}} \mbox{\hyperlink{classsf_1_1_socket_a0c41f91229069c06859746a458731617}{m\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em Type of the socket (TCP or UDP) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesf_aefabb521d8f5eec9e6a9b521271d20d1}{Socket\+Handle}} \mbox{\hyperlink{classsf_1_1_socket_a83b63e07a0cfdb2bb1852990afe7762d}{m\+\_\+socket}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsf_1_1_socket}{Socket}} descriptor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_socket_a0eed7647c471354050aef148bf43081f}{m\+\_\+is\+Blocking}}
+\begin{DoxyCompactList}\small\item\em Current blocking mode of the socket. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsf_1_1_socket_a4d597c43b180384801eff14207b0e137}{Socket\+Selector}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Base class for all the socket types. 
+
+This class mainly defines internal stuff to be used by derived classes.
+
+The only public features that it defines, and which is therefore common to all the socket classes, is the blocking state. All sockets can be set as blocking or non-\/blocking.
+
+In blocking mode, socket functions will hang until the operation completes, which means that the entire program (well, in fact the current thread if you use multiple ones) will be stuck waiting for your socket operation to complete.
+
+In non-\/blocking mode, all the socket functions will return immediately. If the socket is not ready to complete the requested operation, the function simply returns the proper status code (\mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca412bf3512c20bfcbcd511858d55acfbd}{Socket\+::\+Not\+Ready}}).
+
+The default mode, which is blocking, is the one that is generally used, in combination with threads or selectors. The non-\/blocking mode is rather used in real-\/time applications that run an endless loop that can poll the socket often enough, and cannot afford blocking this loop.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_tcp_listener}{sf\+::\+Tcp\+Listener}}, \mbox{\hyperlink{classsf_1_1_tcp_socket}{sf\+::\+Tcp\+Socket}}, \mbox{\hyperlink{classsf_1_1_udp_socket}{sf\+::\+Udp\+Socket}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00045}{45}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source}{Socket.\+hpp}}.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classsf_1_1_socket_aa4a89a300ab96e173ae5e829d12a3aef}\label{classsf_1_1_socket_aa4a89a300ab96e173ae5e829d12a3aef}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+
+
+Some special values used by sockets. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AnyPort@{AnyPort}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!AnyPort@{AnyPort}}}\mbox{\Hypertarget{classsf_1_1_socket_aa4a89a300ab96e173ae5e829d12a3aefadee98ca77e6cde0b3d818eb1341e3db0}\label{classsf_1_1_socket_aa4a89a300ab96e173ae5e829d12a3aefadee98ca77e6cde0b3d818eb1341e3db0}} 
+Any\+Port&Special value that tells the system to pick any available port. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00066}{66}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source}{Socket.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_socket_aa3e6c984bcb81a35234dcc9cc8369d75}\label{classsf_1_1_socket_aa3e6c984bcb81a35234dcc9cc8369d75}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+
+
+Some special values used by sockets. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AnyPort@{AnyPort}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!AnyPort@{AnyPort}}}\mbox{\Hypertarget{classsf_1_1_socket_aa4a89a300ab96e173ae5e829d12a3aefadee98ca77e6cde0b3d818eb1341e3db0}\label{classsf_1_1_socket_aa4a89a300ab96e173ae5e829d12a3aefadee98ca77e6cde0b3d818eb1341e3db0}} 
+Any\+Port&Special value that tells the system to pick any available port. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00066}{66}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source}{Socket.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}\label{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}} 
+\index{sf::Socket@{sf::Socket}!Status@{Status}}
+\index{Status@{Status}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{Status}{Status}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{sf\+::\+Socket\+::\+Status}}}
+
+
+
+Status codes that may be returned by socket functions. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Done@{Done}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!Done@{Done}}}\mbox{\Hypertarget{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca6b3d5ba897b6df8ebda86c823b30348a}\label{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca6b3d5ba897b6df8ebda86c823b30348a}} 
+Done&The socket has sent / received the data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NotReady@{NotReady}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!NotReady@{NotReady}}}\mbox{\Hypertarget{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca412bf3512c20bfcbcd511858d55acfbd}\label{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca412bf3512c20bfcbcd511858d55acfbd}} 
+Not\+Ready&The socket is not ready to send / receive data yet. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Partial@{Partial}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!Partial@{Partial}}}\mbox{\Hypertarget{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca1c852ba07a30478851e563336d86042e}\label{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca1c852ba07a30478851e563336d86042e}} 
+Partial&The socket sent a part of the data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Disconnected@{Disconnected}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!Disconnected@{Disconnected}}}\mbox{\Hypertarget{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca4cbfeb4c26392f23efa26ae6900ae164}\label{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca4cbfeb4c26392f23efa26ae6900ae164}} 
+Disconnected&The TCP socket has been disconnected. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Error@{Error}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!Error@{Error}}}\mbox{\Hypertarget{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca28b7d8d7de8cf854287b67003316dfbe}\label{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca28b7d8d7de8cf854287b67003316dfbe}} 
+Error&An unexpected error happened. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Done@{Done}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!Done@{Done}}}\mbox{\Hypertarget{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca6b3d5ba897b6df8ebda86c823b30348a}\label{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca6b3d5ba897b6df8ebda86c823b30348a}} 
+Done&The socket has sent / received the data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NotReady@{NotReady}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!NotReady@{NotReady}}}\mbox{\Hypertarget{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca412bf3512c20bfcbcd511858d55acfbd}\label{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca412bf3512c20bfcbcd511858d55acfbd}} 
+Not\+Ready&The socket is not ready to send / receive data yet. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Partial@{Partial}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!Partial@{Partial}}}\mbox{\Hypertarget{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca1c852ba07a30478851e563336d86042e}\label{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca1c852ba07a30478851e563336d86042e}} 
+Partial&The socket sent a part of the data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Disconnected@{Disconnected}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!Disconnected@{Disconnected}}}\mbox{\Hypertarget{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca4cbfeb4c26392f23efa26ae6900ae164}\label{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca4cbfeb4c26392f23efa26ae6900ae164}} 
+Disconnected&The TCP socket has been disconnected. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Error@{Error}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!Error@{Error}}}\mbox{\Hypertarget{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca28b7d8d7de8cf854287b67003316dfbe}\label{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca28b7d8d7de8cf854287b67003316dfbe}} 
+Error&An unexpected error happened. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00053}{53}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source}{Socket.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}\label{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}} 
+\index{sf::Socket@{sf::Socket}!Status@{Status}}
+\index{Status@{Status}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{Status}{Status}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{sf\+::\+Socket\+::\+Status}}}
+
+
+
+Status codes that may be returned by socket functions. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Done@{Done}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!Done@{Done}}}\mbox{\Hypertarget{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca6b3d5ba897b6df8ebda86c823b30348a}\label{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca6b3d5ba897b6df8ebda86c823b30348a}} 
+Done&The socket has sent / received the data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NotReady@{NotReady}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!NotReady@{NotReady}}}\mbox{\Hypertarget{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca412bf3512c20bfcbcd511858d55acfbd}\label{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca412bf3512c20bfcbcd511858d55acfbd}} 
+Not\+Ready&The socket is not ready to send / receive data yet. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Partial@{Partial}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!Partial@{Partial}}}\mbox{\Hypertarget{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca1c852ba07a30478851e563336d86042e}\label{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca1c852ba07a30478851e563336d86042e}} 
+Partial&The socket sent a part of the data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Disconnected@{Disconnected}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!Disconnected@{Disconnected}}}\mbox{\Hypertarget{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca4cbfeb4c26392f23efa26ae6900ae164}\label{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca4cbfeb4c26392f23efa26ae6900ae164}} 
+Disconnected&The TCP socket has been disconnected. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Error@{Error}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!Error@{Error}}}\mbox{\Hypertarget{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca28b7d8d7de8cf854287b67003316dfbe}\label{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca28b7d8d7de8cf854287b67003316dfbe}} 
+Error&An unexpected error happened. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Done@{Done}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!Done@{Done}}}\mbox{\Hypertarget{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca6b3d5ba897b6df8ebda86c823b30348a}\label{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca6b3d5ba897b6df8ebda86c823b30348a}} 
+Done&The socket has sent / received the data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NotReady@{NotReady}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!NotReady@{NotReady}}}\mbox{\Hypertarget{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca412bf3512c20bfcbcd511858d55acfbd}\label{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca412bf3512c20bfcbcd511858d55acfbd}} 
+Not\+Ready&The socket is not ready to send / receive data yet. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Partial@{Partial}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!Partial@{Partial}}}\mbox{\Hypertarget{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca1c852ba07a30478851e563336d86042e}\label{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca1c852ba07a30478851e563336d86042e}} 
+Partial&The socket sent a part of the data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Disconnected@{Disconnected}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!Disconnected@{Disconnected}}}\mbox{\Hypertarget{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca4cbfeb4c26392f23efa26ae6900ae164}\label{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca4cbfeb4c26392f23efa26ae6900ae164}} 
+Disconnected&The TCP socket has been disconnected. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Error@{Error}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!Error@{Error}}}\mbox{\Hypertarget{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca28b7d8d7de8cf854287b67003316dfbe}\label{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca28b7d8d7de8cf854287b67003316dfbe}} 
+Error&An unexpected error happened. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00053}{53}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source}{Socket.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8}\label{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8}} 
+\index{sf::Socket@{sf::Socket}!Type@{Type}}
+\index{Type@{Type}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8}{sf\+::\+Socket\+::\+Type}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Types of protocols that the socket can use. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Tcp@{Tcp}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!Tcp@{Tcp}}}\mbox{\Hypertarget{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8a61b0d1d657709c3d1412b46d001ea17b}\label{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8a61b0d1d657709c3d1412b46d001ea17b}} 
+Tcp&TCP protocol. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Udp@{Udp}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!Udp@{Udp}}}\mbox{\Hypertarget{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8a63a22585eabe16c71a78322695e9c1de}\label{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8a63a22585eabe16c71a78322695e9c1de}} 
+Udp&UDP protocol. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Tcp@{Tcp}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!Tcp@{Tcp}}}\mbox{\Hypertarget{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8a61b0d1d657709c3d1412b46d001ea17b}\label{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8a61b0d1d657709c3d1412b46d001ea17b}} 
+Tcp&TCP protocol. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Udp@{Udp}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!Udp@{Udp}}}\mbox{\Hypertarget{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8a63a22585eabe16c71a78322695e9c1de}\label{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8a63a22585eabe16c71a78322695e9c1de}} 
+Udp&UDP protocol. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00114}{114}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source}{Socket.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8}\label{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8}} 
+\index{sf::Socket@{sf::Socket}!Type@{Type}}
+\index{Type@{Type}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8}{sf\+::\+Socket\+::\+Type}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Types of protocols that the socket can use. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Tcp@{Tcp}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!Tcp@{Tcp}}}\mbox{\Hypertarget{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8a61b0d1d657709c3d1412b46d001ea17b}\label{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8a61b0d1d657709c3d1412b46d001ea17b}} 
+Tcp&TCP protocol. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Udp@{Udp}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!Udp@{Udp}}}\mbox{\Hypertarget{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8a63a22585eabe16c71a78322695e9c1de}\label{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8a63a22585eabe16c71a78322695e9c1de}} 
+Udp&UDP protocol. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Tcp@{Tcp}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!Tcp@{Tcp}}}\mbox{\Hypertarget{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8a61b0d1d657709c3d1412b46d001ea17b}\label{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8a61b0d1d657709c3d1412b46d001ea17b}} 
+Tcp&TCP protocol. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Udp@{Udp}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!Udp@{Udp}}}\mbox{\Hypertarget{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8a63a22585eabe16c71a78322695e9c1de}\label{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8a63a22585eabe16c71a78322695e9c1de}} 
+Udp&UDP protocol. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00114}{114}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source}{Socket.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsf_1_1_socket_a79a4b5918f0b34a2f8db449089694788}\label{classsf_1_1_socket_a79a4b5918f0b34a2f8db449089694788}} 
+\index{sf::Socket@{sf::Socket}!````~Socket@{$\sim$Socket}}
+\index{````~Socket@{$\sim$Socket}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{$\sim$Socket()}{~Socket()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual sf\+::\+Socket\+::$\sim$\+Socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+\mbox{\Hypertarget{classsf_1_1_socket_a80ffb47ec0bafc83af019055d3e6a303}\label{classsf_1_1_socket_a80ffb47ec0bafc83af019055d3e6a303}} 
+\index{sf::Socket@{sf::Socket}!Socket@{Socket}}
+\index{Socket@{Socket}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{Socket()}{Socket()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily sf\+::\+Socket\+::\+Socket (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8}{Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Default constructor. 
+
+This constructor can only be accessed by derived classes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Type of the socket (TCP or UDP) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_socket_a79a4b5918f0b34a2f8db449089694788}\label{classsf_1_1_socket_a79a4b5918f0b34a2f8db449089694788}} 
+\index{sf::Socket@{sf::Socket}!````~Socket@{$\sim$Socket}}
+\index{````~Socket@{$\sim$Socket}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{$\sim$Socket()}{~Socket()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual sf\+::\+Socket\+::$\sim$\+Socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+\mbox{\Hypertarget{classsf_1_1_socket_a80ffb47ec0bafc83af019055d3e6a303}\label{classsf_1_1_socket_a80ffb47ec0bafc83af019055d3e6a303}} 
+\index{sf::Socket@{sf::Socket}!Socket@{Socket}}
+\index{Socket@{Socket}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{Socket()}{Socket()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sf\+::\+Socket\+::\+Socket (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8}{Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Default constructor. 
+
+This constructor can only be accessed by derived classes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Type of the socket (TCP or UDP) \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsf_1_1_socket_a71f2f5c2aa99e01cafe824fee4c573be}\label{classsf_1_1_socket_a71f2f5c2aa99e01cafe824fee4c573be}} 
+\index{sf::Socket@{sf::Socket}!close@{close}}
+\index{close@{close}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Socket\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Close the socket gracefully. 
+
+This function can only be accessed by derived classes. \mbox{\Hypertarget{classsf_1_1_socket_a71f2f5c2aa99e01cafe824fee4c573be}\label{classsf_1_1_socket_a71f2f5c2aa99e01cafe824fee4c573be}} 
+\index{sf::Socket@{sf::Socket}!close@{close}}
+\index{close@{close}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Socket\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Close the socket gracefully. 
+
+This function can only be accessed by derived classes. \mbox{\Hypertarget{classsf_1_1_socket_aafbe140f4b1921e0d19e88cf7a61dcbc}\label{classsf_1_1_socket_aafbe140f4b1921e0d19e88cf7a61dcbc}} 
+\index{sf::Socket@{sf::Socket}!create@{create}}
+\index{create@{create}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void sf\+::\+Socket\+::create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Create the internal representation of the socket. 
+
+This function can only be accessed by derived classes. \mbox{\Hypertarget{classsf_1_1_socket_aafbe140f4b1921e0d19e88cf7a61dcbc}\label{classsf_1_1_socket_aafbe140f4b1921e0d19e88cf7a61dcbc}} 
+\index{sf::Socket@{sf::Socket}!create@{create}}
+\index{create@{create}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void sf\+::\+Socket\+::create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Create the internal representation of the socket. 
+
+This function can only be accessed by derived classes. \mbox{\Hypertarget{classsf_1_1_socket_af1dd898f7aa3ead7ff7b2d1c20e97781}\label{classsf_1_1_socket_af1dd898f7aa3ead7ff7b2d1c20e97781}} 
+\index{sf::Socket@{sf::Socket}!create@{create}}
+\index{create@{create}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void sf\+::\+Socket\+::create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_aefabb521d8f5eec9e6a9b521271d20d1}{Socket\+Handle}}}]{handle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Create the internal representation of the socket from a socket handle. 
+
+This function can only be accessed by derived classes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & OS-\/specific handle of the socket to wrap \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_socket_af1dd898f7aa3ead7ff7b2d1c20e97781}\label{classsf_1_1_socket_af1dd898f7aa3ead7ff7b2d1c20e97781}} 
+\index{sf::Socket@{sf::Socket}!create@{create}}
+\index{create@{create}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void sf\+::\+Socket\+::create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_aefabb521d8f5eec9e6a9b521271d20d1}{Socket\+Handle}}}]{handle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Create the internal representation of the socket from a socket handle. 
+
+This function can only be accessed by derived classes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & OS-\/specific handle of the socket to wrap \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_socket_a675457784284ae2f5640bbbe16729393}\label{classsf_1_1_socket_a675457784284ae2f5640bbbe16729393}} 
+\index{sf::Socket@{sf::Socket}!getHandle@{getHandle}}
+\index{getHandle@{getHandle}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{getHandle()}{getHandle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_aefabb521d8f5eec9e6a9b521271d20d1}{Socket\+Handle}} sf\+::\+Socket\+::get\+Handle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Return the internal handle of the socket. 
+
+The returned handle may be invalid if the socket was not created yet (or already destroyed). This function can only be accessed by derived classes.
+
+\begin{DoxyReturn}{Returns}
+The internal (OS-\/specific) handle of the socket 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_socket_a675457784284ae2f5640bbbe16729393}\label{classsf_1_1_socket_a675457784284ae2f5640bbbe16729393}} 
+\index{sf::Socket@{sf::Socket}!getHandle@{getHandle}}
+\index{getHandle@{getHandle}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{getHandle()}{getHandle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_aefabb521d8f5eec9e6a9b521271d20d1}{Socket\+Handle}} sf\+::\+Socket\+::get\+Handle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Return the internal handle of the socket. 
+
+The returned handle may be invalid if the socket was not created yet (or already destroyed). This function can only be accessed by derived classes.
+
+\begin{DoxyReturn}{Returns}
+The internal (OS-\/specific) handle of the socket 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_socket_ab1ceca9ac114b8baeeda3b34a0aca468}\label{classsf_1_1_socket_ab1ceca9ac114b8baeeda3b34a0aca468}} 
+\index{sf::Socket@{sf::Socket}!isBlocking@{isBlocking}}
+\index{isBlocking@{isBlocking}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{isBlocking()}{isBlocking()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool sf\+::\+Socket\+::is\+Blocking (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Tell whether the socket is in blocking or non-\/blocking mode. 
+
+\begin{DoxyReturn}{Returns}
+True if the socket is blocking, false otherwise
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_socket_a165fc1423e281ea2714c70303d3a9782}{set\+Blocking}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_socket_ab1ceca9ac114b8baeeda3b34a0aca468}\label{classsf_1_1_socket_ab1ceca9ac114b8baeeda3b34a0aca468}} 
+\index{sf::Socket@{sf::Socket}!isBlocking@{isBlocking}}
+\index{isBlocking@{isBlocking}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{isBlocking()}{isBlocking()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool sf\+::\+Socket\+::is\+Blocking (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Tell whether the socket is in blocking or non-\/blocking mode. 
+
+\begin{DoxyReturn}{Returns}
+True if the socket is blocking, false otherwise
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_socket_a165fc1423e281ea2714c70303d3a9782}{set\+Blocking}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_socket_a165fc1423e281ea2714c70303d3a9782}\label{classsf_1_1_socket_a165fc1423e281ea2714c70303d3a9782}} 
+\index{sf::Socket@{sf::Socket}!setBlocking@{setBlocking}}
+\index{setBlocking@{setBlocking}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{setBlocking()}{setBlocking()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Socket\+::set\+Blocking (\begin{DoxyParamCaption}\item[{bool}]{blocking }\end{DoxyParamCaption})}
+
+
+
+Set the blocking state of the socket. 
+
+In blocking mode, calls will not return until they have completed their task. For example, a call to Receive in blocking mode won\textquotesingle{}t return until some data was actually received. In non-\/blocking mode, calls will always return immediately, using the return code to signal whether there was data available or not. By default, all sockets are blocking.
+
+
+\begin{DoxyParams}{Parameters}
+{\em blocking} & True to set the socket as blocking, false for non-\/blocking\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_socket_ab1ceca9ac114b8baeeda3b34a0aca468}{is\+Blocking}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_socket_a165fc1423e281ea2714c70303d3a9782}\label{classsf_1_1_socket_a165fc1423e281ea2714c70303d3a9782}} 
+\index{sf::Socket@{sf::Socket}!setBlocking@{setBlocking}}
+\index{setBlocking@{setBlocking}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{setBlocking()}{setBlocking()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Socket\+::set\+Blocking (\begin{DoxyParamCaption}\item[{bool}]{blocking }\end{DoxyParamCaption})}
+
+
+
+Set the blocking state of the socket. 
+
+In blocking mode, calls will not return until they have completed their task. For example, a call to Receive in blocking mode won\textquotesingle{}t return until some data was actually received. In non-\/blocking mode, calls will always return immediately, using the return code to signal whether there was data available or not. By default, all sockets are blocking.
+
+
+\begin{DoxyParams}{Parameters}
+{\em blocking} & True to set the socket as blocking, false for non-\/blocking\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_socket_ab1ceca9ac114b8baeeda3b34a0aca468}{is\+Blocking}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classsf_1_1_socket_a4d597c43b180384801eff14207b0e137}\label{classsf_1_1_socket_a4d597c43b180384801eff14207b0e137}} 
+\index{sf::Socket@{sf::Socket}!SocketSelector@{SocketSelector}}
+\index{SocketSelector@{SocketSelector}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{SocketSelector}{SocketSelector}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_socket_selector}{Socket\+Selector}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00171}{171}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source}{Socket.\+hpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsf_1_1_socket_a0eed7647c471354050aef148bf43081f}\label{classsf_1_1_socket_a0eed7647c471354050aef148bf43081f}} 
+\index{sf::Socket@{sf::Socket}!m\_isBlocking@{m\_isBlocking}}
+\index{m\_isBlocking@{m\_isBlocking}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{m\_isBlocking}{m\_isBlocking}}
+{\footnotesize\ttfamily bool sf\+::\+Socket\+::m\+\_\+is\+Blocking\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current blocking mode of the socket. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00178}{178}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source}{Socket.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_socket_a83b63e07a0cfdb2bb1852990afe7762d}\label{classsf_1_1_socket_a83b63e07a0cfdb2bb1852990afe7762d}} 
+\index{sf::Socket@{sf::Socket}!m\_socket@{m\_socket}}
+\index{m\_socket@{m\_socket}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{m\_socket}{m\_socket}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_aefabb521d8f5eec9e6a9b521271d20d1}{Socket\+Handle}} sf\+::\+Socket\+::m\+\_\+socket\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{classsf_1_1_socket}{Socket}} descriptor. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00177}{177}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source}{Socket.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_socket_a0c41f91229069c06859746a458731617}\label{classsf_1_1_socket_a0c41f91229069c06859746a458731617}} 
+\index{sf::Socket@{sf::Socket}!m\_type@{m\_type}}
+\index{m\_type@{m\_type}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{m\_type}{m\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_socket_a5d3ff44e56e68f02816bb0fabc34adf8}{Type}} sf\+::\+Socket\+::m\+\_\+type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Type of the socket (TCP or UDP) 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source_l00176}{176}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp_source}{Socket.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+SFML-\/2.\+5.\+1/include/\+SFML/\+Network/\mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp}{Socket.\+hpp}}\item 
+Week14/\+SFML-\/2.\+5.\+1/include/\+SFML/\+Network/\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_8hpp}{Socket.\+hpp}}\end{DoxyCompactItemize}

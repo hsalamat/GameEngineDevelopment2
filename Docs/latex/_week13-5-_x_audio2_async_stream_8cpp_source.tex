@@ -1,0 +1,516 @@
+\hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source}{}\doxysection{Week13-\/5-\/\+XAudio2\+Async\+Stream.cpp}
+\label{_week13-5-_x_audio2_async_stream_8cpp_source}\index{Week13/Week13-\/5-\/XAudio2AsyncStream.cpp@{Week13/Week13-\/5-\/XAudio2AsyncStream.cpp}}
+\mbox{\hyperlink{_week13-5-_x_audio2_async_stream_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00001}00001 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00002}00002 \textcolor{comment}{// File: XAudio2AsyncStream.cpp}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00003}00003 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00004}00004 \textcolor{comment}{// Streaming from a Wave Bank using XAudio2 and asynchronous I/O}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00005}00005 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00006}00006 \textcolor{comment}{// NOTE: Currently ignores loop regions in the Wave Bank, and only works for PCM data}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00007}00007 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00008}00008 \textcolor{comment}{// Copyright (c) Microsoft Corporation. All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00009}00009 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00011}\mbox{\hyperlink{_week13-5-_x_audio2_async_stream_8cpp_ac7bef5d85e3dcd73eef56ad39ffc84a9}{00011}} \textcolor{preprocessor}{\#define WIN32\_LEAN\_AND\_MEAN}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00012}00012 \textcolor{preprocessor}{\#include <windows.h>}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00013}00013 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00014}00014 \textcolor{preprocessor}{\#include <assert.h>}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00016}00016 \textcolor{preprocessor}{\#include <wrl\(\backslash\)client.h>}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00018}00018 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_x_audio2_versions_8h}{XAudio2Versions.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00019}00019 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_wave_bank_reader_8h}{WaveBankReader.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00021}00021 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespace_direct_x}{DirectX}};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00022}00022 \textcolor{keyword}{using} Microsoft::WRL::ComPtr;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00024}00024 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00025}\mbox{\hyperlink{_week13-5-_x_audio2_async_stream_8cpp_a7958ffad7af3b6e0d2fdb6bc2d7be628}{00025}} \textcolor{preprocessor}{\#define STREAMING\_BUFFER\_SIZE 65536}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00026}\mbox{\hyperlink{_week13-5-_x_audio2_async_stream_8cpp_a433048abeb218e08e3f423032b6c537c}{00026}} \textcolor{preprocessor}{\#define MAX\_BUFFER\_COUNT 3}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00028}00028 \textcolor{keyword}{static\_assert}((\mbox{\hyperlink{_week13-5-_x_audio2_async_stream_8cpp_a7958ffad7af3b6e0d2fdb6bc2d7be628}{STREAMING\_BUFFER\_SIZE}} \% 2048) == 0, \textcolor{stringliteral}{"{}Streaming size must be 2K aligned to use for async I/O"{}});}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00030}00030 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00031}00031 \textcolor{comment}{// Callback structure}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00032}00032 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00033}00033 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_streaming_voice_context}{StreamingVoiceContext}} : \textcolor{keyword}{public} IXAudio2VoiceCallback}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00034}00034 \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00035}\mbox{\hyperlink{struct_streaming_voice_context_ad4837344d20e3e4c111550054ca8d139}{00035}}     \mbox{\hyperlink{struct_streaming_voice_context_ad4837344d20e3e4c111550054ca8d139}{STDMETHOD\_}}(\textcolor{keywordtype}{void}, OnVoiceProcessingPassStart)(UINT32) \textcolor{keyword}{override}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00036}00036     \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00037}00037     \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00038}\mbox{\hyperlink{struct_streaming_voice_context_aebecac71b2955198d273e87acf0d79ed}{00038}}     \mbox{\hyperlink{struct_streaming_voice_context_aebecac71b2955198d273e87acf0d79ed}{STDMETHOD\_}}(\textcolor{keywordtype}{void}, OnVoiceProcessingPassEnd)() \textcolor{keyword}{override}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00039}00039     \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00040}00040     \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00041}\mbox{\hyperlink{struct_streaming_voice_context_a0bca7fb1200c41a866a4869affd745de}{00041}}     \mbox{\hyperlink{struct_streaming_voice_context_a0bca7fb1200c41a866a4869affd745de}{STDMETHOD\_}}(\textcolor{keywordtype}{void}, OnStreamEnd)() \textcolor{keyword}{override}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00042}00042     \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00043}00043     \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00044}\mbox{\hyperlink{struct_streaming_voice_context_a303a3429bfbec117a11ca153b8fd2034}{00044}}     \mbox{\hyperlink{struct_streaming_voice_context_a303a3429bfbec117a11ca153b8fd2034}{STDMETHOD\_}}(\textcolor{keywordtype}{void}, OnBufferStart)(\textcolor{keywordtype}{void}*) \textcolor{keyword}{override}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00045}00045     \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00046}00046     \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00047}\mbox{\hyperlink{struct_streaming_voice_context_a1f7871b0ef7319209af74a7bbb680483}{00047}}     \mbox{\hyperlink{struct_streaming_voice_context_a1f7871b0ef7319209af74a7bbb680483}{STDMETHOD\_}}(\textcolor{keywordtype}{void}, OnBufferEnd)(\textcolor{keywordtype}{void}*) \textcolor{keyword}{override}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00048}00048     \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00049}00049         SetEvent(hBufferEndEvent);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00050}00050     \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00051}\mbox{\hyperlink{struct_streaming_voice_context_aac9cd642e0e542717674c4d4f263c2c5}{00051}}     \mbox{\hyperlink{struct_streaming_voice_context_aac9cd642e0e542717674c4d4f263c2c5}{STDMETHOD\_}}(\textcolor{keywordtype}{void}, OnLoopEnd)(\textcolor{keywordtype}{void}*) \textcolor{keyword}{override}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00052}00052     \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00053}00053     \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00054}\mbox{\hyperlink{struct_streaming_voice_context_a89a0700ff14cc9c6349f9416f27ff013}{00054}}     \mbox{\hyperlink{struct_streaming_voice_context_a89a0700ff14cc9c6349f9416f27ff013}{STDMETHOD\_}}(\textcolor{keywordtype}{void}, OnVoiceError)(\textcolor{keywordtype}{void}*, HRESULT) \textcolor{keyword}{override}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00055}00055     \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00056}00056     \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00058}00058     HANDLE hBufferEndEvent;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00060}\mbox{\hyperlink{struct_streaming_voice_context_a8f88e99eac0e59bb039885274499a925}{00060}}     \mbox{\hyperlink{struct_streaming_voice_context_a8f88e99eac0e59bb039885274499a925}{StreamingVoiceContext}}() :}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00061}00061 \#if (\_WIN32\_WINNT >= \_WIN32\_WINNT\_VISTA)}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00062}00062         hBufferEndEvent(CreateEventEx(nullptr, nullptr, 0, EVENT\_MODIFY\_STATE | SYNCHRONIZE))}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00063}00063 \#else}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00064}00064         hBufferEndEvent(CreateEvent(nullptr, FALSE, FALSE, nullptr))}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00065}00065 \#endif}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00066}00066     \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00067}00067     \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00068}\mbox{\hyperlink{struct_streaming_voice_context_abb3dd8940111285d383145cd375c6ad5}{00068}}     \textcolor{keyword}{virtual} \mbox{\hyperlink{struct_streaming_voice_context_abb3dd8940111285d383145cd375c6ad5}{\string~StreamingVoiceContext}}()}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00069}00069     \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00070}00070         CloseHandle(hBufferEndEvent);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00071}00071     \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00072}00072 \};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00075}00075 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00076}00076 \textcolor{comment}{// Forward declaration}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00077}00077 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00078}\mbox{\hyperlink{_week13-5-_x_audio2_async_stream_8cpp_a349b6c149589c66ec69410e1036837f7}{00078}} HRESULT \mbox{\hyperlink{_week13-5-_x_audio2_async_stream_8cpp_a349b6c149589c66ec69410e1036837f7}{FindMediaFileCch}}(\_Out\_writes\_(cchDest) WCHAR* strDestPath, \_In\_ \textcolor{keywordtype}{int} cchDest, \_In\_z\_ LPCWSTR strFilename);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00081}00081 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00082}00082 \textcolor{comment}{// Entry point to the program}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00083}00083 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00084}\mbox{\hyperlink{_week13-5-_x_audio2_async_stream_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00084}} \textcolor{keywordtype}{int} \mbox{\hyperlink{_week13-5-_x_audio2_async_stream_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00085}00085 \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00086}00086     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00087}00087     \textcolor{comment}{// Initialize XAudio2}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00088}00088     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00089}00089     HRESULT hr = CoInitializeEx(\textcolor{keyword}{nullptr}, COINIT\_MULTITHREADED);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00090}00090     \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00091}00091     \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00092}00092         wprintf(L\textcolor{stringliteral}{"{}Failed to init COM: \%\#X\(\backslash\)n"{}}, hr);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00093}00093         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00094}00094     \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00096}00096 \textcolor{preprocessor}{\#if defined(USING\_XAUDIO2\_7\_DIRECTX)}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00097}00097     \textcolor{comment}{// Workaround for XAudio 2.7 known issue}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00098}00098 \textcolor{preprocessor}{\#ifdef \_DEBUG}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00099}00099     HMODULE mXAudioDLL = LoadLibraryExW(L\textcolor{stringliteral}{"{}XAudioD2\_7.DLL"{}}, \textcolor{keyword}{nullptr}, 0x00000800 \textcolor{comment}{/* LOAD\_LIBRARY\_SEARCH\_SYSTEM32 */});}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00100}00100 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00101}00101     HMODULE mXAudioDLL = LoadLibraryExW(L\textcolor{stringliteral}{"{}XAudio2\_7.DLL"{}}, \textcolor{keyword}{nullptr}, 0x00000800 \textcolor{comment}{/* LOAD\_LIBRARY\_SEARCH\_SYSTEM32 */});}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00102}00102 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00103}00103     \textcolor{keywordflow}{if} (!mXAudioDLL)}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00104}00104     \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00105}00105         wprintf(L\textcolor{stringliteral}{"{}Failed to find XAudio 2.7 DLL"{}});}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00106}00106         CoUninitialize();}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00107}00107         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00108}00108     \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00109}00109 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00110}00110 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00111}00111     UINT32 flags = 0;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00112}00112 \textcolor{preprocessor}{\#if defined(USING\_XAUDIO2\_7\_DIRECTX) \&\& defined(\_DEBUG)}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00113}00113     flags |= XAUDIO2\_DEBUG\_ENGINE;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00114}00114 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00115}00115 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00116}00116     ComPtr<IXAudio2> pXAudio2;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00117}00117     hr = XAudio2Create(pXAudio2.GetAddressOf(), flags);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00118}00118     \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00119}00119     \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00120}00120         wprintf(L\textcolor{stringliteral}{"{}Failed to init XAudio2 engine: \%\#X\(\backslash\)n"{}}, hr);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00121}00121         CoUninitialize();}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00122}00122         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00123}00123     \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00124}00124 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00125}00125 \textcolor{preprocessor}{\#if !defined(USING\_XAUDIO2\_7\_DIRECTX) \&\& defined(\_DEBUG)}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00126}00126     \textcolor{comment}{// To see the trace output, you need to view ETW logs for this application:}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00127}00127     \textcolor{comment}{//    Go to Control Panel, Administrative Tools, Event Viewer.}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00128}00128     \textcolor{comment}{//    View-\/>Show Analytic and Debug Logs.}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00129}00129     \textcolor{comment}{//    Applications and Services Logs / Microsoft / Windows / XAudio2. }}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00130}00130     \textcolor{comment}{//    Right click on Microsoft Windows XAudio2 debug logging, Properties, then Enable Logging, and hit OK }}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00131}00131     XAUDIO2\_DEBUG\_CONFIGURATION debug = \{ 0 \};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00132}00132     debug.TraceMask = XAUDIO2\_LOG\_ERRORS | XAUDIO2\_LOG\_WARNINGS;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00133}00133     debug.BreakMask = XAUDIO2\_LOG\_ERRORS;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00134}00134     pXAudio2-\/>SetDebugConfiguration(\&debug, 0);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00135}00135 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00136}00136 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00137}00137     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00138}00138     \textcolor{comment}{// Create a mastering voice}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00139}00139     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00140}00140     IXAudio2MasteringVoice* pMasteringVoice = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00141}00141 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00142}00142     \textcolor{keywordflow}{if} (FAILED(hr = pXAudio2-\/>CreateMasteringVoice(\&pMasteringVoice)))}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00143}00143     \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00144}00144         wprintf(L\textcolor{stringliteral}{"{}Failed creating mastering voice: \%\#X\(\backslash\)n"{}}, hr);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00145}00145         pXAudio2.Reset();}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00146}00146         CoUninitialize();}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00147}00147         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00148}00148     \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00149}00149 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00150}00150     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00151}00151     \textcolor{comment}{// Find our wave bank file}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00152}00152     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00153}00153     WCHAR wavebank[MAX\_PATH];}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00154}00154 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00155}00155     \textcolor{keywordflow}{if} (FAILED(hr = \mbox{\hyperlink{_week13-5-_x_audio2_async_stream_8cpp_a349b6c149589c66ec69410e1036837f7}{FindMediaFileCch}}(wavebank, MAX\_PATH, L\textcolor{stringliteral}{"{}Media\(\backslash\)\(\backslash\)Banks\(\backslash\)\(\backslash\)wavebank.xwb"{}})))}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00156}00156     \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00157}00157         wprintf(L\textcolor{stringliteral}{"{}Failed to find media file (\%\#X)\(\backslash\)n"{}}, hr);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00158}00158         pXAudio2.Reset();}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00159}00159         CoUninitialize();}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00160}00160         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00161}00161     \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00162}00162 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00163}00163     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00164}00164     \textcolor{comment}{// Extract wavebank data (entries, formats, offsets, and sizes)}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00165}00165     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00166}00166     \textcolor{comment}{// Note we are using Wave Banks to get sector-\/aligned streaming data to allow us to use}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00167}00167     \textcolor{comment}{// async unbuffered I/O. Raw .WAV files do not meet these requirements.}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00168}00168     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00169}00169     \mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader}{WaveBankReader}} wb;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00170}00170 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00171}00171     \textcolor{keywordflow}{if} (FAILED(hr = wb.\mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader_a2ec9adf03d35e11cf51a13b12c54b6b2}{Open}}(wavebank)))}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00172}00172     \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00173}00173         wprintf(L\textcolor{stringliteral}{"{}Failed to wavebank data (\%\#X)\(\backslash\)n"{}}, hr);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00174}00174         pXAudio2.Reset();}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00175}00175         CoUninitialize();}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00176}00176         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00177}00177     \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00178}00178 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00179}00179     wprintf(L\textcolor{stringliteral}{"{}Wavebank loaded with \%u entries.\(\backslash\)n"{}}, wb.\mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader_a519664a5a3e389664a5192e026e418b5}{Count}}());}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00180}00180 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00181}00181     \textcolor{keywordflow}{if} (!wb.\mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader_aaa5e6b8e0e0e80a143499c9481f3d460}{IsStreamingBank}}())}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00182}00182     \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00183}00183         wprintf(L\textcolor{stringliteral}{"{}This sample plays back streaming wave banks.\(\backslash\)nSee XAudio2WaveBank for playing in-\/memory wave banks"{}});}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00184}00184         pXAudio2.Reset();}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00185}00185         CoUninitialize();}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00186}00186         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00187}00187     \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00188}00188 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00189}00189     wprintf(L\textcolor{stringliteral}{"{}Press <ESC> to exit.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00190}00190 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00191}00191     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00192}00192     \textcolor{comment}{// Repeated loop through all the wavebank entries}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00193}00193     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00194}00194     \textcolor{keywordtype}{bool} exit = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00195}00195 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00196}00196     \textcolor{keywordflow}{while} (!exit)}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00197}00197     \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00198}00198         \textcolor{keywordflow}{for} (DWORD i = 0; i < wb.\mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader_a519664a5a3e389664a5192e026e418b5}{Count}}(); ++i)}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00199}00199         \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00200}00200             wprintf(L\textcolor{stringliteral}{"{}Now playing wave entry \%u"{}}, i);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00201}00201 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00202}00202             \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00203}00203             \textcolor{comment}{// Get the info we need to play back this wave (need enough space for PCM, ADPCM, and xWMA formats)}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00204}00204             \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00205}00205             \textcolor{keywordtype}{char} formatBuff[64];}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00206}00206             WAVEFORMATEX* wfx = \textcolor{keyword}{reinterpret\_cast<}WAVEFORMATEX*\textcolor{keyword}{>}(\&formatBuff);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00207}00207 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00208}00208             \textcolor{keywordflow}{if} (FAILED(hr = wb.\mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader_a50ed0b658fddf6af82f9fc74e96c5b7a}{GetFormat}}(i, wfx, 64)))}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00209}00209             \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00210}00210                 wprintf(L\textcolor{stringliteral}{"{}\(\backslash\)nCouldn't get wave format for entry \%u: error 0x\%x\(\backslash\)n"{}}, i, hr);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00211}00211                 exit = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00212}00212                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00213}00213             \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00214}00214 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00215}00215             \mbox{\hyperlink{struct_direct_x_1_1_wave_bank_reader_1_1_metadata}{WaveBankReader::Metadata}} metadata;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00216}00216             \textcolor{keywordflow}{if} (FAILED(hr = wb.\mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader_ae3e4fedea9f72088cf9241b08f622312}{GetMetadata}}(i, metadata)))}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00217}00217             \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00218}00218                 wprintf(L\textcolor{stringliteral}{"{}\(\backslash\)nCouldn't get metadta for entry \%u: error 0x\%x\(\backslash\)n"{}}, i, hr);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00219}00219                 exit = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00220}00220                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00221}00221             \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00222}00222 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00223}00223             \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00224}00224             \textcolor{comment}{// Create an XAudio2 voice to stream this wave}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00225}00225             \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00226}00226             \mbox{\hyperlink{struct_streaming_voice_context}{StreamingVoiceContext}} voiceContext;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00227}00227 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00228}00228             IXAudio2SourceVoice* pSourceVoice;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00229}00229             \textcolor{keywordflow}{if} (FAILED(hr = pXAudio2-\/>CreateSourceVoice(\&pSourceVoice, wfx, 0, 1.0f, \&voiceContext)))}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00230}00230             \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00231}00231                 wprintf(L\textcolor{stringliteral}{"{}\(\backslash\)nError \%\#X creating source voice\(\backslash\)n"{}}, hr);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00232}00232                 exit = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00233}00233                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00234}00234             \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00235}00235             pSourceVoice-\/>Start(0, 0);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00236}00236 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00237}00237             \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00238}00238             \textcolor{comment}{// Create an overlapped structure and buffers to handle the async I/O}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00239}00239             \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00240}00240             OVERLAPPED ovlCurrentRequest = \{ 0 \};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00241}00241 \textcolor{preprocessor}{\#if (\_WIN32\_WINNT >= \_WIN32\_WINNT\_VISTA)}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00242}00242             ovlCurrentRequest.hEvent = CreateEventEx(\textcolor{keyword}{nullptr}, \textcolor{keyword}{nullptr}, CREATE\_EVENT\_MANUAL\_RESET, EVENT\_MODIFY\_STATE | SYNCHRONIZE);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00243}00243 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00244}00244             ovlCurrentRequest.hEvent = CreateEvent(\textcolor{keyword}{nullptr}, TRUE, FALSE, \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00245}00245 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00246}00246 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00247}00247             \textcolor{keywordflow}{if} ((\mbox{\hyperlink{_week13-5-_x_audio2_async_stream_8cpp_a7958ffad7af3b6e0d2fdb6bc2d7be628}{STREAMING\_BUFFER\_SIZE}} \% wfx-\/>nBlockAlign) != 0)}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00248}00248             \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00249}00249                 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00250}00250                 \textcolor{comment}{// non-\/PCM data will fail here. ADPCM requires a more complicated streaming mechanism to deal with submission in audio frames that do}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00251}00251                 \textcolor{comment}{// not necessarily align to the 2K async boundary.}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00252}00252                 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00253}00253                 wprintf(L\textcolor{stringliteral}{"{}\(\backslash\)nStreaming buffer size (\%u) is not aligned with sample block requirements (\%u)\(\backslash\)n"{}}, \mbox{\hyperlink{_week13-5-_x_audio2_async_stream_8cpp_a7958ffad7af3b6e0d2fdb6bc2d7be628}{STREAMING\_BUFFER\_SIZE}}, wfx-\/>nBlockAlign);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00254}00254                 exit = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00255}00255                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00256}00256             \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00257}00257 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00258}00258             std::unique\_ptr<uint8\_t[]> buffers[\mbox{\hyperlink{_week13-5-_x_audio2_async_stream_8cpp_a433048abeb218e08e3f423032b6c537c}{MAX\_BUFFER\_COUNT}}];}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00259}00259             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} j = 0; j < \mbox{\hyperlink{_week13-5-_x_audio2_async_stream_8cpp_a433048abeb218e08e3f423032b6c537c}{MAX\_BUFFER\_COUNT}}; ++j)}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00260}00260             \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00261}00261                 buffers[j].reset(\textcolor{keyword}{new} uint8\_t[\mbox{\hyperlink{_week13-5-_x_audio2_async_stream_8cpp_a7958ffad7af3b6e0d2fdb6bc2d7be628}{STREAMING\_BUFFER\_SIZE}}]);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00262}00262             \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00263}00263             DWORD currentDiskReadBuffer = 0;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00264}00264             DWORD currentPosition = 0;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00265}00265 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00266}00266             \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00267}00267             \textcolor{comment}{// This sample code shows the simplest way to manage asynchronous}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00268}00268             \textcolor{comment}{// streaming. There are three different processes involved. One is the management}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00269}00269             \textcolor{comment}{// process, which is what we're writing here. The other two processes are}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00270}00270             \textcolor{comment}{// essentially hardware operations: disk reads from the I/O system, and}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00271}00271             \textcolor{comment}{// audio processing from XAudio2. Disk reads and audio playback both happen}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00272}00272             \textcolor{comment}{// without much intervention from our application, so our job is just to make}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00273}00273             \textcolor{comment}{// sure that the data being read off the disk makes it over to the audio}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00274}00274             \textcolor{comment}{// processor in time to be played back.}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00275}00275             \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00276}00276             \textcolor{comment}{// There are two events that can happen in this system. The disk I/O system can}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00277}00277             \textcolor{comment}{// signal that data is ready, and the audio system can signal that it's done}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00278}00278             \textcolor{comment}{// playing back data. We can handle either or both of these events either synchronously}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00279}00279             \textcolor{comment}{// (via polling) or asynchronously (via callbacks or by waiting on an event}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00280}00280             \textcolor{comment}{// object).}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00281}00281             \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00282}00282             HANDLE async = wb.\mbox{\hyperlink{class_direct_x_1_1_wave_bank_reader_a65814e765c107e614830b939bdbe4c86}{GetAsyncHandle}}();}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00283}00283 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00284}00284             \textcolor{keywordflow}{while} (currentPosition < metadata.\mbox{\hyperlink{struct_direct_x_1_1_wave_bank_reader_1_1_metadata_ae728d57737d2c990d061630fccf8b0b9}{lengthBytes}})}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00285}00285             \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00286}00286                 wprintf(L\textcolor{stringliteral}{"{}."{}});}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00287}00287 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00288}00288                 \textcolor{keywordflow}{if} (GetAsyncKeyState(VK\_ESCAPE))}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00289}00289                 \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00290}00290                     exit = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00291}00291 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00292}00292                     \textcolor{keywordflow}{while} (GetAsyncKeyState(VK\_ESCAPE))}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00293}00293                         Sleep(10);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00294}00294 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00295}00295                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00296}00296                 \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00297}00297 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00298}00298                 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00299}00299                 \textcolor{comment}{// Issue a request.}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00300}00300                 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00301}00301                 \textcolor{comment}{// Note: although the file read will be done asynchronously, it is possible for the}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00302}00302                 \textcolor{comment}{// call to ReadFile to block for longer than you might think. If the I/O system needs}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00303}00303                 \textcolor{comment}{// to read the file allocation table in order to satisfy the read, it will do that}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00304}00304                 \textcolor{comment}{// BEFORE returning from ReadFile. That means that this call could potentially}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00305}00305                 \textcolor{comment}{// block for several milliseconds! In order to get "{}true"{} async I/O you should put}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00306}00306                 \textcolor{comment}{// this entire loop on a separate thread.}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00307}00307                 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00308}00308                 \textcolor{comment}{// Second note: async requests have to be a multiple of the disk sector size. Rather than}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00309}00309                 \textcolor{comment}{// handle this conditionally, make all reads the same size but remember how many}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00310}00310                 \textcolor{comment}{// bytes we actually want and only submit that many to the voice.}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00311}00311                 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00312}00312                 DWORD cbValid = min(\mbox{\hyperlink{_week13-5-_x_audio2_async_stream_8cpp_a7958ffad7af3b6e0d2fdb6bc2d7be628}{STREAMING\_BUFFER\_SIZE}}, metadata.\mbox{\hyperlink{struct_direct_x_1_1_wave_bank_reader_1_1_metadata_ae728d57737d2c990d061630fccf8b0b9}{lengthBytes}} -\/ currentPosition);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00313}00313                 ovlCurrentRequest.Offset = metadata.\mbox{\hyperlink{struct_direct_x_1_1_wave_bank_reader_1_1_metadata_ac3c4675edfa7fc241cb463cfb81788bd}{offsetBytes}} + currentPosition;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00314}00314 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00315}00315                 \textcolor{keywordtype}{bool} wait = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00316}00316                 \textcolor{keywordflow}{if} (!ReadFile(async, buffers[currentDiskReadBuffer].get(), \mbox{\hyperlink{_week13-5-_x_audio2_async_stream_8cpp_a7958ffad7af3b6e0d2fdb6bc2d7be628}{STREAMING\_BUFFER\_SIZE}}, \textcolor{keyword}{nullptr}, \&ovlCurrentRequest))}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00317}00317                 \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00318}00318                     DWORD error = GetLastError();}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00319}00319                     \textcolor{keywordflow}{if} (error != ERROR\_IO\_PENDING)}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00320}00320                     \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00321}00321                         wprintf(L\textcolor{stringliteral}{"{}\(\backslash\)nCouldn't start async read: error \%\#X\(\backslash\)n"{}}, HRESULT\_FROM\_WIN32(error));}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00322}00322                         exit = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00323}00323                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00324}00324                     \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00325}00325                     wait = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00326}00326                 \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00327}00327 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00328}00328                 currentPosition += cbValid;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00329}00329 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00330}00330                 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00331}00331                 \textcolor{comment}{// At this point the read is progressing in the background and we are free to do}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00332}00332                 \textcolor{comment}{// other processing while we wait for it to finish. For the purposes of this sample,}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00333}00333                 \textcolor{comment}{// however, we'll just go to sleep until the read is done.}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00334}00334                 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00335}00335                 \textcolor{keywordflow}{if} (wait)}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00336}00336                     WaitForSingleObject(ovlCurrentRequest.hEvent, INFINITE);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00337}00337 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00338}00338                 DWORD cb;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00339}00339 \textcolor{preprocessor}{\#if (\_WIN32\_WINNT >= 0x0602 }\textcolor{comment}{/*\_WIN32\_WINNT\_WIN8*/}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00340}00340                 BOOL result = GetOverlappedResultEx(async, \&ovlCurrentRequest, \&cb, 0, FALSE);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00341}00341 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00342}00342                 BOOL result = GetOverlappedResult(async, \&ovlCurrentRequest, \&cb, FALSE);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00343}00343 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00344}00344                 \textcolor{keywordflow}{if} (!result)}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00345}00345                 \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00346}00346                     wprintf(L\textcolor{stringliteral}{"{}\(\backslash\)nFailed waiting for async read: error \%\#X\(\backslash\)n"{}}, HRESULT\_FROM\_WIN32(GetLastError()));}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00347}00347                     exit = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00348}00348                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00349}00349                 \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00350}00350 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00351}00351                 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00352}00352                 \textcolor{comment}{// Now that the event has been signaled, we know we have audio available. The next}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00353}00353                 \textcolor{comment}{// question is whether our XAudio2 source voice has played enough data for us to give}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00354}00354                 \textcolor{comment}{// it another buffer full of audio. We'd like to keep no more than MAX\_BUFFER\_COUNT -\/ 1}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00355}00355                 \textcolor{comment}{// buffers on the queue, so that one buffer is always free for disk I/O.}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00356}00356                 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00357}00357                 XAUDIO2\_VOICE\_STATE state;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00358}00358                 \textcolor{keywordflow}{for} (;; )}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00359}00359                 \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00360}00360                     pSourceVoice-\/>GetState(\&state);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00361}00361                     \textcolor{keywordflow}{if} (state.BuffersQueued < \mbox{\hyperlink{_week13-5-_x_audio2_async_stream_8cpp_a433048abeb218e08e3f423032b6c537c}{MAX\_BUFFER\_COUNT}} -\/ 1)}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00362}00362                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00363}00363 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00364}00364                     WaitForSingleObject(voiceContext.hBufferEndEvent, INFINITE);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00365}00365                 \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00366}00366 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00367}00367                 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00368}00368                 \textcolor{comment}{// At this point we have a buffer full of audio and enough room to submit it, so}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00369}00369                 \textcolor{comment}{// let's submit it and get another read request going.}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00370}00370                 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00371}00371                 XAUDIO2\_BUFFER buf = \{ 0 \};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00372}00372                 buf.AudioBytes = cbValid;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00373}00373                 buf.pAudioData = buffers[currentDiskReadBuffer].get();}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00374}00374                 \textcolor{keywordflow}{if} (currentPosition >= metadata.\mbox{\hyperlink{struct_direct_x_1_1_wave_bank_reader_1_1_metadata_ae728d57737d2c990d061630fccf8b0b9}{lengthBytes}})}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00375}00375                     buf.Flags = XAUDIO2\_END\_OF\_STREAM;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00376}00376 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00377}00377                 pSourceVoice-\/>SubmitSourceBuffer(\&buf);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00378}00378 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00379}00379                 currentDiskReadBuffer++;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00380}00380                 currentDiskReadBuffer \%= \mbox{\hyperlink{_week13-5-_x_audio2_async_stream_8cpp_a433048abeb218e08e3f423032b6c537c}{MAX\_BUFFER\_COUNT}};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00381}00381             \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00382}00382 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00383}00383             \textcolor{keywordflow}{if} (!exit)}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00384}00384             \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00385}00385                 wprintf(L\textcolor{stringliteral}{"{}done streaming.."{}});}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00386}00386 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00387}00387                 XAUDIO2\_VOICE\_STATE state;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00388}00388                 \textcolor{keywordflow}{for} (; ; )}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00389}00389                 \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00390}00390                     pSourceVoice-\/>GetState(\&state);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00391}00391                     \textcolor{keywordflow}{if} (!state.BuffersQueued)}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00392}00392                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00393}00393 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00394}00394                     wprintf(L\textcolor{stringliteral}{"{}."{}});}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00395}00395                     WaitForSingleObject(voiceContext.hBufferEndEvent, INFINITE);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00396}00396                 \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00397}00397             \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00398}00398 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00399}00399             \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00400}00400             \textcolor{comment}{// Clean up}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00401}00401             \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00402}00402             pSourceVoice-\/>Stop(0);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00403}00403             pSourceVoice-\/>DestroyVoice();}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00404}00404 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00405}00405             CloseHandle(ovlCurrentRequest.hEvent);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00406}00406 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00407}00407             wprintf(L\textcolor{stringliteral}{"{}stopped\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00408}00408 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00409}00409             \textcolor{keywordflow}{if} (exit)}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00410}00410                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00411}00411 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00412}00412             Sleep(500);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00413}00413         \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00414}00414     \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00415}00415 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00416}00416     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00417}00417     \textcolor{comment}{// Cleanup XAudio2}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00418}00418     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00419}00419 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00420}00420     \textcolor{comment}{// All XAudio2 interfaces are released when the engine is destroyed, but being tidy}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00421}00421     pMasteringVoice-\/>DestroyVoice();}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00422}00422 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00423}00423     pXAudio2.Reset();}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00424}00424 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00425}00425 \textcolor{preprocessor}{\#ifdef USING\_XAUDIO2\_7\_DIRECTX}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00426}00426     \textcolor{keywordflow}{if} (mXAudioDLL)}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00427}00427         FreeLibrary(mXAudioDLL);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00428}00428 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00429}00429 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00430}00430     CoUninitialize();}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00431}00431 \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00432}00432 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00433}00433 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00434}00434 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00435}00435 \textcolor{comment}{// Helper function to try to find the location of a media file}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00436}00436 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00437}00437 \mbox{\hyperlink{_d_d_s_texture_loader_8h_a3150346626fcea3ad7afe5dfb4ce27d8}{\_Use\_decl\_annotations\_}}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00438}\mbox{\hyperlink{_week13-5-_x_audio2_async_stream_8cpp_ad0895a6d9abe365dfbaccf3eb7fc0046}{00438}} HRESULT \mbox{\hyperlink{_week13-5-_x_audio2_async_stream_8cpp_a349b6c149589c66ec69410e1036837f7}{FindMediaFileCch}}(WCHAR* strDestPath, \textcolor{keywordtype}{int} cchDest, LPCWSTR strFilename)}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00439}00439 \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00440}00440     \textcolor{keywordtype}{bool} bFound = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00441}00441 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00442}00442     \textcolor{keywordflow}{if} (!strFilename || strFilename[0] == 0 || !strDestPath || cchDest < 10)}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00443}00443         \textcolor{keywordflow}{return} E\_INVALIDARG;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00444}00444 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00445}00445     \textcolor{comment}{// Get the exe name, and exe path}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00446}00446     WCHAR strExePath[MAX\_PATH] = \{ 0 \};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00447}00447     WCHAR strExeName[MAX\_PATH] = \{ 0 \};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00448}00448     WCHAR* strLastSlash = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00449}00449     GetModuleFileName(\textcolor{keyword}{nullptr}, strExePath, MAX\_PATH);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00450}00450     strExePath[MAX\_PATH -\/ 1] = 0;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00451}00451     strLastSlash = wcsrchr(strExePath, TEXT(\textcolor{charliteral}{'\(\backslash\)\(\backslash\)'}));}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00452}00452     \textcolor{keywordflow}{if} (strLastSlash)}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00453}00453     \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00454}00454         wcscpy\_s(strExeName, MAX\_PATH, \&strLastSlash[1]);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00455}00455 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00456}00456         \textcolor{comment}{// Chop the exe name from the exe path}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00457}00457         *strLastSlash = 0;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00458}00458 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00459}00459         \textcolor{comment}{// Chop the .exe from the exe name}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00460}00460         strLastSlash = wcsrchr(strExeName, TEXT(\textcolor{charliteral}{'.'}));}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00461}00461         \textcolor{keywordflow}{if} (strLastSlash)}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00462}00462             *strLastSlash = 0;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00463}00463     \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00464}00464 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00465}00465     wcscpy\_s(strDestPath, cchDest, strFilename);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00466}00466     \textcolor{keywordflow}{if} (GetFileAttributes(strDestPath) != 0xFFFFFFFF)}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00467}00467         \textcolor{keywordflow}{return} S\_OK;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00468}00468 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00469}00469     \textcolor{comment}{// Search all parent directories starting at .\(\backslash\) and using strFilename as the leaf name}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00470}00470     WCHAR strLeafName[MAX\_PATH] = \{ 0 \};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00471}00471     wcscpy\_s(strLeafName, MAX\_PATH, strFilename);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00472}00472 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00473}00473     WCHAR strFullPath[MAX\_PATH] = \{ 0 \};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00474}00474     WCHAR strFullFileName[MAX\_PATH] = \{ 0 \};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00475}00475     WCHAR strSearch[MAX\_PATH] = \{ 0 \};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00476}00476     WCHAR* strFilePart = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00477}00477 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00478}00478     GetFullPathName(L\textcolor{stringliteral}{"{}."{}}, MAX\_PATH, strFullPath, \&strFilePart);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00479}00479     \textcolor{keywordflow}{if} (!strFilePart)}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00480}00480         \textcolor{keywordflow}{return} E\_FAIL;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00481}00481 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00482}00482     \textcolor{keywordflow}{while} (strFilePart \&\& *strFilePart != \textcolor{charliteral}{'\(\backslash\)0'})}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00483}00483     \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00484}00484         swprintf\_s(strFullFileName, MAX\_PATH, L\textcolor{stringliteral}{"{}\%s\(\backslash\)\(\backslash\)\%s"{}}, strFullPath, strLeafName);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00485}00485         \textcolor{keywordflow}{if} (GetFileAttributes(strFullFileName) != 0xFFFFFFFF)}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00486}00486         \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00487}00487             wcscpy\_s(strDestPath, cchDest, strFullFileName);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00488}00488             bFound = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00489}00489             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00490}00490         \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00491}00491 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00492}00492         swprintf\_s(strFullFileName, MAX\_PATH, L\textcolor{stringliteral}{"{}\%s\(\backslash\)\(\backslash\)\%s\(\backslash\)\(\backslash\)\%s"{}}, strFullPath, strExeName, strLeafName);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00493}00493         \textcolor{keywordflow}{if} (GetFileAttributes(strFullFileName) != 0xFFFFFFFF)}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00494}00494         \{}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00495}00495             wcscpy\_s(strDestPath, cchDest, strFullFileName);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00496}00496             bFound = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00497}00497             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00498}00498         \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00499}00499 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00500}00500         swprintf\_s(strSearch, MAX\_PATH, L\textcolor{stringliteral}{"{}\%s\(\backslash\)\(\backslash\).."{}}, strFullPath);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00501}00501         GetFullPathName(strSearch, MAX\_PATH, strFullPath, \&strFilePart);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00502}00502     \}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00503}00503     \textcolor{keywordflow}{if} (bFound)}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00504}00504         \textcolor{keywordflow}{return} S\_OK;}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00505}00505 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00506}00506     \textcolor{comment}{// On failure, return the file as the path but also return an error code}}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00507}00507     wcscpy\_s(strDestPath, cchDest, strFilename);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00508}00508 }
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00509}00509     \textcolor{keywordflow}{return} HRESULT\_FROM\_WIN32(ERROR\_FILE\_NOT\_FOUND);}
+\DoxyCodeLine{\Hypertarget{_week13-5-_x_audio2_async_stream_8cpp_source_l00510}00510 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,97 @@
+\hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source}{}\doxysection{Sound\+File\+Factory.\+hpp}
+\label{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source}\index{Week14/SFML-\/2.5.1/include/SFML/Audio/SoundFileFactory.hpp@{Week14/SFML-\/2.5.1/include/SFML/Audio/SoundFileFactory.hpp}}
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00002}00002 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00003}00003 \textcolor{comment}{// SFML -\/ Simple and Fast Multimedia Library}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00004}00004 \textcolor{comment}{// Copyright (C) 2007-\/2018 Laurent Gomila (laurent@sfml-\/dev.org)}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00005}00005 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00006}00006 \textcolor{comment}{// This software is provided 'as-\/is', without any express or implied warranty.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00007}00007 \textcolor{comment}{// In no event will the authors be held liable for any damages arising from the use of this software.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00008}00008 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00009}00009 \textcolor{comment}{// Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00010}00010 \textcolor{comment}{// including commercial applications, and to alter it and redistribute it freely,}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00011}00011 \textcolor{comment}{// subject to the following restrictions:}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00012}00012 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00013}00013 \textcolor{comment}{// 1. The origin of this software must not be misrepresented;}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00014}00014 \textcolor{comment}{//    you must not claim that you wrote the original software.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00015}00015 \textcolor{comment}{//    If you use this software in a product, an acknowledgment}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00016}00016 \textcolor{comment}{//    in the product documentation would be appreciated but is not required.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00017}00017 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00018}00018 \textcolor{comment}{// 2. Altered source versions must be plainly marked as such,}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00019}00019 \textcolor{comment}{//    and must not be misrepresented as being the original software.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00020}00020 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00021}00021 \textcolor{comment}{// 3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00022}00022 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00024}00024 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00025}00025 \textcolor{preprocessor}{\#ifndef SFML\_SOUNDFILEFACTORY\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00026}00026 \textcolor{preprocessor}{\#define SFML\_SOUNDFILEFACTORY\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00029}00029 \textcolor{comment}{// Headers}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00031}00031 \textcolor{comment}{}\textcolor{preprocessor}{\#include <SFML/Audio/Export.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00032}00032 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00033}00033 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00036}00036 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacesf}{sf}}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00037}00037 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00038}00038 \textcolor{keyword}{class }InputStream;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00039}00039 \textcolor{keyword}{class }SoundFileReader;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00040}00040 \textcolor{keyword}{class }SoundFileWriter;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00046}00046 \textcolor{keyword}{class }\mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_export_8hpp_a4d34c0f253824ac49bdd93545913eb89}{SFML\_AUDIO\_API}} SoundFileFactory}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00047}00047 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00048}00048 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00056}00056     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00057}\mbox{\hyperlink{classsf_1_1_sound_file_factory_aeee396bfdbb6ac24c57e5c73c30ec105}{00057}}     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_sound_file_factory_aeee396bfdbb6ac24c57e5c73c30ec105}{registerReader}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00065}00065     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00066}\mbox{\hyperlink{classsf_1_1_sound_file_factory_ac42f01faf678d1f410e1ce8a18e4cebb}{00066}}     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_sound_file_factory_ac42f01faf678d1f410e1ce8a18e4cebb}{unregisterReader}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00074}00074     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00075}\mbox{\hyperlink{classsf_1_1_sound_file_factory_abb6e082ea3fedf22c8648113d1be5755}{00075}}     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_sound_file_factory_abb6e082ea3fedf22c8648113d1be5755}{registerWriter}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00083}00083     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00084}\mbox{\hyperlink{classsf_1_1_sound_file_factory_a1bd8ebd264a5ec33962a9f7a8ca21a60}{00084}}     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_sound_file_factory_a1bd8ebd264a5ec33962a9f7a8ca21a60}{unregisterWriter}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00098}\mbox{\hyperlink{classsf_1_1_sound_file_factory_ae68185540db5e2a451d626be45036fe0}{00098}}     \textcolor{keyword}{static} \mbox{\hyperlink{classsf_1_1_sound_file_reader}{SoundFileReader}}* \mbox{\hyperlink{classsf_1_1_sound_file_factory_ae68185540db5e2a451d626be45036fe0}{createReaderFromFilename}}(\textcolor{keyword}{const} std::string\& filename);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00113}\mbox{\hyperlink{classsf_1_1_sound_file_factory_a2384ed647b08c5b2bbf43566d5d7b5fd}{00113}}     \textcolor{keyword}{static} \mbox{\hyperlink{classsf_1_1_sound_file_reader}{SoundFileReader}}* \mbox{\hyperlink{classsf_1_1_sound_file_factory_a2384ed647b08c5b2bbf43566d5d7b5fd}{createReaderFromMemory}}(\textcolor{keyword}{const} \textcolor{keywordtype}{void}* data, std::size\_t sizeInBytes);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00127}\mbox{\hyperlink{classsf_1_1_sound_file_factory_af64ce454cde415ebd3ca5442801d87d8}{00127}}     \textcolor{keyword}{static} \mbox{\hyperlink{classsf_1_1_sound_file_reader}{SoundFileReader}}* \mbox{\hyperlink{classsf_1_1_sound_file_factory_af64ce454cde415ebd3ca5442801d87d8}{createReaderFromStream}}(\mbox{\hyperlink{classsf_1_1_input_stream}{InputStream}}\& stream);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00128}00128 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00139}\mbox{\hyperlink{classsf_1_1_sound_file_factory_a2bc9da55d78be2c41a273bbbea4c0978}{00139}}     \textcolor{keyword}{static} \mbox{\hyperlink{classsf_1_1_sound_file_writer}{SoundFileWriter}}* \mbox{\hyperlink{classsf_1_1_sound_file_factory_a2bc9da55d78be2c41a273bbbea4c0978}{createWriterFromFilename}}(\textcolor{keyword}{const} std::string\& filename);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00140}00140 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00141}00141 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00142}00142 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00144}00144     \textcolor{comment}{// Types}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00146}00146 \textcolor{comment}{}    \textcolor{keyword}{struct }\mbox{\hyperlink{structsf_1_1_sound_file_factory_1_1_reader_factory}{ReaderFactory}}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00147}00147     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00148}00148         bool (*check)(\mbox{\hyperlink{classsf_1_1_input_stream}{InputStream}}\&);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00149}00149         \mbox{\hyperlink{classsf_1_1_sound_file_reader}{SoundFileReader}}* (*create)();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00150}00150     \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00151}\mbox{\hyperlink{classsf_1_1_sound_file_factory_ac17e17e2acd7955119f54e32d45293a2}{00151}}     \textcolor{keyword}{typedef} std::vector<ReaderFactory> \mbox{\hyperlink{classsf_1_1_sound_file_factory_ac17e17e2acd7955119f54e32d45293a2}{ReaderFactoryArray}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00152}00152 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00153}00153     \textcolor{keyword}{struct }\mbox{\hyperlink{structsf_1_1_sound_file_factory_1_1_writer_factory}{WriterFactory}}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00154}00154     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00155}00155         bool (*check)(\textcolor{keyword}{const} std::string\&);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00156}00156         \mbox{\hyperlink{classsf_1_1_sound_file_writer}{SoundFileWriter}}* (*create)();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00157}00157     \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00158}\mbox{\hyperlink{classsf_1_1_sound_file_factory_a5ef91a693abbf9ebffcd86379ddb9930}{00158}}     \textcolor{keyword}{typedef} std::vector<WriterFactory> \mbox{\hyperlink{classsf_1_1_sound_file_factory_a5ef91a693abbf9ebffcd86379ddb9930}{WriterFactoryArray}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00159}00159 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00161}00161     \textcolor{comment}{// Static member data}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00163}00163 \textcolor{comment}{}    \textcolor{keyword}{static} \mbox{\hyperlink{classsf_1_1_sound_file_factory_ac17e17e2acd7955119f54e32d45293a2}{ReaderFactoryArray}} s\_readers; }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00164}00164     \textcolor{keyword}{static} \mbox{\hyperlink{classsf_1_1_sound_file_factory_a5ef91a693abbf9ebffcd86379ddb9930}{WriterFactoryArray}} s\_writers; }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00165}00165 \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00166}00166 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00167}00167 \} \textcolor{comment}{// namespace sf}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00168}00168 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00169}00169 \textcolor{preprocessor}{\#include <SFML/Audio/SoundFileFactory.inl>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00170}00170 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00171}00171 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// SFML\_SOUNDFILEFACTORY\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00172}00172 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source_l00173}00173 }
+
+\end{DoxyCode}

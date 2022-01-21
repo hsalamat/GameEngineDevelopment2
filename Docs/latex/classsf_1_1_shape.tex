@@ -1,0 +1,1006 @@
+\hypertarget{classsf_1_1_shape}{}\doxysection{sf\+::Shape Class Reference}
+\label{classsf_1_1_shape}\index{sf::Shape@{sf::Shape}}
+
+
+Base class for textured shapes with outline.  
+
+
+
+
+{\ttfamily \#include $<$Shape.\+hpp$>$}
+
+Inheritance diagram for sf\+::Shape\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.187500cm]{classsf_1_1_shape}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classsf_1_1_shape_a2262aceb9df52d4275c19633592f19bf}{$\sim$\+Shape}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shape_af8fb22bab1956325be5d62282711e3b6}{set\+Texture}} (const \mbox{\hyperlink{classsf_1_1_texture}{Texture}} $\ast$texture, bool reset\+Rect=false)
+\begin{DoxyCompactList}\small\item\em Change the source texture of the shape. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shape_a2029cc820d1740d14ac794b82525e157}{set\+Texture\+Rect}} (const \mbox{\hyperlink{namespacesf_a1b1279ab06950b96686cffaacb72fed5}{Int\+Rect}} \&rect)
+\begin{DoxyCompactList}\small\item\em Set the sub-\/rectangle of the texture that the shape will display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shape_a3506f9b5d916fec14d583d16f23c2485}{set\+Fill\+Color}} (const \mbox{\hyperlink{classsf_1_1_color}{Color}} \&color)
+\begin{DoxyCompactList}\small\item\em Set the fill color of the shape. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shape_a5978f41ee349ac3c52942996dcb184f7}{set\+Outline\+Color}} (const \mbox{\hyperlink{classsf_1_1_color}{Color}} \&color)
+\begin{DoxyCompactList}\small\item\em Set the outline color of the shape. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shape_a5ad336ad74fc1f567fce3b7e44cf87dc}{set\+Outline\+Thickness}} (float thickness)
+\begin{DoxyCompactList}\small\item\em Set the thickness of the shape\textquotesingle{}s outline. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classsf_1_1_texture}{Texture}} $\ast$ \mbox{\hyperlink{classsf_1_1_shape_af4c345931cd651ffb8f7a177446e28f7}{get\+Texture}} () const
+\begin{DoxyCompactList}\small\item\em Get the source texture of the shape. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{namespacesf_a1b1279ab06950b96686cffaacb72fed5}{Int\+Rect}} \& \mbox{\hyperlink{classsf_1_1_shape_ad8adbb54823c8eff1830a938e164daa4}{get\+Texture\+Rect}} () const
+\begin{DoxyCompactList}\small\item\em Get the sub-\/rectangle of the texture displayed by the shape. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classsf_1_1_color}{Color}} \& \mbox{\hyperlink{classsf_1_1_shape_aa5da23e522d2dd11e3e7661c26164c78}{get\+Fill\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Get the fill color of the shape. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classsf_1_1_color}{Color}} \& \mbox{\hyperlink{classsf_1_1_shape_a4aa05b59851468e948ac9682b9c71abb}{get\+Outline\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Get the outline color of the shape. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classsf_1_1_shape_a1d4d5299c573a905e5833fc4dce783a7}{get\+Outline\+Thickness}} () const
+\begin{DoxyCompactList}\small\item\em Get the outline thickness of the shape. \end{DoxyCompactList}\item 
+virtual std\+::size\+\_\+t \mbox{\hyperlink{classsf_1_1_shape_af988dd61a29803fc04d02198e44b5643}{get\+Point\+Count}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the total number of points of the shape. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}} \mbox{\hyperlink{classsf_1_1_shape_a40e5d83713eb9f0c999944cf96458085}{get\+Point}} (std\+::size\+\_\+t index) const =0
+\begin{DoxyCompactList}\small\item\em Get a point of the shape. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{Float\+Rect}} \mbox{\hyperlink{classsf_1_1_shape_ae3294bcdf8713d33a862242ecf706443}{get\+Local\+Bounds}} () const
+\begin{DoxyCompactList}\small\item\em Get the local bounding rectangle of the entity. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{Float\+Rect}} \mbox{\hyperlink{classsf_1_1_shape_ac0e29425d908d5442060cc44790fe4da}{get\+Global\+Bounds}} () const
+\begin{DoxyCompactList}\small\item\em Get the global (non-\/minimal) bounding rectangle of the entity. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classsf_1_1_shape_a2262aceb9df52d4275c19633592f19bf}{$\sim$\+Shape}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shape_af8fb22bab1956325be5d62282711e3b6}{set\+Texture}} (const \mbox{\hyperlink{classsf_1_1_texture}{Texture}} $\ast$texture, bool reset\+Rect=false)
+\begin{DoxyCompactList}\small\item\em Change the source texture of the shape. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shape_a2029cc820d1740d14ac794b82525e157}{set\+Texture\+Rect}} (const \mbox{\hyperlink{namespacesf_a1b1279ab06950b96686cffaacb72fed5}{Int\+Rect}} \&rect)
+\begin{DoxyCompactList}\small\item\em Set the sub-\/rectangle of the texture that the shape will display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shape_a3506f9b5d916fec14d583d16f23c2485}{set\+Fill\+Color}} (const \mbox{\hyperlink{classsf_1_1_color}{Color}} \&color)
+\begin{DoxyCompactList}\small\item\em Set the fill color of the shape. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shape_a5978f41ee349ac3c52942996dcb184f7}{set\+Outline\+Color}} (const \mbox{\hyperlink{classsf_1_1_color}{Color}} \&color)
+\begin{DoxyCompactList}\small\item\em Set the outline color of the shape. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shape_a5ad336ad74fc1f567fce3b7e44cf87dc}{set\+Outline\+Thickness}} (float thickness)
+\begin{DoxyCompactList}\small\item\em Set the thickness of the shape\textquotesingle{}s outline. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classsf_1_1_texture}{Texture}} $\ast$ \mbox{\hyperlink{classsf_1_1_shape_af4c345931cd651ffb8f7a177446e28f7}{get\+Texture}} () const
+\begin{DoxyCompactList}\small\item\em Get the source texture of the shape. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{namespacesf_a1b1279ab06950b96686cffaacb72fed5}{Int\+Rect}} \& \mbox{\hyperlink{classsf_1_1_shape_ad8adbb54823c8eff1830a938e164daa4}{get\+Texture\+Rect}} () const
+\begin{DoxyCompactList}\small\item\em Get the sub-\/rectangle of the texture displayed by the shape. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classsf_1_1_color}{Color}} \& \mbox{\hyperlink{classsf_1_1_shape_aa5da23e522d2dd11e3e7661c26164c78}{get\+Fill\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Get the fill color of the shape. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classsf_1_1_color}{Color}} \& \mbox{\hyperlink{classsf_1_1_shape_a4aa05b59851468e948ac9682b9c71abb}{get\+Outline\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Get the outline color of the shape. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classsf_1_1_shape_a1d4d5299c573a905e5833fc4dce783a7}{get\+Outline\+Thickness}} () const
+\begin{DoxyCompactList}\small\item\em Get the outline thickness of the shape. \end{DoxyCompactList}\item 
+virtual std\+::size\+\_\+t \mbox{\hyperlink{classsf_1_1_shape_af988dd61a29803fc04d02198e44b5643}{get\+Point\+Count}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the total number of points of the shape. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}} \mbox{\hyperlink{classsf_1_1_shape_a40e5d83713eb9f0c999944cf96458085}{get\+Point}} (std\+::size\+\_\+t index) const =0
+\begin{DoxyCompactList}\small\item\em Get a point of the shape. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{Float\+Rect}} \mbox{\hyperlink{classsf_1_1_shape_ae3294bcdf8713d33a862242ecf706443}{get\+Local\+Bounds}} () const
+\begin{DoxyCompactList}\small\item\em Get the local bounding rectangle of the entity. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{Float\+Rect}} \mbox{\hyperlink{classsf_1_1_shape_ac0e29425d908d5442060cc44790fe4da}{get\+Global\+Bounds}} () const
+\begin{DoxyCompactList}\small\item\em Get the global (non-\/minimal) bounding rectangle of the entity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsf_1_1_shape_a413a457f720835b9f5d8e97ca8b80960}{Shape}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shape_adfb2bd966c8edbc5d6c92ebc375e4ac1}{update}} ()
+\begin{DoxyCompactList}\small\item\em Recompute the internal geometry of the shape. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_shape_a413a457f720835b9f5d8e97ca8b80960}{Shape}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shape_adfb2bd966c8edbc5d6c92ebc375e4ac1}{update}} ()
+\begin{DoxyCompactList}\small\item\em Recompute the internal geometry of the shape. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classsf_1_1_shape_af335b88097f1db83afdfafa0cd66d04d}{draw}} (\mbox{\hyperlink{classsf_1_1_render_target}{Render\+Target}} \&target, \mbox{\hyperlink{classsf_1_1_render_states}{Render\+States}} states) const
+\begin{DoxyCompactList}\small\item\em Draw the shape to a render target. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shape_a371b37d672f96660dcf70aa06b2fab77}{update\+Fill\+Colors}} ()
+\begin{DoxyCompactList}\small\item\em Update the fill vertices\textquotesingle{} color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shape_a4a7ea7b0254b26ac36c27a5ff545f4b3}{update\+Tex\+Coords}} ()
+\begin{DoxyCompactList}\small\item\em Update the fill vertices\textquotesingle{} texture coordinates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shape_a1364b357a1041ff38c872871a5c28623}{update\+Outline}} ()
+\begin{DoxyCompactList}\small\item\em Update the outline vertices\textquotesingle{} position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shape_a55d37129600d23db54d5b6cacb2d6d67}{update\+Outline\+Colors}} ()
+\begin{DoxyCompactList}\small\item\em Update the outline vertices\textquotesingle{} color. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classsf_1_1_shape_af335b88097f1db83afdfafa0cd66d04d}{draw}} (\mbox{\hyperlink{classsf_1_1_render_target}{Render\+Target}} \&target, \mbox{\hyperlink{classsf_1_1_render_states}{Render\+States}} states) const
+\begin{DoxyCompactList}\small\item\em Draw the shape to a render target. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shape_a371b37d672f96660dcf70aa06b2fab77}{update\+Fill\+Colors}} ()
+\begin{DoxyCompactList}\small\item\em Update the fill vertices\textquotesingle{} color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shape_a4a7ea7b0254b26ac36c27a5ff545f4b3}{update\+Tex\+Coords}} ()
+\begin{DoxyCompactList}\small\item\em Update the fill vertices\textquotesingle{} texture coordinates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shape_a1364b357a1041ff38c872871a5c28623}{update\+Outline}} ()
+\begin{DoxyCompactList}\small\item\em Update the outline vertices\textquotesingle{} position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shape_a55d37129600d23db54d5b6cacb2d6d67}{update\+Outline\+Colors}} ()
+\begin{DoxyCompactList}\small\item\em Update the outline vertices\textquotesingle{} color. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{classsf_1_1_texture}{Texture}} $\ast$ \mbox{\hyperlink{classsf_1_1_shape_a644478b7195bd1e0c529ed9b43de1383}{m\+\_\+texture}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsf_1_1_texture}{Texture}} of the shape. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesf_a1b1279ab06950b96686cffaacb72fed5}{Int\+Rect}} \mbox{\hyperlink{classsf_1_1_shape_a45b33e918d0f061e81de4fb1746c8e28}{m\+\_\+texture\+Rect}}
+\begin{DoxyCompactList}\small\item\em Rectangle defining the area of the source texture to display. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_color}{Color}} \mbox{\hyperlink{classsf_1_1_shape_afdd52ef012f4a4843fd89793d01bcfdc}{m\+\_\+fill\+Color}}
+\begin{DoxyCompactList}\small\item\em Fill color. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_color}{Color}} \mbox{\hyperlink{classsf_1_1_shape_a65c07a005b8e9b8a335a24f678e4dea4}{m\+\_\+outline\+Color}}
+\begin{DoxyCompactList}\small\item\em Outline color. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classsf_1_1_shape_a0c11dc8ff170665c01c96a667807925f}{m\+\_\+outline\+Thickness}}
+\begin{DoxyCompactList}\small\item\em Thickness of the shape\textquotesingle{}s outline. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_vertex_array}{Vertex\+Array}} \mbox{\hyperlink{classsf_1_1_shape_a51ef27e5e9dc2419354fd036cf581201}{m\+\_\+vertices}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsf_1_1_vertex}{Vertex}} array containing the fill geometry. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_vertex_array}{Vertex\+Array}} \mbox{\hyperlink{classsf_1_1_shape_a822af4e3f583a069e2de6482edfacd4a}{m\+\_\+outline\+Vertices}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsf_1_1_vertex}{Vertex}} array containing the outline geometry. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{Float\+Rect}} \mbox{\hyperlink{classsf_1_1_shape_a4bf719be26d465b86024232097d34494}{m\+\_\+inside\+Bounds}}
+\begin{DoxyCompactList}\small\item\em Bounding rectangle of the inside (fill) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{Float\+Rect}} \mbox{\hyperlink{classsf_1_1_shape_ad1d06d0e65b363f6b62f6794454a1d2b}{m\+\_\+bounds}}
+\begin{DoxyCompactList}\small\item\em Bounding rectangle of the whole shape (outline + fill) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for textured shapes with outline. 
+
+\mbox{\hyperlink{classsf_1_1_shape}{sf\+::\+Shape}} is a drawable class that allows to define and display a custom convex shape on a render target.
+
+It\textquotesingle{}s only an abstract base, it needs to be specialized for concrete types of shapes (circle, rectangle, convex polygon, star, ...).
+
+In addition to the attributes provided by the specialized shape classes, a shape always has the following attributes\+: \begin{DoxyItemize}
+\item a texture \item a texture rectangle \item a fill color \item an outline color \item an outline thickness\end{DoxyItemize}
+Each feature is optional, and can be disabled easily\+: \begin{DoxyItemize}
+\item the texture can be null \item the fill/outline colors can be \mbox{\hyperlink{classsf_1_1_color_a422c310394afa396d3a2798aad982145}{sf\+::\+Color\+::\+Transparent}} \item the outline thickness can be zero\end{DoxyItemize}
+You can write your own derived shape class, there are only two virtual functions to override\+: \begin{DoxyItemize}
+\item get\+Point\+Count must return the number of points of the shape \item get\+Point must return the points of the shape\end{DoxyItemize}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_rectangle_shape}{sf\+::\+Rectangle\+Shape}}, \mbox{\hyperlink{classsf_1_1_circle_shape}{sf\+::\+Circle\+Shape}}, \mbox{\hyperlink{classsf_1_1_convex_shape}{sf\+::\+Convex\+Shape}}, \mbox{\hyperlink{classsf_1_1_transformable}{sf\+::\+Transformable}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shape_8hpp_source_l00044}{44}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shape_8hpp_source}{Shape.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsf_1_1_shape_a2262aceb9df52d4275c19633592f19bf}\label{classsf_1_1_shape_a2262aceb9df52d4275c19633592f19bf}} 
+\index{sf::Shape@{sf::Shape}!````~Shape@{$\sim$Shape}}
+\index{````~Shape@{$\sim$Shape}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{$\sim$Shape()}{~Shape()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual sf\+::\+Shape\+::$\sim$\+Shape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual destructor. 
+
+\mbox{\Hypertarget{classsf_1_1_shape_a413a457f720835b9f5d8e97ca8b80960}\label{classsf_1_1_shape_a413a457f720835b9f5d8e97ca8b80960}} 
+\index{sf::Shape@{sf::Shape}!Shape@{Shape}}
+\index{Shape@{Shape}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{Shape()}{Shape()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily sf\+::\+Shape\+::\+Shape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Default constructor. 
+
+\mbox{\Hypertarget{classsf_1_1_shape_a2262aceb9df52d4275c19633592f19bf}\label{classsf_1_1_shape_a2262aceb9df52d4275c19633592f19bf}} 
+\index{sf::Shape@{sf::Shape}!````~Shape@{$\sim$Shape}}
+\index{````~Shape@{$\sim$Shape}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{$\sim$Shape()}{~Shape()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual sf\+::\+Shape\+::$\sim$\+Shape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual destructor. 
+
+\mbox{\Hypertarget{classsf_1_1_shape_a413a457f720835b9f5d8e97ca8b80960}\label{classsf_1_1_shape_a413a457f720835b9f5d8e97ca8b80960}} 
+\index{sf::Shape@{sf::Shape}!Shape@{Shape}}
+\index{Shape@{Shape}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{Shape()}{Shape()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sf\+::\+Shape\+::\+Shape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Default constructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsf_1_1_shape_af335b88097f1db83afdfafa0cd66d04d}\label{classsf_1_1_shape_af335b88097f1db83afdfafa0cd66d04d}} 
+\index{sf::Shape@{sf::Shape}!draw@{draw}}
+\index{draw@{draw}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void sf\+::\+Shape\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_render_target}{Render\+Target}} \&}]{target,  }\item[{\mbox{\hyperlink{classsf_1_1_render_states}{Render\+States}}}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Draw the shape to a render target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Render target to draw to \\
+\hline
+{\em states} & Current render states \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classsf_1_1_drawable_a90d2c88bba9b035a0844eccb380ef631}{sf\+::\+Drawable}}.
+
+\mbox{\Hypertarget{classsf_1_1_shape_af335b88097f1db83afdfafa0cd66d04d}\label{classsf_1_1_shape_af335b88097f1db83afdfafa0cd66d04d}} 
+\index{sf::Shape@{sf::Shape}!draw@{draw}}
+\index{draw@{draw}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void sf\+::\+Shape\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_render_target}{Render\+Target}} \&}]{target,  }\item[{\mbox{\hyperlink{classsf_1_1_render_states}{Render\+States}}}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Draw the shape to a render target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Render target to draw to \\
+\hline
+{\em states} & Current render states \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classsf_1_1_drawable_a90d2c88bba9b035a0844eccb380ef631}{sf\+::\+Drawable}}.
+
+\mbox{\Hypertarget{classsf_1_1_shape_aa5da23e522d2dd11e3e7661c26164c78}\label{classsf_1_1_shape_aa5da23e522d2dd11e3e7661c26164c78}} 
+\index{sf::Shape@{sf::Shape}!getFillColor@{getFillColor}}
+\index{getFillColor@{getFillColor}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{getFillColor()}{getFillColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classsf_1_1_color}{Color}} \& sf\+::\+Shape\+::get\+Fill\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the fill color of the shape. 
+
+\begin{DoxyReturn}{Returns}
+Fill color of the shape
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shape_a3506f9b5d916fec14d583d16f23c2485}{set\+Fill\+Color}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shape_aa5da23e522d2dd11e3e7661c26164c78}\label{classsf_1_1_shape_aa5da23e522d2dd11e3e7661c26164c78}} 
+\index{sf::Shape@{sf::Shape}!getFillColor@{getFillColor}}
+\index{getFillColor@{getFillColor}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{getFillColor()}{getFillColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classsf_1_1_color}{Color}} \& sf\+::\+Shape\+::get\+Fill\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the fill color of the shape. 
+
+\begin{DoxyReturn}{Returns}
+Fill color of the shape
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shape_a3506f9b5d916fec14d583d16f23c2485}{set\+Fill\+Color}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shape_ac0e29425d908d5442060cc44790fe4da}\label{classsf_1_1_shape_ac0e29425d908d5442060cc44790fe4da}} 
+\index{sf::Shape@{sf::Shape}!getGlobalBounds@{getGlobalBounds}}
+\index{getGlobalBounds@{getGlobalBounds}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{getGlobalBounds()}{getGlobalBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{Float\+Rect}} sf\+::\+Shape\+::get\+Global\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the global (non-\/minimal) bounding rectangle of the entity. 
+
+The returned rectangle is in global coordinates, which means that it takes into account the transformations (translation, rotation, scale, ...) that are applied to the entity. In other words, this function returns the bounds of the shape in the global 2D world\textquotesingle{}s coordinate system.
+
+This function does not necessarily return the {\itshape minimal} bounding rectangle. It merely ensures that the returned rectangle covers all the vertices (but possibly more). This allows for a fast approximation of the bounds as a first check; you may want to use more precise checks on top of that.
+
+\begin{DoxyReturn}{Returns}
+Global bounding rectangle of the entity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_shape_ac0e29425d908d5442060cc44790fe4da}\label{classsf_1_1_shape_ac0e29425d908d5442060cc44790fe4da}} 
+\index{sf::Shape@{sf::Shape}!getGlobalBounds@{getGlobalBounds}}
+\index{getGlobalBounds@{getGlobalBounds}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{getGlobalBounds()}{getGlobalBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{Float\+Rect}} sf\+::\+Shape\+::get\+Global\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the global (non-\/minimal) bounding rectangle of the entity. 
+
+The returned rectangle is in global coordinates, which means that it takes into account the transformations (translation, rotation, scale, ...) that are applied to the entity. In other words, this function returns the bounds of the shape in the global 2D world\textquotesingle{}s coordinate system.
+
+This function does not necessarily return the {\itshape minimal} bounding rectangle. It merely ensures that the returned rectangle covers all the vertices (but possibly more). This allows for a fast approximation of the bounds as a first check; you may want to use more precise checks on top of that.
+
+\begin{DoxyReturn}{Returns}
+Global bounding rectangle of the entity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_shape_ae3294bcdf8713d33a862242ecf706443}\label{classsf_1_1_shape_ae3294bcdf8713d33a862242ecf706443}} 
+\index{sf::Shape@{sf::Shape}!getLocalBounds@{getLocalBounds}}
+\index{getLocalBounds@{getLocalBounds}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{getLocalBounds()}{getLocalBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{Float\+Rect}} sf\+::\+Shape\+::get\+Local\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the local bounding rectangle of the entity. 
+
+The returned rectangle is in local coordinates, which means that it ignores the transformations (translation, rotation, scale, ...) that are applied to the entity. In other words, this function returns the bounds of the entity in the entity\textquotesingle{}s coordinate system.
+
+\begin{DoxyReturn}{Returns}
+Local bounding rectangle of the entity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_shape_ae3294bcdf8713d33a862242ecf706443}\label{classsf_1_1_shape_ae3294bcdf8713d33a862242ecf706443}} 
+\index{sf::Shape@{sf::Shape}!getLocalBounds@{getLocalBounds}}
+\index{getLocalBounds@{getLocalBounds}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{getLocalBounds()}{getLocalBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{Float\+Rect}} sf\+::\+Shape\+::get\+Local\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the local bounding rectangle of the entity. 
+
+The returned rectangle is in local coordinates, which means that it ignores the transformations (translation, rotation, scale, ...) that are applied to the entity. In other words, this function returns the bounds of the entity in the entity\textquotesingle{}s coordinate system.
+
+\begin{DoxyReturn}{Returns}
+Local bounding rectangle of the entity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_shape_a4aa05b59851468e948ac9682b9c71abb}\label{classsf_1_1_shape_a4aa05b59851468e948ac9682b9c71abb}} 
+\index{sf::Shape@{sf::Shape}!getOutlineColor@{getOutlineColor}}
+\index{getOutlineColor@{getOutlineColor}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{getOutlineColor()}{getOutlineColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classsf_1_1_color}{Color}} \& sf\+::\+Shape\+::get\+Outline\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the outline color of the shape. 
+
+\begin{DoxyReturn}{Returns}
+Outline color of the shape
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shape_a5978f41ee349ac3c52942996dcb184f7}{set\+Outline\+Color}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shape_a4aa05b59851468e948ac9682b9c71abb}\label{classsf_1_1_shape_a4aa05b59851468e948ac9682b9c71abb}} 
+\index{sf::Shape@{sf::Shape}!getOutlineColor@{getOutlineColor}}
+\index{getOutlineColor@{getOutlineColor}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{getOutlineColor()}{getOutlineColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classsf_1_1_color}{Color}} \& sf\+::\+Shape\+::get\+Outline\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the outline color of the shape. 
+
+\begin{DoxyReturn}{Returns}
+Outline color of the shape
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shape_a5978f41ee349ac3c52942996dcb184f7}{set\+Outline\+Color}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shape_a1d4d5299c573a905e5833fc4dce783a7}\label{classsf_1_1_shape_a1d4d5299c573a905e5833fc4dce783a7}} 
+\index{sf::Shape@{sf::Shape}!getOutlineThickness@{getOutlineThickness}}
+\index{getOutlineThickness@{getOutlineThickness}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{getOutlineThickness()}{getOutlineThickness()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float sf\+::\+Shape\+::get\+Outline\+Thickness (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the outline thickness of the shape. 
+
+\begin{DoxyReturn}{Returns}
+Outline thickness of the shape
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shape_a5ad336ad74fc1f567fce3b7e44cf87dc}{set\+Outline\+Thickness}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shape_a1d4d5299c573a905e5833fc4dce783a7}\label{classsf_1_1_shape_a1d4d5299c573a905e5833fc4dce783a7}} 
+\index{sf::Shape@{sf::Shape}!getOutlineThickness@{getOutlineThickness}}
+\index{getOutlineThickness@{getOutlineThickness}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{getOutlineThickness()}{getOutlineThickness()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float sf\+::\+Shape\+::get\+Outline\+Thickness (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the outline thickness of the shape. 
+
+\begin{DoxyReturn}{Returns}
+Outline thickness of the shape
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shape_a5ad336ad74fc1f567fce3b7e44cf87dc}{set\+Outline\+Thickness}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shape_a40e5d83713eb9f0c999944cf96458085}\label{classsf_1_1_shape_a40e5d83713eb9f0c999944cf96458085}} 
+\index{sf::Shape@{sf::Shape}!getPoint@{getPoint}}
+\index{getPoint@{getPoint}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{getPoint()}{getPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}} sf\+::\+Shape\+::get\+Point (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get a point of the shape. 
+
+The returned point is in local coordinates, that is, the shape\textquotesingle{}s transforms (position, rotation, scale) are not taken into account. The result is undefined if {\itshape index} is out of the valid range.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the point to get, in range \mbox{[}0 .. \mbox{\hyperlink{classsf_1_1_shape_af988dd61a29803fc04d02198e44b5643}{get\+Point\+Count()}} -\/ 1\mbox{]}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+index-\/th point of the shape
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shape_af988dd61a29803fc04d02198e44b5643}{get\+Point\+Count}} 
+\end{DoxySeeAlso}
+
+
+Implemented in \mbox{\hyperlink{classsf_1_1_circle_shape_a2d7f9715502b960b92387102fddb8736}{sf\+::\+Circle\+Shape}}, \mbox{\hyperlink{classsf_1_1_convex_shape_a72a97bc426d8daf4d682a20fcb7f3fe7}{sf\+::\+Convex\+Shape}}, \mbox{\hyperlink{classsf_1_1_rectangle_shape_a3909f1a1946930ff5ae17c26206c0f81}{sf\+::\+Rectangle\+Shape}}, \mbox{\hyperlink{classsf_1_1_circle_shape_a2d7f9715502b960b92387102fddb8736}{sf\+::\+Circle\+Shape}}, \mbox{\hyperlink{classsf_1_1_convex_shape_a72a97bc426d8daf4d682a20fcb7f3fe7}{sf\+::\+Convex\+Shape}}, and \mbox{\hyperlink{classsf_1_1_rectangle_shape_a3909f1a1946930ff5ae17c26206c0f81}{sf\+::\+Rectangle\+Shape}}.
+
+\mbox{\Hypertarget{classsf_1_1_shape_a40e5d83713eb9f0c999944cf96458085}\label{classsf_1_1_shape_a40e5d83713eb9f0c999944cf96458085}} 
+\index{sf::Shape@{sf::Shape}!getPoint@{getPoint}}
+\index{getPoint@{getPoint}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{getPoint()}{getPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}} sf\+::\+Shape\+::get\+Point (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get a point of the shape. 
+
+The returned point is in local coordinates, that is, the shape\textquotesingle{}s transforms (position, rotation, scale) are not taken into account. The result is undefined if {\itshape index} is out of the valid range.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the point to get, in range \mbox{[}0 .. \mbox{\hyperlink{classsf_1_1_shape_af988dd61a29803fc04d02198e44b5643}{get\+Point\+Count()}} -\/ 1\mbox{]}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+index-\/th point of the shape
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shape_af988dd61a29803fc04d02198e44b5643}{get\+Point\+Count}} 
+\end{DoxySeeAlso}
+
+
+Implemented in \mbox{\hyperlink{classsf_1_1_circle_shape_a2d7f9715502b960b92387102fddb8736}{sf\+::\+Circle\+Shape}}, \mbox{\hyperlink{classsf_1_1_convex_shape_a72a97bc426d8daf4d682a20fcb7f3fe7}{sf\+::\+Convex\+Shape}}, \mbox{\hyperlink{classsf_1_1_rectangle_shape_a3909f1a1946930ff5ae17c26206c0f81}{sf\+::\+Rectangle\+Shape}}, \mbox{\hyperlink{classsf_1_1_circle_shape_a2d7f9715502b960b92387102fddb8736}{sf\+::\+Circle\+Shape}}, \mbox{\hyperlink{classsf_1_1_convex_shape_a72a97bc426d8daf4d682a20fcb7f3fe7}{sf\+::\+Convex\+Shape}}, and \mbox{\hyperlink{classsf_1_1_rectangle_shape_a3909f1a1946930ff5ae17c26206c0f81}{sf\+::\+Rectangle\+Shape}}.
+
+\mbox{\Hypertarget{classsf_1_1_shape_af988dd61a29803fc04d02198e44b5643}\label{classsf_1_1_shape_af988dd61a29803fc04d02198e44b5643}} 
+\index{sf::Shape@{sf::Shape}!getPointCount@{getPointCount}}
+\index{getPointCount@{getPointCount}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{getPointCount()}{getPointCount()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual std\+::size\+\_\+t sf\+::\+Shape\+::get\+Point\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the total number of points of the shape. 
+
+\begin{DoxyReturn}{Returns}
+Number of points of the shape
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shape_a40e5d83713eb9f0c999944cf96458085}{get\+Point}} 
+\end{DoxySeeAlso}
+
+
+Implemented in \mbox{\hyperlink{classsf_1_1_circle_shape_a014d29ec11e8afa4dce50e7047d99601}{sf\+::\+Circle\+Shape}}, \mbox{\hyperlink{classsf_1_1_convex_shape_a0c54b8d48fe4e13414f6e667dbfc22a3}{sf\+::\+Convex\+Shape}}, \mbox{\hyperlink{classsf_1_1_rectangle_shape_adfb2f429e5720c9ccdb26d5996c3ae33}{sf\+::\+Rectangle\+Shape}}, \mbox{\hyperlink{classsf_1_1_circle_shape_a014d29ec11e8afa4dce50e7047d99601}{sf\+::\+Circle\+Shape}}, \mbox{\hyperlink{classsf_1_1_convex_shape_a0c54b8d48fe4e13414f6e667dbfc22a3}{sf\+::\+Convex\+Shape}}, and \mbox{\hyperlink{classsf_1_1_rectangle_shape_adfb2f429e5720c9ccdb26d5996c3ae33}{sf\+::\+Rectangle\+Shape}}.
+
+\mbox{\Hypertarget{classsf_1_1_shape_af988dd61a29803fc04d02198e44b5643}\label{classsf_1_1_shape_af988dd61a29803fc04d02198e44b5643}} 
+\index{sf::Shape@{sf::Shape}!getPointCount@{getPointCount}}
+\index{getPointCount@{getPointCount}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{getPointCount()}{getPointCount()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual std\+::size\+\_\+t sf\+::\+Shape\+::get\+Point\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the total number of points of the shape. 
+
+\begin{DoxyReturn}{Returns}
+Number of points of the shape
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shape_a40e5d83713eb9f0c999944cf96458085}{get\+Point}} 
+\end{DoxySeeAlso}
+
+
+Implemented in \mbox{\hyperlink{classsf_1_1_circle_shape_a014d29ec11e8afa4dce50e7047d99601}{sf\+::\+Circle\+Shape}}, \mbox{\hyperlink{classsf_1_1_convex_shape_a0c54b8d48fe4e13414f6e667dbfc22a3}{sf\+::\+Convex\+Shape}}, \mbox{\hyperlink{classsf_1_1_rectangle_shape_adfb2f429e5720c9ccdb26d5996c3ae33}{sf\+::\+Rectangle\+Shape}}, \mbox{\hyperlink{classsf_1_1_circle_shape_a014d29ec11e8afa4dce50e7047d99601}{sf\+::\+Circle\+Shape}}, \mbox{\hyperlink{classsf_1_1_convex_shape_a0c54b8d48fe4e13414f6e667dbfc22a3}{sf\+::\+Convex\+Shape}}, and \mbox{\hyperlink{classsf_1_1_rectangle_shape_adfb2f429e5720c9ccdb26d5996c3ae33}{sf\+::\+Rectangle\+Shape}}.
+
+\mbox{\Hypertarget{classsf_1_1_shape_af4c345931cd651ffb8f7a177446e28f7}\label{classsf_1_1_shape_af4c345931cd651ffb8f7a177446e28f7}} 
+\index{sf::Shape@{sf::Shape}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{getTexture()}{getTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classsf_1_1_texture}{Texture}} $\ast$ sf\+::\+Shape\+::get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the source texture of the shape. 
+
+If the shape has no source texture, a NULL pointer is returned. The returned pointer is const, which means that you can\textquotesingle{}t modify the texture when you retrieve it with this function.
+
+\begin{DoxyReturn}{Returns}
+Pointer to the shape\textquotesingle{}s texture
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shape_af8fb22bab1956325be5d62282711e3b6}{set\+Texture}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shape_af4c345931cd651ffb8f7a177446e28f7}\label{classsf_1_1_shape_af4c345931cd651ffb8f7a177446e28f7}} 
+\index{sf::Shape@{sf::Shape}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{getTexture()}{getTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classsf_1_1_texture}{Texture}} $\ast$ sf\+::\+Shape\+::get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the source texture of the shape. 
+
+If the shape has no source texture, a NULL pointer is returned. The returned pointer is const, which means that you can\textquotesingle{}t modify the texture when you retrieve it with this function.
+
+\begin{DoxyReturn}{Returns}
+Pointer to the shape\textquotesingle{}s texture
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shape_af8fb22bab1956325be5d62282711e3b6}{set\+Texture}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shape_ad8adbb54823c8eff1830a938e164daa4}\label{classsf_1_1_shape_ad8adbb54823c8eff1830a938e164daa4}} 
+\index{sf::Shape@{sf::Shape}!getTextureRect@{getTextureRect}}
+\index{getTextureRect@{getTextureRect}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{getTextureRect()}{getTextureRect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{namespacesf_a1b1279ab06950b96686cffaacb72fed5}{Int\+Rect}} \& sf\+::\+Shape\+::get\+Texture\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the sub-\/rectangle of the texture displayed by the shape. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classsf_1_1_texture}{Texture}} rectangle of the shape
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shape_a2029cc820d1740d14ac794b82525e157}{set\+Texture\+Rect}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shape_ad8adbb54823c8eff1830a938e164daa4}\label{classsf_1_1_shape_ad8adbb54823c8eff1830a938e164daa4}} 
+\index{sf::Shape@{sf::Shape}!getTextureRect@{getTextureRect}}
+\index{getTextureRect@{getTextureRect}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{getTextureRect()}{getTextureRect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{namespacesf_a1b1279ab06950b96686cffaacb72fed5}{Int\+Rect}} \& sf\+::\+Shape\+::get\+Texture\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the sub-\/rectangle of the texture displayed by the shape. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classsf_1_1_texture}{Texture}} rectangle of the shape
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shape_a2029cc820d1740d14ac794b82525e157}{set\+Texture\+Rect}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shape_a3506f9b5d916fec14d583d16f23c2485}\label{classsf_1_1_shape_a3506f9b5d916fec14d583d16f23c2485}} 
+\index{sf::Shape@{sf::Shape}!setFillColor@{setFillColor}}
+\index{setFillColor@{setFillColor}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{setFillColor()}{setFillColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Shape\+::set\+Fill\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_color}{Color}} \&}]{color }\end{DoxyParamCaption})}
+
+
+
+Set the fill color of the shape. 
+
+This color is modulated (multiplied) with the shape\textquotesingle{}s texture if any. It can be used to colorize the shape, or change its global opacity. You can use \mbox{\hyperlink{classsf_1_1_color_a422c310394afa396d3a2798aad982145}{sf\+::\+Color\+::\+Transparent}} to make the inside of the shape transparent, and have the outline alone. By default, the shape\textquotesingle{}s fill color is opaque white.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & New color of the shape\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shape_aa5da23e522d2dd11e3e7661c26164c78}{get\+Fill\+Color}}, \mbox{\hyperlink{classsf_1_1_shape_a5978f41ee349ac3c52942996dcb184f7}{set\+Outline\+Color}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shape_a3506f9b5d916fec14d583d16f23c2485}\label{classsf_1_1_shape_a3506f9b5d916fec14d583d16f23c2485}} 
+\index{sf::Shape@{sf::Shape}!setFillColor@{setFillColor}}
+\index{setFillColor@{setFillColor}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{setFillColor()}{setFillColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Shape\+::set\+Fill\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_color}{Color}} \&}]{color }\end{DoxyParamCaption})}
+
+
+
+Set the fill color of the shape. 
+
+This color is modulated (multiplied) with the shape\textquotesingle{}s texture if any. It can be used to colorize the shape, or change its global opacity. You can use \mbox{\hyperlink{classsf_1_1_color_a422c310394afa396d3a2798aad982145}{sf\+::\+Color\+::\+Transparent}} to make the inside of the shape transparent, and have the outline alone. By default, the shape\textquotesingle{}s fill color is opaque white.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & New color of the shape\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shape_aa5da23e522d2dd11e3e7661c26164c78}{get\+Fill\+Color}}, \mbox{\hyperlink{classsf_1_1_shape_a5978f41ee349ac3c52942996dcb184f7}{set\+Outline\+Color}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shape_a5978f41ee349ac3c52942996dcb184f7}\label{classsf_1_1_shape_a5978f41ee349ac3c52942996dcb184f7}} 
+\index{sf::Shape@{sf::Shape}!setOutlineColor@{setOutlineColor}}
+\index{setOutlineColor@{setOutlineColor}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{setOutlineColor()}{setOutlineColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Shape\+::set\+Outline\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_color}{Color}} \&}]{color }\end{DoxyParamCaption})}
+
+
+
+Set the outline color of the shape. 
+
+By default, the shape\textquotesingle{}s outline color is opaque white.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & New outline color of the shape\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shape_a4aa05b59851468e948ac9682b9c71abb}{get\+Outline\+Color}}, \mbox{\hyperlink{classsf_1_1_shape_a3506f9b5d916fec14d583d16f23c2485}{set\+Fill\+Color}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shape_a5978f41ee349ac3c52942996dcb184f7}\label{classsf_1_1_shape_a5978f41ee349ac3c52942996dcb184f7}} 
+\index{sf::Shape@{sf::Shape}!setOutlineColor@{setOutlineColor}}
+\index{setOutlineColor@{setOutlineColor}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{setOutlineColor()}{setOutlineColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Shape\+::set\+Outline\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_color}{Color}} \&}]{color }\end{DoxyParamCaption})}
+
+
+
+Set the outline color of the shape. 
+
+By default, the shape\textquotesingle{}s outline color is opaque white.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & New outline color of the shape\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shape_a4aa05b59851468e948ac9682b9c71abb}{get\+Outline\+Color}}, \mbox{\hyperlink{classsf_1_1_shape_a3506f9b5d916fec14d583d16f23c2485}{set\+Fill\+Color}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shape_a5ad336ad74fc1f567fce3b7e44cf87dc}\label{classsf_1_1_shape_a5ad336ad74fc1f567fce3b7e44cf87dc}} 
+\index{sf::Shape@{sf::Shape}!setOutlineThickness@{setOutlineThickness}}
+\index{setOutlineThickness@{setOutlineThickness}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{setOutlineThickness()}{setOutlineThickness()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Shape\+::set\+Outline\+Thickness (\begin{DoxyParamCaption}\item[{float}]{thickness }\end{DoxyParamCaption})}
+
+
+
+Set the thickness of the shape\textquotesingle{}s outline. 
+
+Note that negative values are allowed (so that the outline expands towards the center of the shape), and using zero disables the outline. By default, the outline thickness is 0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em thickness} & New outline thickness\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shape_a1d4d5299c573a905e5833fc4dce783a7}{get\+Outline\+Thickness}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shape_a5ad336ad74fc1f567fce3b7e44cf87dc}\label{classsf_1_1_shape_a5ad336ad74fc1f567fce3b7e44cf87dc}} 
+\index{sf::Shape@{sf::Shape}!setOutlineThickness@{setOutlineThickness}}
+\index{setOutlineThickness@{setOutlineThickness}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{setOutlineThickness()}{setOutlineThickness()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Shape\+::set\+Outline\+Thickness (\begin{DoxyParamCaption}\item[{float}]{thickness }\end{DoxyParamCaption})}
+
+
+
+Set the thickness of the shape\textquotesingle{}s outline. 
+
+Note that negative values are allowed (so that the outline expands towards the center of the shape), and using zero disables the outline. By default, the outline thickness is 0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em thickness} & New outline thickness\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shape_a1d4d5299c573a905e5833fc4dce783a7}{get\+Outline\+Thickness}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shape_af8fb22bab1956325be5d62282711e3b6}\label{classsf_1_1_shape_af8fb22bab1956325be5d62282711e3b6}} 
+\index{sf::Shape@{sf::Shape}!setTexture@{setTexture}}
+\index{setTexture@{setTexture}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{setTexture()}{setTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Shape\+::set\+Texture (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_texture}{Texture}} $\ast$}]{texture,  }\item[{bool}]{reset\+Rect = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Change the source texture of the shape. 
+
+The {\itshape texture} argument refers to a texture that must exist as long as the shape uses it. Indeed, the shape doesn\textquotesingle{}t store its own copy of the texture, but rather keeps a pointer to the one that you passed to this function. If the source texture is destroyed and the shape tries to use it, the behavior is undefined. {\itshape texture} can be NULL to disable texturing. If {\itshape reset\+Rect} is true, the Texture\+Rect property of the shape is automatically adjusted to the size of the new texture. If it is false, the texture rect is left unchanged.
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture} & New texture \\
+\hline
+{\em reset\+Rect} & Should the texture rect be reset to the size of the new texture?\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shape_af4c345931cd651ffb8f7a177446e28f7}{get\+Texture}}, \mbox{\hyperlink{classsf_1_1_shape_a2029cc820d1740d14ac794b82525e157}{set\+Texture\+Rect}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shape_af8fb22bab1956325be5d62282711e3b6}\label{classsf_1_1_shape_af8fb22bab1956325be5d62282711e3b6}} 
+\index{sf::Shape@{sf::Shape}!setTexture@{setTexture}}
+\index{setTexture@{setTexture}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{setTexture()}{setTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Shape\+::set\+Texture (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_texture}{Texture}} $\ast$}]{texture,  }\item[{bool}]{reset\+Rect = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Change the source texture of the shape. 
+
+The {\itshape texture} argument refers to a texture that must exist as long as the shape uses it. Indeed, the shape doesn\textquotesingle{}t store its own copy of the texture, but rather keeps a pointer to the one that you passed to this function. If the source texture is destroyed and the shape tries to use it, the behavior is undefined. {\itshape texture} can be NULL to disable texturing. If {\itshape reset\+Rect} is true, the Texture\+Rect property of the shape is automatically adjusted to the size of the new texture. If it is false, the texture rect is left unchanged.
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture} & New texture \\
+\hline
+{\em reset\+Rect} & Should the texture rect be reset to the size of the new texture?\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shape_af4c345931cd651ffb8f7a177446e28f7}{get\+Texture}}, \mbox{\hyperlink{classsf_1_1_shape_a2029cc820d1740d14ac794b82525e157}{set\+Texture\+Rect}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shape_a2029cc820d1740d14ac794b82525e157}\label{classsf_1_1_shape_a2029cc820d1740d14ac794b82525e157}} 
+\index{sf::Shape@{sf::Shape}!setTextureRect@{setTextureRect}}
+\index{setTextureRect@{setTextureRect}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{setTextureRect()}{setTextureRect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Shape\+::set\+Texture\+Rect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacesf_a1b1279ab06950b96686cffaacb72fed5}{Int\+Rect}} \&}]{rect }\end{DoxyParamCaption})}
+
+
+
+Set the sub-\/rectangle of the texture that the shape will display. 
+
+The texture rect is useful when you don\textquotesingle{}t want to display the whole texture, but rather a part of it. By default, the texture rect covers the entire texture.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & Rectangle defining the region of the texture to display\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shape_ad8adbb54823c8eff1830a938e164daa4}{get\+Texture\+Rect}}, \mbox{\hyperlink{classsf_1_1_shape_af8fb22bab1956325be5d62282711e3b6}{set\+Texture}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shape_a2029cc820d1740d14ac794b82525e157}\label{classsf_1_1_shape_a2029cc820d1740d14ac794b82525e157}} 
+\index{sf::Shape@{sf::Shape}!setTextureRect@{setTextureRect}}
+\index{setTextureRect@{setTextureRect}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{setTextureRect()}{setTextureRect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Shape\+::set\+Texture\+Rect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacesf_a1b1279ab06950b96686cffaacb72fed5}{Int\+Rect}} \&}]{rect }\end{DoxyParamCaption})}
+
+
+
+Set the sub-\/rectangle of the texture that the shape will display. 
+
+The texture rect is useful when you don\textquotesingle{}t want to display the whole texture, but rather a part of it. By default, the texture rect covers the entire texture.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & Rectangle defining the region of the texture to display\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shape_ad8adbb54823c8eff1830a938e164daa4}{get\+Texture\+Rect}}, \mbox{\hyperlink{classsf_1_1_shape_af8fb22bab1956325be5d62282711e3b6}{set\+Texture}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shape_adfb2bd966c8edbc5d6c92ebc375e4ac1}\label{classsf_1_1_shape_adfb2bd966c8edbc5d6c92ebc375e4ac1}} 
+\index{sf::Shape@{sf::Shape}!update@{update}}
+\index{update@{update}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Shape\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Recompute the internal geometry of the shape. 
+
+This function must be called by the derived class everytime the shape\textquotesingle{}s points change (i.\+e. the result of either get\+Point\+Count or get\+Point is different). \mbox{\Hypertarget{classsf_1_1_shape_adfb2bd966c8edbc5d6c92ebc375e4ac1}\label{classsf_1_1_shape_adfb2bd966c8edbc5d6c92ebc375e4ac1}} 
+\index{sf::Shape@{sf::Shape}!update@{update}}
+\index{update@{update}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Shape\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Recompute the internal geometry of the shape. 
+
+This function must be called by the derived class everytime the shape\textquotesingle{}s points change (i.\+e. the result of either get\+Point\+Count or get\+Point is different). \mbox{\Hypertarget{classsf_1_1_shape_a371b37d672f96660dcf70aa06b2fab77}\label{classsf_1_1_shape_a371b37d672f96660dcf70aa06b2fab77}} 
+\index{sf::Shape@{sf::Shape}!updateFillColors@{updateFillColors}}
+\index{updateFillColors@{updateFillColors}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{updateFillColors()}{updateFillColors()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Shape\+::update\+Fill\+Colors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Update the fill vertices\textquotesingle{} color. 
+
+\mbox{\Hypertarget{classsf_1_1_shape_a371b37d672f96660dcf70aa06b2fab77}\label{classsf_1_1_shape_a371b37d672f96660dcf70aa06b2fab77}} 
+\index{sf::Shape@{sf::Shape}!updateFillColors@{updateFillColors}}
+\index{updateFillColors@{updateFillColors}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{updateFillColors()}{updateFillColors()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Shape\+::update\+Fill\+Colors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Update the fill vertices\textquotesingle{} color. 
+
+\mbox{\Hypertarget{classsf_1_1_shape_a1364b357a1041ff38c872871a5c28623}\label{classsf_1_1_shape_a1364b357a1041ff38c872871a5c28623}} 
+\index{sf::Shape@{sf::Shape}!updateOutline@{updateOutline}}
+\index{updateOutline@{updateOutline}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{updateOutline()}{updateOutline()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Shape\+::update\+Outline (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Update the outline vertices\textquotesingle{} position. 
+
+\mbox{\Hypertarget{classsf_1_1_shape_a1364b357a1041ff38c872871a5c28623}\label{classsf_1_1_shape_a1364b357a1041ff38c872871a5c28623}} 
+\index{sf::Shape@{sf::Shape}!updateOutline@{updateOutline}}
+\index{updateOutline@{updateOutline}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{updateOutline()}{updateOutline()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Shape\+::update\+Outline (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Update the outline vertices\textquotesingle{} position. 
+
+\mbox{\Hypertarget{classsf_1_1_shape_a55d37129600d23db54d5b6cacb2d6d67}\label{classsf_1_1_shape_a55d37129600d23db54d5b6cacb2d6d67}} 
+\index{sf::Shape@{sf::Shape}!updateOutlineColors@{updateOutlineColors}}
+\index{updateOutlineColors@{updateOutlineColors}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{updateOutlineColors()}{updateOutlineColors()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Shape\+::update\+Outline\+Colors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Update the outline vertices\textquotesingle{} color. 
+
+\mbox{\Hypertarget{classsf_1_1_shape_a55d37129600d23db54d5b6cacb2d6d67}\label{classsf_1_1_shape_a55d37129600d23db54d5b6cacb2d6d67}} 
+\index{sf::Shape@{sf::Shape}!updateOutlineColors@{updateOutlineColors}}
+\index{updateOutlineColors@{updateOutlineColors}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{updateOutlineColors()}{updateOutlineColors()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Shape\+::update\+Outline\+Colors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Update the outline vertices\textquotesingle{} color. 
+
+\mbox{\Hypertarget{classsf_1_1_shape_a4a7ea7b0254b26ac36c27a5ff545f4b3}\label{classsf_1_1_shape_a4a7ea7b0254b26ac36c27a5ff545f4b3}} 
+\index{sf::Shape@{sf::Shape}!updateTexCoords@{updateTexCoords}}
+\index{updateTexCoords@{updateTexCoords}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{updateTexCoords()}{updateTexCoords()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Shape\+::update\+Tex\+Coords (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Update the fill vertices\textquotesingle{} texture coordinates. 
+
+\mbox{\Hypertarget{classsf_1_1_shape_a4a7ea7b0254b26ac36c27a5ff545f4b3}\label{classsf_1_1_shape_a4a7ea7b0254b26ac36c27a5ff545f4b3}} 
+\index{sf::Shape@{sf::Shape}!updateTexCoords@{updateTexCoords}}
+\index{updateTexCoords@{updateTexCoords}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{updateTexCoords()}{updateTexCoords()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Shape\+::update\+Tex\+Coords (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Update the fill vertices\textquotesingle{} texture coordinates. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsf_1_1_shape_ad1d06d0e65b363f6b62f6794454a1d2b}\label{classsf_1_1_shape_ad1d06d0e65b363f6b62f6794454a1d2b}} 
+\index{sf::Shape@{sf::Shape}!m\_bounds@{m\_bounds}}
+\index{m\_bounds@{m\_bounds}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{m\_bounds}{m\_bounds}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{Float\+Rect}} sf\+::\+Shape\+::m\+\_\+bounds\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bounding rectangle of the whole shape (outline + fill) 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shape_8hpp_source_l00316}{316}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shape_8hpp_source}{Shape.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_shape_afdd52ef012f4a4843fd89793d01bcfdc}\label{classsf_1_1_shape_afdd52ef012f4a4843fd89793d01bcfdc}} 
+\index{sf::Shape@{sf::Shape}!m\_fillColor@{m\_fillColor}}
+\index{m\_fillColor@{m\_fillColor}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{m\_fillColor}{m\_fillColor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_color}{Color}} sf\+::\+Shape\+::m\+\_\+fill\+Color\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Fill color. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shape_8hpp_source_l00310}{310}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shape_8hpp_source}{Shape.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_shape_a4bf719be26d465b86024232097d34494}\label{classsf_1_1_shape_a4bf719be26d465b86024232097d34494}} 
+\index{sf::Shape@{sf::Shape}!m\_insideBounds@{m\_insideBounds}}
+\index{m\_insideBounds@{m\_insideBounds}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{m\_insideBounds}{m\_insideBounds}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{Float\+Rect}} sf\+::\+Shape\+::m\+\_\+inside\+Bounds\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bounding rectangle of the inside (fill) 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shape_8hpp_source_l00315}{315}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shape_8hpp_source}{Shape.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_shape_a65c07a005b8e9b8a335a24f678e4dea4}\label{classsf_1_1_shape_a65c07a005b8e9b8a335a24f678e4dea4}} 
+\index{sf::Shape@{sf::Shape}!m\_outlineColor@{m\_outlineColor}}
+\index{m\_outlineColor@{m\_outlineColor}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{m\_outlineColor}{m\_outlineColor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_color}{Color}} sf\+::\+Shape\+::m\+\_\+outline\+Color\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Outline color. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shape_8hpp_source_l00311}{311}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shape_8hpp_source}{Shape.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_shape_a0c11dc8ff170665c01c96a667807925f}\label{classsf_1_1_shape_a0c11dc8ff170665c01c96a667807925f}} 
+\index{sf::Shape@{sf::Shape}!m\_outlineThickness@{m\_outlineThickness}}
+\index{m\_outlineThickness@{m\_outlineThickness}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{m\_outlineThickness}{m\_outlineThickness}}
+{\footnotesize\ttfamily float sf\+::\+Shape\+::m\+\_\+outline\+Thickness\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Thickness of the shape\textquotesingle{}s outline. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shape_8hpp_source_l00312}{312}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shape_8hpp_source}{Shape.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_shape_a822af4e3f583a069e2de6482edfacd4a}\label{classsf_1_1_shape_a822af4e3f583a069e2de6482edfacd4a}} 
+\index{sf::Shape@{sf::Shape}!m\_outlineVertices@{m\_outlineVertices}}
+\index{m\_outlineVertices@{m\_outlineVertices}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{m\_outlineVertices}{m\_outlineVertices}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_vertex_array}{Vertex\+Array}} sf\+::\+Shape\+::m\+\_\+outline\+Vertices\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{classsf_1_1_vertex}{Vertex}} array containing the outline geometry. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shape_8hpp_source_l00314}{314}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shape_8hpp_source}{Shape.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_shape_a644478b7195bd1e0c529ed9b43de1383}\label{classsf_1_1_shape_a644478b7195bd1e0c529ed9b43de1383}} 
+\index{sf::Shape@{sf::Shape}!m\_texture@{m\_texture}}
+\index{m\_texture@{m\_texture}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{m\_texture}{m\_texture}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classsf_1_1_texture}{Texture}} $\ast$ sf\+::\+Shape\+::m\+\_\+texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{classsf_1_1_texture}{Texture}} of the shape. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shape_8hpp_source_l00308}{308}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shape_8hpp_source}{Shape.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_shape_a45b33e918d0f061e81de4fb1746c8e28}\label{classsf_1_1_shape_a45b33e918d0f061e81de4fb1746c8e28}} 
+\index{sf::Shape@{sf::Shape}!m\_textureRect@{m\_textureRect}}
+\index{m\_textureRect@{m\_textureRect}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{m\_textureRect}{m\_textureRect}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_a1b1279ab06950b96686cffaacb72fed5}{Int\+Rect}} sf\+::\+Shape\+::m\+\_\+texture\+Rect\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Rectangle defining the area of the source texture to display. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shape_8hpp_source_l00309}{309}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shape_8hpp_source}{Shape.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_shape_a51ef27e5e9dc2419354fd036cf581201}\label{classsf_1_1_shape_a51ef27e5e9dc2419354fd036cf581201}} 
+\index{sf::Shape@{sf::Shape}!m\_vertices@{m\_vertices}}
+\index{m\_vertices@{m\_vertices}!sf::Shape@{sf::Shape}}
+\doxysubsubsection{\texorpdfstring{m\_vertices}{m\_vertices}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_vertex_array}{Vertex\+Array}} sf\+::\+Shape\+::m\+\_\+vertices\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{classsf_1_1_vertex}{Vertex}} array containing the fill geometry. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shape_8hpp_source_l00313}{313}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shape_8hpp_source}{Shape.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+SFML-\/2.\+5.\+1/include/\+SFML/\+Graphics/\mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shape_8hpp}{Shape.\+hpp}}\item 
+Week14/\+SFML-\/2.\+5.\+1/include/\+SFML/\+Graphics/\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shape_8hpp}{Shape.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,47 @@
+\hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source}{}\doxysection{Player2.\+hpp}
+\label{_week3-_demo4_2_include_2_player2_8hpp_source}\index{Week3/Week3-\/Demo4/Include/Player2.hpp@{Week3/Week3-\/Demo4/Include/Player2.hpp}}
+\mbox{\hyperlink{_week3-_demo4_2_include_2_player2_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00001}00001 \textcolor{comment}{//B) The other way to do this would be to have your player class inheirit }}
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00002}00002 \textcolor{comment}{//from sf::Drawable and then override the virtual draw() function to do }}
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00003}00003 \textcolor{comment}{//the drawing in the player class. This is the best way to do this but }}
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00004}00004 \textcolor{comment}{//takes more knowledge on inheiritence, though it will allows you to make }}
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00005}00005 \textcolor{comment}{//a draw call like this Window.draw(player); in your main game loop.}}
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00008}00008 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00010}00010 \textcolor{preprocessor}{\#include <SFML\(\backslash\)Graphics.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00011}00011 \textcolor{preprocessor}{\#pragma region step 3}}
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00012}00012 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_include_2_resource_identifiers_8hpp}{ResourceIdentifiers.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00013}00013 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_include_2_resource_holder_8hpp}{ResourceHolder.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00014}00014 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_include_2_entity_8hpp}{Entity.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00016}00016 \textcolor{keyword}{class }\mbox{\hyperlink{class_player2}{Player2}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_entity}{Entity}}}
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00017}00017 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00019}00019 \{}
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00021}00021 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00022}\mbox{\hyperlink{class_player2_a3b7b2ffab988c845bdc54f6b188758ee}{00022}}     \textcolor{keyword}{enum} \mbox{\hyperlink{class_player2_a3b7b2ffab988c845bdc54f6b188758ee}{Type}}}
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00023}00023     \{}
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00024}00024         \mbox{\hyperlink{class_player2_a3b7b2ffab988c845bdc54f6b188758eea2bf5af943e5821872d4ef3d534cd12b0}{Eagle}},}
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00025}00025         \mbox{\hyperlink{class_player2_a3b7b2ffab988c845bdc54f6b188758eeaacc14eefe9118e90ae37d5ac52bae7c0}{Raptor}},}
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00026}00026     \};}
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00029}00029 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00030}\mbox{\hyperlink{class_player2_acb393ded989958cc2771e4363ff3c107}{00030}}     \mbox{\hyperlink{class_player2_acb393ded989958cc2771e4363ff3c107}{Player2}}();}
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00032}\mbox{\hyperlink{class_player2_acd42ba38f07095814e97ac6e683142c9}{00032}}     \mbox{\hyperlink{classsf_1_1_sprite}{sf::Sprite}}\& \mbox{\hyperlink{class_player2_acd42ba38f07095814e97ac6e683142c9}{getSprite}}();}
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00034}\mbox{\hyperlink{class_player2_a9b78c1e1dee130ce052350adec8fde93}{00034}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player2_a9b78c1e1dee130ce052350adec8fde93}{draw}}(\mbox{\hyperlink{classsf_1_1_render_target}{sf::RenderTarget}}\& target, \mbox{\hyperlink{classsf_1_1_render_states}{sf::RenderStates}} states) \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00035}00035     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player2_a6f2076b2b9ca1ec7f6ef4a6c565ed637}{update}}(\mbox{\hyperlink{classsf_1_1_time}{sf::Time}});}
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00037}00037 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00038}00038     \mbox{\hyperlink{classsf_1_1_sprite}{sf::Sprite}} \mbox{\hyperlink{class_player2_a775018b7853d055db2e221d98ecb0762}{mSprite}};}
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00039}\mbox{\hyperlink{class_player2_a5f682aa1a7d05cb1448a3a76d8cad438}{00039}}     \mbox{\hyperlink{class_texture_holder}{TextureHolder}} \mbox{\hyperlink{class_player2_a5f682aa1a7d05cb1448a3a76d8cad438}{textures}};}
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_week3-_demo4_2_include_2_player2_8hpp_source_l00041}00041 \};}
+
+\end{DoxyCode}

@@ -1,0 +1,62 @@
+\hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source}{}\doxysection{Tilte\+State.\+cpp}
+\label{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source}\index{Week6/Week6-\/Demo2-\/TitleState/Source/TilteState.cpp@{Week6/Week6-\/Demo2-\/TitleState/Source/TilteState.cpp}}
+\mbox{\hyperlink{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma region step 11}}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <TitleState.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <Utility.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <ResourceHolder.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <SFML/Graphics/RenderWindow.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00009}00009 \mbox{\hyperlink{class_title_state_a9fb6569d8ed77db85dcf8af2890c112c}{TitleState::TitleState}}(\mbox{\hyperlink{class_state_stack}{StateStack}}\& stack, Context context)}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00010}00010     : \mbox{\hyperlink{class_state}{State}}(stack, context)}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00011}00011     , mText()}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00012}00012     , mShowText(true)}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00013}00013     , mTextEffectTime(\mbox{\hyperlink{namespacesf}{sf}}::Time::Zero)}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00014}00014 \{}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00015}00015     mBackgroundSprite.setTexture(context.textures-\/>get(\mbox{\hyperlink{namespace_textures_a2cfe2099537d4e80b08437b4978301a5aabc39828e8e6457efd234f73c73e5b8b}{Textures::TitleScreen}}));}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00017}00017     mText.setFont(context.fonts-\/>get(\mbox{\hyperlink{namespace_fonts_a240717ec0dc75e98501af734a02c396da9e5a008b88415e37d30b922f06c8eabc}{Fonts::Main}}));}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00018}00018     mText.setString(\textcolor{stringliteral}{"{}Press any key to start"{}});}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00019}00019     \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_add3ffea68d586813ee6765c3bc796d35}{centerOrigin}}(mText);}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00020}00020     mText.setPosition(context.window-\/>getView().getSize() / 2.f);}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00021}00021 \}}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00023}00023 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_title_state_ae12beafe5aad6929a56089942de1220e}{TitleState::draw}}()}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00024}00024 \{}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00025}00025     \mbox{\hyperlink{classsf_1_1_render_window}{sf::RenderWindow}}\& window = *\mbox{\hyperlink{class_state_a93a72915d1aad6d8f7eacc81094dc920}{getContext}}().\mbox{\hyperlink{struct_state_1_1_context_a2a03b5d8d2904b1808d87dc3437ad281}{window}};}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00026}00026     window.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(\mbox{\hyperlink{class_title_state_afca87e4a291c9dc13c1c3ae43161f3e5}{mBackgroundSprite}});}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00028}00028     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_title_state_a39ca2d577793818b9417017247d5c98c}{mShowText}})}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00029}00029         window.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(\mbox{\hyperlink{class_title_state_a73b7c3e01214d0fff03d0d2a96df8421}{mText}});}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00030}00030 \}}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00032}00032 \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_title_state_aa282ac0c6e22267cb6a7054973d75fdf}{TitleState::update}}(\mbox{\hyperlink{classsf_1_1_time}{sf::Time}} dt)}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00033}00033 \{}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00034}00034     \mbox{\hyperlink{class_title_state_a2250b3d758d7c303b4da2824c5571454}{mTextEffectTime}} += dt;}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00036}00036     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_title_state_a2250b3d758d7c303b4da2824c5571454}{mTextEffectTime}} >= sf::seconds(0.5f))}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00037}00037     \{}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00038}00038         \mbox{\hyperlink{class_title_state_a39ca2d577793818b9417017247d5c98c}{mShowText}} = !\mbox{\hyperlink{class_title_state_a39ca2d577793818b9417017247d5c98c}{mShowText}};}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00039}00039         \mbox{\hyperlink{class_title_state_a2250b3d758d7c303b4da2824c5571454}{mTextEffectTime}} = \mbox{\hyperlink{classsf_1_1_time_aa343e67f43a940e7b3b51aa10a495f2f}{sf::Time::Zero}};}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00040}00040     \}}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00042}00042     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00043}00043 \}}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00045}00045 \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_title_state_a91c6ab4d741fe7445d88ed603001971a}{TitleState::handleEvent}}(\textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_event}{sf::Event}}\& event)}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00046}00046 \{}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00047}00047     \textcolor{comment}{// If any key is pressed, trigger the next screen}}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00048}00048     \textcolor{keywordflow}{if} (event.\mbox{\hyperlink{classsf_1_1_event_adf2f8044f713fd9d6019077b0d1ffe0a}{type}} == \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4}{sf::Event::KeyPressed}})}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00049}00049     \{}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00050}00050         \mbox{\hyperlink{class_state_aa418660892d6161772c907bd8d70f910}{requestStackPop}}();}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00051}00051         \textcolor{comment}{//requestStackPush(States::Menu);}}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00052}00052     \}}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00054}00054     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00055}00055 \}}
+\DoxyCodeLine{\Hypertarget{_week6-_demo2-_title_state_2_source_2_tilte_state_8cpp_source_l00056}00056 \textcolor{preprocessor}{\#pragma endregion}}
+
+\end{DoxyCode}

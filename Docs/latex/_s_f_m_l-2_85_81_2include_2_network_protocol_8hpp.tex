@@ -1,0 +1,147 @@
+\hypertarget{_s_f_m_l-2_85_81_2include_2_network_protocol_8hpp}{}\doxysection{Week14/\+SFML-\/2.5.1/include/\+Network\+Protocol.hpp File Reference}
+\label{_s_f_m_l-2_85_81_2include_2_network_protocol_8hpp}\index{Week14/SFML-\/2.5.1/include/NetworkProtocol.hpp@{Week14/SFML-\/2.5.1/include/NetworkProtocol.hpp}}
+{\ttfamily \#include $<$SFML/\+Config.\+hpp$>$}\newline
+{\ttfamily \#include $<$SFML/\+System/\+Vector2.\+hpp$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_game_actions_1_1_action}{Game\+Actions\+::\+Action}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_server}{Server}}
+\item 
+namespace \mbox{\hyperlink{namespace_client}{Client}}
+\item 
+namespace \mbox{\hyperlink{namespace_player_actions}{Player\+Actions}}
+\item 
+namespace \mbox{\hyperlink{namespace_game_actions}{Game\+Actions}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220}{Server\+::\+Packet\+Type}} \{ \newline
+\mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a6cd0e2c2482d4841446d21650cfce562}{Server\+::\+Broadcast\+Message}}
+, \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a01037da7a85ce2494c247553ddebfbf7}{Server\+::\+Spawn\+Self}}
+, \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a1bf0bd9c2b28f6f00fdf4c1cc7af3388}{Server\+::\+Initial\+State}}
+, \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220adc6586044f8877151745cc07e86aaafa}{Server\+::\+Player\+Event}}
+, \newline
+\mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a728c998480b4325abd1de68a647efddb}{Server\+::\+Player\+Realtime\+Change}}
+, \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a0b14dd2cfef4723b98c71a2e38473ab9}{Server\+::\+Player\+Connect}}
+, \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a627515caee434e5f1a8797dcf2414336}{Server\+::\+Player\+Disconnect}}
+, \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220af39f187a4ee5bbe2060d16099a34ed11}{Server\+::\+Accept\+Coop\+Partner}}
+, \newline
+\mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220ac3313cf4836d35b920b827b0c853ed91}{Server\+::\+Spawn\+Enemy}}
+, \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a903d70ec235b5d0091e1efabc782e218}{Server\+::\+Spawn\+Pickup}}
+, \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a2bc55dcb334ed968816aa4ff901e205a}{Server\+::\+Update\+Client\+State}}
+, \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220ac3149c45c0b866c1ad17a2c9cf969eaf}{Server\+::\+Mission\+Success}}
+, \newline
+\mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a6cd0e2c2482d4841446d21650cfce562}{Server\+::\+Broadcast\+Message}}
+, \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a01037da7a85ce2494c247553ddebfbf7}{Server\+::\+Spawn\+Self}}
+, \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a1bf0bd9c2b28f6f00fdf4c1cc7af3388}{Server\+::\+Initial\+State}}
+, \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220adc6586044f8877151745cc07e86aaafa}{Server\+::\+Player\+Event}}
+, \newline
+\mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a728c998480b4325abd1de68a647efddb}{Server\+::\+Player\+Realtime\+Change}}
+, \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a0b14dd2cfef4723b98c71a2e38473ab9}{Server\+::\+Player\+Connect}}
+, \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a627515caee434e5f1a8797dcf2414336}{Server\+::\+Player\+Disconnect}}
+, \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220af39f187a4ee5bbe2060d16099a34ed11}{Server\+::\+Accept\+Coop\+Partner}}
+, \newline
+\mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220ac3313cf4836d35b920b827b0c853ed91}{Server\+::\+Spawn\+Enemy}}
+, \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a903d70ec235b5d0091e1efabc782e218}{Server\+::\+Spawn\+Pickup}}
+, \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a2bc55dcb334ed968816aa4ff901e205a}{Server\+::\+Update\+Client\+State}}
+, \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220ac3149c45c0b866c1ad17a2c9cf969eaf}{Server\+::\+Mission\+Success}}
+, \newline
+\mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a6cd0e2c2482d4841446d21650cfce562}{Server\+::\+Broadcast\+Message}}
+, \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a01037da7a85ce2494c247553ddebfbf7}{Server\+::\+Spawn\+Self}}
+, \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a1bf0bd9c2b28f6f00fdf4c1cc7af3388}{Server\+::\+Initial\+State}}
+, \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220adc6586044f8877151745cc07e86aaafa}{Server\+::\+Player\+Event}}
+, \newline
+\mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a728c998480b4325abd1de68a647efddb}{Server\+::\+Player\+Realtime\+Change}}
+, \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a0b14dd2cfef4723b98c71a2e38473ab9}{Server\+::\+Player\+Connect}}
+, \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a627515caee434e5f1a8797dcf2414336}{Server\+::\+Player\+Disconnect}}
+, \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220af39f187a4ee5bbe2060d16099a34ed11}{Server\+::\+Accept\+Coop\+Partner}}
+, \newline
+\mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220ac3313cf4836d35b920b827b0c853ed91}{Server\+::\+Spawn\+Enemy}}
+, \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a903d70ec235b5d0091e1efabc782e218}{Server\+::\+Spawn\+Pickup}}
+, \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a2bc55dcb334ed968816aa4ff901e205a}{Server\+::\+Update\+Client\+State}}
+, \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220ac3149c45c0b866c1ad17a2c9cf969eaf}{Server\+::\+Mission\+Success}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespace_client_a68298dc54679aba9954afeb49186f8f0}{Client\+::\+Packet\+Type}} \{ \newline
+\mbox{\hyperlink{namespace_client_a68298dc54679aba9954afeb49186f8f0a81a4415cfba96f2c62e337570365cc34}{Client\+::\+Player\+Event}}
+, \mbox{\hyperlink{namespace_client_a68298dc54679aba9954afeb49186f8f0ab92ea026fd3ad34751b56d7733e814e4}{Client\+::\+Player\+Realtime\+Change}}
+, \mbox{\hyperlink{namespace_client_a68298dc54679aba9954afeb49186f8f0a81fcf6a64d26ded8d4e54e4df020f5b1}{Client\+::\+Request\+Coop\+Partner}}
+, \mbox{\hyperlink{namespace_client_a68298dc54679aba9954afeb49186f8f0af1f1f7cef86c4058a0105657e764f72c}{Client\+::\+Position\+Update}}
+, \newline
+\mbox{\hyperlink{namespace_client_a68298dc54679aba9954afeb49186f8f0ad53486696653a4baa5f48b134f01caad}{Client\+::\+Game\+Event}}
+, \mbox{\hyperlink{namespace_client_a68298dc54679aba9954afeb49186f8f0a0875fd7848910bd45f98d72f5081a205}{Client\+::\+Quit}}
+, \mbox{\hyperlink{namespace_client_a68298dc54679aba9954afeb49186f8f0a81a4415cfba96f2c62e337570365cc34}{Client\+::\+Player\+Event}}
+, \mbox{\hyperlink{namespace_client_a68298dc54679aba9954afeb49186f8f0ab92ea026fd3ad34751b56d7733e814e4}{Client\+::\+Player\+Realtime\+Change}}
+, \newline
+\mbox{\hyperlink{namespace_client_a68298dc54679aba9954afeb49186f8f0a81fcf6a64d26ded8d4e54e4df020f5b1}{Client\+::\+Request\+Coop\+Partner}}
+, \mbox{\hyperlink{namespace_client_a68298dc54679aba9954afeb49186f8f0af1f1f7cef86c4058a0105657e764f72c}{Client\+::\+Position\+Update}}
+, \mbox{\hyperlink{namespace_client_a68298dc54679aba9954afeb49186f8f0ad53486696653a4baa5f48b134f01caad}{Client\+::\+Game\+Event}}
+, \mbox{\hyperlink{namespace_client_a68298dc54679aba9954afeb49186f8f0a0875fd7848910bd45f98d72f5081a205}{Client\+::\+Quit}}
+, \newline
+\mbox{\hyperlink{namespace_client_a68298dc54679aba9954afeb49186f8f0a81a4415cfba96f2c62e337570365cc34}{Client\+::\+Player\+Event}}
+, \mbox{\hyperlink{namespace_client_a68298dc54679aba9954afeb49186f8f0ab92ea026fd3ad34751b56d7733e814e4}{Client\+::\+Player\+Realtime\+Change}}
+, \mbox{\hyperlink{namespace_client_a68298dc54679aba9954afeb49186f8f0a81fcf6a64d26ded8d4e54e4df020f5b1}{Client\+::\+Request\+Coop\+Partner}}
+, \mbox{\hyperlink{namespace_client_a68298dc54679aba9954afeb49186f8f0af1f1f7cef86c4058a0105657e764f72c}{Client\+::\+Position\+Update}}
+, \newline
+\mbox{\hyperlink{namespace_client_a68298dc54679aba9954afeb49186f8f0ad53486696653a4baa5f48b134f01caad}{Client\+::\+Game\+Event}}
+, \mbox{\hyperlink{namespace_client_a68298dc54679aba9954afeb49186f8f0a0875fd7848910bd45f98d72f5081a205}{Client\+::\+Quit}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2}{Player\+Actions\+::\+Action}} \{ \newline
+\mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2aa6ab9b694e560ea8186a96f457bd11a6}{Player\+Actions\+::\+Move\+Left}}
+, \mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2ad337d4f32aaab26a1eb7c6d2c5a831a7}{Player\+Actions\+::\+Move\+Right}}
+, \mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2a5705a0679fc0db1d6307887522f0f880}{Player\+Actions\+::\+Move\+Up}}
+, \mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2a30203a3aa8b58ea8dcc6ce6e84da3610}{Player\+Actions\+::\+Move\+Down}}
+, \newline
+\mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2a56eecd2f119a77a9e362a4b9312f916f}{Player\+Actions\+::\+Fire}}
+, \mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2ab162b8f755a6888ecb25100c9df64471}{Player\+Actions\+::\+Launch\+Missile}}
+, \mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2ab84743d15c2e90a15d4a6b48b06a02bb}{Player\+Actions\+::\+Action\+Count}}
+, \mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2aa6ab9b694e560ea8186a96f457bd11a6}{Player\+Actions\+::\+Move\+Left}}
+, \newline
+\mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2ad337d4f32aaab26a1eb7c6d2c5a831a7}{Player\+Actions\+::\+Move\+Right}}
+, \mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2a5705a0679fc0db1d6307887522f0f880}{Player\+Actions\+::\+Move\+Up}}
+, \mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2a30203a3aa8b58ea8dcc6ce6e84da3610}{Player\+Actions\+::\+Move\+Down}}
+, \mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2a56eecd2f119a77a9e362a4b9312f916f}{Player\+Actions\+::\+Fire}}
+, \newline
+\mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2ab162b8f755a6888ecb25100c9df64471}{Player\+Actions\+::\+Launch\+Missile}}
+, \mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2ab84743d15c2e90a15d4a6b48b06a02bb}{Player\+Actions\+::\+Action\+Count}}
+, \mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2aa6ab9b694e560ea8186a96f457bd11a6}{Player\+Actions\+::\+Move\+Left}}
+, \mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2ad337d4f32aaab26a1eb7c6d2c5a831a7}{Player\+Actions\+::\+Move\+Right}}
+, \newline
+\mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2a5705a0679fc0db1d6307887522f0f880}{Player\+Actions\+::\+Move\+Up}}
+, \mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2a30203a3aa8b58ea8dcc6ce6e84da3610}{Player\+Actions\+::\+Move\+Down}}
+, \mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2a56eecd2f119a77a9e362a4b9312f916f}{Player\+Actions\+::\+Fire}}
+, \mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2ab162b8f755a6888ecb25100c9df64471}{Player\+Actions\+::\+Launch\+Missile}}
+, \newline
+\mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2ab84743d15c2e90a15d4a6b48b06a02bb}{Player\+Actions\+::\+Action\+Count}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespace_game_actions_a2c10fdbcc811f03c02f357cdd0c4e76d}{Game\+Actions\+::\+Type}} \{ \mbox{\hyperlink{namespace_game_actions_a2c10fdbcc811f03c02f357cdd0c4e76da7c5f0acddf6e9f52706102fc83cf9f55}{Game\+Actions\+::\+Enemy\+Explode}}
+, \mbox{\hyperlink{namespace_game_actions_a2c10fdbcc811f03c02f357cdd0c4e76da7c5f0acddf6e9f52706102fc83cf9f55}{Game\+Actions\+::\+Enemy\+Explode}}
+, \mbox{\hyperlink{namespace_game_actions_a2c10fdbcc811f03c02f357cdd0c4e76da7c5f0acddf6e9f52706102fc83cf9f55}{Game\+Actions\+::\+Enemy\+Explode}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const unsigned short \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_network_protocol_8hpp_a46f6fa8990f0a21731b90db2d1e75e21}{Server\+Port}} = 5000
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_s_f_m_l-2_85_81_2include_2_network_protocol_8hpp_a46f6fa8990f0a21731b90db2d1e75e21}\label{_s_f_m_l-2_85_81_2include_2_network_protocol_8hpp_a46f6fa8990f0a21731b90db2d1e75e21}} 
+\index{NetworkProtocol.hpp@{NetworkProtocol.hpp}!ServerPort@{ServerPort}}
+\index{ServerPort@{ServerPort}!NetworkProtocol.hpp@{NetworkProtocol.hpp}}
+\doxysubsubsection{\texorpdfstring{ServerPort}{ServerPort}}
+{\footnotesize\ttfamily const unsigned short Server\+Port = 5000}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_network_protocol_8hpp_source_l00008}{8}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_network_protocol_8hpp_source}{Network\+Protocol.\+hpp}}.
+

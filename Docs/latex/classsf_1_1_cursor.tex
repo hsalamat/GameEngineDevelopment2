@@ -1,0 +1,679 @@
+\hypertarget{classsf_1_1_cursor}{}\doxysection{sf\+::Cursor Class Reference}
+\label{classsf_1_1_cursor}\index{sf::Cursor@{sf::Cursor}}
+
+
+\mbox{\hyperlink{classsf_1_1_cursor}{Cursor}} defines the appearance of a system cursor.  
+
+
+
+
+{\ttfamily \#include $<$Cursor.\+hpp$>$}
+
+Inheritance diagram for sf\+::Cursor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsf_1_1_cursor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930a}{Type}} \{ \newline
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa71b812ccf28c183fb9b83ebda1776cf2}{Arrow}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa899587abcc784cb1a209cea5ac6b02cb}{Arrow\+Wait}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa254688acfc9c698320ba01c9d65523b1}{Wait}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aaa40bf09f0eb21a2aaccf44d6ce687390}{Text}}
+, \newline
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa73f5104843ec7293032356bc55b96105}{Hand}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa58f97756fb6a753b4be100c71efc3025}{Size\+Horizontal}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa51fefb12091aa9ddd083fa0e56871cfe}{Size\+Vertical}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aaabf3cbd8f13cf130353c8a1250e55e55}{Size\+Top\+Left\+Bottom\+Right}}
+, \newline
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aac4ba3c0a876bd1c49564b2c3a87dee6c}{Size\+Bottom\+Left\+Top\+Right}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa7cd3d843b3d719ca30becf87c3bd0877}{Size\+All}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aab20690d9fff69c0fbfe6b903776c773e}{Cross}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa82cb754133f6daab31762663da1f8ee0}{Help}}
+, \newline
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa46ec9044050cb0016bb3383d65ce81ce}{Not\+Allowed}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa71b812ccf28c183fb9b83ebda1776cf2}{Arrow}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa899587abcc784cb1a209cea5ac6b02cb}{Arrow\+Wait}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa254688acfc9c698320ba01c9d65523b1}{Wait}}
+, \newline
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aaa40bf09f0eb21a2aaccf44d6ce687390}{Text}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa73f5104843ec7293032356bc55b96105}{Hand}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa58f97756fb6a753b4be100c71efc3025}{Size\+Horizontal}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa51fefb12091aa9ddd083fa0e56871cfe}{Size\+Vertical}}
+, \newline
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aaabf3cbd8f13cf130353c8a1250e55e55}{Size\+Top\+Left\+Bottom\+Right}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aac4ba3c0a876bd1c49564b2c3a87dee6c}{Size\+Bottom\+Left\+Top\+Right}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa7cd3d843b3d719ca30becf87c3bd0877}{Size\+All}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aab20690d9fff69c0fbfe6b903776c773e}{Cross}}
+, \newline
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa82cb754133f6daab31762663da1f8ee0}{Help}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa46ec9044050cb0016bb3383d65ce81ce}{Not\+Allowed}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of the native system cursor types. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930a}{Type}} \{ \newline
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa71b812ccf28c183fb9b83ebda1776cf2}{Arrow}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa899587abcc784cb1a209cea5ac6b02cb}{Arrow\+Wait}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa254688acfc9c698320ba01c9d65523b1}{Wait}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aaa40bf09f0eb21a2aaccf44d6ce687390}{Text}}
+, \newline
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa73f5104843ec7293032356bc55b96105}{Hand}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa58f97756fb6a753b4be100c71efc3025}{Size\+Horizontal}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa51fefb12091aa9ddd083fa0e56871cfe}{Size\+Vertical}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aaabf3cbd8f13cf130353c8a1250e55e55}{Size\+Top\+Left\+Bottom\+Right}}
+, \newline
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aac4ba3c0a876bd1c49564b2c3a87dee6c}{Size\+Bottom\+Left\+Top\+Right}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa7cd3d843b3d719ca30becf87c3bd0877}{Size\+All}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aab20690d9fff69c0fbfe6b903776c773e}{Cross}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa82cb754133f6daab31762663da1f8ee0}{Help}}
+, \newline
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa46ec9044050cb0016bb3383d65ce81ce}{Not\+Allowed}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa71b812ccf28c183fb9b83ebda1776cf2}{Arrow}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa899587abcc784cb1a209cea5ac6b02cb}{Arrow\+Wait}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa254688acfc9c698320ba01c9d65523b1}{Wait}}
+, \newline
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aaa40bf09f0eb21a2aaccf44d6ce687390}{Text}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa73f5104843ec7293032356bc55b96105}{Hand}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa58f97756fb6a753b4be100c71efc3025}{Size\+Horizontal}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa51fefb12091aa9ddd083fa0e56871cfe}{Size\+Vertical}}
+, \newline
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aaabf3cbd8f13cf130353c8a1250e55e55}{Size\+Top\+Left\+Bottom\+Right}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aac4ba3c0a876bd1c49564b2c3a87dee6c}{Size\+Bottom\+Left\+Top\+Right}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa7cd3d843b3d719ca30becf87c3bd0877}{Size\+All}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aab20690d9fff69c0fbfe6b903776c773e}{Cross}}
+, \newline
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa82cb754133f6daab31762663da1f8ee0}{Help}}
+, \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa46ec9044050cb0016bb3383d65ce81ce}{Not\+Allowed}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of the native system cursor types. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsf_1_1_cursor_a6a36a0a5943b22b77b00cac839dd715c}{Cursor}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_cursor_a777ba6a1d0d68f8eb9dc85976a5b9727}{$\sim$\+Cursor}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_cursor_ac24ecf82ac7d9ba6703389397f948b3a}{load\+From\+Pixels}} (const \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} $\ast$pixels, \mbox{\hyperlink{namespacesf_a41039649eb65ea7646e2b97cfe124b4f}{Vector2u}} size, \mbox{\hyperlink{namespacesf_a41039649eb65ea7646e2b97cfe124b4f}{Vector2u}} hotspot)
+\begin{DoxyCompactList}\small\item\em Create a cursor with the provided image. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_cursor_ad41999c8633c2fbaa2364e379c1ab25b}{load\+From\+System}} (\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930a}{Type}} type)
+\begin{DoxyCompactList}\small\item\em Create a native system cursor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_cursor_a6a36a0a5943b22b77b00cac839dd715c}{Cursor}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_cursor_a777ba6a1d0d68f8eb9dc85976a5b9727}{$\sim$\+Cursor}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_cursor_ac24ecf82ac7d9ba6703389397f948b3a}{load\+From\+Pixels}} (const \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} $\ast$pixels, \mbox{\hyperlink{namespacesf_a41039649eb65ea7646e2b97cfe124b4f}{Vector2u}} size, \mbox{\hyperlink{namespacesf_a41039649eb65ea7646e2b97cfe124b4f}{Vector2u}} hotspot)
+\begin{DoxyCompactList}\small\item\em Create a cursor with the provided image. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_cursor_ad41999c8633c2fbaa2364e379c1ab25b}{load\+From\+System}} (\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930a}{Type}} type)
+\begin{DoxyCompactList}\small\item\em Create a native system cursor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const priv\+::\+Cursor\+Impl \& \mbox{\hyperlink{classsf_1_1_cursor_a4219624c65ae8349bdec6841cc9b5fdf}{get\+Impl}} () const
+\begin{DoxyCompactList}\small\item\em Get access to the underlying implementation. \end{DoxyCompactList}\item 
+const priv\+::\+Cursor\+Impl \& \mbox{\hyperlink{classsf_1_1_cursor_a4219624c65ae8349bdec6841cc9b5fdf}{get\+Impl}} () const
+\begin{DoxyCompactList}\small\item\em Get access to the underlying implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+priv\+::\+Cursor\+Impl $\ast$ \mbox{\hyperlink{classsf_1_1_cursor_a3d6ca47bf8db47b818308f874e7f042f}{m\+\_\+impl}}
+\begin{DoxyCompactList}\small\item\em Platform-\/specific implementation of the cursor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsf_1_1_cursor_a6f567238a0aaa00ab1b336d0cf0faf4b}{Window}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classsf_1_1_cursor}{Cursor}} defines the appearance of a system cursor. 
+
+\begin{DoxyWarning}{Warning}
+Features related to \mbox{\hyperlink{classsf_1_1_cursor}{Cursor}} are not supported on i\+OS and Android.
+\end{DoxyWarning}
+This class abstracts the operating system resources associated with either a native system cursor or a custom cursor.
+
+After loading the cursor the graphical appearance with either \mbox{\hyperlink{classsf_1_1_cursor_ac24ecf82ac7d9ba6703389397f948b3a}{load\+From\+Pixels()}} or \mbox{\hyperlink{classsf_1_1_cursor_ad41999c8633c2fbaa2364e379c1ab25b}{load\+From\+System()}}, the cursor can be changed with \mbox{\hyperlink{classsf_1_1_window_aab7a05baece72b08ad120063b143d19b}{sf\+::\+Window\+::set\+Mouse\+Cursor()}}.
+
+The behaviour is undefined if the cursor is destroyed while in use by the window.
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_window}{sf::Window}} window;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// ... create window as usual ...}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_cursor}{sf::Cursor}} cursor;}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (cursor.\mbox{\hyperlink{classsf_1_1_cursor_ad41999c8633c2fbaa2364e379c1ab25b}{loadFromSystem}}(\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa73f5104843ec7293032356bc55b96105}{sf::Cursor::Hand}}))}
+\DoxyCodeLine{    window.\mbox{\hyperlink{classsf_1_1_window_aab7a05baece72b08ad120063b143d19b}{setMouseCursor}}(cursor);}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_window_aab7a05baece72b08ad120063b143d19b}{sf\+::\+Window\+::set\+Mouse\+Cursor}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_cursor_8hpp_source_l00046}{46}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_cursor_8hpp_source}{Cursor.\+hpp}}.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930a}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930a}} 
+\index{sf::Cursor@{sf::Cursor}!Type@{Type}}
+\index{Type@{Type}!sf::Cursor@{sf::Cursor}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930a}{sf\+::\+Cursor\+::\+Type}}}
+
+
+
+Enumeration of the native system cursor types. 
+
+Refer to the following table to determine which cursor is available on which platform.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Linux   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Mac OS X   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Windows    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Linux   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Mac OS X   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Windows    }\\\cline{1-4}
+\endhead
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa71b812ccf28c183fb9b83ebda1776cf2}{sf\+::\+Cursor\+::\+Arrow}}   &\PBS\centering yes   &\PBS\centering yes   &\PBS\centering yes    \\\cline{1-4}
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa899587abcc784cb1a209cea5ac6b02cb}{sf\+::\+Cursor\+::\+Arrow\+Wait}}   &\PBS\centering no   &\PBS\centering no   &\PBS\centering yes    \\\cline{1-4}
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa254688acfc9c698320ba01c9d65523b1}{sf\+::\+Cursor\+::\+Wait}}   &\PBS\centering yes   &\PBS\centering no   &\PBS\centering yes    \\\cline{1-4}
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aaa40bf09f0eb21a2aaccf44d6ce687390}{sf\+::\+Cursor\+::\+Text}}   &\PBS\centering yes   &\PBS\centering yes   &\PBS\centering yes    \\\cline{1-4}
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa73f5104843ec7293032356bc55b96105}{sf\+::\+Cursor\+::\+Hand}}   &\PBS\centering yes   &\PBS\centering yes   &\PBS\centering yes    \\\cline{1-4}
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa58f97756fb6a753b4be100c71efc3025}{sf\+::\+Cursor\+::\+Size\+Horizontal}}   &\PBS\centering yes   &\PBS\centering yes   &\PBS\centering yes    \\\cline{1-4}
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa51fefb12091aa9ddd083fa0e56871cfe}{sf\+::\+Cursor\+::\+Size\+Vertical}}   &\PBS\centering yes   &\PBS\centering yes   &\PBS\centering yes    \\\cline{1-4}
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aaabf3cbd8f13cf130353c8a1250e55e55}{sf\+::\+Cursor\+::\+Size\+Top\+Left\+Bottom\+Right}}   &\PBS\centering no   &\PBS\centering yes$\ast$   &\PBS\centering yes    \\\cline{1-4}
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aac4ba3c0a876bd1c49564b2c3a87dee6c}{sf\+::\+Cursor\+::\+Size\+Bottom\+Left\+Top\+Right}}   &\PBS\centering no   &\PBS\centering yes$\ast$   &\PBS\centering yes    \\\cline{1-4}
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa7cd3d843b3d719ca30becf87c3bd0877}{sf\+::\+Cursor\+::\+Size\+All}}   &\PBS\centering yes   &\PBS\centering no   &\PBS\centering yes    \\\cline{1-4}
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aab20690d9fff69c0fbfe6b903776c773e}{sf\+::\+Cursor\+::\+Cross}}   &\PBS\centering yes   &\PBS\centering yes   &\PBS\centering yes    \\\cline{1-4}
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa82cb754133f6daab31762663da1f8ee0}{sf\+::\+Cursor\+::\+Help}}   &\PBS\centering yes   &\PBS\centering yes$\ast$   &\PBS\centering yes    \\\cline{1-4}
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa46ec9044050cb0016bb3383d65ce81ce}{sf\+::\+Cursor\+::\+Not\+Allowed}}   &\PBS\centering yes   &\PBS\centering yes   &\PBS\centering yes   \\\cline{1-4}
+\end{longtabu}
+
+
+
+\begin{DoxyItemize}
+\item These cursor types are undocumented so may not be available on all versions, but have been tested on 10.\+13 
+\end{DoxyItemize}\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Arrow@{Arrow}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!Arrow@{Arrow}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa71b812ccf28c183fb9b83ebda1776cf2}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa71b812ccf28c183fb9b83ebda1776cf2}} 
+Arrow&Arrow cursor (default) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ArrowWait@{ArrowWait}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!ArrowWait@{ArrowWait}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa899587abcc784cb1a209cea5ac6b02cb}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa899587abcc784cb1a209cea5ac6b02cb}} 
+Arrow\+Wait&Busy arrow cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Wait@{Wait}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!Wait@{Wait}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa254688acfc9c698320ba01c9d65523b1}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa254688acfc9c698320ba01c9d65523b1}} 
+Wait&Busy cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Text@{Text}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!Text@{Text}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aaa40bf09f0eb21a2aaccf44d6ce687390}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aaa40bf09f0eb21a2aaccf44d6ce687390}} 
+Text&I-\/beam, cursor when hovering over a field allowing text entry. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Hand@{Hand}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!Hand@{Hand}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa73f5104843ec7293032356bc55b96105}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa73f5104843ec7293032356bc55b96105}} 
+Hand&Pointing hand cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SizeHorizontal@{SizeHorizontal}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!SizeHorizontal@{SizeHorizontal}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa58f97756fb6a753b4be100c71efc3025}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa58f97756fb6a753b4be100c71efc3025}} 
+Size\+Horizontal&Horizontal double arrow cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SizeVertical@{SizeVertical}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!SizeVertical@{SizeVertical}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa51fefb12091aa9ddd083fa0e56871cfe}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa51fefb12091aa9ddd083fa0e56871cfe}} 
+Size\+Vertical&Vertical double arrow cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SizeTopLeftBottomRight@{SizeTopLeftBottomRight}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!SizeTopLeftBottomRight@{SizeTopLeftBottomRight}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aaabf3cbd8f13cf130353c8a1250e55e55}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aaabf3cbd8f13cf130353c8a1250e55e55}} 
+Size\+Top\+Left\+Bottom\+Right&Double arrow cursor going from top-\/left to bottom-\/right. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SizeBottomLeftTopRight@{SizeBottomLeftTopRight}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!SizeBottomLeftTopRight@{SizeBottomLeftTopRight}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aac4ba3c0a876bd1c49564b2c3a87dee6c}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aac4ba3c0a876bd1c49564b2c3a87dee6c}} 
+Size\+Bottom\+Left\+Top\+Right&Double arrow cursor going from bottom-\/left to top-\/right. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SizeAll@{SizeAll}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!SizeAll@{SizeAll}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa7cd3d843b3d719ca30becf87c3bd0877}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa7cd3d843b3d719ca30becf87c3bd0877}} 
+Size\+All&Combination of Size\+Horizontal and Size\+Vertical. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Cross@{Cross}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!Cross@{Cross}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aab20690d9fff69c0fbfe6b903776c773e}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aab20690d9fff69c0fbfe6b903776c773e}} 
+Cross&Crosshair cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Help@{Help}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!Help@{Help}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa82cb754133f6daab31762663da1f8ee0}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa82cb754133f6daab31762663da1f8ee0}} 
+Help&Help cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NotAllowed@{NotAllowed}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!NotAllowed@{NotAllowed}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa46ec9044050cb0016bb3383d65ce81ce}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa46ec9044050cb0016bb3383d65ce81ce}} 
+Not\+Allowed&Action not allowed cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Arrow@{Arrow}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!Arrow@{Arrow}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa71b812ccf28c183fb9b83ebda1776cf2}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa71b812ccf28c183fb9b83ebda1776cf2}} 
+Arrow&Arrow cursor (default) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ArrowWait@{ArrowWait}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!ArrowWait@{ArrowWait}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa899587abcc784cb1a209cea5ac6b02cb}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa899587abcc784cb1a209cea5ac6b02cb}} 
+Arrow\+Wait&Busy arrow cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Wait@{Wait}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!Wait@{Wait}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa254688acfc9c698320ba01c9d65523b1}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa254688acfc9c698320ba01c9d65523b1}} 
+Wait&Busy cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Text@{Text}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!Text@{Text}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aaa40bf09f0eb21a2aaccf44d6ce687390}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aaa40bf09f0eb21a2aaccf44d6ce687390}} 
+Text&I-\/beam, cursor when hovering over a field allowing text entry. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Hand@{Hand}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!Hand@{Hand}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa73f5104843ec7293032356bc55b96105}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa73f5104843ec7293032356bc55b96105}} 
+Hand&Pointing hand cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SizeHorizontal@{SizeHorizontal}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!SizeHorizontal@{SizeHorizontal}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa58f97756fb6a753b4be100c71efc3025}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa58f97756fb6a753b4be100c71efc3025}} 
+Size\+Horizontal&Horizontal double arrow cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SizeVertical@{SizeVertical}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!SizeVertical@{SizeVertical}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa51fefb12091aa9ddd083fa0e56871cfe}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa51fefb12091aa9ddd083fa0e56871cfe}} 
+Size\+Vertical&Vertical double arrow cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SizeTopLeftBottomRight@{SizeTopLeftBottomRight}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!SizeTopLeftBottomRight@{SizeTopLeftBottomRight}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aaabf3cbd8f13cf130353c8a1250e55e55}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aaabf3cbd8f13cf130353c8a1250e55e55}} 
+Size\+Top\+Left\+Bottom\+Right&Double arrow cursor going from top-\/left to bottom-\/right. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SizeBottomLeftTopRight@{SizeBottomLeftTopRight}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!SizeBottomLeftTopRight@{SizeBottomLeftTopRight}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aac4ba3c0a876bd1c49564b2c3a87dee6c}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aac4ba3c0a876bd1c49564b2c3a87dee6c}} 
+Size\+Bottom\+Left\+Top\+Right&Double arrow cursor going from bottom-\/left to top-\/right. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SizeAll@{SizeAll}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!SizeAll@{SizeAll}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa7cd3d843b3d719ca30becf87c3bd0877}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa7cd3d843b3d719ca30becf87c3bd0877}} 
+Size\+All&Combination of Size\+Horizontal and Size\+Vertical. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Cross@{Cross}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!Cross@{Cross}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aab20690d9fff69c0fbfe6b903776c773e}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aab20690d9fff69c0fbfe6b903776c773e}} 
+Cross&Crosshair cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Help@{Help}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!Help@{Help}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa82cb754133f6daab31762663da1f8ee0}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa82cb754133f6daab31762663da1f8ee0}} 
+Help&Help cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NotAllowed@{NotAllowed}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!NotAllowed@{NotAllowed}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa46ec9044050cb0016bb3383d65ce81ce}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa46ec9044050cb0016bb3383d65ce81ce}} 
+Not\+Allowed&Action not allowed cursor. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_cursor_8hpp_source_l00076}{76}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_cursor_8hpp_source}{Cursor.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930a}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930a}} 
+\index{sf::Cursor@{sf::Cursor}!Type@{Type}}
+\index{Type@{Type}!sf::Cursor@{sf::Cursor}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930a}{sf\+::\+Cursor\+::\+Type}}}
+
+
+
+Enumeration of the native system cursor types. 
+
+Refer to the following table to determine which cursor is available on which platform.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Linux   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Mac OS X   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Windows    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Linux   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Mac OS X   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Windows    }\\\cline{1-4}
+\endhead
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa71b812ccf28c183fb9b83ebda1776cf2}{sf\+::\+Cursor\+::\+Arrow}}   &\PBS\centering yes   &\PBS\centering yes   &\PBS\centering yes    \\\cline{1-4}
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa899587abcc784cb1a209cea5ac6b02cb}{sf\+::\+Cursor\+::\+Arrow\+Wait}}   &\PBS\centering no   &\PBS\centering no   &\PBS\centering yes    \\\cline{1-4}
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa254688acfc9c698320ba01c9d65523b1}{sf\+::\+Cursor\+::\+Wait}}   &\PBS\centering yes   &\PBS\centering no   &\PBS\centering yes    \\\cline{1-4}
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aaa40bf09f0eb21a2aaccf44d6ce687390}{sf\+::\+Cursor\+::\+Text}}   &\PBS\centering yes   &\PBS\centering yes   &\PBS\centering yes    \\\cline{1-4}
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa73f5104843ec7293032356bc55b96105}{sf\+::\+Cursor\+::\+Hand}}   &\PBS\centering yes   &\PBS\centering yes   &\PBS\centering yes    \\\cline{1-4}
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa58f97756fb6a753b4be100c71efc3025}{sf\+::\+Cursor\+::\+Size\+Horizontal}}   &\PBS\centering yes   &\PBS\centering yes   &\PBS\centering yes    \\\cline{1-4}
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa51fefb12091aa9ddd083fa0e56871cfe}{sf\+::\+Cursor\+::\+Size\+Vertical}}   &\PBS\centering yes   &\PBS\centering yes   &\PBS\centering yes    \\\cline{1-4}
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aaabf3cbd8f13cf130353c8a1250e55e55}{sf\+::\+Cursor\+::\+Size\+Top\+Left\+Bottom\+Right}}   &\PBS\centering no   &\PBS\centering yes$\ast$   &\PBS\centering yes    \\\cline{1-4}
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aac4ba3c0a876bd1c49564b2c3a87dee6c}{sf\+::\+Cursor\+::\+Size\+Bottom\+Left\+Top\+Right}}   &\PBS\centering no   &\PBS\centering yes$\ast$   &\PBS\centering yes    \\\cline{1-4}
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa7cd3d843b3d719ca30becf87c3bd0877}{sf\+::\+Cursor\+::\+Size\+All}}   &\PBS\centering yes   &\PBS\centering no   &\PBS\centering yes    \\\cline{1-4}
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aab20690d9fff69c0fbfe6b903776c773e}{sf\+::\+Cursor\+::\+Cross}}   &\PBS\centering yes   &\PBS\centering yes   &\PBS\centering yes    \\\cline{1-4}
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa82cb754133f6daab31762663da1f8ee0}{sf\+::\+Cursor\+::\+Help}}   &\PBS\centering yes   &\PBS\centering yes$\ast$   &\PBS\centering yes    \\\cline{1-4}
+\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa46ec9044050cb0016bb3383d65ce81ce}{sf\+::\+Cursor\+::\+Not\+Allowed}}   &\PBS\centering yes   &\PBS\centering yes   &\PBS\centering yes   \\\cline{1-4}
+\end{longtabu}
+
+
+
+\begin{DoxyItemize}
+\item These cursor types are undocumented so may not be available on all versions, but have been tested on 10.\+13 
+\end{DoxyItemize}\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Arrow@{Arrow}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!Arrow@{Arrow}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa71b812ccf28c183fb9b83ebda1776cf2}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa71b812ccf28c183fb9b83ebda1776cf2}} 
+Arrow&Arrow cursor (default) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ArrowWait@{ArrowWait}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!ArrowWait@{ArrowWait}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa899587abcc784cb1a209cea5ac6b02cb}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa899587abcc784cb1a209cea5ac6b02cb}} 
+Arrow\+Wait&Busy arrow cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Wait@{Wait}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!Wait@{Wait}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa254688acfc9c698320ba01c9d65523b1}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa254688acfc9c698320ba01c9d65523b1}} 
+Wait&Busy cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Text@{Text}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!Text@{Text}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aaa40bf09f0eb21a2aaccf44d6ce687390}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aaa40bf09f0eb21a2aaccf44d6ce687390}} 
+Text&I-\/beam, cursor when hovering over a field allowing text entry. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Hand@{Hand}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!Hand@{Hand}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa73f5104843ec7293032356bc55b96105}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa73f5104843ec7293032356bc55b96105}} 
+Hand&Pointing hand cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SizeHorizontal@{SizeHorizontal}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!SizeHorizontal@{SizeHorizontal}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa58f97756fb6a753b4be100c71efc3025}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa58f97756fb6a753b4be100c71efc3025}} 
+Size\+Horizontal&Horizontal double arrow cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SizeVertical@{SizeVertical}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!SizeVertical@{SizeVertical}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa51fefb12091aa9ddd083fa0e56871cfe}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa51fefb12091aa9ddd083fa0e56871cfe}} 
+Size\+Vertical&Vertical double arrow cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SizeTopLeftBottomRight@{SizeTopLeftBottomRight}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!SizeTopLeftBottomRight@{SizeTopLeftBottomRight}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aaabf3cbd8f13cf130353c8a1250e55e55}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aaabf3cbd8f13cf130353c8a1250e55e55}} 
+Size\+Top\+Left\+Bottom\+Right&Double arrow cursor going from top-\/left to bottom-\/right. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SizeBottomLeftTopRight@{SizeBottomLeftTopRight}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!SizeBottomLeftTopRight@{SizeBottomLeftTopRight}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aac4ba3c0a876bd1c49564b2c3a87dee6c}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aac4ba3c0a876bd1c49564b2c3a87dee6c}} 
+Size\+Bottom\+Left\+Top\+Right&Double arrow cursor going from bottom-\/left to top-\/right. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SizeAll@{SizeAll}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!SizeAll@{SizeAll}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa7cd3d843b3d719ca30becf87c3bd0877}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa7cd3d843b3d719ca30becf87c3bd0877}} 
+Size\+All&Combination of Size\+Horizontal and Size\+Vertical. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Cross@{Cross}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!Cross@{Cross}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aab20690d9fff69c0fbfe6b903776c773e}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aab20690d9fff69c0fbfe6b903776c773e}} 
+Cross&Crosshair cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Help@{Help}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!Help@{Help}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa82cb754133f6daab31762663da1f8ee0}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa82cb754133f6daab31762663da1f8ee0}} 
+Help&Help cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NotAllowed@{NotAllowed}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!NotAllowed@{NotAllowed}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa46ec9044050cb0016bb3383d65ce81ce}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa46ec9044050cb0016bb3383d65ce81ce}} 
+Not\+Allowed&Action not allowed cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Arrow@{Arrow}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!Arrow@{Arrow}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa71b812ccf28c183fb9b83ebda1776cf2}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa71b812ccf28c183fb9b83ebda1776cf2}} 
+Arrow&Arrow cursor (default) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ArrowWait@{ArrowWait}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!ArrowWait@{ArrowWait}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa899587abcc784cb1a209cea5ac6b02cb}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa899587abcc784cb1a209cea5ac6b02cb}} 
+Arrow\+Wait&Busy arrow cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Wait@{Wait}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!Wait@{Wait}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa254688acfc9c698320ba01c9d65523b1}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa254688acfc9c698320ba01c9d65523b1}} 
+Wait&Busy cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Text@{Text}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!Text@{Text}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aaa40bf09f0eb21a2aaccf44d6ce687390}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aaa40bf09f0eb21a2aaccf44d6ce687390}} 
+Text&I-\/beam, cursor when hovering over a field allowing text entry. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Hand@{Hand}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!Hand@{Hand}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa73f5104843ec7293032356bc55b96105}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa73f5104843ec7293032356bc55b96105}} 
+Hand&Pointing hand cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SizeHorizontal@{SizeHorizontal}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!SizeHorizontal@{SizeHorizontal}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa58f97756fb6a753b4be100c71efc3025}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa58f97756fb6a753b4be100c71efc3025}} 
+Size\+Horizontal&Horizontal double arrow cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SizeVertical@{SizeVertical}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!SizeVertical@{SizeVertical}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa51fefb12091aa9ddd083fa0e56871cfe}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa51fefb12091aa9ddd083fa0e56871cfe}} 
+Size\+Vertical&Vertical double arrow cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SizeTopLeftBottomRight@{SizeTopLeftBottomRight}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!SizeTopLeftBottomRight@{SizeTopLeftBottomRight}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aaabf3cbd8f13cf130353c8a1250e55e55}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aaabf3cbd8f13cf130353c8a1250e55e55}} 
+Size\+Top\+Left\+Bottom\+Right&Double arrow cursor going from top-\/left to bottom-\/right. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SizeBottomLeftTopRight@{SizeBottomLeftTopRight}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!SizeBottomLeftTopRight@{SizeBottomLeftTopRight}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aac4ba3c0a876bd1c49564b2c3a87dee6c}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aac4ba3c0a876bd1c49564b2c3a87dee6c}} 
+Size\+Bottom\+Left\+Top\+Right&Double arrow cursor going from bottom-\/left to top-\/right. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SizeAll@{SizeAll}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!SizeAll@{SizeAll}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa7cd3d843b3d719ca30becf87c3bd0877}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa7cd3d843b3d719ca30becf87c3bd0877}} 
+Size\+All&Combination of Size\+Horizontal and Size\+Vertical. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Cross@{Cross}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!Cross@{Cross}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aab20690d9fff69c0fbfe6b903776c773e}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aab20690d9fff69c0fbfe6b903776c773e}} 
+Cross&Crosshair cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Help@{Help}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!Help@{Help}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa82cb754133f6daab31762663da1f8ee0}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa82cb754133f6daab31762663da1f8ee0}} 
+Help&Help cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NotAllowed@{NotAllowed}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!NotAllowed@{NotAllowed}}}\mbox{\Hypertarget{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa46ec9044050cb0016bb3383d65ce81ce}\label{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930aa46ec9044050cb0016bb3383d65ce81ce}} 
+Not\+Allowed&Action not allowed cursor. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_cursor_8hpp_source_l00076}{76}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_cursor_8hpp_source}{Cursor.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsf_1_1_cursor_a6a36a0a5943b22b77b00cac839dd715c}\label{classsf_1_1_cursor_a6a36a0a5943b22b77b00cac839dd715c}} 
+\index{sf::Cursor@{sf::Cursor}!Cursor@{Cursor}}
+\index{Cursor@{Cursor}!sf::Cursor@{sf::Cursor}}
+\doxysubsubsection{\texorpdfstring{Cursor()}{Cursor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily sf\+::\+Cursor\+::\+Cursor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+This constructor doesn\textquotesingle{}t actually create the cursor; initially the new instance is invalid and must not be used until either \mbox{\hyperlink{classsf_1_1_cursor_ac24ecf82ac7d9ba6703389397f948b3a}{load\+From\+Pixels()}} or \mbox{\hyperlink{classsf_1_1_cursor_ad41999c8633c2fbaa2364e379c1ab25b}{load\+From\+System()}} is called and successfully created a cursor. \mbox{\Hypertarget{classsf_1_1_cursor_a777ba6a1d0d68f8eb9dc85976a5b9727}\label{classsf_1_1_cursor_a777ba6a1d0d68f8eb9dc85976a5b9727}} 
+\index{sf::Cursor@{sf::Cursor}!````~Cursor@{$\sim$Cursor}}
+\index{````~Cursor@{$\sim$Cursor}!sf::Cursor@{sf::Cursor}}
+\doxysubsubsection{\texorpdfstring{$\sim$Cursor()}{~Cursor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily sf\+::\+Cursor\+::$\sim$\+Cursor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+This destructor releases the system resources associated with this cursor, if any. \mbox{\Hypertarget{classsf_1_1_cursor_a6a36a0a5943b22b77b00cac839dd715c}\label{classsf_1_1_cursor_a6a36a0a5943b22b77b00cac839dd715c}} 
+\index{sf::Cursor@{sf::Cursor}!Cursor@{Cursor}}
+\index{Cursor@{Cursor}!sf::Cursor@{sf::Cursor}}
+\doxysubsubsection{\texorpdfstring{Cursor()}{Cursor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sf\+::\+Cursor\+::\+Cursor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+This constructor doesn\textquotesingle{}t actually create the cursor; initially the new instance is invalid and must not be used until either \mbox{\hyperlink{classsf_1_1_cursor_ac24ecf82ac7d9ba6703389397f948b3a}{load\+From\+Pixels()}} or \mbox{\hyperlink{classsf_1_1_cursor_ad41999c8633c2fbaa2364e379c1ab25b}{load\+From\+System()}} is called and successfully created a cursor. \mbox{\Hypertarget{classsf_1_1_cursor_a777ba6a1d0d68f8eb9dc85976a5b9727}\label{classsf_1_1_cursor_a777ba6a1d0d68f8eb9dc85976a5b9727}} 
+\index{sf::Cursor@{sf::Cursor}!````~Cursor@{$\sim$Cursor}}
+\index{````~Cursor@{$\sim$Cursor}!sf::Cursor@{sf::Cursor}}
+\doxysubsubsection{\texorpdfstring{$\sim$Cursor()}{~Cursor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sf\+::\+Cursor\+::$\sim$\+Cursor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+This destructor releases the system resources associated with this cursor, if any. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsf_1_1_cursor_a4219624c65ae8349bdec6841cc9b5fdf}\label{classsf_1_1_cursor_a4219624c65ae8349bdec6841cc9b5fdf}} 
+\index{sf::Cursor@{sf::Cursor}!getImpl@{getImpl}}
+\index{getImpl@{getImpl}!sf::Cursor@{sf::Cursor}}
+\doxysubsubsection{\texorpdfstring{getImpl()}{getImpl()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const priv\+::\+Cursor\+Impl \& sf\+::\+Cursor\+::get\+Impl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get access to the underlying implementation. 
+
+This is primarily designed for \mbox{\hyperlink{classsf_1_1_window_aab7a05baece72b08ad120063b143d19b}{sf\+::\+Window\+::set\+Mouse\+Cursor}}, hence the friendship.
+
+\begin{DoxyReturn}{Returns}
+a reference to the OS-\/specific implementation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_cursor_a4219624c65ae8349bdec6841cc9b5fdf}\label{classsf_1_1_cursor_a4219624c65ae8349bdec6841cc9b5fdf}} 
+\index{sf::Cursor@{sf::Cursor}!getImpl@{getImpl}}
+\index{getImpl@{getImpl}!sf::Cursor@{sf::Cursor}}
+\doxysubsubsection{\texorpdfstring{getImpl()}{getImpl()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const priv\+::\+Cursor\+Impl \& sf\+::\+Cursor\+::get\+Impl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get access to the underlying implementation. 
+
+This is primarily designed for \mbox{\hyperlink{classsf_1_1_window_aab7a05baece72b08ad120063b143d19b}{sf\+::\+Window\+::set\+Mouse\+Cursor}}, hence the friendship.
+
+\begin{DoxyReturn}{Returns}
+a reference to the OS-\/specific implementation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_cursor_ac24ecf82ac7d9ba6703389397f948b3a}\label{classsf_1_1_cursor_ac24ecf82ac7d9ba6703389397f948b3a}} 
+\index{sf::Cursor@{sf::Cursor}!loadFromPixels@{loadFromPixels}}
+\index{loadFromPixels@{loadFromPixels}!sf::Cursor@{sf::Cursor}}
+\doxysubsubsection{\texorpdfstring{loadFromPixels()}{loadFromPixels()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool sf\+::\+Cursor\+::load\+From\+Pixels (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} $\ast$}]{pixels,  }\item[{\mbox{\hyperlink{namespacesf_a41039649eb65ea7646e2b97cfe124b4f}{Vector2u}}}]{size,  }\item[{\mbox{\hyperlink{namespacesf_a41039649eb65ea7646e2b97cfe124b4f}{Vector2u}}}]{hotspot }\end{DoxyParamCaption})}
+
+
+
+Create a cursor with the provided image. 
+
+{\itshape pixels} must be an array of {\itshape width} by {\itshape height} pixels in 32-\/bit RGBA format. If not, this will cause undefined behavior.
+
+If {\itshape pixels} is null or either {\itshape width} or {\itshape height} are 0, the current cursor is left unchanged and the function will return false.
+
+In addition to specifying the pixel data, you can also specify the location of the hotspot of the cursor. The hotspot is the pixel coordinate within the cursor image which will be located exactly where the mouse pointer position is. Any mouse actions that are performed will return the window/screen location of the hotspot.
+
+\begin{DoxyWarning}{Warning}
+On Unix, the pixels are mapped into a monochrome bitmap\+: pixels with an alpha channel to 0 are transparent, black if the RGB channel are close to zero, and white otherwise.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em pixels} & Array of pixels of the image \\
+\hline
+{\em size} & Width and height of the image \\
+\hline
+{\em hotspot} & (x,y) location of the hotspot \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the cursor was successfully loaded; false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_cursor_ac24ecf82ac7d9ba6703389397f948b3a}\label{classsf_1_1_cursor_ac24ecf82ac7d9ba6703389397f948b3a}} 
+\index{sf::Cursor@{sf::Cursor}!loadFromPixels@{loadFromPixels}}
+\index{loadFromPixels@{loadFromPixels}!sf::Cursor@{sf::Cursor}}
+\doxysubsubsection{\texorpdfstring{loadFromPixels()}{loadFromPixels()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool sf\+::\+Cursor\+::load\+From\+Pixels (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} $\ast$}]{pixels,  }\item[{\mbox{\hyperlink{namespacesf_a41039649eb65ea7646e2b97cfe124b4f}{Vector2u}}}]{size,  }\item[{\mbox{\hyperlink{namespacesf_a41039649eb65ea7646e2b97cfe124b4f}{Vector2u}}}]{hotspot }\end{DoxyParamCaption})}
+
+
+
+Create a cursor with the provided image. 
+
+{\itshape pixels} must be an array of {\itshape width} by {\itshape height} pixels in 32-\/bit RGBA format. If not, this will cause undefined behavior.
+
+If {\itshape pixels} is null or either {\itshape width} or {\itshape height} are 0, the current cursor is left unchanged and the function will return false.
+
+In addition to specifying the pixel data, you can also specify the location of the hotspot of the cursor. The hotspot is the pixel coordinate within the cursor image which will be located exactly where the mouse pointer position is. Any mouse actions that are performed will return the window/screen location of the hotspot.
+
+\begin{DoxyWarning}{Warning}
+On Unix, the pixels are mapped into a monochrome bitmap\+: pixels with an alpha channel to 0 are transparent, black if the RGB channel are close to zero, and white otherwise.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em pixels} & Array of pixels of the image \\
+\hline
+{\em size} & Width and height of the image \\
+\hline
+{\em hotspot} & (x,y) location of the hotspot \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the cursor was successfully loaded; false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_cursor_ad41999c8633c2fbaa2364e379c1ab25b}\label{classsf_1_1_cursor_ad41999c8633c2fbaa2364e379c1ab25b}} 
+\index{sf::Cursor@{sf::Cursor}!loadFromSystem@{loadFromSystem}}
+\index{loadFromSystem@{loadFromSystem}!sf::Cursor@{sf::Cursor}}
+\doxysubsubsection{\texorpdfstring{loadFromSystem()}{loadFromSystem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool sf\+::\+Cursor\+::load\+From\+System (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930a}{Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Create a native system cursor. 
+
+Refer to the list of cursor available on each system (see \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930a}{sf\+::\+Cursor\+::\+Type}}) to know whether a given cursor is expected to load successfully or is not supported by the operating system.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Native system cursor type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if and only if the corresponding cursor is natively supported by the operating system; false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_cursor_ad41999c8633c2fbaa2364e379c1ab25b}\label{classsf_1_1_cursor_ad41999c8633c2fbaa2364e379c1ab25b}} 
+\index{sf::Cursor@{sf::Cursor}!loadFromSystem@{loadFromSystem}}
+\index{loadFromSystem@{loadFromSystem}!sf::Cursor@{sf::Cursor}}
+\doxysubsubsection{\texorpdfstring{loadFromSystem()}{loadFromSystem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool sf\+::\+Cursor\+::load\+From\+System (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930a}{Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Create a native system cursor. 
+
+Refer to the list of cursor available on each system (see \mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930a}{sf\+::\+Cursor\+::\+Type}}) to know whether a given cursor is expected to load successfully or is not supported by the operating system.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Native system cursor type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if and only if the corresponding cursor is natively supported by the operating system; false otherwise 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classsf_1_1_cursor_a6f567238a0aaa00ab1b336d0cf0faf4b}\label{classsf_1_1_cursor_a6f567238a0aaa00ab1b336d0cf0faf4b}} 
+\index{sf::Cursor@{sf::Cursor}!Window@{Window}}
+\index{Window@{Window}!sf::Cursor@{sf::Cursor}}
+\doxysubsubsection{\texorpdfstring{Window}{Window}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_window}{Window}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_cursor_8hpp_source_l00164}{164}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_cursor_8hpp_source}{Cursor.\+hpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsf_1_1_cursor_a3d6ca47bf8db47b818308f874e7f042f}\label{classsf_1_1_cursor_a3d6ca47bf8db47b818308f874e7f042f}} 
+\index{sf::Cursor@{sf::Cursor}!m\_impl@{m\_impl}}
+\index{m\_impl@{m\_impl}!sf::Cursor@{sf::Cursor}}
+\doxysubsubsection{\texorpdfstring{m\_impl}{m\_impl}}
+{\footnotesize\ttfamily priv\+::\+Cursor\+Impl $\ast$ sf\+::\+Cursor\+::m\+\_\+impl\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Platform-\/specific implementation of the cursor. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_cursor_8hpp_source_l00182}{182}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_cursor_8hpp_source}{Cursor.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+SFML-\/2.\+5.\+1/include/\+SFML/\+Window/\mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_cursor_8hpp}{Cursor.\+hpp}}\item 
+Week14/\+SFML-\/2.\+5.\+1/include/\+SFML/\+Window/\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_cursor_8hpp}{Cursor.\+hpp}}\end{DoxyCompactItemize}

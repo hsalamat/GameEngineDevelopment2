@@ -1,0 +1,92 @@
+\hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source}{}\doxysection{Sound\+Capture.\+cpp}
+\label{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source}\index{Week14/SFML-\/2.5.1/examples/sound-\/capture/SoundCapture.cpp@{Week14/SFML-\/2.5.1/examples/sound-\/capture/SoundCapture.cpp}}
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00003}00003 \textcolor{comment}{// Headers}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00005}00005 \textcolor{comment}{}\textcolor{preprocessor}{\#include <SFML/Audio.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00015}\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00015}} \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00016}00016 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00017}00017     \textcolor{comment}{// Check that the device can capture audio}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00018}00018     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classsf_1_1_sound_recorder_aab2bd0fee9e48d6cfd449b1cb078ce5a}{sf::SoundRecorder::isAvailable}}() == \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00019}00019     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00020}00020         std::cout << \textcolor{stringliteral}{"{}Sorry, audio capture is not supported by your system"{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00021}00021         \textcolor{keywordflow}{return} EXIT\_SUCCESS;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00022}00022     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00024}00024     \textcolor{comment}{// Choose the sample rate}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00025}00025     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} sampleRate;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00026}00026     std::cout << \textcolor{stringliteral}{"{}Please choose the sample rate for sound capture (44100 is CD quality): "{}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00027}00027     std::cin  >> sampleRate;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00028}00028     std::cin.ignore(10000, \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00030}00030     \textcolor{comment}{// Wait for user input...}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00031}00031     std::cout << \textcolor{stringliteral}{"{}Press enter to start recording audio"{}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00032}00032     std::cin.ignore(10000, \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00034}00034     \textcolor{comment}{// Here we'll use an integrated custom recorder, which saves the captured data into a SoundBuffer}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00035}00035     \mbox{\hyperlink{classsf_1_1_sound_buffer_recorder}{sf::SoundBufferRecorder}} recorder;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00037}00037     \textcolor{comment}{// Audio capture is done in a separate thread, so we can block the main thread while it is capturing}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00038}00038     recorder.\mbox{\hyperlink{classsf_1_1_sound_recorder_a715f0fd2f228c83d79aaedca562ae51f}{start}}(sampleRate);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00039}00039     std::cout << \textcolor{stringliteral}{"{}Recording... press enter to stop"{}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00040}00040     std::cin.ignore(10000, \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00041}00041     recorder.\mbox{\hyperlink{classsf_1_1_sound_recorder_a8d9c8346aa9aa409cfed4a1101159c4c}{stop}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00043}00043     \textcolor{comment}{// Get the buffer containing the captured data}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00044}00044     \textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_sound_buffer}{sf::SoundBuffer}}\& buffer = recorder.\mbox{\hyperlink{classsf_1_1_sound_buffer_recorder_a1befea2bfa3959ff6fabbf7e33cbc864}{getBuffer}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00046}00046     \textcolor{comment}{// Display captured sound informations}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00047}00047     std::cout << \textcolor{stringliteral}{"{}Sound information:"{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00048}00048     std::cout << \textcolor{stringliteral}{"{} "{}} << buffer.\mbox{\hyperlink{classsf_1_1_sound_buffer_a280a581d9b360fd16121714c51fc8261}{getDuration}}().\mbox{\hyperlink{classsf_1_1_time_aa3df2f992d0b0041b4eb02258d43f0e3}{asSeconds}}() << \textcolor{stringliteral}{"{} seconds"{}}           << std::endl;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00049}00049     std::cout << \textcolor{stringliteral}{"{} "{}} << buffer.\mbox{\hyperlink{classsf_1_1_sound_buffer_a2c2cf0078ce0549246ecc4a1646212b4}{getSampleRate}}()           << \textcolor{stringliteral}{"{} samples / seconds"{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00050}00050     std::cout << \textcolor{stringliteral}{"{} "{}} << buffer.\mbox{\hyperlink{classsf_1_1_sound_buffer_a127707b831d875ed790eef1aa2b9fcc3}{getChannelCount}}()         << \textcolor{stringliteral}{"{} channels"{}}          << std::endl;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00052}00052     \textcolor{comment}{// Choose what to do with the recorded sound data}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00053}00053     \textcolor{keywordtype}{char} choice;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00054}00054     std::cout << \textcolor{stringliteral}{"{}What do you want to do with captured sound (p = play, s = save) ? "{}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00055}00055     std::cin  >> choice;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00056}00056     std::cin.ignore(10000, \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00058}00058     \textcolor{keywordflow}{if} (choice == \textcolor{charliteral}{'s'})}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00059}00059     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00060}00060         \textcolor{comment}{// Choose the filename}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00061}00061         std::string filename;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00062}00062         std::cout << \textcolor{stringliteral}{"{}Choose the file to create: "{}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00063}00063         std::getline(std::cin, filename);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00065}00065         \textcolor{comment}{// Save the buffer}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00066}00066         buffer.\mbox{\hyperlink{classsf_1_1_sound_buffer_aade64260c6375580a085314a30be007e}{saveToFile}}(filename);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00067}00067     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00068}00068     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00069}00069     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00070}00070         \textcolor{comment}{// Create a sound instance and play it}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00071}00071         \mbox{\hyperlink{classsf_1_1_sound}{sf::Sound}} sound(buffer);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00072}00072         sound.\mbox{\hyperlink{classsf_1_1_sound_a2953ffe632536e72e696fd880ced2532}{play}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00074}00074         \textcolor{comment}{// Wait until finished}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00075}00075         \textcolor{keywordflow}{while} (sound.\mbox{\hyperlink{classsf_1_1_sound_a406fc363594a7718a53ebef49a870f51}{getStatus}}() == \mbox{\hyperlink{classsf_1_1_sound_source_ac43af72c98c077500b239bc75b812f03aeafcb1f70be0ee33ea28dc2dcbca3f1b}{sf::Sound::Playing}})}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00076}00076         \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00077}00077             \textcolor{comment}{// Display the playing position}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00078}00078             std::cout << \textcolor{stringliteral}{"{}\(\backslash\)rPlaying... "{}} << sound.\mbox{\hyperlink{classsf_1_1_sound_a559bc3aea581107bcb380fdbe523aa08}{getPlayingOffset}}().\mbox{\hyperlink{classsf_1_1_time_aa3df2f992d0b0041b4eb02258d43f0e3}{asSeconds}}() << \textcolor{stringliteral}{"{} sec        "{}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00079}00079             std::cout << std::flush;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00081}00081             \textcolor{comment}{// Leave some CPU time for other threads}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00082}00082             \mbox{\hyperlink{group__system_ga2f2620831533dee0ed432ed982342e09}{sf::sleep}}(sf::milliseconds(100));}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00083}00083         \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00084}00084     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00086}00086     \textcolor{comment}{// Finished!}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00087}00087     std::cout << std::endl << \textcolor{stringliteral}{"{}Done!"{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00089}00089     \textcolor{comment}{// Wait until the user presses 'enter' key}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00090}00090     std::cout << \textcolor{stringliteral}{"{}Press enter to exit..."{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00091}00091     std::cin.ignore(10000, \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00093}00093     \textcolor{keywordflow}{return} EXIT\_SUCCESS;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2sound-capture_2_sound_capture_8cpp_source_l00094}00094 \}}
+
+\end{DoxyCode}

@@ -1,8 +1,7 @@
-#ifndef BOOK_GAME_HPP
-#define BOOK_GAME_HPP
+#pragma once
 
 #include <SFML/Graphics.hpp>
-
+#include <string>
 
 class Game : private sf::NonCopyable
 {
@@ -38,4 +37,3 @@ class Game : private sf::NonCopyable
 		bool					mIsMovingLeft;
 };
 
-#endif // BOOK_GAME_HPP

@@ -1,0 +1,83 @@
+\hypertarget{_week13-2-_x_audio2_basic_sound_8cpp}{}\doxysection{Week13/\+Week13-\/2-\/\+XAudio2\+Basic\+Sound.cpp File Reference}
+\label{_week13-2-_x_audio2_basic_sound_8cpp}\index{Week13/Week13-\/2-\/XAudio2BasicSound.cpp@{Week13/Week13-\/2-\/XAudio2BasicSound.cpp}}
+{\ttfamily \#include $<$windows.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$wrl\textbackslash{}client.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}XAudio2\+Versions.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}WAVFile\+Reader.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_week13-2-_x_audio2_basic_sound_8cpp_ac7bef5d85e3dcd73eef56ad39ffc84a9}{WIN32\+\_\+\+LEAN\+\_\+\+AND\+\_\+\+MEAN}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+HRESULT \mbox{\hyperlink{_week13-2-_x_audio2_basic_sound_8cpp_ab288b84491421af1fe678aefcfd2e182}{Play\+Wave}} (\+\_\+\+In\+\_\+ IXAudio2 $\ast$p\+Xaudio2, \+\_\+\+In\+\_\+z\+\_\+ LPCWSTR sz\+Filename)
+\item 
+HRESULT \mbox{\hyperlink{_week13-2-_x_audio2_basic_sound_8cpp_a349b6c149589c66ec69410e1036837f7}{Find\+Media\+File\+Cch}} (\+\_\+\+Out\+\_\+writes\+\_\+(cch\+Dest) WCHAR $\ast$str\+Dest\+Path, \+\_\+\+In\+\_\+ int cch\+Dest, \+\_\+\+In\+\_\+z\+\_\+ LPCWSTR str\+Filename)
+\item 
+int \mbox{\hyperlink{_week13-2-_x_audio2_basic_sound_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\item 
+\mbox{\hyperlink{_d_d_s_texture_loader_8h_a3150346626fcea3ad7afe5dfb4ce27d8}{\+\_\+\+Use\+\_\+decl\+\_\+annotations\+\_\+}} HRESULT \mbox{\hyperlink{_week13-2-_x_audio2_basic_sound_8cpp_ad4def5b723443d0f6ff5e0b6e6e35498}{Play\+Wave}} (IXAudio2 $\ast$p\+Xaudio2, LPCWSTR sz\+Filename)
+\item 
+\mbox{\hyperlink{_d_d_s_texture_loader_8h_a3150346626fcea3ad7afe5dfb4ce27d8}{\+\_\+\+Use\+\_\+decl\+\_\+annotations\+\_\+}} HRESULT \mbox{\hyperlink{_week13-2-_x_audio2_basic_sound_8cpp_ad0895a6d9abe365dfbaccf3eb7fc0046}{Find\+Media\+File\+Cch}} (WCHAR $\ast$str\+Dest\+Path, int cch\+Dest, LPCWSTR str\+Filename)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_ac7bef5d85e3dcd73eef56ad39ffc84a9}\label{_week13-2-_x_audio2_basic_sound_8cpp_ac7bef5d85e3dcd73eef56ad39ffc84a9}} 
+\index{Week13-\/2-\/XAudio2BasicSound.cpp@{Week13-\/2-\/XAudio2BasicSound.cpp}!WIN32\_LEAN\_AND\_MEAN@{WIN32\_LEAN\_AND\_MEAN}}
+\index{WIN32\_LEAN\_AND\_MEAN@{WIN32\_LEAN\_AND\_MEAN}!Week13-\/2-\/XAudio2BasicSound.cpp@{Week13-\/2-\/XAudio2BasicSound.cpp}}
+\doxysubsubsection{\texorpdfstring{WIN32\_LEAN\_AND\_MEAN}{WIN32\_LEAN\_AND\_MEAN}}
+{\footnotesize\ttfamily \#define WIN32\+\_\+\+LEAN\+\_\+\+AND\+\_\+\+MEAN}
+
+
+
+Definition at line \mbox{\hyperlink{_week13-2-_x_audio2_basic_sound_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{_week13-2-_x_audio2_basic_sound_8cpp_source}{Week13-\/2-\/\+XAudio2\+Basic\+Sound.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_a349b6c149589c66ec69410e1036837f7}\label{_week13-2-_x_audio2_basic_sound_8cpp_a349b6c149589c66ec69410e1036837f7}} 
+\index{Week13-\/2-\/XAudio2BasicSound.cpp@{Week13-\/2-\/XAudio2BasicSound.cpp}!FindMediaFileCch@{FindMediaFileCch}}
+\index{FindMediaFileCch@{FindMediaFileCch}!Week13-\/2-\/XAudio2BasicSound.cpp@{Week13-\/2-\/XAudio2BasicSound.cpp}}
+\doxysubsubsection{\texorpdfstring{FindMediaFileCch()}{FindMediaFileCch()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily HRESULT Find\+Media\+File\+Cch (\begin{DoxyParamCaption}\item[{\+\_\+\+Out\+\_\+writes\+\_\+(cch\+Dest) WCHAR $\ast$}]{str\+Dest\+Path,  }\item[{\+\_\+\+In\+\_\+ int}]{cch\+Dest,  }\item[{\+\_\+\+In\+\_\+z\+\_\+ LPCWSTR}]{str\+Filename }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_ad0895a6d9abe365dfbaccf3eb7fc0046}\label{_week13-2-_x_audio2_basic_sound_8cpp_ad0895a6d9abe365dfbaccf3eb7fc0046}} 
+\index{Week13-\/2-\/XAudio2BasicSound.cpp@{Week13-\/2-\/XAudio2BasicSound.cpp}!FindMediaFileCch@{FindMediaFileCch}}
+\index{FindMediaFileCch@{FindMediaFileCch}!Week13-\/2-\/XAudio2BasicSound.cpp@{Week13-\/2-\/XAudio2BasicSound.cpp}}
+\doxysubsubsection{\texorpdfstring{FindMediaFileCch()}{FindMediaFileCch()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_d_d_s_texture_loader_8h_a3150346626fcea3ad7afe5dfb4ce27d8}{\+\_\+\+Use\+\_\+decl\+\_\+annotations\+\_\+}} HRESULT Find\+Media\+File\+Cch (\begin{DoxyParamCaption}\item[{WCHAR $\ast$}]{str\+Dest\+Path,  }\item[{int}]{cch\+Dest,  }\item[{LPCWSTR}]{str\+Filename }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_week13-2-_x_audio2_basic_sound_8cpp_source_l00290}{290}} of file \mbox{\hyperlink{_week13-2-_x_audio2_basic_sound_8cpp_source}{Week13-\/2-\/\+XAudio2\+Basic\+Sound.\+cpp}}.
+
+\mbox{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{_week13-2-_x_audio2_basic_sound_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{Week13-\/2-\/XAudio2BasicSound.cpp@{Week13-\/2-\/XAudio2BasicSound.cpp}!main@{main}}
+\index{main@{main}!Week13-\/2-\/XAudio2BasicSound.cpp@{Week13-\/2-\/XAudio2BasicSound.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_week13-2-_x_audio2_basic_sound_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{_week13-2-_x_audio2_basic_sound_8cpp_source}{Week13-\/2-\/\+XAudio2\+Basic\+Sound.\+cpp}}.
+
+\mbox{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_ab288b84491421af1fe678aefcfd2e182}\label{_week13-2-_x_audio2_basic_sound_8cpp_ab288b84491421af1fe678aefcfd2e182}} 
+\index{Week13-\/2-\/XAudio2BasicSound.cpp@{Week13-\/2-\/XAudio2BasicSound.cpp}!PlayWave@{PlayWave}}
+\index{PlayWave@{PlayWave}!Week13-\/2-\/XAudio2BasicSound.cpp@{Week13-\/2-\/XAudio2BasicSound.cpp}}
+\doxysubsubsection{\texorpdfstring{PlayWave()}{PlayWave()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily HRESULT Play\+Wave (\begin{DoxyParamCaption}\item[{\+\_\+\+In\+\_\+ IXAudio2 $\ast$}]{p\+Xaudio2,  }\item[{\+\_\+\+In\+\_\+z\+\_\+ LPCWSTR}]{sz\+Filename }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_week13-2-_x_audio2_basic_sound_8cpp_ad4def5b723443d0f6ff5e0b6e6e35498}\label{_week13-2-_x_audio2_basic_sound_8cpp_ad4def5b723443d0f6ff5e0b6e6e35498}} 
+\index{Week13-\/2-\/XAudio2BasicSound.cpp@{Week13-\/2-\/XAudio2BasicSound.cpp}!PlayWave@{PlayWave}}
+\index{PlayWave@{PlayWave}!Week13-\/2-\/XAudio2BasicSound.cpp@{Week13-\/2-\/XAudio2BasicSound.cpp}}
+\doxysubsubsection{\texorpdfstring{PlayWave()}{PlayWave()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_d_d_s_texture_loader_8h_a3150346626fcea3ad7afe5dfb4ce27d8}{\+\_\+\+Use\+\_\+decl\+\_\+annotations\+\_\+}} HRESULT Play\+Wave (\begin{DoxyParamCaption}\item[{IXAudio2 $\ast$}]{p\+Xaudio2,  }\item[{LPCWSTR}]{sz\+Filename }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_week13-2-_x_audio2_basic_sound_8cpp_source_l00182}{182}} of file \mbox{\hyperlink{_week13-2-_x_audio2_basic_sound_8cpp_source}{Week13-\/2-\/\+XAudio2\+Basic\+Sound.\+cpp}}.
+

@@ -1,0 +1,32 @@
+\hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp_source}{}\doxysection{Foreach.\+hpp}
+\label{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp_source}\index{Week9-\/10/Week10-\/Demo2-\/TextNode/Include/Foreach.hpp@{Week9-\/10/Week10-\/Demo2-\/TextNode/Include/Foreach.hpp}}
+\mbox{\hyperlink{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#ifndef BOOK\_FOREACH\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#define BOOK\_FOREACH\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp_source_l00004}00004 \textcolor{comment}{// Preprocessor trick to allow nested loops}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp_source_l00005}\mbox{\hyperlink{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp_a1bf5064f927504b42794c6cc5485353f}{00005}} \textcolor{preprocessor}{\#define BOOK\_PP\_CAT\_IMPL(a, b) a \#\# b}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp_source_l00006}\mbox{\hyperlink{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp_a3da6e76eb0ad3ec8d85c66d4d6410f56}{00006}} \textcolor{preprocessor}{\#define BOOK\_PP\_CAT(a, b) BOOK\_PP\_CAT\_IMPL(a, b)}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp_source_l00007}\mbox{\hyperlink{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp_a4243af0f662b9087c9ccea9894e3049c}{00007}} \textcolor{preprocessor}{\#define BOOK\_ID(identifier) BOOK\_PP\_CAT(auroraDetail\_, identifier)}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp_source_l00008}\mbox{\hyperlink{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp_a358cb0312a665d9fea5a266e12ab2b03}{00008}} \textcolor{preprocessor}{\#define BOOK\_LINE\_ID(identifier) BOOK\_PP\_CAT(BOOK\_ID(identifier), \_\_LINE\_\_)}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp_source_l00011}00011 \textcolor{comment}{// Macro to emulate C++11 range-\/based for loop}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp_source_l00012}00012 \textcolor{comment}{// Instead of for (decl : range) you write FOREACH(decl, range) as in the following example}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp_source_l00013}00013 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp_source_l00014}00014 \textcolor{comment}{// std::vector<int> v = ...;}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp_source_l00015}00015 \textcolor{comment}{// FOREACH(int\& i, v)}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp_source_l00016}00016 \textcolor{comment}{// \{}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp_source_l00017}00017 \textcolor{comment}{//     i += 2;}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp_source_l00018}00018 \textcolor{comment}{// \}}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp_source_l00019}\mbox{\hyperlink{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp_a9452a95f9eb779672a527c19029699d6}{00019}} \textcolor{preprocessor}{\#define FOREACH(declaration, container)                                                                                                         \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp_source_l00020}00020 \textcolor{preprocessor}{    if (bool BOOK\_LINE\_ID(broken) = false) \{\} else                                                                                              \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp_source_l00021}00021 \textcolor{preprocessor}{    for (auto BOOK\_LINE\_ID(itr) = (container).begin(); BOOK\_LINE\_ID(itr) != (container).end() \&\& !BOOK\_LINE\_ID(broken); ++BOOK\_LINE\_ID(itr))    \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp_source_l00022}00022 \textcolor{preprocessor}{    if (bool BOOK\_LINE\_ID(passed) = false) \{\} else                                                                                              \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp_source_l00023}00023 \textcolor{preprocessor}{    if (BOOK\_LINE\_ID(broken) = true, false) \{\} else                                                                                             \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp_source_l00024}00024 \textcolor{preprocessor}{    for (declaration = *BOOK\_LINE\_ID(itr); !BOOK\_LINE\_ID(passed); BOOK\_LINE\_ID(passed) = true, BOOK\_LINE\_ID(broken) = false)}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_foreach_8hpp_source_l00026}00026 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// BOOK\_FOREACH\_HPP}}
+
+\end{DoxyCode}

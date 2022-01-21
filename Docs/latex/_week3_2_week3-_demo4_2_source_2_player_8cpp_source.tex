@@ -1,0 +1,30 @@
+\hypertarget{_week3_2_week3-_demo4_2_source_2_player_8cpp_source}{}\doxysection{Player.\+cpp}
+\label{_week3_2_week3-_demo4_2_source_2_player_8cpp_source}\index{Week3/Week3-\/Demo4/Source/Player.cpp@{Week3/Week3-\/Demo4/Source/Player.cpp}}
+\mbox{\hyperlink{_week3_2_week3-_demo4_2_source_2_player_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2_player_8cpp_source_l00001}00001 \textcolor{comment}{//To get your sprite object drawn that is in the player class from the }}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2_player_8cpp_source_l00002}00002 \textcolor{comment}{//main game loop inside of your main.cpp file you can do it one of two ways }}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2_player_8cpp_source_l00003}00003 \textcolor{comment}{//(There are more but these are the easiest).}}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2_player_8cpp_source_l00004}00004 \textcolor{comment}{//A.) Provide a get function that returns a reference to the sf::Sprite object in your player class.}}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2_player_8cpp_source_l00005}00005 \textcolor{comment}{//B) Look at Player2.hpp!}}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2_player_8cpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2_player_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include "{}Player.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2_player_8cpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2_player_8cpp_source_l00009}00009 \mbox{\hyperlink{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{Player::Player}}()}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2_player_8cpp_source_l00010}00010 \{}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2_player_8cpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2_player_8cpp_source_l00012}00012     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_player_a7c13048fe5f95523cd007833aff4f521}{texture2}}.\mbox{\hyperlink{classsf_1_1_texture_a8e1b56eabfe33e2e0e1cb03712c7fcc7}{loadFromFile}}(\textcolor{stringliteral}{"{}Media/Textures/Eagle.png"{}}))}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2_player_8cpp_source_l00013}00013     \{}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2_player_8cpp_source_l00014}00014         \textcolor{comment}{// Handle loading error}}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2_player_8cpp_source_l00015}00015     \}}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2_player_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2_player_8cpp_source_l00017}00017     \mbox{\hyperlink{class_player_af2dbdf451b2468061471387692049f92}{mSprite}}.\mbox{\hyperlink{classsf_1_1_sprite_a3729c88d88ac38c19317c18e87242560}{setTexture}}(\mbox{\hyperlink{class_player_a7c13048fe5f95523cd007833aff4f521}{texture2}});}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2_player_8cpp_source_l00018}00018     \mbox{\hyperlink{class_player_af2dbdf451b2468061471387692049f92}{mSprite}}.\mbox{\hyperlink{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{setPosition}}(200.f, 200.f);}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2_player_8cpp_source_l00019}00019 \}}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2_player_8cpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2_player_8cpp_source_l00021}00021 \mbox{\hyperlink{classsf_1_1_sprite}{sf::Sprite}}\& \mbox{\hyperlink{class_player_a408134399497e07b0ba53e82d5c40958}{Player::getSprite}}()}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2_player_8cpp_source_l00022}00022 \{}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2_player_8cpp_source_l00023}00023     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_player_af2dbdf451b2468061471387692049f92}{mSprite}};}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2_player_8cpp_source_l00024}00024 \}}
+
+\end{DoxyCode}

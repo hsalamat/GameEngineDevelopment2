@@ -1,0 +1,2443 @@
+\hypertarget{classsf_1_1_shader}{}\doxysection{sf\+::Shader Class Reference}
+\label{classsf_1_1_shader}\index{sf::Shader@{sf::Shader}}
+
+
+\mbox{\hyperlink{classsf_1_1_shader}{Shader}} class (vertex, geometry and fragment)  
+
+
+
+
+{\ttfamily \#include $<$Shader.\+hpp$>$}
+
+Inheritance diagram for sf\+::Shader\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsf_1_1_shader}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structsf_1_1_shader_1_1_current_texture_type}{Current\+Texture\+Type}}
+\begin{DoxyCompactList}\small\item\em Special type that can be passed to \mbox{\hyperlink{classsf_1_1_shader_abf78e3bea1e9b0bab850b6b0a0de29c7}{set\+Uniform()}}, and that represents the texture of the object being drawn. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3}{Type}} \{ \newline
+\mbox{\hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3ac6677cff2fb888f93e247591d886a791}{Vertex}}
+, \mbox{\hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3ae4df6eca15fba5a8c8b75892009508bc}{Geometry}}
+, \mbox{\hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3adb35eecade8e954987a1a265125e1845}{Fragment}}
+, \mbox{\hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3ac6677cff2fb888f93e247591d886a791}{Vertex}}
+, \newline
+\mbox{\hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3ae4df6eca15fba5a8c8b75892009508bc}{Geometry}}
+, \mbox{\hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3adb35eecade8e954987a1a265125e1845}{Fragment}}
+ \}
+\begin{DoxyCompactList}\small\item\em Types of shaders. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3}{Type}} \{ \newline
+\mbox{\hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3ac6677cff2fb888f93e247591d886a791}{Vertex}}
+, \mbox{\hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3ae4df6eca15fba5a8c8b75892009508bc}{Geometry}}
+, \mbox{\hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3adb35eecade8e954987a1a265125e1845}{Fragment}}
+, \mbox{\hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3ac6677cff2fb888f93e247591d886a791}{Vertex}}
+, \newline
+\mbox{\hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3ae4df6eca15fba5a8c8b75892009508bc}{Geometry}}
+, \mbox{\hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3adb35eecade8e954987a1a265125e1845}{Fragment}}
+ \}
+\begin{DoxyCompactList}\small\item\em Types of shaders. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsf_1_1_shader_a1d7f28f26b4122959fcafec871c2c3c5}{Shader}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_shader_a4bac6cc8b046ecd8fb967c145a2380e6}{$\sim$\+Shader}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_shader_a053a5632848ebaca2fcd8ba29abe9e6e}{load\+From\+File}} (const std\+::string \&filename, \mbox{\hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3}{Type}} type)
+\begin{DoxyCompactList}\small\item\em Load the vertex, geometry or fragment shader from a file. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_shader_ac9d7289966fcef562eeb92271c03e3dc}{load\+From\+File}} (const std\+::string \&vertex\+Shader\+Filename, const std\+::string \&fragment\+Shader\+Filename)
+\begin{DoxyCompactList}\small\item\em Load both the vertex and fragment shaders from files. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_shader_a295d8468811ca15bf9c5401a7a7d4f54}{load\+From\+File}} (const std\+::string \&vertex\+Shader\+Filename, const std\+::string \&geometry\+Shader\+Filename, const std\+::string \&fragment\+Shader\+Filename)
+\begin{DoxyCompactList}\small\item\em Load the vertex, geometry and fragment shaders from files. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_shader_ac92d46bf71dff2d791117e4e472148aa}{load\+From\+Memory}} (const std\+::string \&shader, \mbox{\hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3}{Type}} type)
+\begin{DoxyCompactList}\small\item\em Load the vertex, geometry or fragment shader from a source code in memory. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_shader_ae34e94070d7547a890166b7993658a9b}{load\+From\+Memory}} (const std\+::string \&vertex\+Shader, const std\+::string \&fragment\+Shader)
+\begin{DoxyCompactList}\small\item\em Load both the vertex and fragment shaders from source codes in memory. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_shader_ab8c8b715b02aba2cf7c0a0e0c0984250}{load\+From\+Memory}} (const std\+::string \&vertex\+Shader, const std\+::string \&geometry\+Shader, const std\+::string \&fragment\+Shader)
+\begin{DoxyCompactList}\small\item\em Load the vertex, geometry and fragment shaders from source codes in memory. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_shader_a2ee1b130c0606e4f8bcdf65c1efc2a53}{load\+From\+Stream}} (\mbox{\hyperlink{classsf_1_1_input_stream}{Input\+Stream}} \&stream, \mbox{\hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3}{Type}} type)
+\begin{DoxyCompactList}\small\item\em Load the vertex, geometry or fragment shader from a custom stream. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_shader_a3b7958159ffb5596c4babc3052e35465}{load\+From\+Stream}} (\mbox{\hyperlink{classsf_1_1_input_stream}{Input\+Stream}} \&vertex\+Shader\+Stream, \mbox{\hyperlink{classsf_1_1_input_stream}{Input\+Stream}} \&fragment\+Shader\+Stream)
+\begin{DoxyCompactList}\small\item\em Load both the vertex and fragment shaders from custom streams. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_shader_aa08f1c091806205e6654db9d83197fcd}{load\+From\+Stream}} (\mbox{\hyperlink{classsf_1_1_input_stream}{Input\+Stream}} \&vertex\+Shader\+Stream, \mbox{\hyperlink{classsf_1_1_input_stream}{Input\+Stream}} \&geometry\+Shader\+Stream, \mbox{\hyperlink{classsf_1_1_input_stream}{Input\+Stream}} \&fragment\+Shader\+Stream)
+\begin{DoxyCompactList}\small\item\em Load the vertex, geometry and fragment shaders from custom streams. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_abf78e3bea1e9b0bab850b6b0a0de29c7}{set\+Uniform}} (const std\+::string \&name, float x)
+\begin{DoxyCompactList}\small\item\em Specify value for {\ttfamily float} uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_a4a2c673c41e37b17d67e4af1298b679f}{set\+Uniform}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_1_1_glsl_abfcb09fe753e2d3afdf5b34ead5ac998}{Glsl\+::\+Vec2}} \&vector)
+\begin{DoxyCompactList}\small\item\em Specify value for {\ttfamily vec2} uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_aad654ad8de6f0c56191fa7b8cea21db2}{set\+Uniform}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_1_1_glsl_a054bd0a821d072e08de6c358de9f67ad}{Glsl\+::\+Vec3}} \&vector)
+\begin{DoxyCompactList}\small\item\em Specify value for {\ttfamily vec3} uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_abc1aee8343800680fd62e1f3d43c24bf}{set\+Uniform}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_1_1_glsl_a1370d4e28095744e9e5271eb34bae8d4}{Glsl\+::\+Vec4}} \&vector)
+\begin{DoxyCompactList}\small\item\em Specify value for {\ttfamily vec4} uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_ae4fc8b4c18e6b653952bce5c8c81e4a0}{set\+Uniform}} (const std\+::string \&name, int x)
+\begin{DoxyCompactList}\small\item\em Specify value for {\ttfamily int} uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_a2ccb5bae59cedc7d6a9b533c97f7d1ed}{set\+Uniform}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_1_1_glsl_a310968541a71ce373f98af70566a8685}{Glsl\+::\+Ivec2}} \&vector)
+\begin{DoxyCompactList}\small\item\em Specify value for {\ttfamily ivec2} uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_a9e328e3e97cd753fdc7b842f4b0f202e}{set\+Uniform}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_1_1_glsl_a7015052834578e9f820c80d5c0ee68a9}{Glsl\+::\+Ivec3}} \&vector)
+\begin{DoxyCompactList}\small\item\em Specify value for {\ttfamily ivec3} uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_a380e7a5a2896162c5fd08966c4523790}{set\+Uniform}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_1_1_glsl_a28a91512c3a71bf0f0e4c40935316c6a}{Glsl\+::\+Ivec4}} \&vector)
+\begin{DoxyCompactList}\small\item\em Specify value for {\ttfamily ivec4} uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_af417027ac72c06e6cfbf30975cd678e9}{set\+Uniform}} (const std\+::string \&name, bool x)
+\begin{DoxyCompactList}\small\item\em Specify value for {\ttfamily bool} uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_ab2518b8dd0762e682b452a5d5005f2bf}{set\+Uniform}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_1_1_glsl_a7702dd528400bf68fded485341d2589c}{Glsl\+::\+Bvec2}} \&vector)
+\begin{DoxyCompactList}\small\item\em Specify value for {\ttfamily bvec2} uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_ab06830875c82476fbb9c975cdeb78a11}{set\+Uniform}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_1_1_glsl_a45470800f45fc6a55c3d30ea2ea7f412}{Glsl\+::\+Bvec3}} \&vector)
+\begin{DoxyCompactList}\small\item\em Specify value for {\ttfamily bvec3} uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_ac8db3e0adf1129abf24f0a51a7ec36f4}{set\+Uniform}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_1_1_glsl_a5a4dd3ad1fe5137c49298ee9799d474c}{Glsl\+::\+Bvec4}} \&vector)
+\begin{DoxyCompactList}\small\item\em Specify value for {\ttfamily bvec4} uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_ac1198ae0152d439bc05781046883e281}{set\+Uniform}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_1_1_glsl_a5740f2f47b1bea944dd94045af397e39}{Glsl\+::\+Mat3}} \&matrix)
+\begin{DoxyCompactList}\small\item\em Specify value for {\ttfamily mat3} matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_aca5c55c4a3b23d21e33dbdaab7990755}{set\+Uniform}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_1_1_glsl_a7f4817a969b6cc76c0828eaecf8f386b}{Glsl\+::\+Mat4}} \&matrix)
+\begin{DoxyCompactList}\small\item\em Specify value for {\ttfamily mat4} matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_a7806a29ffbd0ee9251256a9e7265d479}{set\+Uniform}} (const std\+::string \&name, const \mbox{\hyperlink{classsf_1_1_texture}{Texture}} \&texture)
+\begin{DoxyCompactList}\small\item\em Specify a texture as {\ttfamily sampler2D} uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_ab18f531e1f726b88fec1cf5a1e6af26d}{set\+Uniform}} (const std\+::string \&name, \mbox{\hyperlink{structsf_1_1_shader_1_1_current_texture_type}{Current\+Texture\+Type}})
+\begin{DoxyCompactList}\small\item\em Specify current texture as {\ttfamily sampler2D} uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_a731d3b9953c50fe7d3fb03340b97deff}{set\+Uniform\+Array}} (const std\+::string \&name, const float $\ast$scalar\+Array, std\+::size\+\_\+t \mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_source_2_utility_8cpp_a658e7a578e1b8e49820b0691fd6993d6}{length}})
+\begin{DoxyCompactList}\small\item\em Specify values for {\ttfamily float}\mbox{[}\mbox{]} array uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_ab2e2eab45d9a091f3720c0879a5bb026}{set\+Uniform\+Array}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_1_1_glsl_abfcb09fe753e2d3afdf5b34ead5ac998}{Glsl\+::\+Vec2}} $\ast$vector\+Array, std\+::size\+\_\+t \mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_source_2_utility_8cpp_a658e7a578e1b8e49820b0691fd6993d6}{length}})
+\begin{DoxyCompactList}\small\item\em Specify values for {\ttfamily vec2}\mbox{[}\mbox{]} array uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_aeae884292fed977bbea5039818f208e7}{set\+Uniform\+Array}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_1_1_glsl_a054bd0a821d072e08de6c358de9f67ad}{Glsl\+::\+Vec3}} $\ast$vector\+Array, std\+::size\+\_\+t \mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_source_2_utility_8cpp_a658e7a578e1b8e49820b0691fd6993d6}{length}})
+\begin{DoxyCompactList}\small\item\em Specify values for {\ttfamily vec3}\mbox{[}\mbox{]} array uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_aa89ac1ea7918c9b1c2232df59affb7fa}{set\+Uniform\+Array}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_1_1_glsl_a1370d4e28095744e9e5271eb34bae8d4}{Glsl\+::\+Vec4}} $\ast$vector\+Array, std\+::size\+\_\+t \mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_source_2_utility_8cpp_a658e7a578e1b8e49820b0691fd6993d6}{length}})
+\begin{DoxyCompactList}\small\item\em Specify values for {\ttfamily vec4}\mbox{[}\mbox{]} array uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_a69587701d347ba21d506197d0fb9f842}{set\+Uniform\+Array}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_1_1_glsl_a5740f2f47b1bea944dd94045af397e39}{Glsl\+::\+Mat3}} $\ast$matrix\+Array, std\+::size\+\_\+t \mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_source_2_utility_8cpp_a658e7a578e1b8e49820b0691fd6993d6}{length}})
+\begin{DoxyCompactList}\small\item\em Specify values for {\ttfamily mat3}\mbox{[}\mbox{]} array uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_a066b0ba02e1c1bddc9e2571eca1156ab}{set\+Uniform\+Array}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_1_1_glsl_a7f4817a969b6cc76c0828eaecf8f386b}{Glsl\+::\+Mat4}} $\ast$matrix\+Array, std\+::size\+\_\+t \mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_source_2_utility_8cpp_a658e7a578e1b8e49820b0691fd6993d6}{length}})
+\begin{DoxyCompactList}\small\item\em Specify values for {\ttfamily mat4}\mbox{[}\mbox{]} array uniform. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void \mbox{\hyperlink{classsf_1_1_shader_a4d6ec78f6de1a0a2146c93ab09d7d762}{set\+Parameter}} (const std\+::string \&name, float x)
+\begin{DoxyCompactList}\small\item\em Change a float parameter of the shader. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void \mbox{\hyperlink{classsf_1_1_shader_a61f5cdb5847fc3b57335b095a2f3dad3}{set\+Parameter}} (const std\+::string \&name, float x, float y)
+\begin{DoxyCompactList}\small\item\em Change a 2-\/components vector parameter of the shader. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void \mbox{\hyperlink{classsf_1_1_shader_a1fa0fb11cabd8553ccd37e97c725c992}{set\+Parameter}} (const std\+::string \&name, float x, float y, float z)
+\begin{DoxyCompactList}\small\item\em Change a 3-\/components vector parameter of the shader. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void \mbox{\hyperlink{classsf_1_1_shader_a6d6b84575a5f1a869d70a126df8d6478}{set\+Parameter}} (const std\+::string \&name, float x, float y, float z, float w)
+\begin{DoxyCompactList}\small\item\em Change a 4-\/components vector parameter of the shader. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void \mbox{\hyperlink{classsf_1_1_shader_aee671dda9a84f607b9b780b2796def74}{set\+Parameter}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}} \&vector)
+\begin{DoxyCompactList}\small\item\em Change a 2-\/components vector parameter of the shader. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void \mbox{\hyperlink{classsf_1_1_shader_abf1eb5e74f216c7bcfaf34d08c960ee0}{set\+Parameter}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_a36e44d9e6d8f649703698ec9d24ac052}{Vector3f}} \&vector)
+\begin{DoxyCompactList}\small\item\em Change a 3-\/components vector parameter of the shader. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void \mbox{\hyperlink{classsf_1_1_shader_a66e68e64c06ef5501e50dd5903cab51c}{set\+Parameter}} (const std\+::string \&name, const \mbox{\hyperlink{classsf_1_1_color}{Color}} \&color)
+\begin{DoxyCompactList}\small\item\em Change a color parameter of the shader. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void \mbox{\hyperlink{classsf_1_1_shader_a398a802fc5295ab69b0317892b0f0c75}{set\+Parameter}} (const std\+::string \&name, const \mbox{\hyperlink{classsf_1_1_transform}{Transform}} \&transform)
+\begin{DoxyCompactList}\small\item\em Change a matrix parameter of the shader. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void \mbox{\hyperlink{classsf_1_1_shader_a08c7cafd4f73ab898319c4fd7d8b5501}{set\+Parameter}} (const std\+::string \&name, const \mbox{\hyperlink{classsf_1_1_texture}{Texture}} \&texture)
+\begin{DoxyCompactList}\small\item\em Change a texture parameter of the shader. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void \mbox{\hyperlink{classsf_1_1_shader_a0fa7ecad14206e4d5edae1d6aa87f553}{set\+Parameter}} (const std\+::string \&name, \mbox{\hyperlink{structsf_1_1_shader_1_1_current_texture_type}{Current\+Texture\+Type}})
+\begin{DoxyCompactList}\small\item\em Change a texture parameter of the shader. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classsf_1_1_shader_ac14d0bf7afe7b6bb415d309f9c707188}{get\+Native\+Handle}} () const
+\begin{DoxyCompactList}\small\item\em Get the underlying Open\+GL handle of the shader. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_shader_a1d7f28f26b4122959fcafec871c2c3c5}{Shader}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_shader_a4bac6cc8b046ecd8fb967c145a2380e6}{$\sim$\+Shader}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_shader_a053a5632848ebaca2fcd8ba29abe9e6e}{load\+From\+File}} (const std\+::string \&filename, \mbox{\hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3}{Type}} type)
+\begin{DoxyCompactList}\small\item\em Load the vertex, geometry or fragment shader from a file. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_shader_ac9d7289966fcef562eeb92271c03e3dc}{load\+From\+File}} (const std\+::string \&vertex\+Shader\+Filename, const std\+::string \&fragment\+Shader\+Filename)
+\begin{DoxyCompactList}\small\item\em Load both the vertex and fragment shaders from files. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_shader_a295d8468811ca15bf9c5401a7a7d4f54}{load\+From\+File}} (const std\+::string \&vertex\+Shader\+Filename, const std\+::string \&geometry\+Shader\+Filename, const std\+::string \&fragment\+Shader\+Filename)
+\begin{DoxyCompactList}\small\item\em Load the vertex, geometry and fragment shaders from files. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_shader_ac92d46bf71dff2d791117e4e472148aa}{load\+From\+Memory}} (const std\+::string \&shader, \mbox{\hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3}{Type}} type)
+\begin{DoxyCompactList}\small\item\em Load the vertex, geometry or fragment shader from a source code in memory. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_shader_ae34e94070d7547a890166b7993658a9b}{load\+From\+Memory}} (const std\+::string \&vertex\+Shader, const std\+::string \&fragment\+Shader)
+\begin{DoxyCompactList}\small\item\em Load both the vertex and fragment shaders from source codes in memory. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_shader_ab8c8b715b02aba2cf7c0a0e0c0984250}{load\+From\+Memory}} (const std\+::string \&vertex\+Shader, const std\+::string \&geometry\+Shader, const std\+::string \&fragment\+Shader)
+\begin{DoxyCompactList}\small\item\em Load the vertex, geometry and fragment shaders from source codes in memory. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_shader_a2ee1b130c0606e4f8bcdf65c1efc2a53}{load\+From\+Stream}} (\mbox{\hyperlink{classsf_1_1_input_stream}{Input\+Stream}} \&stream, \mbox{\hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3}{Type}} type)
+\begin{DoxyCompactList}\small\item\em Load the vertex, geometry or fragment shader from a custom stream. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_shader_a3b7958159ffb5596c4babc3052e35465}{load\+From\+Stream}} (\mbox{\hyperlink{classsf_1_1_input_stream}{Input\+Stream}} \&vertex\+Shader\+Stream, \mbox{\hyperlink{classsf_1_1_input_stream}{Input\+Stream}} \&fragment\+Shader\+Stream)
+\begin{DoxyCompactList}\small\item\em Load both the vertex and fragment shaders from custom streams. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_shader_aa08f1c091806205e6654db9d83197fcd}{load\+From\+Stream}} (\mbox{\hyperlink{classsf_1_1_input_stream}{Input\+Stream}} \&vertex\+Shader\+Stream, \mbox{\hyperlink{classsf_1_1_input_stream}{Input\+Stream}} \&geometry\+Shader\+Stream, \mbox{\hyperlink{classsf_1_1_input_stream}{Input\+Stream}} \&fragment\+Shader\+Stream)
+\begin{DoxyCompactList}\small\item\em Load the vertex, geometry and fragment shaders from custom streams. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_abf78e3bea1e9b0bab850b6b0a0de29c7}{set\+Uniform}} (const std\+::string \&name, float x)
+\begin{DoxyCompactList}\small\item\em Specify value for {\ttfamily float} uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_a4a2c673c41e37b17d67e4af1298b679f}{set\+Uniform}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_1_1_glsl_abfcb09fe753e2d3afdf5b34ead5ac998}{Glsl\+::\+Vec2}} \&vector)
+\begin{DoxyCompactList}\small\item\em Specify value for {\ttfamily vec2} uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_aad654ad8de6f0c56191fa7b8cea21db2}{set\+Uniform}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_1_1_glsl_a054bd0a821d072e08de6c358de9f67ad}{Glsl\+::\+Vec3}} \&vector)
+\begin{DoxyCompactList}\small\item\em Specify value for {\ttfamily vec3} uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_abc1aee8343800680fd62e1f3d43c24bf}{set\+Uniform}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_1_1_glsl_a1370d4e28095744e9e5271eb34bae8d4}{Glsl\+::\+Vec4}} \&vector)
+\begin{DoxyCompactList}\small\item\em Specify value for {\ttfamily vec4} uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_ae4fc8b4c18e6b653952bce5c8c81e4a0}{set\+Uniform}} (const std\+::string \&name, int x)
+\begin{DoxyCompactList}\small\item\em Specify value for {\ttfamily int} uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_a2ccb5bae59cedc7d6a9b533c97f7d1ed}{set\+Uniform}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_1_1_glsl_a310968541a71ce373f98af70566a8685}{Glsl\+::\+Ivec2}} \&vector)
+\begin{DoxyCompactList}\small\item\em Specify value for {\ttfamily ivec2} uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_a9e328e3e97cd753fdc7b842f4b0f202e}{set\+Uniform}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_1_1_glsl_a7015052834578e9f820c80d5c0ee68a9}{Glsl\+::\+Ivec3}} \&vector)
+\begin{DoxyCompactList}\small\item\em Specify value for {\ttfamily ivec3} uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_a380e7a5a2896162c5fd08966c4523790}{set\+Uniform}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_1_1_glsl_a28a91512c3a71bf0f0e4c40935316c6a}{Glsl\+::\+Ivec4}} \&vector)
+\begin{DoxyCompactList}\small\item\em Specify value for {\ttfamily ivec4} uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_af417027ac72c06e6cfbf30975cd678e9}{set\+Uniform}} (const std\+::string \&name, bool x)
+\begin{DoxyCompactList}\small\item\em Specify value for {\ttfamily bool} uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_ab2518b8dd0762e682b452a5d5005f2bf}{set\+Uniform}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_1_1_glsl_a7702dd528400bf68fded485341d2589c}{Glsl\+::\+Bvec2}} \&vector)
+\begin{DoxyCompactList}\small\item\em Specify value for {\ttfamily bvec2} uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_ab06830875c82476fbb9c975cdeb78a11}{set\+Uniform}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_1_1_glsl_a45470800f45fc6a55c3d30ea2ea7f412}{Glsl\+::\+Bvec3}} \&vector)
+\begin{DoxyCompactList}\small\item\em Specify value for {\ttfamily bvec3} uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_ac8db3e0adf1129abf24f0a51a7ec36f4}{set\+Uniform}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_1_1_glsl_a5a4dd3ad1fe5137c49298ee9799d474c}{Glsl\+::\+Bvec4}} \&vector)
+\begin{DoxyCompactList}\small\item\em Specify value for {\ttfamily bvec4} uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_ac1198ae0152d439bc05781046883e281}{set\+Uniform}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_1_1_glsl_a5740f2f47b1bea944dd94045af397e39}{Glsl\+::\+Mat3}} \&matrix)
+\begin{DoxyCompactList}\small\item\em Specify value for {\ttfamily mat3} matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_aca5c55c4a3b23d21e33dbdaab7990755}{set\+Uniform}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_1_1_glsl_a7f4817a969b6cc76c0828eaecf8f386b}{Glsl\+::\+Mat4}} \&matrix)
+\begin{DoxyCompactList}\small\item\em Specify value for {\ttfamily mat4} matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_a7806a29ffbd0ee9251256a9e7265d479}{set\+Uniform}} (const std\+::string \&name, const \mbox{\hyperlink{classsf_1_1_texture}{Texture}} \&texture)
+\begin{DoxyCompactList}\small\item\em Specify a texture as {\ttfamily sampler2D} uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_ab18f531e1f726b88fec1cf5a1e6af26d}{set\+Uniform}} (const std\+::string \&name, \mbox{\hyperlink{structsf_1_1_shader_1_1_current_texture_type}{Current\+Texture\+Type}})
+\begin{DoxyCompactList}\small\item\em Specify current texture as {\ttfamily sampler2D} uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_a731d3b9953c50fe7d3fb03340b97deff}{set\+Uniform\+Array}} (const std\+::string \&name, const float $\ast$scalar\+Array, std\+::size\+\_\+t \mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_source_2_utility_8cpp_a658e7a578e1b8e49820b0691fd6993d6}{length}})
+\begin{DoxyCompactList}\small\item\em Specify values for {\ttfamily float}\mbox{[}\mbox{]} array uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_ab2e2eab45d9a091f3720c0879a5bb026}{set\+Uniform\+Array}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_1_1_glsl_abfcb09fe753e2d3afdf5b34ead5ac998}{Glsl\+::\+Vec2}} $\ast$vector\+Array, std\+::size\+\_\+t \mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_source_2_utility_8cpp_a658e7a578e1b8e49820b0691fd6993d6}{length}})
+\begin{DoxyCompactList}\small\item\em Specify values for {\ttfamily vec2}\mbox{[}\mbox{]} array uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_aeae884292fed977bbea5039818f208e7}{set\+Uniform\+Array}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_1_1_glsl_a054bd0a821d072e08de6c358de9f67ad}{Glsl\+::\+Vec3}} $\ast$vector\+Array, std\+::size\+\_\+t \mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_source_2_utility_8cpp_a658e7a578e1b8e49820b0691fd6993d6}{length}})
+\begin{DoxyCompactList}\small\item\em Specify values for {\ttfamily vec3}\mbox{[}\mbox{]} array uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_aa89ac1ea7918c9b1c2232df59affb7fa}{set\+Uniform\+Array}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_1_1_glsl_a1370d4e28095744e9e5271eb34bae8d4}{Glsl\+::\+Vec4}} $\ast$vector\+Array, std\+::size\+\_\+t \mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_source_2_utility_8cpp_a658e7a578e1b8e49820b0691fd6993d6}{length}})
+\begin{DoxyCompactList}\small\item\em Specify values for {\ttfamily vec4}\mbox{[}\mbox{]} array uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_a69587701d347ba21d506197d0fb9f842}{set\+Uniform\+Array}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_1_1_glsl_a5740f2f47b1bea944dd94045af397e39}{Glsl\+::\+Mat3}} $\ast$matrix\+Array, std\+::size\+\_\+t \mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_source_2_utility_8cpp_a658e7a578e1b8e49820b0691fd6993d6}{length}})
+\begin{DoxyCompactList}\small\item\em Specify values for {\ttfamily mat3}\mbox{[}\mbox{]} array uniform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_a066b0ba02e1c1bddc9e2571eca1156ab}{set\+Uniform\+Array}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_1_1_glsl_a7f4817a969b6cc76c0828eaecf8f386b}{Glsl\+::\+Mat4}} $\ast$matrix\+Array, std\+::size\+\_\+t \mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_source_2_utility_8cpp_a658e7a578e1b8e49820b0691fd6993d6}{length}})
+\begin{DoxyCompactList}\small\item\em Specify values for {\ttfamily mat4}\mbox{[}\mbox{]} array uniform. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void \mbox{\hyperlink{classsf_1_1_shader_a4d6ec78f6de1a0a2146c93ab09d7d762}{set\+Parameter}} (const std\+::string \&name, float x)
+\begin{DoxyCompactList}\small\item\em Change a float parameter of the shader. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void \mbox{\hyperlink{classsf_1_1_shader_a61f5cdb5847fc3b57335b095a2f3dad3}{set\+Parameter}} (const std\+::string \&name, float x, float y)
+\begin{DoxyCompactList}\small\item\em Change a 2-\/components vector parameter of the shader. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void \mbox{\hyperlink{classsf_1_1_shader_a1fa0fb11cabd8553ccd37e97c725c992}{set\+Parameter}} (const std\+::string \&name, float x, float y, float z)
+\begin{DoxyCompactList}\small\item\em Change a 3-\/components vector parameter of the shader. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void \mbox{\hyperlink{classsf_1_1_shader_a6d6b84575a5f1a869d70a126df8d6478}{set\+Parameter}} (const std\+::string \&name, float x, float y, float z, float w)
+\begin{DoxyCompactList}\small\item\em Change a 4-\/components vector parameter of the shader. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void \mbox{\hyperlink{classsf_1_1_shader_aee671dda9a84f607b9b780b2796def74}{set\+Parameter}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}} \&vector)
+\begin{DoxyCompactList}\small\item\em Change a 2-\/components vector parameter of the shader. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void \mbox{\hyperlink{classsf_1_1_shader_abf1eb5e74f216c7bcfaf34d08c960ee0}{set\+Parameter}} (const std\+::string \&name, const \mbox{\hyperlink{namespacesf_a36e44d9e6d8f649703698ec9d24ac052}{Vector3f}} \&vector)
+\begin{DoxyCompactList}\small\item\em Change a 3-\/components vector parameter of the shader. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void \mbox{\hyperlink{classsf_1_1_shader_a66e68e64c06ef5501e50dd5903cab51c}{set\+Parameter}} (const std\+::string \&name, const \mbox{\hyperlink{classsf_1_1_color}{Color}} \&color)
+\begin{DoxyCompactList}\small\item\em Change a color parameter of the shader. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void \mbox{\hyperlink{classsf_1_1_shader_a398a802fc5295ab69b0317892b0f0c75}{set\+Parameter}} (const std\+::string \&name, const \mbox{\hyperlink{classsf_1_1_transform}{Transform}} \&transform)
+\begin{DoxyCompactList}\small\item\em Change a matrix parameter of the shader. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void \mbox{\hyperlink{classsf_1_1_shader_a08c7cafd4f73ab898319c4fd7d8b5501}{set\+Parameter}} (const std\+::string \&name, const \mbox{\hyperlink{classsf_1_1_texture}{Texture}} \&texture)
+\begin{DoxyCompactList}\small\item\em Change a texture parameter of the shader. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void \mbox{\hyperlink{classsf_1_1_shader_a0fa7ecad14206e4d5edae1d6aa87f553}{set\+Parameter}} (const std\+::string \&name, \mbox{\hyperlink{structsf_1_1_shader_1_1_current_texture_type}{Current\+Texture\+Type}})
+\begin{DoxyCompactList}\small\item\em Change a texture parameter of the shader. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classsf_1_1_shader_ac14d0bf7afe7b6bb415d309f9c707188}{get\+Native\+Handle}} () const
+\begin{DoxyCompactList}\small\item\em Get the underlying Open\+GL handle of the shader. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classsf_1_1_shader_a09778f78afcbeb854d608c8dacd8ea30}{bind}} (const \mbox{\hyperlink{classsf_1_1_shader}{Shader}} $\ast$shader)
+\begin{DoxyCompactList}\small\item\em Bind a shader for rendering. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classsf_1_1_shader_ad22474690bafe4a305c1b9826b1bd86a}{is\+Available}} ()
+\begin{DoxyCompactList}\small\item\em Tell whether or not the system supports shaders. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classsf_1_1_shader_a45db14baf1bbc688577f81813b1fce96}{is\+Geometry\+Available}} ()
+\begin{DoxyCompactList}\small\item\em Tell whether or not the system supports geometry shaders. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classsf_1_1_shader_a09778f78afcbeb854d608c8dacd8ea30}{bind}} (const \mbox{\hyperlink{classsf_1_1_shader}{Shader}} $\ast$shader)
+\begin{DoxyCompactList}\small\item\em Bind a shader for rendering. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classsf_1_1_shader_ad22474690bafe4a305c1b9826b1bd86a}{is\+Available}} ()
+\begin{DoxyCompactList}\small\item\em Tell whether or not the system supports shaders. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classsf_1_1_shader_a45db14baf1bbc688577f81813b1fce96}{is\+Geometry\+Available}} ()
+\begin{DoxyCompactList}\small\item\em Tell whether or not the system supports geometry shaders. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{structsf_1_1_shader_1_1_current_texture_type}{Current\+Texture\+Type}} \mbox{\hyperlink{classsf_1_1_shader_ad679e434fc4f1a1af65f3815b2310fb5}{Current\+Texture}}
+\begin{DoxyCompactList}\small\item\em Represents the texture of the object being drawn. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::map$<$ int, const \mbox{\hyperlink{classsf_1_1_texture}{Texture}} $\ast$ $>$ \mbox{\hyperlink{classsf_1_1_shader_a9a60c773571550fd54a394d4ce83f4a3}{Texture\+Table}}
+\item 
+typedef std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classsf_1_1_shader_a010c8213c1f81acd3b285566f6c8fced}{Uniform\+Table}}
+\item 
+typedef std\+::map$<$ int, const \mbox{\hyperlink{classsf_1_1_texture}{Texture}} $\ast$ $>$ \mbox{\hyperlink{classsf_1_1_shader_a9a60c773571550fd54a394d4ce83f4a3}{Texture\+Table}}
+\item 
+typedef std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classsf_1_1_shader_a010c8213c1f81acd3b285566f6c8fced}{Uniform\+Table}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classsf_1_1_shader_ae83560b673e726e48fc032f62584d606}{compile}} (const char $\ast$vertex\+Shader\+Code, const char $\ast$geometry\+Shader\+Code, const char $\ast$fragment\+Shader\+Code)
+\begin{DoxyCompactList}\small\item\em Compile the shader(s) and create the program. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_a091595f44919468606a36e3414b5106e}{bind\+Textures}} () const
+\begin{DoxyCompactList}\small\item\em Bind all the textures used by the shader. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classsf_1_1_shader_a2127d2ac6030a825cdcb5605791d3d8a}{get\+Uniform\+Location}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Get the location ID of a shader uniform. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_shader_ae83560b673e726e48fc032f62584d606}{compile}} (const char $\ast$vertex\+Shader\+Code, const char $\ast$geometry\+Shader\+Code, const char $\ast$fragment\+Shader\+Code)
+\begin{DoxyCompactList}\small\item\em Compile the shader(s) and create the program. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsf_1_1_shader_a091595f44919468606a36e3414b5106e}{bind\+Textures}} () const
+\begin{DoxyCompactList}\small\item\em Bind all the textures used by the shader. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classsf_1_1_shader_a2127d2ac6030a825cdcb5605791d3d8a}{get\+Uniform\+Location}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Get the location ID of a shader uniform. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{classsf_1_1_shader_a72169743cfd7206fd49759f705a15466}{m\+\_\+shader\+Program}}
+\begin{DoxyCompactList}\small\item\em Open\+GL identifier for the program. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classsf_1_1_shader_a5d7b43495def6cc6bd91b6c5d167a485}{m\+\_\+current\+Texture}}
+\begin{DoxyCompactList}\small\item\em Location of the current texture in the shader. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_shader_a9a60c773571550fd54a394d4ce83f4a3}{Texture\+Table}} \mbox{\hyperlink{classsf_1_1_shader_a3daecf04a0045a1d7445959432b5a52f}{m\+\_\+textures}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsf_1_1_texture}{Texture}} variables in the shader, mapped to their location. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_shader_a010c8213c1f81acd3b285566f6c8fced}{Uniform\+Table}} \mbox{\hyperlink{classsf_1_1_shader_a1bf3ba9e8ca3842a9b4cb084443d0477}{m\+\_\+uniforms}}
+\begin{DoxyCompactList}\small\item\em Parameters location cache. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classsf_1_1_shader}{Shader}} class (vertex, geometry and fragment) 
+
+\mbox{\hyperlink{namespace_shaders}{Shaders}} are programs written using a specific language, executed directly by the graphics card and allowing to apply real-\/time operations to the rendered entities.
+
+There are three kinds of shaders\+: \begin{DoxyItemize}
+\item Vertex shaders, that process vertices \item \mbox{\hyperlink{class_geometry}{Geometry}} shaders, that process primitives \item Fragment (pixel) shaders, that process pixels\end{DoxyItemize}
+A \mbox{\hyperlink{classsf_1_1_shader}{sf\+::\+Shader}} can be composed of either a vertex shader alone, a geometry shader alone, a fragment shader alone, or any combination of them. (see the variants of the load functions).
+
+\mbox{\hyperlink{namespace_shaders}{Shaders}} are written in GLSL, which is a C-\/like language dedicated to Open\+GL shaders. You\textquotesingle{}ll probably need to learn its basics before writing your own shaders for SFML.
+
+Like any C/\+C++ program, a GLSL shader has its own variables called {\itshape uniforms} that you can set from your C++ application. \mbox{\hyperlink{classsf_1_1_shader}{sf\+::\+Shader}} handles different types of uniforms\+: \begin{DoxyItemize}
+\item scalars\+: {\ttfamily float}, {\ttfamily int}, {\ttfamily bool} \item vectors (2, 3 or 4 components) \item matrices (3x3 or 4x4) \item samplers (textures)\end{DoxyItemize}
+Some SFML-\/specific types can be converted\+: \begin{DoxyItemize}
+\item \mbox{\hyperlink{classsf_1_1_color}{sf\+::\+Color}} as a 4D vector ({\ttfamily vec4}) \item \mbox{\hyperlink{classsf_1_1_transform}{sf\+::\+Transform}} as matrices ({\ttfamily mat3} or {\ttfamily mat4})\end{DoxyItemize}
+Every uniform variable in a shader can be set through one of the \mbox{\hyperlink{classsf_1_1_shader_abf78e3bea1e9b0bab850b6b0a0de29c7}{set\+Uniform()}} or \mbox{\hyperlink{classsf_1_1_shader_a731d3b9953c50fe7d3fb03340b97deff}{set\+Uniform\+Array()}} overloads. For example, if you have a shader with the following uniforms\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{uniform \textcolor{keywordtype}{float} offset;}
+\DoxyCodeLine{uniform vec3 point;}
+\DoxyCodeLine{uniform vec4 color;}
+\DoxyCodeLine{uniform mat4 matrix;}
+\DoxyCodeLine{uniform sampler2D overlay;}
+\DoxyCodeLine{uniform sampler2D current;}
+
+\end{DoxyCode}
+ You can set their values from C++ code as follows, using the types defined in the \mbox{\hyperlink{namespacesf_1_1_glsl}{sf\+::\+Glsl}} namespace\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{shader.setUniform(\textcolor{stringliteral}{"{}offset"{}}, 2.f);}
+\DoxyCodeLine{shader.setUniform(\textcolor{stringliteral}{"{}point"{}}, \mbox{\hyperlink{classsf_1_1_vector3}{sf::Vector3f}}(0.5f, 0.8f, 0.3f));}
+\DoxyCodeLine{shader.setUniform(\textcolor{stringliteral}{"{}color"{}}, \mbox{\hyperlink{structsf_1_1priv_1_1_vector4}{sf::Glsl::Vec4}}(color));          \textcolor{comment}{// color is a sf::Color}}
+\DoxyCodeLine{shader.setUniform(\textcolor{stringliteral}{"{}matrix"{}}, \mbox{\hyperlink{structsf_1_1priv_1_1_matrix}{sf::Glsl::Mat4}}(transform));     \textcolor{comment}{// transform is a sf::Transform}}
+\DoxyCodeLine{shader.setUniform(\textcolor{stringliteral}{"{}overlay"{}}, texture);                      \textcolor{comment}{// texture is a sf::Texture}}
+\DoxyCodeLine{shader.setUniform(\textcolor{stringliteral}{"{}current"{}}, \mbox{\hyperlink{classsf_1_1_shader_ad679e434fc4f1a1af65f3815b2310fb5}{sf::Shader::CurrentTexture}});}
+
+\end{DoxyCode}
+
+
+The old \mbox{\hyperlink{classsf_1_1_shader_a4d6ec78f6de1a0a2146c93ab09d7d762}{set\+Parameter()}} overloads are deprecated and will be removed in a future version. You should use their \mbox{\hyperlink{classsf_1_1_shader_abf78e3bea1e9b0bab850b6b0a0de29c7}{set\+Uniform()}} equivalents instead.
+
+The special \mbox{\hyperlink{classsf_1_1_shader_ad679e434fc4f1a1af65f3815b2310fb5}{Shader\+::\+Current\+Texture}} argument maps the given {\ttfamily sampler2D} uniform to the current texture of the object being drawn (which cannot be known in advance).
+
+To apply a shader to a drawable, you must pass it as an additional parameter to the \mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{Render\+Window\+::draw}} function\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{window.draw(sprite, \&shader);}
+
+\end{DoxyCode}
+
+
+... which is in fact just a shortcut for this\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_render_states}{sf::RenderStates}} states;}
+\DoxyCodeLine{states.\mbox{\hyperlink{classsf_1_1_render_states_a30e00c9f28ca246ae73119975255ebd0}{shader}} = \&shader;}
+\DoxyCodeLine{window.draw(sprite, states);}
+
+\end{DoxyCode}
+
+
+In the code above we pass a pointer to the shader, because it may be null (which means \char`\"{}no shader\char`\"{}).
+
+\mbox{\hyperlink{namespace_shaders}{Shaders}} can be used on any drawable, but some combinations are not interesting. For example, using a vertex shader on a \mbox{\hyperlink{classsf_1_1_sprite}{sf\+::\+Sprite}} is limited because there are only 4 vertices, the sprite would have to be subdivided in order to apply wave effects. Another bad example is a fragment shader with \mbox{\hyperlink{classsf_1_1_text}{sf\+::\+Text}}\+: the texture of the text is not the actual text that you see on screen, it is a big texture containing all the characters of the font in an arbitrary order; thus, texture lookups on pixels other than the current one may not give you the expected result.
+
+\mbox{\hyperlink{namespace_shaders}{Shaders}} can also be used to apply global post-\/effects to the current contents of the target (like the old sf\+::\+Post\+Fx class in SFML 1). This can be done in two different ways\+: \begin{DoxyItemize}
+\item draw everything to a \mbox{\hyperlink{classsf_1_1_render_texture}{sf\+::\+Render\+Texture}}, then draw it to the main target using the shader \item draw everything directly to the main target, then use sf\+::\+Texture\+::update(\+Window\&) to copy its contents to a texture and draw it to the main target using the shader\end{DoxyItemize}
+The first technique is more optimized because it doesn\textquotesingle{}t involve retrieving the target\textquotesingle{}s pixels to system memory, but the second one doesn\textquotesingle{}t impact the rendering process and can be easily inserted anywhere without impacting all the code.
+
+Like \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} that can be used as a raw Open\+GL texture, \mbox{\hyperlink{classsf_1_1_shader}{sf\+::\+Shader}} can also be used directly as a raw shader for custom Open\+GL geometry. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_shader_a09778f78afcbeb854d608c8dacd8ea30}{sf::Shader::bind}}(\&shader);}
+\DoxyCodeLine{... render OpenGL geometry ...}
+\DoxyCodeLine{sf::Shader::bind(NULL);}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{namespacesf_1_1_glsl}{sf\+::\+Glsl}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source_l00052}{52}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source}{Shader.\+hpp}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classsf_1_1_shader_a9a60c773571550fd54a394d4ce83f4a3}\label{classsf_1_1_shader_a9a60c773571550fd54a394d4ce83f4a3}} 
+\index{sf::Shader@{sf::Shader}!TextureTable@{TextureTable}}
+\index{TextureTable@{TextureTable}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{TextureTable}{TextureTable}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef std\+::map$<$int, const \mbox{\hyperlink{classsf_1_1_texture}{Texture}}$\ast$$>$ \mbox{\hyperlink{classsf_1_1_shader_a9a60c773571550fd54a394d4ce83f4a3}{sf\+::\+Shader\+::\+Texture\+Table}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source_l00742}{742}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source}{Shader.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_shader_a9a60c773571550fd54a394d4ce83f4a3}\label{classsf_1_1_shader_a9a60c773571550fd54a394d4ce83f4a3}} 
+\index{sf::Shader@{sf::Shader}!TextureTable@{TextureTable}}
+\index{TextureTable@{TextureTable}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{TextureTable}{TextureTable}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef std\+::map$<$int, const \mbox{\hyperlink{classsf_1_1_texture}{Texture}}$\ast$$>$ \mbox{\hyperlink{classsf_1_1_shader_a9a60c773571550fd54a394d4ce83f4a3}{sf\+::\+Shader\+::\+Texture\+Table}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source_l00742}{742}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source}{Shader.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_shader_a010c8213c1f81acd3b285566f6c8fced}\label{classsf_1_1_shader_a010c8213c1f81acd3b285566f6c8fced}} 
+\index{sf::Shader@{sf::Shader}!UniformTable@{UniformTable}}
+\index{UniformTable@{UniformTable}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{UniformTable}{UniformTable}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef std\+::map$<$std\+::string, int$>$ \mbox{\hyperlink{classsf_1_1_shader_a010c8213c1f81acd3b285566f6c8fced}{sf\+::\+Shader\+::\+Uniform\+Table}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source_l00743}{743}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source}{Shader.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_shader_a010c8213c1f81acd3b285566f6c8fced}\label{classsf_1_1_shader_a010c8213c1f81acd3b285566f6c8fced}} 
+\index{sf::Shader@{sf::Shader}!UniformTable@{UniformTable}}
+\index{UniformTable@{UniformTable}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{UniformTable}{UniformTable}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef std\+::map$<$std\+::string, int$>$ \mbox{\hyperlink{classsf_1_1_shader_a010c8213c1f81acd3b285566f6c8fced}{sf\+::\+Shader\+::\+Uniform\+Table}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source_l00743}{743}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source}{Shader.\+hpp}}.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3}\label{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3}} 
+\index{sf::Shader@{sf::Shader}!Type@{Type}}
+\index{Type@{Type}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3}{sf\+::\+Shader\+::\+Type}}}
+
+
+
+Types of shaders. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Vertex@{Vertex}!sf::Shader@{sf::Shader}}\index{sf::Shader@{sf::Shader}!Vertex@{Vertex}}}\mbox{\Hypertarget{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3ac6677cff2fb888f93e247591d886a791}\label{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3ac6677cff2fb888f93e247591d886a791}} 
+Vertex&Vertex shader \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Geometry@{Geometry}!sf::Shader@{sf::Shader}}\index{sf::Shader@{sf::Shader}!Geometry@{Geometry}}}\mbox{\Hypertarget{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3ae4df6eca15fba5a8c8b75892009508bc}\label{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3ae4df6eca15fba5a8c8b75892009508bc}} 
+Geometry&\mbox{\hyperlink{class_geometry}{Geometry}} shader. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Fragment@{Fragment}!sf::Shader@{sf::Shader}}\index{sf::Shader@{sf::Shader}!Fragment@{Fragment}}}\mbox{\Hypertarget{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3adb35eecade8e954987a1a265125e1845}\label{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3adb35eecade8e954987a1a265125e1845}} 
+Fragment&Fragment (pixel) shader. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Vertex@{Vertex}!sf::Shader@{sf::Shader}}\index{sf::Shader@{sf::Shader}!Vertex@{Vertex}}}\mbox{\Hypertarget{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3ac6677cff2fb888f93e247591d886a791}\label{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3ac6677cff2fb888f93e247591d886a791}} 
+Vertex&Vertex shader \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Geometry@{Geometry}!sf::Shader@{sf::Shader}}\index{sf::Shader@{sf::Shader}!Geometry@{Geometry}}}\mbox{\Hypertarget{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3ae4df6eca15fba5a8c8b75892009508bc}\label{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3ae4df6eca15fba5a8c8b75892009508bc}} 
+Geometry&\mbox{\hyperlink{class_geometry}{Geometry}} shader. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Fragment@{Fragment}!sf::Shader@{sf::Shader}}\index{sf::Shader@{sf::Shader}!Fragment@{Fragment}}}\mbox{\Hypertarget{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3adb35eecade8e954987a1a265125e1845}\label{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3adb35eecade8e954987a1a265125e1845}} 
+Fragment&Fragment (pixel) shader. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source_l00060}{60}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source}{Shader.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3}\label{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3}} 
+\index{sf::Shader@{sf::Shader}!Type@{Type}}
+\index{Type@{Type}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3}{sf\+::\+Shader\+::\+Type}}}
+
+
+
+Types of shaders. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Vertex@{Vertex}!sf::Shader@{sf::Shader}}\index{sf::Shader@{sf::Shader}!Vertex@{Vertex}}}\mbox{\Hypertarget{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3ac6677cff2fb888f93e247591d886a791}\label{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3ac6677cff2fb888f93e247591d886a791}} 
+Vertex&Vertex shader \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Geometry@{Geometry}!sf::Shader@{sf::Shader}}\index{sf::Shader@{sf::Shader}!Geometry@{Geometry}}}\mbox{\Hypertarget{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3ae4df6eca15fba5a8c8b75892009508bc}\label{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3ae4df6eca15fba5a8c8b75892009508bc}} 
+Geometry&\mbox{\hyperlink{class_geometry}{Geometry}} shader. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Fragment@{Fragment}!sf::Shader@{sf::Shader}}\index{sf::Shader@{sf::Shader}!Fragment@{Fragment}}}\mbox{\Hypertarget{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3adb35eecade8e954987a1a265125e1845}\label{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3adb35eecade8e954987a1a265125e1845}} 
+Fragment&Fragment (pixel) shader. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Vertex@{Vertex}!sf::Shader@{sf::Shader}}\index{sf::Shader@{sf::Shader}!Vertex@{Vertex}}}\mbox{\Hypertarget{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3ac6677cff2fb888f93e247591d886a791}\label{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3ac6677cff2fb888f93e247591d886a791}} 
+Vertex&Vertex shader \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Geometry@{Geometry}!sf::Shader@{sf::Shader}}\index{sf::Shader@{sf::Shader}!Geometry@{Geometry}}}\mbox{\Hypertarget{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3ae4df6eca15fba5a8c8b75892009508bc}\label{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3ae4df6eca15fba5a8c8b75892009508bc}} 
+Geometry&\mbox{\hyperlink{class_geometry}{Geometry}} shader. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Fragment@{Fragment}!sf::Shader@{sf::Shader}}\index{sf::Shader@{sf::Shader}!Fragment@{Fragment}}}\mbox{\Hypertarget{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3adb35eecade8e954987a1a265125e1845}\label{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3adb35eecade8e954987a1a265125e1845}} 
+Fragment&Fragment (pixel) shader. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source_l00060}{60}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source}{Shader.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsf_1_1_shader_a1d7f28f26b4122959fcafec871c2c3c5}\label{classsf_1_1_shader_a1d7f28f26b4122959fcafec871c2c3c5}} 
+\index{sf::Shader@{sf::Shader}!Shader@{Shader}}
+\index{Shader@{Shader}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{Shader()}{Shader()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily sf\+::\+Shader\+::\+Shader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+This constructor creates an invalid shader. \mbox{\Hypertarget{classsf_1_1_shader_a4bac6cc8b046ecd8fb967c145a2380e6}\label{classsf_1_1_shader_a4bac6cc8b046ecd8fb967c145a2380e6}} 
+\index{sf::Shader@{sf::Shader}!````~Shader@{$\sim$Shader}}
+\index{````~Shader@{$\sim$Shader}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{$\sim$Shader()}{~Shader()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily sf\+::\+Shader\+::$\sim$\+Shader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+\mbox{\Hypertarget{classsf_1_1_shader_a1d7f28f26b4122959fcafec871c2c3c5}\label{classsf_1_1_shader_a1d7f28f26b4122959fcafec871c2c3c5}} 
+\index{sf::Shader@{sf::Shader}!Shader@{Shader}}
+\index{Shader@{Shader}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{Shader()}{Shader()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sf\+::\+Shader\+::\+Shader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+This constructor creates an invalid shader. \mbox{\Hypertarget{classsf_1_1_shader_a4bac6cc8b046ecd8fb967c145a2380e6}\label{classsf_1_1_shader_a4bac6cc8b046ecd8fb967c145a2380e6}} 
+\index{sf::Shader@{sf::Shader}!````~Shader@{$\sim$Shader}}
+\index{````~Shader@{$\sim$Shader}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{$\sim$Shader()}{~Shader()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sf\+::\+Shader\+::$\sim$\+Shader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsf_1_1_shader_a09778f78afcbeb854d608c8dacd8ea30}\label{classsf_1_1_shader_a09778f78afcbeb854d608c8dacd8ea30}} 
+\index{sf::Shader@{sf::Shader}!bind@{bind}}
+\index{bind@{bind}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{bind()}{bind()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void sf\+::\+Shader\+::bind (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_shader}{Shader}} $\ast$}]{shader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Bind a shader for rendering. 
+
+This function is not part of the graphics API, it mustn\textquotesingle{}t be used when drawing SFML entities. It must be used only if you mix \mbox{\hyperlink{classsf_1_1_shader}{sf\+::\+Shader}} with Open\+GL code.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_shader}{sf::Shader}} s1, s2;}
+\DoxyCodeLine{...}
+\DoxyCodeLine{sf::Shader::bind(\&s1);}
+\DoxyCodeLine{\textcolor{comment}{// draw OpenGL stuff that use s1...}}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_shader_a09778f78afcbeb854d608c8dacd8ea30}{sf::Shader::bind}}(\&s2);}
+\DoxyCodeLine{\textcolor{comment}{// draw OpenGL stuff that use s2...}}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_shader_a09778f78afcbeb854d608c8dacd8ea30}{sf::Shader::bind}}(NULL);}
+\DoxyCodeLine{\textcolor{comment}{// draw OpenGL stuff that use no shader...}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & \mbox{\hyperlink{classsf_1_1_shader}{Shader}} to bind, can be null to use no shader \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_a09778f78afcbeb854d608c8dacd8ea30}\label{classsf_1_1_shader_a09778f78afcbeb854d608c8dacd8ea30}} 
+\index{sf::Shader@{sf::Shader}!bind@{bind}}
+\index{bind@{bind}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{bind()}{bind()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void sf\+::\+Shader\+::bind (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_shader}{Shader}} $\ast$}]{shader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Bind a shader for rendering. 
+
+This function is not part of the graphics API, it mustn\textquotesingle{}t be used when drawing SFML entities. It must be used only if you mix \mbox{\hyperlink{classsf_1_1_shader}{sf\+::\+Shader}} with Open\+GL code.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_shader}{sf::Shader}} s1, s2;}
+\DoxyCodeLine{...}
+\DoxyCodeLine{sf::Shader::bind(\&s1);}
+\DoxyCodeLine{\textcolor{comment}{// draw OpenGL stuff that use s1...}}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_shader_a09778f78afcbeb854d608c8dacd8ea30}{sf::Shader::bind}}(\&s2);}
+\DoxyCodeLine{\textcolor{comment}{// draw OpenGL stuff that use s2...}}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_shader_a09778f78afcbeb854d608c8dacd8ea30}{sf::Shader::bind}}(NULL);}
+\DoxyCodeLine{\textcolor{comment}{// draw OpenGL stuff that use no shader...}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & \mbox{\hyperlink{classsf_1_1_shader}{Shader}} to bind, can be null to use no shader \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_a091595f44919468606a36e3414b5106e}\label{classsf_1_1_shader_a091595f44919468606a36e3414b5106e}} 
+\index{sf::Shader@{sf::Shader}!bindTextures@{bindTextures}}
+\index{bindTextures@{bindTextures}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{bindTextures()}{bindTextures()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::bind\+Textures (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bind all the textures used by the shader. 
+
+This function each texture to a different unit, and updates the corresponding variables in the shader accordingly. \mbox{\Hypertarget{classsf_1_1_shader_a091595f44919468606a36e3414b5106e}\label{classsf_1_1_shader_a091595f44919468606a36e3414b5106e}} 
+\index{sf::Shader@{sf::Shader}!bindTextures@{bindTextures}}
+\index{bindTextures@{bindTextures}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{bindTextures()}{bindTextures()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::bind\+Textures (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bind all the textures used by the shader. 
+
+This function each texture to a different unit, and updates the corresponding variables in the shader accordingly. \mbox{\Hypertarget{classsf_1_1_shader_ae83560b673e726e48fc032f62584d606}\label{classsf_1_1_shader_ae83560b673e726e48fc032f62584d606}} 
+\index{sf::Shader@{sf::Shader}!compile@{compile}}
+\index{compile@{compile}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{compile()}{compile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool sf\+::\+Shader\+::compile (\begin{DoxyParamCaption}\item[{const char $\ast$}]{vertex\+Shader\+Code,  }\item[{const char $\ast$}]{geometry\+Shader\+Code,  }\item[{const char $\ast$}]{fragment\+Shader\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Compile the shader(s) and create the program. 
+
+If one of the arguments is NULL, the corresponding shader is not created.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Shader\+Code} & Source code of the vertex shader \\
+\hline
+{\em geometry\+Shader\+Code} & Source code of the geometry shader \\
+\hline
+{\em fragment\+Shader\+Code} & Source code of the fragment shader\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True on success, false if any error happened 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_shader_ae83560b673e726e48fc032f62584d606}\label{classsf_1_1_shader_ae83560b673e726e48fc032f62584d606}} 
+\index{sf::Shader@{sf::Shader}!compile@{compile}}
+\index{compile@{compile}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{compile()}{compile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool sf\+::\+Shader\+::compile (\begin{DoxyParamCaption}\item[{const char $\ast$}]{vertex\+Shader\+Code,  }\item[{const char $\ast$}]{geometry\+Shader\+Code,  }\item[{const char $\ast$}]{fragment\+Shader\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Compile the shader(s) and create the program. 
+
+If one of the arguments is NULL, the corresponding shader is not created.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Shader\+Code} & Source code of the vertex shader \\
+\hline
+{\em geometry\+Shader\+Code} & Source code of the geometry shader \\
+\hline
+{\em fragment\+Shader\+Code} & Source code of the fragment shader\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True on success, false if any error happened 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_shader_ac14d0bf7afe7b6bb415d309f9c707188}\label{classsf_1_1_shader_ac14d0bf7afe7b6bb415d309f9c707188}} 
+\index{sf::Shader@{sf::Shader}!getNativeHandle@{getNativeHandle}}
+\index{getNativeHandle@{getNativeHandle}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{getNativeHandle()}{getNativeHandle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Shader\+::get\+Native\+Handle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the underlying Open\+GL handle of the shader. 
+
+You shouldn\textquotesingle{}t need to use this function, unless you have very specific stuff to implement that SFML doesn\textquotesingle{}t support, or implement a temporary workaround until a bug is fixed.
+
+\begin{DoxyReturn}{Returns}
+Open\+GL handle of the shader or 0 if not yet loaded 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_shader_ac14d0bf7afe7b6bb415d309f9c707188}\label{classsf_1_1_shader_ac14d0bf7afe7b6bb415d309f9c707188}} 
+\index{sf::Shader@{sf::Shader}!getNativeHandle@{getNativeHandle}}
+\index{getNativeHandle@{getNativeHandle}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{getNativeHandle()}{getNativeHandle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Shader\+::get\+Native\+Handle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the underlying Open\+GL handle of the shader. 
+
+You shouldn\textquotesingle{}t need to use this function, unless you have very specific stuff to implement that SFML doesn\textquotesingle{}t support, or implement a temporary workaround until a bug is fixed.
+
+\begin{DoxyReturn}{Returns}
+Open\+GL handle of the shader or 0 if not yet loaded 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_shader_a2127d2ac6030a825cdcb5605791d3d8a}\label{classsf_1_1_shader_a2127d2ac6030a825cdcb5605791d3d8a}} 
+\index{sf::Shader@{sf::Shader}!getUniformLocation@{getUniformLocation}}
+\index{getUniformLocation@{getUniformLocation}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{getUniformLocation()}{getUniformLocation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int sf\+::\+Shader\+::get\+Uniform\+Location (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get the location ID of a shader uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable to search\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Location ID of the uniform, or -\/1 if not found 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_shader_a2127d2ac6030a825cdcb5605791d3d8a}\label{classsf_1_1_shader_a2127d2ac6030a825cdcb5605791d3d8a}} 
+\index{sf::Shader@{sf::Shader}!getUniformLocation@{getUniformLocation}}
+\index{getUniformLocation@{getUniformLocation}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{getUniformLocation()}{getUniformLocation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int sf\+::\+Shader\+::get\+Uniform\+Location (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get the location ID of a shader uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable to search\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Location ID of the uniform, or -\/1 if not found 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_shader_ad22474690bafe4a305c1b9826b1bd86a}\label{classsf_1_1_shader_ad22474690bafe4a305c1b9826b1bd86a}} 
+\index{sf::Shader@{sf::Shader}!isAvailable@{isAvailable}}
+\index{isAvailable@{isAvailable}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{isAvailable()}{isAvailable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static bool sf\+::\+Shader\+::is\+Available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Tell whether or not the system supports shaders. 
+
+This function should always be called before using the shader features. If it returns false, then any attempt to use \mbox{\hyperlink{classsf_1_1_shader}{sf\+::\+Shader}} will fail.
+
+\begin{DoxyReturn}{Returns}
+True if shaders are supported, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_shader_ad22474690bafe4a305c1b9826b1bd86a}\label{classsf_1_1_shader_ad22474690bafe4a305c1b9826b1bd86a}} 
+\index{sf::Shader@{sf::Shader}!isAvailable@{isAvailable}}
+\index{isAvailable@{isAvailable}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{isAvailable()}{isAvailable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static bool sf\+::\+Shader\+::is\+Available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Tell whether or not the system supports shaders. 
+
+This function should always be called before using the shader features. If it returns false, then any attempt to use \mbox{\hyperlink{classsf_1_1_shader}{sf\+::\+Shader}} will fail.
+
+\begin{DoxyReturn}{Returns}
+True if shaders are supported, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_shader_a45db14baf1bbc688577f81813b1fce96}\label{classsf_1_1_shader_a45db14baf1bbc688577f81813b1fce96}} 
+\index{sf::Shader@{sf::Shader}!isGeometryAvailable@{isGeometryAvailable}}
+\index{isGeometryAvailable@{isGeometryAvailable}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{isGeometryAvailable()}{isGeometryAvailable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static bool sf\+::\+Shader\+::is\+Geometry\+Available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Tell whether or not the system supports geometry shaders. 
+
+This function should always be called before using the geometry shader features. If it returns false, then any attempt to use \mbox{\hyperlink{classsf_1_1_shader}{sf\+::\+Shader}} geometry shader features will fail.
+
+This function can only return true if \mbox{\hyperlink{classsf_1_1_shader_ad22474690bafe4a305c1b9826b1bd86a}{is\+Available()}} would also return true, since shaders in general have to be supported in order for geometry shaders to be supported as well.
+
+Note\+: The first call to this function, whether by your code or SFML will result in a context switch.
+
+\begin{DoxyReturn}{Returns}
+True if geometry shaders are supported, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_shader_a45db14baf1bbc688577f81813b1fce96}\label{classsf_1_1_shader_a45db14baf1bbc688577f81813b1fce96}} 
+\index{sf::Shader@{sf::Shader}!isGeometryAvailable@{isGeometryAvailable}}
+\index{isGeometryAvailable@{isGeometryAvailable}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{isGeometryAvailable()}{isGeometryAvailable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static bool sf\+::\+Shader\+::is\+Geometry\+Available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Tell whether or not the system supports geometry shaders. 
+
+This function should always be called before using the geometry shader features. If it returns false, then any attempt to use \mbox{\hyperlink{classsf_1_1_shader}{sf\+::\+Shader}} geometry shader features will fail.
+
+This function can only return true if \mbox{\hyperlink{classsf_1_1_shader_ad22474690bafe4a305c1b9826b1bd86a}{is\+Available()}} would also return true, since shaders in general have to be supported in order for geometry shaders to be supported as well.
+
+Note\+: The first call to this function, whether by your code or SFML will result in a context switch.
+
+\begin{DoxyReturn}{Returns}
+True if geometry shaders are supported, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_shader_a053a5632848ebaca2fcd8ba29abe9e6e}\label{classsf_1_1_shader_a053a5632848ebaca2fcd8ba29abe9e6e}} 
+\index{sf::Shader@{sf::Shader}!loadFromFile@{loadFromFile}}
+\index{loadFromFile@{loadFromFile}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{loadFromFile()}{loadFromFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily bool sf\+::\+Shader\+::load\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{\mbox{\hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3}{Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Load the vertex, geometry or fragment shader from a file. 
+
+This function loads a single shader, vertex, geometry or fragment, identified by the second argument. The source must be a text file containing a valid shader in GLSL language. GLSL is a C-\/like language dedicated to Open\+GL shaders; you\textquotesingle{}ll probably need to read a good documentation for it before writing your own shaders.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Path of the vertex, geometry or fragment shader file to load \\
+\hline
+{\em type} & Type of shader (vertex, geometry or fragment)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shader_ac92d46bf71dff2d791117e4e472148aa}{load\+From\+Memory}}, \mbox{\hyperlink{classsf_1_1_shader_a2ee1b130c0606e4f8bcdf65c1efc2a53}{load\+From\+Stream}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shader_a053a5632848ebaca2fcd8ba29abe9e6e}\label{classsf_1_1_shader_a053a5632848ebaca2fcd8ba29abe9e6e}} 
+\index{sf::Shader@{sf::Shader}!loadFromFile@{loadFromFile}}
+\index{loadFromFile@{loadFromFile}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{loadFromFile()}{loadFromFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily bool sf\+::\+Shader\+::load\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{\mbox{\hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3}{Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Load the vertex, geometry or fragment shader from a file. 
+
+This function loads a single shader, vertex, geometry or fragment, identified by the second argument. The source must be a text file containing a valid shader in GLSL language. GLSL is a C-\/like language dedicated to Open\+GL shaders; you\textquotesingle{}ll probably need to read a good documentation for it before writing your own shaders.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Path of the vertex, geometry or fragment shader file to load \\
+\hline
+{\em type} & Type of shader (vertex, geometry or fragment)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shader_ac92d46bf71dff2d791117e4e472148aa}{load\+From\+Memory}}, \mbox{\hyperlink{classsf_1_1_shader_a2ee1b130c0606e4f8bcdf65c1efc2a53}{load\+From\+Stream}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shader_ac9d7289966fcef562eeb92271c03e3dc}\label{classsf_1_1_shader_ac9d7289966fcef562eeb92271c03e3dc}} 
+\index{sf::Shader@{sf::Shader}!loadFromFile@{loadFromFile}}
+\index{loadFromFile@{loadFromFile}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{loadFromFile()}{loadFromFile()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily bool sf\+::\+Shader\+::load\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{vertex\+Shader\+Filename,  }\item[{const std\+::string \&}]{fragment\+Shader\+Filename }\end{DoxyParamCaption})}
+
+
+
+Load both the vertex and fragment shaders from files. 
+
+This function loads both the vertex and the fragment shaders. If one of them fails to load, the shader is left empty (the valid shader is unloaded). The sources must be text files containing valid shaders in GLSL language. GLSL is a C-\/like language dedicated to Open\+GL shaders; you\textquotesingle{}ll probably need to read a good documentation for it before writing your own shaders.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Shader\+Filename} & Path of the vertex shader file to load \\
+\hline
+{\em fragment\+Shader\+Filename} & Path of the fragment shader file to load\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shader_ac92d46bf71dff2d791117e4e472148aa}{load\+From\+Memory}}, \mbox{\hyperlink{classsf_1_1_shader_a2ee1b130c0606e4f8bcdf65c1efc2a53}{load\+From\+Stream}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shader_ac9d7289966fcef562eeb92271c03e3dc}\label{classsf_1_1_shader_ac9d7289966fcef562eeb92271c03e3dc}} 
+\index{sf::Shader@{sf::Shader}!loadFromFile@{loadFromFile}}
+\index{loadFromFile@{loadFromFile}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{loadFromFile()}{loadFromFile()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily bool sf\+::\+Shader\+::load\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{vertex\+Shader\+Filename,  }\item[{const std\+::string \&}]{fragment\+Shader\+Filename }\end{DoxyParamCaption})}
+
+
+
+Load both the vertex and fragment shaders from files. 
+
+This function loads both the vertex and the fragment shaders. If one of them fails to load, the shader is left empty (the valid shader is unloaded). The sources must be text files containing valid shaders in GLSL language. GLSL is a C-\/like language dedicated to Open\+GL shaders; you\textquotesingle{}ll probably need to read a good documentation for it before writing your own shaders.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Shader\+Filename} & Path of the vertex shader file to load \\
+\hline
+{\em fragment\+Shader\+Filename} & Path of the fragment shader file to load\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shader_ac92d46bf71dff2d791117e4e472148aa}{load\+From\+Memory}}, \mbox{\hyperlink{classsf_1_1_shader_a2ee1b130c0606e4f8bcdf65c1efc2a53}{load\+From\+Stream}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shader_a295d8468811ca15bf9c5401a7a7d4f54}\label{classsf_1_1_shader_a295d8468811ca15bf9c5401a7a7d4f54}} 
+\index{sf::Shader@{sf::Shader}!loadFromFile@{loadFromFile}}
+\index{loadFromFile@{loadFromFile}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{loadFromFile()}{loadFromFile()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily bool sf\+::\+Shader\+::load\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{vertex\+Shader\+Filename,  }\item[{const std\+::string \&}]{geometry\+Shader\+Filename,  }\item[{const std\+::string \&}]{fragment\+Shader\+Filename }\end{DoxyParamCaption})}
+
+
+
+Load the vertex, geometry and fragment shaders from files. 
+
+This function loads the vertex, geometry and fragment shaders. If one of them fails to load, the shader is left empty (the valid shader is unloaded). The sources must be text files containing valid shaders in GLSL language. GLSL is a C-\/like language dedicated to Open\+GL shaders; you\textquotesingle{}ll probably need to read a good documentation for it before writing your own shaders.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Shader\+Filename} & Path of the vertex shader file to load \\
+\hline
+{\em geometry\+Shader\+Filename} & Path of the geometry shader file to load \\
+\hline
+{\em fragment\+Shader\+Filename} & Path of the fragment shader file to load\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shader_ac92d46bf71dff2d791117e4e472148aa}{load\+From\+Memory}}, \mbox{\hyperlink{classsf_1_1_shader_a2ee1b130c0606e4f8bcdf65c1efc2a53}{load\+From\+Stream}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shader_a295d8468811ca15bf9c5401a7a7d4f54}\label{classsf_1_1_shader_a295d8468811ca15bf9c5401a7a7d4f54}} 
+\index{sf::Shader@{sf::Shader}!loadFromFile@{loadFromFile}}
+\index{loadFromFile@{loadFromFile}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{loadFromFile()}{loadFromFile()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily bool sf\+::\+Shader\+::load\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{vertex\+Shader\+Filename,  }\item[{const std\+::string \&}]{geometry\+Shader\+Filename,  }\item[{const std\+::string \&}]{fragment\+Shader\+Filename }\end{DoxyParamCaption})}
+
+
+
+Load the vertex, geometry and fragment shaders from files. 
+
+This function loads the vertex, geometry and fragment shaders. If one of them fails to load, the shader is left empty (the valid shader is unloaded). The sources must be text files containing valid shaders in GLSL language. GLSL is a C-\/like language dedicated to Open\+GL shaders; you\textquotesingle{}ll probably need to read a good documentation for it before writing your own shaders.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Shader\+Filename} & Path of the vertex shader file to load \\
+\hline
+{\em geometry\+Shader\+Filename} & Path of the geometry shader file to load \\
+\hline
+{\em fragment\+Shader\+Filename} & Path of the fragment shader file to load\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shader_ac92d46bf71dff2d791117e4e472148aa}{load\+From\+Memory}}, \mbox{\hyperlink{classsf_1_1_shader_a2ee1b130c0606e4f8bcdf65c1efc2a53}{load\+From\+Stream}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shader_ac92d46bf71dff2d791117e4e472148aa}\label{classsf_1_1_shader_ac92d46bf71dff2d791117e4e472148aa}} 
+\index{sf::Shader@{sf::Shader}!loadFromMemory@{loadFromMemory}}
+\index{loadFromMemory@{loadFromMemory}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{loadFromMemory()}{loadFromMemory()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily bool sf\+::\+Shader\+::load\+From\+Memory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{shader,  }\item[{\mbox{\hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3}{Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Load the vertex, geometry or fragment shader from a source code in memory. 
+
+This function loads a single shader, vertex, geometry or fragment, identified by the second argument. The source code must be a valid shader in GLSL language. GLSL is a C-\/like language dedicated to Open\+GL shaders; you\textquotesingle{}ll probably need to read a good documentation for it before writing your own shaders.
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & \mbox{\hyperlink{classsf_1_1_string}{String}} containing the source code of the shader \\
+\hline
+{\em type} & Type of shader (vertex, geometry or fragment)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shader_a053a5632848ebaca2fcd8ba29abe9e6e}{load\+From\+File}}, \mbox{\hyperlink{classsf_1_1_shader_a2ee1b130c0606e4f8bcdf65c1efc2a53}{load\+From\+Stream}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shader_ac92d46bf71dff2d791117e4e472148aa}\label{classsf_1_1_shader_ac92d46bf71dff2d791117e4e472148aa}} 
+\index{sf::Shader@{sf::Shader}!loadFromMemory@{loadFromMemory}}
+\index{loadFromMemory@{loadFromMemory}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{loadFromMemory()}{loadFromMemory()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily bool sf\+::\+Shader\+::load\+From\+Memory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{shader,  }\item[{\mbox{\hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3}{Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Load the vertex, geometry or fragment shader from a source code in memory. 
+
+This function loads a single shader, vertex, geometry or fragment, identified by the second argument. The source code must be a valid shader in GLSL language. GLSL is a C-\/like language dedicated to Open\+GL shaders; you\textquotesingle{}ll probably need to read a good documentation for it before writing your own shaders.
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & \mbox{\hyperlink{classsf_1_1_string}{String}} containing the source code of the shader \\
+\hline
+{\em type} & Type of shader (vertex, geometry or fragment)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shader_a053a5632848ebaca2fcd8ba29abe9e6e}{load\+From\+File}}, \mbox{\hyperlink{classsf_1_1_shader_a2ee1b130c0606e4f8bcdf65c1efc2a53}{load\+From\+Stream}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shader_ae34e94070d7547a890166b7993658a9b}\label{classsf_1_1_shader_ae34e94070d7547a890166b7993658a9b}} 
+\index{sf::Shader@{sf::Shader}!loadFromMemory@{loadFromMemory}}
+\index{loadFromMemory@{loadFromMemory}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{loadFromMemory()}{loadFromMemory()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily bool sf\+::\+Shader\+::load\+From\+Memory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{vertex\+Shader,  }\item[{const std\+::string \&}]{fragment\+Shader }\end{DoxyParamCaption})}
+
+
+
+Load both the vertex and fragment shaders from source codes in memory. 
+
+This function loads both the vertex and the fragment shaders. If one of them fails to load, the shader is left empty (the valid shader is unloaded). The sources must be valid shaders in GLSL language. GLSL is a C-\/like language dedicated to Open\+GL shaders; you\textquotesingle{}ll probably need to read a good documentation for it before writing your own shaders.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Shader} & \mbox{\hyperlink{classsf_1_1_string}{String}} containing the source code of the vertex shader \\
+\hline
+{\em fragment\+Shader} & \mbox{\hyperlink{classsf_1_1_string}{String}} containing the source code of the fragment shader\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shader_a053a5632848ebaca2fcd8ba29abe9e6e}{load\+From\+File}}, \mbox{\hyperlink{classsf_1_1_shader_a2ee1b130c0606e4f8bcdf65c1efc2a53}{load\+From\+Stream}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shader_ae34e94070d7547a890166b7993658a9b}\label{classsf_1_1_shader_ae34e94070d7547a890166b7993658a9b}} 
+\index{sf::Shader@{sf::Shader}!loadFromMemory@{loadFromMemory}}
+\index{loadFromMemory@{loadFromMemory}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{loadFromMemory()}{loadFromMemory()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily bool sf\+::\+Shader\+::load\+From\+Memory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{vertex\+Shader,  }\item[{const std\+::string \&}]{fragment\+Shader }\end{DoxyParamCaption})}
+
+
+
+Load both the vertex and fragment shaders from source codes in memory. 
+
+This function loads both the vertex and the fragment shaders. If one of them fails to load, the shader is left empty (the valid shader is unloaded). The sources must be valid shaders in GLSL language. GLSL is a C-\/like language dedicated to Open\+GL shaders; you\textquotesingle{}ll probably need to read a good documentation for it before writing your own shaders.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Shader} & \mbox{\hyperlink{classsf_1_1_string}{String}} containing the source code of the vertex shader \\
+\hline
+{\em fragment\+Shader} & \mbox{\hyperlink{classsf_1_1_string}{String}} containing the source code of the fragment shader\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shader_a053a5632848ebaca2fcd8ba29abe9e6e}{load\+From\+File}}, \mbox{\hyperlink{classsf_1_1_shader_a2ee1b130c0606e4f8bcdf65c1efc2a53}{load\+From\+Stream}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shader_ab8c8b715b02aba2cf7c0a0e0c0984250}\label{classsf_1_1_shader_ab8c8b715b02aba2cf7c0a0e0c0984250}} 
+\index{sf::Shader@{sf::Shader}!loadFromMemory@{loadFromMemory}}
+\index{loadFromMemory@{loadFromMemory}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{loadFromMemory()}{loadFromMemory()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily bool sf\+::\+Shader\+::load\+From\+Memory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{vertex\+Shader,  }\item[{const std\+::string \&}]{geometry\+Shader,  }\item[{const std\+::string \&}]{fragment\+Shader }\end{DoxyParamCaption})}
+
+
+
+Load the vertex, geometry and fragment shaders from source codes in memory. 
+
+This function loads the vertex, geometry and fragment shaders. If one of them fails to load, the shader is left empty (the valid shader is unloaded). The sources must be valid shaders in GLSL language. GLSL is a C-\/like language dedicated to Open\+GL shaders; you\textquotesingle{}ll probably need to read a good documentation for it before writing your own shaders.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Shader} & \mbox{\hyperlink{classsf_1_1_string}{String}} containing the source code of the vertex shader \\
+\hline
+{\em geometry\+Shader} & \mbox{\hyperlink{classsf_1_1_string}{String}} containing the source code of the geometry shader \\
+\hline
+{\em fragment\+Shader} & \mbox{\hyperlink{classsf_1_1_string}{String}} containing the source code of the fragment shader\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shader_a053a5632848ebaca2fcd8ba29abe9e6e}{load\+From\+File}}, \mbox{\hyperlink{classsf_1_1_shader_a2ee1b130c0606e4f8bcdf65c1efc2a53}{load\+From\+Stream}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shader_ab8c8b715b02aba2cf7c0a0e0c0984250}\label{classsf_1_1_shader_ab8c8b715b02aba2cf7c0a0e0c0984250}} 
+\index{sf::Shader@{sf::Shader}!loadFromMemory@{loadFromMemory}}
+\index{loadFromMemory@{loadFromMemory}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{loadFromMemory()}{loadFromMemory()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily bool sf\+::\+Shader\+::load\+From\+Memory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{vertex\+Shader,  }\item[{const std\+::string \&}]{geometry\+Shader,  }\item[{const std\+::string \&}]{fragment\+Shader }\end{DoxyParamCaption})}
+
+
+
+Load the vertex, geometry and fragment shaders from source codes in memory. 
+
+This function loads the vertex, geometry and fragment shaders. If one of them fails to load, the shader is left empty (the valid shader is unloaded). The sources must be valid shaders in GLSL language. GLSL is a C-\/like language dedicated to Open\+GL shaders; you\textquotesingle{}ll probably need to read a good documentation for it before writing your own shaders.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Shader} & \mbox{\hyperlink{classsf_1_1_string}{String}} containing the source code of the vertex shader \\
+\hline
+{\em geometry\+Shader} & \mbox{\hyperlink{classsf_1_1_string}{String}} containing the source code of the geometry shader \\
+\hline
+{\em fragment\+Shader} & \mbox{\hyperlink{classsf_1_1_string}{String}} containing the source code of the fragment shader\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shader_a053a5632848ebaca2fcd8ba29abe9e6e}{load\+From\+File}}, \mbox{\hyperlink{classsf_1_1_shader_a2ee1b130c0606e4f8bcdf65c1efc2a53}{load\+From\+Stream}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shader_a2ee1b130c0606e4f8bcdf65c1efc2a53}\label{classsf_1_1_shader_a2ee1b130c0606e4f8bcdf65c1efc2a53}} 
+\index{sf::Shader@{sf::Shader}!loadFromStream@{loadFromStream}}
+\index{loadFromStream@{loadFromStream}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{loadFromStream()}{loadFromStream()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily bool sf\+::\+Shader\+::load\+From\+Stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_input_stream}{Input\+Stream}} \&}]{stream,  }\item[{\mbox{\hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3}{Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Load the vertex, geometry or fragment shader from a custom stream. 
+
+This function loads a single shader, vertex, geometry or fragment, identified by the second argument. The source code must be a valid shader in GLSL language. GLSL is a C-\/like language dedicated to Open\+GL shaders; you\textquotesingle{}ll probably need to read a good documentation for it before writing your own shaders.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & Source stream to read from \\
+\hline
+{\em type} & Type of shader (vertex, geometry or fragment)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shader_a053a5632848ebaca2fcd8ba29abe9e6e}{load\+From\+File}}, \mbox{\hyperlink{classsf_1_1_shader_ac92d46bf71dff2d791117e4e472148aa}{load\+From\+Memory}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shader_a2ee1b130c0606e4f8bcdf65c1efc2a53}\label{classsf_1_1_shader_a2ee1b130c0606e4f8bcdf65c1efc2a53}} 
+\index{sf::Shader@{sf::Shader}!loadFromStream@{loadFromStream}}
+\index{loadFromStream@{loadFromStream}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{loadFromStream()}{loadFromStream()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily bool sf\+::\+Shader\+::load\+From\+Stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_input_stream}{Input\+Stream}} \&}]{stream,  }\item[{\mbox{\hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3}{Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Load the vertex, geometry or fragment shader from a custom stream. 
+
+This function loads a single shader, vertex, geometry or fragment, identified by the second argument. The source code must be a valid shader in GLSL language. GLSL is a C-\/like language dedicated to Open\+GL shaders; you\textquotesingle{}ll probably need to read a good documentation for it before writing your own shaders.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & Source stream to read from \\
+\hline
+{\em type} & Type of shader (vertex, geometry or fragment)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shader_a053a5632848ebaca2fcd8ba29abe9e6e}{load\+From\+File}}, \mbox{\hyperlink{classsf_1_1_shader_ac92d46bf71dff2d791117e4e472148aa}{load\+From\+Memory}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shader_a3b7958159ffb5596c4babc3052e35465}\label{classsf_1_1_shader_a3b7958159ffb5596c4babc3052e35465}} 
+\index{sf::Shader@{sf::Shader}!loadFromStream@{loadFromStream}}
+\index{loadFromStream@{loadFromStream}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{loadFromStream()}{loadFromStream()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily bool sf\+::\+Shader\+::load\+From\+Stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_input_stream}{Input\+Stream}} \&}]{vertex\+Shader\+Stream,  }\item[{\mbox{\hyperlink{classsf_1_1_input_stream}{Input\+Stream}} \&}]{fragment\+Shader\+Stream }\end{DoxyParamCaption})}
+
+
+
+Load both the vertex and fragment shaders from custom streams. 
+
+This function loads both the vertex and the fragment shaders. If one of them fails to load, the shader is left empty (the valid shader is unloaded). The source codes must be valid shaders in GLSL language. GLSL is a C-\/like language dedicated to Open\+GL shaders; you\textquotesingle{}ll probably need to read a good documentation for it before writing your own shaders.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Shader\+Stream} & Source stream to read the vertex shader from \\
+\hline
+{\em fragment\+Shader\+Stream} & Source stream to read the fragment shader from\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shader_a053a5632848ebaca2fcd8ba29abe9e6e}{load\+From\+File}}, \mbox{\hyperlink{classsf_1_1_shader_ac92d46bf71dff2d791117e4e472148aa}{load\+From\+Memory}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shader_a3b7958159ffb5596c4babc3052e35465}\label{classsf_1_1_shader_a3b7958159ffb5596c4babc3052e35465}} 
+\index{sf::Shader@{sf::Shader}!loadFromStream@{loadFromStream}}
+\index{loadFromStream@{loadFromStream}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{loadFromStream()}{loadFromStream()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily bool sf\+::\+Shader\+::load\+From\+Stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_input_stream}{Input\+Stream}} \&}]{vertex\+Shader\+Stream,  }\item[{\mbox{\hyperlink{classsf_1_1_input_stream}{Input\+Stream}} \&}]{fragment\+Shader\+Stream }\end{DoxyParamCaption})}
+
+
+
+Load both the vertex and fragment shaders from custom streams. 
+
+This function loads both the vertex and the fragment shaders. If one of them fails to load, the shader is left empty (the valid shader is unloaded). The source codes must be valid shaders in GLSL language. GLSL is a C-\/like language dedicated to Open\+GL shaders; you\textquotesingle{}ll probably need to read a good documentation for it before writing your own shaders.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Shader\+Stream} & Source stream to read the vertex shader from \\
+\hline
+{\em fragment\+Shader\+Stream} & Source stream to read the fragment shader from\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shader_a053a5632848ebaca2fcd8ba29abe9e6e}{load\+From\+File}}, \mbox{\hyperlink{classsf_1_1_shader_ac92d46bf71dff2d791117e4e472148aa}{load\+From\+Memory}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shader_aa08f1c091806205e6654db9d83197fcd}\label{classsf_1_1_shader_aa08f1c091806205e6654db9d83197fcd}} 
+\index{sf::Shader@{sf::Shader}!loadFromStream@{loadFromStream}}
+\index{loadFromStream@{loadFromStream}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{loadFromStream()}{loadFromStream()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily bool sf\+::\+Shader\+::load\+From\+Stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_input_stream}{Input\+Stream}} \&}]{vertex\+Shader\+Stream,  }\item[{\mbox{\hyperlink{classsf_1_1_input_stream}{Input\+Stream}} \&}]{geometry\+Shader\+Stream,  }\item[{\mbox{\hyperlink{classsf_1_1_input_stream}{Input\+Stream}} \&}]{fragment\+Shader\+Stream }\end{DoxyParamCaption})}
+
+
+
+Load the vertex, geometry and fragment shaders from custom streams. 
+
+This function loads the vertex, geometry and fragment shaders. If one of them fails to load, the shader is left empty (the valid shader is unloaded). The source codes must be valid shaders in GLSL language. GLSL is a C-\/like language dedicated to Open\+GL shaders; you\textquotesingle{}ll probably need to read a good documentation for it before writing your own shaders.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Shader\+Stream} & Source stream to read the vertex shader from \\
+\hline
+{\em geometry\+Shader\+Stream} & Source stream to read the geometry shader from \\
+\hline
+{\em fragment\+Shader\+Stream} & Source stream to read the fragment shader from\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shader_a053a5632848ebaca2fcd8ba29abe9e6e}{load\+From\+File}}, \mbox{\hyperlink{classsf_1_1_shader_ac92d46bf71dff2d791117e4e472148aa}{load\+From\+Memory}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shader_aa08f1c091806205e6654db9d83197fcd}\label{classsf_1_1_shader_aa08f1c091806205e6654db9d83197fcd}} 
+\index{sf::Shader@{sf::Shader}!loadFromStream@{loadFromStream}}
+\index{loadFromStream@{loadFromStream}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{loadFromStream()}{loadFromStream()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily bool sf\+::\+Shader\+::load\+From\+Stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_input_stream}{Input\+Stream}} \&}]{vertex\+Shader\+Stream,  }\item[{\mbox{\hyperlink{classsf_1_1_input_stream}{Input\+Stream}} \&}]{geometry\+Shader\+Stream,  }\item[{\mbox{\hyperlink{classsf_1_1_input_stream}{Input\+Stream}} \&}]{fragment\+Shader\+Stream }\end{DoxyParamCaption})}
+
+
+
+Load the vertex, geometry and fragment shaders from custom streams. 
+
+This function loads the vertex, geometry and fragment shaders. If one of them fails to load, the shader is left empty (the valid shader is unloaded). The source codes must be valid shaders in GLSL language. GLSL is a C-\/like language dedicated to Open\+GL shaders; you\textquotesingle{}ll probably need to read a good documentation for it before writing your own shaders.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Shader\+Stream} & Source stream to read the vertex shader from \\
+\hline
+{\em geometry\+Shader\+Stream} & Source stream to read the geometry shader from \\
+\hline
+{\em fragment\+Shader\+Stream} & Source stream to read the fragment shader from\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shader_a053a5632848ebaca2fcd8ba29abe9e6e}{load\+From\+File}}, \mbox{\hyperlink{classsf_1_1_shader_ac92d46bf71dff2d791117e4e472148aa}{load\+From\+Memory}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsf_1_1_shader_a66e68e64c06ef5501e50dd5903cab51c}\label{classsf_1_1_shader_a66e68e64c06ef5501e50dd5903cab51c}} 
+\index{sf::Shader@{sf::Shader}!setParameter@{setParameter}}
+\index{setParameter@{setParameter}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setParameter()}{setParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/20]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void sf\+::\+Shader\+::set\+Parameter (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{classsf_1_1_color}{Color}} \&}]{color }\end{DoxyParamCaption})}
+
+
+
+Change a color parameter of the shader. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000012}{Deprecated}}]Use \mbox{\hyperlink{classsf_1_1_shader_abc1aee8343800680fd62e1f3d43c24bf}{set\+Uniform(const std\+::string\&, const Glsl\+::\+Vec4\&)}} instead.\end{DoxyRefDesc}
+\mbox{\Hypertarget{classsf_1_1_shader_a66e68e64c06ef5501e50dd5903cab51c}\label{classsf_1_1_shader_a66e68e64c06ef5501e50dd5903cab51c}} 
+\index{sf::Shader@{sf::Shader}!setParameter@{setParameter}}
+\index{setParameter@{setParameter}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setParameter()}{setParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/20]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void sf\+::\+Shader\+::set\+Parameter (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{classsf_1_1_color}{Color}} \&}]{color }\end{DoxyParamCaption})}
+
+
+
+Change a color parameter of the shader. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000035}{Deprecated}}]Use \mbox{\hyperlink{classsf_1_1_shader_abc1aee8343800680fd62e1f3d43c24bf}{set\+Uniform(const std\+::string\&, const Glsl\+::\+Vec4\&)}} instead.\end{DoxyRefDesc}
+\mbox{\Hypertarget{classsf_1_1_shader_a08c7cafd4f73ab898319c4fd7d8b5501}\label{classsf_1_1_shader_a08c7cafd4f73ab898319c4fd7d8b5501}} 
+\index{sf::Shader@{sf::Shader}!setParameter@{setParameter}}
+\index{setParameter@{setParameter}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setParameter()}{setParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [3/20]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void sf\+::\+Shader\+::set\+Parameter (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{classsf_1_1_texture}{Texture}} \&}]{texture }\end{DoxyParamCaption})}
+
+
+
+Change a texture parameter of the shader. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000014}{Deprecated}}]Use \mbox{\hyperlink{classsf_1_1_shader_a7806a29ffbd0ee9251256a9e7265d479}{set\+Uniform(const std\+::string\&, const Texture\&)}} instead.\end{DoxyRefDesc}
+\mbox{\Hypertarget{classsf_1_1_shader_a08c7cafd4f73ab898319c4fd7d8b5501}\label{classsf_1_1_shader_a08c7cafd4f73ab898319c4fd7d8b5501}} 
+\index{sf::Shader@{sf::Shader}!setParameter@{setParameter}}
+\index{setParameter@{setParameter}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setParameter()}{setParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [4/20]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void sf\+::\+Shader\+::set\+Parameter (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{classsf_1_1_texture}{Texture}} \&}]{texture }\end{DoxyParamCaption})}
+
+
+
+Change a texture parameter of the shader. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000037}{Deprecated}}]Use \mbox{\hyperlink{classsf_1_1_shader_a7806a29ffbd0ee9251256a9e7265d479}{set\+Uniform(const std\+::string\&, const Texture\&)}} instead.\end{DoxyRefDesc}
+\mbox{\Hypertarget{classsf_1_1_shader_a398a802fc5295ab69b0317892b0f0c75}\label{classsf_1_1_shader_a398a802fc5295ab69b0317892b0f0c75}} 
+\index{sf::Shader@{sf::Shader}!setParameter@{setParameter}}
+\index{setParameter@{setParameter}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setParameter()}{setParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [5/20]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void sf\+::\+Shader\+::set\+Parameter (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{classsf_1_1_transform}{Transform}} \&}]{transform }\end{DoxyParamCaption})}
+
+
+
+Change a matrix parameter of the shader. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000013}{Deprecated}}]Use \mbox{\hyperlink{classsf_1_1_shader_aca5c55c4a3b23d21e33dbdaab7990755}{set\+Uniform(const std\+::string\&, const Glsl\+::\+Mat4\&)}} instead.\end{DoxyRefDesc}
+\mbox{\Hypertarget{classsf_1_1_shader_a398a802fc5295ab69b0317892b0f0c75}\label{classsf_1_1_shader_a398a802fc5295ab69b0317892b0f0c75}} 
+\index{sf::Shader@{sf::Shader}!setParameter@{setParameter}}
+\index{setParameter@{setParameter}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setParameter()}{setParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [6/20]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void sf\+::\+Shader\+::set\+Parameter (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{classsf_1_1_transform}{Transform}} \&}]{transform }\end{DoxyParamCaption})}
+
+
+
+Change a matrix parameter of the shader. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000036}{Deprecated}}]Use \mbox{\hyperlink{classsf_1_1_shader_aca5c55c4a3b23d21e33dbdaab7990755}{set\+Uniform(const std\+::string\&, const Glsl\+::\+Mat4\&)}} instead.\end{DoxyRefDesc}
+\mbox{\Hypertarget{classsf_1_1_shader_aee671dda9a84f607b9b780b2796def74}\label{classsf_1_1_shader_aee671dda9a84f607b9b780b2796def74}} 
+\index{sf::Shader@{sf::Shader}!setParameter@{setParameter}}
+\index{setParameter@{setParameter}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setParameter()}{setParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [7/20]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void sf\+::\+Shader\+::set\+Parameter (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}} \&}]{vector }\end{DoxyParamCaption})}
+
+
+
+Change a 2-\/components vector parameter of the shader. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000010}{Deprecated}}]Use \mbox{\hyperlink{classsf_1_1_shader_a4a2c673c41e37b17d67e4af1298b679f}{set\+Uniform(const std\+::string\&, const Glsl\+::\+Vec2\&)}} instead.\end{DoxyRefDesc}
+\mbox{\Hypertarget{classsf_1_1_shader_aee671dda9a84f607b9b780b2796def74}\label{classsf_1_1_shader_aee671dda9a84f607b9b780b2796def74}} 
+\index{sf::Shader@{sf::Shader}!setParameter@{setParameter}}
+\index{setParameter@{setParameter}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setParameter()}{setParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [8/20]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void sf\+::\+Shader\+::set\+Parameter (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{Vector2f}} \&}]{vector }\end{DoxyParamCaption})}
+
+
+
+Change a 2-\/components vector parameter of the shader. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000033}{Deprecated}}]Use \mbox{\hyperlink{classsf_1_1_shader_a4a2c673c41e37b17d67e4af1298b679f}{set\+Uniform(const std\+::string\&, const Glsl\+::\+Vec2\&)}} instead.\end{DoxyRefDesc}
+\mbox{\Hypertarget{classsf_1_1_shader_abf1eb5e74f216c7bcfaf34d08c960ee0}\label{classsf_1_1_shader_abf1eb5e74f216c7bcfaf34d08c960ee0}} 
+\index{sf::Shader@{sf::Shader}!setParameter@{setParameter}}
+\index{setParameter@{setParameter}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setParameter()}{setParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [9/20]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void sf\+::\+Shader\+::set\+Parameter (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_a36e44d9e6d8f649703698ec9d24ac052}{Vector3f}} \&}]{vector }\end{DoxyParamCaption})}
+
+
+
+Change a 3-\/components vector parameter of the shader. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000011}{Deprecated}}]Use \mbox{\hyperlink{classsf_1_1_shader_aad654ad8de6f0c56191fa7b8cea21db2}{set\+Uniform(const std\+::string\&, const Glsl\+::\+Vec3\&)}} instead.\end{DoxyRefDesc}
+\mbox{\Hypertarget{classsf_1_1_shader_abf1eb5e74f216c7bcfaf34d08c960ee0}\label{classsf_1_1_shader_abf1eb5e74f216c7bcfaf34d08c960ee0}} 
+\index{sf::Shader@{sf::Shader}!setParameter@{setParameter}}
+\index{setParameter@{setParameter}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setParameter()}{setParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [10/20]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void sf\+::\+Shader\+::set\+Parameter (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_a36e44d9e6d8f649703698ec9d24ac052}{Vector3f}} \&}]{vector }\end{DoxyParamCaption})}
+
+
+
+Change a 3-\/components vector parameter of the shader. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000034}{Deprecated}}]Use \mbox{\hyperlink{classsf_1_1_shader_aad654ad8de6f0c56191fa7b8cea21db2}{set\+Uniform(const std\+::string\&, const Glsl\+::\+Vec3\&)}} instead.\end{DoxyRefDesc}
+\mbox{\Hypertarget{classsf_1_1_shader_a0fa7ecad14206e4d5edae1d6aa87f553}\label{classsf_1_1_shader_a0fa7ecad14206e4d5edae1d6aa87f553}} 
+\index{sf::Shader@{sf::Shader}!setParameter@{setParameter}}
+\index{setParameter@{setParameter}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setParameter()}{setParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [11/20]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void sf\+::\+Shader\+::set\+Parameter (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{\mbox{\hyperlink{structsf_1_1_shader_1_1_current_texture_type}{Current\+Texture\+Type}}}]{ }\end{DoxyParamCaption})}
+
+
+
+Change a texture parameter of the shader. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000015}{Deprecated}}]Use \mbox{\hyperlink{classsf_1_1_shader_ab18f531e1f726b88fec1cf5a1e6af26d}{set\+Uniform(const std\+::string\&, Current\+Texture\+Type)}} instead.\end{DoxyRefDesc}
+\mbox{\Hypertarget{classsf_1_1_shader_a0fa7ecad14206e4d5edae1d6aa87f553}\label{classsf_1_1_shader_a0fa7ecad14206e4d5edae1d6aa87f553}} 
+\index{sf::Shader@{sf::Shader}!setParameter@{setParameter}}
+\index{setParameter@{setParameter}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setParameter()}{setParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [12/20]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void sf\+::\+Shader\+::set\+Parameter (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{\mbox{\hyperlink{structsf_1_1_shader_1_1_current_texture_type}{Current\+Texture\+Type}}}]{ }\end{DoxyParamCaption})}
+
+
+
+Change a texture parameter of the shader. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000038}{Deprecated}}]Use \mbox{\hyperlink{classsf_1_1_shader_ab18f531e1f726b88fec1cf5a1e6af26d}{set\+Uniform(const std\+::string\&, Current\+Texture\+Type)}} instead.\end{DoxyRefDesc}
+\mbox{\Hypertarget{classsf_1_1_shader_a4d6ec78f6de1a0a2146c93ab09d7d762}\label{classsf_1_1_shader_a4d6ec78f6de1a0a2146c93ab09d7d762}} 
+\index{sf::Shader@{sf::Shader}!setParameter@{setParameter}}
+\index{setParameter@{setParameter}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setParameter()}{setParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [13/20]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void sf\+::\+Shader\+::set\+Parameter (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{float}]{x }\end{DoxyParamCaption})}
+
+
+
+Change a float parameter of the shader. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000006}{Deprecated}}]Use \mbox{\hyperlink{classsf_1_1_shader_abf78e3bea1e9b0bab850b6b0a0de29c7}{set\+Uniform(const std\+::string\&, float)}} instead.\end{DoxyRefDesc}
+\mbox{\Hypertarget{classsf_1_1_shader_a4d6ec78f6de1a0a2146c93ab09d7d762}\label{classsf_1_1_shader_a4d6ec78f6de1a0a2146c93ab09d7d762}} 
+\index{sf::Shader@{sf::Shader}!setParameter@{setParameter}}
+\index{setParameter@{setParameter}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setParameter()}{setParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [14/20]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void sf\+::\+Shader\+::set\+Parameter (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{float}]{x }\end{DoxyParamCaption})}
+
+
+
+Change a float parameter of the shader. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000029}{Deprecated}}]Use \mbox{\hyperlink{classsf_1_1_shader_abf78e3bea1e9b0bab850b6b0a0de29c7}{set\+Uniform(const std\+::string\&, float)}} instead.\end{DoxyRefDesc}
+\mbox{\Hypertarget{classsf_1_1_shader_a61f5cdb5847fc3b57335b095a2f3dad3}\label{classsf_1_1_shader_a61f5cdb5847fc3b57335b095a2f3dad3}} 
+\index{sf::Shader@{sf::Shader}!setParameter@{setParameter}}
+\index{setParameter@{setParameter}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setParameter()}{setParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [15/20]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void sf\+::\+Shader\+::set\+Parameter (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})}
+
+
+
+Change a 2-\/components vector parameter of the shader. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000007}{Deprecated}}]Use \mbox{\hyperlink{classsf_1_1_shader_a4a2c673c41e37b17d67e4af1298b679f}{set\+Uniform(const std\+::string\&, const Glsl\+::\+Vec2\&)}} instead.\end{DoxyRefDesc}
+\mbox{\Hypertarget{classsf_1_1_shader_a61f5cdb5847fc3b57335b095a2f3dad3}\label{classsf_1_1_shader_a61f5cdb5847fc3b57335b095a2f3dad3}} 
+\index{sf::Shader@{sf::Shader}!setParameter@{setParameter}}
+\index{setParameter@{setParameter}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setParameter()}{setParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [16/20]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void sf\+::\+Shader\+::set\+Parameter (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})}
+
+
+
+Change a 2-\/components vector parameter of the shader. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000030}{Deprecated}}]Use \mbox{\hyperlink{classsf_1_1_shader_a4a2c673c41e37b17d67e4af1298b679f}{set\+Uniform(const std\+::string\&, const Glsl\+::\+Vec2\&)}} instead.\end{DoxyRefDesc}
+\mbox{\Hypertarget{classsf_1_1_shader_a1fa0fb11cabd8553ccd37e97c725c992}\label{classsf_1_1_shader_a1fa0fb11cabd8553ccd37e97c725c992}} 
+\index{sf::Shader@{sf::Shader}!setParameter@{setParameter}}
+\index{setParameter@{setParameter}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setParameter()}{setParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [17/20]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void sf\+::\+Shader\+::set\+Parameter (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})}
+
+
+
+Change a 3-\/components vector parameter of the shader. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000008}{Deprecated}}]Use \mbox{\hyperlink{classsf_1_1_shader_aad654ad8de6f0c56191fa7b8cea21db2}{set\+Uniform(const std\+::string\&, const Glsl\+::\+Vec3\&)}} instead.\end{DoxyRefDesc}
+\mbox{\Hypertarget{classsf_1_1_shader_a1fa0fb11cabd8553ccd37e97c725c992}\label{classsf_1_1_shader_a1fa0fb11cabd8553ccd37e97c725c992}} 
+\index{sf::Shader@{sf::Shader}!setParameter@{setParameter}}
+\index{setParameter@{setParameter}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setParameter()}{setParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [18/20]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void sf\+::\+Shader\+::set\+Parameter (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})}
+
+
+
+Change a 3-\/components vector parameter of the shader. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000031}{Deprecated}}]Use \mbox{\hyperlink{classsf_1_1_shader_aad654ad8de6f0c56191fa7b8cea21db2}{set\+Uniform(const std\+::string\&, const Glsl\+::\+Vec3\&)}} instead.\end{DoxyRefDesc}
+\mbox{\Hypertarget{classsf_1_1_shader_a6d6b84575a5f1a869d70a126df8d6478}\label{classsf_1_1_shader_a6d6b84575a5f1a869d70a126df8d6478}} 
+\index{sf::Shader@{sf::Shader}!setParameter@{setParameter}}
+\index{setParameter@{setParameter}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setParameter()}{setParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [19/20]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void sf\+::\+Shader\+::set\+Parameter (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z,  }\item[{float}]{w }\end{DoxyParamCaption})}
+
+
+
+Change a 4-\/components vector parameter of the shader. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000009}{Deprecated}}]Use \mbox{\hyperlink{classsf_1_1_shader_abc1aee8343800680fd62e1f3d43c24bf}{set\+Uniform(const std\+::string\&, const Glsl\+::\+Vec4\&)}} instead.\end{DoxyRefDesc}
+\mbox{\Hypertarget{classsf_1_1_shader_a6d6b84575a5f1a869d70a126df8d6478}\label{classsf_1_1_shader_a6d6b84575a5f1a869d70a126df8d6478}} 
+\index{sf::Shader@{sf::Shader}!setParameter@{setParameter}}
+\index{setParameter@{setParameter}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setParameter()}{setParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [20/20]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void sf\+::\+Shader\+::set\+Parameter (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z,  }\item[{float}]{w }\end{DoxyParamCaption})}
+
+
+
+Change a 4-\/components vector parameter of the shader. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000032}{Deprecated}}]Use \mbox{\hyperlink{classsf_1_1_shader_abc1aee8343800680fd62e1f3d43c24bf}{set\+Uniform(const std\+::string\&, const Glsl\+::\+Vec4\&)}} instead.\end{DoxyRefDesc}
+\mbox{\Hypertarget{classsf_1_1_shader_af417027ac72c06e6cfbf30975cd678e9}\label{classsf_1_1_shader_af417027ac72c06e6cfbf30975cd678e9}} 
+\index{sf::Shader@{sf::Shader}!setUniform@{setUniform}}
+\index{setUniform@{setUniform}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform()}{setUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/32]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{bool}]{x }\end{DoxyParamCaption})}
+
+
+
+Specify value for {\ttfamily bool} uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em x} & Value of the bool scalar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_af417027ac72c06e6cfbf30975cd678e9}\label{classsf_1_1_shader_af417027ac72c06e6cfbf30975cd678e9}} 
+\index{sf::Shader@{sf::Shader}!setUniform@{setUniform}}
+\index{setUniform@{setUniform}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform()}{setUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/32]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{bool}]{x }\end{DoxyParamCaption})}
+
+
+
+Specify value for {\ttfamily bool} uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em x} & Value of the bool scalar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_ab2518b8dd0762e682b452a5d5005f2bf}\label{classsf_1_1_shader_ab2518b8dd0762e682b452a5d5005f2bf}} 
+\index{sf::Shader@{sf::Shader}!setUniform@{setUniform}}
+\index{setUniform@{setUniform}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform()}{setUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [3/32]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_1_1_glsl_a7702dd528400bf68fded485341d2589c}{Glsl\+::\+Bvec2}} \&}]{vector }\end{DoxyParamCaption})}
+
+
+
+Specify value for {\ttfamily bvec2} uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em vector} & Value of the bvec2 vector \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_ab2518b8dd0762e682b452a5d5005f2bf}\label{classsf_1_1_shader_ab2518b8dd0762e682b452a5d5005f2bf}} 
+\index{sf::Shader@{sf::Shader}!setUniform@{setUniform}}
+\index{setUniform@{setUniform}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform()}{setUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [4/32]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_1_1_glsl_a7702dd528400bf68fded485341d2589c}{Glsl\+::\+Bvec2}} \&}]{vector }\end{DoxyParamCaption})}
+
+
+
+Specify value for {\ttfamily bvec2} uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em vector} & Value of the bvec2 vector \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_ab06830875c82476fbb9c975cdeb78a11}\label{classsf_1_1_shader_ab06830875c82476fbb9c975cdeb78a11}} 
+\index{sf::Shader@{sf::Shader}!setUniform@{setUniform}}
+\index{setUniform@{setUniform}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform()}{setUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [5/32]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_1_1_glsl_a45470800f45fc6a55c3d30ea2ea7f412}{Glsl\+::\+Bvec3}} \&}]{vector }\end{DoxyParamCaption})}
+
+
+
+Specify value for {\ttfamily bvec3} uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em vector} & Value of the bvec3 vector \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_ab06830875c82476fbb9c975cdeb78a11}\label{classsf_1_1_shader_ab06830875c82476fbb9c975cdeb78a11}} 
+\index{sf::Shader@{sf::Shader}!setUniform@{setUniform}}
+\index{setUniform@{setUniform}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform()}{setUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [6/32]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_1_1_glsl_a45470800f45fc6a55c3d30ea2ea7f412}{Glsl\+::\+Bvec3}} \&}]{vector }\end{DoxyParamCaption})}
+
+
+
+Specify value for {\ttfamily bvec3} uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em vector} & Value of the bvec3 vector \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_ac8db3e0adf1129abf24f0a51a7ec36f4}\label{classsf_1_1_shader_ac8db3e0adf1129abf24f0a51a7ec36f4}} 
+\index{sf::Shader@{sf::Shader}!setUniform@{setUniform}}
+\index{setUniform@{setUniform}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform()}{setUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [7/32]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_1_1_glsl_a5a4dd3ad1fe5137c49298ee9799d474c}{Glsl\+::\+Bvec4}} \&}]{vector }\end{DoxyParamCaption})}
+
+
+
+Specify value for {\ttfamily bvec4} uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em vector} & Value of the bvec4 vector \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_ac8db3e0adf1129abf24f0a51a7ec36f4}\label{classsf_1_1_shader_ac8db3e0adf1129abf24f0a51a7ec36f4}} 
+\index{sf::Shader@{sf::Shader}!setUniform@{setUniform}}
+\index{setUniform@{setUniform}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform()}{setUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [8/32]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_1_1_glsl_a5a4dd3ad1fe5137c49298ee9799d474c}{Glsl\+::\+Bvec4}} \&}]{vector }\end{DoxyParamCaption})}
+
+
+
+Specify value for {\ttfamily bvec4} uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em vector} & Value of the bvec4 vector \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_a2ccb5bae59cedc7d6a9b533c97f7d1ed}\label{classsf_1_1_shader_a2ccb5bae59cedc7d6a9b533c97f7d1ed}} 
+\index{sf::Shader@{sf::Shader}!setUniform@{setUniform}}
+\index{setUniform@{setUniform}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform()}{setUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [9/32]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_1_1_glsl_a310968541a71ce373f98af70566a8685}{Glsl\+::\+Ivec2}} \&}]{vector }\end{DoxyParamCaption})}
+
+
+
+Specify value for {\ttfamily ivec2} uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em vector} & Value of the ivec2 vector \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_a2ccb5bae59cedc7d6a9b533c97f7d1ed}\label{classsf_1_1_shader_a2ccb5bae59cedc7d6a9b533c97f7d1ed}} 
+\index{sf::Shader@{sf::Shader}!setUniform@{setUniform}}
+\index{setUniform@{setUniform}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform()}{setUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [10/32]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_1_1_glsl_a310968541a71ce373f98af70566a8685}{Glsl\+::\+Ivec2}} \&}]{vector }\end{DoxyParamCaption})}
+
+
+
+Specify value for {\ttfamily ivec2} uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em vector} & Value of the ivec2 vector \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_a9e328e3e97cd753fdc7b842f4b0f202e}\label{classsf_1_1_shader_a9e328e3e97cd753fdc7b842f4b0f202e}} 
+\index{sf::Shader@{sf::Shader}!setUniform@{setUniform}}
+\index{setUniform@{setUniform}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform()}{setUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [11/32]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_1_1_glsl_a7015052834578e9f820c80d5c0ee68a9}{Glsl\+::\+Ivec3}} \&}]{vector }\end{DoxyParamCaption})}
+
+
+
+Specify value for {\ttfamily ivec3} uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em vector} & Value of the ivec3 vector \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_a9e328e3e97cd753fdc7b842f4b0f202e}\label{classsf_1_1_shader_a9e328e3e97cd753fdc7b842f4b0f202e}} 
+\index{sf::Shader@{sf::Shader}!setUniform@{setUniform}}
+\index{setUniform@{setUniform}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform()}{setUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [12/32]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_1_1_glsl_a7015052834578e9f820c80d5c0ee68a9}{Glsl\+::\+Ivec3}} \&}]{vector }\end{DoxyParamCaption})}
+
+
+
+Specify value for {\ttfamily ivec3} uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em vector} & Value of the ivec3 vector \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_a380e7a5a2896162c5fd08966c4523790}\label{classsf_1_1_shader_a380e7a5a2896162c5fd08966c4523790}} 
+\index{sf::Shader@{sf::Shader}!setUniform@{setUniform}}
+\index{setUniform@{setUniform}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform()}{setUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [13/32]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_1_1_glsl_a28a91512c3a71bf0f0e4c40935316c6a}{Glsl\+::\+Ivec4}} \&}]{vector }\end{DoxyParamCaption})}
+
+
+
+Specify value for {\ttfamily ivec4} uniform. 
+
+This overload can also be called with \mbox{\hyperlink{classsf_1_1_color}{sf\+::\+Color}} objects that are converted to \mbox{\hyperlink{namespacesf_1_1_glsl_a28a91512c3a71bf0f0e4c40935316c6a}{sf\+::\+Glsl\+::\+Ivec4}}.
+
+If color conversions are used, the ivec4 uniform in GLSL will hold the same values as the original \mbox{\hyperlink{classsf_1_1_color}{sf\+::\+Color}} instance. For example, \mbox{\hyperlink{classsf_1_1_color}{sf\+::\+Color(255, 127, 0, 255)}} is mapped to ivec4(255, 127, 0, 255).
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em vector} & Value of the ivec4 vector \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_a380e7a5a2896162c5fd08966c4523790}\label{classsf_1_1_shader_a380e7a5a2896162c5fd08966c4523790}} 
+\index{sf::Shader@{sf::Shader}!setUniform@{setUniform}}
+\index{setUniform@{setUniform}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform()}{setUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [14/32]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_1_1_glsl_a28a91512c3a71bf0f0e4c40935316c6a}{Glsl\+::\+Ivec4}} \&}]{vector }\end{DoxyParamCaption})}
+
+
+
+Specify value for {\ttfamily ivec4} uniform. 
+
+This overload can also be called with \mbox{\hyperlink{classsf_1_1_color}{sf\+::\+Color}} objects that are converted to \mbox{\hyperlink{namespacesf_1_1_glsl_a28a91512c3a71bf0f0e4c40935316c6a}{sf\+::\+Glsl\+::\+Ivec4}}.
+
+If color conversions are used, the ivec4 uniform in GLSL will hold the same values as the original \mbox{\hyperlink{classsf_1_1_color}{sf\+::\+Color}} instance. For example, \mbox{\hyperlink{classsf_1_1_color}{sf\+::\+Color(255, 127, 0, 255)}} is mapped to ivec4(255, 127, 0, 255).
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em vector} & Value of the ivec4 vector \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_ac1198ae0152d439bc05781046883e281}\label{classsf_1_1_shader_ac1198ae0152d439bc05781046883e281}} 
+\index{sf::Shader@{sf::Shader}!setUniform@{setUniform}}
+\index{setUniform@{setUniform}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform()}{setUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [15/32]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_1_1_glsl_a5740f2f47b1bea944dd94045af397e39}{Glsl\+::\+Mat3}} \&}]{matrix }\end{DoxyParamCaption})}
+
+
+
+Specify value for {\ttfamily mat3} matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em matrix} & Value of the mat3 matrix \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_ac1198ae0152d439bc05781046883e281}\label{classsf_1_1_shader_ac1198ae0152d439bc05781046883e281}} 
+\index{sf::Shader@{sf::Shader}!setUniform@{setUniform}}
+\index{setUniform@{setUniform}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform()}{setUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [16/32]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_1_1_glsl_a5740f2f47b1bea944dd94045af397e39}{Glsl\+::\+Mat3}} \&}]{matrix }\end{DoxyParamCaption})}
+
+
+
+Specify value for {\ttfamily mat3} matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em matrix} & Value of the mat3 matrix \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_aca5c55c4a3b23d21e33dbdaab7990755}\label{classsf_1_1_shader_aca5c55c4a3b23d21e33dbdaab7990755}} 
+\index{sf::Shader@{sf::Shader}!setUniform@{setUniform}}
+\index{setUniform@{setUniform}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform()}{setUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [17/32]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_1_1_glsl_a7f4817a969b6cc76c0828eaecf8f386b}{Glsl\+::\+Mat4}} \&}]{matrix }\end{DoxyParamCaption})}
+
+
+
+Specify value for {\ttfamily mat4} matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em matrix} & Value of the mat4 matrix \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_aca5c55c4a3b23d21e33dbdaab7990755}\label{classsf_1_1_shader_aca5c55c4a3b23d21e33dbdaab7990755}} 
+\index{sf::Shader@{sf::Shader}!setUniform@{setUniform}}
+\index{setUniform@{setUniform}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform()}{setUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [18/32]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_1_1_glsl_a7f4817a969b6cc76c0828eaecf8f386b}{Glsl\+::\+Mat4}} \&}]{matrix }\end{DoxyParamCaption})}
+
+
+
+Specify value for {\ttfamily mat4} matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em matrix} & Value of the mat4 matrix \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_a4a2c673c41e37b17d67e4af1298b679f}\label{classsf_1_1_shader_a4a2c673c41e37b17d67e4af1298b679f}} 
+\index{sf::Shader@{sf::Shader}!setUniform@{setUniform}}
+\index{setUniform@{setUniform}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform()}{setUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [19/32]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_1_1_glsl_abfcb09fe753e2d3afdf5b34ead5ac998}{Glsl\+::\+Vec2}} \&}]{vector }\end{DoxyParamCaption})}
+
+
+
+Specify value for {\ttfamily vec2} uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em vector} & Value of the vec2 vector \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_a4a2c673c41e37b17d67e4af1298b679f}\label{classsf_1_1_shader_a4a2c673c41e37b17d67e4af1298b679f}} 
+\index{sf::Shader@{sf::Shader}!setUniform@{setUniform}}
+\index{setUniform@{setUniform}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform()}{setUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [20/32]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_1_1_glsl_abfcb09fe753e2d3afdf5b34ead5ac998}{Glsl\+::\+Vec2}} \&}]{vector }\end{DoxyParamCaption})}
+
+
+
+Specify value for {\ttfamily vec2} uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em vector} & Value of the vec2 vector \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_aad654ad8de6f0c56191fa7b8cea21db2}\label{classsf_1_1_shader_aad654ad8de6f0c56191fa7b8cea21db2}} 
+\index{sf::Shader@{sf::Shader}!setUniform@{setUniform}}
+\index{setUniform@{setUniform}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform()}{setUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [21/32]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_1_1_glsl_a054bd0a821d072e08de6c358de9f67ad}{Glsl\+::\+Vec3}} \&}]{vector }\end{DoxyParamCaption})}
+
+
+
+Specify value for {\ttfamily vec3} uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em vector} & Value of the vec3 vector \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_aad654ad8de6f0c56191fa7b8cea21db2}\label{classsf_1_1_shader_aad654ad8de6f0c56191fa7b8cea21db2}} 
+\index{sf::Shader@{sf::Shader}!setUniform@{setUniform}}
+\index{setUniform@{setUniform}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform()}{setUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [22/32]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_1_1_glsl_a054bd0a821d072e08de6c358de9f67ad}{Glsl\+::\+Vec3}} \&}]{vector }\end{DoxyParamCaption})}
+
+
+
+Specify value for {\ttfamily vec3} uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em vector} & Value of the vec3 vector \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_abc1aee8343800680fd62e1f3d43c24bf}\label{classsf_1_1_shader_abc1aee8343800680fd62e1f3d43c24bf}} 
+\index{sf::Shader@{sf::Shader}!setUniform@{setUniform}}
+\index{setUniform@{setUniform}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform()}{setUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [23/32]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_1_1_glsl_a1370d4e28095744e9e5271eb34bae8d4}{Glsl\+::\+Vec4}} \&}]{vector }\end{DoxyParamCaption})}
+
+
+
+Specify value for {\ttfamily vec4} uniform. 
+
+This overload can also be called with \mbox{\hyperlink{classsf_1_1_color}{sf\+::\+Color}} objects that are converted to \mbox{\hyperlink{namespacesf_1_1_glsl_a1370d4e28095744e9e5271eb34bae8d4}{sf\+::\+Glsl\+::\+Vec4}}.
+
+It is important to note that the components of the color are normalized before being passed to the shader. Therefore, they are converted from range \mbox{[}0 .. 255\mbox{]} to range \mbox{[}0 .. 1\mbox{]}. For example, a \mbox{\hyperlink{classsf_1_1_color}{sf\+::\+Color(255, 127, 0, 255)}} will be transformed to a vec4(1.\+0, 0.\+5, 0.\+0, 1.\+0) in the shader.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em vector} & Value of the vec4 vector \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_abc1aee8343800680fd62e1f3d43c24bf}\label{classsf_1_1_shader_abc1aee8343800680fd62e1f3d43c24bf}} 
+\index{sf::Shader@{sf::Shader}!setUniform@{setUniform}}
+\index{setUniform@{setUniform}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform()}{setUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [24/32]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_1_1_glsl_a1370d4e28095744e9e5271eb34bae8d4}{Glsl\+::\+Vec4}} \&}]{vector }\end{DoxyParamCaption})}
+
+
+
+Specify value for {\ttfamily vec4} uniform. 
+
+This overload can also be called with \mbox{\hyperlink{classsf_1_1_color}{sf\+::\+Color}} objects that are converted to \mbox{\hyperlink{namespacesf_1_1_glsl_a1370d4e28095744e9e5271eb34bae8d4}{sf\+::\+Glsl\+::\+Vec4}}.
+
+It is important to note that the components of the color are normalized before being passed to the shader. Therefore, they are converted from range \mbox{[}0 .. 255\mbox{]} to range \mbox{[}0 .. 1\mbox{]}. For example, a \mbox{\hyperlink{classsf_1_1_color}{sf\+::\+Color(255, 127, 0, 255)}} will be transformed to a vec4(1.\+0, 0.\+5, 0.\+0, 1.\+0) in the shader.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em vector} & Value of the vec4 vector \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_a7806a29ffbd0ee9251256a9e7265d479}\label{classsf_1_1_shader_a7806a29ffbd0ee9251256a9e7265d479}} 
+\index{sf::Shader@{sf::Shader}!setUniform@{setUniform}}
+\index{setUniform@{setUniform}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform()}{setUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [25/32]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{classsf_1_1_texture}{Texture}} \&}]{texture }\end{DoxyParamCaption})}
+
+
+
+Specify a texture as {\ttfamily sampler2D} uniform. 
+
+{\itshape name} is the name of the variable to change in the shader. The corresponding parameter in the shader must be a 2D texture ({\ttfamily sampler2D} GLSL type).
+
+Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{uniform sampler2D the\_texture; \textcolor{comment}{// this is the variable in the shader}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_texture}{sf::Texture}} texture;}
+\DoxyCodeLine{...}
+\DoxyCodeLine{shader.setUniform(\textcolor{stringliteral}{"{}the\_texture"{}}, texture);}
+
+\end{DoxyCode}
+ It is important to note that {\itshape texture} must remain alive as long as the shader uses it, no copy is made internally.
+
+To use the texture of the object being drawn, which cannot be known in advance, you can pass the special value \mbox{\hyperlink{classsf_1_1_shader_ad679e434fc4f1a1af65f3815b2310fb5}{sf\+::\+Shader\+::\+Current\+Texture}}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{shader.setUniform(\textcolor{stringliteral}{"{}the\_texture"{}}, \mbox{\hyperlink{classsf_1_1_shader_ad679e434fc4f1a1af65f3815b2310fb5}{sf::Shader::CurrentTexture}}).}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the texture in the shader \\
+\hline
+{\em texture} & \mbox{\hyperlink{classsf_1_1_texture}{Texture}} to assign \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_a7806a29ffbd0ee9251256a9e7265d479}\label{classsf_1_1_shader_a7806a29ffbd0ee9251256a9e7265d479}} 
+\index{sf::Shader@{sf::Shader}!setUniform@{setUniform}}
+\index{setUniform@{setUniform}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform()}{setUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [26/32]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{classsf_1_1_texture}{Texture}} \&}]{texture }\end{DoxyParamCaption})}
+
+
+
+Specify a texture as {\ttfamily sampler2D} uniform. 
+
+{\itshape name} is the name of the variable to change in the shader. The corresponding parameter in the shader must be a 2D texture ({\ttfamily sampler2D} GLSL type).
+
+Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{uniform sampler2D the\_texture; \textcolor{comment}{// this is the variable in the shader}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_texture}{sf::Texture}} texture;}
+\DoxyCodeLine{...}
+\DoxyCodeLine{shader.setUniform(\textcolor{stringliteral}{"{}the\_texture"{}}, texture);}
+
+\end{DoxyCode}
+ It is important to note that {\itshape texture} must remain alive as long as the shader uses it, no copy is made internally.
+
+To use the texture of the object being drawn, which cannot be known in advance, you can pass the special value \mbox{\hyperlink{classsf_1_1_shader_ad679e434fc4f1a1af65f3815b2310fb5}{sf\+::\+Shader\+::\+Current\+Texture}}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{shader.setUniform(\textcolor{stringliteral}{"{}the\_texture"{}}, \mbox{\hyperlink{classsf_1_1_shader_ad679e434fc4f1a1af65f3815b2310fb5}{sf::Shader::CurrentTexture}}).}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the texture in the shader \\
+\hline
+{\em texture} & \mbox{\hyperlink{classsf_1_1_texture}{Texture}} to assign \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_ab18f531e1f726b88fec1cf5a1e6af26d}\label{classsf_1_1_shader_ab18f531e1f726b88fec1cf5a1e6af26d}} 
+\index{sf::Shader@{sf::Shader}!setUniform@{setUniform}}
+\index{setUniform@{setUniform}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform()}{setUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [27/32]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{\mbox{\hyperlink{structsf_1_1_shader_1_1_current_texture_type}{Current\+Texture\+Type}}}]{ }\end{DoxyParamCaption})}
+
+
+
+Specify current texture as {\ttfamily sampler2D} uniform. 
+
+This overload maps a shader texture variable to the texture of the object being drawn, which cannot be known in advance. The second argument must be \mbox{\hyperlink{classsf_1_1_shader_ad679e434fc4f1a1af65f3815b2310fb5}{sf\+::\+Shader\+::\+Current\+Texture}}. The corresponding parameter in the shader must be a 2D texture ({\ttfamily sampler2D} GLSL type).
+
+Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{uniform sampler2D current; \textcolor{comment}{// this is the variable in the shader}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{shader.setUniform(\textcolor{stringliteral}{"{}current"{}}, \mbox{\hyperlink{classsf_1_1_shader_ad679e434fc4f1a1af65f3815b2310fb5}{sf::Shader::CurrentTexture}});}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the texture in the shader \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_ab18f531e1f726b88fec1cf5a1e6af26d}\label{classsf_1_1_shader_ab18f531e1f726b88fec1cf5a1e6af26d}} 
+\index{sf::Shader@{sf::Shader}!setUniform@{setUniform}}
+\index{setUniform@{setUniform}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform()}{setUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [28/32]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{\mbox{\hyperlink{structsf_1_1_shader_1_1_current_texture_type}{Current\+Texture\+Type}}}]{ }\end{DoxyParamCaption})}
+
+
+
+Specify current texture as {\ttfamily sampler2D} uniform. 
+
+This overload maps a shader texture variable to the texture of the object being drawn, which cannot be known in advance. The second argument must be \mbox{\hyperlink{classsf_1_1_shader_ad679e434fc4f1a1af65f3815b2310fb5}{sf\+::\+Shader\+::\+Current\+Texture}}. The corresponding parameter in the shader must be a 2D texture ({\ttfamily sampler2D} GLSL type).
+
+Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{uniform sampler2D current; \textcolor{comment}{// this is the variable in the shader}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{shader.setUniform(\textcolor{stringliteral}{"{}current"{}}, \mbox{\hyperlink{classsf_1_1_shader_ad679e434fc4f1a1af65f3815b2310fb5}{sf::Shader::CurrentTexture}});}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the texture in the shader \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_abf78e3bea1e9b0bab850b6b0a0de29c7}\label{classsf_1_1_shader_abf78e3bea1e9b0bab850b6b0a0de29c7}} 
+\index{sf::Shader@{sf::Shader}!setUniform@{setUniform}}
+\index{setUniform@{setUniform}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform()}{setUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [29/32]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{float}]{x }\end{DoxyParamCaption})}
+
+
+
+Specify value for {\ttfamily float} uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em x} & Value of the float scalar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_abf78e3bea1e9b0bab850b6b0a0de29c7}\label{classsf_1_1_shader_abf78e3bea1e9b0bab850b6b0a0de29c7}} 
+\index{sf::Shader@{sf::Shader}!setUniform@{setUniform}}
+\index{setUniform@{setUniform}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform()}{setUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [30/32]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{float}]{x }\end{DoxyParamCaption})}
+
+
+
+Specify value for {\ttfamily float} uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em x} & Value of the float scalar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_ae4fc8b4c18e6b653952bce5c8c81e4a0}\label{classsf_1_1_shader_ae4fc8b4c18e6b653952bce5c8c81e4a0}} 
+\index{sf::Shader@{sf::Shader}!setUniform@{setUniform}}
+\index{setUniform@{setUniform}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform()}{setUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [31/32]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+Specify value for {\ttfamily int} uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em x} & Value of the int scalar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_ae4fc8b4c18e6b653952bce5c8c81e4a0}\label{classsf_1_1_shader_ae4fc8b4c18e6b653952bce5c8c81e4a0}} 
+\index{sf::Shader@{sf::Shader}!setUniform@{setUniform}}
+\index{setUniform@{setUniform}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform()}{setUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [32/32]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+Specify value for {\ttfamily int} uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em x} & Value of the int scalar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_a731d3b9953c50fe7d3fb03340b97deff}\label{classsf_1_1_shader_a731d3b9953c50fe7d3fb03340b97deff}} 
+\index{sf::Shader@{sf::Shader}!setUniformArray@{setUniformArray}}
+\index{setUniformArray@{setUniformArray}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniformArray()}{setUniformArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/12]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform\+Array (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const float $\ast$}]{scalar\+Array,  }\item[{std\+::size\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Specify values for {\ttfamily float}\mbox{[}\mbox{]} array uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em scalar\+Array} & pointer to array of {\ttfamily float} values \\
+\hline
+{\em length} & Number of elements in the array \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_a731d3b9953c50fe7d3fb03340b97deff}\label{classsf_1_1_shader_a731d3b9953c50fe7d3fb03340b97deff}} 
+\index{sf::Shader@{sf::Shader}!setUniformArray@{setUniformArray}}
+\index{setUniformArray@{setUniformArray}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniformArray()}{setUniformArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/12]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform\+Array (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const float $\ast$}]{scalar\+Array,  }\item[{std\+::size\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Specify values for {\ttfamily float}\mbox{[}\mbox{]} array uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em scalar\+Array} & pointer to array of {\ttfamily float} values \\
+\hline
+{\em length} & Number of elements in the array \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_a69587701d347ba21d506197d0fb9f842}\label{classsf_1_1_shader_a69587701d347ba21d506197d0fb9f842}} 
+\index{sf::Shader@{sf::Shader}!setUniformArray@{setUniformArray}}
+\index{setUniformArray@{setUniformArray}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniformArray()}{setUniformArray()}\hspace{0.1cm}{\footnotesize\ttfamily [3/12]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform\+Array (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_1_1_glsl_a5740f2f47b1bea944dd94045af397e39}{Glsl\+::\+Mat3}} $\ast$}]{matrix\+Array,  }\item[{std\+::size\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Specify values for {\ttfamily mat3}\mbox{[}\mbox{]} array uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em matrix\+Array} & pointer to array of {\ttfamily mat3} values \\
+\hline
+{\em length} & Number of elements in the array \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_a69587701d347ba21d506197d0fb9f842}\label{classsf_1_1_shader_a69587701d347ba21d506197d0fb9f842}} 
+\index{sf::Shader@{sf::Shader}!setUniformArray@{setUniformArray}}
+\index{setUniformArray@{setUniformArray}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniformArray()}{setUniformArray()}\hspace{0.1cm}{\footnotesize\ttfamily [4/12]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform\+Array (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_1_1_glsl_a5740f2f47b1bea944dd94045af397e39}{Glsl\+::\+Mat3}} $\ast$}]{matrix\+Array,  }\item[{std\+::size\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Specify values for {\ttfamily mat3}\mbox{[}\mbox{]} array uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em matrix\+Array} & pointer to array of {\ttfamily mat3} values \\
+\hline
+{\em length} & Number of elements in the array \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_a066b0ba02e1c1bddc9e2571eca1156ab}\label{classsf_1_1_shader_a066b0ba02e1c1bddc9e2571eca1156ab}} 
+\index{sf::Shader@{sf::Shader}!setUniformArray@{setUniformArray}}
+\index{setUniformArray@{setUniformArray}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniformArray()}{setUniformArray()}\hspace{0.1cm}{\footnotesize\ttfamily [5/12]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform\+Array (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_1_1_glsl_a7f4817a969b6cc76c0828eaecf8f386b}{Glsl\+::\+Mat4}} $\ast$}]{matrix\+Array,  }\item[{std\+::size\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Specify values for {\ttfamily mat4}\mbox{[}\mbox{]} array uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em matrix\+Array} & pointer to array of {\ttfamily mat4} values \\
+\hline
+{\em length} & Number of elements in the array \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_a066b0ba02e1c1bddc9e2571eca1156ab}\label{classsf_1_1_shader_a066b0ba02e1c1bddc9e2571eca1156ab}} 
+\index{sf::Shader@{sf::Shader}!setUniformArray@{setUniformArray}}
+\index{setUniformArray@{setUniformArray}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniformArray()}{setUniformArray()}\hspace{0.1cm}{\footnotesize\ttfamily [6/12]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform\+Array (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_1_1_glsl_a7f4817a969b6cc76c0828eaecf8f386b}{Glsl\+::\+Mat4}} $\ast$}]{matrix\+Array,  }\item[{std\+::size\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Specify values for {\ttfamily mat4}\mbox{[}\mbox{]} array uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em matrix\+Array} & pointer to array of {\ttfamily mat4} values \\
+\hline
+{\em length} & Number of elements in the array \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_ab2e2eab45d9a091f3720c0879a5bb026}\label{classsf_1_1_shader_ab2e2eab45d9a091f3720c0879a5bb026}} 
+\index{sf::Shader@{sf::Shader}!setUniformArray@{setUniformArray}}
+\index{setUniformArray@{setUniformArray}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniformArray()}{setUniformArray()}\hspace{0.1cm}{\footnotesize\ttfamily [7/12]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform\+Array (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_1_1_glsl_abfcb09fe753e2d3afdf5b34ead5ac998}{Glsl\+::\+Vec2}} $\ast$}]{vector\+Array,  }\item[{std\+::size\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Specify values for {\ttfamily vec2}\mbox{[}\mbox{]} array uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em vector\+Array} & pointer to array of {\ttfamily vec2} values \\
+\hline
+{\em length} & Number of elements in the array \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_ab2e2eab45d9a091f3720c0879a5bb026}\label{classsf_1_1_shader_ab2e2eab45d9a091f3720c0879a5bb026}} 
+\index{sf::Shader@{sf::Shader}!setUniformArray@{setUniformArray}}
+\index{setUniformArray@{setUniformArray}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniformArray()}{setUniformArray()}\hspace{0.1cm}{\footnotesize\ttfamily [8/12]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform\+Array (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_1_1_glsl_abfcb09fe753e2d3afdf5b34ead5ac998}{Glsl\+::\+Vec2}} $\ast$}]{vector\+Array,  }\item[{std\+::size\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Specify values for {\ttfamily vec2}\mbox{[}\mbox{]} array uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em vector\+Array} & pointer to array of {\ttfamily vec2} values \\
+\hline
+{\em length} & Number of elements in the array \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_aeae884292fed977bbea5039818f208e7}\label{classsf_1_1_shader_aeae884292fed977bbea5039818f208e7}} 
+\index{sf::Shader@{sf::Shader}!setUniformArray@{setUniformArray}}
+\index{setUniformArray@{setUniformArray}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniformArray()}{setUniformArray()}\hspace{0.1cm}{\footnotesize\ttfamily [9/12]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform\+Array (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_1_1_glsl_a054bd0a821d072e08de6c358de9f67ad}{Glsl\+::\+Vec3}} $\ast$}]{vector\+Array,  }\item[{std\+::size\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Specify values for {\ttfamily vec3}\mbox{[}\mbox{]} array uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em vector\+Array} & pointer to array of {\ttfamily vec3} values \\
+\hline
+{\em length} & Number of elements in the array \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_aeae884292fed977bbea5039818f208e7}\label{classsf_1_1_shader_aeae884292fed977bbea5039818f208e7}} 
+\index{sf::Shader@{sf::Shader}!setUniformArray@{setUniformArray}}
+\index{setUniformArray@{setUniformArray}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniformArray()}{setUniformArray()}\hspace{0.1cm}{\footnotesize\ttfamily [10/12]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform\+Array (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_1_1_glsl_a054bd0a821d072e08de6c358de9f67ad}{Glsl\+::\+Vec3}} $\ast$}]{vector\+Array,  }\item[{std\+::size\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Specify values for {\ttfamily vec3}\mbox{[}\mbox{]} array uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em vector\+Array} & pointer to array of {\ttfamily vec3} values \\
+\hline
+{\em length} & Number of elements in the array \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_aa89ac1ea7918c9b1c2232df59affb7fa}\label{classsf_1_1_shader_aa89ac1ea7918c9b1c2232df59affb7fa}} 
+\index{sf::Shader@{sf::Shader}!setUniformArray@{setUniformArray}}
+\index{setUniformArray@{setUniformArray}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniformArray()}{setUniformArray()}\hspace{0.1cm}{\footnotesize\ttfamily [11/12]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform\+Array (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_1_1_glsl_a1370d4e28095744e9e5271eb34bae8d4}{Glsl\+::\+Vec4}} $\ast$}]{vector\+Array,  }\item[{std\+::size\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Specify values for {\ttfamily vec4}\mbox{[}\mbox{]} array uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em vector\+Array} & pointer to array of {\ttfamily vec4} values \\
+\hline
+{\em length} & Number of elements in the array \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_shader_aa89ac1ea7918c9b1c2232df59affb7fa}\label{classsf_1_1_shader_aa89ac1ea7918c9b1c2232df59affb7fa}} 
+\index{sf::Shader@{sf::Shader}!setUniformArray@{setUniformArray}}
+\index{setUniformArray@{setUniformArray}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniformArray()}{setUniformArray()}\hspace{0.1cm}{\footnotesize\ttfamily [12/12]}}
+{\footnotesize\ttfamily void sf\+::\+Shader\+::set\+Uniform\+Array (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{namespacesf_1_1_glsl_a1370d4e28095744e9e5271eb34bae8d4}{Glsl\+::\+Vec4}} $\ast$}]{vector\+Array,  }\item[{std\+::size\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Specify values for {\ttfamily vec4}\mbox{[}\mbox{]} array uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the uniform variable in GLSL \\
+\hline
+{\em vector\+Array} & pointer to array of {\ttfamily vec4} values \\
+\hline
+{\em length} & Number of elements in the array \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsf_1_1_shader_ad679e434fc4f1a1af65f3815b2310fb5}\label{classsf_1_1_shader_ad679e434fc4f1a1af65f3815b2310fb5}} 
+\index{sf::Shader@{sf::Shader}!CurrentTexture@{CurrentTexture}}
+\index{CurrentTexture@{CurrentTexture}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{CurrentTexture}{CurrentTexture}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{structsf_1_1_shader_1_1_current_texture_type}{Current\+Texture\+Type}} sf\+::\+Shader\+::\+Current\+Texture\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Represents the texture of the object being drawn. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shader_ab18f531e1f726b88fec1cf5a1e6af26d}{set\+Uniform(const std\+::string\&, Current\+Texture\+Type)}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source_l00082}{82}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source}{Shader.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_shader_a5d7b43495def6cc6bd91b6c5d167a485}\label{classsf_1_1_shader_a5d7b43495def6cc6bd91b6c5d167a485}} 
+\index{sf::Shader@{sf::Shader}!m\_currentTexture@{m\_currentTexture}}
+\index{m\_currentTexture@{m\_currentTexture}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{m\_currentTexture}{m\_currentTexture}}
+{\footnotesize\ttfamily int sf\+::\+Shader\+::m\+\_\+current\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Location of the current texture in the shader. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source_l00749}{749}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source}{Shader.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_shader_a72169743cfd7206fd49759f705a15466}\label{classsf_1_1_shader_a72169743cfd7206fd49759f705a15466}} 
+\index{sf::Shader@{sf::Shader}!m\_shaderProgram@{m\_shaderProgram}}
+\index{m\_shaderProgram@{m\_shaderProgram}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{m\_shaderProgram}{m\_shaderProgram}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Shader\+::m\+\_\+shader\+Program\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Open\+GL identifier for the program. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source_l00748}{748}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source}{Shader.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_shader_a3daecf04a0045a1d7445959432b5a52f}\label{classsf_1_1_shader_a3daecf04a0045a1d7445959432b5a52f}} 
+\index{sf::Shader@{sf::Shader}!m\_textures@{m\_textures}}
+\index{m\_textures@{m\_textures}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{m\_textures}{m\_textures}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_shader_a9a60c773571550fd54a394d4ce83f4a3}{Texture\+Table}} sf\+::\+Shader\+::m\+\_\+textures\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{classsf_1_1_texture}{Texture}} variables in the shader, mapped to their location. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source_l00750}{750}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source}{Shader.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_shader_a1bf3ba9e8ca3842a9b4cb084443d0477}\label{classsf_1_1_shader_a1bf3ba9e8ca3842a9b4cb084443d0477}} 
+\index{sf::Shader@{sf::Shader}!m\_uniforms@{m\_uniforms}}
+\index{m\_uniforms@{m\_uniforms}!sf::Shader@{sf::Shader}}
+\doxysubsubsection{\texorpdfstring{m\_uniforms}{m\_uniforms}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_shader_a010c8213c1f81acd3b285566f6c8fced}{Uniform\+Table}} sf\+::\+Shader\+::m\+\_\+uniforms\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Parameters location cache. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source_l00751}{751}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source}{Shader.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+SFML-\/2.\+5.\+1/include/\+SFML/\+Graphics/\mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp}{Shader.\+hpp}}\item 
+Week14/\+SFML-\/2.\+5.\+1/include/\+SFML/\+Graphics/\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp}{Shader.\+hpp}}\end{DoxyCompactItemize}

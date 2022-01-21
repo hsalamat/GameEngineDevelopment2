@@ -1,0 +1,145 @@
+\hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source}{}\doxysection{Window.\+cpp}
+\label{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source}\index{Week14/SFML-\/2.5.1/examples/window/Window.cpp@{Week14/SFML-\/2.5.1/examples/window/Window.cpp}}
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00002}00002 \textcolor{comment}{// Headers}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00004}00004 \textcolor{comment}{}\textcolor{preprocessor}{\#include <SFML/Window.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include <SFML/OpenGL.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00014}\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00014}} \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00015}00015 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00016}00016     \textcolor{comment}{// Request a 24-\/bits depth buffer when creating the window}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00017}00017     \mbox{\hyperlink{structsf_1_1_context_settings}{sf::ContextSettings}} contextSettings;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00018}00018     contextSettings.\mbox{\hyperlink{structsf_1_1_context_settings_a4809e22089c2af7276b8809b5aede7bb}{depthBits}} = 24;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00020}00020     \textcolor{comment}{// Create the main window}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00021}00021     \mbox{\hyperlink{classsf_1_1_window}{sf::Window}} window(\mbox{\hyperlink{classsf_1_1_video_mode}{sf::VideoMode}}(640, 480), \textcolor{stringliteral}{"{}SFML window with OpenGL"{}}, \mbox{\hyperlink{group__window_ggaa75e94f0d3f52da8a61ed467ffd6d6e8aaf73ca9c9fa787f9da9c1d7527d42734}{sf::Style::Default}}, contextSettings);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00023}00023     \textcolor{comment}{// Make it the active window for OpenGL calls}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00024}00024     window.\mbox{\hyperlink{classsf_1_1_window_aaab549da64cedf74fa6f1ae7a3cc79e0}{setActive}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00026}00026     \textcolor{comment}{// Set the color and depth clear values}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00027}00027     glClearDepth(1.f);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00028}00028     glClearColor(0.f, 0.f, 0.f, 1.f);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00030}00030     \textcolor{comment}{// Enable Z-\/buffer read and write}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00031}00031     glEnable(GL\_DEPTH\_TEST);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00032}00032     glDepthMask(GL\_TRUE);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00034}00034     \textcolor{comment}{// Disable lighting and texturing}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00035}00035     glDisable(GL\_LIGHTING);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00036}00036     glDisable(GL\_TEXTURE\_2D);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00038}00038     \textcolor{comment}{// Configure the viewport (the same size as the window)}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00039}00039     glViewport(0, 0, window.\mbox{\hyperlink{classsf_1_1_window_a3969926741cbe83d7f9eeaf5333d4e71}{getSize}}().\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}}, window.\mbox{\hyperlink{classsf_1_1_window_a3969926741cbe83d7f9eeaf5333d4e71}{getSize}}().\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00041}00041     \textcolor{comment}{// Setup a perspective projection}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00042}00042     glMatrixMode(GL\_PROJECTION);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00043}00043     glLoadIdentity();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00044}00044     GLfloat ratio = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(window.\mbox{\hyperlink{classsf_1_1_window_a3969926741cbe83d7f9eeaf5333d4e71}{getSize}}().\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}}) / window.\mbox{\hyperlink{classsf_1_1_window_a3969926741cbe83d7f9eeaf5333d4e71}{getSize}}().\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00045}00045     glFrustum(-\/ratio, ratio, -\/1.f, 1.f, 1.f, 500.f);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00047}00047     \textcolor{comment}{// Define a 3D cube (6 faces made of 2 triangles composed by 3 vertices)}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00048}00048     GLfloat cube[] =}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00049}00049     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00050}00050         \textcolor{comment}{// positions    // colors (r, g, b, a)}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00051}00051         -\/50, -\/50, -\/50,  0, 0, 1, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00052}00052         -\/50,  50, -\/50,  0, 0, 1, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00053}00053         -\/50, -\/50,  50,  0, 0, 1, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00054}00054         -\/50, -\/50,  50,  0, 0, 1, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00055}00055         -\/50,  50, -\/50,  0, 0, 1, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00056}00056         -\/50,  50,  50,  0, 0, 1, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00058}00058          50, -\/50, -\/50,  0, 1, 0, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00059}00059          50,  50, -\/50,  0, 1, 0, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00060}00060          50, -\/50,  50,  0, 1, 0, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00061}00061          50, -\/50,  50,  0, 1, 0, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00062}00062          50,  50, -\/50,  0, 1, 0, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00063}00063          50,  50,  50,  0, 1, 0, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00065}00065         -\/50, -\/50, -\/50,  1, 0, 0, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00066}00066          50, -\/50, -\/50,  1, 0, 0, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00067}00067         -\/50, -\/50,  50,  1, 0, 0, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00068}00068         -\/50, -\/50,  50,  1, 0, 0, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00069}00069          50, -\/50, -\/50,  1, 0, 0, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00070}00070          50, -\/50,  50,  1, 0, 0, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00072}00072         -\/50,  50, -\/50,  0, 1, 1, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00073}00073          50,  50, -\/50,  0, 1, 1, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00074}00074         -\/50,  50,  50,  0, 1, 1, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00075}00075         -\/50,  50,  50,  0, 1, 1, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00076}00076          50,  50, -\/50,  0, 1, 1, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00077}00077          50,  50,  50,  0, 1, 1, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00079}00079         -\/50, -\/50, -\/50,  1, 0, 1, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00080}00080          50, -\/50, -\/50,  1, 0, 1, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00081}00081         -\/50,  50, -\/50,  1, 0, 1, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00082}00082         -\/50,  50, -\/50,  1, 0, 1, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00083}00083          50, -\/50, -\/50,  1, 0, 1, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00084}00084          50,  50, -\/50,  1, 0, 1, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00086}00086         -\/50, -\/50,  50,  1, 1, 0, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00087}00087          50, -\/50,  50,  1, 1, 0, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00088}00088         -\/50,  50,  50,  1, 1, 0, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00089}00089         -\/50,  50,  50,  1, 1, 0, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00090}00090          50, -\/50,  50,  1, 1, 0, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00091}00091          50,  50,  50,  1, 1, 0, 1,}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00092}00092     \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00094}00094     \textcolor{comment}{// Enable position and color vertex components}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00095}00095     glEnableClientState(GL\_VERTEX\_ARRAY);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00096}00096     glEnableClientState(GL\_COLOR\_ARRAY);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00097}00097     glVertexPointer(3, GL\_FLOAT, 7 * \textcolor{keyword}{sizeof}(GLfloat), cube);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00098}00098     glColorPointer(4, GL\_FLOAT, 7 * \textcolor{keyword}{sizeof}(GLfloat), cube + 3);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00100}00100     \textcolor{comment}{// Disable normal and texture coordinates vertex components}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00101}00101     glDisableClientState(GL\_NORMAL\_ARRAY);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00102}00102     glDisableClientState(GL\_TEXTURE\_COORD\_ARRAY);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00103}00103 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00104}00104     \textcolor{comment}{// Create a clock for measuring the time elapsed}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00105}00105     \mbox{\hyperlink{classsf_1_1_clock}{sf::Clock}} clock;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00106}00106 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00107}00107     \textcolor{comment}{// Start the game loop}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00108}00108     \textcolor{keywordflow}{while} (window.\mbox{\hyperlink{classsf_1_1_window_ae873503db7d48157bb9cbf6129562bce}{isOpen}}())}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00109}00109     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00110}00110         \textcolor{comment}{// Process events}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00111}00111         \mbox{\hyperlink{classsf_1_1_event}{sf::Event}} event;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00112}00112         \textcolor{keywordflow}{while} (window.\mbox{\hyperlink{classsf_1_1_window_a338e996585faf82e93069858e3b531b7}{pollEvent}}(event))}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00113}00113         \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00114}00114             \textcolor{comment}{// Close window: exit}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00115}00115             \textcolor{keywordflow}{if} (event.\mbox{\hyperlink{classsf_1_1_event_adf2f8044f713fd9d6019077b0d1ffe0a}{type}} == \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa4f718a7f43b0f2d46be222fe23198d9e}{sf::Event::Closed}})}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00116}00116                 window.\mbox{\hyperlink{classsf_1_1_window_a99d1e030387b0c26f5995670504fe7b5}{close}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00117}00117 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00118}00118             \textcolor{comment}{// Escape key: exit}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00119}00119             \textcolor{keywordflow}{if} ((event.\mbox{\hyperlink{classsf_1_1_event_adf2f8044f713fd9d6019077b0d1ffe0a}{type}} == \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4}{sf::Event::KeyPressed}}) \&\& (event.\mbox{\hyperlink{classsf_1_1_event_a45b92fc6757ca7c193f06b302e424ab0}{key}}.\mbox{\hyperlink{structsf_1_1_event_1_1_key_event_a2879fdab8a68cb1c6ecc45730a2d0e61}{code}} == \mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142a72019ff9ecb145a9d3910177a49c757a}{sf::Keyboard::Escape}}))}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00120}00120                 window.\mbox{\hyperlink{classsf_1_1_window_a99d1e030387b0c26f5995670504fe7b5}{close}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00121}00121 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00122}00122             \textcolor{comment}{// Resize event: adjust the viewport}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00123}00123             \textcolor{keywordflow}{if} (event.\mbox{\hyperlink{classsf_1_1_event_adf2f8044f713fd9d6019077b0d1ffe0a}{type}} == \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aac5a9f3d76cbf4a577fa982623f3198eb}{sf::Event::Resized}})}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00124}00124                 glViewport(0, 0, event.\mbox{\hyperlink{classsf_1_1_event_a85dae56a377eeffd39183c3f6fc96cb9}{size}}.\mbox{\hyperlink{structsf_1_1_event_1_1_size_event_a20ea1b78c9bb1604432f8f0067bbfd94}{width}}, event.\mbox{\hyperlink{classsf_1_1_event_a85dae56a377eeffd39183c3f6fc96cb9}{size}}.\mbox{\hyperlink{structsf_1_1_event_1_1_size_event_af0f76a599d5f48189cb8d78d4e5facdb}{height}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00125}00125         \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00126}00126 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00127}00127         \textcolor{comment}{// Clear the color and depth buffers}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00128}00128         glClear(GL\_COLOR\_BUFFER\_BIT | GL\_DEPTH\_BUFFER\_BIT);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00129}00129 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00130}00130         \textcolor{comment}{// Apply some transformations to rotate the cube}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00131}00131         glMatrixMode(GL\_MODELVIEW);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00132}00132         glLoadIdentity();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00133}00133         glTranslatef(0.f, 0.f, -\/200.f);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00134}00134         glRotatef(clock.\mbox{\hyperlink{classsf_1_1_clock_abe889b42a65bcd8eefc16419645d08a7}{getElapsedTime}}().\mbox{\hyperlink{classsf_1_1_time_aa3df2f992d0b0041b4eb02258d43f0e3}{asSeconds}}() * 50, 1.f, 0.f, 0.f);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00135}00135         glRotatef(clock.\mbox{\hyperlink{classsf_1_1_clock_abe889b42a65bcd8eefc16419645d08a7}{getElapsedTime}}().\mbox{\hyperlink{classsf_1_1_time_aa3df2f992d0b0041b4eb02258d43f0e3}{asSeconds}}() * 30, 0.f, 1.f, 0.f);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00136}00136         glRotatef(clock.\mbox{\hyperlink{classsf_1_1_clock_abe889b42a65bcd8eefc16419645d08a7}{getElapsedTime}}().\mbox{\hyperlink{classsf_1_1_time_aa3df2f992d0b0041b4eb02258d43f0e3}{asSeconds}}() * 90, 0.f, 0.f, 1.f);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00137}00137 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00138}00138         \textcolor{comment}{// Draw the cube}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00139}00139         glDrawArrays(GL\_TRIANGLES, 0, 36);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00140}00140 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00141}00141         \textcolor{comment}{// Finally, display the rendered frame on screen}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00142}00142         window.\mbox{\hyperlink{classsf_1_1_window_adabf839cb103ac96cfc82f781638772a}{display}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00143}00143     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00144}00144 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00145}00145     \textcolor{keywordflow}{return} EXIT\_SUCCESS;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2window_2_window_8cpp_source_l00146}00146 \}}
+
+\end{DoxyCode}

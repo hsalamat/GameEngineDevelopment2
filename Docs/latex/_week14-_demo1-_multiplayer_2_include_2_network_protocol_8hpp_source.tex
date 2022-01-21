@@ -1,0 +1,91 @@
+\hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source}{}\doxysection{Network\+Protocol.\+hpp}
+\label{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source}\index{Week14/Week14-\/Demo1-\/Multiplayer/Include/NetworkProtocol.hpp@{Week14/Week14-\/Demo1-\/Multiplayer/Include/NetworkProtocol.hpp}}
+\mbox{\hyperlink{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#pragma region step 11}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include <SFML/Config.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00005}00005 \textcolor{preprocessor}{\#include <SFML/System/Vector2.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00008}\mbox{\hyperlink{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_a46f6fa8990f0a21731b90db2d1e75e21}{00008}} \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_network_protocol_8hpp_a46f6fa8990f0a21731b90db2d1e75e21}{ServerPort}} = 5000;}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00010}00010 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_server}{Server}}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00011}00011 \{}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00012}00012     \textcolor{comment}{// Packets originated in the server}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00013}\mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220}{00013}}     \textcolor{keyword}{enum} \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220}{PacketType}}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00014}00014     \{}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00015}00015         \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a6cd0e2c2482d4841446d21650cfce562}{BroadcastMessage}},   \textcolor{comment}{// format: [Int32:packetType] [string:message]}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00016}00016         \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a01037da7a85ce2494c247553ddebfbf7}{SpawnSelf}},         \textcolor{comment}{// format: [Int32:packetType]}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00017}00017         \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a1bf0bd9c2b28f6f00fdf4c1cc7af3388}{InitialState}},}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00018}00018         \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220adc6586044f8877151745cc07e86aaafa}{PlayerEvent}},}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00019}00019         \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a728c998480b4325abd1de68a647efddb}{PlayerRealtimeChange}},}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00020}00020         \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a0b14dd2cfef4723b98c71a2e38473ab9}{PlayerConnect}},}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00021}00021         \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a627515caee434e5f1a8797dcf2414336}{PlayerDisconnect}},}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00022}00022         \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220af39f187a4ee5bbe2060d16099a34ed11}{AcceptCoopPartner}},}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00023}00023         \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220ac3313cf4836d35b920b827b0c853ed91}{SpawnEnemy}},}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00024}00024         \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a903d70ec235b5d0091e1efabc782e218}{SpawnPickup}},}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00025}00025         \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220a2bc55dcb334ed968816aa4ff901e205a}{UpdateClientState}},}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00026}00026         \mbox{\hyperlink{namespace_server_a3f01a66639d25aac95a4f661182e2220ac3149c45c0b866c1ad17a2c9cf969eaf}{MissionSuccess}}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00027}00027     \};}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00028}00028 \}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00030}00030 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_client}{Client}}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00031}00031 \{}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00032}00032     \textcolor{comment}{// Packets originated in the client}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00033}\mbox{\hyperlink{namespace_client_a68298dc54679aba9954afeb49186f8f0}{00033}}     \textcolor{keyword}{enum} \mbox{\hyperlink{namespace_client_a68298dc54679aba9954afeb49186f8f0}{PacketType}}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00034}00034     \{}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00035}00035         \mbox{\hyperlink{namespace_client_a68298dc54679aba9954afeb49186f8f0a81a4415cfba96f2c62e337570365cc34}{PlayerEvent}},}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00036}00036         \mbox{\hyperlink{namespace_client_a68298dc54679aba9954afeb49186f8f0ab92ea026fd3ad34751b56d7733e814e4}{PlayerRealtimeChange}},}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00037}00037         \mbox{\hyperlink{namespace_client_a68298dc54679aba9954afeb49186f8f0a81fcf6a64d26ded8d4e54e4df020f5b1}{RequestCoopPartner}},}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00038}00038         \mbox{\hyperlink{namespace_client_a68298dc54679aba9954afeb49186f8f0af1f1f7cef86c4058a0105657e764f72c}{PositionUpdate}},}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00039}00039         \mbox{\hyperlink{namespace_client_a68298dc54679aba9954afeb49186f8f0ad53486696653a4baa5f48b134f01caad}{GameEvent}},}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00040}00040         \mbox{\hyperlink{namespace_client_a68298dc54679aba9954afeb49186f8f0a0875fd7848910bd45f98d72f5081a205}{Quit}}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00041}00041     \};}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00042}00042 \}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00044}00044 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_player_actions}{PlayerActions}}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00045}00045 \{}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00046}\mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2}{00046}}     \textcolor{keyword}{enum} \mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2}{Action}}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00047}00047     \{}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00048}00048         \mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2aa6ab9b694e560ea8186a96f457bd11a6}{MoveLeft}},}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00049}00049         \mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2ad337d4f32aaab26a1eb7c6d2c5a831a7}{MoveRight}},}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00050}00050         \mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2a5705a0679fc0db1d6307887522f0f880}{MoveUp}},}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00051}00051         \mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2a30203a3aa8b58ea8dcc6ce6e84da3610}{MoveDown}},}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00052}00052         \mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2a56eecd2f119a77a9e362a4b9312f916f}{Fire}},}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00053}00053         \mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2ab162b8f755a6888ecb25100c9df64471}{LaunchMissile}},}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00054}00054         \mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2ab84743d15c2e90a15d4a6b48b06a02bb}{ActionCount}}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00055}00055     \};}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00056}00056 \}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00058}00058 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_game_actions}{GameActions}}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00059}00059 \{}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00060}\mbox{\hyperlink{namespace_game_actions_a2c10fdbcc811f03c02f357cdd0c4e76d}{00060}}     \textcolor{keyword}{enum} \mbox{\hyperlink{namespace_game_actions_a2c10fdbcc811f03c02f357cdd0c4e76d}{Type}}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00061}00061     \{}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00062}00062         \mbox{\hyperlink{namespace_game_actions_a2c10fdbcc811f03c02f357cdd0c4e76da7c5f0acddf6e9f52706102fc83cf9f55}{EnemyExplode}},}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00063}00063     \};}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00065}00065     \textcolor{keyword}{struct }\mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2}{Action}}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00066}00066     \{}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00067}\mbox{\hyperlink{struct_game_actions_1_1_action_a3a53cd61f738526a284ecd1fd72ed5bf}{00067}}         \mbox{\hyperlink{struct_game_actions_1_1_action_a3a53cd61f738526a284ecd1fd72ed5bf}{Action}}()}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00068}00068         \{ \textcolor{comment}{// leave uninitialized}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00069}00069         \}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00071}\mbox{\hyperlink{struct_game_actions_1_1_action_a4f99d636b15eb70c090574871bc6e5c6}{00071}}         \mbox{\hyperlink{struct_game_actions_1_1_action_a4f99d636b15eb70c090574871bc6e5c6}{Action}}(\mbox{\hyperlink{namespace_game_actions_a2c10fdbcc811f03c02f357cdd0c4e76d}{Type}} \mbox{\hyperlink{struct_game_actions_1_1_action_ac4b04fe7c91e9f47d55665d7272b4622}{type}}, \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}} \mbox{\hyperlink{struct_game_actions_1_1_action_ac6834c74b5e0b5db797e2226da4dc83f}{position}})}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00072}00072             : \mbox{\hyperlink{struct_game_actions_1_1_action_ac4b04fe7c91e9f47d55665d7272b4622}{type}}(\mbox{\hyperlink{struct_game_actions_1_1_action_ac4b04fe7c91e9f47d55665d7272b4622}{type}})}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00073}00073             , \mbox{\hyperlink{struct_game_actions_1_1_action_ac6834c74b5e0b5db797e2226da4dc83f}{position}}(\mbox{\hyperlink{struct_game_actions_1_1_action_ac6834c74b5e0b5db797e2226da4dc83f}{position}})}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00074}00074         \{}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00075}00075         \}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00077}00077         \mbox{\hyperlink{namespace_game_actions_a2c10fdbcc811f03c02f357cdd0c4e76d}{Type}}            \mbox{\hyperlink{struct_game_actions_1_1_action_ac4b04fe7c91e9f47d55665d7272b4622}{type}};}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00078}00078         \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}}    \mbox{\hyperlink{struct_game_actions_1_1_action_ac6834c74b5e0b5db797e2226da4dc83f}{position}};}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00079}00079     \};}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00080}00080 \}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00084}00084 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_include_2_network_protocol_8hpp_source_l00085}00085 }
+
+\end{DoxyCode}

@@ -1,0 +1,1621 @@
+\hypertarget{xwbtool_8cpp_source}{}\doxysection{xwbtool.\+cpp}
+\label{xwbtool_8cpp_source}\index{Week13/XWBTool/xwbtool.cpp@{Week13/XWBTool/xwbtool.cpp}}
+\mbox{\hyperlink{xwbtool_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00001}00001 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00002}00002 \textcolor{comment}{// File: xwbtool.cpp}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00003}00003 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00004}00004 \textcolor{comment}{// Simple command-\/line tool for building wave banks from 1 or more .WAV files. This}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00005}00005 \textcolor{comment}{// generates binary wave banks compliant with XACT 3's Wave Bank .XWB format. The}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00006}00006 \textcolor{comment}{// .WAV files are not format converted or compressed.}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00007}00007 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00008}00008 \textcolor{comment}{// For a more full-\/featured builder, see XACT 3 and the XACTBLD tool in the legacy}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00009}00009 \textcolor{comment}{// DirectX SDK (June 2010) release.}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00010}00010 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00011}00011 \textcolor{comment}{// Copyright (c) Microsoft Corporation. All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00012}00012 \textcolor{comment}{// Licensed under the MIT License.}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00013}00013 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00014}00014 \textcolor{comment}{// http://go.microsoft.com/fwlink/?LinkId=248929}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00015}00015 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00017}00017 \textcolor{preprocessor}{\#pragma warning(push)}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00018}00018 \textcolor{preprocessor}{\#pragma warning(disable : 4005)}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00019}\mbox{\hyperlink{xwbtool_8cpp_ac7bef5d85e3dcd73eef56ad39ffc84a9}{00019}} \textcolor{preprocessor}{\#define WIN32\_LEAN\_AND\_MEAN}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00020}\mbox{\hyperlink{xwbtool_8cpp_a9f918755b601cf4bffca775992e6fb90}{00020}} \textcolor{preprocessor}{\#define NOMINMAX}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00021}\mbox{\hyperlink{xwbtool_8cpp_a5ceb8b3e84824f87cae315091546e67f}{00021}} \textcolor{preprocessor}{\#define NODRAWTEXT}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00022}\mbox{\hyperlink{xwbtool_8cpp_a2bedaca1c6ca66de2397772910fbe140}{00022}} \textcolor{preprocessor}{\#define NOGDI}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00023}\mbox{\hyperlink{xwbtool_8cpp_a0cb3b715e455027f14eb08891c46b5f5}{00023}} \textcolor{preprocessor}{\#define NOBITMAP}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00024}\mbox{\hyperlink{xwbtool_8cpp_a256fe1caeb996b1142c3eb51097fef0e}{00024}} \textcolor{preprocessor}{\#define NOMCX}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00025}\mbox{\hyperlink{xwbtool_8cpp_a14ac98af6281e748377693d824e41ca9}{00025}} \textcolor{preprocessor}{\#define NOSERVICE}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00026}\mbox{\hyperlink{xwbtool_8cpp_a34c6896a3b5f4079b3539fb8118be1d5}{00026}} \textcolor{preprocessor}{\#define NOHELP}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00027}00027 \textcolor{preprocessor}{\#pragma warning(pop)}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00029}00029 \textcolor{preprocessor}{\#include <Windows.h>}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00031}00031 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00032}00032 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00033}00033 \textcolor{preprocessor}{\#include <assert.h>}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00035}00035 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00036}00036 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00037}00037 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00038}00038 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00039}00039 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00041}00041 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_x_w_b_tool_2_w_a_v_file_reader_8h}{WAVFileReader.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00043}00043 \textcolor{preprocessor}{\#ifdef \_\_INTEL\_COMPILER}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00044}00044 \textcolor{preprocessor}{\#pragma warning(disable : 161)}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00045}00045 \textcolor{comment}{// warning \#161: unrecognized \#pragma}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00046}00046 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00052}00052 \textcolor{preprocessor}{\#ifndef MAKEFOURCC}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00053}\mbox{\hyperlink{xwbtool_8cpp_a706a9d1784b228428ecc412848c32d83}{00053}} \textcolor{preprocessor}{\#define MAKEFOURCC(ch0, ch1, ch2, ch3) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00054}00054 \textcolor{preprocessor}{                (static\_cast<uint32\_t>(static\_cast<uint8\_t>(ch0)) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00055}00055 \textcolor{preprocessor}{                | (static\_cast<uint32\_t>(static\_cast<uint8\_t>(ch1)) << 8) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00056}00056 \textcolor{preprocessor}{                | (static\_cast<uint32\_t>(static\_cast<uint8\_t>(ch2)) << 16) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00057}00057 \textcolor{preprocessor}{                | (static\_cast<uint32\_t>(static\_cast<uint8\_t>(ch3)) << 24))}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00058}00058 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* defined(MAKEFOURCC) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00060}00060 \textcolor{keyword}{namespace}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00061}00061 \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00062}00062     \textcolor{keyword}{struct }handle\_closer \{ \textcolor{keywordtype}{void} operator()(HANDLE h) \{ \textcolor{keywordflow}{if} (h) CloseHandle(h); \} \};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00064}00064     \textcolor{keyword}{using} ScopedHandle = std::unique\_ptr<void, handle\_closer>;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00066}00066     \textcolor{keyword}{inline} HANDLE safe\_handle(HANDLE h) \{ \textcolor{keywordflow}{return} (h == INVALID\_HANDLE\_VALUE) ? nullptr : h; \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00068}00068     \textcolor{keyword}{struct }find\_closer \{ \textcolor{keywordtype}{void} operator()(HANDLE h) \{ assert(h != INVALID\_HANDLE\_VALUE); \textcolor{keywordflow}{if} (h) FindClose(h); \} \};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00070}00070     \textcolor{keyword}{using} ScopedFindHandle = std::unique\_ptr<void, find\_closer>;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00072}\mbox{\hyperlink{xwbtool_8cpp_acad1a14eb25694084a1693c0e31a0269}{00072}} \textcolor{preprocessor}{\#define BLOCKALIGNPAD(a, b) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00073}00073 \textcolor{preprocessor}{    ((((a) + ((b) -\/ 1)) / (b)) * (b))}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00075}\mbox{\hyperlink{xwbtool_8cpp_adbc31aa8f43bf6f4c694adc04be94635}{00075}} \textcolor{preprocessor}{\#define XACT\_CONTENT\_VERSION 46 }\textcolor{comment}{// DirectX SDK (June 2010)}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00077}00077 \textcolor{preprocessor}{\#pragma pack(push, 1)}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00079}00079     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} DVD\_SECTOR\_SIZE = 2048;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00081}00081     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} ALIGNMENT\_MIN = 4;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00082}00082     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} ALIGNMENT\_DVD = DVD\_SECTOR\_SIZE;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00084}00084     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} MAX\_COMPACT\_DATA\_SEGMENT\_SIZE = 0x001FFFFF;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00086}00086     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} ENTRYNAME\_LENGTH = 64;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00087}00087 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00088}00088     \textcolor{keyword}{struct }REGION}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00089}00089     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00090}00090         uint32\_t    dwOffset;   \textcolor{comment}{// Region offset, in bytes.}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00091}00091         uint32\_t    dwLength;   \textcolor{comment}{// Region length, in bytes.}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00092}00092     \};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00094}00094     \textcolor{keyword}{struct }SAMPLEREGION}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00095}00095     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00096}00096         uint32\_t    dwStartSample;  \textcolor{comment}{// Start sample for the region.}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00097}00097         uint32\_t    dwTotalSamples; \textcolor{comment}{// Region length in samples.}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00098}00098     \};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00100}00100     \textcolor{keyword}{struct }HEADER}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00101}00101     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00102}00102         \textcolor{keyword}{static} \textcolor{keyword}{const} uint32\_t SIGNATURE = \mbox{\hyperlink{xwbtool_8cpp_a706a9d1784b228428ecc412848c32d83}{MAKEFOURCC}}(\textcolor{charliteral}{'W'}, \textcolor{charliteral}{'B'}, \textcolor{charliteral}{'N'}, \textcolor{charliteral}{'D'});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00103}00103         \textcolor{keyword}{static} \textcolor{keyword}{const} uint32\_t VERSION = 44;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00104}00104 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00105}00105         \textcolor{keyword}{enum} SEGIDX}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00106}00106         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00107}00107             SEGIDX\_BANKDATA = 0,       \textcolor{comment}{// Bank data}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00108}00108             SEGIDX\_ENTRYMETADATA,      \textcolor{comment}{// Entry meta-\/data}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00109}00109             SEGIDX\_SEEKTABLES,         \textcolor{comment}{// Storage for seek tables for the encoded waves.}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00110}00110             SEGIDX\_ENTRYNAMES,         \textcolor{comment}{// Entry friendly names}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00111}00111             SEGIDX\_ENTRYWAVEDATA,      \textcolor{comment}{// Entry wave data}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00112}00112             SEGIDX\_COUNT}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00113}00113         \};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00115}00115         uint32\_t    dwSignature;            \textcolor{comment}{// File signature}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00116}00116         uint32\_t    dwVersion;              \textcolor{comment}{// Version of the tool that created the file}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00117}00117         uint32\_t    dwHeaderVersion;        \textcolor{comment}{// Version of the file format}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00118}00118         REGION      Segments[SEGIDX\_COUNT]; \textcolor{comment}{// Segment lookup table}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00119}00119     \};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00120}00120 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00121}00121 \textcolor{preprocessor}{\#pragma warning( disable : 4201 4203 )}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00122}00122 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00123}00123     \textcolor{keyword}{union }MINIWAVEFORMAT}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00124}00124     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00125}00125         \textcolor{keyword}{static} \textcolor{keyword}{const} uint32\_t TAG\_PCM = 0x0;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00126}00126         \textcolor{keyword}{static} \textcolor{keyword}{const} uint32\_t TAG\_XMA = 0x1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00127}00127         \textcolor{keyword}{static} \textcolor{keyword}{const} uint32\_t TAG\_ADPCM = 0x2;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00128}00128         \textcolor{keyword}{static} \textcolor{keyword}{const} uint32\_t TAG\_WMA = 0x3;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00129}00129 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00130}00130         \textcolor{keyword}{static} \textcolor{keyword}{const} uint32\_t BITDEPTH\_8 = 0x0; \textcolor{comment}{// PCM only}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00131}00131         \textcolor{keyword}{static} \textcolor{keyword}{const} uint32\_t BITDEPTH\_16 = 0x1; \textcolor{comment}{// PCM only}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00132}00132 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00133}00133         \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} ADPCM\_BLOCKALIGN\_CONVERSION\_OFFSET = 22;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00134}00134 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00135}00135         \textcolor{keyword}{struct}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00136}00136         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00137}00137             uint32\_t       wFormatTag : 2;        \textcolor{comment}{// Format tag}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00138}00138             uint32\_t       nChannels : 3;        \textcolor{comment}{// Channel count (1 -\/ 6)}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00139}00139             uint32\_t       nSamplesPerSec : 18;       \textcolor{comment}{// Sampling rate}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00140}00140             uint32\_t       wBlockAlign : 8;        \textcolor{comment}{// Block alignment.  For WMA, lower 6 bits block alignment index, upper 2 bits bytes-\/per-\/second index.}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00141}00141             uint32\_t       wBitsPerSample : 1;        \textcolor{comment}{// Bits per sample (8 vs. 16, PCM only); WMAudio2/WMAudio3 (for WMA)}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00142}00142         \};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00143}00143 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00144}00144         uint32\_t           dwValue;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00145}00145     \};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00146}00146 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00147}00147     \textcolor{keyword}{struct }ENTRY}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00148}00148     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00149}00149         \textcolor{keyword}{static} \textcolor{keyword}{const} uint32\_t FLAGS\_READAHEAD = 0x00000001;     \textcolor{comment}{// Enable stream read-\/ahead}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00150}00150         \textcolor{keyword}{static} \textcolor{keyword}{const} uint32\_t FLAGS\_LOOPCACHE = 0x00000002;     \textcolor{comment}{// One or more looping sounds use this wave}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00151}00151         \textcolor{keyword}{static} \textcolor{keyword}{const} uint32\_t FLAGS\_REMOVELOOPTAIL = 0x00000004;\textcolor{comment}{// Remove data after the end of the loop region}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00152}00152         \textcolor{keyword}{static} \textcolor{keyword}{const} uint32\_t FLAGS\_IGNORELOOP = 0x00000008;    \textcolor{comment}{// Used internally when the loop region can't be used}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00153}00153         \textcolor{keyword}{static} \textcolor{keyword}{const} uint32\_t FLAGS\_MASK = 0x00000008;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00154}00154 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00155}00155         \textcolor{keyword}{union}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00156}00156         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00157}00157             \textcolor{keyword}{struct}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00158}00158             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00159}00159                 \textcolor{comment}{// Entry flags}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00160}00160                 uint32\_t                   dwFlags : 4;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00161}00161 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00162}00162                 \textcolor{comment}{// Duration of the wave, in units of one sample.}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00163}00163                 \textcolor{comment}{// For instance, a ten second long wave sampled}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00164}00164                 \textcolor{comment}{// at 48KHz would have a duration of 480,000.}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00165}00165                 \textcolor{comment}{// This value is not affected by the number of}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00166}00166                 \textcolor{comment}{// channels, the number of bits per sample, or the}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00167}00167                 \textcolor{comment}{// compression format of the wave.}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00168}00168                 uint32\_t                   Duration : 28;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00169}00169             \};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00170}00170             uint32\_t dwFlagsAndDuration;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00171}00171         \};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00172}00172 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00173}00173         MINIWAVEFORMAT  Format;         \textcolor{comment}{// Entry format.}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00174}00174         REGION          PlayRegion;     \textcolor{comment}{// Region within the wave data segment that contains this entry.}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00175}00175         SAMPLEREGION    LoopRegion;     \textcolor{comment}{// Region within the wave data (in samples) that should loop.}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00176}00176     \};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00177}00177 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00178}00178     \textcolor{keyword}{struct }ENTRYCOMPACT}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00179}00179     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00180}00180         uint32\_t       dwOffset : 21;       \textcolor{comment}{// Data offset, in multiplies of the bank alignment}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00181}00181         uint32\_t       dwLengthDeviation : 11;       \textcolor{comment}{// Data length deviation, in bytes}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00182}00182     \};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00183}00183 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00184}00184     \textcolor{keyword}{struct }BANKDATA}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00185}00185     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00186}00186         \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} BANKNAME\_LENGTH = 64;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00187}00187 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00188}00188         \textcolor{keyword}{static} \textcolor{keyword}{const} uint32\_t TYPE\_BUFFER = 0x00000000;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00189}00189         \textcolor{keyword}{static} \textcolor{keyword}{const} uint32\_t TYPE\_STREAMING = 0x00000001;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00190}00190         \textcolor{keyword}{static} \textcolor{keyword}{const} uint32\_t TYPE\_MASK = 0x00000001;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00191}00191 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00192}00192         \textcolor{keyword}{static} \textcolor{keyword}{const} uint32\_t FLAGS\_ENTRYNAMES = 0x00010000;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00193}00193         \textcolor{keyword}{static} \textcolor{keyword}{const} uint32\_t FLAGS\_COMPACT = 0x00020000;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00194}00194         \textcolor{keyword}{static} \textcolor{keyword}{const} uint32\_t FLAGS\_SYNC\_DISABLED = 0x00040000;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00195}00195         \textcolor{keyword}{static} \textcolor{keyword}{const} uint32\_t FLAGS\_SEEKTABLES = 0x00080000;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00196}00196         \textcolor{keyword}{static} \textcolor{keyword}{const} uint32\_t FLAGS\_MASK = 0x000F0000;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00197}00197 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00198}00198         uint32\_t        dwFlags;                        \textcolor{comment}{// Bank flags}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00199}00199         uint32\_t        dwEntryCount;                   \textcolor{comment}{// Number of entries in the bank}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00200}00200         \textcolor{keywordtype}{char}            szBankName[BANKNAME\_LENGTH];    \textcolor{comment}{// Bank friendly name}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00201}00201         uint32\_t        dwEntryMetaDataElementSize;     \textcolor{comment}{// Size of each entry meta-\/data element, in bytes}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00202}00202         uint32\_t        dwEntryNameElementSize;         \textcolor{comment}{// Size of each entry name element, in bytes}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00203}00203         uint32\_t        dwAlignment;                    \textcolor{comment}{// Entry alignment, in bytes}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00204}00204         MINIWAVEFORMAT  CompactFormat;                  \textcolor{comment}{// Format data for compact bank}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00205}00205         FILETIME        BuildTime;                      \textcolor{comment}{// Build timestamp}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00206}00206     \};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00207}00207 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00208}00208 \textcolor{preprocessor}{\#pragma pack(pop)}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00209}00209 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00210}00210     \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(REGION) == 8, \textcolor{stringliteral}{"{}Mismatch with xact3wb.h"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00211}00211     \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(SAMPLEREGION) == 8, \textcolor{stringliteral}{"{}Mismatch with xact3wb.h"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00212}00212     \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(HEADER) == 52, \textcolor{stringliteral}{"{}Mismatch with xact3wb.h"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00213}00213     \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(ENTRY) == 24, \textcolor{stringliteral}{"{}Mismatch with xact3wb.h"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00214}00214     \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(MINIWAVEFORMAT) == 4, \textcolor{stringliteral}{"{}Mismatch with xact3wb.h"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00215}00215     \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(ENTRY) == 24, \textcolor{stringliteral}{"{}Mismatch with xact3wb.h"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00216}00216     \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(ENTRYCOMPACT) == 4, \textcolor{stringliteral}{"{}Mismatch with xact3wb.h"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00217}00217     \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(BANKDATA) == 96, \textcolor{stringliteral}{"{}Mismatch with xact3wb.h"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00218}00218 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00219}00219     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T> WORD ChannelsSpecifiedInMask(T x)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00220}00220     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00221}00221         WORD bitCount = 0;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00222}00222         \textcolor{keywordflow}{while} (x) \{ ++bitCount; x \&= (x -\/ 1); \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00223}00223         \textcolor{keywordflow}{return} bitCount;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00224}00224     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00225}00225 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00226}00226     WORD AdpcmBlockSizeFromPcmFrames(WORD nPcmFrames, WORD nChannels)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00227}00227     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00228}00228         \textcolor{comment}{// The full calculation is as follows:}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00229}00229         \textcolor{comment}{//    UINT uHeaderBytes = MSADPCM\_HEADER\_LENGTH * nChannels;}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00230}00230         \textcolor{comment}{//    UINT uBitsPerSample = MSADPCM\_BITS\_PER\_SAMPLE * nChannels;}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00231}00231         \textcolor{comment}{//    UINT uBlockAlign = uHeaderBytes + (nPcmFrames -\/ 2) * uBitsPerSample / 8;}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00232}00232         \textcolor{comment}{//    return WORD(uBlockAlign);}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00233}00233 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00234}00234         assert(nChannels == 1 || nChannels == 2);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00235}00235 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00236}00236         \textcolor{keywordflow}{if} (nPcmFrames)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00237}00237         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00238}00238             \textcolor{keywordflow}{if} (nChannels == 1)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00239}00239             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00240}00240                 assert(nPcmFrames \% 2 == 0); \textcolor{comment}{// Mono data needs even nPcmFrames}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00241}00241                 \textcolor{keywordflow}{return} WORD(nPcmFrames / 2 + 6);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00242}00242             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00243}00243             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00244}00244             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00245}00245                 \textcolor{keywordflow}{return} WORD(nPcmFrames + 12);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00246}00246             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00247}00247         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00248}00248         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00249}00249         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00250}00250             \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00251}00251         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00252}00252     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00253}00253 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00254}00254     DWORD EncodeWMABlockAlign(DWORD dwBlockAlign, DWORD dwAvgBytesPerSec)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00255}00255     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00256}00256         \textcolor{keyword}{static} \textcolor{keyword}{const} uint32\_t aWMABlockAlign[] =}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00257}00257         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00258}00258             929,}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00259}00259             1487,}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00260}00260             1280,}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00261}00261             2230,}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00262}00262             8917,}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00263}00263             8192,}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00264}00264             4459,}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00265}00265             5945,}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00266}00266             2304,}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00267}00267             1536,}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00268}00268             1485,}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00269}00269             1008,}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00270}00270             2731,}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00271}00271             4096,}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00272}00272             6827,}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00273}00273             5462,}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00274}00274             1280}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00275}00275         \};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00276}00276 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00277}00277         \textcolor{keyword}{static} \textcolor{keyword}{const} uint32\_t aWMAAvgBytesPerSec[] =}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00278}00278         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00279}00279             12000,}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00280}00280             24000,}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00281}00281             4000,}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00282}00282             6000,}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00283}00283             8000,}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00284}00284             20000,}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00285}00285             2500}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00286}00286         \};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00287}00287 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00288}00288         \textcolor{keyword}{auto} bit = std::find(std::begin(aWMABlockAlign), std::end(aWMABlockAlign), dwBlockAlign);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00289}00289         \textcolor{keywordflow}{if} (bit == std::end(aWMABlockAlign))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00290}00290             \textcolor{keywordflow}{return} DWORD(-\/1);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00291}00291 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00292}00292         DWORD blockAlignIndex = DWORD(bit -\/ std::begin(aWMABlockAlign));}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00293}00293 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00294}00294         \textcolor{keyword}{auto} ait = std::find(std::begin(aWMAAvgBytesPerSec), std::end(aWMAAvgBytesPerSec), dwAvgBytesPerSec);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00295}00295         \textcolor{keywordflow}{if} (ait == std::end(aWMAAvgBytesPerSec))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00296}00296             \textcolor{keywordflow}{return} DWORD(-\/1);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00297}00297 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00298}00298         DWORD bytesPerSecIndex = DWORD(ait -\/ std::begin(aWMAAvgBytesPerSec));}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00299}00299 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00300}00300         \textcolor{keywordflow}{return} DWORD(blockAlignIndex | (bytesPerSecIndex << 5));}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00301}00301     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00302}00302 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00303}00303     \textcolor{keywordtype}{bool} ConvertToMiniFormat(\textcolor{keyword}{const} WAVEFORMATEX* wfx, \textcolor{keywordtype}{bool} hasSeek, MINIWAVEFORMAT\& miniFmt)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00304}00304     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00305}00305         \textcolor{keywordflow}{if} (!wfx)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00306}00306             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00307}00307 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00308}00308         \textcolor{keywordflow}{if} (!wfx-\/>nChannels)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00309}00309         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00310}00310             wprintf(L\textcolor{stringliteral}{"{}ERROR: Wave bank entry must have at least 1 channel\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00311}00311             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00312}00312         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00313}00313 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00314}00314         \textcolor{keywordflow}{if} (wfx-\/>nChannels > 7)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00315}00315         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00316}00316             wprintf(L\textcolor{stringliteral}{"{}ERROR: Wave banks only support up to 7 channels\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00317}00317             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00318}00318         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00319}00319 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00320}00320         \textcolor{keywordflow}{if} (!wfx-\/>nSamplesPerSec)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00321}00321         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00322}00322             wprintf(L\textcolor{stringliteral}{"{}ERROR: Wave banks entry sample rate must be non-\/zero\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00323}00323             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00324}00324         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00325}00325 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00326}00326         \textcolor{keywordflow}{if} (wfx-\/>nSamplesPerSec > 262143)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00327}00327         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00328}00328             wprintf(L\textcolor{stringliteral}{"{}ERROR: Wave banks only support sample rates up to 2\string^18 (262143)\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00329}00329             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00330}00330         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00331}00331 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00332}00332         miniFmt.dwValue = 0;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00333}00333         miniFmt.nSamplesPerSec = wfx-\/>nSamplesPerSec;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00334}00334         miniFmt.nChannels = wfx-\/>nChannels;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00335}00335 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00336}00336         \textcolor{keywordflow}{switch} (wfx-\/>wFormatTag)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00337}00337         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00338}00338         \textcolor{keywordflow}{case} WAVE\_FORMAT\_PCM:}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00339}00339             \textcolor{keywordflow}{if} ((wfx-\/>wBitsPerSample != 8) \&\& (wfx-\/>wBitsPerSample != 16))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00340}00340             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00341}00341                 wprintf(L\textcolor{stringliteral}{"{}ERROR: Wave banks only support 8-\/bit or 16-\/bit integer PCM data\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00342}00342                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00343}00343             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00344}00344 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00345}00345             \textcolor{keywordflow}{if} (wfx-\/>nBlockAlign > 255)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00346}00346             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00347}00347                 wprintf(L\textcolor{stringliteral}{"{}ERROR: Wave banks only support block alignments up to 255 (\%u)\(\backslash\)n"{}}, wfx-\/>nBlockAlign);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00348}00348                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00349}00349             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00350}00350 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00351}00351             \textcolor{keywordflow}{if} (wfx-\/>nBlockAlign != (wfx-\/>nChannels * wfx-\/>wBitsPerSample / 8))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00352}00352             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00353}00353                 wprintf(L\textcolor{stringliteral}{"{}ERROR: nBlockAlign (\%u) != nChannels (\%u) * wBitsPerSample (\%u) / 8\(\backslash\)n"{}},}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00354}00354                     wfx-\/>nBlockAlign, wfx-\/>nChannels, wfx-\/>wBitsPerSample);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00355}00355                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00356}00356             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00357}00357 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00358}00358             \textcolor{keywordflow}{if} (wfx-\/>nAvgBytesPerSec != (wfx-\/>nSamplesPerSec * wfx-\/>nBlockAlign))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00359}00359             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00360}00360                 wprintf(L\textcolor{stringliteral}{"{}ERROR: nAvgBytesPerSec (\%lu) != nSamplesPerSec (\%lu) * nBlockAlign (\%u)\(\backslash\)n"{}},}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00361}00361                     wfx-\/>nAvgBytesPerSec, wfx-\/>nSamplesPerSec, wfx-\/>nBlockAlign);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00362}00362                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00363}00363             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00364}00364 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00365}00365             miniFmt.wFormatTag = MINIWAVEFORMAT::TAG\_PCM;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00366}00366             miniFmt.wBitsPerSample = (wfx-\/>wBitsPerSample == 16) ? MINIWAVEFORMAT::BITDEPTH\_16 : MINIWAVEFORMAT::BITDEPTH\_8;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00367}00367             miniFmt.wBlockAlign = wfx-\/>nBlockAlign;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00368}00368             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00369}00369 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00370}00370         \textcolor{keywordflow}{case} WAVE\_FORMAT\_IEEE\_FLOAT:}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00371}00371             wprintf(L\textcolor{stringliteral}{"{}ERROR: Wave banks do not support IEEE float PCM data\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00372}00372             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00373}00373 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00374}00374         \textcolor{keywordflow}{case} WAVE\_FORMAT\_ADPCM:}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00375}00375             \textcolor{keywordflow}{if} ((wfx-\/>nChannels != 1) \&\& (wfx-\/>nChannels != 2))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00376}00376             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00377}00377                 wprintf(L\textcolor{stringliteral}{"{}ERROR: ADPCM wave format must have 1 or 2 channels (not \%u)\(\backslash\)n"{}}, wfx-\/>nChannels);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00378}00378                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00379}00379             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00380}00380 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00381}00381             \textcolor{keywordflow}{if} (wfx-\/>wBitsPerSample != 4 \textcolor{comment}{/*MSADPCM\_BITS\_PER\_SAMPLE*/})}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00382}00382             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00383}00383                 wprintf(L\textcolor{stringliteral}{"{}ERROR: ADPCM wave format must have 4 bits per sample (not \%u)\(\backslash\)n"{}}, wfx-\/>wBitsPerSample);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00384}00384                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00385}00385             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00386}00386 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00387}00387             \textcolor{keywordflow}{if} (wfx-\/>cbSize != 32 \textcolor{comment}{/*MSADPCM\_FORMAT\_EXTRA\_BYTES*/})}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00388}00388             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00389}00389                 wprintf(L\textcolor{stringliteral}{"{}ERROR: ADPCM wave format must have cbSize = 32 (not \%u)\(\backslash\)n"{}}, wfx-\/>cbSize);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00390}00390                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00391}00391             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00392}00392             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00393}00393             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00394}00394                 \textcolor{keyword}{auto} wfadpcm = \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }ADPCMWAVEFORMAT*\textcolor{keyword}{>}(wfx);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00395}00395 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00396}00396                 \textcolor{keywordflow}{if} (wfadpcm-\/>wNumCoef != 7 \textcolor{comment}{/*MSADPCM\_NUM\_COEFFICIENTS*/})}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00397}00397                 \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00398}00398                     wprintf(L\textcolor{stringliteral}{"{}ERROR: ADPCM wave format must have 7 coefficients (not \%u)\(\backslash\)n"{}}, wfadpcm-\/>wNumCoef);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00399}00399                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00400}00400                 \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00401}00401 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00402}00402                 \textcolor{keywordtype}{bool} valid = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00403}00403                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 7 \textcolor{comment}{/*MSADPCM\_NUM\_COEFFICIENTS*/}; ++j)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00404}00404                 \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00405}00405                     \textcolor{comment}{// Microsoft ADPCM standard encoding coefficients}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00406}00406                     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{short} g\_pAdpcmCoefficients1[] = \{ 256,  512, 0, 192, 240,  460,  392 \};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00407}00407                     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{short} g\_pAdpcmCoefficients2[] = \{ 0, -\/256, 0,  64,   0, -\/208, -\/232 \};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00408}00408 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00409}00409                     \textcolor{keywordflow}{if} (wfadpcm-\/>aCoef[j].iCoef1 != g\_pAdpcmCoefficients1[j]}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00410}00410                         || wfadpcm-\/>aCoef[j].iCoef2 != g\_pAdpcmCoefficients2[j])}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00411}00411                     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00412}00412                         valid = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00413}00413                     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00414}00414                 \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00415}00415 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00416}00416                 \textcolor{keywordflow}{if} (!valid)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00417}00417                 \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00418}00418                     wprintf(L\textcolor{stringliteral}{"{}ERROR: Non-\/standard coefficients for ADPCM found\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00419}00419                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00420}00420                 \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00421}00421 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00422}00422                 \textcolor{keywordflow}{if} ((wfadpcm-\/>wSamplesPerBlock < 4 \textcolor{comment}{/*MSADPCM\_MIN\_SAMPLES\_PER\_BLOCK*/})}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00423}00423                     || (wfadpcm-\/>wSamplesPerBlock > 64000 \textcolor{comment}{/*MSADPCM\_MAX\_SAMPLES\_PER\_BLOCK*/}))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00424}00424                 \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00425}00425                     wprintf(L\textcolor{stringliteral}{"{}ERROR: ADPCM wave format wSamplesPerBlock must be 4..64000\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00426}00426                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00427}00427                 \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00428}00428 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00429}00429                 \textcolor{keywordflow}{if} (wfadpcm-\/>wfx.nChannels == 1 \&\& (wfadpcm-\/>wSamplesPerBlock \% 2))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00430}00430                 \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00431}00431                     wprintf(L\textcolor{stringliteral}{"{}ERROR: ADPCM wave format mono files must have even wSamplesPerBlock\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00432}00432                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00433}00433                 \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00434}00434 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00435}00435                 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nHeaderBytes = 7 \textcolor{comment}{/*MSADPCM\_HEADER\_LENGTH*/} * wfx-\/>nChannels;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00436}00436                 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nBitsPerFrame = 4 \textcolor{comment}{/*MSADPCM\_BITS\_PER\_SAMPLE*/} * wfx-\/>nChannels;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00437}00437                 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nPcmFramesPerBlock = (wfx-\/>nBlockAlign -\/ nHeaderBytes) * 8 / nBitsPerFrame + 2;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00438}00438 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00439}00439                 \textcolor{keywordflow}{if} (wfadpcm-\/>wSamplesPerBlock != nPcmFramesPerBlock)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00440}00440                 \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00441}00441                     wprintf(L\textcolor{stringliteral}{"{}ERROR: ADPCM \%u-\/channel format with nBlockAlign = \%u must have wSamplesPerBlock = \%u (not \%u)\(\backslash\)n"{}},}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00442}00442                         wfx-\/>nChannels, wfx-\/>nBlockAlign, nPcmFramesPerBlock, wfadpcm-\/>wSamplesPerBlock);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00443}00443                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00444}00444                 \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00445}00445 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00446}00446                 miniFmt.wFormatTag = MINIWAVEFORMAT::TAG\_ADPCM;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00447}00447                 miniFmt.wBitsPerSample = 0;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00448}00448                 miniFmt.wBlockAlign = AdpcmBlockSizeFromPcmFrames(wfadpcm-\/>wSamplesPerBlock, 1) -\/ MINIWAVEFORMAT::ADPCM\_BLOCKALIGN\_CONVERSION\_OFFSET;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00449}00449             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00450}00450             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00451}00451 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00452}00452         \textcolor{keywordflow}{case} WAVE\_FORMAT\_WMAUDIO2:}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00453}00453         \textcolor{keywordflow}{case} WAVE\_FORMAT\_WMAUDIO3:}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00454}00454             \textcolor{keywordflow}{if} (!hasSeek)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00455}00455             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00456}00456                 wprintf(L\textcolor{stringliteral}{"{}ERROR: xWMA requires seek tables ('dpds' chunk)\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00457}00457                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00458}00458             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00459}00459 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00460}00460             \textcolor{keywordflow}{if} (wfx-\/>wBitsPerSample != 16)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00461}00461             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00462}00462                 wprintf(L\textcolor{stringliteral}{"{}ERROR: Wave banks only support 16-\/bit xWMA data\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00463}00463                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00464}00464             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00465}00465 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00466}00466             \textcolor{keywordflow}{if} (!wfx-\/>nBlockAlign)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00467}00467             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00468}00468                 wprintf(L\textcolor{stringliteral}{"{}ERROR: Wave bank xWMA must have a non-\/zero nBlockAlign\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00469}00469                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00470}00470             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00471}00471 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00472}00472             \textcolor{keywordflow}{if} (!wfx-\/>nAvgBytesPerSec)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00473}00473             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00474}00474                 wprintf(L\textcolor{stringliteral}{"{}ERROR: Wave bank xWMA must have a non-\/zero nAvgBytesPerSec\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00475}00475                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00476}00476             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00477}00477 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00478}00478             \textcolor{keywordflow}{if} (wfx-\/>cbSize != 0)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00479}00479             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00480}00480                 wprintf(L\textcolor{stringliteral}{"{}ERROR: Unexpected data found in xWMA header\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00481}00481                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00482}00482             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00483}00483 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00484}00484             miniFmt.wFormatTag = MINIWAVEFORMAT::TAG\_WMA;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00485}00485             miniFmt.wBitsPerSample = (wfx-\/>wFormatTag == WAVE\_FORMAT\_WMAUDIO3) ? MINIWAVEFORMAT::BITDEPTH\_16 : MINIWAVEFORMAT::BITDEPTH\_8;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00486}00486             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00487}00487                 DWORD blockAlign = EncodeWMABlockAlign(wfx-\/>nBlockAlign, wfx-\/>nAvgBytesPerSec);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00488}00488                 \textcolor{keywordflow}{if} (blockAlign == DWORD(-\/1))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00489}00489                 \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00490}00490                     wprintf(L\textcolor{stringliteral}{"{}ERROR: Failed encoding nBlockAlign and nAvgBytesPerSec for xWMA\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00491}00491                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00492}00492                 \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00493}00493                 miniFmt.wBlockAlign = blockAlign;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00494}00494             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00495}00495             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00496}00496 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00497}00497         \textcolor{keywordflow}{case} 0x166 \textcolor{comment}{/*WAVE\_FORMAT\_XMA2(*/}:}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00498}00498             wprintf(L\textcolor{stringliteral}{"{}ERROR: XMA2 not supported by this version of XWBTool\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00499}00499             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00500}00500 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00501}00501         \textcolor{keywordflow}{case} WAVE\_FORMAT\_EXTENSIBLE:}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00502}00502             \textcolor{keywordflow}{if} (wfx-\/>cbSize < (\textcolor{keyword}{sizeof}(WAVEFORMATEXTENSIBLE) -\/ \textcolor{keyword}{sizeof}(WAVEFORMATEX)))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00503}00503             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00504}00504                 wprintf(L\textcolor{stringliteral}{"{}ERROR: WAVEFORMATEXTENSIBLE cbSize must be at least \%zu (\%u)"{}}, (\textcolor{keyword}{sizeof}(WAVEFORMATEXTENSIBLE) -\/ \textcolor{keyword}{sizeof}(WAVEFORMATEX)), wfx-\/>cbSize);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00505}00505                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00506}00506             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00507}00507             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00508}00508             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00509}00509                 \textcolor{keyword}{static} \textcolor{keyword}{const} GUID s\_wfexBase = \{ 0x00000000, 0x0000, 0x0010, \{ 0x80, 0x00, 0x00, 0xAA, 0x00, 0x38, 0x9B, 0x71 \} \};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00510}00510 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00511}00511                 \textcolor{keyword}{auto} wfex = \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }WAVEFORMATEXTENSIBLE*\textcolor{keyword}{>}(wfx);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00512}00512 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00513}00513                 \textcolor{keywordflow}{if} (memcmp(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }BYTE*\textcolor{keyword}{>}(\&wfex-\/>SubFormat) + \textcolor{keyword}{sizeof}(DWORD),}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00514}00514                     \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }BYTE*\textcolor{keyword}{>}(\&s\_wfexBase) + \textcolor{keyword}{sizeof}(DWORD), \textcolor{keyword}{sizeof}(GUID) -\/ \textcolor{keyword}{sizeof}(DWORD)) != 0)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00515}00515                 \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00516}00516                     wprintf(L\textcolor{stringliteral}{"{}ERROR: WAVEFORMATEXTENSIBLE encountered with unknown GUID (\{\%8.8lX-\/\%4.4X-\/\%4.4X-\/\%2.2X\%2.2X-\/\%2.2X\%2.2X\%2.2X\%2.2X\%2.2X\%2.2X\})\(\backslash\)n"{}},}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00517}00517                         wfex-\/>SubFormat.Data1, wfex-\/>SubFormat.Data2, wfex-\/>SubFormat.Data3,}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00518}00518                         wfex-\/>SubFormat.Data4[0], wfex-\/>SubFormat.Data4[1], wfex-\/>SubFormat.Data4[2], wfex-\/>SubFormat.Data4[3],}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00519}00519                         wfex-\/>SubFormat.Data4[4], wfex-\/>SubFormat.Data4[5], wfex-\/>SubFormat.Data4[6], wfex-\/>SubFormat.Data4[7]);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00520}00520                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00521}00521                 \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00522}00522 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00523}00523                 \textcolor{keywordflow}{switch} (wfex-\/>SubFormat.Data1)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00524}00524                 \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00525}00525                 \textcolor{keywordflow}{case} WAVE\_FORMAT\_PCM:}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00526}00526                     \textcolor{keywordflow}{if} ((wfx-\/>wBitsPerSample != 8) \&\& (wfx-\/>wBitsPerSample != 16))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00527}00527                     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00528}00528                         wprintf(L\textcolor{stringliteral}{"{}ERROR: Wave banks only support 8-\/bit or 16-\/bit integer PCM data (\%u)\(\backslash\)n"{}}, wfx-\/>wBitsPerSample);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00529}00529                         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00530}00530                     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00531}00531 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00532}00532                     \textcolor{keywordflow}{if} (!wfex-\/>Samples.wValidBitsPerSample)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00533}00533                     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00534}00534                         wprintf(L\textcolor{stringliteral}{"{}WARNING: Integer PCM WAVEFORMATEXTENSIBLE format should not have wValidBitsPerSample = 0\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00535}00535                     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00536}00536                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (((wfex-\/>Samples.wValidBitsPerSample != 8) \&\& (wfex-\/>Samples.wValidBitsPerSample != 16))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00537}00537                         || (wfex-\/>Samples.wValidBitsPerSample > wfx-\/>wBitsPerSample))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00538}00538                     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00539}00539                         wprintf(L\textcolor{stringliteral}{"{}ERROR: Unexpected wValidBitsPerSample value (\%u)\(\backslash\)n"{}}, wfex-\/>Samples.wValidBitsPerSample);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00540}00540                         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00541}00541                     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00542}00542 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00543}00543                     \textcolor{keywordflow}{if} (wfx-\/>nBlockAlign > 255)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00544}00544                     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00545}00545                         wprintf(L\textcolor{stringliteral}{"{}ERROR: Wave banks only support block alignments up to 255 (\%u)\(\backslash\)n"{}}, wfx-\/>nBlockAlign);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00546}00546                         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00547}00547                     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00548}00548 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00549}00549                     \textcolor{keywordflow}{if} (wfx-\/>nBlockAlign != (wfx-\/>nChannels * wfx-\/>wBitsPerSample / 8))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00550}00550                     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00551}00551                         wprintf(L\textcolor{stringliteral}{"{}ERROR: nBlockAlign (\%u) != nChannels (\%u) * wBitsPerSample (\%u) / 8\(\backslash\)n"{}},}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00552}00552                             wfx-\/>nBlockAlign, wfx-\/>nChannels, wfx-\/>wBitsPerSample);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00553}00553                         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00554}00554                     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00555}00555 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00556}00556                     \textcolor{keywordflow}{if} (wfx-\/>nAvgBytesPerSec != (wfx-\/>nSamplesPerSec * wfx-\/>nBlockAlign))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00557}00557                     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00558}00558                         wprintf(L\textcolor{stringliteral}{"{}ERROR: nAvgBytesPerSec (\%lu) != nSamplesPerSec (\%lu) * nBlockAlign (\%u)\(\backslash\)n"{}},}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00559}00559                             wfx-\/>nAvgBytesPerSec, wfx-\/>nSamplesPerSec, wfx-\/>nBlockAlign);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00560}00560                         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00561}00561                     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00562}00562 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00563}00563                     miniFmt.wFormatTag = MINIWAVEFORMAT::TAG\_PCM;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00564}00564                     miniFmt.wBitsPerSample = (wfex-\/>Samples.wValidBitsPerSample == 16) ? MINIWAVEFORMAT::BITDEPTH\_16 : MINIWAVEFORMAT::BITDEPTH\_8;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00565}00565                     miniFmt.wBlockAlign = wfx-\/>nBlockAlign;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00566}00566                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00567}00567 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00568}00568                 \textcolor{keywordflow}{case} WAVE\_FORMAT\_IEEE\_FLOAT:}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00569}00569                     wprintf(L\textcolor{stringliteral}{"{}ERROR: Wave banks do not support float PCM data\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00570}00570                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00571}00571 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00572}00572                 \textcolor{keywordflow}{case} WAVE\_FORMAT\_ADPCM:}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00573}00573                     wprintf(L\textcolor{stringliteral}{"{}ERROR: ADPCM is not supported as a WAVEFORMATEXTENSIBLE\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00574}00574                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00575}00575 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00576}00576                 \textcolor{keywordflow}{case} WAVE\_FORMAT\_WMAUDIO2:}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00577}00577                 \textcolor{keywordflow}{case} WAVE\_FORMAT\_WMAUDIO3:}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00578}00578                     \textcolor{keywordflow}{if} (!hasSeek)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00579}00579                     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00580}00580                         wprintf(L\textcolor{stringliteral}{"{}ERROR: xWMA requires seek tables (dpds chunk)\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00581}00581                         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00582}00582                     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00583}00583 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00584}00584                     \textcolor{keywordflow}{if} (wfx-\/>wBitsPerSample != 16)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00585}00585                     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00586}00586                         wprintf(L\textcolor{stringliteral}{"{}ERROR: Wave banks only support 16-\/bit xWMA data\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00587}00587                         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00588}00588                     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00589}00589 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00590}00590                     \textcolor{keywordflow}{if} (!wfx-\/>nBlockAlign)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00591}00591                     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00592}00592                         wprintf(L\textcolor{stringliteral}{"{}ERROR: Wvae bank xWMA must have a non-\/zero nBlockAlign\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00593}00593                         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00594}00594                     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00595}00595 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00596}00596                     \textcolor{keywordflow}{if} (!wfx-\/>nAvgBytesPerSec)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00597}00597                     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00598}00598                         wprintf(L\textcolor{stringliteral}{"{}ERROR: Wave bank xWMA must have a non-\/zero nAvgBytesPerSec\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00599}00599                         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00600}00600                     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00601}00601 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00602}00602                     miniFmt.wFormatTag = MINIWAVEFORMAT::TAG\_WMA;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00603}00603                     miniFmt.wBitsPerSample = (wfx-\/>wFormatTag == WAVE\_FORMAT\_WMAUDIO3) ? MINIWAVEFORMAT::BITDEPTH\_16 : MINIWAVEFORMAT::BITDEPTH\_8;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00604}00604                     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00605}00605                         DWORD blockAlign = EncodeWMABlockAlign(wfx-\/>nBlockAlign, wfx-\/>nAvgBytesPerSec);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00606}00606                         \textcolor{keywordflow}{if} (blockAlign == DWORD(-\/1))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00607}00607                         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00608}00608                             wprintf(L\textcolor{stringliteral}{"{}ERROR: Failed encoding nBlockAlign and nAvgBytesPerSec for xWMA\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00609}00609                             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00610}00610                         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00611}00611                         miniFmt.wBlockAlign = blockAlign;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00612}00612                     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00613}00613                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00614}00614 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00615}00615                 \textcolor{keywordflow}{case} 0x166 \textcolor{comment}{/*WAVE\_FORMAT\_XMA2(*/}:}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00616}00616                     wprintf(L\textcolor{stringliteral}{"{}ERROR: XMA2 is not supported as a WAVEFORMATEXTENSIBLE\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00617}00617                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00618}00618 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00619}00619                 \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00620}00620                     wprintf(L\textcolor{stringliteral}{"{}ERROR: Unknown WAVEFORMATEXTENSIBLE format tag\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00621}00621                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00622}00622                 \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00623}00623 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00624}00624                 \textcolor{keywordflow}{if} (wfex-\/>dwChannelMask)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00625}00625                 \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00626}00626                     \textcolor{keyword}{auto} channelBits = ChannelsSpecifiedInMask(wfex-\/>dwChannelMask);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00627}00627                     \textcolor{keywordflow}{if} (channelBits != wfx-\/>nChannels)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00628}00628                     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00629}00629                         wprintf(L\textcolor{stringliteral}{"{}ERROR: WAVEFORMATEXTENSIBLE: nChannels=\%u but ChannelMask has \%u bits set\(\backslash\)n"{}},}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00630}00630                             wfx-\/>nChannels, channelBits);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00631}00631                         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00632}00632                     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00633}00633                     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00634}00634                     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00635}00635                         wprintf(L\textcolor{stringliteral}{"{}WARNING: WAVEFORMATEXTENSIBLE ChannelMask is ignored in wave banks\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00636}00636                     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00637}00637                 \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00638}00638 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00639}00639                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00640}00640             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00641}00641 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00642}00642         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00643}00643             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00644}00644         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00645}00645     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00646}00646 \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00647}00647 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00648}00648 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00652}00652 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00653}\mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9c}{00653}} \textcolor{keyword}{enum} \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9c}{OPTIONS}}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00654}00654 \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00655}\mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca23a014e1f6fe5e7e51720ea2961829e4}{00655}}     \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca23a014e1f6fe5e7e51720ea2961829e4}{OPT\_RECURSIVE}} = 1,}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00656}\mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca7feec62c20fde3b10fcf3525550e14c1}{00656}}     \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca7feec62c20fde3b10fcf3525550e14c1}{OPT\_STREAMING}},}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00657}\mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9cafbb35e93ed84618883f2f38657bee409}{00657}}     \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9cafbb35e93ed84618883f2f38657bee409}{OPT\_OUTPUTFILE}},}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00658}\mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca8d143edabed52f072be92e365444d307}{00658}}     \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca8d143edabed52f072be92e365444d307}{OPT\_OUTPUTHEADER}},}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00659}\mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca8d6b45174c6325e1fa3d1b888ffc14d9}{00659}}     \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca8d6b45174c6325e1fa3d1b888ffc14d9}{OPT\_TOLOWER}},}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00660}\mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9cab32550772e401aaf4a785aa412db2bad}{00660}}     \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9cab32550772e401aaf4a785aa412db2bad}{OPT\_OVERWRITE}},}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00661}\mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca48cac8863e3b0543ddf45d63098b7b25}{00661}}     \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca48cac8863e3b0543ddf45d63098b7b25}{OPT\_COMPACT}},}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00662}\mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca06727f57941ad131db3a70b143da21a9}{00662}}     \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca06727f57941ad131db3a70b143da21a9}{OPT\_NOCOMPACT}},}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00663}\mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca1466358788a8c98e1e002da496316b06}{00663}}     \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca1466358788a8c98e1e002da496316b06}{OPT\_FRIENDLY\_NAMES}},}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00664}\mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9caa415c5db159c8480d5550b84e10b90ae}{00664}}     \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9caa415c5db159c8480d5550b84e10b90ae}{OPT\_NOLOGO}},}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00665}\mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca2375ceba13408faf9e0679247d29cbf9}{00665}}     \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca2375ceba13408faf9e0679247d29cbf9}{OPT\_FILELIST}},}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00666}00666     \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca071a0b4ca1a6ed34e7a1764730787720}{OPT\_MAX}}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00667}\mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca071a0b4ca1a6ed34e7a1764730787720}{00667}} \};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00668}00668 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00669}00669 \textcolor{keyword}{static\_assert}(\mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca071a0b4ca1a6ed34e7a1764730787720}{OPT\_MAX}} <= 32, \textcolor{stringliteral}{"{}dwOptions is a DWORD bitfield"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00670}00670 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00671}\mbox{\hyperlink{struct_s_conversion}{00671}} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_conversion}{SConversion}}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00672}00672 \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00673}\mbox{\hyperlink{struct_s_conversion_a8ab41aa327c4b1478512428d29351129}{00673}}     \textcolor{keywordtype}{wchar\_t} \mbox{\hyperlink{struct_s_conversion_a8ab41aa327c4b1478512428d29351129}{szSrc}}[MAX\_PATH];}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00674}00674 \};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00675}00675 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00676}\mbox{\hyperlink{struct_s_value}{00676}} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_value}{SValue}}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00677}00677 \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00678}\mbox{\hyperlink{struct_s_value_ab2df5aff1299ae81b40daca214e43ec1}{00678}}     LPCWSTR \mbox{\hyperlink{struct_s_value_ab2df5aff1299ae81b40daca214e43ec1}{pName}};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00679}\mbox{\hyperlink{struct_s_value_a3bb1d7d511e4c7d717ea76f993058e12}{00679}}     DWORD \mbox{\hyperlink{struct_s_value_a3bb1d7d511e4c7d717ea76f993058e12}{dwValue}};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00680}00680 \};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00681}00681 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00682}\mbox{\hyperlink{struct_wave_file}{00682}} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_wave_file}{WaveFile}}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00683}00683 \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00684}\mbox{\hyperlink{struct_wave_file_ac835f500460fa285dc42cef47e84cd88}{00684}}     \mbox{\hyperlink{struct_direct_x_1_1_w_a_v_data}{DirectX::WAVData}} \mbox{\hyperlink{struct_wave_file_ac835f500460fa285dc42cef47e84cd88}{data}};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00685}\mbox{\hyperlink{struct_wave_file_adeef1a6858c047de8932ba87da0296d3}{00685}}     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{struct_wave_file_adeef1a6858c047de8932ba87da0296d3}{conv}};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00686}\mbox{\hyperlink{struct_wave_file_a7b19ea4e68272e1f32ce297d8cf85813}{00686}}     MINIWAVEFORMAT \mbox{\hyperlink{struct_wave_file_a7b19ea4e68272e1f32ce297d8cf85813}{miniFmt}};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00687}\mbox{\hyperlink{struct_wave_file_a99f79c3779d5f9e503f82dc003bb0950}{00687}}     std::unique\_ptr<uint8\_t[]> \mbox{\hyperlink{struct_wave_file_a99f79c3779d5f9e503f82dc003bb0950}{waveData}};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00688}00688 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00689}\mbox{\hyperlink{struct_wave_file_aa89b71768e7552b90a94f11d9a73e629}{00689}}     \mbox{\hyperlink{struct_wave_file_aa89b71768e7552b90a94f11d9a73e629}{WaveFile}}() noexcept :}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00690}00690         \mbox{\hyperlink{struct_wave_file_ac835f500460fa285dc42cef47e84cd88}{data}}\{\},}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00691}00691         \mbox{\hyperlink{struct_wave_file_adeef1a6858c047de8932ba87da0296d3}{conv}}(0),}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00692}00692         \mbox{\hyperlink{struct_wave_file_a7b19ea4e68272e1f32ce297d8cf85813}{miniFmt}}\{\}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00693}00693     \{\}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00694}00694 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00695}\mbox{\hyperlink{struct_wave_file_af5b7484ef94a0a995c1c2366e728901f}{00695}}     \mbox{\hyperlink{struct_wave_file_af5b7484ef94a0a995c1c2366e728901f}{WaveFile}}(\mbox{\hyperlink{struct_wave_file}{WaveFile}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00696}\mbox{\hyperlink{struct_wave_file_af7e66be19be2a43073d3fa7cb8e4b9eb}{00696}}     \mbox{\hyperlink{struct_wave_file}{WaveFile}}\& \mbox{\hyperlink{struct_wave_file_af7e66be19be2a43073d3fa7cb8e4b9eb}{operator= }}(\mbox{\hyperlink{struct_wave_file}{WaveFile}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00697}00697 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00698}\mbox{\hyperlink{struct_wave_file_ad40783c1b1a682d2b5c2127520ab3705}{00698}}     \mbox{\hyperlink{struct_wave_file_ad40783c1b1a682d2b5c2127520ab3705}{WaveFile}}(\mbox{\hyperlink{struct_wave_file}{WaveFile}}\&\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00699}\mbox{\hyperlink{struct_wave_file_a60bbe29f7a537fffd28b47611e5307fc}{00699}}     \mbox{\hyperlink{struct_wave_file}{WaveFile}}\& \mbox{\hyperlink{struct_wave_file_af7e66be19be2a43073d3fa7cb8e4b9eb}{operator= }}(\mbox{\hyperlink{struct_wave_file}{WaveFile}}\&\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00700}00700 \};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00701}00701 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00702}00702 \textcolor{keyword}{namespace}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00703}00703 \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00704}00704     \textcolor{keywordtype}{void} FileNameToIdentifier(\_Inout\_updates\_all\_(count) \textcolor{keywordtype}{wchar\_t}* str, \textcolor{keywordtype}{size\_t} count)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00705}00705     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00706}00706         \textcolor{keywordtype}{size\_t} j = 0;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00707}00707         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{wchar\_t}* c = str; j < count \&\& *c != 0; ++c, ++j)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00708}00708         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00709}00709             \textcolor{keywordtype}{wchar\_t} t = towupper(*c);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00710}00710             \textcolor{keywordflow}{if} (!iswdigit(t) \&\& !iswalpha(t))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00711}00711                 t = \textcolor{charliteral}{'\_'};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00712}00712             *c = t;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00713}00713         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00714}00714     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00715}00715 \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00716}00716 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00720}00720 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00721}\mbox{\hyperlink{xwbtool_8cpp_a74abcb937349cd4f0ba0f7701a7d0a10}{00721}} \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_value}{SValue}} \mbox{\hyperlink{xwbtool_8cpp_a74abcb937349cd4f0ba0f7701a7d0a10}{g\_pOptions}}[] =}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00722}00722 \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00723}00723     \{ L\textcolor{stringliteral}{"{}r"{}},         \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca23a014e1f6fe5e7e51720ea2961829e4}{OPT\_RECURSIVE}} \},}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00724}00724     \{ L\textcolor{stringliteral}{"{}s"{}},         \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca7feec62c20fde3b10fcf3525550e14c1}{OPT\_STREAMING}} \},}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00725}00725     \{ L\textcolor{stringliteral}{"{}o"{}},         \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9cafbb35e93ed84618883f2f38657bee409}{OPT\_OUTPUTFILE}} \},}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00726}00726     \{ L\textcolor{stringliteral}{"{}l"{}},         \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca8d6b45174c6325e1fa3d1b888ffc14d9}{OPT\_TOLOWER}} \},}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00727}00727     \{ L\textcolor{stringliteral}{"{}h"{}},         \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca8d143edabed52f072be92e365444d307}{OPT\_OUTPUTHEADER}} \},}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00728}00728     \{ L\textcolor{stringliteral}{"{}y"{}},         \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9cab32550772e401aaf4a785aa412db2bad}{OPT\_OVERWRITE}} \},}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00729}00729     \{ L\textcolor{stringliteral}{"{}c"{}},         \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca48cac8863e3b0543ddf45d63098b7b25}{OPT\_COMPACT}} \},}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00730}00730     \{ L\textcolor{stringliteral}{"{}nc"{}},        \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca06727f57941ad131db3a70b143da21a9}{OPT\_NOCOMPACT}} \},}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00731}00731     \{ L\textcolor{stringliteral}{"{}f"{}},         \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca1466358788a8c98e1e002da496316b06}{OPT\_FRIENDLY\_NAMES}} \},}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00732}00732     \{ L\textcolor{stringliteral}{"{}nologo"{}},    \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9caa415c5db159c8480d5550b84e10b90ae}{OPT\_NOLOGO}} \},}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00733}00733     \{ L\textcolor{stringliteral}{"{}flist"{}},     \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca2375ceba13408faf9e0679247d29cbf9}{OPT\_FILELIST}} \},}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00734}00734     \{ \textcolor{keyword}{nullptr},      0 \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00735}00735 \};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00736}00736 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00740}00740 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00741}00741 \textcolor{keyword}{namespace}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00742}00742 \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00743}00743 \textcolor{preprocessor}{\#ifdef \_PREFAST\_}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00744}00744 \textcolor{preprocessor}{\#pragma prefast(disable : 26018, "{}Only used with static internal arrays"{}})}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00745}00745 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00746}00746 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00747}00747     DWORD LookupByName(\textcolor{keyword}{const} \textcolor{keywordtype}{wchar\_t}* pName, \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_value}{SValue}}* pArray)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00748}00748     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00749}00749         \textcolor{keywordflow}{while} (pArray-\/>\mbox{\hyperlink{struct_s_value_ab2df5aff1299ae81b40daca214e43ec1}{pName}})}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00750}00750         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00751}00751             \textcolor{keywordflow}{if} (!\_wcsicmp(pName, pArray-\/>\mbox{\hyperlink{struct_s_value_ab2df5aff1299ae81b40daca214e43ec1}{pName}}))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00752}00752                 \textcolor{keywordflow}{return} pArray-\/>\mbox{\hyperlink{struct_s_value_a3bb1d7d511e4c7d717ea76f993058e12}{dwValue}};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00753}00753 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00754}00754             pArray++;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00755}00755         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00756}00756 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00757}00757         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00758}00758     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00759}00759 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00760}00760     \textcolor{keywordtype}{void} SearchForFiles(\textcolor{keyword}{const} \textcolor{keywordtype}{wchar\_t}* path, std::list<SConversion>\& files, \textcolor{keywordtype}{bool} recursive)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00761}00761     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00762}00762         \textcolor{comment}{// Process files}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00763}00763         WIN32\_FIND\_DATAW findData = \{\};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00764}00764         ScopedFindHandle hFile(safe\_handle(FindFirstFileExW(path,}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00765}00765             FindExInfoBasic, \&findData,}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00766}00766             FindExSearchNameMatch, \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00767}00767             FIND\_FIRST\_EX\_LARGE\_FETCH)));}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00768}00768         \textcolor{keywordflow}{if} (hFile)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00769}00769         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00770}00770             \textcolor{keywordflow}{for} (;;)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00771}00771             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00772}00772                 \textcolor{keywordflow}{if} (!(findData.dwFileAttributes \& (FILE\_ATTRIBUTE\_HIDDEN | FILE\_ATTRIBUTE\_SYSTEM | FILE\_ATTRIBUTE\_DIRECTORY)))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00773}00773                 \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00774}00774                     \textcolor{keywordtype}{wchar\_t} drive[\_MAX\_DRIVE] = \{\};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00775}00775                     \textcolor{keywordtype}{wchar\_t} dir[\_MAX\_DIR] = \{\};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00776}00776                     \_wsplitpath\_s(path, drive, \_MAX\_DRIVE, dir, \_MAX\_DIR, \textcolor{keyword}{nullptr}, 0, \textcolor{keyword}{nullptr}, 0);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00777}00777 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00778}00778                     \mbox{\hyperlink{struct_s_conversion}{SConversion}} conv;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00779}00779                     \_wmakepath\_s(conv.\mbox{\hyperlink{struct_s_conversion_a8ab41aa327c4b1478512428d29351129}{szSrc}}, drive, dir, findData.cFileName, \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00780}00780                     files.push\_back(conv);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00781}00781                 \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00782}00782 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00783}00783                 \textcolor{keywordflow}{if} (!FindNextFileW(hFile.get(), \&findData))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00784}00784                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00785}00785             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00786}00786         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00787}00787 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00788}00788         \textcolor{comment}{// Process directories}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00789}00789         \textcolor{keywordflow}{if} (recursive)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00790}00790         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00791}00791             \textcolor{keywordtype}{wchar\_t} searchDir[MAX\_PATH] = \{\};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00792}00792             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00793}00793                 \textcolor{keywordtype}{wchar\_t} drive[\_MAX\_DRIVE] = \{\};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00794}00794                 \textcolor{keywordtype}{wchar\_t} dir[\_MAX\_DIR] = \{\};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00795}00795                 \_wsplitpath\_s(path, drive, \_MAX\_DRIVE, dir, \_MAX\_DIR, \textcolor{keyword}{nullptr}, 0, \textcolor{keyword}{nullptr}, 0);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00796}00796                 \_wmakepath\_s(searchDir, drive, dir, L\textcolor{stringliteral}{"{}*"{}}, \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00797}00797             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00798}00798 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00799}00799             hFile.reset(safe\_handle(FindFirstFileExW(searchDir,}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00800}00800                 FindExInfoBasic, \&findData,}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00801}00801                 FindExSearchLimitToDirectories, \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00802}00802                 FIND\_FIRST\_EX\_LARGE\_FETCH)));}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00803}00803             \textcolor{keywordflow}{if} (!hFile)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00804}00804                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00805}00805 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00806}00806             \textcolor{keywordflow}{for} (;;)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00807}00807             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00808}00808                 \textcolor{keywordflow}{if} (findData.dwFileAttributes \& FILE\_ATTRIBUTE\_DIRECTORY)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00809}00809                 \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00810}00810                     \textcolor{keywordflow}{if} (findData.cFileName[0] != L\textcolor{charliteral}{'.'})}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00811}00811                     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00812}00812                         \textcolor{keywordtype}{wchar\_t} subdir[MAX\_PATH] = \{\};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00813}00813 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00814}00814                         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00815}00815                             \textcolor{keywordtype}{wchar\_t} drive[\_MAX\_DRIVE] = \{\};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00816}00816                             \textcolor{keywordtype}{wchar\_t} dir[\_MAX\_DIR] = \{\};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00817}00817                             \textcolor{keywordtype}{wchar\_t} fname[\_MAX\_FNAME] = \{\};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00818}00818                             \textcolor{keywordtype}{wchar\_t} ext[\_MAX\_FNAME] = \{\};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00819}00819                             \_wsplitpath\_s(path, drive, dir, fname, ext);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00820}00820                             wcscat\_s(dir, findData.cFileName);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00821}00821                             \_wmakepath\_s(subdir, drive, dir, fname, ext);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00822}00822                         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00823}00823 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00824}00824                         SearchForFiles(subdir, files, recursive);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00825}00825                     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00826}00826                 \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00827}00827 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00828}00828                 \textcolor{keywordflow}{if} (!FindNextFileW(hFile.get(), \&findData))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00829}00829                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00830}00830             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00831}00831         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00832}00832     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00833}00833 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00834}00834     \textcolor{keywordtype}{void} PrintLogo()}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00835}00835     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00836}00836         wprintf(L\textcolor{stringliteral}{"{}Microsoft (R) XACT-\/style Wave Bank Tool \(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00837}00837         wprintf(L\textcolor{stringliteral}{"{}Copyright (C) Microsoft Corp. All rights reserved.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00838}00838 \textcolor{preprocessor}{\#ifdef \_DEBUG}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00839}00839         wprintf(L\textcolor{stringliteral}{"{}*** Debug build ***\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00840}00840 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00841}00841         wprintf(L\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00842}00842     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00843}00843 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00844}00844     \textcolor{keywordtype}{void} PrintUsage()}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00845}00845     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00846}00846         PrintLogo();}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00847}00847 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00848}00848         wprintf(L\textcolor{stringliteral}{"{}Usage: xwbtool <options> <wav-\/files>\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00849}00849         wprintf(L\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00850}00850         wprintf(L\textcolor{stringliteral}{"{}   -\/r                  wildcard filename search is recursive\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00851}00851         wprintf(L\textcolor{stringliteral}{"{}   -\/s                  creates a streaming wave bank,\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00852}00852         wprintf(L\textcolor{stringliteral}{"{}                       otherwise an in-\/memory bank is created\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00853}00853         wprintf(L\textcolor{stringliteral}{"{}   -\/o <filename>       output filename\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00854}00854         wprintf(L\textcolor{stringliteral}{"{}   -\/h <h-\/filename>     output C/C++ header\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00855}00855         wprintf(L\textcolor{stringliteral}{"{}   -\/l                  force output filename to lower case\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00856}00856         wprintf(L\textcolor{stringliteral}{"{}   -\/y                  overwrite existing output file (if any)\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00857}00857         wprintf(L\textcolor{stringliteral}{"{}   -\/c                  force creation of compact wavebank\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00858}00858         wprintf(L\textcolor{stringliteral}{"{}   -\/nc                 force creation of non-\/compact wavebank\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00859}00859         wprintf(L\textcolor{stringliteral}{"{}   -\/f                  include entry friendly names\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00860}00860         wprintf(L\textcolor{stringliteral}{"{}   -\/nologo             suppress copyright message\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00861}00861         wprintf(L\textcolor{stringliteral}{"{}   -\/flist <filename>   use text file with a list of input files (one per line)\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00862}00862     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00863}00863 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00864}00864     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* GetFormatTagName(WORD wFormatTag)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00865}00865     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00866}00866         \textcolor{keywordflow}{switch} (wFormatTag)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00867}00867         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00868}00868         \textcolor{keywordflow}{case} WAVE\_FORMAT\_PCM: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}PCM"{}};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00869}00869         \textcolor{keywordflow}{case} WAVE\_FORMAT\_ADPCM: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}MS ADPCM"{}};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00870}00870         \textcolor{keywordflow}{case} WAVE\_FORMAT\_EXTENSIBLE: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}EXTENSIBLE"{}};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00871}00871         \textcolor{keywordflow}{case} WAVE\_FORMAT\_IEEE\_FLOAT: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}IEEE float"{}};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00872}00872         \textcolor{keywordflow}{case} WAVE\_FORMAT\_MPEGLAYER3: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}ISO/MPEG Layer3"{}};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00873}00873         \textcolor{keywordflow}{case} WAVE\_FORMAT\_DOLBY\_AC3\_SPDIF: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}Dolby Audio Codec 3 over S/PDIF"{}};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00874}00874         \textcolor{keywordflow}{case} WAVE\_FORMAT\_WMAUDIO2: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}Windows Media Audio"{}};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00875}00875         \textcolor{keywordflow}{case} WAVE\_FORMAT\_WMAUDIO3: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}Windows Media Audio Pro"{}};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00876}00876         \textcolor{keywordflow}{case} WAVE\_FORMAT\_WMASPDIF: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}Windows Media Audio over S/PDIF"{}};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00877}00877         \textcolor{keywordflow}{case} 0x165: \textcolor{comment}{/*WAVE\_FORMAT\_XMA*/} \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}Xbox XMA"{}};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00878}00878         \textcolor{keywordflow}{case} 0x166: \textcolor{comment}{/*WAVE\_FORMAT\_XMA2*/} \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}Xbox XMA2"{}};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00879}00879         \textcolor{keywordflow}{default}: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}*UNKNOWN*"{}};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00880}00880         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00881}00881     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00882}00882 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00883}00883     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* ChannelDesc(DWORD dwChannelMask)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00884}00884     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00885}00885         \textcolor{keywordflow}{switch} (dwChannelMask)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00886}00886         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00887}00887         \textcolor{keywordflow}{case} 0x00000004 \textcolor{comment}{/*SPEAKER\_MONO*/}: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}Mono"{}};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00888}00888         \textcolor{keywordflow}{case} 0x00000003 \textcolor{comment}{/* SPEAKER\_STEREO */}: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}Stereo"{}};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00889}00889         \textcolor{keywordflow}{case} 0x0000000B \textcolor{comment}{/* SPEAKER\_2POINT1 */}: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}2.1"{}};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00890}00890         \textcolor{keywordflow}{case} 0x00000107 \textcolor{comment}{/* SPEAKER\_SURROUND */}: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}Surround"{}};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00891}00891         \textcolor{keywordflow}{case} 0x00000033 \textcolor{comment}{/* SPEAKER\_QUAD */}: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}Quad"{}};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00892}00892         \textcolor{keywordflow}{case} 0x0000003B \textcolor{comment}{/* SPEAKER\_4POINT1 */}: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}4.1"{}};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00893}00893         \textcolor{keywordflow}{case} 0x0000003F \textcolor{comment}{/* SPEAKER\_5POINT1 */}: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}5.1"{}};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00894}00894         \textcolor{keywordflow}{case} 0x000000FF \textcolor{comment}{/* SPEAKER\_7POINT1 */}: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}7.1"{}};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00895}00895         \textcolor{keywordflow}{case} 0x0000060F \textcolor{comment}{/* SPEAKER\_5POINT1\_SURROUND */}: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}Surround5.1"{}};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00896}00896         \textcolor{keywordflow}{case} 0x0000063F \textcolor{comment}{/* SPEAKER\_7POINT1\_SURROUND */}: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}Surround7.1"{}};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00897}00897         \textcolor{keywordflow}{default}: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}Custom"{}};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00898}00898         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00899}00899     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00900}00900 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00901}00901     \textcolor{keywordtype}{void} PrintInfo(\textcolor{keyword}{const} \mbox{\hyperlink{struct_wave_file}{WaveFile}}\& wave)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00902}00902     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00903}00903         \textcolor{keywordflow}{if} (wave.\mbox{\hyperlink{struct_wave_file_ac835f500460fa285dc42cef47e84cd88}{data}}.\mbox{\hyperlink{struct_direct_x_1_1_w_a_v_data_a99e61196c19390fc26fe0caad9e10000}{wfx}}-\/>wFormatTag == WAVE\_FORMAT\_EXTENSIBLE}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00904}00904             \&\& (wave.\mbox{\hyperlink{struct_wave_file_ac835f500460fa285dc42cef47e84cd88}{data}}.\mbox{\hyperlink{struct_direct_x_1_1_w_a_v_data_a99e61196c19390fc26fe0caad9e10000}{wfx}}-\/>cbSize >= (\textcolor{keyword}{sizeof}(WAVEFORMATEXTENSIBLE) -\/ \textcolor{keyword}{sizeof}(WAVEFORMATEX))))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00905}00905         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00906}00906             \textcolor{keyword}{auto} wext = \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }WAVEFORMATEXTENSIBLE*\textcolor{keyword}{>}(\&wave.\mbox{\hyperlink{struct_wave_file_ac835f500460fa285dc42cef47e84cd88}{data}}.\mbox{\hyperlink{struct_direct_x_1_1_w_a_v_data_a99e61196c19390fc26fe0caad9e10000}{wfx}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00907}00907 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00908}00908             wprintf(L\textcolor{stringliteral}{"{} (\%hs \%u channels, \%u-\/bit, \%lu Hz, CMask:\%hs)"{}}, GetFormatTagName(wave.\mbox{\hyperlink{struct_wave_file_ac835f500460fa285dc42cef47e84cd88}{data}}.\mbox{\hyperlink{struct_direct_x_1_1_w_a_v_data_a99e61196c19390fc26fe0caad9e10000}{wfx}}-\/>wFormatTag), wave.\mbox{\hyperlink{struct_wave_file_ac835f500460fa285dc42cef47e84cd88}{data}}.\mbox{\hyperlink{struct_direct_x_1_1_w_a_v_data_a99e61196c19390fc26fe0caad9e10000}{wfx}}-\/>nChannels, wave.\mbox{\hyperlink{struct_wave_file_ac835f500460fa285dc42cef47e84cd88}{data}}.\mbox{\hyperlink{struct_direct_x_1_1_w_a_v_data_a99e61196c19390fc26fe0caad9e10000}{wfx}}-\/>wBitsPerSample, wave.\mbox{\hyperlink{struct_wave_file_ac835f500460fa285dc42cef47e84cd88}{data}}.\mbox{\hyperlink{struct_direct_x_1_1_w_a_v_data_a99e61196c19390fc26fe0caad9e10000}{wfx}}-\/>nSamplesPerSec, ChannelDesc(wext-\/>dwChannelMask));}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00909}00909         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00910}00910         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00911}00911         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00912}00912             wprintf(L\textcolor{stringliteral}{"{} (\%hs \%u channels, \%u-\/bit, \%lu Hz)"{}}, GetFormatTagName(wave.\mbox{\hyperlink{struct_wave_file_ac835f500460fa285dc42cef47e84cd88}{data}}.\mbox{\hyperlink{struct_direct_x_1_1_w_a_v_data_a99e61196c19390fc26fe0caad9e10000}{wfx}}-\/>wFormatTag), wave.\mbox{\hyperlink{struct_wave_file_ac835f500460fa285dc42cef47e84cd88}{data}}.\mbox{\hyperlink{struct_direct_x_1_1_w_a_v_data_a99e61196c19390fc26fe0caad9e10000}{wfx}}-\/>nChannels, wave.\mbox{\hyperlink{struct_wave_file_ac835f500460fa285dc42cef47e84cd88}{data}}.\mbox{\hyperlink{struct_direct_x_1_1_w_a_v_data_a99e61196c19390fc26fe0caad9e10000}{wfx}}-\/>wBitsPerSample, wave.\mbox{\hyperlink{struct_wave_file_ac835f500460fa285dc42cef47e84cd88}{data}}.\mbox{\hyperlink{struct_direct_x_1_1_w_a_v_data_a99e61196c19390fc26fe0caad9e10000}{wfx}}-\/>nSamplesPerSec);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00913}00913         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00914}00914     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00915}00915 \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00916}00916 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00920}00920 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00921}00921 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00922}00922 \textcolor{comment}{// Entry-\/point}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00923}00923 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00924}00924 \textcolor{preprocessor}{\#ifdef \_PREFAST\_}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00925}00925 \textcolor{preprocessor}{\#pragma prefast(disable : 28198, "{}Command-\/line tool, frees all memory on exit"{}})}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00926}00926 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00927}00927 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00928}\mbox{\hyperlink{xwbtool_8cpp_a6135ef3769bd5142a92045f49378032b}{00928}} \textcolor{keywordtype}{int} \_\_cdecl \mbox{\hyperlink{xwbtool_8cpp_a6135ef3769bd5142a92045f49378032b}{wmain}}(\_In\_ \textcolor{keywordtype}{int} argc, \_In\_z\_count\_(argc) \textcolor{keywordtype}{wchar\_t}* argv[])}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00929}00929 \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00930}00930     \textcolor{comment}{// Parameters and defaults}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00931}00931     \textcolor{keywordtype}{wchar\_t} szOutputFile[MAX\_PATH] = \{\};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00932}00932     \textcolor{keywordtype}{wchar\_t} szHeaderFile[MAX\_PATH] = \{\};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00933}00933 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00934}00934     ScopedHandle hFile;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00935}00935 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00936}00936     \textcolor{comment}{// Process command line}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00937}00937     DWORD dwOptions = 0;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00938}00938     std::list<SConversion> conversion;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00939}00939 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00940}00940     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} iArg = 1; iArg < argc; iArg++)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00941}00941     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00942}00942         PWSTR pArg = argv[iArg];}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00943}00943 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00944}00944         \textcolor{keywordflow}{if} ((\textcolor{charliteral}{'-\/'} == pArg[0]) || (\textcolor{charliteral}{'/'} == pArg[0]))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00945}00945         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00946}00946             pArg++;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00947}00947             PWSTR pValue;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00948}00948 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00949}00949             \textcolor{keywordflow}{for} (pValue = pArg; *pValue \&\& (\textcolor{charliteral}{':'} != *pValue); pValue++);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00950}00950 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00951}00951             \textcolor{keywordflow}{if} (*pValue)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00952}00952                 *pValue++ = 0;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00953}00953 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00954}00954             DWORD dwOption = LookupByName(pArg, \mbox{\hyperlink{xwbtool_8cpp_a74abcb937349cd4f0ba0f7701a7d0a10}{g\_pOptions}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00955}00955 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00956}00956             \textcolor{keywordflow}{if} (!dwOption || (dwOptions \& (1 << dwOption)))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00957}00957             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00958}00958                 PrintUsage();}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00959}00959                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00960}00960             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00961}00961 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00962}00962             dwOptions |= 1 << dwOption;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00963}00963 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00964}00964             \textcolor{comment}{// Handle options with additional value parameter}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00965}00965             \textcolor{keywordflow}{switch} (dwOption)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00966}00966             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00967}00967             \textcolor{keywordflow}{case} \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9cafbb35e93ed84618883f2f38657bee409}{OPT\_OUTPUTFILE}}:}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00968}00968             \textcolor{keywordflow}{case} \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca8d143edabed52f072be92e365444d307}{OPT\_OUTPUTHEADER}}:}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00969}00969             \textcolor{keywordflow}{case} \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca2375ceba13408faf9e0679247d29cbf9}{OPT\_FILELIST}}:}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00970}00970                 \textcolor{keywordflow}{if} (!*pValue)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00971}00971                 \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00972}00972                     \textcolor{keywordflow}{if} ((iArg + 1 >= argc))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00973}00973                     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00974}00974                         PrintUsage();}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00975}00975                         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00976}00976                     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00977}00977 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00978}00978                     iArg++;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00979}00979                     pValue = argv[iArg];}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00980}00980                 \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00981}00981                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00982}00982             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00983}00983 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00984}00984             \textcolor{keywordflow}{switch} (dwOption)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00985}00985             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00986}00986             \textcolor{keywordflow}{case} \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9cafbb35e93ed84618883f2f38657bee409}{OPT\_OUTPUTFILE}}:}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00987}00987                 wcscpy\_s(szOutputFile, MAX\_PATH, pValue);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00988}00988                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00989}00989 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00990}00990             \textcolor{keywordflow}{case} \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca8d143edabed52f072be92e365444d307}{OPT\_OUTPUTHEADER}}:}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00991}00991                 wcscpy\_s(szHeaderFile, MAX\_PATH, pValue);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00992}00992                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00993}00993 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00994}00994             \textcolor{keywordflow}{case} \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca48cac8863e3b0543ddf45d63098b7b25}{OPT\_COMPACT}}:}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00995}00995                 \textcolor{keywordflow}{if} (dwOptions \& (1 << \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca06727f57941ad131db3a70b143da21a9}{OPT\_NOCOMPACT}}))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00996}00996                 \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00997}00997                     wprintf(L\textcolor{stringliteral}{"{}-\/c and -\/nc are mutually exclusive options\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00998}00998                     \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l00999}00999                 \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01000}01000                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01001}01001 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01002}01002             \textcolor{keywordflow}{case} \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca06727f57941ad131db3a70b143da21a9}{OPT\_NOCOMPACT}}:}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01003}01003                 \textcolor{keywordflow}{if} (dwOptions \& (1 << \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca48cac8863e3b0543ddf45d63098b7b25}{OPT\_COMPACT}}))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01004}01004                 \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01005}01005                     wprintf(L\textcolor{stringliteral}{"{}-\/c and -\/nc are mutually exclusive options\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01006}01006                     \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01007}01007                 \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01008}01008                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01009}01009 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01010}01010             \textcolor{keywordflow}{case} \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca2375ceba13408faf9e0679247d29cbf9}{OPT\_FILELIST}}:}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01011}01011             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01012}01012                 std::wifstream inFile(pValue);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01013}01013                 \textcolor{keywordflow}{if} (!inFile)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01014}01014                 \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01015}01015                     wprintf(L\textcolor{stringliteral}{"{}Error opening -\/flist file \%ls\(\backslash\)n"{}}, pValue);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01016}01016                     \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01017}01017                 \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01018}01018                 \textcolor{keywordtype}{wchar\_t} fname[1024] = \{\};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01019}01019                 \textcolor{keywordflow}{for} (;;)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01020}01020                 \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01021}01021                     inFile >> fname;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01022}01022                     \textcolor{keywordflow}{if} (!inFile)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01023}01023                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01024}01024 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01025}01025                     \textcolor{keywordflow}{if} (*fname == L\textcolor{charliteral}{'\#'})}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01026}01026                     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01027}01027                         \textcolor{comment}{// Comment}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01028}01028                     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01029}01029                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (*fname == L\textcolor{charliteral}{'-\/'})}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01030}01030                     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01031}01031                         wprintf(L\textcolor{stringliteral}{"{}Command-\/line arguments not supported in -\/flist file\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01032}01032                         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01033}01033                     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01034}01034                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wcspbrk(fname, L\textcolor{stringliteral}{"{}?*"{}}) != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01035}01035                     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01036}01036                         wprintf(L\textcolor{stringliteral}{"{}Wildcards not supported in -\/flist file\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01037}01037                         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01038}01038                     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01039}01039                     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01040}01040                     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01041}01041                         \mbox{\hyperlink{struct_s_conversion}{SConversion}} conv;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01042}01042                         wcscpy\_s(conv.\mbox{\hyperlink{struct_s_conversion_a8ab41aa327c4b1478512428d29351129}{szSrc}}, MAX\_PATH, fname);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01043}01043                         conversion.push\_back(conv);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01044}01044                     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01045}01045 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01046}01046                     inFile.ignore(1000, \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01047}01047                 \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01048}01048                 inFile.close();}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01049}01049             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01050}01050             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01051}01051             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01052}01052         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01053}01053         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wcspbrk(pArg, L\textcolor{stringliteral}{"{}?*"{}}) != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01054}01054         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01055}01055             \textcolor{keywordtype}{size\_t} count = conversion.size();}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01056}01056             SearchForFiles(pArg, conversion, (dwOptions \& (1 << \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca23a014e1f6fe5e7e51720ea2961829e4}{OPT\_RECURSIVE}})) != 0);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01057}01057             \textcolor{keywordflow}{if} (conversion.size() <= count)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01058}01058             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01059}01059                 wprintf(L\textcolor{stringliteral}{"{}No matching files found for \%ls\(\backslash\)n"{}}, pArg);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01060}01060                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01061}01061             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01062}01062         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01063}01063         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01064}01064         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01065}01065             \mbox{\hyperlink{struct_s_conversion}{SConversion}} conv;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01066}01066             wcscpy\_s(conv.\mbox{\hyperlink{struct_s_conversion_a8ab41aa327c4b1478512428d29351129}{szSrc}}, MAX\_PATH, pArg);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01067}01067 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01068}01068             conversion.push\_back(conv);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01069}01069         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01070}01070     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01071}01071 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01072}01072     \textcolor{keywordflow}{if} (conversion.empty())}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01073}01073     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01074}01074         wprintf(L\textcolor{stringliteral}{"{}ERROR: Need at least 1 wave file to build wave bank\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01075}01075         PrintUsage();}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01076}01076         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01077}01077     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01078}01078 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01079}01079     \textcolor{keywordflow}{if} (\string~dwOptions \& (1 << \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9caa415c5db159c8480d5550b84e10b90ae}{OPT\_NOLOGO}}))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01080}01080         PrintLogo();}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01081}01081 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01082}01082     \textcolor{comment}{// Determine output file name}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01083}01083     \textcolor{keywordflow}{if} (!*szOutputFile)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01084}01084     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01085}01085         \textcolor{keyword}{auto} pConv = conversion.begin();}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01086}01086 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01087}01087         \textcolor{keywordtype}{wchar\_t} ext[\_MAX\_EXT];}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01088}01088         \textcolor{keywordtype}{wchar\_t} fname[\_MAX\_FNAME];}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01089}01089         \_wsplitpath\_s(pConv-\/>szSrc, \textcolor{keyword}{nullptr}, 0, \textcolor{keyword}{nullptr}, 0, fname, \_MAX\_FNAME, ext, \_MAX\_EXT);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01090}01090 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01091}01091         \textcolor{keywordflow}{if} (\_wcsicmp(ext, L\textcolor{stringliteral}{"{}.xwb"{}}) == 0)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01092}01092         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01093}01093             wprintf(L\textcolor{stringliteral}{"{}ERROR: Need to specify output file via -\/o\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01094}01094             \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01095}01095         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01096}01096 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01097}01097         \_wmakepath\_s(szOutputFile, \textcolor{keyword}{nullptr}, \textcolor{keyword}{nullptr}, fname, L\textcolor{stringliteral}{"{}.xwb"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01098}01098     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01099}01099 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01100}01100     \textcolor{keywordflow}{if} (dwOptions \& (1 << \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca8d6b45174c6325e1fa3d1b888ffc14d9}{OPT\_TOLOWER}}))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01101}01101     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01102}01102         (void)\_wcslwr\_s(szOutputFile);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01103}01103 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01104}01104         \textcolor{keywordflow}{if} (*szHeaderFile)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01105}01105         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01106}01106             (void)\_wcslwr\_s(szHeaderFile);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01107}01107         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01108}01108     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01109}01109 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01110}01110     \textcolor{keywordflow}{if} (\string~dwOptions \& (1 << \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9cab32550772e401aaf4a785aa412db2bad}{OPT\_OVERWRITE}}))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01111}01111     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01112}01112         \textcolor{keywordflow}{if} (GetFileAttributesW(szOutputFile) != INVALID\_FILE\_ATTRIBUTES)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01113}01113         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01114}01114             wprintf(L\textcolor{stringliteral}{"{}ERROR: Output file \%ls already exists, use -\/y to overwrite!\(\backslash\)n"{}}, szOutputFile);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01115}01115             \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01116}01116         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01117}01117 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01118}01118         \textcolor{keywordflow}{if} (*szHeaderFile)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01119}01119         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01120}01120             \textcolor{keywordflow}{if} (GetFileAttributesW(szHeaderFile) != INVALID\_FILE\_ATTRIBUTES)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01121}01121             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01122}01122                 wprintf(L\textcolor{stringliteral}{"{}ERROR: Output header file \%ls already exists!\(\backslash\)n"{}}, szHeaderFile);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01123}01123                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01124}01124             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01125}01125         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01126}01126     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01127}01127 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01128}01128     \textcolor{comment}{// Gather wave files}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01129}01129     std::unique\_ptr<uint8\_t[]> entries;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01130}01130     std::unique\_ptr<char[]> entryNames;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01131}01131     std::vector<WaveFile> waves;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01132}01132     MINIWAVEFORMAT compactFormat = \{\};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01133}01133 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01134}01134     \textcolor{keywordtype}{size\_t} index = 0;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01135}01135     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} pConv = conversion.begin(); pConv != conversion.end(); ++pConv, ++index)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01136}01136     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01137}01137         \textcolor{keywordtype}{wchar\_t} ext[\_MAX\_EXT];}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01138}01138         \textcolor{keywordtype}{wchar\_t} fname[\_MAX\_FNAME];}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01139}01139         \_wsplitpath\_s(pConv-\/>szSrc, \textcolor{keyword}{nullptr}, 0, \textcolor{keyword}{nullptr}, 0, fname, \_MAX\_FNAME, ext, \_MAX\_EXT);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01140}01140 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01141}01141         \textcolor{comment}{// Load source image}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01142}01142         \textcolor{keywordflow}{if} (pConv != conversion.begin())}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01143}01143             wprintf(L\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01144}01144 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01145}01145         wprintf(L\textcolor{stringliteral}{"{}reading \%ls"{}}, pConv-\/>szSrc);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01146}01146         fflush(stdout);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01147}01147 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01148}01148         \mbox{\hyperlink{struct_wave_file}{WaveFile}} wave;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01149}01149         wave.\mbox{\hyperlink{struct_wave_file_adeef1a6858c047de8932ba87da0296d3}{conv}} = index;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01150}01150         std::unique\_ptr<uint8\_t[]> waveData;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01151}01151 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01152}01152         HRESULT hr = \mbox{\hyperlink{namespace_direct_x_aa35f921e8b5bb5f9fd94c00e5e2f91ef}{DirectX::LoadWAVAudioFromFileEx}}(pConv-\/>szSrc, waveData, wave.\mbox{\hyperlink{struct_wave_file_ac835f500460fa285dc42cef47e84cd88}{data}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01153}01153         \textcolor{keywordflow}{if} (FAILED(hr))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01154}01154         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01155}01155             wprintf(L\textcolor{stringliteral}{"{}\(\backslash\)nERROR: Failed to load file (\%08X)\(\backslash\)n"{}}, \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\textcolor{keyword}{>}(hr));}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01156}01156             \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01157}01157         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01158}01158 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01159}01159         wave.\mbox{\hyperlink{struct_wave_file_a99f79c3779d5f9e503f82dc003bb0950}{waveData}} = std::move(waveData);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01160}01160 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01161}01161         PrintInfo(wave);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01162}01162 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01163}01163         waves.emplace\_back(std::move(wave));}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01164}01164     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01165}01165 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01166}01166     wprintf(L\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01167}01167 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01168}01168     DWORD dwAlignment = ALIGNMENT\_MIN;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01169}01169     \textcolor{keywordflow}{if} (dwOptions \& (1 << \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca7feec62c20fde3b10fcf3525550e14c1}{OPT\_STREAMING}}))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01170}01170         dwAlignment = ALIGNMENT\_DVD;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01171}01171 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01172}01172     \textcolor{comment}{// Convert wave format to miniformat, failing if any won't map}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01173}01173     \textcolor{comment}{// Check to see if we can use the compact wave bank format}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01174}01174     \textcolor{keywordtype}{bool} compact = (dwOptions \& (1 << \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca06727f57941ad131db3a70b143da21a9}{OPT\_NOCOMPACT}})) ? false : \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01175}01175     \textcolor{keywordtype}{int} reason = 0;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01176}01176     uint64\_t waveOffset = 0;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01177}01177 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01178}01178     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = waves.begin(); it != waves.end(); ++it)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01179}01179     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01180}01180         \textcolor{keywordflow}{if} (!ConvertToMiniFormat(it-\/>data.wfx, it-\/>data.seek != \textcolor{keyword}{nullptr}, it-\/>miniFmt))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01181}01181         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01182}01182             \textcolor{keyword}{auto} cit = conversion.cbegin();}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01183}01183             advance(cit, it-\/>conv);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01184}01184             wprintf(L\textcolor{stringliteral}{"{}ERROR: Failed encoding \%ls\(\backslash\)n"{}}, cit-\/>szSrc);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01185}01185             \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01186}01186         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01187}01187 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01188}01188         \textcolor{keywordflow}{if} (it == waves.begin())}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01189}01189         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01190}01190             memcpy(\&compactFormat, \&it-\/>miniFmt, \textcolor{keyword}{sizeof}(MINIWAVEFORMAT));}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01191}01191         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01192}01192         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (memcmp(\&compactFormat, \&it-\/>miniFmt, \textcolor{keyword}{sizeof}(MINIWAVEFORMAT)) != 0)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01193}01193         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01194}01194             compact = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01195}01195             reason |= 0x1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01196}01196         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01197}01197 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01198}01198         \textcolor{keywordflow}{if} (it-\/>data.loopLength > 0)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01199}01199         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01200}01200             compact = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01201}01201             reason |= 0x2;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01202}01202         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01203}01203 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01204}01204         DWORD alignedSize = \mbox{\hyperlink{xwbtool_8cpp_acad1a14eb25694084a1693c0e31a0269}{BLOCKALIGNPAD}}(it-\/>data.audioBytes, dwAlignment);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01205}01205         waveOffset += alignedSize;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01206}01206     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01207}01207 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01208}01208     \textcolor{keywordflow}{if} (waveOffset > UINT32\_MAX)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01209}01209     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01210}01210         wprintf(L\textcolor{stringliteral}{"{}ERROR: Audio wave data is too large to encode into wavebank (offset \%llu)"{}}, waveOffset);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01211}01211         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01212}01212     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01213}01213     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (waveOffset > (MAX\_COMPACT\_DATA\_SEGMENT\_SIZE * uint64\_t(dwAlignment)))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01214}01214     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01215}01215         compact = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01216}01216         reason |= 0x4;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01217}01217     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01218}01218 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01219}01219     \textcolor{keywordflow}{if} ((dwOptions \& (1 << \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca48cac8863e3b0543ddf45d63098b7b25}{OPT\_COMPACT}})) \&\& !compact)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01220}01220     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01221}01221         wprintf(L\textcolor{stringliteral}{"{}ERROR: Cannot create compact wave bank:\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01222}01222         \textcolor{keywordflow}{if} (reason \& 0x1)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01223}01223         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01224}01224             wprintf(L\textcolor{stringliteral}{"{}-\/ Mismatched formats. All formats must be identical for a compact wavebank.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01225}01225         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01226}01226         \textcolor{keywordflow}{if} (reason \& 0x2)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01227}01227         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01228}01228             wprintf(L\textcolor{stringliteral}{"{}-\/ Found loop points. Compact wavebanks do not support loop points.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01229}01229         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01230}01230         \textcolor{keywordflow}{if} (reason \& 0x4)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01231}01231         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01232}01232             wprintf(L\textcolor{stringliteral}{"{}-\/ Audio wave data is too large to encode in compact wavebank (\%llu > \%llu).\(\backslash\)n"{}}, waveOffset, (uint64\_t(MAX\_COMPACT\_DATA\_SEGMENT\_SIZE) * uint64\_t(dwAlignment)));}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01233}01233         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01234}01234         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01235}01235     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01236}01236 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01237}01237     \textcolor{comment}{// Build entry metadata (and assign wave offset within data segment)}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01238}01238     \textcolor{comment}{// Build entry friendly names if requested}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01239}01239     entries.reset(\textcolor{keyword}{new} uint8\_t[(compact ? \textcolor{keyword}{sizeof}(ENTRYCOMPACT) : \textcolor{keyword}{sizeof}(ENTRY)) * waves.size()]);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01240}01240 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01241}01241     \textcolor{keywordflow}{if} (dwOptions \& (1 << \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca1466358788a8c98e1e002da496316b06}{OPT\_FRIENDLY\_NAMES}}))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01242}01242     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01243}01243         entryNames.reset(\textcolor{keyword}{new} \textcolor{keywordtype}{char}[waves.size() * ENTRYNAME\_LENGTH]);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01244}01244         memset(entryNames.get(), 0, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}) * waves.size() * ENTRYNAME\_LENGTH);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01245}01245     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01246}01246 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01247}01247     waveOffset = 0;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01248}01248     \textcolor{keywordtype}{size\_t} count = 0;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01249}01249     \textcolor{keywordtype}{size\_t} seekEntries = 0;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01250}01250     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = waves.begin(); it != waves.end(); ++it, ++count)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01251}01251     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01252}01252         DWORD alignedSize = \mbox{\hyperlink{xwbtool_8cpp_acad1a14eb25694084a1693c0e31a0269}{BLOCKALIGNPAD}}(it-\/>data.audioBytes, dwAlignment);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01253}01253 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01254}01254         \textcolor{keyword}{auto} wfx = it-\/>data.wfx;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01255}01255 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01256}01256         uint64\_t duration = 0;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01257}01257 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01258}01258         \textcolor{keywordflow}{switch} (it-\/>miniFmt.wFormatTag)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01259}01259         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01260}01260         \textcolor{keywordflow}{case} MINIWAVEFORMAT::TAG\_ADPCM:}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01261}01261         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01262}01262             \textcolor{keyword}{auto} adpcmFmt = \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }ADPCMEWAVEFORMAT*\textcolor{keyword}{>}(wfx);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01263}01263             duration = (uint64\_t(it-\/>data.audioBytes) / uint64\_t(wfx-\/>nBlockAlign)) * uint64\_t(adpcmFmt-\/>wSamplesPerBlock);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01264}01264             \textcolor{keywordtype}{int} partial = it-\/>data.audioBytes \% wfx-\/>nBlockAlign;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01265}01265             \textcolor{keywordflow}{if} (partial)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01266}01266             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01267}01267                 \textcolor{keywordflow}{if} (partial >= (7 * wfx-\/>nChannels))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01268}01268                     duration += (uint64\_t(partial) * 2 / uint64\_t(wfx-\/>nChannels -\/ 12));}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01269}01269             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01270}01270         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01271}01271         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01272}01272 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01273}01273         \textcolor{keywordflow}{case} MINIWAVEFORMAT::TAG\_WMA:}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01274}01274             \textcolor{keywordflow}{if} (it-\/>data.seekCount > 0)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01275}01275             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01276}01276                 seekEntries += size\_t(it-\/>data.seekCount) + 1u;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01277}01277                 duration = it-\/>data.seek[it-\/>data.seekCount -\/ 1] / uint32\_t(2 * wfx-\/>nChannels);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01278}01278             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01279}01279             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01280}01280 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01281}01281         \textcolor{keywordflow}{default}: \textcolor{comment}{// MINIWAVEFORMAT::TAG\_PCM}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01282}01282             duration = (uint64\_t(it-\/>data.audioBytes) * 8) / (uint64\_t(wfx-\/>wBitsPerSample) * uint64\_t(wfx-\/>nChannels));}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01283}01283             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01284}01284         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01285}01285 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01286}01286         \textcolor{keywordflow}{if} (compact)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01287}01287         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01288}01288             \textcolor{keyword}{auto} entry = \textcolor{keyword}{reinterpret\_cast<}ENTRYCOMPACT*\textcolor{keyword}{>}(entries.get() + count * \textcolor{keyword}{sizeof}(ENTRYCOMPACT));}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01289}01289             memset(entry, 0, \textcolor{keyword}{sizeof}(ENTRYCOMPACT));}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01290}01290 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01291}01291             assert(waveOffset <= (MAX\_COMPACT\_DATA\_SEGMENT\_SIZE * uint64\_t(dwAlignment)));}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01292}01292             entry-\/>dwOffset = uint32\_t(waveOffset / dwAlignment);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01293}01293 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01294}01294             assert(dwAlignment <= 2048);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01295}01295             entry-\/>dwLengthDeviation = alignedSize -\/ it-\/>data.audioBytes;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01296}01296         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01297}01297         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01298}01298         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01299}01299             \textcolor{keyword}{auto} entry = \textcolor{keyword}{reinterpret\_cast<}ENTRY*\textcolor{keyword}{>}(entries.get() + count * \textcolor{keyword}{sizeof}(ENTRY));}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01300}01300             memset(entry, 0, \textcolor{keyword}{sizeof}(ENTRY));}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01301}01301 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01302}01302             \textcolor{keywordflow}{if} (duration > 268435455)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01303}01303             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01304}01304                 wprintf(L\textcolor{stringliteral}{"{}ERROR: Duration of audio too long to encode into wavebank (\%llu > 2\string^28))\(\backslash\)n"{}}, duration);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01305}01305                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01306}01306             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01307}01307 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01308}01308             entry-\/>Duration = uint32\_t(duration);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01309}01309             memcpy(\&entry-\/>Format, \&it-\/>miniFmt, \textcolor{keyword}{sizeof}(MINIWAVEFORMAT));}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01310}01310             entry-\/>PlayRegion.dwOffset = uint32\_t(waveOffset);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01311}01311             entry-\/>PlayRegion.dwLength = it-\/>data.audioBytes;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01312}01312 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01313}01313             \textcolor{keywordflow}{if} (it-\/>data.loopLength > 0)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01314}01314             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01315}01315                 entry-\/>LoopRegion.dwStartSample = it-\/>data.loopStart;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01316}01316                 entry-\/>LoopRegion.dwTotalSamples = it-\/>data.loopLength;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01317}01317             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01318}01318         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01319}01319 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01320}01320         \textcolor{keywordflow}{if} (dwOptions \& (1 << \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca1466358788a8c98e1e002da496316b06}{OPT\_FRIENDLY\_NAMES}}))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01321}01321         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01322}01322             \textcolor{keyword}{auto} cit = conversion.cbegin();}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01323}01323             advance(cit, it-\/>conv);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01324}01324 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01325}01325             \textcolor{keywordtype}{wchar\_t} wEntryName[\_MAX\_FNAME];}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01326}01326             \_wsplitpath\_s(cit-\/>szSrc, \textcolor{keyword}{nullptr}, 0, \textcolor{keyword}{nullptr}, 0, wEntryName, \_MAX\_FNAME, \textcolor{keyword}{nullptr}, 0);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01327}01327 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01328}01328             \textcolor{keywordtype}{int} result = WideCharToMultiByte(CP\_UTF8, WC\_NO\_BEST\_FIT\_CHARS, wEntryName, -\/1, \&entryNames[count * ENTRYNAME\_LENGTH], ENTRYNAME\_LENGTH, \textcolor{keyword}{nullptr}, \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01329}01329             \textcolor{keywordflow}{if} (result <= 0)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01330}01330             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01331}01331                 memset(\&entryNames[count * ENTRYNAME\_LENGTH], 0, ENTRYNAME\_LENGTH);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01332}01332             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01333}01333         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01334}01334 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01335}01335         waveOffset += alignedSize;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01336}01336     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01337}01337 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01338}01338     assert(count > 0 \&\& count == waves.size());}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01339}01339 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01340}01340     \textcolor{comment}{// Create wave bank}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01341}01341     assert(*szOutputFile != 0);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01342}01342 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01343}01343     wprintf(L\textcolor{stringliteral}{"{}writing \%ls\%ls wavebank \%ls w/ \%zu entries\(\backslash\)n"{}}, (compact) ? L\textcolor{stringliteral}{"{}compact "{}} : L\textcolor{stringliteral}{"{}"{}}, (dwOptions \& (1 << \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca7feec62c20fde3b10fcf3525550e14c1}{OPT\_STREAMING}})) ? L\textcolor{stringliteral}{"{}streaming"{}} : L\textcolor{stringliteral}{"{}in-\/memory"{}}, szOutputFile, waves.size());}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01344}01344     fflush(stdout);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01345}01345 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01346}01346     hFile.reset(safe\_handle(CreateFileW(szOutputFile, GENERIC\_WRITE, 0, \textcolor{keyword}{nullptr}, CREATE\_ALWAYS, FILE\_ATTRIBUTE\_NORMAL, \textcolor{keyword}{nullptr})));}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01347}01347     \textcolor{keywordflow}{if} (!hFile)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01348}01348     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01349}01349         wprintf(L\textcolor{stringliteral}{"{}ERROR: Failed opening output file \%ls, \%lu\(\backslash\)n"{}}, szOutputFile, GetLastError());}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01350}01350         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01351}01351     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01352}01352 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01353}01353     \textcolor{comment}{// Setup wave bank header}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01354}01354     HEADER header = \{\};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01355}01355     header.dwSignature = HEADER::SIGNATURE;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01356}01356     header.dwHeaderVersion = HEADER::VERSION;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01357}01357     header.dwVersion = \mbox{\hyperlink{xwbtool_8cpp_adbc31aa8f43bf6f4c694adc04be94635}{XACT\_CONTENT\_VERSION}};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01358}01358 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01359}01359     DWORD segmentOffset = \textcolor{keyword}{sizeof}(HEADER);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01360}01360 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01361}01361     \textcolor{comment}{// Write bank metadata}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01362}01362     assert((segmentOffset \% 4) == 0);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01363}01363 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01364}01364     BANKDATA data = \{\};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01365}01365 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01366}01366     data.dwEntryCount = uint32\_t(waves.size());}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01367}01367     data.dwAlignment = dwAlignment;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01368}01368 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01369}01369     GetSystemTimeAsFileTime(\&data.BuildTime);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01370}01370 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01371}01371     data.dwFlags = (dwOptions \& (1 << \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca7feec62c20fde3b10fcf3525550e14c1}{OPT\_STREAMING}})) ? BANKDATA::TYPE\_STREAMING : BANKDATA::TYPE\_BUFFER;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01372}01372 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01373}01373     \textcolor{keywordflow}{if} (seekEntries > 0)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01374}01374     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01375}01375         data.dwFlags |= BANKDATA::FLAGS\_SEEKTABLES;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01376}01376     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01377}01377 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01378}01378     \textcolor{keywordflow}{if} (dwOptions \& (1 << \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca1466358788a8c98e1e002da496316b06}{OPT\_FRIENDLY\_NAMES}}))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01379}01379     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01380}01380         data.dwFlags |= BANKDATA::FLAGS\_ENTRYNAMES;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01381}01381         data.dwEntryNameElementSize = ENTRYNAME\_LENGTH;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01382}01382     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01383}01383 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01384}01384     \textcolor{keywordflow}{if} (compact)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01385}01385     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01386}01386         data.dwFlags |= BANKDATA::FLAGS\_COMPACT;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01387}01387         data.dwEntryMetaDataElementSize = \textcolor{keyword}{sizeof}(ENTRYCOMPACT);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01388}01388         memcpy(\&data.CompactFormat, \&compactFormat, \textcolor{keyword}{sizeof}(MINIWAVEFORMAT));}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01389}01389     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01390}01390     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01391}01391     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01392}01392         data.dwEntryMetaDataElementSize = \textcolor{keyword}{sizeof}(ENTRY);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01393}01393     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01394}01394 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01395}01395     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01396}01396         \textcolor{keywordtype}{wchar\_t} wBankName[\_MAX\_FNAME];}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01397}01397         \_wsplitpath\_s(szOutputFile, \textcolor{keyword}{nullptr}, 0, \textcolor{keyword}{nullptr}, 0, wBankName, \_MAX\_FNAME, \textcolor{keyword}{nullptr}, 0);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01398}01398 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01399}01399         \textcolor{keywordtype}{int} result = WideCharToMultiByte(CP\_UTF8, WC\_NO\_BEST\_FIT\_CHARS, wBankName, -\/1, data.szBankName, BANKDATA::BANKNAME\_LENGTH, \textcolor{keyword}{nullptr}, \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01400}01400         \textcolor{keywordflow}{if} (result <= 0)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01401}01401         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01402}01402             memset(data.szBankName, 0, BANKDATA::BANKNAME\_LENGTH);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01403}01403         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01404}01404     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01405}01405 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01406}01406     \textcolor{keywordflow}{if} (SetFilePointer(hFile.get(), LONG(segmentOffset), \textcolor{keyword}{nullptr}, FILE\_BEGIN) == INVALID\_SET\_FILE\_POINTER)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01407}01407     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01408}01408         wprintf(L\textcolor{stringliteral}{"{}ERROR: Failed writing bank data to \%ls, SFP \%lu\(\backslash\)n"{}}, szOutputFile, GetLastError());}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01409}01409         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01410}01410     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01411}01411 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01412}01412     DWORD bytesWritten;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01413}01413     \textcolor{keywordflow}{if} (!WriteFile(hFile.get(), \&data, \textcolor{keyword}{sizeof}(data), \&bytesWritten, \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01414}01414         || bytesWritten != \textcolor{keyword}{sizeof}(data))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01415}01415     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01416}01416         wprintf(L\textcolor{stringliteral}{"{}ERROR: Failed writing bank data to \%ls, \%lu\(\backslash\)n"{}}, szOutputFile, GetLastError());}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01417}01417         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01418}01418     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01419}01419 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01420}01420     header.Segments[HEADER::SEGIDX\_BANKDATA].dwOffset = segmentOffset;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01421}01421     header.Segments[HEADER::SEGIDX\_BANKDATA].dwLength = \textcolor{keyword}{sizeof}(BANKDATA);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01422}01422     segmentOffset += \textcolor{keyword}{sizeof}(BANKDATA);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01423}01423 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01424}01424     \textcolor{comment}{// Write entry metadata}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01425}01425     assert((segmentOffset \% 4) == 0);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01426}01426 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01427}01427     \textcolor{keywordflow}{if} (SetFilePointer(hFile.get(), LONG(segmentOffset), \textcolor{keyword}{nullptr}, FILE\_BEGIN) == INVALID\_SET\_FILE\_POINTER)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01428}01428     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01429}01429         wprintf(L\textcolor{stringliteral}{"{}ERROR: Failed writing entry metadata to \%ls, SFP \%lu\(\backslash\)n"{}}, szOutputFile, GetLastError());}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01430}01430         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01431}01431     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01432}01432 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01433}01433     uint32\_t entryBytes = uint32\_t(waves.size() * data.dwEntryMetaDataElementSize);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01434}01434     \textcolor{keywordflow}{if} (!WriteFile(hFile.get(), entries.get(), entryBytes, \&bytesWritten, \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01435}01435         || bytesWritten != entryBytes)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01436}01436     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01437}01437         wprintf(L\textcolor{stringliteral}{"{}ERROR: Failed writing entry metadata to \%ls, \%lu\(\backslash\)n"{}}, szOutputFile, GetLastError());}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01438}01438         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01439}01439     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01440}01440 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01441}01441     header.Segments[HEADER::SEGIDX\_ENTRYMETADATA].dwOffset = segmentOffset;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01442}01442     header.Segments[HEADER::SEGIDX\_ENTRYMETADATA].dwLength = entryBytes;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01443}01443     segmentOffset += entryBytes;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01444}01444 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01445}01445     \textcolor{comment}{// Write seek tables}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01446}01446     assert((segmentOffset \% 4) == 0);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01447}01447 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01448}01448     header.Segments[HEADER::SEGIDX\_SEEKTABLES].dwOffset = segmentOffset;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01449}01449 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01450}01450     \textcolor{keywordflow}{if} (seekEntries > 0)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01451}01451     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01452}01452         seekEntries += waves.size(); \textcolor{comment}{// Room for an offset per entry}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01453}01453 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01454}01454         \textcolor{keyword}{auto} seekTables = std::make\_unique<uint32\_t[]>(seekEntries);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01455}01455 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01456}01456         \textcolor{keywordflow}{if} (SetFilePointer(hFile.get(), LONG(segmentOffset), \textcolor{keyword}{nullptr}, FILE\_BEGIN) == INVALID\_SET\_FILE\_POINTER)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01457}01457         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01458}01458             wprintf(L\textcolor{stringliteral}{"{}ERROR: Failed writing seek tables to \%ls, SFP \%lu\(\backslash\)n"{}}, szOutputFile, GetLastError());}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01459}01459             \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01460}01460         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01461}01461 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01462}01462         uint32\_t seekoffset = 0;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01463}01463         uint32\_t windex = 0;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01464}01464         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = waves.begin(); it != waves.end(); ++it, ++windex)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01465}01465         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01466}01466             \textcolor{keywordflow}{if} (it-\/>miniFmt.wFormatTag == MINIWAVEFORMAT::TAG\_WMA)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01467}01467             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01468}01468                 seekTables[windex] = seekoffset * \textcolor{keyword}{sizeof}(uint32\_t);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01469}01469 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01470}01470                 uint32\_t baseoffset = uint32\_t(waves.size() + seekoffset);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01471}01471                 seekTables[baseoffset] = it-\/>data.seekCount;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01472}01472 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01473}01473                 \textcolor{keywordflow}{for} (uint32\_t j = 0; j < it-\/>data.seekCount; ++j)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01474}01474                 \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01475}01475                     seekTables[size\_t(baseoffset) + size\_t(j) + 1u] = it-\/>data.seek[j];}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01476}01476                 \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01477}01477 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01478}01478                 seekoffset += size\_t(it-\/>data.seekCount) + 1u;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01479}01479             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01480}01480             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01481}01481             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01482}01482                 seekTables[windex] = uint32\_t(-\/1);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01483}01483             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01484}01484         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01485}01485 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01486}01486         uint32\_t seekLen = uint32\_t(\textcolor{keyword}{sizeof}(uint32\_t) * seekEntries);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01487}01487 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01488}01488         \textcolor{keywordflow}{if} (!WriteFile(hFile.get(), seekTables.get(), seekLen, \&bytesWritten, \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01489}01489             || bytesWritten != seekLen)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01490}01490         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01491}01491             wprintf(L\textcolor{stringliteral}{"{}ERROR: Failed writing seek tables to \%ls, \%lu\(\backslash\)n"{}}, szOutputFile, GetLastError());}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01492}01492             \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01493}01493         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01494}01494 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01495}01495         segmentOffset += seekLen;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01496}01496 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01497}01497         header.Segments[HEADER::SEGIDX\_SEEKTABLES].dwLength = seekLen;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01498}01498     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01499}01499     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01500}01500     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01501}01501         header.Segments[HEADER::SEGIDX\_SEEKTABLES].dwLength = 0;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01502}01502     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01503}01503 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01504}01504     \textcolor{comment}{// Write entry names}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01505}01505     \textcolor{keywordflow}{if} (dwOptions \& (1 << \mbox{\hyperlink{xwbtool_8cpp_a4d39c1cfd27cf8736005f0eeec214c9ca1466358788a8c98e1e002da496316b06}{OPT\_FRIENDLY\_NAMES}}))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01506}01506     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01507}01507         assert((segmentOffset \% 4) == 0);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01508}01508 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01509}01509         \textcolor{keywordflow}{if} (SetFilePointer(hFile.get(), LONG(segmentOffset), \textcolor{keyword}{nullptr}, FILE\_BEGIN) == INVALID\_SET\_FILE\_POINTER)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01510}01510         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01511}01511             wprintf(L\textcolor{stringliteral}{"{}ERROR: Failed writing friendly entry names to \%ls, SFP \%lu\(\backslash\)n"{}}, szOutputFile, GetLastError());}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01512}01512             \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01513}01513         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01514}01514 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01515}01515         uint32\_t entryNamesBytes = uint32\_t(count * data.dwEntryNameElementSize);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01516}01516         \textcolor{keywordflow}{if} (!WriteFile(hFile.get(), entryNames.get(), entryNamesBytes, \&bytesWritten, \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01517}01517             || bytesWritten != entryNamesBytes)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01518}01518         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01519}01519             wprintf(L\textcolor{stringliteral}{"{}ERROR: Failed writing friendly entry names to \%ls, \%lu\(\backslash\)n"{}}, szOutputFile, GetLastError());}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01520}01520             \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01521}01521         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01522}01522 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01523}01523         header.Segments[HEADER::SEGIDX\_ENTRYNAMES].dwOffset = segmentOffset;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01524}01524         header.Segments[HEADER::SEGIDX\_ENTRYNAMES].dwLength = entryNamesBytes;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01525}01525         segmentOffset += entryNamesBytes;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01526}01526     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01527}01527 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01528}01528     \textcolor{comment}{// Write wave data}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01529}01529     segmentOffset = \mbox{\hyperlink{xwbtool_8cpp_acad1a14eb25694084a1693c0e31a0269}{BLOCKALIGNPAD}}(segmentOffset, dwAlignment);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01530}01530 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01531}01531     header.Segments[HEADER::SEGIDX\_ENTRYWAVEDATA].dwOffset = segmentOffset;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01532}01532     header.Segments[HEADER::SEGIDX\_ENTRYWAVEDATA].dwLength = uint32\_t(waveOffset);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01533}01533 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01534}01534     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = waves.begin(); it != waves.end(); ++it)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01535}01535     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01536}01536         \textcolor{keywordflow}{if} (SetFilePointer(hFile.get(), LONG(segmentOffset), \textcolor{keyword}{nullptr}, FILE\_BEGIN) == INVALID\_SET\_FILE\_POINTER)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01537}01537         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01538}01538             wprintf(L\textcolor{stringliteral}{"{}ERROR: Failed writing audio data to \%ls, SFP \%lu\(\backslash\)n"{}}, szOutputFile, GetLastError());}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01539}01539             \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01540}01540         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01541}01541 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01542}01542         \textcolor{keywordflow}{if} (!WriteFile(hFile.get(), it-\/>data.startAudio, it-\/>data.audioBytes, \&bytesWritten, \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01543}01543             || bytesWritten != it-\/>data.audioBytes)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01544}01544         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01545}01545             wprintf(L\textcolor{stringliteral}{"{}ERROR: Failed writing audio data to \%ls, \%lu\(\backslash\)n"{}}, szOutputFile, GetLastError());}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01546}01546             \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01547}01547         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01548}01548 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01549}01549         DWORD alignedSize = \mbox{\hyperlink{xwbtool_8cpp_acad1a14eb25694084a1693c0e31a0269}{BLOCKALIGNPAD}}(it-\/>data.audioBytes, dwAlignment);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01550}01550 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01551}01551         \textcolor{keywordflow}{if} ((uint64\_t(segmentOffset) + alignedSize) > UINT32\_MAX)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01552}01552         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01553}01553             wprintf(L\textcolor{stringliteral}{"{}ERROR: Data exceeds maximum size for wavebank\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01554}01554             \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01555}01555         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01556}01556 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01557}01557         segmentOffset += alignedSize;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01558}01558     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01559}01559 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01560}01560     assert(segmentOffset == (header.Segments[HEADER::SEGIDX\_ENTRYWAVEDATA].dwOffset + waveOffset));}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01561}01561 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01562}01562     \textcolor{comment}{// Commit wave bank}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01563}01563     \textcolor{keywordflow}{if} (SetFilePointer(hFile.get(), LONG(segmentOffset), \textcolor{keyword}{nullptr}, FILE\_BEGIN) == INVALID\_SET\_FILE\_POINTER)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01564}01564     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01565}01565         wprintf(L\textcolor{stringliteral}{"{}ERROR: Failed committing output file \%ls, EOF \%lu\(\backslash\)n"{}}, szOutputFile, GetLastError());}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01566}01566         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01567}01567     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01568}01568 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01569}01569     \textcolor{keywordflow}{if} (!SetEndOfFile(hFile.get()))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01570}01570     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01571}01571         wprintf(L\textcolor{stringliteral}{"{}ERROR: Failed committing output file \%ls, EOF \%lu\(\backslash\)n"{}}, szOutputFile, GetLastError());}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01572}01572         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01573}01573     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01574}01574 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01575}01575     \textcolor{keywordflow}{if} (SetFilePointer(hFile.get(), 0, \textcolor{keyword}{nullptr}, FILE\_BEGIN) == INVALID\_SET\_FILE\_POINTER)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01576}01576     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01577}01577         wprintf(L\textcolor{stringliteral}{"{}ERROR: Failed committing output file \%ls, HDR \%lu\(\backslash\)n"{}}, szOutputFile, GetLastError());}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01578}01578         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01579}01579     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01580}01580 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01581}01581     \textcolor{keywordflow}{if} (!WriteFile(hFile.get(), \&header, \textcolor{keyword}{sizeof}(header), \&bytesWritten, \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01582}01582         || bytesWritten != \textcolor{keyword}{sizeof}(header))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01583}01583     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01584}01584         wprintf(L\textcolor{stringliteral}{"{}ERROR: Failed committing output file \%ls, HDR \%lu\(\backslash\)n"{}}, szOutputFile, GetLastError());}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01585}01585         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01586}01586     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01587}01587 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01588}01588     \textcolor{comment}{// Write C header if requested}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01589}01589     \textcolor{keywordflow}{if} (*szHeaderFile)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01590}01590     \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01591}01591         wprintf(L\textcolor{stringliteral}{"{}writing C header \%ls\(\backslash\)n"{}}, szHeaderFile);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01592}01592         fflush(stdout);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01593}01593 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01594}01594         FILE* file = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01595}01595         \textcolor{keywordflow}{if} (!\_wfopen\_s(\&file, szHeaderFile, L\textcolor{stringliteral}{"{}wt"{}}))}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01596}01596         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01597}01597             \textcolor{keywordtype}{wchar\_t} wBankName[\_MAX\_FNAME];}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01598}01598             \_wsplitpath\_s(szOutputFile, \textcolor{keyword}{nullptr}, 0, \textcolor{keyword}{nullptr}, 0, wBankName, \_MAX\_FNAME, \textcolor{keyword}{nullptr}, 0);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01599}01599 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01600}01600             FileNameToIdentifier(wBankName, \_MAX\_FNAME);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01601}01601 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01602}01602             fprintf\_s(file, \textcolor{stringliteral}{"{}\#pragma once\(\backslash\)n\(\backslash\)nenum XACT\_WAVEBANK\_\%ls : unsigned int\(\backslash\)n\{\(\backslash\)n"{}}, wBankName);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01603}01603 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01604}01604             \textcolor{keywordtype}{size\_t} windex = 0;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01605}01605             \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = waves.begin(); it != waves.end(); ++it, ++windex)}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01606}01606             \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01607}01607                 \textcolor{keyword}{auto} cit = conversion.cbegin();}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01608}01608                 advance(cit, it-\/>conv);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01609}01609 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01610}01610                 \textcolor{keywordtype}{wchar\_t} wEntryName[\_MAX\_FNAME];}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01611}01611                 \_wsplitpath\_s(cit-\/>szSrc, \textcolor{keyword}{nullptr}, 0, \textcolor{keyword}{nullptr}, 0, wEntryName, \_MAX\_FNAME, \textcolor{keyword}{nullptr}, 0);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01612}01612 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01613}01613                 FileNameToIdentifier(wEntryName, \_MAX\_FNAME);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01614}01614 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01615}01615                 fprintf\_s(file, \textcolor{stringliteral}{"{}    XACT\_WAVEBANK\_\%ls\_\%ls = \%zu,\(\backslash\)n"{}}, wBankName, wEntryName, windex);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01616}01616             \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01617}01617 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01618}01618             fprintf\_s(file, \textcolor{stringliteral}{"{}\};\(\backslash\)n\(\backslash\)n\#define XACT\_WAVEBANK\_\%ls\_ENTRY\_COUNT \%zu\(\backslash\)n"{}}, wBankName, count);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01619}01619 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01620}01620             fclose(file);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01621}01621         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01622}01622         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01623}01623         \{}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01624}01624             wprintf(L\textcolor{stringliteral}{"{}ERROR: Failed writing wave bank C header \%ls\(\backslash\)n"{}}, szHeaderFile);}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01625}01625             \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01626}01626         \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01627}01627     \}}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01628}01628 }
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01629}01629     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{xwbtool_8cpp_source_l01630}01630 \}}
+
+\end{DoxyCode}

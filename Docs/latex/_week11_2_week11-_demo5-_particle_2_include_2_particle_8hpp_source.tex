@@ -1,0 +1,31 @@
+\hypertarget{_week11_2_week11-_demo5-_particle_2_include_2_particle_8hpp_source}{}\doxysection{Particle.\+hpp}
+\label{_week11_2_week11-_demo5-_particle_2_include_2_particle_8hpp_source}\index{Week11/Week11-\/Demo5-\/Particle/Include/Particle.hpp@{Week11/Week11-\/Demo5-\/Particle/Include/Particle.hpp}}
+\mbox{\hyperlink{_week11_2_week11-_demo5-_particle_2_include_2_particle_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo5-_particle_2_include_2_particle_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma region step 1}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo5-_particle_2_include_2_particle_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo5-_particle_2_include_2_particle_8hpp_source_l00003}00003 \textcolor{preprocessor}{\#include <SFML/System/Vector2.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo5-_particle_2_include_2_particle_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include <SFML/System/Time.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo5-_particle_2_include_2_particle_8hpp_source_l00005}00005 \textcolor{preprocessor}{\#include <SFML/Graphics/Color.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo5-_particle_2_include_2_particle_8hpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo5-_particle_2_include_2_particle_8hpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo5-_particle_2_include_2_particle_8hpp_source_l00008}\mbox{\hyperlink{struct_particle}{00008}} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_particle}{Particle}}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo5-_particle_2_include_2_particle_8hpp_source_l00009}00009 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo5-_particle_2_include_2_particle_8hpp_source_l00010}\mbox{\hyperlink{struct_particle_aa27c7e68459c587570d108f511ea353e}{00010}}     \textcolor{keyword}{enum} \mbox{\hyperlink{struct_particle_aa27c7e68459c587570d108f511ea353e}{Type}}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo5-_particle_2_include_2_particle_8hpp_source_l00011}00011     \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo5-_particle_2_include_2_particle_8hpp_source_l00012}\mbox{\hyperlink{struct_particle_aa27c7e68459c587570d108f511ea353ea844ab5bfafca3638acbd634e1ee1be28}{00012}}         \mbox{\hyperlink{struct_particle_aa27c7e68459c587570d108f511ea353ea844ab5bfafca3638acbd634e1ee1be28}{Propellant}},}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo5-_particle_2_include_2_particle_8hpp_source_l00013}\mbox{\hyperlink{struct_particle_aa27c7e68459c587570d108f511ea353ea5e71fbcef60d0f60654b39a36755bd64}{00013}}         \mbox{\hyperlink{struct_particle_aa27c7e68459c587570d108f511ea353ea5e71fbcef60d0f60654b39a36755bd64}{Smoke}},}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo5-_particle_2_include_2_particle_8hpp_source_l00014}00014         \mbox{\hyperlink{struct_particle_aa27c7e68459c587570d108f511ea353ea445a370ac4605b313ef923823aca7a01}{ParticleCount}}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo5-_particle_2_include_2_particle_8hpp_source_l00015}\mbox{\hyperlink{struct_particle_aa27c7e68459c587570d108f511ea353ea445a370ac4605b313ef923823aca7a01}{00015}}     \};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo5-_particle_2_include_2_particle_8hpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo5-_particle_2_include_2_particle_8hpp_source_l00017}\mbox{\hyperlink{struct_particle_ae3a38445c8cda2ae6e8b95b7d4d800c5}{00017}}     \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}}    \mbox{\hyperlink{struct_particle_ae3a38445c8cda2ae6e8b95b7d4d800c5}{position}};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo5-_particle_2_include_2_particle_8hpp_source_l00018}\mbox{\hyperlink{struct_particle_ac4b0b63df626ccb45334c7df7a6ca446}{00018}}     \mbox{\hyperlink{classsf_1_1_color}{sf::Color}}      \mbox{\hyperlink{struct_particle_ac4b0b63df626ccb45334c7df7a6ca446}{color}};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo5-_particle_2_include_2_particle_8hpp_source_l00019}\mbox{\hyperlink{struct_particle_a160dfae711f857869ddf279cc745a350}{00019}}     \mbox{\hyperlink{classsf_1_1_time}{sf::Time}}        \mbox{\hyperlink{struct_particle_a160dfae711f857869ddf279cc745a350}{lifetime}};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo5-_particle_2_include_2_particle_8hpp_source_l00020}00020 \};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo5-_particle_2_include_2_particle_8hpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo5-_particle_2_include_2_particle_8hpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo5-_particle_2_include_2_particle_8hpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo5-_particle_2_include_2_particle_8hpp_source_l00024}00024 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo5-_particle_2_include_2_particle_8hpp_source_l00025}00025 }
+
+\end{DoxyCode}

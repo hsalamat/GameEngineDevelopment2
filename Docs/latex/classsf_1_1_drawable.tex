@@ -1,0 +1,186 @@
+\hypertarget{classsf_1_1_drawable}{}\doxysection{sf\+::Drawable Class Reference}
+\label{classsf_1_1_drawable}\index{sf::Drawable@{sf::Drawable}}
+
+
+Abstract base class for objects that can be drawn to a render target.  
+
+
+
+
+{\ttfamily \#include $<$Drawable.\+hpp$>$}
+
+Inheritance diagram for sf\+::Drawable\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classsf_1_1_drawable}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classsf_1_1_drawable_a906002f2df7beb5edbddf5bbef96f120}{$\sim$\+Drawable}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classsf_1_1_drawable_a906002f2df7beb5edbddf5bbef96f120}{$\sim$\+Drawable}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classsf_1_1_drawable_a90d2c88bba9b035a0844eccb380ef631}{draw}} (\mbox{\hyperlink{classsf_1_1_render_target}{Render\+Target}} \&target, \mbox{\hyperlink{classsf_1_1_render_states}{Render\+States}} states) const =0
+\begin{DoxyCompactList}\small\item\em Draw the object to a render target. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classsf_1_1_drawable_a90d2c88bba9b035a0844eccb380ef631}{draw}} (\mbox{\hyperlink{classsf_1_1_render_target}{Render\+Target}} \&target, \mbox{\hyperlink{classsf_1_1_render_states}{Render\+States}} states) const =0
+\begin{DoxyCompactList}\small\item\em Draw the object to a render target. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsf_1_1_drawable_a564c389faf3e8638c546c12cdbdda81d}{Render\+Target}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for objects that can be drawn to a render target. 
+
+\mbox{\hyperlink{classsf_1_1_drawable}{sf\+::\+Drawable}} is a very simple base class that allows objects of derived classes to be drawn to a \mbox{\hyperlink{classsf_1_1_render_target}{sf\+::\+Render\+Target}}.
+
+All you have to do in your derived class is to override the draw virtual function.
+
+Note that inheriting from \mbox{\hyperlink{classsf_1_1_drawable}{sf\+::\+Drawable}} is not mandatory, but it allows this nice syntax \char`\"{}window.\+draw(object)\char`\"{} rather than \char`\"{}object.\+draw(window)\char`\"{}, which is more consistent with other SFML classes.
+
+Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class }MyDrawable : \textcolor{keyword}{public} \mbox{\hyperlink{classsf_1_1_drawable}{sf::Drawable}}}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{}
+\DoxyCodeLine{   ...}
+\DoxyCodeLine{}
+\DoxyCodeLine{private:}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_drawable_a90d2c88bba9b035a0844eccb380ef631}{draw}}(\mbox{\hyperlink{classsf_1_1_render_target}{sf::RenderTarget}}\& target, \mbox{\hyperlink{classsf_1_1_render_states}{sf::RenderStates}} states)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\textcolor{keyword}{    }\{}
+\DoxyCodeLine{        \textcolor{comment}{// You can draw other high-\/level objects}}
+\DoxyCodeLine{        target.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(m\_sprite, states);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{comment}{// ... or use the low-\/level API}}
+\DoxyCodeLine{        states.\mbox{\hyperlink{classsf_1_1_render_states_ad7eb50453917561fa7a9df7f4c53f1fd}{texture}} = \&m\_texture;}
+\DoxyCodeLine{        target.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(m\_vertices, states);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{comment}{// ... or draw with OpenGL directly}}
+\DoxyCodeLine{        glBegin(GL\_QUADS);}
+\DoxyCodeLine{        ...}
+\DoxyCodeLine{        glEnd();}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \mbox{\hyperlink{classsf_1_1_sprite}{sf::Sprite}} m\_sprite;}
+\DoxyCodeLine{    \mbox{\hyperlink{classsf_1_1_texture}{sf::Texture}} m\_texture;}
+\DoxyCodeLine{    \mbox{\hyperlink{classsf_1_1_vertex_array}{sf::VertexArray}} m\_vertices;}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_render_target}{sf\+::\+Render\+Target}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_drawable_8hpp_source_l00044}{44}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_drawable_8hpp_source}{Drawable.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsf_1_1_drawable_a906002f2df7beb5edbddf5bbef96f120}\label{classsf_1_1_drawable_a906002f2df7beb5edbddf5bbef96f120}} 
+\index{sf::Drawable@{sf::Drawable}!````~Drawable@{$\sim$Drawable}}
+\index{````~Drawable@{$\sim$Drawable}!sf::Drawable@{sf::Drawable}}
+\doxysubsubsection{\texorpdfstring{$\sim$Drawable()}{~Drawable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual sf\+::\+Drawable\+::$\sim$\+Drawable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Virtual destructor. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_drawable_8hpp_source_l00052}{52}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_drawable_8hpp_source}{Drawable.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_drawable_a906002f2df7beb5edbddf5bbef96f120}\label{classsf_1_1_drawable_a906002f2df7beb5edbddf5bbef96f120}} 
+\index{sf::Drawable@{sf::Drawable}!````~Drawable@{$\sim$Drawable}}
+\index{````~Drawable@{$\sim$Drawable}!sf::Drawable@{sf::Drawable}}
+\doxysubsubsection{\texorpdfstring{$\sim$Drawable()}{~Drawable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual sf\+::\+Drawable\+::$\sim$\+Drawable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Virtual destructor. 
+
+
+
+Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_drawable_8hpp_source_l00052}{52}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_drawable_8hpp_source}{Drawable.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsf_1_1_drawable_a90d2c88bba9b035a0844eccb380ef631}\label{classsf_1_1_drawable_a90d2c88bba9b035a0844eccb380ef631}} 
+\index{sf::Drawable@{sf::Drawable}!draw@{draw}}
+\index{draw@{draw}!sf::Drawable@{sf::Drawable}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void sf\+::\+Drawable\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_render_target}{Render\+Target}} \&}]{target,  }\item[{\mbox{\hyperlink{classsf_1_1_render_states}{Render\+States}}}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Draw the object to a render target. 
+
+This is a pure virtual function that has to be implemented by the derived class to define how the drawable should be drawn.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Render target to draw to \\
+\hline
+{\em states} & Current render states \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classsf_1_1_shape_af335b88097f1db83afdfafa0cd66d04d}{sf\+::\+Shape}}, \mbox{\hyperlink{classsf_1_1_sprite_ad6ab20148c4ba6d6fc33a4aaf5eb838b}{sf\+::\+Sprite}}, \mbox{\hyperlink{classsf_1_1_text_a42f0cd394f76f4c0998114918cb3f11c}{sf\+::\+Text}}, \mbox{\hyperlink{classsf_1_1_vertex_array_aa461f084e4a65fabfa4992885dabbea6}{sf\+::\+Vertex\+Array}}, \mbox{\hyperlink{classsf_1_1_vertex_buffer_a3591a7fd52f502033b40755af71edc17}{sf\+::\+Vertex\+Buffer}}, \mbox{\hyperlink{classsf_1_1_shape_af335b88097f1db83afdfafa0cd66d04d}{sf\+::\+Shape}}, \mbox{\hyperlink{classsf_1_1_sprite_ad6ab20148c4ba6d6fc33a4aaf5eb838b}{sf\+::\+Sprite}}, \mbox{\hyperlink{classsf_1_1_text_a42f0cd394f76f4c0998114918cb3f11c}{sf\+::\+Text}}, \mbox{\hyperlink{classsf_1_1_vertex_array_aa461f084e4a65fabfa4992885dabbea6}{sf\+::\+Vertex\+Array}}, \mbox{\hyperlink{classsf_1_1_vertex_buffer_a3591a7fd52f502033b40755af71edc17}{sf\+::\+Vertex\+Buffer}}, \mbox{\hyperlink{class_effect_a6a3a393e127581c7f84e1278b5be0438}{Effect}}, \mbox{\hyperlink{class_g_u_i_1_1_button_a85381689221d309cb05154c711a72f3b}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_a187a0b6564a5fc35ba56a7150ca9b310}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_a81dd820c6f2cbe39fcb0e2ac4af9ec1a}{Scene\+Node}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_animation_a012ebbed7899dc6c860ef42e1215478b}{Animation}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_animation_a012ebbed7899dc6c860ef42e1215478b}{Animation}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_animation_a012ebbed7899dc6c860ef42e1215478b}{Animation}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_animation_a012ebbed7899dc6c860ef42e1215478b}{Animation}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_animation_a012ebbed7899dc6c860ef42e1215478b}{Animation}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_animation_a012ebbed7899dc6c860ef42e1215478b}{Animation}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_effect_a6a3a393e127581c7f84e1278b5be0438}{Effect}}, \mbox{\hyperlink{class_animation_a012ebbed7899dc6c860ef42e1215478b}{Animation}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_animation_a012ebbed7899dc6c860ef42e1215478b}{Animation}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_animation_a012ebbed7899dc6c860ef42e1215478b}{Animation}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_animation_a012ebbed7899dc6c860ef42e1215478b}{Animation}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_player2_acdd12f0d31cde82cfc36eb3028b1984d}{Player2}}, \mbox{\hyperlink{class_player2_a9b78c1e1dee130ce052350adec8fde93}{Player2}}, \mbox{\hyperlink{class_player2_a9b78c1e1dee130ce052350adec8fde93}{Player2}}, \mbox{\hyperlink{class_player2_a9b78c1e1dee130ce052350adec8fde93}{Player2}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, and \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}.
+
+\mbox{\Hypertarget{classsf_1_1_drawable_a90d2c88bba9b035a0844eccb380ef631}\label{classsf_1_1_drawable_a90d2c88bba9b035a0844eccb380ef631}} 
+\index{sf::Drawable@{sf::Drawable}!draw@{draw}}
+\index{draw@{draw}!sf::Drawable@{sf::Drawable}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void sf\+::\+Drawable\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_render_target}{Render\+Target}} \&}]{target,  }\item[{\mbox{\hyperlink{classsf_1_1_render_states}{Render\+States}}}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Draw the object to a render target. 
+
+This is a pure virtual function that has to be implemented by the derived class to define how the drawable should be drawn.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Render target to draw to \\
+\hline
+{\em states} & Current render states \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classsf_1_1_shape_af335b88097f1db83afdfafa0cd66d04d}{sf\+::\+Shape}}, \mbox{\hyperlink{classsf_1_1_sprite_ad6ab20148c4ba6d6fc33a4aaf5eb838b}{sf\+::\+Sprite}}, \mbox{\hyperlink{classsf_1_1_text_a42f0cd394f76f4c0998114918cb3f11c}{sf\+::\+Text}}, \mbox{\hyperlink{classsf_1_1_vertex_array_aa461f084e4a65fabfa4992885dabbea6}{sf\+::\+Vertex\+Array}}, \mbox{\hyperlink{classsf_1_1_vertex_buffer_a3591a7fd52f502033b40755af71edc17}{sf\+::\+Vertex\+Buffer}}, \mbox{\hyperlink{classsf_1_1_shape_af335b88097f1db83afdfafa0cd66d04d}{sf\+::\+Shape}}, \mbox{\hyperlink{classsf_1_1_sprite_ad6ab20148c4ba6d6fc33a4aaf5eb838b}{sf\+::\+Sprite}}, \mbox{\hyperlink{classsf_1_1_text_a42f0cd394f76f4c0998114918cb3f11c}{sf\+::\+Text}}, \mbox{\hyperlink{classsf_1_1_vertex_array_aa461f084e4a65fabfa4992885dabbea6}{sf\+::\+Vertex\+Array}}, \mbox{\hyperlink{classsf_1_1_vertex_buffer_a3591a7fd52f502033b40755af71edc17}{sf\+::\+Vertex\+Buffer}}, \mbox{\hyperlink{class_effect_a6a3a393e127581c7f84e1278b5be0438}{Effect}}, \mbox{\hyperlink{class_g_u_i_1_1_button_a85381689221d309cb05154c711a72f3b}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_a187a0b6564a5fc35ba56a7150ca9b310}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_a81dd820c6f2cbe39fcb0e2ac4af9ec1a}{Scene\+Node}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_animation_a012ebbed7899dc6c860ef42e1215478b}{Animation}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_animation_a012ebbed7899dc6c860ef42e1215478b}{Animation}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_animation_a012ebbed7899dc6c860ef42e1215478b}{Animation}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_animation_a012ebbed7899dc6c860ef42e1215478b}{Animation}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_animation_a012ebbed7899dc6c860ef42e1215478b}{Animation}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_animation_a012ebbed7899dc6c860ef42e1215478b}{Animation}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_effect_a6a3a393e127581c7f84e1278b5be0438}{Effect}}, \mbox{\hyperlink{class_animation_a012ebbed7899dc6c860ef42e1215478b}{Animation}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_animation_a012ebbed7899dc6c860ef42e1215478b}{Animation}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_animation_a012ebbed7899dc6c860ef42e1215478b}{Animation}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_animation_a012ebbed7899dc6c860ef42e1215478b}{Animation}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_player2_acdd12f0d31cde82cfc36eb3028b1984d}{Player2}}, \mbox{\hyperlink{class_player2_a9b78c1e1dee130ce052350adec8fde93}{Player2}}, \mbox{\hyperlink{class_player2_a9b78c1e1dee130ce052350adec8fde93}{Player2}}, \mbox{\hyperlink{class_player2_a9b78c1e1dee130ce052350adec8fde93}{Player2}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}, \mbox{\hyperlink{class_g_u_i_1_1_button_ad6a5feb37f9c64571a6853c6ee12da6d}{GUI\+::\+Button}}, \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{GUI\+::\+Container}}, \mbox{\hyperlink{class_g_u_i_1_1_label_a8ce148a24802a4aed76682b5589cdacc}{GUI\+::\+Label}}, and \mbox{\hyperlink{class_scene_node_ad052adc249cbfb2d3731803912312e1f}{Scene\+Node}}.
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classsf_1_1_drawable_a564c389faf3e8638c546c12cdbdda81d}\label{classsf_1_1_drawable_a564c389faf3e8638c546c12cdbdda81d}} 
+\index{sf::Drawable@{sf::Drawable}!RenderTarget@{RenderTarget}}
+\index{RenderTarget@{RenderTarget}!sf::Drawable@{sf::Drawable}}
+\doxysubsubsection{\texorpdfstring{RenderTarget}{RenderTarget}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_render_target}{Render\+Target}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_drawable_8hpp_source_l00056}{56}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_drawable_8hpp_source}{Drawable.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+SFML-\/2.\+5.\+1/include/\+SFML/\+Graphics/\mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_drawable_8hpp}{Drawable.\+hpp}}\item 
+Week14/\+SFML-\/2.\+5.\+1/include/\+SFML/\+Graphics/\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_drawable_8hpp}{Drawable.\+hpp}}\end{DoxyCompactItemize}

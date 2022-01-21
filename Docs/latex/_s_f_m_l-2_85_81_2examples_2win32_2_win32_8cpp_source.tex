@@ -1,0 +1,124 @@
+\hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source}{}\doxysection{Win32.\+cpp}
+\label{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source}\index{SFML-\/2.5.1/examples/win32/Win32.cpp@{SFML-\/2.5.1/examples/win32/Win32.cpp}}
+\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00003}00003 \textcolor{comment}{// Headers}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00005}00005 \textcolor{comment}{}\textcolor{preprocessor}{\#include <SFML/Graphics.hpp>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <windows.h>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00009}\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_a92decbf8642d08b3993016451fdad8df}{00009}} HWND \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_a92decbf8642d08b3993016451fdad8df}{button}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00016}\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_a47cbf2412fb28ccdc8e67dc754fd507b}{00016}} LRESULT CALLBACK \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_a47cbf2412fb28ccdc8e67dc754fd507b}{onEvent}}(HWND handle, UINT message, WPARAM wParam, LPARAM lParam)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00017}00017 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00018}00018     \textcolor{keywordflow}{switch} (message)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00019}00019     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00020}00020         \textcolor{comment}{// Quit when we close the main window}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00021}00021         \textcolor{keywordflow}{case} WM\_CLOSE:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00022}00022         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00023}00023             PostQuitMessage(0);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00024}00024             \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00025}00025         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00027}00027         \textcolor{comment}{// Quit when we click the "{}quit"{} button}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00028}00028         \textcolor{keywordflow}{case} WM\_COMMAND:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00029}00029         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00030}00030             \textcolor{keywordflow}{if} (\textcolor{keyword}{reinterpret\_cast<}HWND\textcolor{keyword}{>}(lParam) == \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_a92decbf8642d08b3993016451fdad8df}{button}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00031}00031             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00032}00032                 PostQuitMessage(0);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00033}00033                 \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00034}00034             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00035}00035         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00036}00036     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00038}00038     \textcolor{keywordflow}{return} DefWindowProc(handle, message, wParam, lParam);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00039}00039 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00050}\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00050}} \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00051}00051 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00052}00052     HINSTANCE instance = GetModuleHandle(NULL);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00054}00054     \textcolor{comment}{// Define a class for our main window}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00055}00055     WNDCLASS windowClass;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00056}00056     windowClass.style         = 0;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00057}00057     windowClass.lpfnWndProc   = \&\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_a47cbf2412fb28ccdc8e67dc754fd507b}{onEvent}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00058}00058     windowClass.cbClsExtra    = 0;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00059}00059     windowClass.cbWndExtra    = 0;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00060}00060     windowClass.hInstance     = instance;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00061}00061     windowClass.hIcon         = NULL;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00062}00062     windowClass.hCursor       = 0;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00063}00063     windowClass.hbrBackground = \textcolor{keyword}{reinterpret\_cast<}HBRUSH\textcolor{keyword}{>}(COLOR\_BACKGROUND);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00064}00064     windowClass.lpszMenuName  = NULL;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00065}00065     windowClass.lpszClassName = TEXT(\textcolor{stringliteral}{"{}SFML App"{}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00066}00066     RegisterClass(\&windowClass);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00068}00068     \textcolor{comment}{// Let's create the main window}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00069}00069     HWND window = CreateWindow(TEXT(\textcolor{stringliteral}{"{}SFML App"{}}), TEXT(\textcolor{stringliteral}{"{}SFML Win32"{}}), WS\_SYSMENU | WS\_VISIBLE, 200, 200, 660, 520, NULL, NULL, instance, NULL);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00071}00071     \textcolor{comment}{// Add a button for exiting}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00072}00072     \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_a92decbf8642d08b3993016451fdad8df}{button}} = CreateWindow(TEXT(\textcolor{stringliteral}{"{}BUTTON"{}}), TEXT(\textcolor{stringliteral}{"{}Quit"{}}), WS\_CHILD | WS\_VISIBLE, 560, 440, 80, 40, window, NULL, instance, NULL);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00074}00074     \textcolor{comment}{// Let's create two SFML views}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00075}00075     HWND view1 = CreateWindow(TEXT(\textcolor{stringliteral}{"{}STATIC"{}}), NULL, WS\_CHILD | WS\_VISIBLE | WS\_CLIPSIBLINGS, 20,  20, 300, 400, window, NULL, instance, NULL);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00076}00076     HWND view2 = CreateWindow(TEXT(\textcolor{stringliteral}{"{}STATIC"{}}), NULL, WS\_CHILD | WS\_VISIBLE | WS\_CLIPSIBLINGS, 340, 20, 300, 400, window, NULL, instance, NULL);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00077}00077     \mbox{\hyperlink{classsf_1_1_render_window}{sf::RenderWindow}} SFMLView1(view1);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00078}00078     \mbox{\hyperlink{classsf_1_1_render_window}{sf::RenderWindow}} SFMLView2(view2);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00080}00080     \textcolor{comment}{// Load some textures to display}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00081}00081     \mbox{\hyperlink{classsf_1_1_texture}{sf::Texture}} texture1, texture2;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00082}00082     \textcolor{keywordflow}{if} (!texture1.\mbox{\hyperlink{classsf_1_1_texture_a8e1b56eabfe33e2e0e1cb03712c7fcc7}{loadFromFile}}(\textcolor{stringliteral}{"{}resources/image1.jpg"{}}) || !texture2.\mbox{\hyperlink{classsf_1_1_texture_a8e1b56eabfe33e2e0e1cb03712c7fcc7}{loadFromFile}}(\textcolor{stringliteral}{"{}resources/image2.jpg"{}}))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00083}00083         \textcolor{keywordflow}{return} EXIT\_FAILURE;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00084}00084     \mbox{\hyperlink{classsf_1_1_sprite}{sf::Sprite}} sprite1(texture1);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00085}00085     \mbox{\hyperlink{classsf_1_1_sprite}{sf::Sprite}} sprite2(texture2);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00086}00086     sprite1.\mbox{\hyperlink{classsf_1_1_transformable_a56c67bd80aae8418d13fb96c034d25ec}{setOrigin}}(\mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}}(texture1.\mbox{\hyperlink{classsf_1_1_texture_a9f86b8cc670c6399c539d4ce07ae5c8a}{getSize}}()) / 2.f);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00087}00087     sprite1.\mbox{\hyperlink{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{setPosition}}(sprite1.\mbox{\hyperlink{classsf_1_1_transformable_a898b33eb6513161eb5c747a072364f15}{getOrigin}}());}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00089}00089     \textcolor{comment}{// Create a clock for measuring elapsed time}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00090}00090     \mbox{\hyperlink{classsf_1_1_clock}{sf::Clock}} clock;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00092}00092     \textcolor{comment}{// Loop until a WM\_QUIT message is received}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00093}00093     MSG message;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00094}00094     message.message = \textcolor{keyword}{static\_cast<}UINT\textcolor{keyword}{>}(\string~WM\_QUIT);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00095}00095     \textcolor{keywordflow}{while} (message.message != WM\_QUIT)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00096}00096     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00097}00097         \textcolor{keywordflow}{if} (PeekMessage(\&message, NULL, 0, 0, PM\_REMOVE))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00098}00098         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00099}00099             \textcolor{comment}{// If a message was waiting in the message queue, process it}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00100}00100             TranslateMessage(\&message);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00101}00101             DispatchMessage(\&message);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00102}00102         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00103}00103         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00104}00104         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00105}00105             \textcolor{keywordtype}{float} time = clock.\mbox{\hyperlink{classsf_1_1_clock_abe889b42a65bcd8eefc16419645d08a7}{getElapsedTime}}().\mbox{\hyperlink{classsf_1_1_time_aa3df2f992d0b0041b4eb02258d43f0e3}{asSeconds}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00106}00106 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00107}00107             \textcolor{comment}{// Clear views}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00108}00108             SFMLView1.\mbox{\hyperlink{classsf_1_1_render_target_a6bb6f0ba348f2b1e2f46114aeaf60f26}{clear}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00109}00109             SFMLView2.\mbox{\hyperlink{classsf_1_1_render_target_a6bb6f0ba348f2b1e2f46114aeaf60f26}{clear}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00110}00110 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00111}00111             \textcolor{comment}{// Draw sprite 1 on view 1}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00112}00112             sprite1.\mbox{\hyperlink{classsf_1_1_transformable_a32baf2bf1a74699b03bf8c95030a38ed}{setRotation}}(time * 100);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00113}00113             SFMLView1.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(sprite1);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00115}00115             \textcolor{comment}{// Draw sprite 2 on view 2}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00116}00116             sprite2.\mbox{\hyperlink{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{setPosition}}(std::cos(time) * 100.f, 0.f);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00117}00117             SFMLView2.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(sprite2);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00118}00118 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00119}00119             \textcolor{comment}{// Display each view on screen}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00120}00120             SFMLView1.\mbox{\hyperlink{classsf_1_1_window_adabf839cb103ac96cfc82f781638772a}{display}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00121}00121             SFMLView2.\mbox{\hyperlink{classsf_1_1_window_adabf839cb103ac96cfc82f781638772a}{display}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00122}00122         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00123}00123     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00124}00124 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00125}00125     \textcolor{comment}{// Destroy the main window (all its child controls will be destroyed)}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00126}00126     DestroyWindow(window);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00127}00127 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00128}00128     \textcolor{comment}{// Don't forget to unregister the window class}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00129}00129     UnregisterClass(TEXT(\textcolor{stringliteral}{"{}SFML App"{}}), instance);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00130}00130 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00131}00131     \textcolor{keywordflow}{return} EXIT\_SUCCESS;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp_source_l00132}00132 \}}
+
+\end{DoxyCode}

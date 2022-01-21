@@ -1,0 +1,18 @@
+\hypertarget{_week8_2_week8-_demo2-_label_2_include_2_string_helpers_8hpp_source}{}\doxysection{String\+Helpers.\+hpp}
+\label{_week8_2_week8-_demo2-_label_2_include_2_string_helpers_8hpp_source}\index{Week8/Week8-\/Demo2-\/Label/Include/StringHelpers.hpp@{Week8/Week8-\/Demo2-\/Label/Include/StringHelpers.hpp}}
+\mbox{\hyperlink{_week8_2_week8-_demo2-_label_2_include_2_string_helpers_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo2-_label_2_include_2_string_helpers_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#ifndef BOOK\_STRINGHELPERS\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo2-_label_2_include_2_string_helpers_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#define BOOK\_STRINGHELPERS\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo2-_label_2_include_2_string_helpers_8hpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo2-_label_2_include_2_string_helpers_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo2-_label_2_include_2_string_helpers_8hpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo2-_label_2_include_2_string_helpers_8hpp_source_l00006}00006 \textcolor{comment}{// Since std::to\_string doesn't work on MinGW we have to implement}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo2-_label_2_include_2_string_helpers_8hpp_source_l00007}00007 \textcolor{comment}{// our own to support all platforms.}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo2-_label_2_include_2_string_helpers_8hpp_source_l00008}00008 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo2-_label_2_include_2_string_helpers_8hpp_source_l00009}00009 std::string \mbox{\hyperlink{_week11_2_week11-_demo2-_open_g_l_2_include_2_string_helpers_8hpp_a1e803cea7d2670ece91f5465281446ba}{toString}}(\textcolor{keyword}{const} T\& value);}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo2-_label_2_include_2_string_helpers_8hpp_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo2-_label_2_include_2_string_helpers_8hpp_source_l00011}00011 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_week9-10_2_week10-_demo1-_settings_2_include_2_string_helpers_8inl}{StringHelpers.inl}}>}}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo2-_label_2_include_2_string_helpers_8hpp_source_l00012}00012 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// BOOK\_STRINGHELPERS\_HPP}}
+
+\end{DoxyCode}

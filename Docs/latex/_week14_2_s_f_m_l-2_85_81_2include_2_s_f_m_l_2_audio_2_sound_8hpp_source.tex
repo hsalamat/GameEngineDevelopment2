@@ -1,0 +1,91 @@
+\hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source}{}\doxysection{Sound.\+hpp}
+\label{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source}\index{Week14/SFML-\/2.5.1/include/SFML/Audio/Sound.hpp@{Week14/SFML-\/2.5.1/include/SFML/Audio/Sound.hpp}}
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00002}00002 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00003}00003 \textcolor{comment}{// SFML -\/ Simple and Fast Multimedia Library}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00004}00004 \textcolor{comment}{// Copyright (C) 2007-\/2018 Laurent Gomila (laurent@sfml-\/dev.org)}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00005}00005 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00006}00006 \textcolor{comment}{// This software is provided 'as-\/is', without any express or implied warranty.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00007}00007 \textcolor{comment}{// In no event will the authors be held liable for any damages arising from the use of this software.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00008}00008 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00009}00009 \textcolor{comment}{// Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00010}00010 \textcolor{comment}{// including commercial applications, and to alter it and redistribute it freely,}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00011}00011 \textcolor{comment}{// subject to the following restrictions:}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00012}00012 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00013}00013 \textcolor{comment}{// 1. The origin of this software must not be misrepresented;}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00014}00014 \textcolor{comment}{//    you must not claim that you wrote the original software.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00015}00015 \textcolor{comment}{//    If you use this software in a product, an acknowledgment}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00016}00016 \textcolor{comment}{//    in the product documentation would be appreciated but is not required.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00017}00017 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00018}00018 \textcolor{comment}{// 2. Altered source versions must be plainly marked as such,}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00019}00019 \textcolor{comment}{//    and must not be misrepresented as being the original software.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00020}00020 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00021}00021 \textcolor{comment}{// 3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00022}00022 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00024}00024 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00025}00025 \textcolor{preprocessor}{\#ifndef SFML\_SOUND\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00026}00026 \textcolor{preprocessor}{\#define SFML\_SOUND\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00029}00029 \textcolor{comment}{// Headers}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00031}00031 \textcolor{comment}{}\textcolor{preprocessor}{\#include <SFML/Audio/Export.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00032}00032 \textcolor{preprocessor}{\#include <SFML/Audio/SoundSource.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00033}00033 \textcolor{preprocessor}{\#include <SFML/System/Time.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00034}00034 \textcolor{preprocessor}{\#include <cstdlib>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00037}00037 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacesf}{sf}}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00038}00038 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00039}00039 \textcolor{keyword}{class }SoundBuffer;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00045}00045 \textcolor{keyword}{class }\mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_export_8hpp_a4d34c0f253824ac49bdd93545913eb89}{SFML\_AUDIO\_API}} Sound : \textcolor{keyword}{public} SoundSource}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00046}00046 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00047}00047 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00053}\mbox{\hyperlink{classsf_1_1_sound_a36ab74beaaa953d9879c933ddd246282}{00053}}     \mbox{\hyperlink{classsf_1_1_sound_a36ab74beaaa953d9879c933ddd246282}{Sound}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00061}\mbox{\hyperlink{classsf_1_1_sound_a3b1cfc19a856d4ff8c079ee41bb78e69}{00061}}     \textcolor{keyword}{explicit} \mbox{\hyperlink{classsf_1_1_sound_a3b1cfc19a856d4ff8c079ee41bb78e69}{Sound}}(\textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_sound_buffer}{SoundBuffer}}\& buffer);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00069}\mbox{\hyperlink{classsf_1_1_sound_ae05eeed6377932694d86b3011be366c0}{00069}}     \mbox{\hyperlink{classsf_1_1_sound_ae05eeed6377932694d86b3011be366c0}{Sound}}(\textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_sound}{Sound}}\& copy);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00075}\mbox{\hyperlink{classsf_1_1_sound_ad0792c35310eba2dffd8489c80fad076}{00075}}     \mbox{\hyperlink{classsf_1_1_sound_ad0792c35310eba2dffd8489c80fad076}{\string~Sound}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00089}\mbox{\hyperlink{classsf_1_1_sound_a2953ffe632536e72e696fd880ced2532}{00089}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_sound_a2953ffe632536e72e696fd880ced2532}{play}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00100}\mbox{\hyperlink{classsf_1_1_sound_a5eeb25815bfa8cdc4a6cc000b7b19ad5}{00100}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_sound_a5eeb25815bfa8cdc4a6cc000b7b19ad5}{pause}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00101}00101 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00112}\mbox{\hyperlink{classsf_1_1_sound_aa9c91c34f7c6d344d5ee9b997511f754}{00112}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_sound_aa9c91c34f7c6d344d5ee9b997511f754}{stop}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00126}\mbox{\hyperlink{classsf_1_1_sound_a8b395e9713d0efa48a18628c8ec1972e}{00126}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_sound_a8b395e9713d0efa48a18628c8ec1972e}{setBuffer}}(\textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_sound_buffer}{SoundBuffer}}\& buffer);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00127}00127 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00141}\mbox{\hyperlink{classsf_1_1_sound_af23ab4f78f975bbabac031102321612b}{00141}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_sound_af23ab4f78f975bbabac031102321612b}{setLoop}}(\textcolor{keywordtype}{bool} loop);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00142}00142 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00156}\mbox{\hyperlink{classsf_1_1_sound_ab905677846558042022dd6ab15cddff0}{00156}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_sound_ab905677846558042022dd6ab15cddff0}{setPlayingOffset}}(\mbox{\hyperlink{classsf_1_1_time}{Time}} timeOffset);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00157}00157 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00164}\mbox{\hyperlink{classsf_1_1_sound_a7c0f6033856909eeefa2e6696db96ef2}{00164}}     \textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_sound_buffer}{SoundBuffer}}* \mbox{\hyperlink{classsf_1_1_sound_a7c0f6033856909eeefa2e6696db96ef2}{getBuffer}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00165}00165 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00174}\mbox{\hyperlink{classsf_1_1_sound_a054da07266ce8f39229495146e3041eb}{00174}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classsf_1_1_sound_a054da07266ce8f39229495146e3041eb}{getLoop}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00175}00175 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00184}\mbox{\hyperlink{classsf_1_1_sound_a559bc3aea581107bcb380fdbe523aa08}{00184}}     \mbox{\hyperlink{classsf_1_1_time}{Time}} \mbox{\hyperlink{classsf_1_1_sound_a559bc3aea581107bcb380fdbe523aa08}{getPlayingOffset}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00185}00185 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00192}\mbox{\hyperlink{classsf_1_1_sound_a406fc363594a7718a53ebef49a870f51}{00192}}     \mbox{\hyperlink{classsf_1_1_sound_source_ac43af72c98c077500b239bc75b812f03}{Status}} \mbox{\hyperlink{classsf_1_1_sound_a406fc363594a7718a53ebef49a870f51}{getStatus}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00193}00193 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00202}\mbox{\hyperlink{classsf_1_1_sound_a8eee9197359bfdf20d399544a894af8b}{00202}}     \mbox{\hyperlink{classsf_1_1_sound}{Sound}}\& operator =(\textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_sound}{Sound}}\& right);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00203}00203 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00213}\mbox{\hyperlink{classsf_1_1_sound_acb7289d45e06fb76b8292ac84beb82a7}{00213}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_sound_acb7289d45e06fb76b8292ac84beb82a7}{resetBuffer}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00214}00214 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00215}00215 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00216}00216 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00218}00218     \textcolor{comment}{// Member data}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00220}00220 \textcolor{comment}{}    \textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_sound_buffer}{SoundBuffer}}* m\_buffer; }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00221}00221 \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00222}00222 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00223}00223 \} \textcolor{comment}{// namespace sf}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00224}00224 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00225}00225 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00226}00226 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// SFML\_SOUND\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00227}00227 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp_source_l00228}00228 }
+
+\end{DoxyCode}

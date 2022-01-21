@@ -1,0 +1,77 @@
+\hypertarget{_week12-_demo7-_sound_position_8cpp_source}{}\doxysection{Week12-\/\+Demo7-\/\+Sound\+Position.cpp}
+\label{_week12-_demo7-_sound_position_8cpp_source}\index{Week12/Week12-\/Sound/Source/Week12-\/Demo7-\/SoundPosition.cpp@{Week12/Week12-\/Sound/Source/Week12-\/Demo7-\/SoundPosition.cpp}}
+\mbox{\hyperlink{_week12-_demo7-_sound_position_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00001}00001 \textcolor{comment}{//Every audio source provided by SFML (sounds, music, streams) defines the same properties for spatialization.}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include "{}Windows.h"{}}  \textcolor{comment}{//for sleep function}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <SFML/Audio.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00006}\mbox{\hyperlink{_week12-_demo7-_sound_position_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00006}} \textcolor{keywordtype}{int} \mbox{\hyperlink{_week12-_demo7-_sound_position_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00007}00007 \{}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00009}00009     \textcolor{comment}{//First, you can set the listener's position in the scene:}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00010}00010     \textcolor{comment}{//If you have a 2D world you can just use the same Y value everywhere, usually 0.}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00011}00011     \mbox{\hyperlink{classsf_1_1_listener_a5bc2d8d18ea2d8f339d23cbf17678564}{sf::Listener::setPosition}}(0.f, 0.f, 0.f);    }
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00013}00013     \textcolor{comment}{//Here, the listener is oriented along the -\/Z axis toward the front. }}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00014}00014     \mbox{\hyperlink{classsf_1_1_listener_ae479dc15513c6557984d26e32d06d06e}{sf::Listener::setDirection}}(0.f, 0.f, -\/1.f);}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00016}00016     \textcolor{comment}{//The "{}up"{} vector of the listener is set to (0, 1, 0) by default, in other words, }}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00017}00017     \textcolor{comment}{//the top of the listener's head is pointing towards +Y. You can change the "{}up"{} vector if you want. It is rarely necessary though.}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00018}00018     \mbox{\hyperlink{classsf_1_1_listener_a0ea9b3083a994b2b90253543bc4e3ad6}{sf::Listener::setUpVector}}(0.f, 1.f, 0.f);}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00020}00020     \textcolor{comment}{//the listener can adjust the global volume of the scene :}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00021}00021     \mbox{\hyperlink{classsf_1_1_listener_a803a24a1fc04620cacc9f88c6fbc0e3a}{sf::Listener::setGlobalVolume}}(50.f);}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00023}00023     \textcolor{comment}{//sf::Music music;}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00024}00024     \textcolor{comment}{//if (!music.openFromFile("{}Media/Music/MissionTheme.ogg"{}))}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00025}00025     \textcolor{comment}{//    return -\/1; // error}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00026}00026     \textcolor{comment}{//music.setVolume(10.f);}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00027}00027     \textcolor{comment}{//music.setLoop(true);}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00028}00028     \textcolor{comment}{//music.play();}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00033}00033     \mbox{\hyperlink{classsf_1_1_sound_buffer}{sf::SoundBuffer}} buffer;}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00034}00034     \textcolor{keywordflow}{if} (!buffer.\mbox{\hyperlink{classsf_1_1_sound_buffer_a2be6a8025c97eb622a7dff6cf2594394}{loadFromFile}}(\textcolor{stringliteral}{"{}Media/Sound/Explosion1.wav"{}}))}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00035}00035         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00037}00037     \mbox{\hyperlink{classsf_1_1_sound}{sf::Sound}} sound;}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00038}00038     sound.\mbox{\hyperlink{classsf_1_1_sound_a8b395e9713d0efa48a18628c8ec1972e}{setBuffer}}(buffer);}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00039}00039     sound.\mbox{\hyperlink{classsf_1_1_sound_source_a2f192f2b49fb8e2b82f3498d3663fcc2}{setVolume}}(100.f);}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00040}00040     sound.\mbox{\hyperlink{classsf_1_1_sound_af23ab4f78f975bbabac031102321612b}{setLoop}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00042}00042     \textcolor{comment}{//the sound is coming from right}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00043}00043     sound.\mbox{\hyperlink{classsf_1_1_sound_source_a0480257ea25d986eba6cc3c1a6f8d7c2}{setPosition}}(2.f, 0.f, -\/5.f);}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00045}00045     \textcolor{comment}{//what happens if the listener turns right?}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00046}00046     \textcolor{comment}{//sf::Listener::setDirection(1.f, 0.f, 0.f);}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00047}00047     }
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00048}00048     \textcolor{comment}{//This position is absolute by default, but it can be relative to the listener if needed.}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00049}00049     \textcolor{comment}{//This can be useful for sounds emitted by the listener itself (like a gun shot, or foot steps). }}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00050}00050     \textcolor{comment}{//It also has the interesting side-\/effect of disabling spatialization if you set the position of the audio source to (0, 0, 0). }}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00051}00051     \textcolor{comment}{//Non-\/spatialized sounds can be required in various situations: GUI sounds (clicks), ambient music, etc.}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00052}00052     \textcolor{comment}{//sound.setRelativeToListener(true);}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00055}00055     \textcolor{comment}{//You can also set the factor by which audio sources will be attenuated depending on their distance to the listener.}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00057}00057     \textcolor{comment}{//The minimum distance is the distance under which the sound will be heard at its maximum volume.}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00058}00058     sound.\mbox{\hyperlink{classsf_1_1_sound_source_a75bbc2c34addc8b25a14edb908508afe}{setMinDistance}}(5.f);}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00060}00060     \textcolor{comment}{//The attenuation is a multiplicative factor.The greater the attenuation, }}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00061}00061     \textcolor{comment}{//the less it will be heard when the sound moves away from the listener.}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00062}00062     \textcolor{comment}{//To get a non -\/ attenuated sound, you can use 0. }}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00063}00063     \textcolor{comment}{//On the other hand, using a value like 100 will highly attenuate the sound, }}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00064}00064     \textcolor{comment}{//which means that it will be heard only if very close to the listener.}}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00065}00065     sound.\mbox{\hyperlink{classsf_1_1_sound_source_aa2adff44cd2f8b4e3c7315d7c2a45626}{setAttenuation}}(10.f);}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00067}00067     sound.\mbox{\hyperlink{classsf_1_1_sound_a2953ffe632536e72e696fd880ced2532}{play}}();}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00068}00068     }
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00069}00069     Sleep(50000);}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00070}00070     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_week12-_demo7-_sound_position_8cpp_source_l00071}00071 \}}
+
+\end{DoxyCode}

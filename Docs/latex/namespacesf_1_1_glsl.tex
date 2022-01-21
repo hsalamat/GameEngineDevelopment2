@@ -1,0 +1,185 @@
+\hypertarget{namespacesf_1_1_glsl}{}\doxysection{sf\+::Glsl Namespace Reference}
+\label{namespacesf_1_1_glsl}\index{sf::Glsl@{sf::Glsl}}
+
+
+Namespace with GLSL types.  
+
+
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{classsf_1_1_vector2}{Vector2}}$<$ float $>$ \mbox{\hyperlink{namespacesf_1_1_glsl_abfcb09fe753e2d3afdf5b34ead5ac998}{Vec2}}
+\begin{DoxyCompactList}\small\item\em 2D float vector ({\ttfamily vec2} in GLSL) \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{classsf_1_1_vector2}{Vector2}}$<$ int $>$ \mbox{\hyperlink{namespacesf_1_1_glsl_a310968541a71ce373f98af70566a8685}{Ivec2}}
+\begin{DoxyCompactList}\small\item\em 2D int vector ({\ttfamily ivec2} in GLSL) \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{classsf_1_1_vector2}{Vector2}}$<$ bool $>$ \mbox{\hyperlink{namespacesf_1_1_glsl_a7702dd528400bf68fded485341d2589c}{Bvec2}}
+\begin{DoxyCompactList}\small\item\em 2D bool vector ({\ttfamily bvec2} in GLSL) \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{classsf_1_1_vector3}{Vector3}}$<$ float $>$ \mbox{\hyperlink{namespacesf_1_1_glsl_a054bd0a821d072e08de6c358de9f67ad}{Vec3}}
+\begin{DoxyCompactList}\small\item\em 3D float vector ({\ttfamily vec3} in GLSL) \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{classsf_1_1_vector3}{Vector3}}$<$ int $>$ \mbox{\hyperlink{namespacesf_1_1_glsl_a7015052834578e9f820c80d5c0ee68a9}{Ivec3}}
+\begin{DoxyCompactList}\small\item\em 3D int vector ({\ttfamily ivec3} in GLSL) \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{classsf_1_1_vector3}{Vector3}}$<$ bool $>$ \mbox{\hyperlink{namespacesf_1_1_glsl_a45470800f45fc6a55c3d30ea2ea7f412}{Bvec3}}
+\begin{DoxyCompactList}\small\item\em 3D bool vector ({\ttfamily bvec3} in GLSL) \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{structsf_1_1priv_1_1_vector4}{priv\+::\+Vector4}}$<$ float $>$ \mbox{\hyperlink{namespacesf_1_1_glsl_a1370d4e28095744e9e5271eb34bae8d4}{Vec4}}
+\item 
+typedef \mbox{\hyperlink{structsf_1_1priv_1_1_vector4}{priv\+::\+Vector4}}$<$ int $>$ \mbox{\hyperlink{namespacesf_1_1_glsl_a28a91512c3a71bf0f0e4c40935316c6a}{Ivec4}}
+\item 
+typedef \mbox{\hyperlink{structsf_1_1priv_1_1_vector4}{priv\+::\+Vector4}}$<$ bool $>$ \mbox{\hyperlink{namespacesf_1_1_glsl_a5a4dd3ad1fe5137c49298ee9799d474c}{Bvec4}}
+\item 
+typedef \mbox{\hyperlink{structsf_1_1priv_1_1_matrix}{priv\+::\+Matrix}}$<$ 3, 3 $>$ \mbox{\hyperlink{namespacesf_1_1_glsl_a5740f2f47b1bea944dd94045af397e39}{Mat3}}
+\item 
+typedef \mbox{\hyperlink{structsf_1_1priv_1_1_matrix}{priv\+::\+Matrix}}$<$ 4, 4 $>$ \mbox{\hyperlink{namespacesf_1_1_glsl_a7f4817a969b6cc76c0828eaecf8f386b}{Mat4}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Namespace with GLSL types. 
+
+The \mbox{\hyperlink{namespacesf_1_1_glsl}{sf\+::\+Glsl}} namespace contains types that match their equivalents in GLSL, the Open\+GL shading language. These types are exclusively used by the \mbox{\hyperlink{classsf_1_1_shader}{sf\+::\+Shader}} class.
+
+Types that already exist in SFML, such as \mbox{\hyperlink{classsf_1_1_vector2}{sf\+::\+Vector2$<$\+T$>$}} and \mbox{\hyperlink{classsf_1_1_vector3}{sf\+::\+Vector3$<$\+T$>$}}, are reused as typedefs, so you can use the types in this namespace as well as the original ones. Others are newly defined, such as \mbox{\hyperlink{namespacesf_1_1_glsl_a1370d4e28095744e9e5271eb34bae8d4}{Glsl\+::\+Vec4}} or \mbox{\hyperlink{namespacesf_1_1_glsl_a5740f2f47b1bea944dd94045af397e39}{Glsl\+::\+Mat3}}. Their actual type is an implementation detail and should not be used.
+
+All vector types support a default constructor that initializes every component to zero, in addition to a constructor with one parameter for each component. The components are stored in member variables called x, y, z, and w.
+
+All matrix types support a constructor with a float$\ast$ parameter that points to a float array of the appropriate size (that is, 9 in a 3x3 matrix, 16 in a 4x4 matrix). Furthermore, they can be converted from \mbox{\hyperlink{classsf_1_1_transform}{sf\+::\+Transform}} objects.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsf_1_1_shader}{sf\+::\+Shader}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{namespacesf_1_1_glsl_a7702dd528400bf68fded485341d2589c}\label{namespacesf_1_1_glsl_a7702dd528400bf68fded485341d2589c}} 
+\index{sf::Glsl@{sf::Glsl}!Bvec2@{Bvec2}}
+\index{Bvec2@{Bvec2}!sf::Glsl@{sf::Glsl}}
+\doxysubsubsection{\texorpdfstring{Bvec2}{Bvec2}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classsf_1_1_vector2}{Vector2}}$<$ bool $>$ \mbox{\hyperlink{namespacesf_1_1_glsl_a7702dd528400bf68fded485341d2589c}{sf\+::\+Glsl\+::\+Bvec2}}}
+
+
+
+2D bool vector ({\ttfamily bvec2} in GLSL) 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8hpp_source_l00076}{76}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8hpp_source}{Glsl.\+hpp}}.
+
+\mbox{\Hypertarget{namespacesf_1_1_glsl_a45470800f45fc6a55c3d30ea2ea7f412}\label{namespacesf_1_1_glsl_a45470800f45fc6a55c3d30ea2ea7f412}} 
+\index{sf::Glsl@{sf::Glsl}!Bvec3@{Bvec3}}
+\index{Bvec3@{Bvec3}!sf::Glsl@{sf::Glsl}}
+\doxysubsubsection{\texorpdfstring{Bvec3}{Bvec3}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classsf_1_1_vector3}{Vector3}}$<$ bool $>$ \mbox{\hyperlink{namespacesf_1_1_glsl_a45470800f45fc6a55c3d30ea2ea7f412}{sf\+::\+Glsl\+::\+Bvec3}}}
+
+
+
+3D bool vector ({\ttfamily bvec3} in GLSL) 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8hpp_source_l00094}{94}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8hpp_source}{Glsl.\+hpp}}.
+
+\mbox{\Hypertarget{namespacesf_1_1_glsl_a5a4dd3ad1fe5137c49298ee9799d474c}\label{namespacesf_1_1_glsl_a5a4dd3ad1fe5137c49298ee9799d474c}} 
+\index{sf::Glsl@{sf::Glsl}!Bvec4@{Bvec4}}
+\index{Bvec4@{Bvec4}!sf::Glsl@{sf::Glsl}}
+\doxysubsubsection{\texorpdfstring{Bvec4}{Bvec4}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{structsf_1_1priv_1_1_vector4}{priv\+::\+Vector4}}$<$ bool $>$ \mbox{\hyperlink{namespacesf_1_1_glsl_a5a4dd3ad1fe5137c49298ee9799d474c}{sf\+::\+Glsl\+::\+Bvec4}}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8hpp_source_l00187}{187}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8hpp_source}{Glsl.\+hpp}}.
+
+\mbox{\Hypertarget{namespacesf_1_1_glsl_a310968541a71ce373f98af70566a8685}\label{namespacesf_1_1_glsl_a310968541a71ce373f98af70566a8685}} 
+\index{sf::Glsl@{sf::Glsl}!Ivec2@{Ivec2}}
+\index{Ivec2@{Ivec2}!sf::Glsl@{sf::Glsl}}
+\doxysubsubsection{\texorpdfstring{Ivec2}{Ivec2}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classsf_1_1_vector2}{Vector2}}$<$ int $>$ \mbox{\hyperlink{namespacesf_1_1_glsl_a310968541a71ce373f98af70566a8685}{sf\+::\+Glsl\+::\+Ivec2}}}
+
+
+
+2D int vector ({\ttfamily ivec2} in GLSL) 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8hpp_source_l00070}{70}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8hpp_source}{Glsl.\+hpp}}.
+
+\mbox{\Hypertarget{namespacesf_1_1_glsl_a7015052834578e9f820c80d5c0ee68a9}\label{namespacesf_1_1_glsl_a7015052834578e9f820c80d5c0ee68a9}} 
+\index{sf::Glsl@{sf::Glsl}!Ivec3@{Ivec3}}
+\index{Ivec3@{Ivec3}!sf::Glsl@{sf::Glsl}}
+\doxysubsubsection{\texorpdfstring{Ivec3}{Ivec3}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classsf_1_1_vector3}{Vector3}}$<$ int $>$ \mbox{\hyperlink{namespacesf_1_1_glsl_a7015052834578e9f820c80d5c0ee68a9}{sf\+::\+Glsl\+::\+Ivec3}}}
+
+
+
+3D int vector ({\ttfamily ivec3} in GLSL) 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8hpp_source_l00088}{88}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8hpp_source}{Glsl.\+hpp}}.
+
+\mbox{\Hypertarget{namespacesf_1_1_glsl_a28a91512c3a71bf0f0e4c40935316c6a}\label{namespacesf_1_1_glsl_a28a91512c3a71bf0f0e4c40935316c6a}} 
+\index{sf::Glsl@{sf::Glsl}!Ivec4@{Ivec4}}
+\index{Ivec4@{Ivec4}!sf::Glsl@{sf::Glsl}}
+\doxysubsubsection{\texorpdfstring{Ivec4}{Ivec4}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{structsf_1_1priv_1_1_vector4}{priv\+::\+Vector4}}$<$ int $>$ \mbox{\hyperlink{namespacesf_1_1_glsl_a28a91512c3a71bf0f0e4c40935316c6a}{sf\+::\+Glsl\+::\+Ivec4}}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8hpp_source_l00186}{186}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8hpp_source}{Glsl.\+hpp}}.
+
+\mbox{\Hypertarget{namespacesf_1_1_glsl_a5740f2f47b1bea944dd94045af397e39}\label{namespacesf_1_1_glsl_a5740f2f47b1bea944dd94045af397e39}} 
+\index{sf::Glsl@{sf::Glsl}!Mat3@{Mat3}}
+\index{Mat3@{Mat3}!sf::Glsl@{sf::Glsl}}
+\doxysubsubsection{\texorpdfstring{Mat3}{Mat3}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{structsf_1_1priv_1_1_matrix}{priv\+::\+Matrix}}$<$ 3, 3 $>$ \mbox{\hyperlink{namespacesf_1_1_glsl_a5740f2f47b1bea944dd94045af397e39}{sf\+::\+Glsl\+::\+Mat3}}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8hpp_source_l00188}{188}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8hpp_source}{Glsl.\+hpp}}.
+
+\mbox{\Hypertarget{namespacesf_1_1_glsl_a7f4817a969b6cc76c0828eaecf8f386b}\label{namespacesf_1_1_glsl_a7f4817a969b6cc76c0828eaecf8f386b}} 
+\index{sf::Glsl@{sf::Glsl}!Mat4@{Mat4}}
+\index{Mat4@{Mat4}!sf::Glsl@{sf::Glsl}}
+\doxysubsubsection{\texorpdfstring{Mat4}{Mat4}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{structsf_1_1priv_1_1_matrix}{priv\+::\+Matrix}}$<$ 4, 4 $>$ \mbox{\hyperlink{namespacesf_1_1_glsl_a7f4817a969b6cc76c0828eaecf8f386b}{sf\+::\+Glsl\+::\+Mat4}}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8hpp_source_l00189}{189}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8hpp_source}{Glsl.\+hpp}}.
+
+\mbox{\Hypertarget{namespacesf_1_1_glsl_abfcb09fe753e2d3afdf5b34ead5ac998}\label{namespacesf_1_1_glsl_abfcb09fe753e2d3afdf5b34ead5ac998}} 
+\index{sf::Glsl@{sf::Glsl}!Vec2@{Vec2}}
+\index{Vec2@{Vec2}!sf::Glsl@{sf::Glsl}}
+\doxysubsubsection{\texorpdfstring{Vec2}{Vec2}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classsf_1_1_vector2}{Vector2}}$<$ float $>$ \mbox{\hyperlink{namespacesf_1_1_glsl_abfcb09fe753e2d3afdf5b34ead5ac998}{sf\+::\+Glsl\+::\+Vec2}}}
+
+
+
+2D float vector ({\ttfamily vec2} in GLSL) 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8hpp_source_l00064}{64}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8hpp_source}{Glsl.\+hpp}}.
+
+\mbox{\Hypertarget{namespacesf_1_1_glsl_a054bd0a821d072e08de6c358de9f67ad}\label{namespacesf_1_1_glsl_a054bd0a821d072e08de6c358de9f67ad}} 
+\index{sf::Glsl@{sf::Glsl}!Vec3@{Vec3}}
+\index{Vec3@{Vec3}!sf::Glsl@{sf::Glsl}}
+\doxysubsubsection{\texorpdfstring{Vec3}{Vec3}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classsf_1_1_vector3}{Vector3}}$<$ float $>$ \mbox{\hyperlink{namespacesf_1_1_glsl_a054bd0a821d072e08de6c358de9f67ad}{sf\+::\+Glsl\+::\+Vec3}}}
+
+
+
+3D float vector ({\ttfamily vec3} in GLSL) 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8hpp_source_l00082}{82}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8hpp_source}{Glsl.\+hpp}}.
+
+\mbox{\Hypertarget{namespacesf_1_1_glsl_a1370d4e28095744e9e5271eb34bae8d4}\label{namespacesf_1_1_glsl_a1370d4e28095744e9e5271eb34bae8d4}} 
+\index{sf::Glsl@{sf::Glsl}!Vec4@{Vec4}}
+\index{Vec4@{Vec4}!sf::Glsl@{sf::Glsl}}
+\doxysubsubsection{\texorpdfstring{Vec4}{Vec4}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{structsf_1_1priv_1_1_vector4}{priv\+::\+Vector4}}$<$ float $>$ \mbox{\hyperlink{namespacesf_1_1_glsl_a1370d4e28095744e9e5271eb34bae8d4}{sf\+::\+Glsl\+::\+Vec4}}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8hpp_source_l00185}{185}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8hpp_source}{Glsl.\+hpp}}.
+

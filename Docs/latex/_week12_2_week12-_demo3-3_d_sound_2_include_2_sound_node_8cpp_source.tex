@@ -1,0 +1,28 @@
+\hypertarget{_week12_2_week12-_demo3-3_d_sound_2_include_2_sound_node_8cpp_source}{}\doxysection{Sound\+Node.\+cpp}
+\label{_week12_2_week12-_demo3-3_d_sound_2_include_2_sound_node_8cpp_source}\index{Week12/Week12-\/Demo3-\/3DSound/Include/SoundNode.cpp@{Week12/Week12-\/Demo3-\/3DSound/Include/SoundNode.cpp}}
+\mbox{\hyperlink{_week12_2_week12-_demo3-3_d_sound_2_include_2_sound_node_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_include_2_sound_node_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma region step 5}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_include_2_sound_node_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_week14_2_week14-_demo1-_player2_2_include_2_sound_node_8hpp}{SoundNode.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_include_2_sound_node_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_week14_2_week14-_demo1-_player2_2_include_2_sound_player_8hpp}{SoundPlayer.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_include_2_sound_node_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_include_2_sound_node_8cpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_include_2_sound_node_8cpp_source_l00006}\mbox{\hyperlink{class_sound_node_a374cff296ed78406c03103f843f544b3}{00006}} \mbox{\hyperlink{class_sound_node_a374cff296ed78406c03103f843f544b3}{SoundNode::SoundNode}}(\mbox{\hyperlink{class_sound_player}{SoundPlayer}}\& player)}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_include_2_sound_node_8cpp_source_l00007}00007     : \mbox{\hyperlink{class_scene_node}{SceneNode}}()}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_include_2_sound_node_8cpp_source_l00008}00008     , mSounds(player)}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_include_2_sound_node_8cpp_source_l00009}00009 \{}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_include_2_sound_node_8cpp_source_l00010}00010 \}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_include_2_sound_node_8cpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_include_2_sound_node_8cpp_source_l00012}\mbox{\hyperlink{class_sound_node_a596804942f356e61ec845c9310c42b8d}{00012}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sound_node_a596804942f356e61ec845c9310c42b8d}{SoundNode::playSound}}(\mbox{\hyperlink{namespace_sound_effect_a11ffbf1eb89e85a34cbfd5a59b2cd9cb}{SoundEffect::ID}} sound, \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}} position)}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_include_2_sound_node_8cpp_source_l00013}00013 \{}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_include_2_sound_node_8cpp_source_l00014}00014     \mbox{\hyperlink{class_sound_node_a677dac98422ab216031033ad26b57529}{mSounds}}.\mbox{\hyperlink{class_sound_player_aa0b85f15f5b13bc41c71eeee6b0a7779}{play}}(sound, position);}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_include_2_sound_node_8cpp_source_l00015}00015 \}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_include_2_sound_node_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_include_2_sound_node_8cpp_source_l00017}\mbox{\hyperlink{class_sound_node_a2d41acd2e32af8f4a020a1604cfc5ff6}{00017}} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_sound_node_a2d41acd2e32af8f4a020a1604cfc5ff6}{SoundNode::getCategory}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_include_2_sound_node_8cpp_source_l00018}00018 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_include_2_sound_node_8cpp_source_l00019}00019     \textcolor{keywordflow}{return} \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0af2d299c2c389cc2273d27b5fea986449}{Category::SoundEffect}};}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_include_2_sound_node_8cpp_source_l00020}00020 \}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_include_2_sound_node_8cpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_include_2_sound_node_8cpp_source_l00022}00022 \textcolor{preprocessor}{\#pragma endregion}}
+
+\end{DoxyCode}

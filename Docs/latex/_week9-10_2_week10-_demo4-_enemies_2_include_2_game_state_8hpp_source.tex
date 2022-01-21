@@ -1,0 +1,33 @@
+\hypertarget{_week9-10_2_week10-_demo4-_enemies_2_include_2_game_state_8hpp_source}{}\doxysection{Game\+State.\+hpp}
+\label{_week9-10_2_week10-_demo4-_enemies_2_include_2_game_state_8hpp_source}\index{Week9-\/10/Week10-\/Demo4-\/Enemies/Include/GameState.hpp@{Week9-\/10/Week10-\/Demo4-\/Enemies/Include/GameState.hpp}}
+\mbox{\hyperlink{_week9-10_2_week10-_demo4-_enemies_2_include_2_game_state_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_include_2_game_state_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#ifndef BOOK\_GAMESTATE\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_include_2_game_state_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#define BOOK\_GAMESTATE\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_include_2_game_state_8hpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_include_2_game_state_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_include_2_state_8hpp}{State.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_include_2_game_state_8hpp_source_l00005}00005 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_include_2_world_8hpp}{World.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_include_2_game_state_8hpp_source_l00006}00006 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_include_2_player_8hpp}{Player.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_include_2_game_state_8hpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_include_2_game_state_8hpp_source_l00008}00008 \textcolor{preprocessor}{\#include <SFML/Graphics/Sprite.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_include_2_game_state_8hpp_source_l00009}00009 \textcolor{preprocessor}{\#include <SFML/Graphics/Text.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_include_2_game_state_8hpp_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_include_2_game_state_8hpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_include_2_game_state_8hpp_source_l00012}00012 \textcolor{keyword}{class }\mbox{\hyperlink{class_game_state}{GameState}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_state}{State}}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_include_2_game_state_8hpp_source_l00013}00013 \{}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_include_2_game_state_8hpp_source_l00014}00014     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_include_2_game_state_8hpp_source_l00015}\mbox{\hyperlink{class_game_state_aeb2e2598754640c694b989311b1aebfe}{00015}}                             \mbox{\hyperlink{class_game_state_aeb2e2598754640c694b989311b1aebfe}{GameState}}(\mbox{\hyperlink{class_state_stack}{StateStack}}\& stack, \mbox{\hyperlink{struct_state_1_1_context}{Context}} context);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_include_2_game_state_8hpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_include_2_game_state_8hpp_source_l00017}\mbox{\hyperlink{class_game_state_adf753ecc90e0b309c849b117036e619e}{00017}}         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}        \mbox{\hyperlink{class_game_state_adf753ecc90e0b309c849b117036e619e}{draw}}();}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_include_2_game_state_8hpp_source_l00018}\mbox{\hyperlink{class_game_state_a0b13d7c27239f0cfc7260955a960d045}{00018}}         \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool}        \mbox{\hyperlink{class_game_state_a0b13d7c27239f0cfc7260955a960d045}{update}}(\mbox{\hyperlink{classsf_1_1_time}{sf::Time}} dt);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_include_2_game_state_8hpp_source_l00019}\mbox{\hyperlink{class_game_state_a063c526c647305d7bac9ae95b3f9078f}{00019}}         \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool}        \mbox{\hyperlink{class_game_state_a063c526c647305d7bac9ae95b3f9078f}{handleEvent}}(\textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_event}{sf::Event}}\& event);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_include_2_game_state_8hpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_include_2_game_state_8hpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_include_2_game_state_8hpp_source_l00022}00022     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_include_2_game_state_8hpp_source_l00023}00023         \mbox{\hyperlink{class_world}{World}}              \mbox{\hyperlink{class_game_state_abae3784758f93e8affba727139d51455}{mWorld}};}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_include_2_game_state_8hpp_source_l00024}00024         \mbox{\hyperlink{class_player}{Player}}\&               \mbox{\hyperlink{class_game_state_ace97ddede15b11df84d98dbb5ac56a06}{mPlayer}};}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_include_2_game_state_8hpp_source_l00025}00025 \};}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_include_2_game_state_8hpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_include_2_game_state_8hpp_source_l00027}00027 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// BOOK\_GAMESTATE\_HPP}}
+
+\end{DoxyCode}

@@ -1,0 +1,35 @@
+\hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_text_node_8hpp_source}{}\doxysection{Text\+Node.\+hpp}
+\label{_week9-10_2_week10-_demo2-_text_node_2_include_2_text_node_8hpp_source}\index{Week9-\/10/Week10-\/Demo2-\/TextNode/Include/TextNode.hpp@{Week9-\/10/Week10-\/Demo2-\/TextNode/Include/TextNode.hpp}}
+\mbox{\hyperlink{_week9-10_2_week10-_demo2-_text_node_2_include_2_text_node_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_text_node_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma region step 1}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_text_node_8hpp_source_l00002}00002 \textcolor{comment}{//Add some text on the display to show the hitpoints or ammunition of different entities}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_text_node_8hpp_source_l00003}00003 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_text_node_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_include_2_resource_holder_8hpp}{ResourceHolder.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_text_node_8hpp_source_l00005}00005 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_include_2_resource_identifiers_8hpp}{ResourceIdentifiers.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_text_node_8hpp_source_l00006}00006 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_include_2_scene_node_8hpp}{SceneNode.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_text_node_8hpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_text_node_8hpp_source_l00008}00008 \textcolor{preprocessor}{\#include <SFML/Graphics/Text.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_text_node_8hpp_source_l00009}00009 \textcolor{preprocessor}{\#include <SFML/Graphics/Font.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_text_node_8hpp_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_text_node_8hpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_text_node_8hpp_source_l00012}00012 \textcolor{keyword}{class }\mbox{\hyperlink{class_text_node}{TextNode}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_scene_node}{SceneNode}}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_text_node_8hpp_source_l00013}00013 \{}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_text_node_8hpp_source_l00014}00014 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_text_node_8hpp_source_l00015}\mbox{\hyperlink{class_text_node_a6ac9f0e37c705f4afdeb2c1888ca4084}{00015}}     \textcolor{keyword}{explicit}            \mbox{\hyperlink{class_text_node_a6ac9f0e37c705f4afdeb2c1888ca4084}{TextNode}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_resource_holder}{FontHolder}}\& fonts, \textcolor{keyword}{const} std::string\& text);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_text_node_8hpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_text_node_8hpp_source_l00017}\mbox{\hyperlink{class_text_node_a51c396c803287f43ee640c6b6421a212}{00017}}     \textcolor{keywordtype}{void}                \mbox{\hyperlink{class_text_node_a51c396c803287f43ee640c6b6421a212}{setString}}(\textcolor{keyword}{const} std::string\& text);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_text_node_8hpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_text_node_8hpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_text_node_8hpp_source_l00020}00020 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_text_node_8hpp_source_l00021}\mbox{\hyperlink{class_text_node_a43e76765e8f83c810601dc01513688fc}{00021}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}        \mbox{\hyperlink{class_text_node_a43e76765e8f83c810601dc01513688fc}{drawCurrent}}(\mbox{\hyperlink{classsf_1_1_render_target}{sf::RenderTarget}}\& target, \mbox{\hyperlink{classsf_1_1_render_states}{sf::RenderStates}} states) \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_text_node_8hpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_text_node_8hpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_text_node_8hpp_source_l00024}00024 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_text_node_8hpp_source_l00025}00025     \mbox{\hyperlink{classsf_1_1_text}{sf::Text}}            \mbox{\hyperlink{class_text_node_a1b9f14720e400eea10b29043bbe79c41}{mText}};}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_text_node_8hpp_source_l00026}00026 \};}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_text_node_8hpp_source_l00027}00027 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_text_node_8hpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_include_2_text_node_8hpp_source_l00029}00029 }
+
+\end{DoxyCode}

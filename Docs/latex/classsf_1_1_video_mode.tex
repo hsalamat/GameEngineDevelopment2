@@ -1,0 +1,555 @@
+\hypertarget{classsf_1_1_video_mode}{}\doxysection{sf\+::Video\+Mode Class Reference}
+\label{classsf_1_1_video_mode}\index{sf::VideoMode@{sf::VideoMode}}
+
+
+\mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} defines a video mode (width, height, bpp)  
+
+
+
+
+{\ttfamily \#include $<$Video\+Mode.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsf_1_1_video_mode_a04c9417e5c304510bef5f6aeb03f6ce1}{Video\+Mode}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_video_mode_a46c35ed41de9e115661dcd529d64e9d3}{Video\+Mode}} (unsigned int mode\+Width, unsigned int mode\+Height, unsigned int mode\+Bits\+Per\+Pixel=32)
+\begin{DoxyCompactList}\small\item\em Construct the video mode with its attributes. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_video_mode_ad5e04c044b0925523c75ecb173d2129a}{is\+Valid}} () const
+\begin{DoxyCompactList}\small\item\em Tell whether or not the video mode is valid. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_video_mode_a04c9417e5c304510bef5f6aeb03f6ce1}{Video\+Mode}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsf_1_1_video_mode_a46c35ed41de9e115661dcd529d64e9d3}{Video\+Mode}} (unsigned int mode\+Width, unsigned int mode\+Height, unsigned int mode\+Bits\+Per\+Pixel=32)
+\begin{DoxyCompactList}\small\item\em Construct the video mode with its attributes. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsf_1_1_video_mode_ad5e04c044b0925523c75ecb173d2129a}{is\+Valid}} () const
+\begin{DoxyCompactList}\small\item\em Tell whether or not the video mode is valid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \mbox{\hyperlink{classsf_1_1_video_mode_ac1be160a4342e6eafb2cb0e8c9b18d44}{get\+Desktop\+Mode}} ()
+\begin{DoxyCompactList}\small\item\em Get the current desktop video mode. \end{DoxyCompactList}\item 
+static const std\+::vector$<$ \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} $>$ \& \mbox{\hyperlink{classsf_1_1_video_mode_a0f99e67ef2b51fbdc335d9991232609e}{get\+Fullscreen\+Modes}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve all the video modes supported in fullscreen mode. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \mbox{\hyperlink{classsf_1_1_video_mode_ac1be160a4342e6eafb2cb0e8c9b18d44}{get\+Desktop\+Mode}} ()
+\begin{DoxyCompactList}\small\item\em Get the current desktop video mode. \end{DoxyCompactList}\item 
+static const std\+::vector$<$ \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} $>$ \& \mbox{\hyperlink{classsf_1_1_video_mode_a0f99e67ef2b51fbdc335d9991232609e}{get\+Fullscreen\+Modes}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve all the video modes supported in fullscreen mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{classsf_1_1_video_mode_a9b3b2ad2cac6b9c266823fb5ed506d90}{width}}
+\begin{DoxyCompactList}\small\item\em Video mode width, in pixels. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classsf_1_1_video_mode_a5a88d44c9470db7474361a42a189342d}{height}}
+\begin{DoxyCompactList}\small\item\em Video mode height, in pixels. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classsf_1_1_video_mode_aa080f1ef96a1008d58b1920eceb189df}{bits\+Per\+Pixel}}
+\begin{DoxyCompactList}\small\item\em Video mode pixel depth, in bits per pixels. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Related Functions}
+(Note that these are not member functions.) \begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_export_8hpp_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool \mbox{\hyperlink{classsf_1_1_video_mode_a03c51c119811ffd4403c6e2bcbd4ceaf}{operator==}} (const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&left, const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of == operator to compare two video modes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_export_8hpp_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool \mbox{\hyperlink{classsf_1_1_video_mode_abd7bf172d318085ea572b8c10033f7b7}{operator!=}} (const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&left, const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of != operator to compare two video modes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_export_8hpp_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool \mbox{\hyperlink{classsf_1_1_video_mode_a8e3d8fa57fa10dca05edbc34c4e2f1a8}{operator$<$}} (const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&left, const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of \texorpdfstring{$<$}{<} operator to compare video modes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_export_8hpp_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool \mbox{\hyperlink{classsf_1_1_video_mode_ab6e5b2c65a428a4b56de8551b3706a36}{operator$>$}} (const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&left, const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of \texorpdfstring{$>$}{>} operator to compare video modes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_export_8hpp_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool \mbox{\hyperlink{classsf_1_1_video_mode_a09b0a83f9135d934e540800bad12f0ca}{operator$<$=}} (const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&left, const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of \texorpdfstring{$<$}{<}= operator to compare video modes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_export_8hpp_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool \mbox{\hyperlink{classsf_1_1_video_mode_a7f7983e336203d34c9878c77fff60f1f}{operator$>$=}} (const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&left, const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of \texorpdfstring{$>$}{>}= operator to compare video modes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_export_8hpp_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool \mbox{\hyperlink{classsf_1_1_video_mode_a03c51c119811ffd4403c6e2bcbd4ceaf}{operator==}} (const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&left, const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of == operator to compare two video modes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_export_8hpp_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool \mbox{\hyperlink{classsf_1_1_video_mode_abd7bf172d318085ea572b8c10033f7b7}{operator!=}} (const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&left, const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of != operator to compare two video modes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_export_8hpp_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool \mbox{\hyperlink{classsf_1_1_video_mode_a8e3d8fa57fa10dca05edbc34c4e2f1a8}{operator$<$}} (const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&left, const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of \texorpdfstring{$<$}{<} operator to compare video modes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_export_8hpp_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool \mbox{\hyperlink{classsf_1_1_video_mode_ab6e5b2c65a428a4b56de8551b3706a36}{operator$>$}} (const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&left, const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of \texorpdfstring{$>$}{>} operator to compare video modes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_export_8hpp_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool \mbox{\hyperlink{classsf_1_1_video_mode_a09b0a83f9135d934e540800bad12f0ca}{operator$<$=}} (const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&left, const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of \texorpdfstring{$<$}{<}= operator to compare video modes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_export_8hpp_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool \mbox{\hyperlink{classsf_1_1_video_mode_a7f7983e336203d34c9878c77fff60f1f}{operator$>$=}} (const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&left, const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of \texorpdfstring{$>$}{>}= operator to compare video modes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} defines a video mode (width, height, bpp) 
+
+A video mode is defined by a width and a height (in pixels) and a depth (in bits per pixel).
+
+Video modes are used to setup windows (\mbox{\hyperlink{classsf_1_1_window}{sf\+::\+Window}}) at creation time.
+
+The main usage of video modes is for fullscreen mode\+: indeed you must use one of the valid video modes allowed by the OS (which are defined by what the monitor and the graphics card support), otherwise your window creation will just fail.
+
+\mbox{\hyperlink{classsf_1_1_video_mode}{sf\+::\+Video\+Mode}} provides a static function for retrieving the list of all the video modes supported by the system\+: \mbox{\hyperlink{classsf_1_1_video_mode_a0f99e67ef2b51fbdc335d9991232609e}{get\+Fullscreen\+Modes()}}.
+
+A custom video mode can also be checked directly for fullscreen compatibility with its \mbox{\hyperlink{classsf_1_1_video_mode_ad5e04c044b0925523c75ecb173d2129a}{is\+Valid()}} function.
+
+Additionally, \mbox{\hyperlink{classsf_1_1_video_mode}{sf\+::\+Video\+Mode}} provides a static function to get the mode currently used by the desktop\+: \mbox{\hyperlink{classsf_1_1_video_mode_ac1be160a4342e6eafb2cb0e8c9b18d44}{get\+Desktop\+Mode()}}. This allows to build windows with the same size or pixel depth as the current resolution.
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Display the list of all the video modes available for fullscreen}}
+\DoxyCodeLine{std::vector<sf::VideoMode> modes = \mbox{\hyperlink{classsf_1_1_video_mode_a0f99e67ef2b51fbdc335d9991232609e}{sf::VideoMode::getFullscreenModes}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (std::size\_t i = 0; i < modes.size(); ++i)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \mbox{\hyperlink{classsf_1_1_video_mode}{sf::VideoMode}} mode = modes[i];}
+\DoxyCodeLine{    std::cout << \textcolor{stringliteral}{"{}Mode \#"{}} << i << \textcolor{stringliteral}{"{}: "{}}}
+\DoxyCodeLine{              << mode.\mbox{\hyperlink{classsf_1_1_video_mode_a9b3b2ad2cac6b9c266823fb5ed506d90}{width}} << \textcolor{stringliteral}{"{}x"{}} << mode.\mbox{\hyperlink{classsf_1_1_video_mode_a5a88d44c9470db7474361a42a189342d}{height}} << \textcolor{stringliteral}{"{} -\/ "{}}}
+\DoxyCodeLine{              << mode.\mbox{\hyperlink{classsf_1_1_video_mode_aa080f1ef96a1008d58b1920eceb189df}{bitsPerPixel}} << \textcolor{stringliteral}{"{} bpp"{}} << std::endl;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Create a window with the same pixel depth as the desktop}}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_video_mode}{sf::VideoMode}} desktop = \mbox{\hyperlink{classsf_1_1_video_mode_ac1be160a4342e6eafb2cb0e8c9b18d44}{sf::VideoMode::getDesktopMode}}();}
+\DoxyCodeLine{window.create(\mbox{\hyperlink{classsf_1_1_video_mode}{sf::VideoMode}}(1024, 768, desktop.\mbox{\hyperlink{classsf_1_1_video_mode_aa080f1ef96a1008d58b1920eceb189df}{bitsPerPixel}}), \textcolor{stringliteral}{"{}SFML window"{}});}
+
+\end{DoxyCode}
+ 
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_video_mode_8hpp_source_l00041}{41}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_video_mode_8hpp_source}{Video\+Mode.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsf_1_1_video_mode_a04c9417e5c304510bef5f6aeb03f6ce1}\label{classsf_1_1_video_mode_a04c9417e5c304510bef5f6aeb03f6ce1}} 
+\index{sf::VideoMode@{sf::VideoMode}!VideoMode@{VideoMode}}
+\index{VideoMode@{VideoMode}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{VideoMode()}{VideoMode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily sf\+::\+Video\+Mode\+::\+Video\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+This constructors initializes all members to 0. \mbox{\Hypertarget{classsf_1_1_video_mode_a46c35ed41de9e115661dcd529d64e9d3}\label{classsf_1_1_video_mode_a46c35ed41de9e115661dcd529d64e9d3}} 
+\index{sf::VideoMode@{sf::VideoMode}!VideoMode@{VideoMode}}
+\index{VideoMode@{VideoMode}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{VideoMode()}{VideoMode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily sf\+::\+Video\+Mode\+::\+Video\+Mode (\begin{DoxyParamCaption}\item[{unsigned int}]{mode\+Width,  }\item[{unsigned int}]{mode\+Height,  }\item[{unsigned int}]{mode\+Bits\+Per\+Pixel = {\ttfamily 32} }\end{DoxyParamCaption})}
+
+
+
+Construct the video mode with its attributes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode\+Width} & Width in pixels \\
+\hline
+{\em mode\+Height} & Height in pixels \\
+\hline
+{\em mode\+Bits\+Per\+Pixel} & Pixel depths in bits per pixel \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsf_1_1_video_mode_a04c9417e5c304510bef5f6aeb03f6ce1}\label{classsf_1_1_video_mode_a04c9417e5c304510bef5f6aeb03f6ce1}} 
+\index{sf::VideoMode@{sf::VideoMode}!VideoMode@{VideoMode}}
+\index{VideoMode@{VideoMode}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{VideoMode()}{VideoMode()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily sf\+::\+Video\+Mode\+::\+Video\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+This constructors initializes all members to 0. \mbox{\Hypertarget{classsf_1_1_video_mode_a46c35ed41de9e115661dcd529d64e9d3}\label{classsf_1_1_video_mode_a46c35ed41de9e115661dcd529d64e9d3}} 
+\index{sf::VideoMode@{sf::VideoMode}!VideoMode@{VideoMode}}
+\index{VideoMode@{VideoMode}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{VideoMode()}{VideoMode()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily sf\+::\+Video\+Mode\+::\+Video\+Mode (\begin{DoxyParamCaption}\item[{unsigned int}]{mode\+Width,  }\item[{unsigned int}]{mode\+Height,  }\item[{unsigned int}]{mode\+Bits\+Per\+Pixel = {\ttfamily 32} }\end{DoxyParamCaption})}
+
+
+
+Construct the video mode with its attributes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode\+Width} & Width in pixels \\
+\hline
+{\em mode\+Height} & Height in pixels \\
+\hline
+{\em mode\+Bits\+Per\+Pixel} & Pixel depths in bits per pixel \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsf_1_1_video_mode_ac1be160a4342e6eafb2cb0e8c9b18d44}\label{classsf_1_1_video_mode_ac1be160a4342e6eafb2cb0e8c9b18d44}} 
+\index{sf::VideoMode@{sf::VideoMode}!getDesktopMode@{getDesktopMode}}
+\index{getDesktopMode@{getDesktopMode}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{getDesktopMode()}{getDesktopMode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} sf\+::\+Video\+Mode\+::get\+Desktop\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the current desktop video mode. 
+
+\begin{DoxyReturn}{Returns}
+Current desktop video mode 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_video_mode_ac1be160a4342e6eafb2cb0e8c9b18d44}\label{classsf_1_1_video_mode_ac1be160a4342e6eafb2cb0e8c9b18d44}} 
+\index{sf::VideoMode@{sf::VideoMode}!getDesktopMode@{getDesktopMode}}
+\index{getDesktopMode@{getDesktopMode}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{getDesktopMode()}{getDesktopMode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} sf\+::\+Video\+Mode\+::get\+Desktop\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the current desktop video mode. 
+
+\begin{DoxyReturn}{Returns}
+Current desktop video mode 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_video_mode_a0f99e67ef2b51fbdc335d9991232609e}\label{classsf_1_1_video_mode_a0f99e67ef2b51fbdc335d9991232609e}} 
+\index{sf::VideoMode@{sf::VideoMode}!getFullscreenModes@{getFullscreenModes}}
+\index{getFullscreenModes@{getFullscreenModes}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{getFullscreenModes()}{getFullscreenModes()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static const std\+::vector$<$ \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} $>$ \& sf\+::\+Video\+Mode\+::get\+Fullscreen\+Modes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retrieve all the video modes supported in fullscreen mode. 
+
+When creating a fullscreen window, the video mode is restricted to be compatible with what the graphics driver and monitor support. This function returns the complete list of all video modes that can be used in fullscreen mode. The returned array is sorted from best to worst, so that the first element will always give the best mode (higher width, height and bits-\/per-\/pixel).
+
+\begin{DoxyReturn}{Returns}
+Array containing all the supported fullscreen modes 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_video_mode_a0f99e67ef2b51fbdc335d9991232609e}\label{classsf_1_1_video_mode_a0f99e67ef2b51fbdc335d9991232609e}} 
+\index{sf::VideoMode@{sf::VideoMode}!getFullscreenModes@{getFullscreenModes}}
+\index{getFullscreenModes@{getFullscreenModes}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{getFullscreenModes()}{getFullscreenModes()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static const std\+::vector$<$ \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} $>$ \& sf\+::\+Video\+Mode\+::get\+Fullscreen\+Modes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retrieve all the video modes supported in fullscreen mode. 
+
+When creating a fullscreen window, the video mode is restricted to be compatible with what the graphics driver and monitor support. This function returns the complete list of all video modes that can be used in fullscreen mode. The returned array is sorted from best to worst, so that the first element will always give the best mode (higher width, height and bits-\/per-\/pixel).
+
+\begin{DoxyReturn}{Returns}
+Array containing all the supported fullscreen modes 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_video_mode_ad5e04c044b0925523c75ecb173d2129a}\label{classsf_1_1_video_mode_ad5e04c044b0925523c75ecb173d2129a}} 
+\index{sf::VideoMode@{sf::VideoMode}!isValid@{isValid}}
+\index{isValid@{isValid}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool sf\+::\+Video\+Mode\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Tell whether or not the video mode is valid. 
+
+The validity of video modes is only relevant when using fullscreen windows; otherwise any video mode can be used with no restriction.
+
+\begin{DoxyReturn}{Returns}
+True if the video mode is valid for fullscreen mode 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_video_mode_ad5e04c044b0925523c75ecb173d2129a}\label{classsf_1_1_video_mode_ad5e04c044b0925523c75ecb173d2129a}} 
+\index{sf::VideoMode@{sf::VideoMode}!isValid@{isValid}}
+\index{isValid@{isValid}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool sf\+::\+Video\+Mode\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Tell whether or not the video mode is valid. 
+
+The validity of video modes is only relevant when using fullscreen windows; otherwise any video mode can be used with no restriction.
+
+\begin{DoxyReturn}{Returns}
+True if the video mode is valid for fullscreen mode 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classsf_1_1_video_mode_abd7bf172d318085ea572b8c10033f7b7}\label{classsf_1_1_video_mode_abd7bf172d318085ea572b8c10033f7b7}} 
+\index{sf::VideoMode@{sf::VideoMode}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_export_8hpp_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&}]{left,  }\item[{const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of != operator to compare two video modes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a video mode) \\
+\hline
+{\em right} & Right operand (a video mode)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if modes are different 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_video_mode_abd7bf172d318085ea572b8c10033f7b7}\label{classsf_1_1_video_mode_abd7bf172d318085ea572b8c10033f7b7}} 
+\index{sf::VideoMode@{sf::VideoMode}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_export_8hpp_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&}]{left,  }\item[{const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of != operator to compare two video modes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a video mode) \\
+\hline
+{\em right} & Right operand (a video mode)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if modes are different 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_video_mode_a8e3d8fa57fa10dca05edbc34c4e2f1a8}\label{classsf_1_1_video_mode_a8e3d8fa57fa10dca05edbc34c4e2f1a8}} 
+\index{sf::VideoMode@{sf::VideoMode}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_export_8hpp_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&}]{left,  }\item[{const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of \texorpdfstring{$<$}{<} operator to compare video modes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a video mode) \\
+\hline
+{\em right} & Right operand (a video mode)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is lesser than {\itshape right} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_video_mode_a8e3d8fa57fa10dca05edbc34c4e2f1a8}\label{classsf_1_1_video_mode_a8e3d8fa57fa10dca05edbc34c4e2f1a8}} 
+\index{sf::VideoMode@{sf::VideoMode}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_export_8hpp_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&}]{left,  }\item[{const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of \texorpdfstring{$<$}{<} operator to compare video modes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a video mode) \\
+\hline
+{\em right} & Right operand (a video mode)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is lesser than {\itshape right} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_video_mode_a09b0a83f9135d934e540800bad12f0ca}\label{classsf_1_1_video_mode_a09b0a83f9135d934e540800bad12f0ca}} 
+\index{sf::VideoMode@{sf::VideoMode}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_export_8hpp_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool operator$<$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&}]{left,  }\item[{const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of \texorpdfstring{$<$}{<}= operator to compare video modes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a video mode) \\
+\hline
+{\em right} & Right operand (a video mode)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is lesser or equal than {\itshape right} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_video_mode_a09b0a83f9135d934e540800bad12f0ca}\label{classsf_1_1_video_mode_a09b0a83f9135d934e540800bad12f0ca}} 
+\index{sf::VideoMode@{sf::VideoMode}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_export_8hpp_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool operator$<$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&}]{left,  }\item[{const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of \texorpdfstring{$<$}{<}= operator to compare video modes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a video mode) \\
+\hline
+{\em right} & Right operand (a video mode)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is lesser or equal than {\itshape right} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_video_mode_a03c51c119811ffd4403c6e2bcbd4ceaf}\label{classsf_1_1_video_mode_a03c51c119811ffd4403c6e2bcbd4ceaf}} 
+\index{sf::VideoMode@{sf::VideoMode}!operator==@{operator==}}
+\index{operator==@{operator==}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_export_8hpp_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&}]{left,  }\item[{const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of == operator to compare two video modes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a video mode) \\
+\hline
+{\em right} & Right operand (a video mode)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if modes are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_video_mode_a03c51c119811ffd4403c6e2bcbd4ceaf}\label{classsf_1_1_video_mode_a03c51c119811ffd4403c6e2bcbd4ceaf}} 
+\index{sf::VideoMode@{sf::VideoMode}!operator==@{operator==}}
+\index{operator==@{operator==}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_export_8hpp_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&}]{left,  }\item[{const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of == operator to compare two video modes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a video mode) \\
+\hline
+{\em right} & Right operand (a video mode)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if modes are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_video_mode_ab6e5b2c65a428a4b56de8551b3706a36}\label{classsf_1_1_video_mode_ab6e5b2c65a428a4b56de8551b3706a36}} 
+\index{sf::VideoMode@{sf::VideoMode}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_export_8hpp_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&}]{left,  }\item[{const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of \texorpdfstring{$>$}{>} operator to compare video modes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a video mode) \\
+\hline
+{\em right} & Right operand (a video mode)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is greater than {\itshape right} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_video_mode_ab6e5b2c65a428a4b56de8551b3706a36}\label{classsf_1_1_video_mode_ab6e5b2c65a428a4b56de8551b3706a36}} 
+\index{sf::VideoMode@{sf::VideoMode}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_export_8hpp_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&}]{left,  }\item[{const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of \texorpdfstring{$>$}{>} operator to compare video modes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a video mode) \\
+\hline
+{\em right} & Right operand (a video mode)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is greater than {\itshape right} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_video_mode_a7f7983e336203d34c9878c77fff60f1f}\label{classsf_1_1_video_mode_a7f7983e336203d34c9878c77fff60f1f}} 
+\index{sf::VideoMode@{sf::VideoMode}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_export_8hpp_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool operator$>$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&}]{left,  }\item[{const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of \texorpdfstring{$>$}{>}= operator to compare video modes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a video mode) \\
+\hline
+{\em right} & Right operand (a video mode)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is greater or equal than {\itshape right} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsf_1_1_video_mode_a7f7983e336203d34c9878c77fff60f1f}\label{classsf_1_1_video_mode_a7f7983e336203d34c9878c77fff60f1f}} 
+\index{sf::VideoMode@{sf::VideoMode}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_export_8hpp_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool operator$>$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&}]{left,  }\item[{const \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of \texorpdfstring{$>$}{>}= operator to compare video modes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a video mode) \\
+\hline
+{\em right} & Right operand (a video mode)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is greater or equal than {\itshape right} 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsf_1_1_video_mode_aa080f1ef96a1008d58b1920eceb189df}\label{classsf_1_1_video_mode_aa080f1ef96a1008d58b1920eceb189df}} 
+\index{sf::VideoMode@{sf::VideoMode}!bitsPerPixel@{bitsPerPixel}}
+\index{bitsPerPixel@{bitsPerPixel}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{bitsPerPixel}{bitsPerPixel}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Video\+Mode\+::bits\+Per\+Pixel}
+
+
+
+Video mode pixel depth, in bits per pixels. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_video_mode_8hpp_source_l00104}{104}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_video_mode_8hpp_source}{Video\+Mode.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_video_mode_a5a88d44c9470db7474361a42a189342d}\label{classsf_1_1_video_mode_a5a88d44c9470db7474361a42a189342d}} 
+\index{sf::VideoMode@{sf::VideoMode}!height@{height}}
+\index{height@{height}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Video\+Mode\+::height}
+
+
+
+Video mode height, in pixels. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_video_mode_8hpp_source_l00103}{103}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_video_mode_8hpp_source}{Video\+Mode.\+hpp}}.
+
+\mbox{\Hypertarget{classsf_1_1_video_mode_a9b3b2ad2cac6b9c266823fb5ed506d90}\label{classsf_1_1_video_mode_a9b3b2ad2cac6b9c266823fb5ed506d90}} 
+\index{sf::VideoMode@{sf::VideoMode}!width@{width}}
+\index{width@{width}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Video\+Mode\+::width}
+
+
+
+Video mode width, in pixels. 
+
+
+
+Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_video_mode_8hpp_source_l00102}{102}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_video_mode_8hpp_source}{Video\+Mode.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+SFML-\/2.\+5.\+1/include/\+SFML/\+Window/\mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_video_mode_8hpp}{Video\+Mode.\+hpp}}\item 
+Week14/\+SFML-\/2.\+5.\+1/include/\+SFML/\+Window/\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_video_mode_8hpp}{Video\+Mode.\+hpp}}\end{DoxyCompactItemize}

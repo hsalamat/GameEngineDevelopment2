@@ -1,0 +1,95 @@
+\hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source}{}\doxysection{Player.\+cpp}
+\label{_week5_2_week5-_demo2_2_source_2_player_8cpp_source}\index{Week5/Week5-\/Demo2/Source/Player.cpp@{Week5/Week5-\/Demo2/Source/Player.cpp}}
+\mbox{\hyperlink{_week5_2_week5-_demo2_2_source_2_player_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma region step 18}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <Player.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <CommandQueue.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <Aircraft.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00010}00010 \textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_player_acda404452c57e799dc69346d85c50f03}{Player::PlayerSpeed}} = 100.f;}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00011}00011 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_aircraft_mover}{AircraftMover}}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00012}00012 \{}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00013}\mbox{\hyperlink{struct_aircraft_mover_a663cf13bc8568988fb45195efbea2a3b}{00013}}     \mbox{\hyperlink{struct_aircraft_mover_a663cf13bc8568988fb45195efbea2a3b}{AircraftMover}}(\textcolor{keywordtype}{float} vx, \textcolor{keywordtype}{float} vy)}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00014}00014     : \mbox{\hyperlink{struct_aircraft_mover_a8403de0c4c7e057e7a47c6d38f621468}{velocity}}(vx, vy)}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00015}00015     \{}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00016}00016     \}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00018}\mbox{\hyperlink{struct_aircraft_mover_abad36338ec9f30e35e29b725ad731697}{00018}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_aircraft_mover_abad36338ec9f30e35e29b725ad731697}{operator() }}(\mbox{\hyperlink{class_aircraft}{Aircraft}}\& aircraft, \mbox{\hyperlink{classsf_1_1_time}{sf::Time}})\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00019}00019 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00020}00020         aircraft.\mbox{\hyperlink{class_entity_a80cdb89f11d47716781bc567efd2bcda}{accelerate}}(\mbox{\hyperlink{struct_aircraft_mover_a8403de0c4c7e057e7a47c6d38f621468}{velocity}});}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00021}00021     \}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00023}00023     \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}} \mbox{\hyperlink{struct_aircraft_mover_a8403de0c4c7e057e7a47c6d38f621468}{velocity}};}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00024}00024 \};}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00026}00026 \mbox{\hyperlink{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{Player::Player}}()}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00027}00027 \{}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00029}00029 \}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00031}00031 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_ac84a4e0b787f92bf773ccd0d0483f5b1}{Player::handleEvent}}(\textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_event}{sf::Event}}\& event, \mbox{\hyperlink{class_command_queue}{CommandQueue}}\& commands)}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00032}00032 \{}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00033}00033     \textcolor{keywordflow}{if} (event.\mbox{\hyperlink{classsf_1_1_event_adf2f8044f713fd9d6019077b0d1ffe0a}{type}} == \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4}{sf::Event::KeyPressed}} \&\& event.\mbox{\hyperlink{classsf_1_1_event_a45b92fc6757ca7c193f06b302e424ab0}{key}}.\mbox{\hyperlink{structsf_1_1_event_1_1_key_event_a2879fdab8a68cb1c6ecc45730a2d0e61}{code}} == \mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142a4c39943c14e7994651678b10b933706b}{sf::Keyboard::P}})}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00034}00034     \{}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00035}00035         \mbox{\hyperlink{struct_command}{Command}} output;}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00036}00036         output.\mbox{\hyperlink{struct_command_a1529e898c9e6dd47b1826b5b1eac09fb}{category}} = \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category::PlayerAircraft}};}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00037}00037         output.\mbox{\hyperlink{struct_command_ac5473faf8b8b03ce83353838bc00c6dd}{action}} = [](\mbox{\hyperlink{class_scene_node}{SceneNode}}\& s, \mbox{\hyperlink{classsf_1_1_time}{sf::Time}}) \{}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00038}00038             std::cout << s.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}} << \textcolor{stringliteral}{"{},"{}}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00039}00039                 << s.\mbox{\hyperlink{classsf_1_1_transformable_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}().\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}} << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00040}00040         \};}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00041}00041         commands.\mbox{\hyperlink{class_command_queue_ad444e0d7af45d9e09b834f0cec1e1f43}{push}}(output);}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00042}00042     \}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00043}00043 \}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00045}00045 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_ac520744c103fb38763c8856b4f158627}{Player::handleRealtimeInput}}(\mbox{\hyperlink{class_command_queue}{CommandQueue}}\& commands)}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00046}00046 \{}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00047}00047     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classsf_1_1_keyboard_a80a04b2f53005886957f49eee3531599}{sf::Keyboard::isKeyPressed}}(\mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142a5e7dd0a44aba7c8ca5cde717af892507}{sf::Keyboard::Left}}))}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00048}00048     \{}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00049}00049         \mbox{\hyperlink{struct_command}{Command}} moveLeft;}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00050}00050         moveLeft.\mbox{\hyperlink{struct_command_a1529e898c9e6dd47b1826b5b1eac09fb}{category}} = \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category::PlayerAircraft}};}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00051}00051         moveLeft.\mbox{\hyperlink{struct_command_ac5473faf8b8b03ce83353838bc00c6dd}{action}} = derivedAction<Aircraft>(}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00052}00052             \mbox{\hyperlink{struct_aircraft_mover}{AircraftMover}}(-\/\mbox{\hyperlink{class_player_acda404452c57e799dc69346d85c50f03}{PlayerSpeed}}, 0.f)}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00053}00053             );}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00054}00054         commands.\mbox{\hyperlink{class_command_queue_ad444e0d7af45d9e09b834f0cec1e1f43}{push}}(moveLeft);}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00055}00055     \}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00057}00057     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classsf_1_1_keyboard_a80a04b2f53005886957f49eee3531599}{sf::Keyboard::isKeyPressed}}(\mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142a30e643d209ea070c73ca1b5602e10ff4}{sf::Keyboard::Right}}))}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00058}00058     \{}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00059}00059         \mbox{\hyperlink{struct_command}{Command}} moveRight;}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00060}00060         moveRight.\mbox{\hyperlink{struct_command_a1529e898c9e6dd47b1826b5b1eac09fb}{category}} = \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category::PlayerAircraft}};}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00061}00061         moveRight.\mbox{\hyperlink{struct_command_ac5473faf8b8b03ce83353838bc00c6dd}{action}} = derivedAction<Aircraft>(}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00062}00062             \mbox{\hyperlink{struct_aircraft_mover}{AircraftMover}}(\mbox{\hyperlink{class_player_acda404452c57e799dc69346d85c50f03}{PlayerSpeed}}, 0.f)}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00063}00063             );}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00064}00064         commands.\mbox{\hyperlink{class_command_queue_ad444e0d7af45d9e09b834f0cec1e1f43}{push}}(moveRight);}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00065}00065     \}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00067}00067     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classsf_1_1_keyboard_a80a04b2f53005886957f49eee3531599}{sf::Keyboard::isKeyPressed}}(\mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142aa0cd0ee9f2d03294d7ca25b21068fa22}{sf::Keyboard::Up}}))}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00068}00068     \{}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00069}00069         \mbox{\hyperlink{struct_command}{Command}} moveUp;}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00070}00070         moveUp.\mbox{\hyperlink{struct_command_a1529e898c9e6dd47b1826b5b1eac09fb}{category}} = \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category::PlayerAircraft}};}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00071}00071         moveUp.\mbox{\hyperlink{struct_command_ac5473faf8b8b03ce83353838bc00c6dd}{action}} = derivedAction<Aircraft>(}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00072}00072             \mbox{\hyperlink{struct_aircraft_mover}{AircraftMover}}(0.f, -\/\mbox{\hyperlink{class_player_acda404452c57e799dc69346d85c50f03}{PlayerSpeed}})}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00073}00073             );}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00074}00074         commands.\mbox{\hyperlink{class_command_queue_ad444e0d7af45d9e09b834f0cec1e1f43}{push}}(moveUp);}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00075}00075     \}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00077}00077     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classsf_1_1_keyboard_a80a04b2f53005886957f49eee3531599}{sf::Keyboard::isKeyPressed}}(\mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142a4c156edb237453ea7e9070b8178333ad}{sf::Keyboard::Down}}))}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00078}00078     \{}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00079}00079         \mbox{\hyperlink{struct_command}{Command}} moveDown;}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00080}00080         moveDown.\mbox{\hyperlink{struct_command_a1529e898c9e6dd47b1826b5b1eac09fb}{category}} = \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category::PlayerAircraft}};}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00081}00081         moveDown.\mbox{\hyperlink{struct_command_ac5473faf8b8b03ce83353838bc00c6dd}{action}} = derivedAction<Aircraft>(}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00082}00082             \mbox{\hyperlink{struct_aircraft_mover}{AircraftMover}}(0.f, \mbox{\hyperlink{class_player_acda404452c57e799dc69346d85c50f03}{PlayerSpeed}})}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00083}00083             );}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00084}00084         commands.\mbox{\hyperlink{class_command_queue_ad444e0d7af45d9e09b834f0cec1e1f43}{push}}(moveDown);}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00085}00085     \}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00087}00087 }
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00088}00088 \}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2_player_8cpp_source_l00089}00089 \textcolor{preprocessor}{\#pragma endregion}}
+
+\end{DoxyCode}

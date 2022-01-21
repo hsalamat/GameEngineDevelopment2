@@ -1,0 +1,90 @@
+\hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source}{}\doxysection{Sprite.\+hpp}
+\label{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source}\index{Week14/SFML-\/2.5.1/include/SFML/Graphics/Sprite.hpp@{Week14/SFML-\/2.5.1/include/SFML/Graphics/Sprite.hpp}}
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00002}00002 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00003}00003 \textcolor{comment}{// SFML -\/ Simple and Fast Multimedia Library}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00004}00004 \textcolor{comment}{// Copyright (C) 2007-\/2018 Laurent Gomila (laurent@sfml-\/dev.org)}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00005}00005 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00006}00006 \textcolor{comment}{// This software is provided 'as-\/is', without any express or implied warranty.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00007}00007 \textcolor{comment}{// In no event will the authors be held liable for any damages arising from the use of this software.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00008}00008 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00009}00009 \textcolor{comment}{// Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00010}00010 \textcolor{comment}{// including commercial applications, and to alter it and redistribute it freely,}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00011}00011 \textcolor{comment}{// subject to the following restrictions:}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00012}00012 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00013}00013 \textcolor{comment}{// 1. The origin of this software must not be misrepresented;}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00014}00014 \textcolor{comment}{//    you must not claim that you wrote the original software.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00015}00015 \textcolor{comment}{//    If you use this software in a product, an acknowledgment}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00016}00016 \textcolor{comment}{//    in the product documentation would be appreciated but is not required.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00017}00017 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00018}00018 \textcolor{comment}{// 2. Altered source versions must be plainly marked as such,}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00019}00019 \textcolor{comment}{//    and must not be misrepresented as being the original software.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00020}00020 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00021}00021 \textcolor{comment}{// 3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00022}00022 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00024}00024 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00025}00025 \textcolor{preprocessor}{\#ifndef SFML\_SPRITE\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00026}00026 \textcolor{preprocessor}{\#define SFML\_SPRITE\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00029}00029 \textcolor{comment}{// Headers}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00031}00031 \textcolor{comment}{}\textcolor{preprocessor}{\#include <SFML/Graphics/Export.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00032}00032 \textcolor{preprocessor}{\#include <SFML/Graphics/Drawable.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00033}00033 \textcolor{preprocessor}{\#include <SFML/Graphics/Transformable.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00034}00034 \textcolor{preprocessor}{\#include <SFML/Graphics/Vertex.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00035}00035 \textcolor{preprocessor}{\#include <SFML/Graphics/Rect.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00038}00038 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacesf}{sf}}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00039}00039 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00040}00040 \textcolor{keyword}{class }\mbox{\hyperlink{struct_texture}{Texture}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00047}00047 \textcolor{keyword}{class }\mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_export_8hpp_ab84c9f1035e146917de3bc0f98d72b35}{SFML\_GRAPHICS\_API}} Sprite : \textcolor{keyword}{public} Drawable, \textcolor{keyword}{public} Transformable}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00048}00048 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00049}00049 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00057}\mbox{\hyperlink{classsf_1_1_sprite_a92559fbca895a96758abf5eabab96984}{00057}}     \mbox{\hyperlink{classsf_1_1_sprite_a92559fbca895a96758abf5eabab96984}{Sprite}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00067}\mbox{\hyperlink{classsf_1_1_sprite_a2a9fca374d7abf084bb1c143a879ff4a}{00067}}     \textcolor{keyword}{explicit} \mbox{\hyperlink{classsf_1_1_sprite_a2a9fca374d7abf084bb1c143a879ff4a}{Sprite}}(\textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_texture}{Texture}}\& texture);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00078}\mbox{\hyperlink{classsf_1_1_sprite_a01cfe1402372d243dbaa2ffa96020206}{00078}}     \mbox{\hyperlink{classsf_1_1_sprite_a01cfe1402372d243dbaa2ffa96020206}{Sprite}}(\textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_texture}{Texture}}\& texture, \textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_rect}{IntRect}}\& rectangle);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00099}\mbox{\hyperlink{classsf_1_1_sprite_a3729c88d88ac38c19317c18e87242560}{00099}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_sprite_a3729c88d88ac38c19317c18e87242560}{setTexture}}(\textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_texture}{Texture}}\& texture, \textcolor{keywordtype}{bool} resetRect = \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00100}00100 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00113}\mbox{\hyperlink{classsf_1_1_sprite_a3fefec419a4e6a90c0fd54c793d82ec2}{00113}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_sprite_a3fefec419a4e6a90c0fd54c793d82ec2}{setTextureRect}}(\textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_rect}{IntRect}}\& rectangle);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00128}\mbox{\hyperlink{classsf_1_1_sprite_a14def44da6437bfea20c4df5e71aba4c}{00128}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_sprite_a14def44da6437bfea20c4df5e71aba4c}{setColor}}(\textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_color}{Color}}\& color);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00129}00129 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00142}\mbox{\hyperlink{classsf_1_1_sprite_a6d0f107b5dd5976be50bc5b163ba21aa}{00142}}     \textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_texture}{Texture}}* \mbox{\hyperlink{classsf_1_1_sprite_a6d0f107b5dd5976be50bc5b163ba21aa}{getTexture}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00143}00143 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00152}\mbox{\hyperlink{classsf_1_1_sprite_afb19e5b4f39d17cf4d95752b3a79bcb6}{00152}}     \textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_rect}{IntRect}}\& \mbox{\hyperlink{classsf_1_1_sprite_afb19e5b4f39d17cf4d95752b3a79bcb6}{getTextureRect}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00153}00153 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00162}\mbox{\hyperlink{classsf_1_1_sprite_af4a3ee8177fdd6e472a360a0a837d7cf}{00162}}     \textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_color}{Color}}\& \mbox{\hyperlink{classsf_1_1_sprite_af4a3ee8177fdd6e472a360a0a837d7cf}{getColor}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00163}00163 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00176}\mbox{\hyperlink{classsf_1_1_sprite_ab2f4c781464da6f8a52b1df6058a48b8}{00176}}     \mbox{\hyperlink{classsf_1_1_rect}{FloatRect}} \mbox{\hyperlink{classsf_1_1_sprite_ab2f4c781464da6f8a52b1df6058a48b8}{getLocalBounds}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00177}00177 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00190}\mbox{\hyperlink{classsf_1_1_sprite_aa795483096b90745b2e799532963e271}{00190}}     \mbox{\hyperlink{classsf_1_1_rect}{FloatRect}} \mbox{\hyperlink{classsf_1_1_sprite_aa795483096b90745b2e799532963e271}{getGlobalBounds}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00191}00191 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00192}00192 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00193}00193 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00201}\mbox{\hyperlink{classsf_1_1_sprite_ad6ab20148c4ba6d6fc33a4aaf5eb838b}{00201}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_sprite_ad6ab20148c4ba6d6fc33a4aaf5eb838b}{draw}}(\mbox{\hyperlink{classsf_1_1_render_target}{RenderTarget}}\& target, \mbox{\hyperlink{classsf_1_1_render_states}{RenderStates}} states) \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00202}00202 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00207}\mbox{\hyperlink{classsf_1_1_sprite_adc47a06b1f326ee3eb2dea65167c8b43}{00207}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_sprite_adc47a06b1f326ee3eb2dea65167c8b43}{updatePositions}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00208}00208 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00213}\mbox{\hyperlink{classsf_1_1_sprite_ae5e26f96031b2c0727fc27fd602feb5c}{00213}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_sprite_ae5e26f96031b2c0727fc27fd602feb5c}{updateTexCoords}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00214}00214 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00216}00216     \textcolor{comment}{// Member data}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00218}00218 \textcolor{comment}{}    \mbox{\hyperlink{classsf_1_1_vertex}{Vertex}}         m\_vertices[4]; }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00219}00219     \textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_texture}{Texture}}* m\_texture;     }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00220}00220     \mbox{\hyperlink{classsf_1_1_rect}{IntRect}}        m\_textureRect; }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00221}00221 \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00222}00222 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00223}00223 \} \textcolor{comment}{// namespace sf}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00224}00224 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00225}00225 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00226}00226 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// SFML\_SPRITE\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00227}00227 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00228}00228 }
+
+\end{DoxyCode}

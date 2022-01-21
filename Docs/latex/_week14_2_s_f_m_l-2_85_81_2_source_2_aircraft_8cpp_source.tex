@@ -1,0 +1,403 @@
+\hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source}{}\doxysection{Aircraft.\+cpp}
+\label{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source}\index{Week14/SFML-\/2.5.1/Source/Aircraft.cpp@{Week14/SFML-\/2.5.1/Source/Aircraft.cpp}}
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include <Aircraft.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <DataTables.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <Utility.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <Pickup.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include <CommandQueue.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <SoundNode.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include <NetworkNode.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#include <ResourceHolder.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00010}00010 \textcolor{preprocessor}{\#include <SFML/Graphics/RenderTarget.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00011}00011 \textcolor{preprocessor}{\#include <SFML/Graphics/RenderStates.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00013}00013 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00016}00016 \textcolor{keyword}{using namespace }std::placeholders;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00018}00018 \textcolor{keyword}{namespace}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00019}00019 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00020}00020     \textcolor{keyword}{const} std::vector<AircraftData> Table = \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_data_tables_8hpp_aadcf137288192ca5bff8ed1ea604e0b4}{initializeAircraftData}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00021}00021 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00023}00023 \mbox{\hyperlink{class_aircraft_a88290be2611c6dc415cb1e32223b790a}{Aircraft::Aircraft}}(\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0}{Type}} type, \textcolor{keyword}{const} \mbox{\hyperlink{class_texture_holder}{TextureHolder}}\& textures, \textcolor{keyword}{const} \mbox{\hyperlink{class_resource_holder}{FontHolder}}\& fonts)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00024}00024     : \mbox{\hyperlink{class_entity}{Entity}}(Table[type].hitpoints)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00025}00025     , mType(type)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00026}00026     , mSprite(textures.get(Table[type].texture), Table[type].textureRect)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00027}00027     , mExplosion(textures.get(\mbox{\hyperlink{namespace_textures}{Textures}}::\mbox{\hyperlink{namespace_textures_a2cfe2099537d4e80b08437b4978301a5aabfa5345831e58f32111a0a36f9fccc0}{Explosion}}))}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00028}00028     , mFireCommand()}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00029}00029     , mMissileCommand()}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00030}00030     , mFireCountdown(\mbox{\hyperlink{namespacesf}{sf}}::Time::Zero)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00031}00031     , mIsFiring(false)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00032}00032     , mIsLaunchingMissile(false)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00033}00033     , mShowExplosion(true)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00034}00034     , mExplosionBegan(false)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00035}00035     , mSpawnedPickup(false)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00036}00036     , mPickupsEnabled(true)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00037}00037     , mFireRateLevel(1)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00038}00038     , mSpreadLevel(1)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00039}00039     , mMissileAmmo(2)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00040}00040     , mDropPickupCommand()}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00041}00041     , mTravelledDistance(0.f)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00042}00042     , mDirectionIndex(0)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00043}00043     , mMissileDisplay(nullptr)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00044}00044     , mIdentifier(0)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00045}00045 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00046}00046     mExplosion.setFrameSize(\mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2i}}(256, 256));}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00047}00047     mExplosion.setNumFrames(16);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00048}00048     mExplosion.setDuration(sf::seconds(1));}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00050}00050     \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_add3ffea68d586813ee6765c3bc796d35}{centerOrigin}}(mSprite);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00051}00051     \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_add3ffea68d586813ee6765c3bc796d35}{centerOrigin}}(mExplosion);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00053}00053     mFireCommand.category = \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a1588522bcecf9cbd0bf9526cf11e6461}{Category::SceneAirLayer}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00054}00054     mFireCommand.action = [\textcolor{keyword}{this}, \&textures](\mbox{\hyperlink{class_scene_node}{SceneNode}}\& node, \mbox{\hyperlink{classsf_1_1_time}{sf::Time}})}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00055}00055     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00056}00056         createBullets(node, textures);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00057}00057     \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00059}00059     mMissileCommand.category = \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a1588522bcecf9cbd0bf9526cf11e6461}{Category::SceneAirLayer}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00060}00060     mMissileCommand.action = [\textcolor{keyword}{this}, \&textures](\mbox{\hyperlink{class_scene_node}{SceneNode}}\& node, \mbox{\hyperlink{classsf_1_1_time}{sf::Time}})}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00061}00061     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00062}00062         createProjectile(node, \mbox{\hyperlink{class_projectile_ae0d6ce4b663618b4105d2f3a483ff2eba4ace24c3115396d6d9da8d27dede56c9}{Projectile::Missile}}, 0.f, 0.5f, textures);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00063}00063     \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00065}00065     mDropPickupCommand.category = \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a1588522bcecf9cbd0bf9526cf11e6461}{Category::SceneAirLayer}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00066}00066     mDropPickupCommand.action = [\textcolor{keyword}{this}, \&textures](\mbox{\hyperlink{class_scene_node}{SceneNode}}\& node, \mbox{\hyperlink{classsf_1_1_time}{sf::Time}})}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00067}00067     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00068}00068         createPickup(node, textures);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00069}00069     \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00071}00071     std::unique\_ptr<TextNode> healthDisplay(\textcolor{keyword}{new} \mbox{\hyperlink{class_text_node}{TextNode}}(fonts, \textcolor{stringliteral}{"{}"{}}));}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00072}00072     mHealthDisplay = healthDisplay.get();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00073}00073     attachChild(std::move(healthDisplay));}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00075}00075     \textcolor{keywordflow}{if} (getCategory() == \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category::PlayerAircraft}})}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00076}00076     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00077}00077         std::unique\_ptr<TextNode> missileDisplay(\textcolor{keyword}{new} \mbox{\hyperlink{class_text_node}{TextNode}}(fonts, \textcolor{stringliteral}{"{}"{}}));}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00078}00078         missileDisplay-\/>setPosition(0, 70);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00079}00079         mMissileDisplay = missileDisplay.get();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00080}00080         attachChild(std::move(missileDisplay));}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00081}00081     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00083}00083     updateTexts();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00084}00084 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00086}\mbox{\hyperlink{class_aircraft_a341876d4692fd3da07058d545ee44da7}{00086}} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_aircraft_a341876d4692fd3da07058d545ee44da7}{Aircraft::getMissileAmmo}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00087}00087 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00088}00088     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_aircraft_a1f247d6d0aa931e6df458354d223a2a9}{mMissileAmmo}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00089}00089 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00091}\mbox{\hyperlink{class_aircraft_ac57cbf96490c9ae413bf7c3027a5aedb}{00091}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_aircraft_ac57cbf96490c9ae413bf7c3027a5aedb}{Aircraft::setMissileAmmo}}(\textcolor{keywordtype}{int} ammo)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00092}00092 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00093}00093     \mbox{\hyperlink{class_aircraft_a1f247d6d0aa931e6df458354d223a2a9}{mMissileAmmo}} = ammo;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00094}00094 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00096}00096 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_aircraft_a7f4f9a8ca342eaa182fd3ec6a17433c8}{Aircraft::drawCurrent}}(\mbox{\hyperlink{classsf_1_1_render_target}{sf::RenderTarget}}\& target, \mbox{\hyperlink{classsf_1_1_render_states}{sf::RenderStates}} states)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00097}00097 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00098}00098     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_entity_a938cddf03ff5239be09195452142c5e6}{isDestroyed}}() \&\& \mbox{\hyperlink{class_aircraft_aa954dd0f542f044a15673b8c909abb79}{mShowExplosion}})}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00099}00099         target.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(\mbox{\hyperlink{class_aircraft_a95365bb3cb365756dd8c1df9f50069c8}{mExplosion}}, states);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00100}00100     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00101}00101         target.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(\mbox{\hyperlink{class_aircraft_a29b30f294572850c57961753ecae302e}{mSprite}}, states);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00102}00102 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00103}00103 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00104}\mbox{\hyperlink{class_aircraft_a4f8baeaece69f71f61c4d1afce022a02}{00104}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_aircraft_a4f8baeaece69f71f61c4d1afce022a02}{Aircraft::disablePickups}}()}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00105}00105 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00106}00106     \mbox{\hyperlink{class_aircraft_ab3b0f51794392ef37339494c60a17720}{mPickupsEnabled}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00107}00107 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00108}00108 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00109}00109 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_aircraft_a4883a799ad2f779dcbcef43d78343e96}{Aircraft::updateCurrent}}(\mbox{\hyperlink{classsf_1_1_time}{sf::Time}} dt, \mbox{\hyperlink{class_command_queue}{CommandQueue}}\& commands)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00110}00110 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00111}00111     \textcolor{comment}{// Update texts and roll animation}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00112}00112     \mbox{\hyperlink{class_aircraft_a2d3f4b6725f6d58c47e5b4b4a1515135}{updateTexts}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00113}00113     \mbox{\hyperlink{class_aircraft_aebd42035ee5b07b1808d5e91f3a0bb89}{updateRollAnimation}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00115}00115     \textcolor{comment}{// Entity has been destroyed: Possibly drop pickup, mark for removal}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00116}00116     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_entity_a938cddf03ff5239be09195452142c5e6}{isDestroyed}}())}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00117}00117     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00118}00118         \mbox{\hyperlink{class_aircraft_a8167fca9147b41bdea427c20dd115879}{checkPickupDrop}}(commands);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00119}00119         \mbox{\hyperlink{class_aircraft_a95365bb3cb365756dd8c1df9f50069c8}{mExplosion}}.\mbox{\hyperlink{class_animation_a250fabaf23dab62bd373daac39aa25d3}{update}}(dt);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00120}00120 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00121}00121         \textcolor{comment}{// Play explosion sound only once}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00122}00122         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_aircraft_aafe2a1fcd2417638731561c96350fa6e}{mExplosionBegan}})}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00123}00123         \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00124}00124             \textcolor{comment}{// Play sound effect}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00125}00125             \mbox{\hyperlink{namespace_sound_effect_a11ffbf1eb89e85a34cbfd5a59b2cd9cb}{SoundEffect::ID}} soundEffect = (\mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_a2b5c63e659d4c60c2db5b576d3bc3bf1}{randomInt}}(2) == 0) ? \mbox{\hyperlink{namespace_sound_effect_a11ffbf1eb89e85a34cbfd5a59b2cd9cba8097f4d177f5c3b6d01d68f4b4a5ca1d}{SoundEffect::Explosion1}} : \mbox{\hyperlink{namespace_sound_effect_a11ffbf1eb89e85a34cbfd5a59b2cd9cba9cba8902a4cfc948814c8599f941b3b4}{SoundEffect::Explosion2}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00126}00126             \mbox{\hyperlink{class_aircraft_a604ac5c8004f6a94d5b9222ed0c4c79a}{playLocalSound}}(commands, soundEffect);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00127}00127 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00128}00128             \textcolor{comment}{// Emit network game action for enemy explosions}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00129}00129             \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_aircraft_ab8503b05e0f3ede5986e7f0d4754afe0}{isAllied}}())}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00130}00130             \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00131}00131                 \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}} position = \mbox{\hyperlink{class_scene_node_a43061f972f26184b271e6c56723a29c2}{getWorldPosition}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00132}00132 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00133}00133                 \mbox{\hyperlink{struct_command}{Command}} command;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00134}00134                 command.\mbox{\hyperlink{struct_command_a1529e898c9e6dd47b1826b5b1eac09fb}{category}} = \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a2ffca533b60b8f001f163badb78416f3}{Category::Network}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00135}00135                 command.\mbox{\hyperlink{struct_command_ac5473faf8b8b03ce83353838bc00c6dd}{action}} = derivedAction<NetworkNode>([position](\mbox{\hyperlink{class_network_node}{NetworkNode}}\& node, \mbox{\hyperlink{classsf_1_1_time}{sf::Time}})}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00136}00136                 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00137}00137                     node.\mbox{\hyperlink{class_network_node_a76c8daddb63d9d2ea57a1e3096b0fcc1}{notifyGameAction}}(\mbox{\hyperlink{namespace_game_actions_a2c10fdbcc811f03c02f357cdd0c4e76da7c5f0acddf6e9f52706102fc83cf9f55}{GameActions::EnemyExplode}}, position);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00138}00138                 \});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00139}00139 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00140}00140                 commands.\mbox{\hyperlink{class_command_queue_ad444e0d7af45d9e09b834f0cec1e1f43}{push}}(command);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00141}00141             \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00142}00142 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00143}00143             \mbox{\hyperlink{class_aircraft_aafe2a1fcd2417638731561c96350fa6e}{mExplosionBegan}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00144}00144         \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00145}00145         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00146}00146     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00147}00147 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00148}00148     \textcolor{comment}{// Check if bullets or missiles are fired}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00149}00149     \mbox{\hyperlink{class_aircraft_aa4bd5421ab53c9cd8a6b2e778092b3e4}{checkProjectileLaunch}}(dt, commands);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00150}00150 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00151}00151     \textcolor{comment}{// Update enemy movement pattern; apply velocity}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00152}00152     \mbox{\hyperlink{class_aircraft_aa28617508de48df07a58f5ac043a5896}{updateMovementPattern}}(dt);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00153}00153     \mbox{\hyperlink{class_entity_a3d9ad14643b61864cf60ea7f0738146b}{Entity::updateCurrent}}(dt, commands);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00154}00154 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00155}00155 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00156}00156 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_aircraft_a01f9042934c08ef18b62351e6bca320d}{Aircraft::getCategory}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00157}00157 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00158}00158     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_aircraft_ab8503b05e0f3ede5986e7f0d4754afe0}{isAllied}}())}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00159}00159         \textcolor{keywordflow}{return} \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category::PlayerAircraft}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00160}00160     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00161}00161         \textcolor{keywordflow}{return} \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a47fa94ade30549cae5d6beb884b74b49}{Category::EnemyAircraft}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00162}00162 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00163}00163 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00164}00164 \mbox{\hyperlink{classsf_1_1_rect}{sf::FloatRect}} \mbox{\hyperlink{class_aircraft_af9ec3d1e8298586e95f5f4bdde8f5791}{Aircraft::getBoundingRect}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00165}00165 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00166}00166     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_scene_node_aedae712e618334745fea3c934d51a390}{getWorldTransform}}().\mbox{\hyperlink{classsf_1_1_transform_a3824a20505d81a94bc22be1ffee57d3d}{transformRect}}(\mbox{\hyperlink{class_aircraft_a29b30f294572850c57961753ecae302e}{mSprite}}.\mbox{\hyperlink{classsf_1_1_sprite_aa795483096b90745b2e799532963e271}{getGlobalBounds}}());}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00167}00167 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00168}00168 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00169}00169 \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_aircraft_a994039b523a54dac943fb4df4ed71d1c}{Aircraft::isMarkedForRemoval}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00170}00170 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00171}00171     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_entity_a938cddf03ff5239be09195452142c5e6}{isDestroyed}}() \&\& (\mbox{\hyperlink{class_aircraft_a95365bb3cb365756dd8c1df9f50069c8}{mExplosion}}.\mbox{\hyperlink{class_animation_a52f7a8449004b0248a3b7f8de9759cd0}{isFinished}}() || !\mbox{\hyperlink{class_aircraft_aa954dd0f542f044a15673b8c909abb79}{mShowExplosion}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00172}00172 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00173}00173 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00174}00174 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_aircraft_a87e4abd58bf5844521988a9f97d5a5ae}{Aircraft::remove}}()}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00175}00175 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00176}00176     \mbox{\hyperlink{class_entity_aa84c32a5d1baceccefec62568edc0a4f}{Entity::remove}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00177}00177     \mbox{\hyperlink{class_aircraft_aa954dd0f542f044a15673b8c909abb79}{mShowExplosion}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00178}00178 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00179}00179 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00180}00180 \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_aircraft_ab8503b05e0f3ede5986e7f0d4754afe0}{Aircraft::isAllied}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00181}00181 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00182}00182     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_aircraft_a4228cdd5cf4f8b1b41ad481446b7ee4c}{mType}} == \mbox{\hyperlink{class_aircraft_a7dae28542933e088032b753600046acda9ea6cee76436b5677fc48c31cd9b4ef2}{Eagle}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00183}00183 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00184}00184 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00185}00185 \textcolor{keywordtype}{float} \mbox{\hyperlink{class_aircraft_a64e22bc8086cd2d4c15a2b2b6be3b98c}{Aircraft::getMaxSpeed}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00186}00186 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00187}00187     \textcolor{keywordflow}{return} Table[\mbox{\hyperlink{class_aircraft_a4228cdd5cf4f8b1b41ad481446b7ee4c}{mType}}].speed;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00188}00188 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00189}00189 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00190}00190 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_aircraft_a285d3970515e3b37458204aaffc14892}{Aircraft::increaseFireRate}}()}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00191}00191 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00192}00192     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_aircraft_ad72f643616e4b0aab0b90bf12074493c}{mFireRateLevel}} < 10)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00193}00193         ++\mbox{\hyperlink{class_aircraft_ad72f643616e4b0aab0b90bf12074493c}{mFireRateLevel}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00194}00194 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00195}00195 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00196}00196 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_aircraft_a155d6b2120cd6de1317689e5bf0cbc4e}{Aircraft::increaseSpread}}()}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00197}00197 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00198}00198     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_aircraft_ae0646a37aea541f73c4926cae0a376ef}{mSpreadLevel}} < 3)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00199}00199         ++\mbox{\hyperlink{class_aircraft_ae0646a37aea541f73c4926cae0a376ef}{mSpreadLevel}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00200}00200 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00201}00201 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00202}00202 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_aircraft_ad9d53b569d28aec2d2d77d948c8ab33e}{Aircraft::collectMissiles}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} count)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00203}00203 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00204}00204     \mbox{\hyperlink{class_aircraft_a1f247d6d0aa931e6df458354d223a2a9}{mMissileAmmo}} += count;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00205}00205 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00206}00206 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00207}00207 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_aircraft_a8ea011c4732eb38c9dc9872a24d2227c}{Aircraft::fire}}()}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00208}00208 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00209}00209     \textcolor{comment}{// Only ships with fire interval != 0 are able to fire}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00210}00210     \textcolor{keywordflow}{if} (Table[\mbox{\hyperlink{class_aircraft_a4228cdd5cf4f8b1b41ad481446b7ee4c}{mType}}].fireInterval != \mbox{\hyperlink{classsf_1_1_time_aa343e67f43a940e7b3b51aa10a495f2f}{sf::Time::Zero}})}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00211}00211         \mbox{\hyperlink{class_aircraft_aabb1e0e47e23da9894bd890409477ba9}{mIsFiring}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00212}00212 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00213}00213 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00214}00214 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_aircraft_a3bd9289d3c789cbb0aa3abe53a5da52e}{Aircraft::launchMissile}}()}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00215}00215 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00216}00216     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_aircraft_a1f247d6d0aa931e6df458354d223a2a9}{mMissileAmmo}} > 0)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00217}00217     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00218}00218         \mbox{\hyperlink{class_aircraft_a36daaf198aec8125c6ac3eb3b8b000d3}{mIsLaunchingMissile}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00219}00219         -\/-\/\mbox{\hyperlink{class_aircraft_a1f247d6d0aa931e6df458354d223a2a9}{mMissileAmmo}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00220}00220     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00221}00221 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00222}00222 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00223}00223 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_aircraft_a604ac5c8004f6a94d5b9222ed0c4c79a}{Aircraft::playLocalSound}}(\mbox{\hyperlink{class_command_queue}{CommandQueue}}\& commands, \mbox{\hyperlink{namespace_sound_effect_a11ffbf1eb89e85a34cbfd5a59b2cd9cb}{SoundEffect::ID}} effect)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00224}00224 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00225}00225     \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}} worldPosition = \mbox{\hyperlink{class_scene_node_a43061f972f26184b271e6c56723a29c2}{getWorldPosition}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00226}00226 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00227}00227     \mbox{\hyperlink{struct_command}{Command}} command;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00228}00228     command.\mbox{\hyperlink{struct_command_a1529e898c9e6dd47b1826b5b1eac09fb}{category}} = \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0af2d299c2c389cc2273d27b5fea986449}{Category::SoundEffect}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00229}00229     command.\mbox{\hyperlink{struct_command_ac5473faf8b8b03ce83353838bc00c6dd}{action}} = derivedAction<SoundNode>(}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00230}00230         [effect, worldPosition](\mbox{\hyperlink{class_sound_node}{SoundNode}}\& node, \mbox{\hyperlink{classsf_1_1_time}{sf::Time}})}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00231}00231     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00232}00232         node.\mbox{\hyperlink{class_sound_node_a596804942f356e61ec845c9310c42b8d}{playSound}}(effect, worldPosition);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00233}00233     \});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00234}00234 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00235}00235     commands.\mbox{\hyperlink{class_command_queue_ad444e0d7af45d9e09b834f0cec1e1f43}{push}}(command);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00236}00236 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00237}00237 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00238}\mbox{\hyperlink{class_aircraft_a2f6a97f09252744828f748120025630b}{00238}} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_aircraft_a2f6a97f09252744828f748120025630b}{Aircraft::getIdentifier}}()}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00239}00239 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00240}00240     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_aircraft_a63f79b61427ccb9453cb8fa5c05430e5}{mIdentifier}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00241}00241 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00242}00242 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00243}\mbox{\hyperlink{class_aircraft_a56692fd9bd62cfb642320d462ce9c5d7}{00243}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_aircraft_a56692fd9bd62cfb642320d462ce9c5d7}{Aircraft::setIdentifier}}(\textcolor{keywordtype}{int} identifier)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00244}00244 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00245}00245     \mbox{\hyperlink{class_aircraft_a63f79b61427ccb9453cb8fa5c05430e5}{mIdentifier}} = identifier;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00246}00246 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00247}00247 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00248}00248 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_aircraft_aa28617508de48df07a58f5ac043a5896}{Aircraft::updateMovementPattern}}(\mbox{\hyperlink{classsf_1_1_time}{sf::Time}} dt)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00249}00249 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00250}00250     \textcolor{comment}{// Enemy airplane: Movement pattern}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00251}00251     \textcolor{keyword}{const} std::vector<Direction>\& directions = Table[\mbox{\hyperlink{class_aircraft_a4228cdd5cf4f8b1b41ad481446b7ee4c}{mType}}].directions;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00252}00252     \textcolor{keywordflow}{if} (!directions.empty())}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00253}00253     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00254}00254         \textcolor{comment}{// Moved long enough in current direction: Change direction}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00255}00255         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_aircraft_a063104d82e3dbf6a3979492664e2c30c}{mTravelledDistance}} > directions[\mbox{\hyperlink{class_aircraft_a1b91995fca258702edf7782f0e0cca4d}{mDirectionIndex}}].\mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_scene_node_8hpp_a7b80a3dcfdac5445e81c0d5baa0e18af}{distance}})}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00256}00256         \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00257}00257             \mbox{\hyperlink{class_aircraft_a1b91995fca258702edf7782f0e0cca4d}{mDirectionIndex}} = (\mbox{\hyperlink{class_aircraft_a1b91995fca258702edf7782f0e0cca4d}{mDirectionIndex}} + 1) \% directions.size();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00258}00258             \mbox{\hyperlink{class_aircraft_a063104d82e3dbf6a3979492664e2c30c}{mTravelledDistance}} = 0.f;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00259}00259         \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00260}00260 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00261}00261         \textcolor{comment}{// Compute velocity from direction}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00262}00262         \textcolor{keywordtype}{float} radians = \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_ae54253eaf1757c529de9ffcbf6c28e47}{toRadian}}(directions[\mbox{\hyperlink{class_aircraft_a1b91995fca258702edf7782f0e0cca4d}{mDirectionIndex}}].angle + 90.f);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00263}00263         \textcolor{keywordtype}{float} vx = \mbox{\hyperlink{class_aircraft_a64e22bc8086cd2d4c15a2b2b6be3b98c}{getMaxSpeed}}() * std::cos(radians);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00264}00264         \textcolor{keywordtype}{float} vy = \mbox{\hyperlink{class_aircraft_a64e22bc8086cd2d4c15a2b2b6be3b98c}{getMaxSpeed}}() * std::sin(radians);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00265}00265 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00266}00266         \mbox{\hyperlink{class_entity_a5bf79843c973eac1fdbebfd1fc83a1e8}{setVelocity}}(vx, vy);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00267}00267 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00268}00268         \mbox{\hyperlink{class_aircraft_a063104d82e3dbf6a3979492664e2c30c}{mTravelledDistance}} += \mbox{\hyperlink{class_aircraft_a64e22bc8086cd2d4c15a2b2b6be3b98c}{getMaxSpeed}}() * dt.\mbox{\hyperlink{classsf_1_1_time_aa3df2f992d0b0041b4eb02258d43f0e3}{asSeconds}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00269}00269     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00270}00270 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00271}00271 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00272}00272 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_aircraft_a8167fca9147b41bdea427c20dd115879}{Aircraft::checkPickupDrop}}(\mbox{\hyperlink{class_command_queue}{CommandQueue}}\& commands)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00273}00273 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00274}00274     \textcolor{comment}{// Drop pickup, if enemy airplane, with probability 1/3, if pickup not yet dropped}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00275}00275     \textcolor{comment}{// and if not in network mode (where pickups are dropped via packets)}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00276}00276     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_aircraft_ab8503b05e0f3ede5986e7f0d4754afe0}{isAllied}}() \&\& \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_a2b5c63e659d4c60c2db5b576d3bc3bf1}{randomInt}}(3) == 0 \&\& !\mbox{\hyperlink{class_aircraft_a89f499526f718bfefe75bf8460c85229}{mSpawnedPickup}} \&\& \mbox{\hyperlink{class_aircraft_ab3b0f51794392ef37339494c60a17720}{mPickupsEnabled}})}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00277}00277         commands.\mbox{\hyperlink{class_command_queue_ad444e0d7af45d9e09b834f0cec1e1f43}{push}}(\mbox{\hyperlink{class_aircraft_ae1794f952949e75c47ccb492ac19d060}{mDropPickupCommand}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00278}00278 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00279}00279     \mbox{\hyperlink{class_aircraft_a89f499526f718bfefe75bf8460c85229}{mSpawnedPickup}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00280}00280 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00281}00281 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00282}00282 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_aircraft_aa4bd5421ab53c9cd8a6b2e778092b3e4}{Aircraft::checkProjectileLaunch}}(\mbox{\hyperlink{classsf_1_1_time}{sf::Time}} dt, \mbox{\hyperlink{class_command_queue}{CommandQueue}}\& commands)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00283}00283 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00284}00284     \textcolor{comment}{// Enemies try to fire all the time}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00285}00285     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_aircraft_ab8503b05e0f3ede5986e7f0d4754afe0}{isAllied}}())}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00286}00286         \mbox{\hyperlink{class_aircraft_a8ea011c4732eb38c9dc9872a24d2227c}{fire}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00287}00287 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00288}00288     \textcolor{comment}{// Check for automatic gunfire, allow only in intervals}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00289}00289     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_aircraft_aabb1e0e47e23da9894bd890409477ba9}{mIsFiring}} \&\& \mbox{\hyperlink{class_aircraft_a051d730fedabfc12f59989669308e28e}{mFireCountdown}} <= \mbox{\hyperlink{classsf_1_1_time_aa343e67f43a940e7b3b51aa10a495f2f}{sf::Time::Zero}})}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00290}00290     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00291}00291         \textcolor{comment}{// Interval expired: We can fire a new bullet}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00292}00292         commands.\mbox{\hyperlink{class_command_queue_ad444e0d7af45d9e09b834f0cec1e1f43}{push}}(\mbox{\hyperlink{class_aircraft_ad6ccf056fbc6a18ab9b779f47e1fb338}{mFireCommand}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00293}00293         \mbox{\hyperlink{class_aircraft_a604ac5c8004f6a94d5b9222ed0c4c79a}{playLocalSound}}(commands, \mbox{\hyperlink{class_aircraft_ab8503b05e0f3ede5986e7f0d4754afe0}{isAllied}}() ? \mbox{\hyperlink{namespace_sound_effect_a11ffbf1eb89e85a34cbfd5a59b2cd9cbae5b9b9f662eb088d0839f1cb058ff54f}{SoundEffect::AlliedGunfire}} : \mbox{\hyperlink{namespace_sound_effect_a11ffbf1eb89e85a34cbfd5a59b2cd9cba5a439b17b04a33e8223329298ca63a1b}{SoundEffect::EnemyGunfire}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00294}00294 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00295}00295         \mbox{\hyperlink{class_aircraft_a051d730fedabfc12f59989669308e28e}{mFireCountdown}} += Table[\mbox{\hyperlink{class_aircraft_a4228cdd5cf4f8b1b41ad481446b7ee4c}{mType}}].fireInterval / (\mbox{\hyperlink{class_aircraft_ad72f643616e4b0aab0b90bf12074493c}{mFireRateLevel}} + 1.f);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00296}00296         \mbox{\hyperlink{class_aircraft_aabb1e0e47e23da9894bd890409477ba9}{mIsFiring}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00297}00297     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00298}00298     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_aircraft_a051d730fedabfc12f59989669308e28e}{mFireCountdown}} > \mbox{\hyperlink{classsf_1_1_time_aa343e67f43a940e7b3b51aa10a495f2f}{sf::Time::Zero}})}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00299}00299     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00300}00300         \textcolor{comment}{// Interval not expired: Decrease it further}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00301}00301         \mbox{\hyperlink{class_aircraft_a051d730fedabfc12f59989669308e28e}{mFireCountdown}} -\/= dt;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00302}00302         \mbox{\hyperlink{class_aircraft_aabb1e0e47e23da9894bd890409477ba9}{mIsFiring}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00303}00303     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00304}00304 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00305}00305     \textcolor{comment}{// Check for missile launch}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00306}00306     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_aircraft_a36daaf198aec8125c6ac3eb3b8b000d3}{mIsLaunchingMissile}})}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00307}00307     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00308}00308         commands.\mbox{\hyperlink{class_command_queue_ad444e0d7af45d9e09b834f0cec1e1f43}{push}}(\mbox{\hyperlink{class_aircraft_a9f9da976ecc260dd03838c1ecdc67e30}{mMissileCommand}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00309}00309         \mbox{\hyperlink{class_aircraft_a604ac5c8004f6a94d5b9222ed0c4c79a}{playLocalSound}}(commands, \mbox{\hyperlink{namespace_sound_effect_a11ffbf1eb89e85a34cbfd5a59b2cd9cba34388ab9af347c5ef75ea1a81332d7bc}{SoundEffect::LaunchMissile}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00310}00310 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00311}00311         \mbox{\hyperlink{class_aircraft_a36daaf198aec8125c6ac3eb3b8b000d3}{mIsLaunchingMissile}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00312}00312     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00313}00313 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00314}00314 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00315}00315 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_aircraft_a4ea7d2fd22973ecebcc767543bf0ece5}{Aircraft::createBullets}}(\mbox{\hyperlink{class_scene_node}{SceneNode}}\& node, \textcolor{keyword}{const} \mbox{\hyperlink{class_texture_holder}{TextureHolder}}\& textures)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00316}00316 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00317}00317     \mbox{\hyperlink{class_projectile_ae0d6ce4b663618b4105d2f3a483ff2eb}{Projectile::Type}} type = \mbox{\hyperlink{class_aircraft_ab8503b05e0f3ede5986e7f0d4754afe0}{isAllied}}() ? \mbox{\hyperlink{class_projectile_ae0d6ce4b663618b4105d2f3a483ff2ebac51214748b36e8f3f7b7d8ea72adb405}{Projectile::AlliedBullet}} : \mbox{\hyperlink{class_projectile_ae0d6ce4b663618b4105d2f3a483ff2ebacc4b99a5fd2688afeb13fed7b8cd1311}{Projectile::EnemyBullet}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00318}00318 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00319}00319     \textcolor{keywordflow}{switch} (\mbox{\hyperlink{class_aircraft_ae0646a37aea541f73c4926cae0a376ef}{mSpreadLevel}})}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00320}00320     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00321}00321     \textcolor{keywordflow}{case} 1:}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00322}00322         \mbox{\hyperlink{class_aircraft_a960bded693cd6942bb64ac13a0a44e30}{createProjectile}}(node, type, 0.0f, 0.5f, textures);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00323}00323         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00324}00324 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00325}00325     \textcolor{keywordflow}{case} 2:}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00326}00326         \mbox{\hyperlink{class_aircraft_a960bded693cd6942bb64ac13a0a44e30}{createProjectile}}(node, type, -\/0.33f, 0.33f, textures);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00327}00327         \mbox{\hyperlink{class_aircraft_a960bded693cd6942bb64ac13a0a44e30}{createProjectile}}(node, type, +0.33f, 0.33f, textures);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00328}00328         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00329}00329 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00330}00330     \textcolor{keywordflow}{case} 3:}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00331}00331         \mbox{\hyperlink{class_aircraft_a960bded693cd6942bb64ac13a0a44e30}{createProjectile}}(node, type, -\/0.5f, 0.33f, textures);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00332}00332         \mbox{\hyperlink{class_aircraft_a960bded693cd6942bb64ac13a0a44e30}{createProjectile}}(node, type, 0.0f, 0.5f, textures);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00333}00333         \mbox{\hyperlink{class_aircraft_a960bded693cd6942bb64ac13a0a44e30}{createProjectile}}(node, type, +0.5f, 0.33f, textures);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00334}00334         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00335}00335     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00336}00336 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00337}00337 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00338}00338 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_aircraft_a960bded693cd6942bb64ac13a0a44e30}{Aircraft::createProjectile}}(\mbox{\hyperlink{class_scene_node}{SceneNode}}\& node, \mbox{\hyperlink{class_projectile_ae0d6ce4b663618b4105d2f3a483ff2eb}{Projectile::Type}} type, \textcolor{keywordtype}{float} xOffset, \textcolor{keywordtype}{float} yOffset, \textcolor{keyword}{const} \mbox{\hyperlink{class_texture_holder}{TextureHolder}}\& textures)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00339}00339 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00340}00340     std::unique\_ptr<Projectile> projectile(\textcolor{keyword}{new} \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a8f56bceae53a7f352a3a3c41adb56b37}{Projectile}}(type, textures));}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00341}00341 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00342}00342     \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}} offset(xOffset * \mbox{\hyperlink{class_aircraft_a29b30f294572850c57961753ecae302e}{mSprite}}.\mbox{\hyperlink{classsf_1_1_sprite_aa795483096b90745b2e799532963e271}{getGlobalBounds}}().\mbox{\hyperlink{classsf_1_1_rect_a4dd5b9d4333bebbc51bd309298fd500f}{width}}, yOffset * \mbox{\hyperlink{class_aircraft_a29b30f294572850c57961753ecae302e}{mSprite}}.\mbox{\hyperlink{classsf_1_1_sprite_aa795483096b90745b2e799532963e271}{getGlobalBounds}}().\mbox{\hyperlink{classsf_1_1_rect_a6fa0fc7de1636d78cae1a1b54eef95cd}{height}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00343}00343     \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}} velocity(0, projectile-\/>getMaxSpeed());}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00344}00344 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00345}00345     \textcolor{keywordtype}{float} sign = \mbox{\hyperlink{class_aircraft_ab8503b05e0f3ede5986e7f0d4754afe0}{isAllied}}() ? -\/1.f : +1.f;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00346}00346     projectile-\/>setPosition(\mbox{\hyperlink{class_scene_node_a43061f972f26184b271e6c56723a29c2}{getWorldPosition}}() + offset * sign);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00347}00347     projectile-\/>setVelocity(velocity * sign);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00348}00348     node.\mbox{\hyperlink{class_scene_node_acdfa2c2ba28bce076c886eaba2d9e650}{attachChild}}(std::move(projectile));}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00349}00349 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00350}00350 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00351}00351 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_aircraft_a67d9f7673bd160eedfa3ec01c434c51e}{Aircraft::createPickup}}(\mbox{\hyperlink{class_scene_node}{SceneNode}}\& node, \textcolor{keyword}{const} \mbox{\hyperlink{class_texture_holder}{TextureHolder}}\& textures)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00352}00352 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00353}00353     \textcolor{keyword}{auto} type = \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_pickup_ad4681315b06f1fc58c8f2a17937dd88a}{Pickup::Type}}\textcolor{keyword}{>}(\mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_a2b5c63e659d4c60c2db5b576d3bc3bf1}{randomInt}}(\mbox{\hyperlink{class_pickup_ad4681315b06f1fc58c8f2a17937dd88aa5a8b006eb65cd6ac0b6e3e18bfc07502}{Pickup::TypeCount}}));}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00354}00354 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00355}00355     std::unique\_ptr<Pickup> pickup(\textcolor{keyword}{new} \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0adf22ba361f388b8f0a1747f65bd42ecc}{Pickup}}(type, textures));}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00356}00356     pickup-\/>setPosition(\mbox{\hyperlink{class_scene_node_a43061f972f26184b271e6c56723a29c2}{getWorldPosition}}());}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00357}00357     pickup-\/>setVelocity(0.f, 1.f);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00358}00358     node.\mbox{\hyperlink{class_scene_node_acdfa2c2ba28bce076c886eaba2d9e650}{attachChild}}(std::move(pickup));}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00359}00359 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00360}00360 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00361}00361 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_aircraft_a2d3f4b6725f6d58c47e5b4b4a1515135}{Aircraft::updateTexts}}()}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00362}00362 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00363}00363     \textcolor{comment}{// Display hitpoints}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00364}00364     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_entity_a938cddf03ff5239be09195452142c5e6}{isDestroyed}}())}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00365}00365         \mbox{\hyperlink{class_aircraft_aea938bb083a5d7e4053e5d786ce0182a}{mHealthDisplay}}-\/>\mbox{\hyperlink{class_text_node_a51c396c803287f43ee640c6b6421a212}{setString}}(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00366}00366     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00367}00367         \mbox{\hyperlink{class_aircraft_aea938bb083a5d7e4053e5d786ce0182a}{mHealthDisplay}}-\/>\mbox{\hyperlink{class_text_node_a51c396c803287f43ee640c6b6421a212}{setString}}(\mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_a1e803cea7d2670ece91f5465281446ba}{toString}}(\mbox{\hyperlink{class_entity_ade4af3619c02f07429981259bacc881b}{getHitpoints}}()) + \textcolor{stringliteral}{"{} HP"{}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00368}00368     \mbox{\hyperlink{class_aircraft_aea938bb083a5d7e4053e5d786ce0182a}{mHealthDisplay}}-\/>\mbox{\hyperlink{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{setPosition}}(0.f, 50.f);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00369}00369     \mbox{\hyperlink{class_aircraft_aea938bb083a5d7e4053e5d786ce0182a}{mHealthDisplay}}-\/>\mbox{\hyperlink{classsf_1_1_transformable_a32baf2bf1a74699b03bf8c95030a38ed}{setRotation}}(-\/\mbox{\hyperlink{classsf_1_1_transformable_aa00b5c5d4a06ac24a94dd72c56931d3a}{getRotation}}());}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00370}00370 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00371}00371     \textcolor{comment}{// Display missiles, if available}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00372}00372     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_aircraft_a49d017575d187c1a547b656e4eb1ecca}{mMissileDisplay}})}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00373}00373     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00374}00374         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_aircraft_a1f247d6d0aa931e6df458354d223a2a9}{mMissileAmmo}} == 0 || \mbox{\hyperlink{class_entity_a938cddf03ff5239be09195452142c5e6}{isDestroyed}}())}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00375}00375             \mbox{\hyperlink{class_aircraft_a49d017575d187c1a547b656e4eb1ecca}{mMissileDisplay}}-\/>\mbox{\hyperlink{class_text_node_a51c396c803287f43ee640c6b6421a212}{setString}}(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00376}00376         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00377}00377             \mbox{\hyperlink{class_aircraft_a49d017575d187c1a547b656e4eb1ecca}{mMissileDisplay}}-\/>\mbox{\hyperlink{class_text_node_a51c396c803287f43ee640c6b6421a212}{setString}}(\textcolor{stringliteral}{"{}M: "{}} + \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_a1e803cea7d2670ece91f5465281446ba}{toString}}(\mbox{\hyperlink{class_aircraft_a1f247d6d0aa931e6df458354d223a2a9}{mMissileAmmo}}));}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00378}00378     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00379}00379 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00380}00380 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00381}00381 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_aircraft_aebd42035ee5b07b1808d5e91f3a0bb89}{Aircraft::updateRollAnimation}}()}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00382}00382 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00383}00383     \textcolor{keywordflow}{if} (Table[\mbox{\hyperlink{class_aircraft_a4228cdd5cf4f8b1b41ad481446b7ee4c}{mType}}].hasRollAnimation)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00384}00384     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00385}00385         \mbox{\hyperlink{classsf_1_1_rect}{sf::IntRect}} textureRect = Table[\mbox{\hyperlink{class_aircraft_a4228cdd5cf4f8b1b41ad481446b7ee4c}{mType}}].textureRect;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00386}00386 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00387}00387         \textcolor{comment}{// Roll left: Texture rect offset once}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00388}00388         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_entity_ae7518a0181de088e0de2eacd1a13d656}{getVelocity}}().x < 0.f)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00389}00389             textureRect.\mbox{\hyperlink{classsf_1_1_rect_aa49960fa465103d9cb7069ceb25c7c32}{left}} += textureRect.\mbox{\hyperlink{classsf_1_1_rect_a4dd5b9d4333bebbc51bd309298fd500f}{width}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00390}00390 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00391}00391         \textcolor{comment}{// Roll right: Texture rect offset twice}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00392}00392         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_entity_ae7518a0181de088e0de2eacd1a13d656}{getVelocity}}().x > 0.f)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00393}00393             textureRect.\mbox{\hyperlink{classsf_1_1_rect_aa49960fa465103d9cb7069ceb25c7c32}{left}} += 2 * textureRect.\mbox{\hyperlink{classsf_1_1_rect_a4dd5b9d4333bebbc51bd309298fd500f}{width}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00394}00394 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00395}00395         \mbox{\hyperlink{class_aircraft_a29b30f294572850c57961753ecae302e}{mSprite}}.\mbox{\hyperlink{classsf_1_1_sprite_a3fefec419a4e6a90c0fd54c793d82ec2}{setTextureRect}}(textureRect);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00396}00396     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2_source_2_aircraft_8cpp_source_l00397}00397 \}}
+
+\end{DoxyCode}

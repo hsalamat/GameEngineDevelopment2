@@ -1,0 +1,96 @@
+\hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source}{}\doxysection{Sound\+Player.\+cpp}
+\label{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source}\index{Week12/Week12-\/Demo3-\/3DSound/Source/SoundPlayer.cpp@{Week12/Week12-\/Demo3-\/3DSound/Source/SoundPlayer.cpp}}
+\mbox{\hyperlink{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include <SoundPlayer.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <SFML/Audio/Listener.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#pragma region step 2}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00009}00009 \textcolor{keyword}{namespace}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00010}00010 \{}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00011}00011     \textcolor{comment}{// Sound coordinate system, point of view of a player in front of the screen:}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00012}00012     \textcolor{comment}{// X = left; Y = up; Z = back (out of the screen)}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00014}00014     \textcolor{comment}{//The distance between the listener and the screen plane}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00015}00015     \textcolor{keyword}{const} \textcolor{keywordtype}{float} ListenerZ = 300.f;}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00017}00017     \textcolor{comment}{//Attenuation factor determines how fast a sound is attenuated depending on the distance}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00018}00018     \textcolor{comment}{//the higher the factor, the weaker the sound becomes for a given distance}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00019}00019     \textcolor{keyword}{const} \textcolor{keywordtype}{float} Attenuation = 8.f;}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00021}00021     \textcolor{comment}{//2D minimum distance is the number of world units between the listener's place in 2D world and the sound}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00022}00022     \textcolor{keyword}{const} \textcolor{keywordtype}{float} MinDistance2D = 200.f;}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00024}00024     \textcolor{comment}{//3D minimum distance has to be computed with the Pythagorean theorem}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00025}00025     \textcolor{keyword}{const} \textcolor{keywordtype}{float} MinDistance3D = std::sqrt(MinDistance2D*MinDistance2D + ListenerZ*ListenerZ);}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00026}00026 \}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00028}00028 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00030}00030 \mbox{\hyperlink{class_sound_player_ac7107aecd54bdcfac29486487768ebc6}{SoundPlayer::SoundPlayer}}()}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00031}00031     : mSoundBuffers()}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00032}00032     , mSounds()}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00033}00033 \{}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00034}00034     mSoundBuffers.load(\mbox{\hyperlink{namespace_sound_effect_a11ffbf1eb89e85a34cbfd5a59b2cd9cbae5b9b9f662eb088d0839f1cb058ff54f}{SoundEffect::AlliedGunfire}}, \textcolor{stringliteral}{"{}Media/Sound/AlliedGunfire.wav"{}});}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00035}00035     mSoundBuffers.load(\mbox{\hyperlink{namespace_sound_effect_a11ffbf1eb89e85a34cbfd5a59b2cd9cba5a439b17b04a33e8223329298ca63a1b}{SoundEffect::EnemyGunfire}}, \textcolor{stringliteral}{"{}Media/Sound/EnemyGunfire.wav"{}});}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00036}00036     mSoundBuffers.load(\mbox{\hyperlink{namespace_sound_effect_a11ffbf1eb89e85a34cbfd5a59b2cd9cba8097f4d177f5c3b6d01d68f4b4a5ca1d}{SoundEffect::Explosion1}}, \textcolor{stringliteral}{"{}Media/Sound/Explosion1.wav"{}});}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00037}00037     mSoundBuffers.load(\mbox{\hyperlink{namespace_sound_effect_a11ffbf1eb89e85a34cbfd5a59b2cd9cba9cba8902a4cfc948814c8599f941b3b4}{SoundEffect::Explosion2}}, \textcolor{stringliteral}{"{}Media/Sound/Explosion2.wav"{}});}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00038}00038     mSoundBuffers.load(\mbox{\hyperlink{namespace_sound_effect_a11ffbf1eb89e85a34cbfd5a59b2cd9cba34388ab9af347c5ef75ea1a81332d7bc}{SoundEffect::LaunchMissile}}, \textcolor{stringliteral}{"{}Media/Sound/LaunchMissile.wav"{}});}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00039}00039     mSoundBuffers.load(\mbox{\hyperlink{namespace_sound_effect_a11ffbf1eb89e85a34cbfd5a59b2cd9cba1976e68cb386f12ddfc1b4850d1e8a73}{SoundEffect::CollectPickup}}, \textcolor{stringliteral}{"{}Media/Sound/CollectPickup.wav"{}});}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00040}00040     mSoundBuffers.load(\mbox{\hyperlink{namespace_sound_effect_a11ffbf1eb89e85a34cbfd5a59b2cd9cba873f21feb9c14e40ff579673bbd6e335}{SoundEffect::Button}}, \textcolor{stringliteral}{"{}Media/Sound/Button.wav"{}});}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00042}00042     \textcolor{comment}{// Listener points towards the screen (default in SFML)}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00043}00043     \mbox{\hyperlink{classsf_1_1_listener_ae479dc15513c6557984d26e32d06d06e}{sf::Listener::setDirection}}(0.f, 0.f, -\/1.f);}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00044}00044 \}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00046}00046 \textcolor{preprocessor}{\#pragma region step 3}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00047}00047 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sound_player_aa0b85f15f5b13bc41c71eeee6b0a7779}{SoundPlayer::play}}(\mbox{\hyperlink{namespace_sound_effect_a11ffbf1eb89e85a34cbfd5a59b2cd9cb}{SoundEffect::ID}} effect)}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00048}00048 \{}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00049}00049     \textcolor{comment}{//mSounds.push\_back(sf::Sound(mSoundBuffers.get(effect)));}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00050}00050     \textcolor{comment}{//mSounds.back().play();}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00052}00052     \textcolor{comment}{//getListenerPosition functions transforms the 3D listener position back to 2D graphice coordinates}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00053}00053     \mbox{\hyperlink{class_sound_player_aa0b85f15f5b13bc41c71eeee6b0a7779}{play}}(effect, \mbox{\hyperlink{class_sound_player_a26ace9198bf0324da5df1b2919ce9665}{getListenerPosition}}());}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00054}00054 \}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00056}00056 \textcolor{comment}{//play() functions takes a 2D graphices position and computes 3D audio position by negating Y and set Z=0}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00057}\mbox{\hyperlink{class_sound_player_af05ab9267e732246b2488d7a572bc58c}{00057}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sound_player_aa0b85f15f5b13bc41c71eeee6b0a7779}{SoundPlayer::play}}(\mbox{\hyperlink{namespace_sound_effect_a11ffbf1eb89e85a34cbfd5a59b2cd9cb}{SoundEffect::ID}} effect, \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}} position)}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00058}00058 \{}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00059}00059     \mbox{\hyperlink{class_sound_player_ad01264344ccdd855bcbcc9c3d65fd9f4}{mSounds}}.push\_back(\mbox{\hyperlink{classsf_1_1_sound}{sf::Sound}}());}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00060}00060     \mbox{\hyperlink{classsf_1_1_sound}{sf::Sound}}\& sound = \mbox{\hyperlink{class_sound_player_ad01264344ccdd855bcbcc9c3d65fd9f4}{mSounds}}.back();}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00062}00062     sound.\mbox{\hyperlink{classsf_1_1_sound_a8b395e9713d0efa48a18628c8ec1972e}{setBuffer}}(\mbox{\hyperlink{class_sound_player_ad3e9174521bdf0ddc6e7618a4e6d4212}{mSoundBuffers}}.\mbox{\hyperlink{class_resource_holder_a6452638a75b6df7ea7d610f204632850}{get}}(effect));}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00063}00063     sound.\mbox{\hyperlink{classsf_1_1_sound_source_a0480257ea25d986eba6cc3c1a6f8d7c2}{setPosition}}(position.\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}}, -\/position.\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}}, 0.f);}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00064}00064     sound.\mbox{\hyperlink{classsf_1_1_sound_source_aa2adff44cd2f8b4e3c7315d7c2a45626}{setAttenuation}}(Attenuation);}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00065}00065     sound.\mbox{\hyperlink{classsf_1_1_sound_source_a75bbc2c34addc8b25a14edb908508afe}{setMinDistance}}(MinDistance3D);}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00067}00067     sound.\mbox{\hyperlink{classsf_1_1_sound_a2953ffe632536e72e696fd880ced2532}{play}}();}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00068}00068 \}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00070}00070 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00072}00072 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sound_player_a3fd165dadf60b580b16367b81d84681b}{SoundPlayer::removeStoppedSounds}}()}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00073}00073 \{}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00074}00074     \mbox{\hyperlink{class_sound_player_ad01264344ccdd855bcbcc9c3d65fd9f4}{mSounds}}.remove\_if([](\textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_sound}{sf::Sound}}\& s)}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00075}00075     \{}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00076}00076         \textcolor{keywordflow}{return} s.\mbox{\hyperlink{classsf_1_1_sound_a406fc363594a7718a53ebef49a870f51}{getStatus}}() == \mbox{\hyperlink{classsf_1_1_sound_source_ac43af72c98c077500b239bc75b812f03ad00854a77b49463ac52454a98f1ba0ed}{sf::Sound::Stopped}};}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00077}00077     \});}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00078}00078 \}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00080}\mbox{\hyperlink{class_sound_player_abfd270417c9490f1c0f92b0c4986fa52}{00080}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sound_player_abfd270417c9490f1c0f92b0c4986fa52}{SoundPlayer::setListenerPosition}}(\mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}} position)}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00081}00081 \{}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00082}00082     \mbox{\hyperlink{classsf_1_1_listener_a5bc2d8d18ea2d8f339d23cbf17678564}{sf::Listener::setPosition}}(position.\mbox{\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x}}, -\/position.\mbox{\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y}}, ListenerZ);}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00083}00083 \}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00085}\mbox{\hyperlink{class_sound_player_a26ace9198bf0324da5df1b2919ce9665}{00085}} \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}} \mbox{\hyperlink{class_sound_player_a26ace9198bf0324da5df1b2919ce9665}{SoundPlayer::getListenerPosition}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00086}00086 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00087}00087     \mbox{\hyperlink{classsf_1_1_vector3}{sf::Vector3f}} position = \mbox{\hyperlink{classsf_1_1_listener_acd7ee65bc948ca38e1c669aa12340c54}{sf::Listener::getPosition}}();}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00088}00088     \textcolor{keywordflow}{return} \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{sf::Vector2f}}(position.\mbox{\hyperlink{classsf_1_1_vector3_a3cb0c769390bc37c346bb1a69e510d16}{x}}, -\/position.\mbox{\hyperlink{classsf_1_1_vector3_a6590d50ccb862c5efc5512e974e9b794}{y}});}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00089}00089 \}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source_l00090}00090 }
+
+\end{DoxyCode}

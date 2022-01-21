@@ -1,0 +1,62 @@
+\hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp}{}\doxysection{Week14/\+SFML-\/2.5.1/examples/voip/\+Client.cpp File Reference}
+\label{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp}\index{Week14/SFML-\/2.5.1/examples/voip/Client.cpp@{Week14/SFML-\/2.5.1/examples/voip/Client.cpp}}
+{\ttfamily \#include $<$SFML/\+Audio.\+hpp$>$}\newline
+{\ttfamily \#include $<$SFML/\+Network.\+hpp$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_network_recorder}{Network\+Recorder}}
+\begin{DoxyCompactList}\small\item\em Specialization of audio recorder for sending recorded audio data through the network. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_af2fb0d243b0b7a8bcac7074dd83078c9}{do\+Client}} (unsigned short port)
+\begin{DoxyCompactList}\small\item\em Create a client, connect it to a running server and start sending him audio data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{sf\+::\+Uint8}} \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_af0c73c991a246dd292263c32ee190547}{audio\+Data}} = 1
+\item 
+const \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{sf\+::\+Uint8}} \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_aa87d7c0acaf7e7354fee28a093fc3176}{end\+Of\+Stream}} = 2
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_af2fb0d243b0b7a8bcac7074dd83078c9}\label{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_af2fb0d243b0b7a8bcac7074dd83078c9}} 
+\index{Client.cpp@{Client.cpp}!doClient@{doClient}}
+\index{doClient@{doClient}!Client.cpp@{Client.cpp}}
+\doxysubsubsection{\texorpdfstring{doClient()}{doClient()}}
+{\footnotesize\ttfamily void do\+Client (\begin{DoxyParamCaption}\item[{unsigned short}]{port }\end{DoxyParamCaption})}
+
+
+
+Create a client, connect it to a running server and start sending him audio data. 
+
+
+
+Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00110}{110}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source}{Client.\+cpp}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_af0c73c991a246dd292263c32ee190547}\label{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_af0c73c991a246dd292263c32ee190547}} 
+\index{Client.cpp@{Client.cpp}!audioData@{audioData}}
+\index{audioData@{audioData}!Client.cpp@{Client.cpp}}
+\doxysubsubsection{\texorpdfstring{audioData}{audioData}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{sf\+::\+Uint8}} audio\+Data = 1}
+
+
+
+Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source}{Client.\+cpp}}.
+
+\mbox{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_aa87d7c0acaf7e7354fee28a093fc3176}\label{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_aa87d7c0acaf7e7354fee28a093fc3176}} 
+\index{Client.cpp@{Client.cpp}!endOfStream@{endOfStream}}
+\index{endOfStream@{endOfStream}!Client.cpp@{Client.cpp}}
+\doxysubsubsection{\texorpdfstring{endOfStream}{endOfStream}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{sf\+::\+Uint8}} end\+Of\+Stream = 2}
+
+
+
+Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source}{Client.\+cpp}}.
+

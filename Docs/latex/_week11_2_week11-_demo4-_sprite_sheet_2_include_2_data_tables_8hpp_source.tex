@@ -1,0 +1,75 @@
+\hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source}{}\doxysection{Data\+Tables.\+hpp}
+\label{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source}\index{Week11/Week11-\/Demo4-\/SpriteSheet/Include/DataTables.hpp@{Week11/Week11-\/Demo4-\/SpriteSheet/Include/DataTables.hpp}}
+\mbox{\hyperlink{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00003}00003 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_include_2_resource_identifiers_8hpp}{ResourceIdentifiers.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00005}00005 \textcolor{preprocessor}{\#include <SFML/System/Time.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00006}00006 \textcolor{preprocessor}{\#include <SFML/Graphics/Color.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00008}00008 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00009}00009 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00011}00011 \textcolor{preprocessor}{\#pragma region step 2 -\/ 1}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00012}00012 \textcolor{preprocessor}{\#include <SFML/Graphics/Rect.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00013}00013 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00016}00016 \textcolor{keyword}{class }\mbox{\hyperlink{class_aircraft}{Aircraft}};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00018}00018 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_direction}{Direction}}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00019}00019 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00020}\mbox{\hyperlink{struct_direction_ad8439f2ac8ed58d652d9f1c40e66c065}{00020}}     \mbox{\hyperlink{struct_direction_ad8439f2ac8ed58d652d9f1c40e66c065}{Direction}}(\textcolor{keywordtype}{float} \mbox{\hyperlink{struct_direction_a8eaabd2d06c6274e92866814cfb6a2ea}{angle}}, \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_direction_a6cf81244bffe43d4b4d1bc8a3f63772a}{distance}})}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00021}00021     : \mbox{\hyperlink{struct_direction_a8eaabd2d06c6274e92866814cfb6a2ea}{angle}}(\mbox{\hyperlink{struct_direction_a8eaabd2d06c6274e92866814cfb6a2ea}{angle}})}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00022}00022     , \mbox{\hyperlink{struct_direction_a6cf81244bffe43d4b4d1bc8a3f63772a}{distance}}(\mbox{\hyperlink{struct_direction_a6cf81244bffe43d4b4d1bc8a3f63772a}{distance}})}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00023}00023     \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00024}00024     \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00026}00026     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_direction_a8eaabd2d06c6274e92866814cfb6a2ea}{angle}};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00027}00027     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_direction_a6cf81244bffe43d4b4d1bc8a3f63772a}{distance}};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00028}00028 \};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00030}00030 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_aircraft_data}{AircraftData}}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00031}00031 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00032}00032     \textcolor{keywordtype}{int}                             \mbox{\hyperlink{struct_aircraft_data_ad2e89a12ab581641e79e97698c4bb751}{hitpoints}};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00033}00033     \textcolor{keywordtype}{float}                           \mbox{\hyperlink{struct_aircraft_data_a2edc576e968bfb7564f126010f85ca98}{speed}};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00034}00034     \mbox{\hyperlink{namespace_textures_a2cfe2099537d4e80b08437b4978301a5}{Textures::ID}}                    \mbox{\hyperlink{struct_aircraft_data_a9c7f1508f44e99fd9376a2a8822f84a9}{texture}};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00036}00036 \textcolor{preprocessor}{\#pragma region step 2 -\/ 2}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00037}\mbox{\hyperlink{struct_aircraft_data_a8d6ac75aa2570404ee6b13c5d2128996}{00037}}     \mbox{\hyperlink{classsf_1_1_rect}{sf::IntRect}}                      \mbox{\hyperlink{struct_aircraft_data_a8d6ac75aa2570404ee6b13c5d2128996}{textureRect}};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00038}00038 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00040}00040     \mbox{\hyperlink{classsf_1_1_time}{sf::Time}}                        \mbox{\hyperlink{struct_aircraft_data_a91ccdace300d5621ce8559b49fcb2efb}{fireInterval}};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00041}00041     std::vector<Direction>          \mbox{\hyperlink{struct_aircraft_data_a1bfcbd01573ed6989240e49006b7e157}{directions}};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00042}00042 \};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00044}00044 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_projectile_data}{ProjectileData}}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00045}00045 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00046}00046     \textcolor{keywordtype}{int}                             \mbox{\hyperlink{struct_projectile_data_add13e5536e407fa142dc8dc1dea3959b}{damage}};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00047}00047     \textcolor{keywordtype}{float}                           \mbox{\hyperlink{struct_projectile_data_ad5203e5d2fccba6c543de57d1e9070d5}{speed}};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00048}00048     \mbox{\hyperlink{namespace_textures_a2cfe2099537d4e80b08437b4978301a5}{Textures::ID}}                    \mbox{\hyperlink{struct_projectile_data_af72f694e0c4ef9fa6e034167a32592f9}{texture}};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00050}00050 \textcolor{preprocessor}{\#pragma region step 2 -\/ 3}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00051}\mbox{\hyperlink{struct_projectile_data_ac238749d31e6643852ac04cee0413f34}{00051}}     \mbox{\hyperlink{classsf_1_1_rect}{sf::IntRect}}                      \mbox{\hyperlink{struct_projectile_data_ac238749d31e6643852ac04cee0413f34}{textureRect}};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00052}00052 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00053}00053 \};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00055}00055 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_pickup_data}{PickupData}}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00056}00056 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00057}00057     std::function<void(\mbox{\hyperlink{class_aircraft}{Aircraft}}\&)>  \mbox{\hyperlink{struct_pickup_data_acbd4989a1fe6a29e35154fd08a51e62a}{action}};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00058}00058     \mbox{\hyperlink{namespace_textures_a2cfe2099537d4e80b08437b4978301a5}{Textures::ID}}                    \mbox{\hyperlink{struct_pickup_data_a3e48147f1441e4c10e7c0b6a9393a0bc}{texture}};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00060}00060 \textcolor{preprocessor}{\#pragma region step 2 -\/ 4}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00061}\mbox{\hyperlink{struct_pickup_data_a7e6288e6d9e8267d35b2d446dc8d58d3}{00061}}     \mbox{\hyperlink{classsf_1_1_rect}{sf::IntRect}}                      \mbox{\hyperlink{struct_pickup_data_a7e6288e6d9e8267d35b2d446dc8d58d3}{textureRect}};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00062}00062 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00063}00063 \};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00066}00066 std::vector<AircraftData>   \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_data_tables_8hpp_aadcf137288192ca5bff8ed1ea604e0b4}{initializeAircraftData}}();}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00067}00067 std::vector<ProjectileData> \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_data_tables_8hpp_ac84be17dd214f21d3281cc83791b5f72}{initializeProjectileData}}();}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00068}00068 std::vector<PickupData>     \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_data_tables_8hpp_a5847a943a96f725db3bd5b7145be903f}{initializePickupData}}();}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo4-_sprite_sheet_2_include_2_data_tables_8hpp_source_l00069}00069 }
+
+\end{DoxyCode}

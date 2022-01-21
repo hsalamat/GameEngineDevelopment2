@@ -1,0 +1,537 @@
+\hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source}{}\doxysection{Island.\+cpp}
+\label{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source}\index{SFML-\/2.5.1/examples/island/Island.cpp@{SFML-\/2.5.1/examples/island/Island.cpp}}
+\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00003}00003 \textcolor{comment}{// Headers}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00005}\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_ad63bc7e124b44adf37ea9e97fa1bf581}{00005}} \textcolor{comment}{}\textcolor{preprocessor}{\#define STB\_PERLIN\_IMPLEMENTATION}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include "{}stb\_perlin.h"{}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include <SFML/Graphics.hpp>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#include <deque>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00010}00010 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00011}00011 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00012}00012 \textcolor{preprocessor}{\#include <cstring>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00013}00013 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00016}00016 \textcolor{keyword}{namespace}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00017}00017 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00018}00018     \textcolor{comment}{// Width and height of the application window}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00019}00019     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} windowWidth = 800;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00020}00020     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} windowHeight = 600;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00022}00022     \textcolor{comment}{// Resolution of the generated terrain}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00023}00023     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} resolutionX = 800;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00024}00024     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} resolutionY = 600;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00026}00026     \textcolor{comment}{// Thread pool parameters}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00027}00027     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} threadCount = 4;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00028}00028     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} blockCount = 32;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00030}00030     \textcolor{keyword}{struct }WorkItem}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00031}00031     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00032}00032         \mbox{\hyperlink{classsf_1_1_vertex}{sf::Vertex}}* targetBuffer;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00033}00033         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00034}00034     \};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00036}00036     std::deque<WorkItem> workQueue;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00037}00037     std::vector<sf::Thread*> threads;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00038}00038     \textcolor{keywordtype}{int} pendingWorkCount = 0;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00039}00039     \textcolor{keywordtype}{bool} workPending = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00040}00040     \textcolor{keywordtype}{bool} bufferUploadPending = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00041}00041     \mbox{\hyperlink{classsf_1_1_mutex}{sf::Mutex}} workQueueMutex;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00043}00043     \textcolor{keyword}{struct }Setting}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00044}00044     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00045}00045         \textcolor{keyword}{const} \textcolor{keywordtype}{char}* name;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00046}00046         \textcolor{keywordtype}{float}* value;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00047}00047     \};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00049}00049     \textcolor{comment}{// Terrain noise parameters}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00050}00050     \textcolor{keyword}{const} \textcolor{keywordtype}{int} perlinOctaves = 3;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00052}00052     \textcolor{keywordtype}{float} perlinFrequency = 7.0f;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00053}00053     \textcolor{keywordtype}{float} perlinFrequencyBase = 4.0f;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00055}00055     \textcolor{comment}{// Terrain generation parameters}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00056}00056     \textcolor{keywordtype}{float} heightBase = 0.0f;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00057}00057     \textcolor{keywordtype}{float} edgeFactor = 0.9f;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00058}00058     \textcolor{keywordtype}{float} edgeDropoffExponent = 1.5f;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00060}00060     \textcolor{keywordtype}{float} snowcapHeight = 0.6f;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00062}00062     \textcolor{comment}{// Terrain lighting parameters}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00063}00063     \textcolor{keywordtype}{float} heightFactor = windowHeight / 2.0f;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00064}00064     \textcolor{keywordtype}{float} heightFlatten = 3.0f;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00065}00065     \textcolor{keywordtype}{float} lightFactor = 0.7f;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00066}00066 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00069}00069 \textcolor{comment}{// Forward declarations of the functions we define further down}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00070}00070 \textcolor{keywordtype}{void} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a58030615808181acc26b9ea47e0405ef}{threadFunction}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00071}00071 \textcolor{keywordtype}{void} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a7f813e30ba292a1be5959dffd26a63c1}{generateTerrain}}(\mbox{\hyperlink{classsf_1_1_vertex}{sf::Vertex}}* vertexBuffer);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00080}\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00080}} \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00081}00081 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00082}00082     \textcolor{comment}{// Create the window of the application}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00083}00083     \mbox{\hyperlink{classsf_1_1_render_window}{sf::RenderWindow}} window(\mbox{\hyperlink{classsf_1_1_video_mode}{sf::VideoMode}}(windowWidth, windowHeight), \textcolor{stringliteral}{"{}SFML Island"{}},}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00084}00084                             \mbox{\hyperlink{group__window_ggaa75e94f0d3f52da8a61ed467ffd6d6e8abf046c6fcae63075c651812c6774e389}{sf::Style::Titlebar}} | \mbox{\hyperlink{group__window_ggaa75e94f0d3f52da8a61ed467ffd6d6e8a76bbd82b28e359cc0feec9e5ec123b40}{sf::Style::Close}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00085}00085     window.\mbox{\hyperlink{classsf_1_1_window_a59041c4556e0351048f8aff366034f61}{setVerticalSyncEnabled}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00087}00087     \mbox{\hyperlink{classsf_1_1_font}{sf::Font}} font;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00088}00088     \textcolor{keywordflow}{if} (!font.\mbox{\hyperlink{classsf_1_1_font_ab020052ef4e01f6c749a85571c0f3fd1}{loadFromFile}}(\textcolor{stringliteral}{"{}resources/sansation.ttf"{}}))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00089}00089         \textcolor{keywordflow}{return} EXIT\_FAILURE;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00091}00091     \textcolor{comment}{// Create all of our graphics resources}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00092}00092     \mbox{\hyperlink{classsf_1_1_text}{sf::Text}} hudText;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00093}00093     \mbox{\hyperlink{classsf_1_1_text}{sf::Text}} statusText;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00094}00094     \mbox{\hyperlink{classsf_1_1_shader}{sf::Shader}} terrainShader;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00095}00095     \mbox{\hyperlink{classsf_1_1_render_states}{sf::RenderStates}} terrainStates(\&terrainShader);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00096}00096     \mbox{\hyperlink{classsf_1_1_vertex_buffer}{sf::VertexBuffer}} terrain(\mbox{\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1babdd5e75b8944a886fdaa30e5bb3adc0d}{sf::Triangles}}, \mbox{\hyperlink{classsf_1_1_vertex_buffer_a3a531528684e63ecb45edd51282f5cb7a2ab86f9c3412ff2dc4cd4343841ec4db}{sf::VertexBuffer::Static}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00097}00097 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00098}00098     \textcolor{comment}{// Set up our text drawables}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00099}00099     statusText.\mbox{\hyperlink{classsf_1_1_text_a2927805d1ae92d57f15034ea34756b81}{setFont}}(font);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00100}00100     statusText.\mbox{\hyperlink{classsf_1_1_text_ae96f835fc1bff858f8a23c5b01eaaf7e}{setCharacterSize}}(28);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00101}00101     statusText.\mbox{\hyperlink{classsf_1_1_text_ab7bb3babac5a6da1802b2c3e1a3e6dcc}{setFillColor}}(\mbox{\hyperlink{classsf_1_1_color_abd9695b00da63b890ea40f74629237c0}{sf::Color::White}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00102}00102     statusText.\mbox{\hyperlink{classsf_1_1_text_aa19ec69c3b894e963602a6804ca68fe4}{setOutlineColor}}(\mbox{\hyperlink{classsf_1_1_color_a25bf5208c8c7668f1a3836acbbb23986}{sf::Color::Black}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00103}00103     statusText.\mbox{\hyperlink{classsf_1_1_text_ab0e6be3b40124557bf53737fe6a6ce77}{setOutlineThickness}}(2.0f);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00104}00104 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00105}00105     hudText.\mbox{\hyperlink{classsf_1_1_text_a2927805d1ae92d57f15034ea34756b81}{setFont}}(font);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00106}00106     hudText.\mbox{\hyperlink{classsf_1_1_text_ae96f835fc1bff858f8a23c5b01eaaf7e}{setCharacterSize}}(14);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00107}00107     hudText.\mbox{\hyperlink{classsf_1_1_text_ab7bb3babac5a6da1802b2c3e1a3e6dcc}{setFillColor}}(\mbox{\hyperlink{classsf_1_1_color_abd9695b00da63b890ea40f74629237c0}{sf::Color::White}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00108}00108     hudText.\mbox{\hyperlink{classsf_1_1_text_aa19ec69c3b894e963602a6804ca68fe4}{setOutlineColor}}(\mbox{\hyperlink{classsf_1_1_color_a25bf5208c8c7668f1a3836acbbb23986}{sf::Color::Black}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00109}00109     hudText.\mbox{\hyperlink{classsf_1_1_text_ab0e6be3b40124557bf53737fe6a6ce77}{setOutlineThickness}}(2.0f);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00110}00110     hudText.\mbox{\hyperlink{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{setPosition}}(5.0f, 5.0f);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00111}00111 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00112}00112     \textcolor{comment}{// Staging buffer for our terrain data that we will upload to our VertexBuffer}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00113}00113     std::vector<sf::Vertex> terrainStagingBuffer;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00115}00115     \textcolor{comment}{// Check whether the prerequisites are suppprted}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00116}00116     \textcolor{keywordtype}{bool} prerequisitesSupported = \mbox{\hyperlink{classsf_1_1_vertex_buffer_a6304bc4134dc0164dc94eff887b08847}{sf::VertexBuffer::isAvailable}}() \&\& \mbox{\hyperlink{classsf_1_1_shader_ad22474690bafe4a305c1b9826b1bd86a}{sf::Shader::isAvailable}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00117}00117 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00118}00118     \textcolor{comment}{// Set up our graphics resources and set the status text accordingly}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00119}00119     \textcolor{keywordflow}{if} (!prerequisitesSupported)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00120}00120     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00121}00121         statusText.\mbox{\hyperlink{classsf_1_1_text_a7d3b3359f286fd9503d1ced25b7b6c33}{setString}}(\textcolor{stringliteral}{"{}Shaders and/or Vertex Buffers Unsupported"{}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00122}00122     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00123}00123     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!terrainShader.\mbox{\hyperlink{classsf_1_1_shader_a053a5632848ebaca2fcd8ba29abe9e6e}{loadFromFile}}(\textcolor{stringliteral}{"{}resources/terrain.vert"{}}, \textcolor{stringliteral}{"{}resources/terrain.frag"{}}))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00124}00124     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00125}00125         prerequisitesSupported = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00126}00126 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00127}00127         statusText.\mbox{\hyperlink{classsf_1_1_text_a7d3b3359f286fd9503d1ced25b7b6c33}{setString}}(\textcolor{stringliteral}{"{}Failed to load shader program"{}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00128}00128     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00129}00129     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00130}00130     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00131}00131         \textcolor{comment}{// Start up our thread pool}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00132}00132         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < threadCount; i++)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00133}00133         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00134}00134             threads.push\_back(\textcolor{keyword}{new} \mbox{\hyperlink{classsf_1_1_thread}{sf::Thread}}(\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a58030615808181acc26b9ea47e0405ef}{threadFunction}}));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00135}00135             threads.back()-\/>launch();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00136}00136         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00137}00137 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00138}00138         \textcolor{comment}{// Create our VertexBuffer with enough space to hold all the terrain geometry}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00139}00139         terrain.\mbox{\hyperlink{classsf_1_1_vertex_buffer_aa68e128d59c7f7d5eb0d4d94125439a5}{create}}(resolutionX * resolutionY * 6);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00140}00140 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00141}00141         \textcolor{comment}{// Resize the staging buffer to be able to hold all the terrain geometry}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00142}00142         terrainStagingBuffer.resize(resolutionX * resolutionY * 6);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00143}00143 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00144}00144         \textcolor{comment}{// Generate the initial terrain}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00145}00145         \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a7f813e30ba292a1be5959dffd26a63c1}{generateTerrain}}(\&terrainStagingBuffer[0]);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00146}00146 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00147}00147         statusText.\mbox{\hyperlink{classsf_1_1_text_a7d3b3359f286fd9503d1ced25b7b6c33}{setString}}(\textcolor{stringliteral}{"{}Generating Terrain..."{}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00148}00148     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00149}00149 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00150}00150     \textcolor{comment}{// Center the status text}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00151}00151     statusText.\mbox{\hyperlink{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{setPosition}}((windowWidth -\/ statusText.\mbox{\hyperlink{classsf_1_1_text_a3e6b3b298827f853b41165eee2cbbc66}{getLocalBounds}}().\mbox{\hyperlink{classsf_1_1_rect_a4dd5b9d4333bebbc51bd309298fd500f}{width}}) / 2.f, (windowHeight -\/ statusText.\mbox{\hyperlink{classsf_1_1_text_a3e6b3b298827f853b41165eee2cbbc66}{getLocalBounds}}().\mbox{\hyperlink{classsf_1_1_rect_a6fa0fc7de1636d78cae1a1b54eef95cd}{height}}) / 2.f);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00152}00152 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00153}00153     \textcolor{comment}{// Set up an array of pointers to our settings for arrow navigation}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00154}00154     Setting settings[] =}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00155}00155     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00156}00156         \{\textcolor{stringliteral}{"{}perlinFrequency"{}},     \&perlinFrequency\},}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00157}00157         \{\textcolor{stringliteral}{"{}perlinFrequencyBase"{}}, \&perlinFrequencyBase\},}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00158}00158         \{\textcolor{stringliteral}{"{}heightBase"{}},          \&heightBase\},}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00159}00159         \{\textcolor{stringliteral}{"{}edgeFactor"{}},          \&edgeFactor\},}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00160}00160         \{\textcolor{stringliteral}{"{}edgeDropoffExponent"{}}, \&edgeDropoffExponent\},}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00161}00161         \{\textcolor{stringliteral}{"{}snowcapHeight"{}},       \&snowcapHeight\},}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00162}00162         \{\textcolor{stringliteral}{"{}heightFactor"{}},        \&heightFactor\},}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00163}00163         \{\textcolor{stringliteral}{"{}heightFlatten"{}},       \&heightFlatten\},}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00164}00164         \{\textcolor{stringliteral}{"{}lightFactor"{}},         \&lightFactor\}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00165}00165     \};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00166}00166 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00167}00167     \textcolor{keyword}{const} \textcolor{keywordtype}{int} settingCount = 9;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00168}00168     \textcolor{keywordtype}{int} currentSetting = 0;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00169}00169 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00170}00170     std::ostringstream osstr;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00171}00171     \mbox{\hyperlink{classsf_1_1_clock}{sf::Clock}} clock;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00172}00172 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00173}00173     \textcolor{keywordflow}{while} (window.\mbox{\hyperlink{classsf_1_1_window_ae873503db7d48157bb9cbf6129562bce}{isOpen}}())}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00174}00174     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00175}00175         \textcolor{comment}{// Handle events}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00176}00176         \mbox{\hyperlink{classsf_1_1_event}{sf::Event}} event;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00177}00177         \textcolor{keywordflow}{while} (window.\mbox{\hyperlink{classsf_1_1_window_a338e996585faf82e93069858e3b531b7}{pollEvent}}(event))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00178}00178         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00179}00179             \textcolor{comment}{// Window closed or escape key pressed: exit}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00180}00180             \textcolor{keywordflow}{if} ((event.\mbox{\hyperlink{classsf_1_1_event_adf2f8044f713fd9d6019077b0d1ffe0a}{type}} == \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa4f718a7f43b0f2d46be222fe23198d9e}{sf::Event::Closed}}) ||}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00181}00181                ((event.\mbox{\hyperlink{classsf_1_1_event_adf2f8044f713fd9d6019077b0d1ffe0a}{type}} == \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4}{sf::Event::KeyPressed}}) \&\& (event.\mbox{\hyperlink{classsf_1_1_event_a45b92fc6757ca7c193f06b302e424ab0}{key}}.\mbox{\hyperlink{structsf_1_1_event_1_1_key_event_a2879fdab8a68cb1c6ecc45730a2d0e61}{code}} == \mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142a72019ff9ecb145a9d3910177a49c757a}{sf::Keyboard::Escape}})))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00182}00182             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00183}00183                 window.\mbox{\hyperlink{classsf_1_1_window_a99d1e030387b0c26f5995670504fe7b5}{close}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00184}00184                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00185}00185             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00186}00186 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00187}00187             \textcolor{comment}{// Arrow key pressed:}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00188}00188             \textcolor{keywordflow}{if} (prerequisitesSupported \&\& (event.\mbox{\hyperlink{classsf_1_1_event_adf2f8044f713fd9d6019077b0d1ffe0a}{type}} == \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4}{sf::Event::KeyPressed}}))}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00189}00189             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00190}00190                 \textcolor{keywordflow}{switch} (event.\mbox{\hyperlink{classsf_1_1_event_a45b92fc6757ca7c193f06b302e424ab0}{key}}.\mbox{\hyperlink{structsf_1_1_event_1_1_key_event_a2879fdab8a68cb1c6ecc45730a2d0e61}{code}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00191}00191                 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00192}00192                     \textcolor{keywordflow}{case} \mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142a45990e46db316fb01b760bce6b5fcf32}{sf::Keyboard::Return}}: \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a7f813e30ba292a1be5959dffd26a63c1}{generateTerrain}}(\&terrainStagingBuffer[0]); \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00193}00193                     \textcolor{keywordflow}{case} \mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142a4c156edb237453ea7e9070b8178333ad}{sf::Keyboard::Down}}:   currentSetting = (currentSetting + 1) \% settingCount; \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00194}00194                     \textcolor{keywordflow}{case} \mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142aa0cd0ee9f2d03294d7ca25b21068fa22}{sf::Keyboard::Up}}:     currentSetting = (currentSetting + settingCount -\/ 1) \% settingCount; \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00195}00195                     \textcolor{keywordflow}{case} \mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142a5e7dd0a44aba7c8ca5cde717af892507}{sf::Keyboard::Left}}:   *(settings[currentSetting].value) -\/= 0.1f; \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00196}00196                     \textcolor{keywordflow}{case} \mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142a30e643d209ea070c73ca1b5602e10ff4}{sf::Keyboard::Right}}:  *(settings[currentSetting].value) += 0.1f; \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00197}00197                     \textcolor{keywordflow}{default}: \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00198}00198                 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00199}00199             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00200}00200         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00201}00201 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00202}00202         \textcolor{comment}{// Clear, draw graphics objects and display}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00203}00203         window.\mbox{\hyperlink{classsf_1_1_render_target_a6bb6f0ba348f2b1e2f46114aeaf60f26}{clear}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00204}00204 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00205}00205         window.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(statusText);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00206}00206 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00207}00207         \textcolor{keywordflow}{if} (prerequisitesSupported)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00208}00208         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00209}00209             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00210}00210                 \mbox{\hyperlink{classsf_1_1_lock}{sf::Lock}} lock(workQueueMutex);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00211}00211 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00212}00212                 \textcolor{comment}{// Don't bother updating/drawing the VertexBuffer while terrain is being regenerated}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00213}00213                 \textcolor{keywordflow}{if} (!pendingWorkCount)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00214}00214                 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00215}00215                     \textcolor{comment}{// If there is new data pending to be uploaded to the VertexBuffer, do it now}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00216}00216                     \textcolor{keywordflow}{if} (bufferUploadPending)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00217}00217                     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00218}00218                         terrain.\mbox{\hyperlink{classsf_1_1_vertex_buffer_ad100a5f578a91c49a9009e3c6956c82d}{update}}(\&terrainStagingBuffer[0]);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00219}00219                         bufferUploadPending = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00220}00220                     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00221}00221 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00222}00222                     terrainShader.\mbox{\hyperlink{classsf_1_1_shader_abf78e3bea1e9b0bab850b6b0a0de29c7}{setUniform}}(\textcolor{stringliteral}{"{}lightFactor"{}}, lightFactor);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00223}00223                     window.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(terrain, terrainStates);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00224}00224                 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00225}00225             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00226}00226 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00227}00227             \textcolor{comment}{// Update and draw the HUD text}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00228}00228             osstr.str(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00229}00229             osstr << \textcolor{stringliteral}{"{}Frame:  "{}} << clock.\mbox{\hyperlink{classsf_1_1_clock_a123e2627f2943e5ecaa1db0c7df3231b}{restart}}().\mbox{\hyperlink{classsf_1_1_time_aa16858ca030a07eb18958c321f256e5a}{asMilliseconds}}() << \textcolor{stringliteral}{"{}ms\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00230}00230                   << \textcolor{stringliteral}{"{}perlinOctaves:  "{}} << perlinOctaves << \textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00231}00231                   << \textcolor{stringliteral}{"{}Use the arrow keys to change the values.\(\backslash\)nUse the return key to regenerate the terrain.\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00232}00232 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00233}00233             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < settingCount; ++i)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00234}00234                 osstr << ((i == currentSetting) ? \textcolor{stringliteral}{"{}>>  "{}} : \textcolor{stringliteral}{"{}       "{}}) << settings[i].name << \textcolor{stringliteral}{"{}:  "{}} << *(settings[i].value) << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00235}00235 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00236}00236             hudText.\mbox{\hyperlink{classsf_1_1_text_a7d3b3359f286fd9503d1ced25b7b6c33}{setString}}(osstr.str());}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00237}00237 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00238}00238             window.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(hudText);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00239}00239         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00240}00240 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00241}00241         \textcolor{comment}{// Display things on screen}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00242}00242         window.\mbox{\hyperlink{classsf_1_1_window_adabf839cb103ac96cfc82f781638772a}{display}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00243}00243     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00244}00244 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00245}00245     \textcolor{comment}{// Shut down our thread pool}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00246}00246     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00247}00247         \mbox{\hyperlink{classsf_1_1_lock}{sf::Lock}} lock(workQueueMutex);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00248}00248         workPending = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00249}00249     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00250}00250 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00251}00251     \textcolor{keywordflow}{while} (!threads.empty())}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00252}00252     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00253}00253         threads.back()-\/>wait();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00254}00254         \textcolor{keyword}{delete} threads.back();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00255}00255         threads.pop\_back();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00256}00256     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00257}00257 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00258}00258     \textcolor{keywordflow}{return} EXIT\_SUCCESS;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00259}00259 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00260}00260 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00261}00261 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00266}\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_aef9257df379ba9fe79102d14dee5cdf9}{00266}} \textcolor{keywordtype}{float} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_aef9257df379ba9fe79102d14dee5cdf9}{getElevation}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00267}00267 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00268}00268     x = x / resolutionX -\/ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00269}00269     y = y / resolutionY -\/ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00270}00270 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00271}00271     \textcolor{keywordtype}{float} elevation = 0.0f;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00272}00272 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00273}00273     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < perlinOctaves; i++)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00274}00274     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00275}00275         elevation += stb\_perlin\_noise3(}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00276}00276             x * perlinFrequency * std::pow(perlinFrequencyBase, i),}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00277}00277             y * perlinFrequency * std::pow(perlinFrequencyBase, i),}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00278}00278             0, 0, 0, 0}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00279}00279         ) * std::pow(perlinFrequencyBase, -\/i);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00280}00280     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00281}00281 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00282}00282     elevation = (elevation + 1.f) / 2.f;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00283}00283 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00284}00284     \textcolor{keywordtype}{float} \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_scene_node_8hpp_a7b80a3dcfdac5445e81c0d5baa0e18af}{distance}} = 2.0f * std::sqrt(x * x + y * y);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00285}00285     elevation = (elevation + heightBase) * (1.0f -\/ edgeFactor * std::pow(\mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_scene_node_8hpp_a7b80a3dcfdac5445e81c0d5baa0e18af}{distance}}, edgeDropoffExponent));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00286}00286     elevation = std::min(std::max(elevation, 0.0f), 1.0f);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00287}00287 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00288}00288     \textcolor{keywordflow}{return} elevation;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00289}00289 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00290}00290 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00291}00291 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00296}\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a30c20a2787406000d031098087cd6744}{00296}} \textcolor{keywordtype}{float} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a30c20a2787406000d031098087cd6744}{getMoisture}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00297}00297 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00298}00298     x = x / resolutionX -\/ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00299}00299     y = y / resolutionY -\/ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00300}00300 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00301}00301     \textcolor{keywordtype}{float} moisture = stb\_perlin\_noise3(}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00302}00302         x * 4.f + 0.5f,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00303}00303         y * 4.f + 0.5f,}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00304}00304         0, 0, 0, 0}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00305}00305     );}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00306}00306 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00307}00307     \textcolor{keywordflow}{return} (moisture + 1.f) / 2.f;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00308}00308 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00309}00309 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00310}00310 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00315}\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a65a1015eb90d87c84aceccaf36191cd7}{00315}} \mbox{\hyperlink{classsf_1_1_color}{sf::Color}} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a65a1015eb90d87c84aceccaf36191cd7}{getLowlandsTerrainColor}}(\textcolor{keywordtype}{float} moisture)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00316}00316 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00317}00317     \mbox{\hyperlink{classsf_1_1_color}{sf::Color}} color =}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00318}00318         moisture < 0.27f ? \mbox{\hyperlink{classsf_1_1_color}{sf::Color}}(240, 240, 180) :}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00319}00319         moisture < 0.3f ? \mbox{\hyperlink{classsf_1_1_color}{sf::Color}}(240 -\/ 240 * (moisture -\/ 0.27f) / 0.03f, 240 -\/ 40 * (moisture -\/ 0.27f) / 0.03f, 180 -\/ 180 * (moisture -\/ 0.27f) / 0.03f) :}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00320}00320         moisture < 0.4f ? \mbox{\hyperlink{classsf_1_1_color}{sf::Color}}(0, 200, 0) :}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00321}00321         moisture < 0.48f ? \mbox{\hyperlink{classsf_1_1_color}{sf::Color}}(0, 200 -\/ 40 * (moisture -\/ 0.4f) / 0.08f, 0) :}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00322}00322         moisture < 0.6f ? \mbox{\hyperlink{classsf_1_1_color}{sf::Color}}(0, 160, 0) :}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00323}00323         moisture < 0.7f ? \mbox{\hyperlink{classsf_1_1_color}{sf::Color}}(34 * (moisture -\/ 0.6f) / 0.1f, 160 -\/ 60 * (moisture -\/ 0.6f) / 0.1f, 34 * (moisture -\/ 0.6f) / 0.1f) :}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00324}00324         \mbox{\hyperlink{classsf_1_1_color}{sf::Color}}(34, 100, 34);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00325}00325 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00326}00326     \textcolor{keywordflow}{return} color;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00327}00327 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00328}00328 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00329}00329 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00335}\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a6ca3410461a3c4cebfd5542cc20e1b18}{00335}} \mbox{\hyperlink{classsf_1_1_color}{sf::Color}} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a6ca3410461a3c4cebfd5542cc20e1b18}{getHighlandsTerrainColor}}(\textcolor{keywordtype}{float} elevation, \textcolor{keywordtype}{float} moisture)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00336}00336 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00337}00337     \mbox{\hyperlink{classsf_1_1_color}{sf::Color}} lowlandsColor = \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a65a1015eb90d87c84aceccaf36191cd7}{getLowlandsTerrainColor}}(moisture);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00338}00338 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00339}00339     \mbox{\hyperlink{classsf_1_1_color}{sf::Color}} color =}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00340}00340         moisture < 0.6f ? \mbox{\hyperlink{classsf_1_1_color}{sf::Color}}(112, 128, 144) :}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00341}00341         \mbox{\hyperlink{classsf_1_1_color}{sf::Color}}(112 + 110 * (moisture -\/ 0.6f) / 0.4f, 128 + 56 * (moisture -\/ 0.6f) / 0.4f, 144 -\/ 9 * (moisture -\/ 0.6f) / 0.4f);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00342}00342 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00343}00343     \textcolor{keywordtype}{float} factor = std::min((elevation -\/ 0.4f) / 0.1f, 1.f);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00344}00344 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00345}00345     color.\mbox{\hyperlink{classsf_1_1_color_a6a5256ca24a4f9f0e0808f6fc23e01e1}{r}} = lowlandsColor.\mbox{\hyperlink{classsf_1_1_color_a6a5256ca24a4f9f0e0808f6fc23e01e1}{r}} * (1.f -\/ factor) + color.\mbox{\hyperlink{classsf_1_1_color_a6a5256ca24a4f9f0e0808f6fc23e01e1}{r}} * factor;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00346}00346     color.\mbox{\hyperlink{classsf_1_1_color_a591daf9c3c55dea830c76c962d6ba1a5}{g}} = lowlandsColor.\mbox{\hyperlink{classsf_1_1_color_a591daf9c3c55dea830c76c962d6ba1a5}{g}} * (1.f -\/ factor) + color.\mbox{\hyperlink{classsf_1_1_color_a591daf9c3c55dea830c76c962d6ba1a5}{g}} * factor;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00347}00347     color.\mbox{\hyperlink{classsf_1_1_color_a6707aedd0609c8920e12df5d7abc53cb}{b}} = lowlandsColor.\mbox{\hyperlink{classsf_1_1_color_a6707aedd0609c8920e12df5d7abc53cb}{b}} * (1.f -\/ factor) + color.\mbox{\hyperlink{classsf_1_1_color_a6707aedd0609c8920e12df5d7abc53cb}{b}} * factor;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00348}00348 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00349}00349     \textcolor{keywordflow}{return} color;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00350}00350 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00351}00351 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00352}00352 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00358}\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a44ec648e02c291ec5ed3779cbdbd9c92}{00358}} \mbox{\hyperlink{classsf_1_1_color}{sf::Color}} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a44ec648e02c291ec5ed3779cbdbd9c92}{getSnowcapTerrainColor}}(\textcolor{keywordtype}{float} elevation, \textcolor{keywordtype}{float} moisture)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00359}00359 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00360}00360     \mbox{\hyperlink{classsf_1_1_color}{sf::Color}} highlandsColor = \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a6ca3410461a3c4cebfd5542cc20e1b18}{getHighlandsTerrainColor}}(elevation, moisture);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00361}00361 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00362}00362     \mbox{\hyperlink{classsf_1_1_color}{sf::Color}} color = \mbox{\hyperlink{classsf_1_1_color_abd9695b00da63b890ea40f74629237c0}{sf::Color::White}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00363}00363 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00364}00364     \textcolor{keywordtype}{float} factor = std::min((elevation -\/ snowcapHeight) / 0.05f, 1.f);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00365}00365 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00366}00366     color.\mbox{\hyperlink{classsf_1_1_color_a6a5256ca24a4f9f0e0808f6fc23e01e1}{r}} = highlandsColor.\mbox{\hyperlink{classsf_1_1_color_a6a5256ca24a4f9f0e0808f6fc23e01e1}{r}} * (1.f -\/ factor) + color.\mbox{\hyperlink{classsf_1_1_color_a6a5256ca24a4f9f0e0808f6fc23e01e1}{r}} * factor;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00367}00367     color.\mbox{\hyperlink{classsf_1_1_color_a591daf9c3c55dea830c76c962d6ba1a5}{g}} = highlandsColor.\mbox{\hyperlink{classsf_1_1_color_a591daf9c3c55dea830c76c962d6ba1a5}{g}} * (1.f -\/ factor) + color.\mbox{\hyperlink{classsf_1_1_color_a591daf9c3c55dea830c76c962d6ba1a5}{g}} * factor;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00368}00368     color.\mbox{\hyperlink{classsf_1_1_color_a6707aedd0609c8920e12df5d7abc53cb}{b}} = highlandsColor.\mbox{\hyperlink{classsf_1_1_color_a6707aedd0609c8920e12df5d7abc53cb}{b}} * (1.f -\/ factor) + color.\mbox{\hyperlink{classsf_1_1_color_a6707aedd0609c8920e12df5d7abc53cb}{b}} * factor;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00369}00369 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00370}00370     \textcolor{keywordflow}{return} color;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00371}00371 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00372}00372 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00373}00373 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00379}\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a1ad42f0af617e224034fd49c16c47927}{00379}} \mbox{\hyperlink{classsf_1_1_color}{sf::Color}} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a1ad42f0af617e224034fd49c16c47927}{getTerrainColor}}(\textcolor{keywordtype}{float} elevation, \textcolor{keywordtype}{float} moisture)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00380}00380 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00381}00381     \mbox{\hyperlink{classsf_1_1_color}{sf::Color}} color =}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00382}00382         elevation < 0.11f ? \mbox{\hyperlink{classsf_1_1_color}{sf::Color}}(0, 0, elevation / 0.11f * 74.f + 181.0f) :}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00383}00383         elevation < 0.14f ? \mbox{\hyperlink{classsf_1_1_color}{sf::Color}}(std::pow((elevation -\/ 0.11f) / 0.03f, 0.3f) * 48.f, std::pow((elevation -\/ 0.11f) / 0.03f, 0.3f) * 48.f, 255) :}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00384}00384         elevation < 0.16f ? \mbox{\hyperlink{classsf_1_1_color}{sf::Color}}((elevation -\/ 0.14f) * 128.f / 0.02f + 48.f, (elevation -\/ 0.14f) * 128.f / 0.02f + 48.f, 127.0f + (0.16f -\/ elevation) * 128.f / 0.02f) :}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00385}00385         elevation < 0.17f ? \mbox{\hyperlink{classsf_1_1_color}{sf::Color}}(240, 230, 140) :}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00386}00386         elevation < 0.4f ? \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a65a1015eb90d87c84aceccaf36191cd7}{getLowlandsTerrainColor}}(moisture) :}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00387}00387         elevation < snowcapHeight ? \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a6ca3410461a3c4cebfd5542cc20e1b18}{getHighlandsTerrainColor}}(elevation, moisture) :}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00388}00388         \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a44ec648e02c291ec5ed3779cbdbd9c92}{getSnowcapTerrainColor}}(elevation, moisture);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00389}00389 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00390}00390         \textcolor{keywordflow}{return} color;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00391}00391 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00392}00392 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00393}00393 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00400}\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a15541afd9ffe894778a3cc084cec16d6}{00400}} \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a15541afd9ffe894778a3cc084cec16d6}{computeNormal}}(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{float} left, \textcolor{keywordtype}{float} right, \textcolor{keywordtype}{float} bottom, \textcolor{keywordtype}{float} top)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00401}00401 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00402}00402     \mbox{\hyperlink{classsf_1_1_vector3}{sf::Vector3f}} deltaX(1, 0, (std::pow(right, heightFlatten) -\/ std::pow(left, heightFlatten)) * heightFactor);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00403}00403     \mbox{\hyperlink{classsf_1_1_vector3}{sf::Vector3f}} deltaY(0, 1, (std::pow(top, heightFlatten) -\/ std::pow(bottom, heightFlatten)) * heightFactor);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00404}00404 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00405}00405     \mbox{\hyperlink{classsf_1_1_vector3}{sf::Vector3f}} crossProduct(}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00406}00406         deltaX.\mbox{\hyperlink{classsf_1_1_vector3_a6590d50ccb862c5efc5512e974e9b794}{y}} * deltaY.\mbox{\hyperlink{classsf_1_1_vector3_a2f36ab4b552c028e3a9734c1ad4df7d1}{z}} -\/ deltaX.\mbox{\hyperlink{classsf_1_1_vector3_a2f36ab4b552c028e3a9734c1ad4df7d1}{z}} * deltaY.\mbox{\hyperlink{classsf_1_1_vector3_a6590d50ccb862c5efc5512e974e9b794}{y}},}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00407}00407         deltaX.\mbox{\hyperlink{classsf_1_1_vector3_a2f36ab4b552c028e3a9734c1ad4df7d1}{z}} * deltaY.\mbox{\hyperlink{classsf_1_1_vector3_a3cb0c769390bc37c346bb1a69e510d16}{x}} -\/ deltaX.\mbox{\hyperlink{classsf_1_1_vector3_a3cb0c769390bc37c346bb1a69e510d16}{x}} * deltaY.\mbox{\hyperlink{classsf_1_1_vector3_a2f36ab4b552c028e3a9734c1ad4df7d1}{z}},}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00408}00408         deltaX.\mbox{\hyperlink{classsf_1_1_vector3_a3cb0c769390bc37c346bb1a69e510d16}{x}} * deltaY.\mbox{\hyperlink{classsf_1_1_vector3_a6590d50ccb862c5efc5512e974e9b794}{y}} -\/ deltaX.\mbox{\hyperlink{classsf_1_1_vector3_a6590d50ccb862c5efc5512e974e9b794}{y}} * deltaY.\mbox{\hyperlink{classsf_1_1_vector3_a3cb0c769390bc37c346bb1a69e510d16}{x}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00409}00409     );}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00410}00410 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00411}00411     \textcolor{comment}{// Scale cross product to make z component 1.0f so we can drop it}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00412}00412     crossProduct /= crossProduct.\mbox{\hyperlink{classsf_1_1_vector3_a2f36ab4b552c028e3a9734c1ad4df7d1}{z}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00413}00413 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00414}00414     \textcolor{comment}{// Return "{}compressed"{} normal}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00415}00415     \textcolor{keywordflow}{return} \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{sf::Vector2f}}(crossProduct.\mbox{\hyperlink{classsf_1_1_vector3_a3cb0c769390bc37c346bb1a69e510d16}{x}}, crossProduct.\mbox{\hyperlink{classsf_1_1_vector3_a6590d50ccb862c5efc5512e974e9b794}{y}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00416}00416 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00417}00417 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00418}00418 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00425}\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_ae562e6fdcd2292b778c8b88369c9290d}{00425}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_ae562e6fdcd2292b778c8b88369c9290d}{processWorkItem}}(std::vector<sf::Vertex>\& vertices, \textcolor{keyword}{const} WorkItem\& workItem)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00426}00426 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00427}00427     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} rowBlockSize = (resolutionY / blockCount) + 1;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00428}00428     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} rowStart = rowBlockSize * workItem.index;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00429}00429 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00430}00430     \textcolor{keywordflow}{if} (rowStart >= resolutionY)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00431}00431         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00432}00432 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00433}00433     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} rowEnd = std::min(rowStart + rowBlockSize, resolutionY);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00434}00434     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} rowCount = rowEnd -\/ rowStart;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00435}00435 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00436}00436     \textcolor{keyword}{const} \textcolor{keywordtype}{float} scalingFactorX = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(windowWidth) / \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(resolutionX);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00437}00437     \textcolor{keyword}{const} \textcolor{keywordtype}{float} scalingFactorY = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(windowHeight) / \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(resolutionY);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00438}00438 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00439}00439     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} y = rowStart; y < rowEnd; y++)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00440}00440     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00441}00441         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} x = 0; x < resolutionX; x++)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00442}00442         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00443}00443             \textcolor{keywordtype}{int} arrayIndexBase = ((y -\/ rowStart) * resolutionX + x) * 6;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00444}00444 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00445}00445             \textcolor{comment}{// Top left corner (first triangle)}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00446}00446             \textcolor{keywordflow}{if} (x > 0)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00447}00447             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00448}00448                 vertices[arrayIndexBase + 0] = vertices[arrayIndexBase -\/ 6 + 5];}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00449}00449             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00450}00450             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (y > rowStart)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00451}00451             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00452}00452                 vertices[arrayIndexBase + 0] = vertices[arrayIndexBase -\/ resolutionX * 6 + 1];}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00453}00453             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00454}00454             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00455}00455             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00456}00456                 vertices[arrayIndexBase + 0].position = \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{sf::Vector2f}}(x * scalingFactorX, y * scalingFactorY);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00457}00457                 vertices[arrayIndexBase + 0].color = \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a1ad42f0af617e224034fd49c16c47927}{getTerrainColor}}(\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_aef9257df379ba9fe79102d14dee5cdf9}{getElevation}}(x, y), \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a30c20a2787406000d031098087cd6744}{getMoisture}}(x, y));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00458}00458                 vertices[arrayIndexBase + 0].texCoords = \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a15541afd9ffe894778a3cc084cec16d6}{computeNormal}}(x, y, \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_aef9257df379ba9fe79102d14dee5cdf9}{getElevation}}(x -\/ 1, y), \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_aef9257df379ba9fe79102d14dee5cdf9}{getElevation}}(x + 1, y), \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_aef9257df379ba9fe79102d14dee5cdf9}{getElevation}}(x, y + 1), \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_aef9257df379ba9fe79102d14dee5cdf9}{getElevation}}(x, y -\/ 1));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00459}00459             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00460}00460 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00461}00461             \textcolor{comment}{// Bottom left corner (first triangle)}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00462}00462             \textcolor{keywordflow}{if} (x > 0)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00463}00463             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00464}00464                 vertices[arrayIndexBase + 1] = vertices[arrayIndexBase -\/ 6 + 2];}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00465}00465             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00466}00466             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00467}00467             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00468}00468                 vertices[arrayIndexBase + 1].position = \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{sf::Vector2f}}(x * scalingFactorX, (y + 1) * scalingFactorY);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00469}00469                 vertices[arrayIndexBase + 1].color = \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a1ad42f0af617e224034fd49c16c47927}{getTerrainColor}}(\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_aef9257df379ba9fe79102d14dee5cdf9}{getElevation}}(x, y + 1), \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a30c20a2787406000d031098087cd6744}{getMoisture}}(x, y + 1));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00470}00470                 vertices[arrayIndexBase + 1].texCoords = \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a15541afd9ffe894778a3cc084cec16d6}{computeNormal}}(x, y + 1, \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_aef9257df379ba9fe79102d14dee5cdf9}{getElevation}}(x -\/ 1, y + 1), \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_aef9257df379ba9fe79102d14dee5cdf9}{getElevation}}(x + 1, y + 1), \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_aef9257df379ba9fe79102d14dee5cdf9}{getElevation}}(x, y + 2), \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_aef9257df379ba9fe79102d14dee5cdf9}{getElevation}}(x, y));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00471}00471             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00472}00472 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00473}00473             \textcolor{comment}{// Bottom right corner (first triangle)}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00474}00474             vertices[arrayIndexBase + 2].position = \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{sf::Vector2f}}((x + 1) * scalingFactorX, (y + 1) * scalingFactorY);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00475}00475             vertices[arrayIndexBase + 2].color = \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a1ad42f0af617e224034fd49c16c47927}{getTerrainColor}}(\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_aef9257df379ba9fe79102d14dee5cdf9}{getElevation}}(x + 1, y + 1), \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a30c20a2787406000d031098087cd6744}{getMoisture}}(x + 1, y + 1));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00476}00476             vertices[arrayIndexBase + 2].texCoords = \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a15541afd9ffe894778a3cc084cec16d6}{computeNormal}}(x + 1, y + 1, \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_aef9257df379ba9fe79102d14dee5cdf9}{getElevation}}(x, y + 1), \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_aef9257df379ba9fe79102d14dee5cdf9}{getElevation}}(x + 2, y + 1), \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_aef9257df379ba9fe79102d14dee5cdf9}{getElevation}}(x + 1, y + 2), \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_aef9257df379ba9fe79102d14dee5cdf9}{getElevation}}(x + 1, y));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00477}00477 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00478}00478             \textcolor{comment}{// Top left corner (second triangle)}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00479}00479             vertices[arrayIndexBase + 3] = vertices[arrayIndexBase + 0];}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00480}00480 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00481}00481             \textcolor{comment}{// Bottom right corner (second triangle)}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00482}00482             vertices[arrayIndexBase + 4] = vertices[arrayIndexBase + 2];}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00483}00483 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00484}00484             \textcolor{comment}{// Top right corner (second triangle)}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00485}00485             \textcolor{keywordflow}{if} (y > rowStart)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00486}00486             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00487}00487                 vertices[arrayIndexBase + 5] = vertices[arrayIndexBase -\/ resolutionX * 6 + 2];}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00488}00488             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00489}00489             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00490}00490             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00491}00491                 vertices[arrayIndexBase + 5].position = \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{sf::Vector2f}}((x + 1) * scalingFactorX, y * scalingFactorY);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00492}00492                 vertices[arrayIndexBase + 5].color = \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a1ad42f0af617e224034fd49c16c47927}{getTerrainColor}}(\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_aef9257df379ba9fe79102d14dee5cdf9}{getElevation}}(x + 1, y), \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a30c20a2787406000d031098087cd6744}{getMoisture}}(x + 1, y));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00493}00493                 vertices[arrayIndexBase + 5].texCoords = \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a15541afd9ffe894778a3cc084cec16d6}{computeNormal}}(x + 1, y, \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_aef9257df379ba9fe79102d14dee5cdf9}{getElevation}}(x, y), \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_aef9257df379ba9fe79102d14dee5cdf9}{getElevation}}(x + 2, y), \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_aef9257df379ba9fe79102d14dee5cdf9}{getElevation}}(x + 1, y + 1), \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_aef9257df379ba9fe79102d14dee5cdf9}{getElevation}}(x + 1, y -\/ 1));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00494}00494             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00495}00495         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00496}00496     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00497}00497 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00498}00498     \textcolor{comment}{// Copy the resulting geometry from our thread-\/local buffer into the target buffer}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00499}00499     std::memcpy(workItem.targetBuffer + (resolutionX * rowStart * 6), \&vertices[0], \textcolor{keyword}{sizeof}(\mbox{\hyperlink{classsf_1_1_vertex}{sf::Vertex}}) * resolutionX * rowCount * 6);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00500}00500 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00501}00501 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00502}00502 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00509}\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a58030615808181acc26b9ea47e0405ef}{00509}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a58030615808181acc26b9ea47e0405ef}{threadFunction}}()}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00510}00510 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00511}00511     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} rowBlockSize = (resolutionY / blockCount) + 1;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00512}00512 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00513}00513     std::vector<sf::Vertex> vertices(resolutionX * rowBlockSize * 6);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00514}00514 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00515}00515     WorkItem workItem = \{0, 0\};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00516}00516 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00517}00517     \textcolor{comment}{// Loop until the application exits}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00518}00518     \textcolor{keywordflow}{for} (;;)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00519}00519     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00520}00520         workItem.targetBuffer = 0;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00521}00521 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00522}00522         \textcolor{comment}{// Check if there are new work items in the queue}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00523}00523         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00524}00524             \mbox{\hyperlink{classsf_1_1_lock}{sf::Lock}} lock(workQueueMutex);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00525}00525 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00526}00526             \textcolor{keywordflow}{if} (!workPending)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00527}00527                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00528}00528 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00529}00529             \textcolor{keywordflow}{if} (!workQueue.empty())}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00530}00530             \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00531}00531                 workItem = workQueue.front();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00532}00532                 workQueue.pop\_front();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00533}00533             \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00534}00534         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00535}00535 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00536}00536         \textcolor{comment}{// If we didn't receive a new work item, keep looping}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00537}00537         \textcolor{keywordflow}{if} (!workItem.targetBuffer)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00538}00538         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00539}00539             \mbox{\hyperlink{group__system_ga2f2620831533dee0ed432ed982342e09}{sf::sleep}}(sf::milliseconds(10));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00540}00540 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00541}00541             \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00542}00542         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00543}00543 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00544}00544         \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_ae562e6fdcd2292b778c8b88369c9290d}{processWorkItem}}(vertices, workItem);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00545}00545 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00546}00546         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00547}00547             \mbox{\hyperlink{classsf_1_1_lock}{sf::Lock}} lock(workQueueMutex);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00548}00548 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00549}00549             -\/-\/pendingWorkCount;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00550}00550         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00551}00551     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00552}00552 \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00553}00553 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00554}00554 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00561}\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a7f813e30ba292a1be5959dffd26a63c1}{00561}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_a7f813e30ba292a1be5959dffd26a63c1}{generateTerrain}}(\mbox{\hyperlink{classsf_1_1_vertex}{sf::Vertex}}* buffer)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00562}00562 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00563}00563     bufferUploadPending = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00564}00564 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00565}00565     \textcolor{comment}{// Make sure the work queue is empty before queuing new work}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00566}00566     \textcolor{keywordflow}{for} (;;)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00567}00567     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00568}00568         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00569}00569             \mbox{\hyperlink{classsf_1_1_lock}{sf::Lock}} lock(workQueueMutex);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00570}00570 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00571}00571             \textcolor{keywordflow}{if} (workQueue.empty())}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00572}00572                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00573}00573         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00574}00574 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00575}00575         \mbox{\hyperlink{group__system_ga2f2620831533dee0ed432ed982342e09}{sf::sleep}}(sf::milliseconds(10));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00576}00576     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00577}00577 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00578}00578     \textcolor{comment}{// Queue all the new work items}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00579}00579     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00580}00580         \mbox{\hyperlink{classsf_1_1_lock}{sf::Lock}} lock(workQueueMutex);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00581}00581 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00582}00582         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < blockCount; i++)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00583}00583         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00584}00584             WorkItem workItem = \{buffer, i\};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00585}00585             workQueue.push\_back(workItem);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00586}00586         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00587}00587 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00588}00588         pendingWorkCount = blockCount;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00589}00589     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2island_2_island_8cpp_source_l00590}00590 \}}
+
+\end{DoxyCode}

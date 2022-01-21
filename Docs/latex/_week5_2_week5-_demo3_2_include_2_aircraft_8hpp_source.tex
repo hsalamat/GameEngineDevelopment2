@@ -1,0 +1,39 @@
+\hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source}{}\doxysection{Aircraft.\+hpp}
+\label{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source}\index{Week5/Week5-\/Demo3/Include/Aircraft.hpp@{Week5/Week5-\/Demo3/Include/Aircraft.hpp}}
+\mbox{\hyperlink{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source_l00003}00003 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_include_2_entity_8hpp}{Entity.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_include_2_resource_identifiers_8hpp}{ResourceIdentifiers.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source_l00005}00005 \textcolor{preprocessor}{\#include <SFML/Graphics/Sprite.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source_l00008}00008 \textcolor{keyword}{class }\mbox{\hyperlink{class_aircraft}{Aircraft}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_entity}{Entity}}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source_l00009}00009 \{}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source_l00010}00010     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source_l00011}\mbox{\hyperlink{class_aircraft_a7dae28542933e088032b753600046acd}{00011}}         \textcolor{keyword}{enum} \mbox{\hyperlink{class_aircraft_a7dae28542933e088032b753600046acd}{Type}}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source_l00012}00012         \{}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source_l00013}00013             \mbox{\hyperlink{class_aircraft_a7dae28542933e088032b753600046acda9ea6cee76436b5677fc48c31cd9b4ef2}{Eagle}},}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source_l00014}00014             \mbox{\hyperlink{class_aircraft_a7dae28542933e088032b753600046acda472af3da5939839b5a4b1e041bbd03ce}{Raptor}},}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source_l00015}00015         \};}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source_l00018}00018     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source_l00019}\mbox{\hyperlink{class_aircraft_ae42f913aa28db8c4657e515a583af1d2}{00019}}                             \mbox{\hyperlink{class_aircraft_ae42f913aa28db8c4657e515a583af1d2}{Aircraft}}(\mbox{\hyperlink{class_aircraft_a7dae28542933e088032b753600046acd}{Type}} type, \textcolor{keyword}{const} \mbox{\hyperlink{class_texture_holder}{TextureHolder}}\& textures);}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source_l00020}\mbox{\hyperlink{class_aircraft_a3368ebbc1797f9c60c4c37ae94ca4fa7}{00020}}                             \textcolor{keyword}{virtual} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}    \mbox{\hyperlink{class_aircraft_a3368ebbc1797f9c60c4c37ae94ca4fa7}{getCategory}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source_l00024}00024     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source_l00025}\mbox{\hyperlink{class_aircraft_a6ee5fd1db8c51f4a0d794168295e83b1}{00025}}         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}        \mbox{\hyperlink{class_aircraft_a6ee5fd1db8c51f4a0d794168295e83b1}{drawCurrent}}(\mbox{\hyperlink{classsf_1_1_render_target}{sf::RenderTarget}}\& target, \mbox{\hyperlink{classsf_1_1_render_states}{sf::RenderStates}} states) \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source_l00028}00028     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source_l00029}00029         \mbox{\hyperlink{class_aircraft_a7dae28542933e088032b753600046acd}{Type}}                \mbox{\hyperlink{class_aircraft_a4228cdd5cf4f8b1b41ad481446b7ee4c}{mType}};}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source_l00030}00030         \mbox{\hyperlink{classsf_1_1_sprite}{sf::Sprite}}            \mbox{\hyperlink{class_aircraft_a29b30f294572850c57961753ecae302e}{mSprite}};}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source_l00031}00031 \};}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo3_2_include_2_aircraft_8hpp_source_l00033}00033 }
+
+\end{DoxyCode}

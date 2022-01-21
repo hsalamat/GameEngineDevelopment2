@@ -1,0 +1,41 @@
+\hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source}{}\doxysection{Music\+Player.\+hpp}
+\label{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source}\index{Week12/Week12-\/Demo2-\/SoundEffect/Include/MusicPlayer.hpp@{Week12/Week12-\/Demo2-\/SoundEffect/Include/MusicPlayer.hpp}}
+\mbox{\hyperlink{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#ifndef BOOK\_MUSICPLAYER\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#define BOOK\_MUSICPLAYER\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_include_2_resource_holder_8hpp}{ResourceHolder.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00005}00005 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_include_2_resource_identifiers_8hpp}{ResourceIdentifiers.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00007}00007 \textcolor{preprocessor}{\#include <SFML/System/NonCopyable.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00008}00008 \textcolor{preprocessor}{\#include <SFML/Audio/Music.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00010}00010 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00011}00011 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00014}00014 \textcolor{keyword}{class }\mbox{\hyperlink{class_music_player}{MusicPlayer}} : \textcolor{keyword}{private} \mbox{\hyperlink{classsf_1_1_non_copyable}{sf::NonCopyable}}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00015}00015 \{}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00016}00016 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00017}\mbox{\hyperlink{class_music_player_a157211d92ff78fe87fdef2bb77a2b5fa}{00017}}     \mbox{\hyperlink{class_music_player_a157211d92ff78fe87fdef2bb77a2b5fa}{MusicPlayer}}();}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00019}\mbox{\hyperlink{class_music_player_a8a10a649154c8b7af3031c5f36cb53ca}{00019}}     \textcolor{keywordtype}{void}                        \mbox{\hyperlink{class_music_player_a8a10a649154c8b7af3031c5f36cb53ca}{play}}(\mbox{\hyperlink{namespace_music_ad5e0c8c2e2e7bdcbffbb125051531b86}{Music::ID}} theme);}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00020}\mbox{\hyperlink{class_music_player_a54e47a9e937730493d886aa5624c44d1}{00020}}     \textcolor{keywordtype}{void}                        \mbox{\hyperlink{class_music_player_a54e47a9e937730493d886aa5624c44d1}{stop}}();}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00022}\mbox{\hyperlink{class_music_player_a59b313a9a9eb850e590f9c6555ad80cf}{00022}}     \textcolor{keywordtype}{void}                        \mbox{\hyperlink{class_music_player_a59b313a9a9eb850e590f9c6555ad80cf}{setPaused}}(\textcolor{keywordtype}{bool} paused);}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00023}\mbox{\hyperlink{class_music_player_a361cbcbfb31d3c0c841d0b67a79c5cdd}{00023}}     \textcolor{keywordtype}{void}                        \mbox{\hyperlink{class_music_player_a361cbcbfb31d3c0c841d0b67a79c5cdd}{setVolume}}(\textcolor{keywordtype}{float} volume);}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00026}00026 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00027}00027     \mbox{\hyperlink{classsf_1_1_music}{sf::Music}}                          \mbox{\hyperlink{class_music_player_ad18cdf29e5ebac13d62185a9e1b646d5}{mMusic}};}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00028}00028     std::map<Music::ID, std::string>    \mbox{\hyperlink{class_music_player_a56ec3cf00ff836dc378dd228443fbc87}{mFilenames}};}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00029}00029     \textcolor{keywordtype}{float}                               \mbox{\hyperlink{class_music_player_ad4d026091511aa086cd96047c1adfd97}{mVolume}};}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00030}00030 \};}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00032}00032 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// BOOK\_MUSICPLAYER\_HPP}}
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{_week12_2_week12-_demo2-_sound_effect_2_include_2_music_player_8hpp_source_l00035}00035 }
+
+\end{DoxyCode}

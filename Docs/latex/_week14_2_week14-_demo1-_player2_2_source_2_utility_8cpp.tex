@@ -1,0 +1,138 @@
+\hypertarget{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp}{}\doxysection{Week14/\+Week14-\/\+Demo1-\/\+Player2/\+Source/\+Utility.cpp File Reference}
+\label{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp}\index{Week14/Week14-\/Demo1-\/Player2/Source/Utility.cpp@{Week14/Week14-\/Demo1-\/Player2/Source/Utility.cpp}}
+{\ttfamily \#include $<$Utility.\+hpp$>$}\newline
+{\ttfamily \#include $<$Animation.\+hpp$>$}\newline
+{\ttfamily \#include $<$SFML/\+Graphics/\+Sprite.\+hpp$>$}\newline
+{\ttfamily \#include $<$SFML/\+Graphics/\+Text.\+hpp$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_a4f23c18c9bcb9b6f092b353b5d7aedc0}{BOOK\+\_\+\+KEYTOSTRING\+\_\+\+CASE}}(KEY)~case sf\+::\+Keyboard\+::\+KEY\+: return \#KEY;
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_a058a75de06831393a659b98a2cddd32f}{to\+String}} (\mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142}{sf\+::\+Keyboard\+::\+Key}} key)
+\item 
+void \mbox{\hyperlink{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_add3ffea68d586813ee6765c3bc796d35}{center\+Origin}} (\mbox{\hyperlink{classsf_1_1_sprite}{sf\+::\+Sprite}} \&sprite)
+\item 
+void \mbox{\hyperlink{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_a16daedd65940272fd178b8fd30bddfe7}{center\+Origin}} (\mbox{\hyperlink{classsf_1_1_text}{sf\+::\+Text}} \&text)
+\item 
+void \mbox{\hyperlink{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_aa355b1278dc04b420d84ea9fe4255bbb}{center\+Origin}} (\mbox{\hyperlink{class_animation}{Animation}} \&animation)
+\item 
+float \mbox{\hyperlink{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_a7f31bacf5d96c36956449854f3e18715}{to\+Degree}} (float radian)
+\item 
+float \mbox{\hyperlink{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_ae54253eaf1757c529de9ffcbf6c28e47}{to\+Radian}} (float degree)
+\item 
+int \mbox{\hyperlink{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_a2b5c63e659d4c60c2db5b576d3bc3bf1}{random\+Int}} (int exclusive\+Max)
+\item 
+float \mbox{\hyperlink{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_a658e7a578e1b8e49820b0691fd6993d6}{length}} (\mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{sf\+::\+Vector2f}} vector)
+\item 
+\mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{sf\+::\+Vector2f}} \mbox{\hyperlink{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_a7628de502bf3e224f8d294d31ccda209}{unit\+Vector}} (\mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{sf\+::\+Vector2f}} vector)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_a4f23c18c9bcb9b6f092b353b5d7aedc0}\label{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_a4f23c18c9bcb9b6f092b353b5d7aedc0}} 
+\index{Utility.cpp@{Utility.cpp}!BOOK\_KEYTOSTRING\_CASE@{BOOK\_KEYTOSTRING\_CASE}}
+\index{BOOK\_KEYTOSTRING\_CASE@{BOOK\_KEYTOSTRING\_CASE}!Utility.cpp@{Utility.cpp}}
+\doxysubsubsection{\texorpdfstring{BOOK\_KEYTOSTRING\_CASE}{BOOK\_KEYTOSTRING\_CASE}}
+{\footnotesize\ttfamily \#define BOOK\+\_\+\+KEYTOSTRING\+\_\+\+CASE(\begin{DoxyParamCaption}\item[{}]{KEY }\end{DoxyParamCaption})~case sf\+::\+Keyboard\+::\+KEY\+: return \#KEY;}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_aa355b1278dc04b420d84ea9fe4255bbb}\label{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_aa355b1278dc04b420d84ea9fe4255bbb}} 
+\index{Utility.cpp@{Utility.cpp}!centerOrigin@{centerOrigin}}
+\index{centerOrigin@{centerOrigin}!Utility.cpp@{Utility.cpp}}
+\doxysubsubsection{\texorpdfstring{centerOrigin()}{centerOrigin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void center\+Origin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animation}{Animation}} \&}]{animation }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_source_l00149}{149}} of file \mbox{\hyperlink{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_source}{Utility.\+cpp}}.
+
+\mbox{\Hypertarget{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_add3ffea68d586813ee6765c3bc796d35}\label{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_add3ffea68d586813ee6765c3bc796d35}} 
+\index{Utility.cpp@{Utility.cpp}!centerOrigin@{centerOrigin}}
+\index{centerOrigin@{centerOrigin}!Utility.cpp@{Utility.cpp}}
+\doxysubsubsection{\texorpdfstring{centerOrigin()}{centerOrigin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void center\+Origin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_sprite}{sf\+::\+Sprite}} \&}]{sprite }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_source_l00137}{137}} of file \mbox{\hyperlink{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_source}{Utility.\+cpp}}.
+
+\mbox{\Hypertarget{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_a16daedd65940272fd178b8fd30bddfe7}\label{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_a16daedd65940272fd178b8fd30bddfe7}} 
+\index{Utility.cpp@{Utility.cpp}!centerOrigin@{centerOrigin}}
+\index{centerOrigin@{centerOrigin}!Utility.cpp@{Utility.cpp}}
+\doxysubsubsection{\texorpdfstring{centerOrigin()}{centerOrigin()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void center\+Origin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_text}{sf\+::\+Text}} \&}]{text }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_source_l00143}{143}} of file \mbox{\hyperlink{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_source}{Utility.\+cpp}}.
+
+\mbox{\Hypertarget{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_a658e7a578e1b8e49820b0691fd6993d6}\label{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_a658e7a578e1b8e49820b0691fd6993d6}} 
+\index{Utility.cpp@{Utility.cpp}!length@{length}}
+\index{length@{length}!Utility.cpp@{Utility.cpp}}
+\doxysubsubsection{\texorpdfstring{length()}{length()}}
+{\footnotesize\ttfamily float length (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{sf\+::\+Vector2f}}}]{vector }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_source_l00171}{171}} of file \mbox{\hyperlink{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_source}{Utility.\+cpp}}.
+
+\mbox{\Hypertarget{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_a2b5c63e659d4c60c2db5b576d3bc3bf1}\label{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_a2b5c63e659d4c60c2db5b576d3bc3bf1}} 
+\index{Utility.cpp@{Utility.cpp}!randomInt@{randomInt}}
+\index{randomInt@{randomInt}!Utility.cpp@{Utility.cpp}}
+\doxysubsubsection{\texorpdfstring{randomInt()}{randomInt()}}
+{\footnotesize\ttfamily int random\+Int (\begin{DoxyParamCaption}\item[{int}]{exclusive\+Max }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_source_l00165}{165}} of file \mbox{\hyperlink{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_source}{Utility.\+cpp}}.
+
+\mbox{\Hypertarget{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_a7f31bacf5d96c36956449854f3e18715}\label{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_a7f31bacf5d96c36956449854f3e18715}} 
+\index{Utility.cpp@{Utility.cpp}!toDegree@{toDegree}}
+\index{toDegree@{toDegree}!Utility.cpp@{Utility.cpp}}
+\doxysubsubsection{\texorpdfstring{toDegree()}{toDegree()}}
+{\footnotesize\ttfamily float to\+Degree (\begin{DoxyParamCaption}\item[{float}]{radian }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_source_l00155}{155}} of file \mbox{\hyperlink{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_source}{Utility.\+cpp}}.
+
+\mbox{\Hypertarget{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_ae54253eaf1757c529de9ffcbf6c28e47}\label{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_ae54253eaf1757c529de9ffcbf6c28e47}} 
+\index{Utility.cpp@{Utility.cpp}!toRadian@{toRadian}}
+\index{toRadian@{toRadian}!Utility.cpp@{Utility.cpp}}
+\doxysubsubsection{\texorpdfstring{toRadian()}{toRadian()}}
+{\footnotesize\ttfamily float to\+Radian (\begin{DoxyParamCaption}\item[{float}]{degree }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_source_l00160}{160}} of file \mbox{\hyperlink{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_source}{Utility.\+cpp}}.
+
+\mbox{\Hypertarget{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_a058a75de06831393a659b98a2cddd32f}\label{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_a058a75de06831393a659b98a2cddd32f}} 
+\index{Utility.cpp@{Utility.cpp}!toString@{toString}}
+\index{toString@{toString}!Utility.cpp@{Utility.cpp}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily std\+::string to\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142}{sf\+::\+Keyboard\+::\+Key}}}]{key }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_source}{Utility.\+cpp}}.
+
+\mbox{\Hypertarget{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_a7628de502bf3e224f8d294d31ccda209}\label{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_a7628de502bf3e224f8d294d31ccda209}} 
+\index{Utility.cpp@{Utility.cpp}!unitVector@{unitVector}}
+\index{unitVector@{unitVector}!Utility.cpp@{Utility.cpp}}
+\doxysubsubsection{\texorpdfstring{unitVector()}{unitVector()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{sf\+::\+Vector2f}} unit\+Vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{sf\+::\+Vector2f}}}]{vector }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_source_l00176}{176}} of file \mbox{\hyperlink{_week14_2_week14-_demo1-_player2_2_source_2_utility_8cpp_source}{Utility.\+cpp}}.
+

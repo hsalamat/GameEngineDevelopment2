@@ -1,0 +1,109 @@
+\hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source}{}\doxysection{Client.\+cpp}
+\label{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source}\index{SFML-\/2.5.1/examples/voip/Client.cpp@{SFML-\/2.5.1/examples/voip/Client.cpp}}
+\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00003}00003 \textcolor{comment}{// Headers}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00005}00005 \textcolor{comment}{}\textcolor{preprocessor}{\#include <SFML/Audio.hpp>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <SFML/Network.hpp>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00010}\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_af0c73c991a246dd292263c32ee190547}{00010}} \textcolor{keyword}{const} \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{sf::Uint8}} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_af0c73c991a246dd292263c32ee190547}{audioData}}   = 1;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00011}\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_aa87d7c0acaf7e7354fee28a093fc3176}{00011}} \textcolor{keyword}{const} \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{sf::Uint8}} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_aa87d7c0acaf7e7354fee28a093fc3176}{endOfStream}} = 2;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00018}\mbox{\hyperlink{class_network_recorder}{00018}} \textcolor{keyword}{class }\mbox{\hyperlink{class_network_recorder}{NetworkRecorder}} : \textcolor{keyword}{public} \mbox{\hyperlink{classsf_1_1_sound_recorder}{sf::SoundRecorder}}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00019}00019 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00020}00020 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00029}\mbox{\hyperlink{class_network_recorder_a30777f6c7a72b29e5230d9eb2033c92b}{00029}}     \mbox{\hyperlink{class_network_recorder_a30777f6c7a72b29e5230d9eb2033c92b}{NetworkRecorder}}(\textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_ip_address}{sf::IpAddress}}\& host, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} port) :}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00030}00030     \mbox{\hyperlink{class_network_recorder_a4c1fcf67d73d1891676deff267ab8ef1}{m\_host}}(host),}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00031}00031     \mbox{\hyperlink{class_network_recorder_ab30fc2cd0feb15190bae786da926a869}{m\_port}}(port)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00032}00032     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00033}00033     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00041}\mbox{\hyperlink{class_network_recorder_a3df2a0d4bc3576cd8c745d34bf2cdfe2}{00041}}     \mbox{\hyperlink{class_network_recorder_a3df2a0d4bc3576cd8c745d34bf2cdfe2}{\string~NetworkRecorder}}()}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00042}00042     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00043}00043         \textcolor{comment}{// Make sure to stop the recording thread}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00044}00044         \mbox{\hyperlink{classsf_1_1_sound_recorder_a8d9c8346aa9aa409cfed4a1101159c4c}{stop}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00045}00045     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00047}00047 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00053}\mbox{\hyperlink{class_network_recorder_aeab34631d5cd58cb42640152b726e1c0}{00053}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_network_recorder_aeab34631d5cd58cb42640152b726e1c0}{onStart}}()}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00054}00054     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00055}00055         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_network_recorder_a74ad89a9fd640f242c817e9e26ba74a8}{m\_socket}}.\mbox{\hyperlink{classsf_1_1_tcp_socket_a68cd42d5ab70ab54b16787f555951c40}{connect}}(\mbox{\hyperlink{class_network_recorder_a4c1fcf67d73d1891676deff267ab8ef1}{m\_host}}, \mbox{\hyperlink{class_network_recorder_ab30fc2cd0feb15190bae786da926a869}{m\_port}}) == \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca6b3d5ba897b6df8ebda86c823b30348a}{sf::Socket::Done}})}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00056}00056         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00057}00057             std::cout << \textcolor{stringliteral}{"{}Connected to server "{}} << \mbox{\hyperlink{class_network_recorder_a4c1fcf67d73d1891676deff267ab8ef1}{m\_host}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00058}00058             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00059}00059         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00060}00060         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00061}00061         \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00062}00062             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00063}00063         \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00064}00064     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00070}\mbox{\hyperlink{class_network_recorder_aeba28ae4824715c651cf6b2323044fe2}{00070}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_network_recorder_aeba28ae4824715c651cf6b2323044fe2}{onProcessSamples}}(\textcolor{keyword}{const} \mbox{\hyperlink{namespacesf_a3c8e10435e2a310a7741755e66b5c94e}{sf::Int16}}* samples, std::size\_t sampleCount)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00071}00071     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00072}00072         \textcolor{comment}{// Pack the audio samples into a network packet}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00073}00073         \mbox{\hyperlink{classsf_1_1_packet}{sf::Packet}} packet;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00074}00074         packet << \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_af0c73c991a246dd292263c32ee190547}{audioData}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00075}00075         packet.\mbox{\hyperlink{classsf_1_1_packet_a7dd6e429b87520008326c4d71f1cf011}{append}}(samples, sampleCount * \textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespacesf_a3c8e10435e2a310a7741755e66b5c94e}{sf::Int16}}));}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00077}00077         \textcolor{comment}{// Send the audio packet to the server}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00078}00078         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_network_recorder_a74ad89a9fd640f242c817e9e26ba74a8}{m\_socket}}.\mbox{\hyperlink{classsf_1_1_tcp_socket_affce26ab3bcc4f5b9269dad79db544c0}{send}}(packet) == \mbox{\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dca6b3d5ba897b6df8ebda86c823b30348a}{sf::Socket::Done}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00079}00079     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00085}\mbox{\hyperlink{class_network_recorder_a3ae6d62a6b72c7d54ce7b0d45d8291fa}{00085}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_network_recorder_a3ae6d62a6b72c7d54ce7b0d45d8291fa}{onStop}}()}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00086}00086     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00087}00087         \textcolor{comment}{// Send a "{}end-\/of-\/stream"{} packet}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00088}00088         \mbox{\hyperlink{classsf_1_1_packet}{sf::Packet}} packet;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00089}00089         packet << \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_aa87d7c0acaf7e7354fee28a093fc3176}{endOfStream}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00090}00090         \mbox{\hyperlink{class_network_recorder_a74ad89a9fd640f242c817e9e26ba74a8}{m\_socket}}.\mbox{\hyperlink{classsf_1_1_tcp_socket_affce26ab3bcc4f5b9269dad79db544c0}{send}}(packet);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00092}00092         \textcolor{comment}{// Close the socket}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00093}00093         \mbox{\hyperlink{class_network_recorder_a74ad89a9fd640f242c817e9e26ba74a8}{m\_socket}}.\mbox{\hyperlink{classsf_1_1_tcp_socket_ac18f518a9be3d6be5e74b9404c253c1e}{disconnect}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00094}00094     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00097}00097     \textcolor{comment}{// Member data}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00099}\mbox{\hyperlink{class_network_recorder_a4c1fcf67d73d1891676deff267ab8ef1}{00099}} \textcolor{comment}{}    \mbox{\hyperlink{classsf_1_1_ip_address}{sf::IpAddress}}  \mbox{\hyperlink{class_network_recorder_a4c1fcf67d73d1891676deff267ab8ef1}{m\_host}};   }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00100}\mbox{\hyperlink{class_network_recorder_ab30fc2cd0feb15190bae786da926a869}{00100}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \mbox{\hyperlink{class_network_recorder_ab30fc2cd0feb15190bae786da926a869}{m\_port}};   }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00101}\mbox{\hyperlink{class_network_recorder_a74ad89a9fd640f242c817e9e26ba74a8}{00101}}     \mbox{\hyperlink{classsf_1_1_tcp_socket}{sf::TcpSocket}}  \mbox{\hyperlink{class_network_recorder_a74ad89a9fd640f242c817e9e26ba74a8}{m\_socket}}; }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00102}00102 \};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00103}00103 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00104}00104 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00110}\mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_af2fb0d243b0b7a8bcac7074dd83078c9}{00110}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_af2fb0d243b0b7a8bcac7074dd83078c9}{doClient}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} port)}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00111}00111 \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00112}00112     \textcolor{comment}{// Check that the device can capture audio}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00113}00113     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classsf_1_1_sound_recorder_aab2bd0fee9e48d6cfd449b1cb078ce5a}{sf::SoundRecorder::isAvailable}}())}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00114}00114     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00115}00115         std::cout << \textcolor{stringliteral}{"{}Sorry, audio capture is not supported by your system"{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00116}00116         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00117}00117     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00118}00118 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00119}00119     \textcolor{comment}{// Ask for server address}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00120}00120     \mbox{\hyperlink{classsf_1_1_ip_address}{sf::IpAddress}} server;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00121}00121     \textcolor{keywordflow}{do}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00122}00122     \{}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00123}00123         std::cout << \textcolor{stringliteral}{"{}Type address or name of the server to connect to: "{}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00124}00124         std::cin  >> server;}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00125}00125     \}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00126}00126     \textcolor{keywordflow}{while} (server == \mbox{\hyperlink{classsf_1_1_ip_address_af95b0353e632372b5266d6227bc0e3ec}{sf::IpAddress::None}});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00127}00127 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00128}00128     \textcolor{comment}{// Create an instance of our custom recorder}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00129}00129     \mbox{\hyperlink{class_network_recorder}{NetworkRecorder}} recorder(server, port);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00130}00130 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00131}00131     \textcolor{comment}{// Wait for user input...}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00132}00132     std::cin.ignore(10000, \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00133}00133     std::cout << \textcolor{stringliteral}{"{}Press enter to start recording audio"{}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00134}00134     std::cin.ignore(10000, \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00135}00135 }
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00136}00136     \textcolor{comment}{// Start capturing audio data}}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00137}00137     recorder.\mbox{\hyperlink{classsf_1_1_sound_recorder_a715f0fd2f228c83d79aaedca562ae51f}{start}}(44100);}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00138}00138     std::cout << \textcolor{stringliteral}{"{}Recording... press enter to stop"{}};}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00139}00139     std::cin.ignore(10000, \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00140}00140     recorder.\mbox{\hyperlink{classsf_1_1_sound_recorder_a8d9c8346aa9aa409cfed4a1101159c4c}{stop}}();}
+\DoxyCodeLine{\Hypertarget{_s_f_m_l-2_85_81_2examples_2voip_2_client_8cpp_source_l00141}00141 \}}
+
+\end{DoxyCode}

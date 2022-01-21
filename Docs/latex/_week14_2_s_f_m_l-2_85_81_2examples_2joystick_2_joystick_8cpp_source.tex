@@ -1,0 +1,236 @@
+\hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source}{}\doxysection{Joystick.\+cpp}
+\label{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source}\index{Week14/SFML-\/2.5.1/examples/joystick/Joystick.cpp@{Week14/SFML-\/2.5.1/examples/joystick/Joystick.cpp}}
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00003}00003 \textcolor{comment}{// Headers}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00005}00005 \textcolor{comment}{}\textcolor{preprocessor}{\#include <SFML/Graphics.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00010}00010 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00013}00013 \textcolor{keyword}{namespace}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00014}00014 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00015}00015     \textcolor{keyword}{struct }JoystickObject}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00016}00016     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00017}00017         \mbox{\hyperlink{classsf_1_1_text}{sf::Text}} label;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00018}00018         \mbox{\hyperlink{classsf_1_1_text}{sf::Text}} value;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00019}00019     \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00021}00021     \textcolor{keyword}{typedef} std::map<std::string, JoystickObject> Texts;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00022}00022     Texts texts;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00023}00023     std::ostringstream sstr;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00024}00024     \textcolor{keywordtype}{float} threshold = 0.1f;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00026}00026     \textcolor{comment}{// Axes labels in as C strings}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00027}00027     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* axislabels[] = \{\textcolor{stringliteral}{"{}X"{}}, \textcolor{stringliteral}{"{}Y"{}}, \textcolor{stringliteral}{"{}Z"{}}, \textcolor{stringliteral}{"{}R"{}}, \textcolor{stringliteral}{"{}U"{}}, \textcolor{stringliteral}{"{}V"{}}, \textcolor{stringliteral}{"{}PovX"{}}, \textcolor{stringliteral}{"{}PovY"{}}\};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00029}00029     \textcolor{comment}{// Helper to set text entries to a specified value}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00030}00030     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00031}00031     \textcolor{keywordtype}{void} set(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* label, \textcolor{keyword}{const} T\& value)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00032}00032     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00033}00033         sstr.str(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00034}00034         sstr << value;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00035}00035         texts[label].value.\mbox{\hyperlink{classsf_1_1_text_a7d3b3359f286fd9503d1ced25b7b6c33}{setString}}(sstr.str());}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00036}00036     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00038}00038     \textcolor{comment}{// Update joystick identification}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00039}00039     \textcolor{keywordtype}{void} updateIdentification(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00040}00040     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00041}00041         sstr.str(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00042}00042         sstr << \textcolor{stringliteral}{"{}Joystick "{}} << index << \textcolor{stringliteral}{"{}:"{}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00043}00043         texts[\textcolor{stringliteral}{"{}ID"{}}].label.setString(sstr.str());}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00044}00044         texts[\textcolor{stringliteral}{"{}ID"{}}].value.setString(\mbox{\hyperlink{classsf_1_1_joystick_aa917c9435330e6e0368d3893672d1b74}{sf::Joystick::getIdentification}}(index).name);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00045}00045     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00047}00047     \textcolor{comment}{// Update joystick axes}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00048}00048     \textcolor{keywordtype}{void} updateAxes(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00049}00049     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00050}00050         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{classsf_1_1_joystick_a9b3cbac99980fc1240a61584e7c318bca09f1cd81cc403e481e06a7cf15a18877}{sf::Joystick::AxisCount}}; ++j)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00051}00051         \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00052}00052             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classsf_1_1_joystick_a268e8f2a11ae6af4a47c727cb4ab4d95}{sf::Joystick::hasAxis}}(index, \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7}{sf::Joystick::Axis}}\textcolor{keyword}{>}(j)))}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00053}00053                 set(axislabels[j], \mbox{\hyperlink{classsf_1_1_joystick_aea4930193331df1851b709f3060ba58b}{sf::Joystick::getAxisPosition}}(index, \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7}{sf::Joystick::Axis}}\textcolor{keyword}{>}(j)));}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00054}00054         \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00055}00055     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00057}00057     \textcolor{comment}{// Update joystick buttons}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00058}00058     \textcolor{keywordtype}{void} updateButtons(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00059}00059     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00060}00060         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{classsf_1_1_joystick_a4de9f445c6582bfe9f0873f695682885}{sf::Joystick::getButtonCount}}(index); ++j)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00061}00061         \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00062}00062             sstr.str(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00063}00063             sstr << \textcolor{stringliteral}{"{}Button "{}} << j;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00065}00065             set(sstr.str().c\_str(), \mbox{\hyperlink{classsf_1_1_joystick_ae0d97a4b84268cbe6a7078e1b2717835}{sf::Joystick::isButtonPressed}}(index, j));}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00066}00066         \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00067}00067     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00069}00069     \textcolor{comment}{// Helper to update displayed joystick values}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00070}00070     \textcolor{keywordtype}{void} updateValues(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00071}00071     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00072}00072         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classsf_1_1_joystick_ac7d4e1923e9f9420174f26703ea63d6c}{sf::Joystick::isConnected}}(index)) \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00073}00073             \textcolor{comment}{// Update the label-\/value sf::Text objects based on the current joystick state}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00074}00074             updateIdentification(index);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00075}00075             updateAxes(index);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00076}00076             updateButtons(index);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00077}00077         \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00078}00078     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00079}00079 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00088}\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00088}} \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00089}00089 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00090}00090     \textcolor{comment}{// Create the window of the application}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00091}00091     \mbox{\hyperlink{classsf_1_1_render_window}{sf::RenderWindow}} window(\mbox{\hyperlink{classsf_1_1_video_mode}{sf::VideoMode}}(400, 680), \textcolor{stringliteral}{"{}Joystick"{}}, \mbox{\hyperlink{group__window_ggaa75e94f0d3f52da8a61ed467ffd6d6e8a76bbd82b28e359cc0feec9e5ec123b40}{sf::Style::Close}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00092}00092     window.\mbox{\hyperlink{classsf_1_1_window_a59041c4556e0351048f8aff366034f61}{setVerticalSyncEnabled}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00094}00094     \textcolor{comment}{// Load the text font}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00095}00095     \mbox{\hyperlink{classsf_1_1_font}{sf::Font}} font;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00096}00096     \textcolor{keywordflow}{if} (!font.\mbox{\hyperlink{classsf_1_1_font_ab020052ef4e01f6c749a85571c0f3fd1}{loadFromFile}}(\textcolor{stringliteral}{"{}resources/sansation.ttf"{}}))}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00097}00097         \textcolor{keywordflow}{return} EXIT\_FAILURE;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00098}00098 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00099}00099     \textcolor{comment}{// Set up our string conversion parameters}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00100}00100     sstr.precision(2);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00101}00101     sstr.setf(std::ios::fixed | std::ios::boolalpha);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00103}00103     \textcolor{comment}{// Set up our joystick identification sf::Text objects}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00104}00104     texts[\textcolor{stringliteral}{"{}ID"{}}].label.setPosition(5.f, 5.f);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00105}00105     texts[\textcolor{stringliteral}{"{}ID"{}}].value.setPosition(80.f, 5.f);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00106}00106 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00107}00107     texts[\textcolor{stringliteral}{"{}ID"{}}].label.setString(\textcolor{stringliteral}{"{}<Not Connected>"{}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00108}00108     texts[\textcolor{stringliteral}{"{}ID"{}}].value.setString(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00109}00109 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00110}00110     \textcolor{comment}{// Set up our threshold sf::Text objects}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00111}00111     sstr.str(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00112}00112     sstr << threshold << \textcolor{stringliteral}{"{}  (Change with up/down arrow keys)"{}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00114}00114     texts[\textcolor{stringliteral}{"{}Threshold"{}}].label.setPosition(5.f, 5.f + 2 * font.\mbox{\hyperlink{classsf_1_1_font_a4538cc8af337393208a87675fe1c3e59}{getLineSpacing}}(14));}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00115}00115     texts[\textcolor{stringliteral}{"{}Threshold"{}}].value.setPosition(80.f, 5.f + 2 * font.\mbox{\hyperlink{classsf_1_1_font_a4538cc8af337393208a87675fe1c3e59}{getLineSpacing}}(14));}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00116}00116 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00117}00117     texts[\textcolor{stringliteral}{"{}Threshold"{}}].label.setString(\textcolor{stringliteral}{"{}Threshold:"{}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00118}00118     texts[\textcolor{stringliteral}{"{}Threshold"{}}].value.setString(sstr.str());}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00119}00119 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00120}00120     \textcolor{comment}{// Set up our label-\/value sf::Text objects}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00121}00121     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classsf_1_1_joystick_a9b3cbac99980fc1240a61584e7c318bca09f1cd81cc403e481e06a7cf15a18877}{sf::Joystick::AxisCount}}; ++i)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00122}00122     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00123}00123         JoystickObject\& \textcolor{keywordtype}{object} = texts[axislabels[i]];}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00124}00124 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00125}00125         \textcolor{keywordtype}{object}.label.setPosition(5.f, 5.f + ((i + 4) * font.\mbox{\hyperlink{classsf_1_1_font_a4538cc8af337393208a87675fe1c3e59}{getLineSpacing}}(14)));}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00126}00126         \textcolor{keywordtype}{object}.label.setString(std::string(axislabels[i]) + \textcolor{stringliteral}{"{}:"{}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00127}00127 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00128}00128         \textcolor{keywordtype}{object}.value.setPosition(80.f, 5.f + ((i + 4) * font.\mbox{\hyperlink{classsf_1_1_font_a4538cc8af337393208a87675fe1c3e59}{getLineSpacing}}(14)));}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00129}00129         \textcolor{keywordtype}{object}.value.setString(\textcolor{stringliteral}{"{}N/A"{}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00130}00130     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00131}00131 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00132}00132     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classsf_1_1_joystick_a9b3cbac99980fc1240a61584e7c318bca34b2a9c61551a32ea6f60004963c7252}{sf::Joystick::ButtonCount}}; ++i)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00133}00133     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00134}00134         sstr.str(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00135}00135         sstr << \textcolor{stringliteral}{"{}Button "{}} << i;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00136}00136         JoystickObject\& \textcolor{keywordtype}{object} = texts[sstr.str()];}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00137}00137 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00138}00138         \textcolor{keywordtype}{object}.label.setPosition(5.f, 5.f + ((\mbox{\hyperlink{classsf_1_1_joystick_a9b3cbac99980fc1240a61584e7c318bca09f1cd81cc403e481e06a7cf15a18877}{sf::Joystick::AxisCount}} + i + 4) * font.\mbox{\hyperlink{classsf_1_1_font_a4538cc8af337393208a87675fe1c3e59}{getLineSpacing}}(14)));}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00139}00139         \textcolor{keywordtype}{object}.label.setString(sstr.str() + \textcolor{stringliteral}{"{}:"{}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00140}00140 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00141}00141         \textcolor{keywordtype}{object}.value.setPosition(80.f, 5.f + ((\mbox{\hyperlink{classsf_1_1_joystick_a9b3cbac99980fc1240a61584e7c318bca09f1cd81cc403e481e06a7cf15a18877}{sf::Joystick::AxisCount}} + i + 4) * font.\mbox{\hyperlink{classsf_1_1_font_a4538cc8af337393208a87675fe1c3e59}{getLineSpacing}}(14)));}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00142}00142         \textcolor{keywordtype}{object}.value.setString(\textcolor{stringliteral}{"{}N/A"{}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00143}00143     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00144}00144 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00145}00145     \textcolor{keywordflow}{for} (Texts::iterator it = texts.begin(); it != texts.end(); ++it)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00146}00146     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00147}00147         it-\/>second.label.setFont(font);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00148}00148         it-\/>second.label.setCharacterSize(14);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00149}00149         it-\/>second.label.setFillColor(\mbox{\hyperlink{classsf_1_1_color_abd9695b00da63b890ea40f74629237c0}{sf::Color::White}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00150}00150 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00151}00151         it-\/>second.value.setFont(font);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00152}00152         it-\/>second.value.setCharacterSize(14);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00153}00153         it-\/>second.value.setFillColor(\mbox{\hyperlink{classsf_1_1_color_abd9695b00da63b890ea40f74629237c0}{sf::Color::White}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00154}00154     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00155}00155 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00156}00156     \textcolor{comment}{// Update initially displayed joystick values if a joystick is already connected on startup}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00157}00157     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classsf_1_1_joystick_a9b3cbac99980fc1240a61584e7c318bca58bb2e8f3749310d61097e4361bc0ba8}{sf::Joystick::Count}}; ++i)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00158}00158     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00159}00159         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classsf_1_1_joystick_ac7d4e1923e9f9420174f26703ea63d6c}{sf::Joystick::isConnected}}(i))}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00160}00160         \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00161}00161             updateValues(i);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00162}00162             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00163}00163         \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00164}00164     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00165}00165 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00166}00166     \textcolor{keywordflow}{while} (window.\mbox{\hyperlink{classsf_1_1_window_ae873503db7d48157bb9cbf6129562bce}{isOpen}}())}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00167}00167     \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00168}00168         \textcolor{comment}{// Handle events}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00169}00169         \mbox{\hyperlink{classsf_1_1_event}{sf::Event}} event;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00170}00170         \textcolor{keywordflow}{while} (window.\mbox{\hyperlink{classsf_1_1_window_a338e996585faf82e93069858e3b531b7}{pollEvent}}(event))}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00171}00171         \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00172}00172             \textcolor{comment}{// Window closed or escape key pressed: exit}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00173}00173             \textcolor{keywordflow}{if} ((event.\mbox{\hyperlink{classsf_1_1_event_adf2f8044f713fd9d6019077b0d1ffe0a}{type}} == \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa4f718a7f43b0f2d46be222fe23198d9e}{sf::Event::Closed}}) ||}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00174}00174                ((event.\mbox{\hyperlink{classsf_1_1_event_adf2f8044f713fd9d6019077b0d1ffe0a}{type}} == \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4}{sf::Event::KeyPressed}}) \&\& (event.\mbox{\hyperlink{classsf_1_1_event_a45b92fc6757ca7c193f06b302e424ab0}{key}}.\mbox{\hyperlink{structsf_1_1_event_1_1_key_event_a2879fdab8a68cb1c6ecc45730a2d0e61}{code}} == \mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142a72019ff9ecb145a9d3910177a49c757a}{sf::Keyboard::Escape}})))}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00175}00175             \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00176}00176                 window.\mbox{\hyperlink{classsf_1_1_window_a99d1e030387b0c26f5995670504fe7b5}{close}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00177}00177                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00178}00178             \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00179}00179             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((event.\mbox{\hyperlink{classsf_1_1_event_adf2f8044f713fd9d6019077b0d1ffe0a}{type}} == \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa048f17d935ca55b7fa063062ed3aa7ee}{sf::Event::JoystickButtonPressed}}) ||}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00180}00180                      (event.\mbox{\hyperlink{classsf_1_1_event_adf2f8044f713fd9d6019077b0d1ffe0a}{type}} == \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aab7c62947d6d4248d8ff05896f06bd360}{sf::Event::JoystickButtonReleased}}) ||}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00181}00181                      (event.\mbox{\hyperlink{classsf_1_1_event_adf2f8044f713fd9d6019077b0d1ffe0a}{type}} == \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aac6e368e4ec275235dbab7e782d857d52}{sf::Event::JoystickMoved}}) ||}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00182}00182                      (event.\mbox{\hyperlink{classsf_1_1_event_adf2f8044f713fd9d6019077b0d1ffe0a}{type}} == \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa103511bbaf4d9710be5028510b80a011}{sf::Event::JoystickConnected}}))}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00183}00183             \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00184}00184                 \textcolor{comment}{// Update displayed joystick values}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00185}00185                 updateValues(event.\mbox{\hyperlink{classsf_1_1_event_aa354335c9ad73362442bc54ffe81118f}{joystickConnect}}.\mbox{\hyperlink{structsf_1_1_event_1_1_joystick_connect_event_a08e58e8559d3e4fe4654855fec79194b}{joystickId}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00186}00186             \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00187}00187             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (event.\mbox{\hyperlink{classsf_1_1_event_adf2f8044f713fd9d6019077b0d1ffe0a}{type}} == \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa8f4151bb75a0eec34a2950ea9d341894}{sf::Event::JoystickDisconnected}})}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00188}00188             \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00189}00189                 \textcolor{comment}{// Reset displayed joystick values to empty}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00190}00190                 \textcolor{keywordflow}{for} (Texts::iterator it = texts.begin(); it != texts.end(); ++it)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00191}00191                     it-\/>second.value.setString(\textcolor{stringliteral}{"{}N/A"{}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00192}00192 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00193}00193                 texts[\textcolor{stringliteral}{"{}ID"{}}].label.setString(\textcolor{stringliteral}{"{}<Not Connected>"{}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00194}00194                 texts[\textcolor{stringliteral}{"{}ID"{}}].value.setString(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00195}00195 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00196}00196                 sstr.str(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00197}00197                 sstr << threshold << \textcolor{stringliteral}{"{}  (Change with up/down arrow keys)"{}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00198}00198 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00199}00199                 texts[\textcolor{stringliteral}{"{}Threshold"{}}].value.setString(sstr.str());}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00200}00200             \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00201}00201         \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00202}00202 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00203}00203         \textcolor{comment}{// Update threshold if the user wants to change it}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00204}00204         \textcolor{keywordtype}{float} newThreshold = threshold;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00205}00205 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00206}00206         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classsf_1_1_keyboard_a80a04b2f53005886957f49eee3531599}{sf::Keyboard::isKeyPressed}}(\mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142aa0cd0ee9f2d03294d7ca25b21068fa22}{sf::Keyboard::Up}}))}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00207}00207             newThreshold += 0.1f;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00208}00208 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00209}00209         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classsf_1_1_keyboard_a80a04b2f53005886957f49eee3531599}{sf::Keyboard::isKeyPressed}}(\mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142a4c156edb237453ea7e9070b8178333ad}{sf::Keyboard::Down}}))}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00210}00210             newThreshold -\/= 0.1f;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00211}00211 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00212}00212         newThreshold = std::min(std::max(newThreshold, 0.1f), 100.0f);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00213}00213 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00214}00214         \textcolor{keywordflow}{if} (newThreshold != threshold)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00215}00215         \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00216}00216             threshold = newThreshold;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00217}00217             window.\mbox{\hyperlink{classsf_1_1_window_aa45b8f54e29a6f59f1fc7ee66b2fab68}{setJoystickThreshold}}(threshold);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00218}00218 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00219}00219             sstr.str(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00220}00220             sstr << threshold << \textcolor{stringliteral}{"{}  (Change with up/down arrow keys)"{}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00221}00221 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00222}00222             texts[\textcolor{stringliteral}{"{}Threshold"{}}].value.setString(sstr.str());}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00223}00223         \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00224}00224 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00225}00225         \textcolor{comment}{// Clear the window}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00226}00226         window.\mbox{\hyperlink{classsf_1_1_render_target_a6bb6f0ba348f2b1e2f46114aeaf60f26}{clear}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00227}00227 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00228}00228         \textcolor{comment}{// Draw the label-\/value sf::Text objects}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00229}00229         \textcolor{keywordflow}{for} (Texts::const\_iterator it = texts.begin(); it != texts.end(); ++it)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00230}00230         \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00231}00231             window.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(it-\/>second.label);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00232}00232             window.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(it-\/>second.value);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00233}00233         \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00234}00234 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00235}00235         \textcolor{comment}{// Display things on screen}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00236}00236         window.\mbox{\hyperlink{classsf_1_1_window_adabf839cb103ac96cfc82f781638772a}{display}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00237}00237     \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2joystick_2_joystick_8cpp_source_l00238}00238 \}}
+
+\end{DoxyCode}

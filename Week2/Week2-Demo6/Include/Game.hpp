@@ -1,7 +1,7 @@
-#ifndef BOOK_GAME_HPP
-#define BOOK_GAME_HPP
+#pragma once
 
 #include <SFML/Graphics.hpp>
+#include <string>
 #include "ResourceHolder.hpp"
 #include <iostream>
 
@@ -17,19 +17,16 @@ namespace Textures
 class Game : private sf::NonCopyable
 {
 	public:
-								Game();
+		Game();
 		void					run();
 		
-
 	private:
 		void					processEvents();
 		void					update(sf::Time elapsedTime);
 		void					render();
-
 		void					updateStatistics(sf::Time elapsedTime);	
 		void					handlePlayerInput(sf::Keyboard::Key key, bool isPressed);
 		
-
 	private:
 		static const float		PlayerSpeed;
 		static const sf::Time	TimePerFrame;
@@ -54,8 +51,6 @@ class Game : private sf::NonCopyable
 		sf::Sprite				airplane;
 		sf::Sprite				landscape;
 		sf::Texture             mBackgroundTexture;
-
-
 };
 
-#endif // BOOK_GAME_HPP
+

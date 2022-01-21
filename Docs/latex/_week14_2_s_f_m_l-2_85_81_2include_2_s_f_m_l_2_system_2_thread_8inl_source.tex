@@ -1,0 +1,92 @@
+\hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source}{}\doxysection{Thread.\+inl}
+\label{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source}\index{Week14/SFML-\/2.5.1/include/SFML/System/Thread.inl@{Week14/SFML-\/2.5.1/include/SFML/System/Thread.inl}}
+\mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00002}00002 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00003}00003 \textcolor{comment}{// SFML -\/ Simple and Fast Multimedia Library}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00004}00004 \textcolor{comment}{// Copyright (C) 2007-\/2018 Laurent Gomila (laurent@sfml-\/dev.org)}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00005}00005 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00006}00006 \textcolor{comment}{// This software is provided 'as-\/is', without any express or implied warranty.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00007}00007 \textcolor{comment}{// In no event will the authors be held liable for any damages arising from the use of this software.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00008}00008 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00009}00009 \textcolor{comment}{// Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00010}00010 \textcolor{comment}{// including commercial applications, and to alter it and redistribute it freely,}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00011}00011 \textcolor{comment}{// subject to the following restrictions:}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00012}00012 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00013}00013 \textcolor{comment}{// 1. The origin of this software must not be misrepresented;}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00014}00014 \textcolor{comment}{//    you must not claim that you wrote the original software.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00015}00015 \textcolor{comment}{//    If you use this software in a product, an acknowledgment}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00016}00016 \textcolor{comment}{//    in the product documentation would be appreciated but is not required.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00017}00017 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00018}00018 \textcolor{comment}{// 2. Altered source versions must be plainly marked as such,}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00019}00019 \textcolor{comment}{//    and must not be misrepresented as being the original software.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00020}00020 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00021}00021 \textcolor{comment}{// 3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00022}00022 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00024}00024 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00025}00025 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacepriv}{priv}}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00026}00026 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00027}00027 \textcolor{comment}{// Base class for abstract thread functions}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00028}00028 \textcolor{keyword}{struct }ThreadFunc}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00029}00029 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00030}\mbox{\hyperlink{structpriv_1_1_thread_func_a085d7741b00ad5c8610cc26739d423cb}{00030}}     \textcolor{keyword}{virtual} \mbox{\hyperlink{structpriv_1_1_thread_func_a085d7741b00ad5c8610cc26739d423cb}{\string~ThreadFunc}}() \{\}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00031}\mbox{\hyperlink{structpriv_1_1_thread_func_ab5465e714ca4aa92a09bf5e24410a5c3}{00031}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{structpriv_1_1_thread_func_ab5465e714ca4aa92a09bf5e24410a5c3}{run}}() = 0;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00032}00032 \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00034}00034 \textcolor{comment}{// Specialization using a functor (including free functions) with no argument}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00035}00035 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00036}00036 \textcolor{keyword}{struct }\mbox{\hyperlink{structpriv_1_1_thread_functor}{ThreadFunctor}} : \mbox{\hyperlink{structpriv_1_1_thread_func}{ThreadFunc}}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00037}00037 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00038}\mbox{\hyperlink{structpriv_1_1_thread_functor_a2df57df5cd6f7396b033512bb0e01848}{00038}}     \mbox{\hyperlink{structpriv_1_1_thread_functor_a2df57df5cd6f7396b033512bb0e01848}{ThreadFunctor}}(T functor) : \mbox{\hyperlink{structpriv_1_1_thread_functor_a73254bbde4d3452de1aeda531ca632b2}{m\_functor}}(functor) \{\}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00039}\mbox{\hyperlink{structpriv_1_1_thread_functor_a8bb44b4b46d08d844d070ae3fdb251d7}{00039}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{structpriv_1_1_thread_functor_a8bb44b4b46d08d844d070ae3fdb251d7}{run}}() \{\mbox{\hyperlink{structpriv_1_1_thread_functor_a73254bbde4d3452de1aeda531ca632b2}{m\_functor}}();\}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00040}00040     T \mbox{\hyperlink{structpriv_1_1_thread_functor_a73254bbde4d3452de1aeda531ca632b2}{m\_functor}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00041}00041 \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00043}00043 \textcolor{comment}{// Specialization using a functor (including free functions) with one argument}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00044}00044 \textcolor{keyword}{template} <\textcolor{keyword}{typename} F, \textcolor{keyword}{typename} A>}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00045}00045 \textcolor{keyword}{struct }ThreadFunctorWithArg : ThreadFunc}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00046}00046 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00047}\mbox{\hyperlink{structpriv_1_1_thread_functor_with_arg_ae3745753b77880cdfda6f10d72748efa}{00047}}     \mbox{\hyperlink{structpriv_1_1_thread_functor_with_arg_ae3745753b77880cdfda6f10d72748efa}{ThreadFunctorWithArg}}(F \textcolor{keyword}{function}, A arg) : \mbox{\hyperlink{structpriv_1_1_thread_functor_with_arg_ab12992af3112f15df4b6f0dbce3137b9}{m\_function}}(function), \mbox{\hyperlink{structpriv_1_1_thread_functor_with_arg_ac598f7701f976320bc3964733b9ae9ae}{m\_arg}}(arg) \{\}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00048}\mbox{\hyperlink{structpriv_1_1_thread_functor_with_arg_a0f8bb6ba36819e80016528bab8b0bd4f}{00048}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{structpriv_1_1_thread_functor_with_arg_a0f8bb6ba36819e80016528bab8b0bd4f}{run}}() \{\mbox{\hyperlink{structpriv_1_1_thread_functor_with_arg_ab12992af3112f15df4b6f0dbce3137b9}{m\_function}}(\mbox{\hyperlink{structpriv_1_1_thread_functor_with_arg_ac598f7701f976320bc3964733b9ae9ae}{m\_arg}});\}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00049}00049     F \mbox{\hyperlink{structpriv_1_1_thread_functor_with_arg_ab12992af3112f15df4b6f0dbce3137b9}{m\_function}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00050}00050     A \mbox{\hyperlink{structpriv_1_1_thread_functor_with_arg_ac598f7701f976320bc3964733b9ae9ae}{m\_arg}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00051}00051 \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00053}00053 \textcolor{comment}{// Specialization using a member function}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00054}00054 \textcolor{keyword}{template} <\textcolor{keyword}{typename} C>}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00055}00055 \textcolor{keyword}{struct }ThreadMemberFunc : ThreadFunc}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00056}00056 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00057}\mbox{\hyperlink{structpriv_1_1_thread_member_func_ae44619c4cf6d886da6f32a1de37d652e}{00057}}     \mbox{\hyperlink{structpriv_1_1_thread_member_func_ae44619c4cf6d886da6f32a1de37d652e}{ThreadMemberFunc}}(\textcolor{keywordtype}{void}(C::*\textcolor{keyword}{function})(), C* \textcolor{keywordtype}{object}) : \mbox{\hyperlink{structpriv_1_1_thread_member_func_a237f80d81258c6553fd18e86880ab6c4}{m\_function}}(function), \mbox{\hyperlink{structpriv_1_1_thread_member_func_acd19c00f65795319eeb10830be7c4569}{m\_object}}(object) \{\}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00058}\mbox{\hyperlink{structpriv_1_1_thread_member_func_abbd440e93edf2747cf9cdde579bc5de0}{00058}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{structpriv_1_1_thread_member_func_abbd440e93edf2747cf9cdde579bc5de0}{run}}() \{(\mbox{\hyperlink{structpriv_1_1_thread_member_func_acd19c00f65795319eeb10830be7c4569}{m\_object}}-\/>*\mbox{\hyperlink{structpriv_1_1_thread_member_func_a237f80d81258c6553fd18e86880ab6c4}{m\_function}})();\}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00059}00059     void(C::*\mbox{\hyperlink{structpriv_1_1_thread_member_func_a237f80d81258c6553fd18e86880ab6c4}{m\_function}})();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00060}00060     C* \mbox{\hyperlink{structpriv_1_1_thread_member_func_acd19c00f65795319eeb10830be7c4569}{m\_object}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00061}00061 \};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00063}00063 \} \textcolor{comment}{// namespace priv}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00067}00067 \textcolor{keyword}{template} <\textcolor{keyword}{typename} F>}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00068}\mbox{\hyperlink{classsf_1_1_thread_a00b88f036de66eb63765f4c12ceb6870}{00068}} Thread::Thread(F functor) :}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00069}00069 m\_impl      (NULL),}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00070}00070 m\_entryPoint(new \mbox{\hyperlink{namespacepriv}{priv}}::ThreadFunctor<F>(functor))}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00071}00071 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00072}00072 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00076}00076 \textcolor{keyword}{template} <\textcolor{keyword}{typename} F, \textcolor{keyword}{typename} A>}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00077}\mbox{\hyperlink{classsf_1_1_thread_a719b2cc067d92d52c35064a49d850a53}{00077}} \mbox{\hyperlink{classsf_1_1_thread_a4cc65399bbb111cf8132537783b8e96c}{Thread::Thread}}(F \textcolor{keyword}{function}, A argument) :}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00078}00078 m\_impl      (NULL),}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00079}00079 m\_entryPoint(new \mbox{\hyperlink{namespacepriv}{priv}}::ThreadFunctorWithArg<F, A>(function, argument))}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00080}00080 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00081}00081 \}}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00085}00085 \textcolor{keyword}{template} <\textcolor{keyword}{typename} C>}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00086}\mbox{\hyperlink{classsf_1_1_thread_aa9f473c8cbb078900c62b1fd14a83a34}{00086}} \mbox{\hyperlink{classsf_1_1_thread_a4cc65399bbb111cf8132537783b8e96c}{Thread::Thread}}(\textcolor{keywordtype}{void}(C::*\textcolor{keyword}{function})(), C* \textcolor{keywordtype}{object}) :}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00087}00087 m\_impl      (NULL),}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00088}00088 m\_entryPoint(new \mbox{\hyperlink{namespacepriv}{priv}}::ThreadMemberFunc<C>(function, object))}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00089}00089 \{}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source_l00090}00090 \}}
+
+\end{DoxyCode}
