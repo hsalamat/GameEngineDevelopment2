@@ -1,25 +1,12 @@
-#ifndef BOOK_GAME_HPP
-#define BOOK_GAME_HPP
+#pragma once
 
 #include <ResourceHolder.hpp>
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-#pragma region step 2
 #include "ResourceIdentifiers.hpp"
 #include "Player.hpp"
 #include "Player2.hpp"
-
-//namespace Textures
-//{
-//	enum ID
-//	{
-//		Landscape,
-//		Airplane,
-//	};
-//}
-
-#pragma endregion
 
 class Game : private sf::NonCopyable
 {
@@ -70,4 +57,4 @@ private:
 
 };
 
-#endif // BOOK_GAME_HPP
+

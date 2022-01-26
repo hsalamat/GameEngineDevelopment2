@@ -1,6 +1,3 @@
-#ifndef BOOK_GAME_HPP
-#define BOOK_GAME_HPP
-
 #include <SFML/Graphics.hpp>
 #include "ResourceHolder.hpp"
 #include <iostream>
@@ -58,4 +55,4 @@ class Game : private sf::NonCopyable
 
 };
 
-#endif // BOOK_GAME_HPP
+

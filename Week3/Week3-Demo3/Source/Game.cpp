@@ -5,7 +5,7 @@ const float Game::PlayerSpeed = 100.f;
 const sf::Time Game::TimePerFrame = sf::seconds(1.f / 60.f);
 
 Game::Game()
-	: mWindow(sf::VideoMode(640, 480), "Resources", sf::Style::Close)
+	: mWindow(sf::VideoMode(640, 480), "View", sf::Style::Close)
 	, landscape()
 	, airplane()
 	, textures()
@@ -164,9 +164,10 @@ void Game::render()
 	mView.setViewport(sf::FloatRect(0.5, 0, 0.5, 1));
 	mWindow.setView(mView);
 	mWindow.draw(landscape);
-
+	mWindow.draw(mStatisticsText);
 	
-	//Lwft half shows different background
+	
+	//Left half shows different background
 	sf::View mView2;
 	mView2 = mWindow.getDefaultView();
 	mView2.setViewport(sf::FloatRect(0, 0, 0.5, 1));
@@ -174,6 +175,7 @@ void Game::render()
 	sf::RectangleShape shape(sf::Vector2f(mView2.getSize().x, 4000.f));
 	shape.setFillColor(sf::Color::Yellow);
 	mWindow.draw(shape);
+
 
 	mWindow.setView(mWindow.getDefaultView());
 	mWindow.draw(airplane);
@@ -194,8 +196,8 @@ void Game::updateStatistics(sf::Time elapsedTime)
 	if (mStatisticsUpdateTime >= sf::seconds(1.0f))
 	{
 		mStatisticsText.setString(
-			"Frames / Second = " + toString(mStatisticsNumFrames) + "\n" +
-			"Time / Update = " + toString(mStatisticsUpdateTime.asMicroseconds() / mStatisticsNumFrames) + "us");
+			"Frames / Second = " + std::to_string(mStatisticsNumFrames) + "\n" +
+			"Time / Update = " + std::to_string(mStatisticsUpdateTime.asMicroseconds() / mStatisticsNumFrames) + "us");
 
 		mStatisticsUpdateTime -= sf::seconds(1.0f);
 		mStatisticsNumFrames = 0;

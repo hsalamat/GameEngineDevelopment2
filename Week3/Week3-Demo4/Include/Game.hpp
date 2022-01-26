@@ -5,21 +5,10 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-#pragma region step 2
 #include "ResourceIdentifiers.hpp"
 #include "Player.hpp"
 #include "Player2.hpp"
 
-//namespace Textures
-//{
-//	enum ID
-//	{
-//		Landscape,
-//		Airplane,
-//	};
-//}
-
-#pragma endregion
 
 class Game : private sf::NonCopyable
 {
@@ -49,12 +38,10 @@ private:
 	sf::Sprite				landscape;
 	sf::Sprite				airplane;
 
-#pragma region step 1
 	sf::View							mView;
 	sf::FloatRect						mWorldBounds;
 	sf::Vector2f						mSpawnPosition;
 	float								mScrollSpeed;
-#pragma endregion
 
 	TextureHolder textures;
 

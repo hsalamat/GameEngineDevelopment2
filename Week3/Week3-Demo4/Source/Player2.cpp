@@ -23,5 +23,5 @@ void Player2::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
 void Player2::update(sf::Time dt)
 {
-	mSprite.move(mVelocity * dt.asSeconds());
+	//mSprite.move(mVelocity * dt.asSeconds());
 }

@@ -1,8 +1,6 @@
 #pragma once
 #pragma region step 5
 
-
-
 namespace sf
 {
 	class Texture;
@@ -21,5 +19,6 @@ template <typename Resource, typename Identifier>
 class ResourceHolder;
 
 typedef ResourceHolder<sf::Texture, Textures::ID> TextureHolder;
+///using TextureHolder = ResourceHolder<sf::Texture, Textures::ID>;
 
 #pragma endregion

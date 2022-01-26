@@ -19,6 +19,7 @@ sf::Vector2f Entity::getVelocity() const
 
 void Entity::update(sf::Time dt)
 {
+	move(mVelocity * dt.asSeconds());
 }
 
 #pragma endregion

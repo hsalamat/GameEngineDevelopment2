@@ -1,8 +1,6 @@
 #pragma once
 #pragma region step 1
 
-
-
 namespace sf
 {
 	class Texture;

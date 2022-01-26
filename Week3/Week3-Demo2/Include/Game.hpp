@@ -1,7 +1,7 @@
 #pragma once
-
 #include <ResourceHolder.hpp>
 #include <SFML/Graphics.hpp>
+#include <string>
 #include <iostream>
 
 #pragma region step 2
@@ -56,8 +56,6 @@ private:
 	bool					mIsMovingDown;
 	bool					mIsMovingRight;
 	bool					mIsMovingLeft;
-
-
 };
 
 
