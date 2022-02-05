@@ -306,7 +306,5 @@ var class_state =
     [ "update", "class_state.html#acd5926bc7a373edff9e57f3ffe94ca13", null ],
     [ "update", "class_state.html#acd5926bc7a373edff9e57f3ffe94ca13", null ],
     [ "update", "class_state.html#acd5926bc7a373edff9e57f3ffe94ca13", null ],
-    [ "update", "class_state.html#acd5926bc7a373edff9e57f3ffe94ca13", null ],
-    [ "mContext", "class_state.html#a7a3d9f2d67529dd7c2eaae143447511b", null ],
-    [ "mStack", "class_state.html#a2aabe991a21d5dd05136c40ba062c694", null ]
+    [ "update", "class_state.html#acd5926bc7a373edff9e57f3ffe94ca13", null ]
 ];

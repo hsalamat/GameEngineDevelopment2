@@ -28,8 +28,6 @@ var classsf_1_1_texture =
     [ "getNativeHandle", "classsf_1_1_texture.html#a674b632608747bfc27b53a4935c835b0", null ],
     [ "getSize", "classsf_1_1_texture.html#a9f86b8cc670c6399c539d4ce07ae5c8a", null ],
     [ "getSize", "classsf_1_1_texture.html#a9f86b8cc670c6399c539d4ce07ae5c8a", null ],
-    [ "invalidateMipmap", "classsf_1_1_texture.html#a7657c59adfbc0c640e54f7e3f12787aa", null ],
-    [ "invalidateMipmap", "classsf_1_1_texture.html#a7657c59adfbc0c640e54f7e3f12787aa", null ],
     [ "isRepeated", "classsf_1_1_texture.html#af1a1a32ca5c799204b2bea4040df7647", null ],
     [ "isRepeated", "classsf_1_1_texture.html#af1a1a32ca5c799204b2bea4040df7647", null ],
     [ "isSmooth", "classsf_1_1_texture.html#a3ebb050b5a71e1d40ba66eb1a060e103", null ],
@@ -72,15 +70,5 @@ var classsf_1_1_texture =
     [ "update", "classsf_1_1_texture.html#a154f246eb8059b602076009ab1cfd175", null ],
     [ "RenderTarget", "classsf_1_1_texture.html#a564c389faf3e8638c546c12cdbdda81d", null ],
     [ "RenderTexture", "classsf_1_1_texture.html#a96c222b24c6d9ddbc3666f7981622156", null ],
-    [ "Text", "classsf_1_1_texture.html#ab54cabecd48a4eb41ddb3c17c26eb6fb", null ],
-    [ "m_actualSize", "classsf_1_1_texture.html#af059062d695a8ea9a47c3790814f4dc5", null ],
-    [ "m_cacheId", "classsf_1_1_texture.html#ad4a4da7eb383fb5444a04736c9b6c197", null ],
-    [ "m_fboAttachment", "classsf_1_1_texture.html#adb1aa659ccb31d7f319a367cfdbd582d", null ],
-    [ "m_hasMipmap", "classsf_1_1_texture.html#a144afc747d7890b759d82b54c3e3c40f", null ],
-    [ "m_isRepeated", "classsf_1_1_texture.html#a9c2e3a838e2f2d028a2059f99ad19994", null ],
-    [ "m_isSmooth", "classsf_1_1_texture.html#a9b2f59e799c9d039146c8379abee3d2e", null ],
-    [ "m_pixelsFlipped", "classsf_1_1_texture.html#ae9409203ce5434396909e81c95ee1f6f", null ],
-    [ "m_size", "classsf_1_1_texture.html#a7904180a15769d35bed34aa2b543a2fe", null ],
-    [ "m_sRgb", "classsf_1_1_texture.html#a4df1e92fd3d8e2b14a140ffbc3d0c6ae", null ],
-    [ "m_texture", "classsf_1_1_texture.html#a2a15d3a9ae9267fa5325eeab0f854b41", null ]
+    [ "Text", "classsf_1_1_texture.html#ab54cabecd48a4eb41ddb3c17c26eb6fb", null ]
 ];

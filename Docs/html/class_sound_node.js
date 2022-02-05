@@ -14,6 +14,5 @@ var class_sound_node =
     [ "playSound", "class_sound_node.html#a596804942f356e61ec845c9310c42b8d", null ],
     [ "playSound", "class_sound_node.html#a596804942f356e61ec845c9310c42b8d", null ],
     [ "playSound", "class_sound_node.html#a596804942f356e61ec845c9310c42b8d", null ],
-    [ "playSound", "class_sound_node.html#a596804942f356e61ec845c9310c42b8d", null ],
-    [ "mSounds", "class_sound_node.html#a677dac98422ab216031033ad26b57529", null ]
+    [ "playSound", "class_sound_node.html#a596804942f356e61ec845c9310c42b8d", null ]
 ];

@@ -6,8 +6,7 @@ var group__system =
       [ "getElapsedTime", "classsf_1_1_clock.html#abe889b42a65bcd8eefc16419645d08a7", null ],
       [ "getElapsedTime", "classsf_1_1_clock.html#abe889b42a65bcd8eefc16419645d08a7", null ],
       [ "restart", "classsf_1_1_clock.html#a123e2627f2943e5ecaa1db0c7df3231b", null ],
-      [ "restart", "classsf_1_1_clock.html#a123e2627f2943e5ecaa1db0c7df3231b", null ],
-      [ "m_startTime", "classsf_1_1_clock.html#a8843eb0a9762787cecfecde181e0f337", null ]
+      [ "restart", "classsf_1_1_clock.html#a123e2627f2943e5ecaa1db0c7df3231b", null ]
     ] ],
     [ "sf::FileInputStream", "classsf_1_1_file_input_stream.html", [
       [ "FileInputStream", "classsf_1_1_file_input_stream.html#a9a321e273f41ff7f187899061fcae9be", null ],
@@ -23,8 +22,7 @@ var group__system =
       [ "seek", "classsf_1_1_file_input_stream.html#abdaf5700d4e1de07568e7829106b4eb9", null ],
       [ "seek", "classsf_1_1_file_input_stream.html#abdaf5700d4e1de07568e7829106b4eb9", null ],
       [ "tell", "classsf_1_1_file_input_stream.html#a768c5fdb3be79e2d71d1bce911f8741c", null ],
-      [ "tell", "classsf_1_1_file_input_stream.html#a768c5fdb3be79e2d71d1bce911f8741c", null ],
-      [ "m_file", "classsf_1_1_file_input_stream.html#a1760b69800b52ee252fbf1ee530fd28d", null ]
+      [ "tell", "classsf_1_1_file_input_stream.html#a768c5fdb3be79e2d71d1bce911f8741c", null ]
     ] ],
     [ "sf::InputStream", "classsf_1_1_input_stream.html", [
       [ "~InputStream", "classsf_1_1_input_stream.html#a4b2eb0f92323e630bd0542bc6191682e", null ],
@@ -42,8 +40,7 @@ var group__system =
       [ "Lock", "classsf_1_1_lock.html#a1a4c5d7a15da61103d85c9aa7f118920", null ],
       [ "~Lock", "classsf_1_1_lock.html#a8168b36323a18ccf5b6bc531d964aec5", null ],
       [ "Lock", "classsf_1_1_lock.html#a1a4c5d7a15da61103d85c9aa7f118920", null ],
-      [ "~Lock", "classsf_1_1_lock.html#a8168b36323a18ccf5b6bc531d964aec5", null ],
-      [ "m_mutex", "classsf_1_1_lock.html#a785360bf1b9594190e1766d4acf1454f", null ]
+      [ "~Lock", "classsf_1_1_lock.html#a8168b36323a18ccf5b6bc531d964aec5", null ]
     ] ],
     [ "sf::MemoryInputStream", "classsf_1_1_memory_input_stream.html", [
       [ "MemoryInputStream", "classsf_1_1_memory_input_stream.html#a2d78851a69a8956a79872be41bcdfe0e", null ],
@@ -57,10 +54,7 @@ var group__system =
       [ "seek", "classsf_1_1_memory_input_stream.html#aa2ac8fda2bdb4c95248ae90c71633034", null ],
       [ "seek", "classsf_1_1_memory_input_stream.html#aa2ac8fda2bdb4c95248ae90c71633034", null ],
       [ "tell", "classsf_1_1_memory_input_stream.html#a7ad4bdf721f29de8f66421ff29e23ee4", null ],
-      [ "tell", "classsf_1_1_memory_input_stream.html#a7ad4bdf721f29de8f66421ff29e23ee4", null ],
-      [ "m_data", "classsf_1_1_memory_input_stream.html#ad5d7b8d524e50e87c3d8d39e121a84e6", null ],
-      [ "m_offset", "classsf_1_1_memory_input_stream.html#afe32a3be4ff1184b7a7e69aa5d6ec128", null ],
-      [ "m_size", "classsf_1_1_memory_input_stream.html#af6e2785bac97d2da74206590b31bae58", null ]
+      [ "tell", "classsf_1_1_memory_input_stream.html#a7ad4bdf721f29de8f66421ff29e23ee4", null ]
     ] ],
     [ "sf::Mutex", "classsf_1_1_mutex.html", [
       [ "Mutex", "classsf_1_1_mutex.html#a9bd52a48320fd7b6db8a78037aad276e", null ],
@@ -70,18 +64,13 @@ var group__system =
       [ "lock", "classsf_1_1_mutex.html#a1a16956a6bbea764480c1b80f2e45763", null ],
       [ "lock", "classsf_1_1_mutex.html#a1a16956a6bbea764480c1b80f2e45763", null ],
       [ "unlock", "classsf_1_1_mutex.html#ade71268ffc5e80756652058b01c23c33", null ],
-      [ "unlock", "classsf_1_1_mutex.html#ade71268ffc5e80756652058b01c23c33", null ],
-      [ "m_mutexImpl", "classsf_1_1_mutex.html#ae1ab8150604464006ec0ddd64bbfcbf0", null ]
+      [ "unlock", "classsf_1_1_mutex.html#ade71268ffc5e80756652058b01c23c33", null ]
     ] ],
     [ "sf::NonCopyable", "classsf_1_1_non_copyable.html", [
       [ "NonCopyable", "classsf_1_1_non_copyable.html#a2110add170580fdb946f887719da6860", null ],
       [ "~NonCopyable", "classsf_1_1_non_copyable.html#a8274ffbf46014f5f7f364befb52c7728", null ],
-      [ "NonCopyable", "classsf_1_1_non_copyable.html#a57729c3045ce03f392ae1ba732224ddb", null ],
       [ "NonCopyable", "classsf_1_1_non_copyable.html#a2110add170580fdb946f887719da6860", null ],
-      [ "~NonCopyable", "classsf_1_1_non_copyable.html#a8274ffbf46014f5f7f364befb52c7728", null ],
-      [ "NonCopyable", "classsf_1_1_non_copyable.html#a57729c3045ce03f392ae1ba732224ddb", null ],
-      [ "operator=", "classsf_1_1_non_copyable.html#ab5989cb58bcc52f833e649c428958c0d", null ],
-      [ "operator=", "classsf_1_1_non_copyable.html#ab5989cb58bcc52f833e649c428958c0d", null ]
+      [ "~NonCopyable", "classsf_1_1_non_copyable.html#a8274ffbf46014f5f7f364befb52c7728", null ]
     ] ],
     [ "sf::String", "classsf_1_1_string.html", [
       [ "ConstIterator", "classsf_1_1_string.html#a8e18efc2e8464f6eb82818902d527efa", null ],
@@ -183,8 +172,7 @@ var group__system =
       [ "operator>", "classsf_1_1_string.html#a5efc1eca58cf5c17d01eb8501d303538", null ],
       [ "operator>", "classsf_1_1_string.html#a5efc1eca58cf5c17d01eb8501d303538", null ],
       [ "operator>=", "classsf_1_1_string.html#a8d2979d7829d6616330a768956f251e1", null ],
-      [ "operator>=", "classsf_1_1_string.html#a8d2979d7829d6616330a768956f251e1", null ],
-      [ "m_string", "classsf_1_1_string.html#a7050a47879be90602a72837b93ecb210", null ]
+      [ "operator>=", "classsf_1_1_string.html#a8d2979d7829d6616330a768956f251e1", null ]
     ] ],
     [ "sf::Thread", "classsf_1_1_thread.html", [
       [ "Thread", "classsf_1_1_thread.html#a4cc65399bbb111cf8132537783b8e96c", null ],
@@ -203,15 +191,11 @@ var group__system =
       [ "Thread", "classsf_1_1_thread.html#aa9f473c8cbb078900c62b1fd14a83a34", null ],
       [ "launch", "classsf_1_1_thread.html#a74f75a9e86e1eb47479496314048b5f6", null ],
       [ "launch", "classsf_1_1_thread.html#a74f75a9e86e1eb47479496314048b5f6", null ],
-      [ "run", "classsf_1_1_thread.html#a593508379bd38e0b42ebf9f5a7e2829c", null ],
-      [ "run", "classsf_1_1_thread.html#a593508379bd38e0b42ebf9f5a7e2829c", null ],
       [ "terminate", "classsf_1_1_thread.html#ad6b205d4f1ce38b8d44bba0f5501477c", null ],
       [ "terminate", "classsf_1_1_thread.html#ad6b205d4f1ce38b8d44bba0f5501477c", null ],
       [ "wait", "classsf_1_1_thread.html#a724b1f94c2d54f84280f2f78bde95fa0", null ],
       [ "wait", "classsf_1_1_thread.html#a724b1f94c2d54f84280f2f78bde95fa0", null ],
-      [ "priv::ThreadImpl", "classsf_1_1_thread.html#a82dc12d2e90bdc557f3a20c61ac27700", null ],
-      [ "m_entryPoint", "classsf_1_1_thread.html#a64132525f67596d2908ebcea2ba72c31", null ],
-      [ "m_impl", "classsf_1_1_thread.html#a7d46a61ae85bb1424b7d4c578015b364", null ]
+      [ "priv::ThreadImpl", "classsf_1_1_thread.html#a82dc12d2e90bdc557f3a20c61ac27700", null ]
     ] ],
     [ "sf::ThreadLocal", "classsf_1_1_thread_local.html", [
       [ "ThreadLocal", "classsf_1_1_thread_local.html#a44ea3c4be4eef118080275cbf4cf04cd", null ],
@@ -221,8 +205,7 @@ var group__system =
       [ "getValue", "classsf_1_1_thread_local.html#a3273f1976f96a838e386937eae33fc21", null ],
       [ "getValue", "classsf_1_1_thread_local.html#a3273f1976f96a838e386937eae33fc21", null ],
       [ "setValue", "classsf_1_1_thread_local.html#ab7e334c83d77644a8e67ee31c3230007", null ],
-      [ "setValue", "classsf_1_1_thread_local.html#ab7e334c83d77644a8e67ee31c3230007", null ],
-      [ "m_impl", "classsf_1_1_thread_local.html#a0996c9c9c99f63dcb1b9c5a9ba34952f", null ]
+      [ "setValue", "classsf_1_1_thread_local.html#ab7e334c83d77644a8e67ee31c3230007", null ]
     ] ],
     [ "sf::ThreadLocalPtr< T >", "classsf_1_1_thread_local_ptr.html", [
       [ "ThreadLocalPtr", "classsf_1_1_thread_local_ptr.html#a8c678211d7828d2a8c41cb534422d649", null ],
@@ -240,9 +223,7 @@ var group__system =
     ] ],
     [ "sf::Time", "classsf_1_1_time.html", [
       [ "Time", "classsf_1_1_time.html#acba0cfbc49e3a09a22a8e079eb67a05c", null ],
-      [ "Time", "classsf_1_1_time.html#abb009ceaef7f7e234572128cc81ba9b0", null ],
       [ "Time", "classsf_1_1_time.html#acba0cfbc49e3a09a22a8e079eb67a05c", null ],
-      [ "Time", "classsf_1_1_time.html#abb009ceaef7f7e234572128cc81ba9b0", null ],
       [ "asMicroseconds", "classsf_1_1_time.html#a000c2c64b74658ebd228b9294a464275", null ],
       [ "asMicroseconds", "classsf_1_1_time.html#a000c2c64b74658ebd228b9294a464275", null ],
       [ "asMilliseconds", "classsf_1_1_time.html#aa16858ca030a07eb18958c321f256e5a", null ],
@@ -308,8 +289,7 @@ var group__system =
       [ "seconds", "classsf_1_1_time.html#ae36b9ef700f0ed0516abf0194ceb546b", null ],
       [ "seconds", "classsf_1_1_time.html#ae36b9ef700f0ed0516abf0194ceb546b", null ],
       [ "seconds", "classsf_1_1_time.html#abe757d058fd820b4c84232c1451c1efa", null ],
-      [ "seconds", "classsf_1_1_time.html#abe757d058fd820b4c84232c1451c1efa", null ],
-      [ "m_microseconds", "classsf_1_1_time.html#a9f00785b8e837350682e056ada05dd51", null ]
+      [ "seconds", "classsf_1_1_time.html#abe757d058fd820b4c84232c1451c1efa", null ]
     ] ],
     [ "sf::Utf< N >", "classsf_1_1_utf.html", null ],
     [ "sf::Vector2< T >", "classsf_1_1_vector2.html", [

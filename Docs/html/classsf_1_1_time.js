@@ -1,9 +1,7 @@
 var classsf_1_1_time =
 [
     [ "Time", "classsf_1_1_time.html#acba0cfbc49e3a09a22a8e079eb67a05c", null ],
-    [ "Time", "classsf_1_1_time.html#abb009ceaef7f7e234572128cc81ba9b0", null ],
     [ "Time", "classsf_1_1_time.html#acba0cfbc49e3a09a22a8e079eb67a05c", null ],
-    [ "Time", "classsf_1_1_time.html#abb009ceaef7f7e234572128cc81ba9b0", null ],
     [ "asMicroseconds", "classsf_1_1_time.html#a000c2c64b74658ebd228b9294a464275", null ],
     [ "asMicroseconds", "classsf_1_1_time.html#a000c2c64b74658ebd228b9294a464275", null ],
     [ "asMilliseconds", "classsf_1_1_time.html#aa16858ca030a07eb18958c321f256e5a", null ],
@@ -69,6 +67,5 @@ var classsf_1_1_time =
     [ "seconds", "classsf_1_1_time.html#ae36b9ef700f0ed0516abf0194ceb546b", null ],
     [ "seconds", "classsf_1_1_time.html#ae36b9ef700f0ed0516abf0194ceb546b", null ],
     [ "seconds", "classsf_1_1_time.html#abe757d058fd820b4c84232c1451c1efa", null ],
-    [ "seconds", "classsf_1_1_time.html#abe757d058fd820b4c84232c1451c1efa", null ],
-    [ "m_microseconds", "classsf_1_1_time.html#a9f00785b8e837350682e056ada05dd51", null ]
+    [ "seconds", "classsf_1_1_time.html#abe757d058fd820b4c84232c1451c1efa", null ]
 ];

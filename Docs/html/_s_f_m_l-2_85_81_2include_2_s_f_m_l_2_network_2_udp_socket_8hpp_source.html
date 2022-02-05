@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Game Engine Development II: SFML-2.5.1/include/SFML/Network/UdpSocket.hpp Source File</title>
+<title>My Project: SFML-2.5.1/include/SFML/Network/UdpSocket.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Game Engine Development II
+   <div id="projectname">My Project
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -160,7 +160,7 @@ $(document).ready(function(){initNavTree('_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="comment">// Member data</span></div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno"><a class="line" href="classsf_1_1_udp_socket.html#ab1c3a202b6fefe0ec61912c6a42833dd">  196</a></span><span class="comment"></span>    std::vector&lt;char&gt; <a class="code hl_variable" href="classsf_1_1_udp_socket.html#ab1c3a202b6fefe0ec61912c6a42833dd">m_buffer</a>; </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span><span class="comment"></span>    std::vector&lt;char&gt; m_buffer; </div>
 <div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>};</div>
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>} <span class="comment">// namespace sf</span></div>
@@ -180,7 +180,6 @@ $(document).ready(function(){initNavTree('_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_
 <div class="ttc" id="aclasssf_1_1_udp_socket_html_a48969a62c80d40fd74293a740798e435"><div class="ttname"><a href="classsf_1_1_udp_socket.html#a48969a62c80d40fd74293a740798e435">sf::UdpSocket::send</a></div><div class="ttdeci">Status send(Packet &amp;packet, const IpAddress &amp;remoteAddress, unsigned short remotePort)</div><div class="ttdoc">Send a formatted packet of data to a remote peer.</div></div>
 <div class="ttc" id="aclasssf_1_1_udp_socket_html_a5c03644b3da34bb763bce93e758c938e"><div class="ttname"><a href="classsf_1_1_udp_socket.html#a5c03644b3da34bb763bce93e758c938e">sf::UdpSocket::getLocalPort</a></div><div class="ttdeci">unsigned short getLocalPort() const</div><div class="ttdoc">Get the port to which the socket is bound locally.</div></div>
 <div class="ttc" id="aclasssf_1_1_udp_socket_html_a664ab8f26f37c21cc4de1b847c2efcca"><div class="ttname"><a href="classsf_1_1_udp_socket.html#a664ab8f26f37c21cc4de1b847c2efcca">sf::UdpSocket::send</a></div><div class="ttdeci">Status send(const void *data, std::size_t size, const IpAddress &amp;remoteAddress, unsigned short remotePort)</div><div class="ttdoc">Send raw data to a remote peer.</div></div>
-<div class="ttc" id="aclasssf_1_1_udp_socket_html_ab1c3a202b6fefe0ec61912c6a42833dd"><div class="ttname"><a href="classsf_1_1_udp_socket.html#ab1c3a202b6fefe0ec61912c6a42833dd">sf::UdpSocket::m_buffer</a></div><div class="ttdeci">std::vector&lt; char &gt; m_buffer</div><div class="ttdoc">Temporary buffer holding the received data in Receive(Packet)</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_udp_socket_8hpp_source.html#l00196">UdpSocket.hpp:196</a></div></div>
 <div class="ttc" id="aclasssf_1_1_udp_socket_html_abb10725e26dee9d3a8165fe87ffb71bb"><div class="ttname"><a href="classsf_1_1_udp_socket.html#abb10725e26dee9d3a8165fe87ffb71bb">sf::UdpSocket::UdpSocket</a></div><div class="ttdeci">UdpSocket()</div><div class="ttdoc">Default constructor.</div></div>
 <div class="ttc" id="aclasssf_1_1_udp_socket_html_ad764c3d06d90b4714dcc97a0d1647bcc"><div class="ttname"><a href="classsf_1_1_udp_socket.html#ad764c3d06d90b4714dcc97a0d1647bcc">sf::UdpSocket::bind</a></div><div class="ttdeci">Status bind(unsigned short port, const IpAddress &amp;address=IpAddress::Any)</div><div class="ttdoc">Bind the socket to a specific port.</div></div>
 <div class="ttc" id="aclasssf_1_1_udp_socket_html_ade9ca0f7ed7919136917b0b997a9833a"><div class="ttname"><a href="classsf_1_1_udp_socket.html#ade9ca0f7ed7919136917b0b997a9833a">sf::UdpSocket::receive</a></div><div class="ttdeci">Status receive(void *data, std::size_t size, std::size_t &amp;received, IpAddress &amp;remoteAddress, unsigned short &amp;remotePort)</div><div class="ttdoc">Receive raw data from a remote peer.</div></div>

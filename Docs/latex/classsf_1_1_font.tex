@@ -13,11 +13,7 @@ Class for loading and manipulating character fonts.
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structsf_1_1_font_1_1_info}{Info}}
-\begin{DoxyCompactList}\small\item\em Holds various information about a font. \end{DoxyCompactList}\item 
-struct \mbox{\hyperlink{structsf_1_1_font_1_1_page}{Page}}
-\begin{DoxyCompactList}\small\item\em Structure defining a page of glyphs. \end{DoxyCompactList}\item 
-struct \mbox{\hyperlink{structsf_1_1_font_1_1_row}{Row}}
-\begin{DoxyCompactList}\small\item\em Structure defining a row of glyphs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Holds various information about a font. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -77,55 +73,6 @@ const \mbox{\hyperlink{classsf_1_1_texture}{Texture}} \& \mbox{\hyperlink{classs
 \begin{DoxyCompactList}\small\item\em Retrieve the texture containing the loaded glyphs of a certain size. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classsf_1_1_font}{Font}} \& \mbox{\hyperlink{classsf_1_1_font_af9be4336df9121ec1b6f14fa9063e46e}{operator=}} (const \mbox{\hyperlink{classsf_1_1_font}{Font}} \&right)
 \begin{DoxyCompactList}\small\item\em Overload of assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Types}
-\begin{DoxyCompactItemize}
-\item 
-typedef std\+::map$<$ \mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}}, \mbox{\hyperlink{classsf_1_1_glyph}{Glyph}} $>$ \mbox{\hyperlink{classsf_1_1_font_a952841b9f01447562e2cd9c6e41d3a58}{Glyph\+Table}}
-\begin{DoxyCompactList}\small\item\em Table mapping a codepoint to its glyph. \end{DoxyCompactList}\item 
-typedef std\+::map$<$ unsigned int, \mbox{\hyperlink{structsf_1_1_font_1_1_page}{Page}} $>$ \mbox{\hyperlink{classsf_1_1_font_a1aca3fb29fc050f48949610be1f40a05}{Page\+Table}}
-\begin{DoxyCompactList}\small\item\em Table mapping a character size to its page (texture) \end{DoxyCompactList}\item 
-typedef std\+::map$<$ \mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}}, \mbox{\hyperlink{classsf_1_1_glyph}{Glyph}} $>$ \mbox{\hyperlink{classsf_1_1_font_a952841b9f01447562e2cd9c6e41d3a58}{Glyph\+Table}}
-\begin{DoxyCompactList}\small\item\em Table mapping a codepoint to its glyph. \end{DoxyCompactList}\item 
-typedef std\+::map$<$ unsigned int, \mbox{\hyperlink{structsf_1_1_font_1_1_page}{Page}} $>$ \mbox{\hyperlink{classsf_1_1_font_a1aca3fb29fc050f48949610be1f40a05}{Page\+Table}}
-\begin{DoxyCompactList}\small\item\em Table mapping a character size to its page (texture) \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-void \mbox{\hyperlink{classsf_1_1_font_aa730fde783fa25a369941a12ae9d1e8e}{cleanup}} ()
-\begin{DoxyCompactList}\small\item\em Free all the internal resources. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classsf_1_1_glyph}{Glyph}} \mbox{\hyperlink{classsf_1_1_font_aa85d44ca0c95b5826cb4adf96a5076ba}{load\+Glyph}} (\mbox{\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} code\+Point, unsigned int character\+Size, bool bold, float outline\+Thickness) const
-\begin{DoxyCompactList}\small\item\em Load a new glyph and store it in the cache. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespacesf_a1b1279ab06950b96686cffaacb72fed5}{Int\+Rect}} \mbox{\hyperlink{classsf_1_1_font_a9201f9699d7c2c22975fa405465aa933}{find\+Glyph\+Rect}} (\mbox{\hyperlink{structsf_1_1_font_1_1_page}{Page}} \&page, unsigned int width, unsigned int height) const
-\begin{DoxyCompactList}\small\item\em Find a suitable rectangle within the texture for a glyph. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classsf_1_1_font_ad1fb7470094a4298932dde878a0ad1c3}{set\+Current\+Size}} (unsigned int character\+Size) const
-\begin{DoxyCompactList}\small\item\em Make sure that the given size is the current one. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsf_1_1_font_aa730fde783fa25a369941a12ae9d1e8e}{cleanup}} ()
-\begin{DoxyCompactList}\small\item\em Free all the internal resources. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classsf_1_1_glyph}{Glyph}} \mbox{\hyperlink{classsf_1_1_font_aa85d44ca0c95b5826cb4adf96a5076ba}{load\+Glyph}} (\mbox{\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} code\+Point, unsigned int character\+Size, bool bold, float outline\+Thickness) const
-\begin{DoxyCompactList}\small\item\em Load a new glyph and store it in the cache. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespacesf_a1b1279ab06950b96686cffaacb72fed5}{Int\+Rect}} \mbox{\hyperlink{classsf_1_1_font_a9201f9699d7c2c22975fa405465aa933}{find\+Glyph\+Rect}} (\mbox{\hyperlink{structsf_1_1_font_1_1_page}{Page}} \&page, unsigned int width, unsigned int height) const
-\begin{DoxyCompactList}\small\item\em Find a suitable rectangle within the texture for a glyph. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classsf_1_1_font_ad1fb7470094a4298932dde878a0ad1c3}{set\+Current\+Size}} (unsigned int character\+Size) const
-\begin{DoxyCompactList}\small\item\em Make sure that the given size is the current one. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-void $\ast$ \mbox{\hyperlink{classsf_1_1_font_aae34ebb7d006f23c09b39f2f7aefd06c}{m\+\_\+library}}
-\begin{DoxyCompactList}\small\item\em Pointer to the internal library interface (it is typeless to avoid exposing implementation details) \end{DoxyCompactList}\item 
-void $\ast$ \mbox{\hyperlink{classsf_1_1_font_a5375da985800e2a443b8c7b7342937b7}{m\+\_\+face}}
-\begin{DoxyCompactList}\small\item\em Pointer to the internal font face (it is typeless to avoid exposing implementation details) \end{DoxyCompactList}\item 
-void $\ast$ \mbox{\hyperlink{classsf_1_1_font_a6d92ea98819fc107a5d3514e4ed527e0}{m\+\_\+stream\+Rec}}
-\begin{DoxyCompactList}\small\item\em Pointer to the stream rec instance (it is typeless to avoid exposing implementation details) \end{DoxyCompactList}\item 
-void $\ast$ \mbox{\hyperlink{classsf_1_1_font_af23de4937a234bd37d290b39e2251d89}{m\+\_\+stroker}}
-\begin{DoxyCompactList}\small\item\em Pointer to the stroker (it is typeless to avoid exposing implementation details) \end{DoxyCompactList}\item 
-int $\ast$ \mbox{\hyperlink{classsf_1_1_font_a63935e8969dc7ec450ba6e722726e276}{m\+\_\+ref\+Count}}
-\begin{DoxyCompactList}\small\item\em Reference counter used by implicit sharing. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structsf_1_1_font_1_1_info}{Info}} \mbox{\hyperlink{classsf_1_1_font_a22f08c57808a1621269e6f634cca0307}{m\+\_\+info}}
-\begin{DoxyCompactList}\small\item\em Information about the font. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classsf_1_1_font_a1aca3fb29fc050f48949610be1f40a05}{Page\+Table}} \mbox{\hyperlink{classsf_1_1_font_a14350f915f1596032463350fe22eb773}{m\+\_\+pages}}
-\begin{DoxyCompactList}\small\item\em Table containing the glyphs pages by character size. \end{DoxyCompactList}\item 
-std\+::vector$<$ \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} $>$ \mbox{\hyperlink{classsf_1_1_font_abc76961ecb1b39e0e78ea1e96ce35538}{m\+\_\+pixel\+Buffer}}
-\begin{DoxyCompactList}\small\item\em Pixel buffer holding a glyph\textquotesingle{}s pixels before being written to the texture. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -177,65 +124,6 @@ Note that if the font is a bitmap font, it is not scalable, thus not all request
 
 
 Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_font_8hpp_source_l00050}{50}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_font_8hpp_source}{Font.\+hpp}}.
-
-
-
-\doxysubsection{Member Typedef Documentation}
-\mbox{\Hypertarget{classsf_1_1_font_a952841b9f01447562e2cd9c6e41d3a58}\label{classsf_1_1_font_a952841b9f01447562e2cd9c6e41d3a58}} 
-\index{sf::Font@{sf::Font}!GlyphTable@{GlyphTable}}
-\index{GlyphTable@{GlyphTable}!sf::Font@{sf::Font}}
-\doxysubsubsection{\texorpdfstring{GlyphTable}{GlyphTable}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily typedef std\+::map$<$\mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}}, \mbox{\hyperlink{classsf_1_1_glyph}{Glyph}}$>$ \mbox{\hyperlink{classsf_1_1_font_a952841b9f01447562e2cd9c6e41d3a58}{sf\+::\+Font\+::\+Glyph\+Table}}\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Table mapping a codepoint to its glyph. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_font_8hpp_source_l00284}{284}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_font_8hpp_source}{Font.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_font_a952841b9f01447562e2cd9c6e41d3a58}\label{classsf_1_1_font_a952841b9f01447562e2cd9c6e41d3a58}} 
-\index{sf::Font@{sf::Font}!GlyphTable@{GlyphTable}}
-\index{GlyphTable@{GlyphTable}!sf::Font@{sf::Font}}
-\doxysubsubsection{\texorpdfstring{GlyphTable}{GlyphTable}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily typedef std\+::map$<$\mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}}, \mbox{\hyperlink{classsf_1_1_glyph}{Glyph}}$>$ \mbox{\hyperlink{classsf_1_1_font_a952841b9f01447562e2cd9c6e41d3a58}{sf\+::\+Font\+::\+Glyph\+Table}}\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Table mapping a codepoint to its glyph. 
-
-
-
-Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_font_8hpp_source_l00284}{284}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_font_8hpp_source}{Font.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_font_a1aca3fb29fc050f48949610be1f40a05}\label{classsf_1_1_font_a1aca3fb29fc050f48949610be1f40a05}} 
-\index{sf::Font@{sf::Font}!PageTable@{PageTable}}
-\index{PageTable@{PageTable}!sf::Font@{sf::Font}}
-\doxysubsubsection{\texorpdfstring{PageTable}{PageTable}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily typedef std\+::map$<$unsigned int, \mbox{\hyperlink{structsf_1_1_font_1_1_page}{Page}}$>$ \mbox{\hyperlink{classsf_1_1_font_a1aca3fb29fc050f48949610be1f40a05}{sf\+::\+Font\+::\+Page\+Table}}\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Table mapping a character size to its page (texture) 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_font_8hpp_source_l00344}{344}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_font_8hpp_source}{Font.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_font_a1aca3fb29fc050f48949610be1f40a05}\label{classsf_1_1_font_a1aca3fb29fc050f48949610be1f40a05}} 
-\index{sf::Font@{sf::Font}!PageTable@{PageTable}}
-\index{PageTable@{PageTable}!sf::Font@{sf::Font}}
-\doxysubsubsection{\texorpdfstring{PageTable}{PageTable}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily typedef std\+::map$<$unsigned int, \mbox{\hyperlink{structsf_1_1_font_1_1_page}{Page}}$>$ \mbox{\hyperlink{classsf_1_1_font_a1aca3fb29fc050f48949610be1f40a05}{sf\+::\+Font\+::\+Page\+Table}}\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Table mapping a character size to its page (texture) 
-
-
-
-Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_font_8hpp_source_l00344}{344}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_font_8hpp_source}{Font.\+hpp}}.
 
 
 
@@ -313,70 +201,6 @@ Destructor.
 Cleans up all the internal resources used by the font 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classsf_1_1_font_aa730fde783fa25a369941a12ae9d1e8e}\label{classsf_1_1_font_aa730fde783fa25a369941a12ae9d1e8e}} 
-\index{sf::Font@{sf::Font}!cleanup@{cleanup}}
-\index{cleanup@{cleanup}!sf::Font@{sf::Font}}
-\doxysubsubsection{\texorpdfstring{cleanup()}{cleanup()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void sf\+::\+Font\+::cleanup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Free all the internal resources. 
-
-\mbox{\Hypertarget{classsf_1_1_font_aa730fde783fa25a369941a12ae9d1e8e}\label{classsf_1_1_font_aa730fde783fa25a369941a12ae9d1e8e}} 
-\index{sf::Font@{sf::Font}!cleanup@{cleanup}}
-\index{cleanup@{cleanup}!sf::Font@{sf::Font}}
-\doxysubsubsection{\texorpdfstring{cleanup()}{cleanup()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void sf\+::\+Font\+::cleanup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Free all the internal resources. 
-
-\mbox{\Hypertarget{classsf_1_1_font_a9201f9699d7c2c22975fa405465aa933}\label{classsf_1_1_font_a9201f9699d7c2c22975fa405465aa933}} 
-\index{sf::Font@{sf::Font}!findGlyphRect@{findGlyphRect}}
-\index{findGlyphRect@{findGlyphRect}!sf::Font@{sf::Font}}
-\doxysubsubsection{\texorpdfstring{findGlyphRect()}{findGlyphRect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_a1b1279ab06950b96686cffaacb72fed5}{Int\+Rect}} sf\+::\+Font\+::find\+Glyph\+Rect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsf_1_1_font_1_1_page}{Page}} \&}]{page,  }\item[{unsigned int}]{width,  }\item[{unsigned int}]{height }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Find a suitable rectangle within the texture for a glyph. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em page} & \mbox{\hyperlink{structsf_1_1_font_1_1_page}{Page}} of glyphs to search in \\
-\hline
-{\em width} & Width of the rectangle \\
-\hline
-{\em height} & Height of the rectangle\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Found rectangle within the texture 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classsf_1_1_font_a9201f9699d7c2c22975fa405465aa933}\label{classsf_1_1_font_a9201f9699d7c2c22975fa405465aa933}} 
-\index{sf::Font@{sf::Font}!findGlyphRect@{findGlyphRect}}
-\index{findGlyphRect@{findGlyphRect}!sf::Font@{sf::Font}}
-\doxysubsubsection{\texorpdfstring{findGlyphRect()}{findGlyphRect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_a1b1279ab06950b96686cffaacb72fed5}{Int\+Rect}} sf\+::\+Font\+::find\+Glyph\+Rect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsf_1_1_font_1_1_page}{Page}} \&}]{page,  }\item[{unsigned int}]{width,  }\item[{unsigned int}]{height }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Find a suitable rectangle within the texture for a glyph. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em page} & \mbox{\hyperlink{structsf_1_1_font_1_1_page}{Page}} of glyphs to search in \\
-\hline
-{\em width} & Width of the rectangle \\
-\hline
-{\em height} & Height of the rectangle\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Found rectangle within the texture 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classsf_1_1_font_a4fa68953025b5357b5683297a3104070}\label{classsf_1_1_font_a4fa68953025b5357b5683297a3104070}} 
 \index{sf::Font@{sf::Font}!getGlyph@{getGlyph}}
 \index{getGlyph@{getGlyph}!sf::Font@{sf::Font}}
@@ -839,54 +663,6 @@ True if loading succeeded, false if it failed
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{classsf_1_1_font_ab020052ef4e01f6c749a85571c0f3fd1}{load\+From\+File}}, \mbox{\hyperlink{classsf_1_1_font_abf2f8d6de31eb4e1db02e061c323e346}{load\+From\+Memory}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{classsf_1_1_font_aa85d44ca0c95b5826cb4adf96a5076ba}\label{classsf_1_1_font_aa85d44ca0c95b5826cb4adf96a5076ba}} 
-\index{sf::Font@{sf::Font}!loadGlyph@{loadGlyph}}
-\index{loadGlyph@{loadGlyph}!sf::Font@{sf::Font}}
-\doxysubsubsection{\texorpdfstring{loadGlyph()}{loadGlyph()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_glyph}{Glyph}} sf\+::\+Font\+::load\+Glyph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}}]{code\+Point,  }\item[{unsigned int}]{character\+Size,  }\item[{bool}]{bold,  }\item[{float}]{outline\+Thickness }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Load a new glyph and store it in the cache. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em code\+Point} & Unicode code point of the character to load \\
-\hline
-{\em character\+Size} & Reference character size \\
-\hline
-{\em bold} & Retrieve the bold version or the regular one? \\
-\hline
-{\em outline\+Thickness} & Thickness of outline (when != 0 the glyph will not be filled)\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-The glyph corresponding to {\itshape code\+Point} and {\itshape character\+Size} 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classsf_1_1_font_aa85d44ca0c95b5826cb4adf96a5076ba}\label{classsf_1_1_font_aa85d44ca0c95b5826cb4adf96a5076ba}} 
-\index{sf::Font@{sf::Font}!loadGlyph@{loadGlyph}}
-\index{loadGlyph@{loadGlyph}!sf::Font@{sf::Font}}
-\doxysubsubsection{\texorpdfstring{loadGlyph()}{loadGlyph()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_glyph}{Glyph}} sf\+::\+Font\+::load\+Glyph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}}]{code\+Point,  }\item[{unsigned int}]{character\+Size,  }\item[{bool}]{bold,  }\item[{float}]{outline\+Thickness }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Load a new glyph and store it in the cache. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em code\+Point} & Unicode code point of the character to load \\
-\hline
-{\em character\+Size} & Reference character size \\
-\hline
-{\em bold} & Retrieve the bold version or the regular one? \\
-\hline
-{\em outline\+Thickness} & Thickness of outline (when != 0 the glyph will not be filled)\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-The glyph corresponding to {\itshape code\+Point} and {\itshape character\+Size} 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classsf_1_1_font_af9be4336df9121ec1b6f14fa9063e46e}\label{classsf_1_1_font_af9be4336df9121ec1b6f14fa9063e46e}} 
 \index{sf::Font@{sf::Font}!operator=@{operator=}}
 \index{operator=@{operator=}!sf::Font@{sf::Font}}
@@ -923,157 +699,6 @@ Overload of assignment operator.
 \begin{DoxyReturn}{Returns}
 Reference to self 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classsf_1_1_font_ad1fb7470094a4298932dde878a0ad1c3}\label{classsf_1_1_font_ad1fb7470094a4298932dde878a0ad1c3}} 
-\index{sf::Font@{sf::Font}!setCurrentSize@{setCurrentSize}}
-\index{setCurrentSize@{setCurrentSize}!sf::Font@{sf::Font}}
-\doxysubsubsection{\texorpdfstring{setCurrentSize()}{setCurrentSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily bool sf\+::\+Font\+::set\+Current\+Size (\begin{DoxyParamCaption}\item[{unsigned int}]{character\+Size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Make sure that the given size is the current one. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em character\+Size} & Reference character size\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-True on success, false if any error happened 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classsf_1_1_font_ad1fb7470094a4298932dde878a0ad1c3}\label{classsf_1_1_font_ad1fb7470094a4298932dde878a0ad1c3}} 
-\index{sf::Font@{sf::Font}!setCurrentSize@{setCurrentSize}}
-\index{setCurrentSize@{setCurrentSize}!sf::Font@{sf::Font}}
-\doxysubsubsection{\texorpdfstring{setCurrentSize()}{setCurrentSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily bool sf\+::\+Font\+::set\+Current\+Size (\begin{DoxyParamCaption}\item[{unsigned int}]{character\+Size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Make sure that the given size is the current one. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em character\+Size} & Reference character size\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-True on success, false if any error happened 
-\end{DoxyReturn}
-
-
-\doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{classsf_1_1_font_a5375da985800e2a443b8c7b7342937b7}\label{classsf_1_1_font_a5375da985800e2a443b8c7b7342937b7}} 
-\index{sf::Font@{sf::Font}!m\_face@{m\_face}}
-\index{m\_face@{m\_face}!sf::Font@{sf::Font}}
-\doxysubsubsection{\texorpdfstring{m\_face}{m\_face}}
-{\footnotesize\ttfamily void $\ast$ sf\+::\+Font\+::m\+\_\+face\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Pointer to the internal font face (it is typeless to avoid exposing implementation details) 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_font_8hpp_source_l00350}{350}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_font_8hpp_source}{Font.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_font_a22f08c57808a1621269e6f634cca0307}\label{classsf_1_1_font_a22f08c57808a1621269e6f634cca0307}} 
-\index{sf::Font@{sf::Font}!m\_info@{m\_info}}
-\index{m\_info@{m\_info}!sf::Font@{sf::Font}}
-\doxysubsubsection{\texorpdfstring{m\_info}{m\_info}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structsf_1_1_font_1_1_info}{Info}} sf\+::\+Font\+::m\+\_\+info\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Information about the font. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_font_8hpp_source_l00354}{354}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_font_8hpp_source}{Font.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_font_aae34ebb7d006f23c09b39f2f7aefd06c}\label{classsf_1_1_font_aae34ebb7d006f23c09b39f2f7aefd06c}} 
-\index{sf::Font@{sf::Font}!m\_library@{m\_library}}
-\index{m\_library@{m\_library}!sf::Font@{sf::Font}}
-\doxysubsubsection{\texorpdfstring{m\_library}{m\_library}}
-{\footnotesize\ttfamily void $\ast$ sf\+::\+Font\+::m\+\_\+library\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Pointer to the internal library interface (it is typeless to avoid exposing implementation details) 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_font_8hpp_source_l00349}{349}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_font_8hpp_source}{Font.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_font_a14350f915f1596032463350fe22eb773}\label{classsf_1_1_font_a14350f915f1596032463350fe22eb773}} 
-\index{sf::Font@{sf::Font}!m\_pages@{m\_pages}}
-\index{m\_pages@{m\_pages}!sf::Font@{sf::Font}}
-\doxysubsubsection{\texorpdfstring{m\_pages}{m\_pages}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_font_a1aca3fb29fc050f48949610be1f40a05}{Page\+Table}} sf\+::\+Font\+::m\+\_\+pages\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
-
-
-
-Table containing the glyphs pages by character size. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_font_8hpp_source_l00355}{355}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_font_8hpp_source}{Font.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_font_abc76961ecb1b39e0e78ea1e96ce35538}\label{classsf_1_1_font_abc76961ecb1b39e0e78ea1e96ce35538}} 
-\index{sf::Font@{sf::Font}!m\_pixelBuffer@{m\_pixelBuffer}}
-\index{m\_pixelBuffer@{m\_pixelBuffer}!sf::Font@{sf::Font}}
-\doxysubsubsection{\texorpdfstring{m\_pixelBuffer}{m\_pixelBuffer}}
-{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} $>$ sf\+::\+Font\+::m\+\_\+pixel\+Buffer\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
-
-
-
-Pixel buffer holding a glyph\textquotesingle{}s pixels before being written to the texture. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_font_8hpp_source_l00356}{356}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_font_8hpp_source}{Font.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_font_a63935e8969dc7ec450ba6e722726e276}\label{classsf_1_1_font_a63935e8969dc7ec450ba6e722726e276}} 
-\index{sf::Font@{sf::Font}!m\_refCount@{m\_refCount}}
-\index{m\_refCount@{m\_refCount}!sf::Font@{sf::Font}}
-\doxysubsubsection{\texorpdfstring{m\_refCount}{m\_refCount}}
-{\footnotesize\ttfamily int $\ast$ sf\+::\+Font\+::m\+\_\+ref\+Count\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Reference counter used by implicit sharing. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_font_8hpp_source_l00353}{353}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_font_8hpp_source}{Font.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_font_a6d92ea98819fc107a5d3514e4ed527e0}\label{classsf_1_1_font_a6d92ea98819fc107a5d3514e4ed527e0}} 
-\index{sf::Font@{sf::Font}!m\_streamRec@{m\_streamRec}}
-\index{m\_streamRec@{m\_streamRec}!sf::Font@{sf::Font}}
-\doxysubsubsection{\texorpdfstring{m\_streamRec}{m\_streamRec}}
-{\footnotesize\ttfamily void $\ast$ sf\+::\+Font\+::m\+\_\+stream\+Rec\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Pointer to the stream rec instance (it is typeless to avoid exposing implementation details) 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_font_8hpp_source_l00351}{351}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_font_8hpp_source}{Font.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_font_af23de4937a234bd37d290b39e2251d89}\label{classsf_1_1_font_af23de4937a234bd37d290b39e2251d89}} 
-\index{sf::Font@{sf::Font}!m\_stroker@{m\_stroker}}
-\index{m\_stroker@{m\_stroker}!sf::Font@{sf::Font}}
-\doxysubsubsection{\texorpdfstring{m\_stroker}{m\_stroker}}
-{\footnotesize\ttfamily void $\ast$ sf\+::\+Font\+::m\+\_\+stroker\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Pointer to the stroker (it is typeless to avoid exposing implementation details) 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_font_8hpp_source_l00352}{352}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_font_8hpp_source}{Font.\+hpp}}.
-
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

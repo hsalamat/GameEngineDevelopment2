@@ -149,31 +149,6 @@ virtual void \mbox{\hyperlink{classsf_1_1_window_a106633b9be49b27f83d4712689b493
 \begin{DoxyCompactList}\small\item\em Function called after the window has been created. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classsf_1_1_window_a10f567a387da7b49f417f73321fcf64d}{on\+Resize}} ()
 \begin{DoxyCompactList}\small\item\em Function called after the window has been resized. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-bool \mbox{\hyperlink{classsf_1_1_window_afd3f9e9c21dcd1fd25a38a87026a159b}{filter\+Event}} (const \mbox{\hyperlink{classsf_1_1_event}{Event}} \&event)
-\begin{DoxyCompactList}\small\item\em Processes an event before it is sent to the user. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsf_1_1_window_a75a8263a54f73f71572ce69f0f0cbbca}{initialize}} ()
-\begin{DoxyCompactList}\small\item\em Perform some common internal initializations. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classsf_1_1_window_afd3f9e9c21dcd1fd25a38a87026a159b}{filter\+Event}} (const \mbox{\hyperlink{classsf_1_1_event}{Event}} \&event)
-\begin{DoxyCompactList}\small\item\em Processes an event before it is sent to the user. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsf_1_1_window_a75a8263a54f73f71572ce69f0f0cbbca}{initialize}} ()
-\begin{DoxyCompactList}\small\item\em Perform some common internal initializations. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-priv\+::\+Window\+Impl $\ast$ \mbox{\hyperlink{classsf_1_1_window_a52048b31ae45683d9536f283137b0cf7}{m\+\_\+impl}}
-\begin{DoxyCompactList}\small\item\em Platform-\/specific implementation of the window. \end{DoxyCompactList}\item 
-priv\+::\+Gl\+Context $\ast$ \mbox{\hyperlink{classsf_1_1_window_a3cb481799084a51bc90a30500213e4ab}{m\+\_\+context}}
-\begin{DoxyCompactList}\small\item\em Platform-\/specific implementation of the Open\+GL context. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classsf_1_1_clock}{Clock}} \mbox{\hyperlink{classsf_1_1_window_ab7722cfc3e60af5e0898c290bee34cb1}{m\+\_\+clock}}
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsf_1_1_clock}{Clock}} for measuring the elapsed time between frames. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classsf_1_1_time}{Time}} \mbox{\hyperlink{classsf_1_1_window_a218e61a2bf154498c2f2f793b267cf6c}{m\+\_\+frame\+Time\+Limit}}
-\begin{DoxyCompactList}\small\item\em Current framerate limit. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespacesf_a41039649eb65ea7646e2b97cfe124b4f}{Vector2u}} \mbox{\hyperlink{classsf_1_1_window_a65607b791306694d0f0a4cf2e8fc4559}{m\+\_\+size}}
-\begin{DoxyCompactList}\small\item\em Current size of the window. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Additional Inherited Members}
 
 
 \doxysubsection{Detailed Description}
@@ -495,41 +470,7 @@ This function is typically called after all Open\+GL rendering has been done for
 
 Display on screen what has been rendered to the window so far. 
 
-This function is typically called after all Open\+GL rendering has been done for the current frame, in order to show it on screen. \mbox{\Hypertarget{classsf_1_1_window_afd3f9e9c21dcd1fd25a38a87026a159b}\label{classsf_1_1_window_afd3f9e9c21dcd1fd25a38a87026a159b}} 
-\index{sf::Window@{sf::Window}!filterEvent@{filterEvent}}
-\index{filterEvent@{filterEvent}!sf::Window@{sf::Window}}
-\doxysubsubsection{\texorpdfstring{filterEvent()}{filterEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily bool sf\+::\+Window\+::filter\+Event (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_event}{Event}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Processes an event before it is sent to the user. 
-
-This function is called every time an event is received from the internal window (through poll\+Event or wait\+Event). It filters out unwanted events, and performs whatever internal stuff the window needs before the event is returned to the user.
-
-
-\begin{DoxyParams}{Parameters}
-{\em event} & \mbox{\hyperlink{classsf_1_1_event}{Event}} to filter \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classsf_1_1_window_afd3f9e9c21dcd1fd25a38a87026a159b}\label{classsf_1_1_window_afd3f9e9c21dcd1fd25a38a87026a159b}} 
-\index{sf::Window@{sf::Window}!filterEvent@{filterEvent}}
-\index{filterEvent@{filterEvent}!sf::Window@{sf::Window}}
-\doxysubsubsection{\texorpdfstring{filterEvent()}{filterEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily bool sf\+::\+Window\+::filter\+Event (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_event}{Event}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Processes an event before it is sent to the user. 
-
-This function is called every time an event is received from the internal window (through poll\+Event or wait\+Event). It filters out unwanted events, and performs whatever internal stuff the window needs before the event is returned to the user.
-
-
-\begin{DoxyParams}{Parameters}
-{\em event} & \mbox{\hyperlink{classsf_1_1_event}{Event}} to filter \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classsf_1_1_window_a420028b8e4d9baedcaaba7b2047b8cb3}\label{classsf_1_1_window_a420028b8e4d9baedcaaba7b2047b8cb3}} 
+This function is typically called after all Open\+GL rendering has been done for the current frame, in order to show it on screen. \mbox{\Hypertarget{classsf_1_1_window_a420028b8e4d9baedcaaba7b2047b8cb3}\label{classsf_1_1_window_a420028b8e4d9baedcaaba7b2047b8cb3}} 
 \index{sf::Window@{sf::Window}!getPosition@{getPosition}}
 \index{getPosition@{getPosition}!sf::Window@{sf::Window}}
 \doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -693,26 +634,6 @@ True if window has focus, false otherwise
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{classsf_1_1_window_a58cf7fa1775e8e7542032e3ecfa83b49}{request\+Focus}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{classsf_1_1_window_a75a8263a54f73f71572ce69f0f0cbbca}\label{classsf_1_1_window_a75a8263a54f73f71572ce69f0f0cbbca}} 
-\index{sf::Window@{sf::Window}!initialize@{initialize}}
-\index{initialize@{initialize}!sf::Window@{sf::Window}}
-\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void sf\+::\+Window\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Perform some common internal initializations. 
-
-\mbox{\Hypertarget{classsf_1_1_window_a75a8263a54f73f71572ce69f0f0cbbca}\label{classsf_1_1_window_a75a8263a54f73f71572ce69f0f0cbbca}} 
-\index{sf::Window@{sf::Window}!initialize@{initialize}}
-\index{initialize@{initialize}!sf::Window@{sf::Window}}
-\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void sf\+::\+Window\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Perform some common internal initializations. 
-
 \mbox{\Hypertarget{classsf_1_1_window_ae873503db7d48157bb9cbf6129562bce}\label{classsf_1_1_window_ae873503db7d48157bb9cbf6129562bce}} 
 \index{sf::Window@{sf::Window}!isOpen@{isOpen}}
 \index{isOpen@{isOpen}!sf::Window@{sf::Window}}
@@ -1465,79 +1386,6 @@ False if any error occurred
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{classsf_1_1_window_a338e996585faf82e93069858e3b531b7}{poll\+Event}} 
 \end{DoxySeeAlso}
-
-
-\doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{classsf_1_1_window_ab7722cfc3e60af5e0898c290bee34cb1}\label{classsf_1_1_window_ab7722cfc3e60af5e0898c290bee34cb1}} 
-\index{sf::Window@{sf::Window}!m\_clock@{m\_clock}}
-\index{m\_clock@{m\_clock}!sf::Window@{sf::Window}}
-\doxysubsubsection{\texorpdfstring{m\_clock}{m\_clock}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_clock}{Clock}} sf\+::\+Window\+::m\+\_\+clock\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-\mbox{\hyperlink{classsf_1_1_clock}{Clock}} for measuring the elapsed time between frames. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_window_8hpp_source_l00547}{547}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_window_8hpp_source}{Window.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_window_a3cb481799084a51bc90a30500213e4ab}\label{classsf_1_1_window_a3cb481799084a51bc90a30500213e4ab}} 
-\index{sf::Window@{sf::Window}!m\_context@{m\_context}}
-\index{m\_context@{m\_context}!sf::Window@{sf::Window}}
-\doxysubsubsection{\texorpdfstring{m\_context}{m\_context}}
-{\footnotesize\ttfamily priv\+::\+Gl\+Context $\ast$ sf\+::\+Window\+::m\+\_\+context\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Platform-\/specific implementation of the Open\+GL context. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_window_8hpp_source_l00546}{546}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_window_8hpp_source}{Window.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_window_a218e61a2bf154498c2f2f793b267cf6c}\label{classsf_1_1_window_a218e61a2bf154498c2f2f793b267cf6c}} 
-\index{sf::Window@{sf::Window}!m\_frameTimeLimit@{m\_frameTimeLimit}}
-\index{m\_frameTimeLimit@{m\_frameTimeLimit}!sf::Window@{sf::Window}}
-\doxysubsubsection{\texorpdfstring{m\_frameTimeLimit}{m\_frameTimeLimit}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_time}{Time}} sf\+::\+Window\+::m\+\_\+frame\+Time\+Limit\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Current framerate limit. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_window_8hpp_source_l00548}{548}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_window_8hpp_source}{Window.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_window_a52048b31ae45683d9536f283137b0cf7}\label{classsf_1_1_window_a52048b31ae45683d9536f283137b0cf7}} 
-\index{sf::Window@{sf::Window}!m\_impl@{m\_impl}}
-\index{m\_impl@{m\_impl}!sf::Window@{sf::Window}}
-\doxysubsubsection{\texorpdfstring{m\_impl}{m\_impl}}
-{\footnotesize\ttfamily priv\+::\+Window\+Impl $\ast$ sf\+::\+Window\+::m\+\_\+impl\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Platform-\/specific implementation of the window. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_window_8hpp_source_l00545}{545}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_window_8hpp_source}{Window.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_window_a65607b791306694d0f0a4cf2e8fc4559}\label{classsf_1_1_window_a65607b791306694d0f0a4cf2e8fc4559}} 
-\index{sf::Window@{sf::Window}!m\_size@{m\_size}}
-\index{m\_size@{m\_size}!sf::Window@{sf::Window}}
-\doxysubsubsection{\texorpdfstring{m\_size}{m\_size}}
-{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_a41039649eb65ea7646e2b97cfe124b4f}{Vector2u}} sf\+::\+Window\+::m\+\_\+size\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Current size of the window. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_window_8hpp_source_l00549}{549}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_window_8hpp_source}{Window.\+hpp}}.
-
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

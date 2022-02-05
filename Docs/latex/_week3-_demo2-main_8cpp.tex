@@ -1,0 +1,42 @@
+\hypertarget{_week3-_demo2-main_8cpp}{}\doxysection{Week3/\+Week3-\/\+Demo2/\+Source/\+Week3-\/\+Demo2-\/main.cpp File Reference}
+\label{_week3-_demo2-main_8cpp}\index{Week3/Week3-\/Demo2/Source/Week3-\/Demo2-\/main.cpp@{Week3/Week3-\/Demo2/Source/Week3-\/Demo2-\/main.cpp}}
+
+
+Adding Resource\+Identifiers and \mbox{\hyperlink{class_player}{Player}} inheriting from \mbox{\hyperlink{classsf_1_1_transformable}{sf\+::\+Transformable}} \& \mbox{\hyperlink{classsf_1_1_drawable}{sf\+::\+Drawable}} SFML provides an API to work with position, rotation, and scale in the class \mbox{\hyperlink{classsf_1_1_transformable}{sf\+::\+Transformable}}.  
+
+
+{\ttfamily \#include \char`\"{}Game.\+hpp\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_week3-_demo2-main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Adding Resource\+Identifiers and \mbox{\hyperlink{class_player}{Player}} inheriting from \mbox{\hyperlink{classsf_1_1_transformable}{sf\+::\+Transformable}} \& \mbox{\hyperlink{classsf_1_1_drawable}{sf\+::\+Drawable}} SFML provides an API to work with position, rotation, and scale in the class \mbox{\hyperlink{classsf_1_1_transformable}{sf\+::\+Transformable}}. 
+
+The class stores the three transforms separately and provides useful accessor functions such as set\+Position(), move(), rotate(), get\+Scale(),and many more. SFML provides another useful base class for graphical entities\+: the class \mbox{\hyperlink{classsf_1_1_drawable}{sf\+::\+Drawable}} is a stateless interface and provides only a pure virtual function with the following signature\+: virtual void Drawable\+::draw(sf\+::\+Render\+Target\& target,sf\+::\+Render\+States states) const = 0 The first parameter specifies, where the drawable object is drawn to. Mostly, this will be a \mbox{\hyperlink{classsf_1_1_render_window}{sf\+::\+Render\+Window}}. The second parameter contains additional information for the rendering process, such as blend mode, transform, the used texture, or shader. SFML\textquotesingle{}s high-\/level classes Sprite, Text, and Shape are all derived from Transformable and Drawable.
+
+\begin{DoxyAuthor}{Author}
+Hooman Salamat 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000010}{Bug}}]No known bugs. \end{DoxyRefDesc}
+
+
+Definition in file \mbox{\hyperlink{_week3-_demo2-main_8cpp_source}{Week3-\/\+Demo2-\/main.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_week3-_demo2-main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{_week3-_demo2-main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{Week3-\/Demo2-\/main.cpp@{Week3-\/Demo2-\/main.cpp}!main@{main}}
+\index{main@{main}!Week3-\/Demo2-\/main.cpp@{Week3-\/Demo2-\/main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_week3-_demo2-main_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{_week3-_demo2-main_8cpp_source}{Week3-\/\+Demo2-\/main.\+cpp}}.
+

@@ -71,7 +71,7 @@ var annotated_dup =
       [ "Sound", "classsf_1_1_sound.html", "classsf_1_1_sound" ],
       [ "SoundBuffer", "classsf_1_1_sound_buffer.html", "classsf_1_1_sound_buffer" ],
       [ "SoundBufferRecorder", "classsf_1_1_sound_buffer_recorder.html", "classsf_1_1_sound_buffer_recorder" ],
-      [ "SoundFileFactory", "classsf_1_1_sound_file_factory.html", "classsf_1_1_sound_file_factory" ],
+      [ "SoundFileFactory", "classsf_1_1_sound_file_factory.html", null ],
       [ "SoundFileReader", "classsf_1_1_sound_file_reader.html", "classsf_1_1_sound_file_reader" ],
       [ "SoundFileWriter", "classsf_1_1_sound_file_writer.html", "classsf_1_1_sound_file_writer" ],
       [ "SoundRecorder", "classsf_1_1_sound_recorder.html", "classsf_1_1_sound_recorder" ],

@@ -15,6 +15,5 @@ var classsf_1_1_udp_socket =
     [ "send", "classsf_1_1_udp_socket.html#a48969a62c80d40fd74293a740798e435", null ],
     [ "send", "classsf_1_1_udp_socket.html#a48969a62c80d40fd74293a740798e435", null ],
     [ "unbind", "classsf_1_1_udp_socket.html#a2c4abb8102a1bd31f51fcfe7f15427a3", null ],
-    [ "unbind", "classsf_1_1_udp_socket.html#a2c4abb8102a1bd31f51fcfe7f15427a3", null ],
-    [ "m_buffer", "classsf_1_1_udp_socket.html#ab1c3a202b6fefe0ec61912c6a42833dd", null ]
+    [ "unbind", "classsf_1_1_udp_socket.html#a2c4abb8102a1bd31f51fcfe7f15427a3", null ]
 ];

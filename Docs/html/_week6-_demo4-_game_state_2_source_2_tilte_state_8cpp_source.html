@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Game Engine Development II: Week6/Week6-Demo4-GameState/Source/TilteState.cpp Source File</title>
+<title>My Project: Week6/Week6-Demo4-GameState/Source/TilteState.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Game Engine Development II
+   <div id="projectname">My Project
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -118,20 +118,20 @@ $(document).ready(function(){initNavTree('_week6-_demo4-_game_state_2_source_2_t
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keywordtype">void</span> <a class="code hl_function" href="class_title_state.html#ae12beafe5aad6929a56089942de1220e">TitleState::draw</a>()</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_class" href="classsf_1_1_render_window.html">sf::RenderWindow</a>&amp; window = *<a class="code hl_function" href="class_state.html#a93a72915d1aad6d8f7eacc81094dc920">getContext</a>().<a class="code hl_variable" href="struct_state_1_1_context.html#a2a03b5d8d2904b1808d87dc3437ad281">window</a>;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    window.<a class="code hl_function" href="classsf_1_1_render_target.html#a12417a3bcc245c41d957b29583556f39">draw</a>(<a class="code hl_variable" href="class_title_state.html#afca87e4a291c9dc13c1c3ae43161f3e5">mBackgroundSprite</a>);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    window.<a class="code hl_function" href="classsf_1_1_render_target.html#a12417a3bcc245c41d957b29583556f39">draw</a>(mBackgroundSprite);</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_title_state.html#a39ca2d577793818b9417017247d5c98c">mShowText</a>)</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        window.<a class="code hl_function" href="classsf_1_1_render_target.html#a12417a3bcc245c41d957b29583556f39">draw</a>(<a class="code hl_variable" href="class_title_state.html#a73b7c3e01214d0fff03d0d2a96df8421">mText</a>);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">if</span> (mShowText)</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        window.<a class="code hl_function" href="classsf_1_1_render_target.html#a12417a3bcc245c41d957b29583556f39">draw</a>(mText);</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keywordtype">bool</span> <a class="code hl_function" href="class_title_state.html#aa282ac0c6e22267cb6a7054973d75fdf">TitleState::update</a>(<a class="code hl_class" href="classsf_1_1_time.html">sf::Time</a> dt)</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <a class="code hl_variable" href="class_title_state.html#a2250b3d758d7c303b4da2824c5571454">mTextEffectTime</a> += dt;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    mTextEffectTime += dt;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_title_state.html#a2250b3d758d7c303b4da2824c5571454">mTextEffectTime</a> &gt;= sf::seconds(0.5f))</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">if</span> (mTextEffectTime &gt;= sf::seconds(0.5f))</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <a class="code hl_variable" href="class_title_state.html#a39ca2d577793818b9417017247d5c98c">mShowText</a> = !<a class="code hl_variable" href="class_title_state.html#a39ca2d577793818b9417017247d5c98c">mShowText</a>;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <a class="code hl_variable" href="class_title_state.html#a2250b3d758d7c303b4da2824c5571454">mTextEffectTime</a> = <a class="code hl_variable" href="classsf_1_1_time.html#aa343e67f43a940e7b3b51aa10a495f2f">sf::Time::Zero</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        mShowText = !mShowText;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        mTextEffectTime = <a class="code hl_variable" href="classsf_1_1_time.html#aa343e67f43a940e7b3b51aa10a495f2f">sf::Time::Zero</a>;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
@@ -157,14 +157,10 @@ $(document).ready(function(){initNavTree('_week6-_demo4-_game_state_2_source_2_t
 <div class="ttc" id="aclass_state_html_a93a72915d1aad6d8f7eacc81094dc920"><div class="ttname"><a href="class_state.html#a93a72915d1aad6d8f7eacc81094dc920">State::getContext</a></div><div class="ttdeci">Context getContext() const</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_source_2_state_8cpp_source.html#l00038">State.cpp:38</a></div></div>
 <div class="ttc" id="aclass_state_html_aa418660892d6161772c907bd8d70f910"><div class="ttname"><a href="class_state.html#aa418660892d6161772c907bd8d70f910">State::requestStackPop</a></div><div class="ttdeci">void requestStackPop()</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_source_2_state_8cpp_source.html#l00028">State.cpp:28</a></div></div>
 <div class="ttc" id="aclass_state_stack_html"><div class="ttname"><a href="class_state_stack.html">StateStack</a></div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_state_stack_8hpp_source.html#l00023">StateStack.hpp:24</a></div></div>
-<div class="ttc" id="aclass_title_state_html_a2250b3d758d7c303b4da2824c5571454"><div class="ttname"><a href="class_title_state.html#a2250b3d758d7c303b4da2824c5571454">TitleState::mTextEffectTime</a></div><div class="ttdeci">sf::Time mTextEffectTime</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source.html#l00025">TitleState.hpp:25</a></div></div>
-<div class="ttc" id="aclass_title_state_html_a39ca2d577793818b9417017247d5c98c"><div class="ttname"><a href="class_title_state.html#a39ca2d577793818b9417017247d5c98c">TitleState::mShowText</a></div><div class="ttdeci">bool mShowText</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source.html#l00024">TitleState.hpp:24</a></div></div>
-<div class="ttc" id="aclass_title_state_html_a73b7c3e01214d0fff03d0d2a96df8421"><div class="ttname"><a href="class_title_state.html#a73b7c3e01214d0fff03d0d2a96df8421">TitleState::mText</a></div><div class="ttdeci">sf::Text mText</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source.html#l00022">TitleState.hpp:22</a></div></div>
 <div class="ttc" id="aclass_title_state_html_a91c6ab4d741fe7445d88ed603001971a"><div class="ttname"><a href="class_title_state.html#a91c6ab4d741fe7445d88ed603001971a">TitleState::handleEvent</a></div><div class="ttdeci">virtual bool handleEvent(const sf::Event &amp;event)</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_source_2_title_state_8cpp_source.html#l00044">TitleState.cpp:44</a></div></div>
 <div class="ttc" id="aclass_title_state_html_a9fb6569d8ed77db85dcf8af2890c112c"><div class="ttname"><a href="class_title_state.html#a9fb6569d8ed77db85dcf8af2890c112c">TitleState::TitleState</a></div><div class="ttdeci">TitleState(StateStack &amp;stack, Context context)</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_source_2_title_state_8cpp_source.html#l00008">TitleState.cpp:8</a></div></div>
 <div class="ttc" id="aclass_title_state_html_aa282ac0c6e22267cb6a7054973d75fdf"><div class="ttname"><a href="class_title_state.html#aa282ac0c6e22267cb6a7054973d75fdf">TitleState::update</a></div><div class="ttdeci">virtual bool update(sf::Time dt)</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_source_2_title_state_8cpp_source.html#l00031">TitleState.cpp:31</a></div></div>
 <div class="ttc" id="aclass_title_state_html_ae12beafe5aad6929a56089942de1220e"><div class="ttname"><a href="class_title_state.html#ae12beafe5aad6929a56089942de1220e">TitleState::draw</a></div><div class="ttdeci">virtual void draw()</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_source_2_title_state_8cpp_source.html#l00022">TitleState.cpp:22</a></div></div>
-<div class="ttc" id="aclass_title_state_html_afca87e4a291c9dc13c1c3ae43161f3e5"><div class="ttname"><a href="class_title_state.html#afca87e4a291c9dc13c1c3ae43161f3e5">TitleState::mBackgroundSprite</a></div><div class="ttdeci">sf::Sprite mBackgroundSprite</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_title_state_8hpp_source.html#l00021">TitleState.hpp:21</a></div></div>
 <div class="ttc" id="aclasssf_1_1_event_html"><div class="ttname"><a href="classsf_1_1_event.html">sf::Event</a></div><div class="ttdoc">Defines a system event and its parameters.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source.html#l00044">Event.hpp:45</a></div></div>
 <div class="ttc" id="aclasssf_1_1_event_html_adf2f8044f713fd9d6019077b0d1ffe0a"><div class="ttname"><a href="classsf_1_1_event.html#adf2f8044f713fd9d6019077b0d1ffe0a">sf::Event::type</a></div><div class="ttdeci">EventType type</div><div class="ttdoc">Type of the event.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source.html#l00219">Event.hpp:219</a></div></div>
 <div class="ttc" id="aclasssf_1_1_event_html_af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4"><div class="ttname"><a href="classsf_1_1_event.html#af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4">sf::Event::KeyPressed</a></div><div class="ttdeci">@ KeyPressed</div><div class="ttdoc">A key was pressed (data in event.key)</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source.html#l00194">Event.hpp:194</a></div></div>

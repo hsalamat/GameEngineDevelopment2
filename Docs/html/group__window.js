@@ -11,8 +11,7 @@ var group__window =
       [ "getSettings", "classsf_1_1_context.html#a5aace0ecfcf9552e97eed9ae88d01f71", null ],
       [ "getSettings", "classsf_1_1_context.html#a5aace0ecfcf9552e97eed9ae88d01f71", null ],
       [ "setActive", "classsf_1_1_context.html#a0806f915ea81ae1f4e8135a7a3696562", null ],
-      [ "setActive", "classsf_1_1_context.html#a0806f915ea81ae1f4e8135a7a3696562", null ],
-      [ "m_context", "classsf_1_1_context.html#aed2ee6e7409507fbb3ffd953d79d08c5", null ]
+      [ "setActive", "classsf_1_1_context.html#a0806f915ea81ae1f4e8135a7a3696562", null ]
     ] ],
     [ "sf::ContextSettings", "structsf_1_1_context_settings.html", [
       [ "Attribute", "structsf_1_1_context_settings.html#af2e91e57e8d26c40afe2ec8efaa32a2c", [
@@ -102,14 +101,11 @@ var group__window =
       [ "~Cursor", "classsf_1_1_cursor.html#a777ba6a1d0d68f8eb9dc85976a5b9727", null ],
       [ "Cursor", "classsf_1_1_cursor.html#a6a36a0a5943b22b77b00cac839dd715c", null ],
       [ "~Cursor", "classsf_1_1_cursor.html#a777ba6a1d0d68f8eb9dc85976a5b9727", null ],
-      [ "getImpl", "classsf_1_1_cursor.html#a4219624c65ae8349bdec6841cc9b5fdf", null ],
-      [ "getImpl", "classsf_1_1_cursor.html#a4219624c65ae8349bdec6841cc9b5fdf", null ],
       [ "loadFromPixels", "classsf_1_1_cursor.html#ac24ecf82ac7d9ba6703389397f948b3a", null ],
       [ "loadFromPixels", "classsf_1_1_cursor.html#ac24ecf82ac7d9ba6703389397f948b3a", null ],
       [ "loadFromSystem", "classsf_1_1_cursor.html#ad41999c8633c2fbaa2364e379c1ab25b", null ],
       [ "loadFromSystem", "classsf_1_1_cursor.html#ad41999c8633c2fbaa2364e379c1ab25b", null ],
-      [ "Window", "classsf_1_1_cursor.html#a6f567238a0aaa00ab1b336d0cf0faf4b", null ],
-      [ "m_impl", "classsf_1_1_cursor.html#a3d6ca47bf8db47b818308f874e7f042f", null ]
+      [ "Window", "classsf_1_1_cursor.html#a6f567238a0aaa00ab1b336d0cf0faf4b", null ]
     ] ],
     [ "sf::Event", "classsf_1_1_event.html", [
       [ "JoystickButtonEvent", "structsf_1_1_event_1_1_joystick_button_event.html", [
@@ -895,8 +891,6 @@ var group__window =
       [ "create", "classsf_1_1_window.html#acf67483dc21f08d65c8835b3889b41b2", null ],
       [ "display", "classsf_1_1_window.html#adabf839cb103ac96cfc82f781638772a", null ],
       [ "display", "classsf_1_1_window.html#adabf839cb103ac96cfc82f781638772a", null ],
-      [ "filterEvent", "classsf_1_1_window.html#afd3f9e9c21dcd1fd25a38a87026a159b", null ],
-      [ "filterEvent", "classsf_1_1_window.html#afd3f9e9c21dcd1fd25a38a87026a159b", null ],
       [ "getPosition", "classsf_1_1_window.html#a420028b8e4d9baedcaaba7b2047b8cb3", null ],
       [ "getPosition", "classsf_1_1_window.html#a420028b8e4d9baedcaaba7b2047b8cb3", null ],
       [ "getSettings", "classsf_1_1_window.html#a0605afbaceb02b098f9d731b7ab4203d", null ],
@@ -907,8 +901,6 @@ var group__window =
       [ "getSystemHandle", "classsf_1_1_window.html#ad2fa6be5104ec0bfe79af7a5f524ea90", null ],
       [ "hasFocus", "classsf_1_1_window.html#ad8db2e6500d13ca9396281296404ba31", null ],
       [ "hasFocus", "classsf_1_1_window.html#ad8db2e6500d13ca9396281296404ba31", null ],
-      [ "initialize", "classsf_1_1_window.html#a75a8263a54f73f71572ce69f0f0cbbca", null ],
-      [ "initialize", "classsf_1_1_window.html#a75a8263a54f73f71572ce69f0f0cbbca", null ],
       [ "isOpen", "classsf_1_1_window.html#ae873503db7d48157bb9cbf6129562bce", null ],
       [ "isOpen", "classsf_1_1_window.html#ae873503db7d48157bb9cbf6129562bce", null ],
       [ "onCreate", "classsf_1_1_window.html#a106633b9be49b27f83d4712689b493eb", null ],
@@ -947,11 +939,6 @@ var group__window =
       [ "setVisible", "classsf_1_1_window.html#a160f7f11a207603d7e99ce606e749703", null ],
       [ "waitEvent", "classsf_1_1_window.html#aaf02ab64fbc1d374eef3696df54137bc", null ],
       [ "waitEvent", "classsf_1_1_window.html#aaf02ab64fbc1d374eef3696df54137bc", null ],
-      [ "m_clock", "classsf_1_1_window.html#ab7722cfc3e60af5e0898c290bee34cb1", null ],
-      [ "m_context", "classsf_1_1_window.html#a3cb481799084a51bc90a30500213e4ab", null ],
-      [ "m_frameTimeLimit", "classsf_1_1_window.html#a218e61a2bf154498c2f2f793b267cf6c", null ],
-      [ "m_impl", "classsf_1_1_window.html#a52048b31ae45683d9536f283137b0cf7", null ],
-      [ "m_size", "classsf_1_1_window.html#a65607b791306694d0f0a4cf2e8fc4559", null ],
       [ "sf::Style::None", "group__window.html#ggaa75e94f0d3f52da8a61ed467ffd6d6e8ac2b155f5f7b49b49c7fb99655f8da86e", null ],
       [ "sf::Style::Titlebar", "group__window.html#ggaa75e94f0d3f52da8a61ed467ffd6d6e8abf046c6fcae63075c651812c6774e389", null ],
       [ "sf::Style::Resize", "group__window.html#ggaa75e94f0d3f52da8a61ed467ffd6d6e8aa7c6f765bd5c0cdd9f81b47871508f3e", null ],

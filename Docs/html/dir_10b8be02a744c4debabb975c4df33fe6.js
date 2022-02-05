@@ -16,8 +16,6 @@ var dir_10b8be02a744c4debabb975c4df33fe6 =
     [ "SocketHandle.hpp", "_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_handle_8hpp.html", null ],
     [ "SocketSelector.hpp", "_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_socket_selector_8hpp.html", null ],
     [ "TcpListener.hpp", "_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_tcp_listener_8hpp.html", null ],
-    [ "TcpSocket.hpp", "_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_tcp_socket_8hpp.html", [
-      [ "sf::TcpSocket::PendingPacket", "structsf_1_1_tcp_socket_1_1_pending_packet.html", "structsf_1_1_tcp_socket_1_1_pending_packet" ]
-    ] ],
+    [ "TcpSocket.hpp", "_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_tcp_socket_8hpp.html", null ],
     [ "UdpSocket.hpp", "_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_udp_socket_8hpp.html", null ]
 ];

@@ -1391,7 +1391,5 @@ var class_pickup =
     [ "getCategory", "class_pickup.html#a37c7b38e64bab555872a42c06321e070", null ],
     [ "getCategory", "class_pickup.html#a37c7b38e64bab555872a42c06321e070", null ],
     [ "getCategory", "class_pickup.html#a37c7b38e64bab555872a42c06321e070", null ],
-    [ "getCategory", "class_pickup.html#a37c7b38e64bab555872a42c06321e070", null ],
-    [ "mSprite", "class_pickup.html#a5afe5dd4a7bd47f1a585b310ccd291c2", null ],
-    [ "mType", "class_pickup.html#a2132d2b9bad724a89478d817dacf06bf", null ]
+    [ "getCategory", "class_pickup.html#a37c7b38e64bab555872a42c06321e070", null ]
 ];

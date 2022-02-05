@@ -55,7 +55,5 @@ var class_game_over_state =
     [ "update", "class_game_over_state.html#a83adaa9e20dee01b9ca855542532e0cf", null ],
     [ "update", "class_game_over_state.html#a83adaa9e20dee01b9ca855542532e0cf", null ],
     [ "update", "class_game_over_state.html#a83adaa9e20dee01b9ca855542532e0cf", null ],
-    [ "update", "class_game_over_state.html#a83adaa9e20dee01b9ca855542532e0cf", null ],
-    [ "mElapsedTime", "class_game_over_state.html#a32f2b8fc0406dd66fc287418b139e908", null ],
-    [ "mGameOverText", "class_game_over_state.html#a6370131ec697b0369e9a29eb6f91dce5", null ]
+    [ "update", "class_game_over_state.html#a83adaa9e20dee01b9ca855542532e0cf", null ]
 ];

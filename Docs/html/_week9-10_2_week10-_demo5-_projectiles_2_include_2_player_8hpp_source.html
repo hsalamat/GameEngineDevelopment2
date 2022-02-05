@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Game Engine Development II: Week9-10/Week10-Demo5-Projectiles/Include/Player.hpp Source File</title>
+<title>My Project: Week9-10/Week10-Demo5-Projectiles/Include/Player.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Game Engine Development II
+   <div id="projectname">My Project
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -135,13 +135,13 @@ $(document).ready(function(){initNavTree('_week9-10_2_week10-_demo5-_projectiles
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_player.html#a6368e8f3834be9ef072ba7e09d58aae7">   39</a></span>        <a class="code hl_enumeration" href="classsf_1_1_keyboard.html#acb4cacd7cc5802dec45724cf3314a142">sf::Keyboard::Key</a>       <a class="code hl_function" href="class_player.html#a6368e8f3834be9ef072ba7e09d58aae7">getAssignedKey</a>(<a class="code hl_enumeration" href="class_player.html#a2da5df212d083bbb1460237f34ab0d88">Action</a> action) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_player.html#ae4b310a8b04f3d2b18e2192e5df536fd">   42</a></span>        <span class="keywordtype">void</span>                    <a class="code hl_function" href="class_player.html#ae4b310a8b04f3d2b18e2192e5df536fd">initializeActions</a>();</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_player.html#a78def422eabdc95236fd313dbf455a13">   43</a></span>        <span class="keyword">static</span> <span class="keywordtype">bool</span>             <a class="code hl_function" href="class_player.html#a78def422eabdc95236fd313dbf455a13">isRealtimeAction</a>(<a class="code hl_enumeration" href="class_player.html#a2da5df212d083bbb1460237f34ab0d88">Action</a> action);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordtype">void</span>                    initializeActions();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keyword">static</span> <span class="keywordtype">bool</span>             isRealtimeAction(<a class="code hl_enumeration" href="class_player.html#a2da5df212d083bbb1460237f34ab0d88">Action</a> action);</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        std::map&lt;sf::Keyboard::Key, Action&gt;     <a class="code hl_variable" href="class_player.html#a4c03bdc95da3ea6f6bc67fdc71fb6edb">mKeyBinding</a>;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        std::map&lt;Action, Command&gt;               <a class="code hl_variable" href="class_player.html#ac9df8bcf0d4dab0880818032545ca397">mActionBinding</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        std::map&lt;sf::Keyboard::Key, Action&gt;     mKeyBinding;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        std::map&lt;Action, Command&gt;               mActionBinding;</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>};</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#endif </span><span class="comment">// BOOK_PLAYER_HPP</span></div>
@@ -156,13 +156,9 @@ $(document).ready(function(){initNavTree('_week9-10_2_week10-_demo5-_projectiles
 <div class="ttc" id="aclass_player_html_a2da5df212d083bbb1460237f34ab0d88acf1fc03cb3683061c22b4f2773228623"><div class="ttname"><a href="class_player.html#a2da5df212d083bbb1460237f34ab0d88acf1fc03cb3683061c22b4f2773228623">Player::MoveLeft</a></div><div class="ttdeci">@ MoveLeft</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_player_8hpp_source.html#l00017">Player.hpp:17</a></div></div>
 <div class="ttc" id="aclass_player_html_a2da5df212d083bbb1460237f34ab0d88adedef1176941afcb33c9660b3f60c2df"><div class="ttname"><a href="class_player.html#a2da5df212d083bbb1460237f34ab0d88adedef1176941afcb33c9660b3f60c2df">Player::MoveUp</a></div><div class="ttdeci">@ MoveUp</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_player_8hpp_source.html#l00019">Player.hpp:19</a></div></div>
 <div class="ttc" id="aclass_player_html_a2da5df212d083bbb1460237f34ab0d88ae110b445106b8ffc91412b8caddfc0a7"><div class="ttname"><a href="class_player.html#a2da5df212d083bbb1460237f34ab0d88ae110b445106b8ffc91412b8caddfc0a7">Player::LaunchMissile</a></div><div class="ttdeci">@ LaunchMissile</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_player_8hpp_source.html#l00022">Player.hpp:22</a></div></div>
-<div class="ttc" id="aclass_player_html_a4c03bdc95da3ea6f6bc67fdc71fb6edb"><div class="ttname"><a href="class_player.html#a4c03bdc95da3ea6f6bc67fdc71fb6edb">Player::mKeyBinding</a></div><div class="ttdeci">std::map&lt; sf::Keyboard::Key, Action &gt; mKeyBinding</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_player_8hpp_source.html#l00052">Player.hpp:52</a></div></div>
 <div class="ttc" id="aclass_player_html_a6368e8f3834be9ef072ba7e09d58aae7"><div class="ttname"><a href="class_player.html#a6368e8f3834be9ef072ba7e09d58aae7">Player::getAssignedKey</a></div><div class="ttdeci">sf::Keyboard::Key getAssignedKey(Action action) const</div></div>
-<div class="ttc" id="aclass_player_html_a78def422eabdc95236fd313dbf455a13"><div class="ttname"><a href="class_player.html#a78def422eabdc95236fd313dbf455a13">Player::isRealtimeAction</a></div><div class="ttdeci">static bool isRealtimeAction(Action action)</div></div>
 <div class="ttc" id="aclass_player_html_ac520744c103fb38763c8856b4f158627"><div class="ttname"><a href="class_player.html#ac520744c103fb38763c8856b4f158627">Player::handleRealtimeInput</a></div><div class="ttdeci">void handleRealtimeInput(CommandQueue &amp;commands)</div></div>
 <div class="ttc" id="aclass_player_html_ac84a4e0b787f92bf773ccd0d0483f5b1"><div class="ttname"><a href="class_player.html#ac84a4e0b787f92bf773ccd0d0483f5b1">Player::handleEvent</a></div><div class="ttdeci">void handleEvent(const sf::Event &amp;event, CommandQueue &amp;commands)</div></div>
-<div class="ttc" id="aclass_player_html_ac9df8bcf0d4dab0880818032545ca397"><div class="ttname"><a href="class_player.html#ac9df8bcf0d4dab0880818032545ca397">Player::mActionBinding</a></div><div class="ttdeci">std::map&lt; Action, Command &gt; mActionBinding</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_player_8hpp_source.html#l00053">Player.hpp:53</a></div></div>
-<div class="ttc" id="aclass_player_html_ae4b310a8b04f3d2b18e2192e5df536fd"><div class="ttname"><a href="class_player.html#ae4b310a8b04f3d2b18e2192e5df536fd">Player::initializeActions</a></div><div class="ttdeci">void initializeActions()</div></div>
 <div class="ttc" id="aclass_player_html_ae7a6e190b35182eef75bb2aff219f90c"><div class="ttname"><a href="class_player.html#ae7a6e190b35182eef75bb2aff219f90c">Player::assignKey</a></div><div class="ttdeci">void assignKey(Action action, sf::Keyboard::Key key)</div></div>
 <div class="ttc" id="aclass_player_html_affe0cc3cb714f6deb4e62f0c0d3f1fd8"><div class="ttname"><a href="class_player.html#affe0cc3cb714f6deb4e62f0c0d3f1fd8">Player::Player</a></div><div class="ttdeci">Player()</div></div>
 <div class="ttc" id="aclasssf_1_1_event_html"><div class="ttname"><a href="classsf_1_1_event.html">sf::Event</a></div><div class="ttdoc">Defines a system event and its parameters.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source.html#l00044">Event.hpp:45</a></div></div>

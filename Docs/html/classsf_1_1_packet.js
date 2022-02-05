@@ -1,15 +1,11 @@
 var classsf_1_1_packet =
 [
-    [ "BoolType", "classsf_1_1_packet.html#af4e23b49b9465634c0b23aaabd94b820", null ],
-    [ "BoolType", "classsf_1_1_packet.html#af4e23b49b9465634c0b23aaabd94b820", null ],
     [ "Packet", "classsf_1_1_packet.html#a786e5d4ced83992ceefa1799963ea858", null ],
     [ "~Packet", "classsf_1_1_packet.html#adc0490ca3c7c3d1e321bd742e5213913", null ],
     [ "Packet", "classsf_1_1_packet.html#a786e5d4ced83992ceefa1799963ea858", null ],
     [ "~Packet", "classsf_1_1_packet.html#adc0490ca3c7c3d1e321bd742e5213913", null ],
     [ "append", "classsf_1_1_packet.html#a7dd6e429b87520008326c4d71f1cf011", null ],
     [ "append", "classsf_1_1_packet.html#a7dd6e429b87520008326c4d71f1cf011", null ],
-    [ "checkSize", "classsf_1_1_packet.html#a54bea2433002686cf1de8c5c6466fe5f", null ],
-    [ "checkSize", "classsf_1_1_packet.html#a54bea2433002686cf1de8c5c6466fe5f", null ],
     [ "clear", "classsf_1_1_packet.html#a133ea8b8fe6e93c230f0d79f19a3bf0d", null ],
     [ "clear", "classsf_1_1_packet.html#a133ea8b8fe6e93c230f0d79f19a3bf0d", null ],
     [ "endOfPacket", "classsf_1_1_packet.html#a61e354fa670da053907c14b738839560", null ],
@@ -24,8 +20,6 @@ var classsf_1_1_packet =
     [ "onSend", "classsf_1_1_packet.html#af0003506bcb290407dcf5fe7f13a887d", null ],
     [ "operator BoolType", "classsf_1_1_packet.html#a8ab20be4a63921b7cb1a4d8ca5c30f75", null ],
     [ "operator BoolType", "classsf_1_1_packet.html#a8ab20be4a63921b7cb1a4d8ca5c30f75", null ],
-    [ "operator!=", "classsf_1_1_packet.html#aba88e3aab53d6991bf7c001f8a416871", null ],
-    [ "operator!=", "classsf_1_1_packet.html#aba88e3aab53d6991bf7c001f8a416871", null ],
     [ "operator<<", "classsf_1_1_packet.html#ae02c874e0aac18a0497fca982a8f9083", null ],
     [ "operator<<", "classsf_1_1_packet.html#ae02c874e0aac18a0497fca982a8f9083", null ],
     [ "operator<<", "classsf_1_1_packet.html#a94522071d95189ddff1ae7ca832695ff", null ],
@@ -58,8 +52,6 @@ var classsf_1_1_packet =
     [ "operator<<", "classsf_1_1_packet.html#af3802406ed3430e20259e8551fa6554b", null ],
     [ "operator<<", "classsf_1_1_packet.html#ad5cc1857ed14878ab7a8509db8d99335", null ],
     [ "operator<<", "classsf_1_1_packet.html#ad5cc1857ed14878ab7a8509db8d99335", null ],
-    [ "operator==", "classsf_1_1_packet.html#aa3136a586a93cde1f54e669b7430dcc9", null ],
-    [ "operator==", "classsf_1_1_packet.html#aa3136a586a93cde1f54e669b7430dcc9", null ],
     [ "operator>>", "classsf_1_1_packet.html#a8b6403506fec6b69f033278de33c8145", null ],
     [ "operator>>", "classsf_1_1_packet.html#a8b6403506fec6b69f033278de33c8145", null ],
     [ "operator>>", "classsf_1_1_packet.html#aaed01fec1a3eae27a028506195607f82", null ],
@@ -93,9 +85,5 @@ var classsf_1_1_packet =
     [ "operator>>", "classsf_1_1_packet.html#a8805e66013f9f84ec8a883e42ae259d4", null ],
     [ "operator>>", "classsf_1_1_packet.html#a8805e66013f9f84ec8a883e42ae259d4", null ],
     [ "TcpSocket", "classsf_1_1_packet.html#ae50c91e8e9046881024f96682796ccfa", null ],
-    [ "UdpSocket", "classsf_1_1_packet.html#a7e0415ed4a34b5104f6b34682f602c6e", null ],
-    [ "m_data", "classsf_1_1_packet.html#a026c8781fb0845f794ced3d212ea0efd", null ],
-    [ "m_isValid", "classsf_1_1_packet.html#a7119dcd69dbd57041e60a3062ced96e6", null ],
-    [ "m_readPos", "classsf_1_1_packet.html#a874eea8a5654957a404c3b40b7ef9284", null ],
-    [ "m_sendPos", "classsf_1_1_packet.html#a321ac7748c681850fad1c52fa265434d", null ]
+    [ "UdpSocket", "classsf_1_1_packet.html#a7e0415ed4a34b5104f6b34682f602c6e", null ]
 ];

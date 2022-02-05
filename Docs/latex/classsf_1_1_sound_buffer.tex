@@ -74,43 +74,6 @@ unsigned int \mbox{\hyperlink{classsf_1_1_sound_buffer_a127707b831d875ed790eef1a
 \begin{DoxyCompactList}\small\item\em Get the total duration of the sound. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classsf_1_1_sound_buffer}{Sound\+Buffer}} \& \mbox{\hyperlink{classsf_1_1_sound_buffer_ad0b6f45d3008cd7d29d340195e68459a}{operator=}} (const \mbox{\hyperlink{classsf_1_1_sound_buffer}{Sound\+Buffer}} \&right)
 \begin{DoxyCompactList}\small\item\em Overload of assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Types}
-\begin{DoxyCompactItemize}
-\item 
-typedef std\+::set$<$ \mbox{\hyperlink{classsf_1_1_sound}{Sound}} $\ast$ $>$ \mbox{\hyperlink{classsf_1_1_sound_buffer_a0c4edd90a4c83b07369e84f14b385196}{Sound\+List}}
-\begin{DoxyCompactList}\small\item\em Set of unique sound instances. \end{DoxyCompactList}\item 
-typedef std\+::set$<$ \mbox{\hyperlink{classsf_1_1_sound}{Sound}} $\ast$ $>$ \mbox{\hyperlink{classsf_1_1_sound_buffer_a0c4edd90a4c83b07369e84f14b385196}{Sound\+List}}
-\begin{DoxyCompactList}\small\item\em Set of unique sound instances. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-bool \mbox{\hyperlink{classsf_1_1_sound_buffer_aa3c563ecb5a554c8975d93044be6fc54}{initialize}} (\mbox{\hyperlink{classsf_1_1_input_sound_file}{Input\+Sound\+File}} \&file)
-\begin{DoxyCompactList}\small\item\em Initialize the internal state after loading a new sound. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classsf_1_1_sound_buffer_afaa542a4b59ac4e8c4f4d163ea61c7e6}{update}} (unsigned int channel\+Count, unsigned int sample\+Rate)
-\begin{DoxyCompactList}\small\item\em Update the internal buffer with the cached audio samples. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsf_1_1_sound_buffer_a2761144856e452446cc26fda484b2b16}{attach\+Sound}} (\mbox{\hyperlink{classsf_1_1_sound}{Sound}} $\ast$sound) const
-\begin{DoxyCompactList}\small\item\em Add a sound to the list of sounds that use this buffer. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsf_1_1_sound_buffer_a02732b7adfaad67c931e2494a14a7027}{detach\+Sound}} (\mbox{\hyperlink{classsf_1_1_sound}{Sound}} $\ast$sound) const
-\begin{DoxyCompactList}\small\item\em Remove a sound from the list of sounds that use this buffer. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classsf_1_1_sound_buffer_aa3c563ecb5a554c8975d93044be6fc54}{initialize}} (\mbox{\hyperlink{classsf_1_1_input_sound_file}{Input\+Sound\+File}} \&file)
-\begin{DoxyCompactList}\small\item\em Initialize the internal state after loading a new sound. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classsf_1_1_sound_buffer_afaa542a4b59ac4e8c4f4d163ea61c7e6}{update}} (unsigned int channel\+Count, unsigned int sample\+Rate)
-\begin{DoxyCompactList}\small\item\em Update the internal buffer with the cached audio samples. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsf_1_1_sound_buffer_a2761144856e452446cc26fda484b2b16}{attach\+Sound}} (\mbox{\hyperlink{classsf_1_1_sound}{Sound}} $\ast$sound) const
-\begin{DoxyCompactList}\small\item\em Add a sound to the list of sounds that use this buffer. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsf_1_1_sound_buffer_a02732b7adfaad67c931e2494a14a7027}{detach\+Sound}} (\mbox{\hyperlink{classsf_1_1_sound}{Sound}} $\ast$sound) const
-\begin{DoxyCompactList}\small\item\em Remove a sound from the list of sounds that use this buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-unsigned int \mbox{\hyperlink{classsf_1_1_sound_buffer_a90bd207655b9b1a312f6ebb7ae783da2}{m\+\_\+buffer}}
-\begin{DoxyCompactList}\small\item\em Open\+AL buffer identifier. \end{DoxyCompactList}\item 
-std\+::vector$<$ \mbox{\hyperlink{namespacesf_a3c8e10435e2a310a7741755e66b5c94e}{Int16}} $>$ \mbox{\hyperlink{classsf_1_1_sound_buffer_a059715cfba0f0b42fc027101d44ab625}{m\+\_\+samples}}
-\begin{DoxyCompactList}\small\item\em Samples buffer. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classsf_1_1_time}{Time}} \mbox{\hyperlink{classsf_1_1_sound_buffer_ad7a031590faff910c94cc442864eabd3}{m\+\_\+duration}}
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsf_1_1_sound}{Sound}} duration. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classsf_1_1_sound_buffer_a0c4edd90a4c83b07369e84f14b385196}{Sound\+List}} \mbox{\hyperlink{classsf_1_1_sound_buffer_aa6fc10c994c0aaca70567e8fd1ddabc3}{m\+\_\+sounds}}
-\begin{DoxyCompactList}\small\item\em List of sounds that are using this buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -166,37 +129,6 @@ Usage example\+:
 
 
 Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_buffer_8hpp_source_l00049}{49}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_buffer_8hpp_source}{Sound\+Buffer.\+hpp}}.
-
-
-
-\doxysubsection{Member Typedef Documentation}
-\mbox{\Hypertarget{classsf_1_1_sound_buffer_a0c4edd90a4c83b07369e84f14b385196}\label{classsf_1_1_sound_buffer_a0c4edd90a4c83b07369e84f14b385196}} 
-\index{sf::SoundBuffer@{sf::SoundBuffer}!SoundList@{SoundList}}
-\index{SoundList@{SoundList}!sf::SoundBuffer@{sf::SoundBuffer}}
-\doxysubsubsection{\texorpdfstring{SoundList}{SoundList}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily typedef std\+::set$<$\mbox{\hyperlink{classsf_1_1_sound}{Sound}}$\ast$$>$ \mbox{\hyperlink{classsf_1_1_sound_buffer_a0c4edd90a4c83b07369e84f14b385196}{sf\+::\+Sound\+Buffer\+::\+Sound\+List}}\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Set of unique sound instances. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_buffer_8hpp_source_l00270}{270}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_buffer_8hpp_source}{Sound\+Buffer.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_sound_buffer_a0c4edd90a4c83b07369e84f14b385196}\label{classsf_1_1_sound_buffer_a0c4edd90a4c83b07369e84f14b385196}} 
-\index{sf::SoundBuffer@{sf::SoundBuffer}!SoundList@{SoundList}}
-\index{SoundList@{SoundList}!sf::SoundBuffer@{sf::SoundBuffer}}
-\doxysubsubsection{\texorpdfstring{SoundList}{SoundList}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily typedef std\+::set$<$\mbox{\hyperlink{classsf_1_1_sound}{Sound}}$\ast$$>$ \mbox{\hyperlink{classsf_1_1_sound_buffer_a0c4edd90a4c83b07369e84f14b385196}{sf\+::\+Sound\+Buffer\+::\+Sound\+List}}\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Set of unique sound instances. 
-
-
-
-Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_buffer_8hpp_source_l00270}{270}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_buffer_8hpp_source}{Sound\+Buffer.\+hpp}}.
 
 
 
@@ -274,66 +206,6 @@ Destructor.
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classsf_1_1_sound_buffer_a2761144856e452446cc26fda484b2b16}\label{classsf_1_1_sound_buffer_a2761144856e452446cc26fda484b2b16}} 
-\index{sf::SoundBuffer@{sf::SoundBuffer}!attachSound@{attachSound}}
-\index{attachSound@{attachSound}!sf::SoundBuffer@{sf::SoundBuffer}}
-\doxysubsubsection{\texorpdfstring{attachSound()}{attachSound()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void sf\+::\+Sound\+Buffer\+::attach\+Sound (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_sound}{Sound}} $\ast$}]{sound }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Add a sound to the list of sounds that use this buffer. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em sound} & \mbox{\hyperlink{classsf_1_1_sound}{Sound}} instance to attach \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classsf_1_1_sound_buffer_a2761144856e452446cc26fda484b2b16}\label{classsf_1_1_sound_buffer_a2761144856e452446cc26fda484b2b16}} 
-\index{sf::SoundBuffer@{sf::SoundBuffer}!attachSound@{attachSound}}
-\index{attachSound@{attachSound}!sf::SoundBuffer@{sf::SoundBuffer}}
-\doxysubsubsection{\texorpdfstring{attachSound()}{attachSound()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void sf\+::\+Sound\+Buffer\+::attach\+Sound (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_sound}{Sound}} $\ast$}]{sound }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Add a sound to the list of sounds that use this buffer. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em sound} & \mbox{\hyperlink{classsf_1_1_sound}{Sound}} instance to attach \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classsf_1_1_sound_buffer_a02732b7adfaad67c931e2494a14a7027}\label{classsf_1_1_sound_buffer_a02732b7adfaad67c931e2494a14a7027}} 
-\index{sf::SoundBuffer@{sf::SoundBuffer}!detachSound@{detachSound}}
-\index{detachSound@{detachSound}!sf::SoundBuffer@{sf::SoundBuffer}}
-\doxysubsubsection{\texorpdfstring{detachSound()}{detachSound()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void sf\+::\+Sound\+Buffer\+::detach\+Sound (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_sound}{Sound}} $\ast$}]{sound }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Remove a sound from the list of sounds that use this buffer. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em sound} & \mbox{\hyperlink{classsf_1_1_sound}{Sound}} instance to detach \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classsf_1_1_sound_buffer_a02732b7adfaad67c931e2494a14a7027}\label{classsf_1_1_sound_buffer_a02732b7adfaad67c931e2494a14a7027}} 
-\index{sf::SoundBuffer@{sf::SoundBuffer}!detachSound@{detachSound}}
-\index{detachSound@{detachSound}!sf::SoundBuffer@{sf::SoundBuffer}}
-\doxysubsubsection{\texorpdfstring{detachSound()}{detachSound()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void sf\+::\+Sound\+Buffer\+::detach\+Sound (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_sound}{Sound}} $\ast$}]{sound }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Remove a sound from the list of sounds that use this buffer. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em sound} & \mbox{\hyperlink{classsf_1_1_sound}{Sound}} instance to detach \\
-\hline
-\end{DoxyParams}
 \mbox{\Hypertarget{classsf_1_1_sound_buffer_a127707b831d875ed790eef1aa2b9fcc3}\label{classsf_1_1_sound_buffer_a127707b831d875ed790eef1aa2b9fcc3}} 
 \index{sf::SoundBuffer@{sf::SoundBuffer}!getChannelCount@{getChannelCount}}
 \index{getChannelCount@{getChannelCount}!sf::SoundBuffer@{sf::SoundBuffer}}
@@ -510,42 +382,6 @@ Read-\/only pointer to the array of sound samples
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{classsf_1_1_sound_buffer_aebe2a4bdbfbd9249353748da3f6a4fa1}{get\+Sample\+Count}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{classsf_1_1_sound_buffer_aa3c563ecb5a554c8975d93044be6fc54}\label{classsf_1_1_sound_buffer_aa3c563ecb5a554c8975d93044be6fc54}} 
-\index{sf::SoundBuffer@{sf::SoundBuffer}!initialize@{initialize}}
-\index{initialize@{initialize}!sf::SoundBuffer@{sf::SoundBuffer}}
-\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily bool sf\+::\+Sound\+Buffer\+::initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_input_sound_file}{Input\+Sound\+File}} \&}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Initialize the internal state after loading a new sound. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em file} & \mbox{\hyperlink{classsf_1_1_sound}{Sound}} file providing access to the new loaded sound\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-True on successful initialization, false on failure 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classsf_1_1_sound_buffer_aa3c563ecb5a554c8975d93044be6fc54}\label{classsf_1_1_sound_buffer_aa3c563ecb5a554c8975d93044be6fc54}} 
-\index{sf::SoundBuffer@{sf::SoundBuffer}!initialize@{initialize}}
-\index{initialize@{initialize}!sf::SoundBuffer@{sf::SoundBuffer}}
-\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily bool sf\+::\+Sound\+Buffer\+::initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_input_sound_file}{Input\+Sound\+File}} \&}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Initialize the internal state after loading a new sound. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em file} & \mbox{\hyperlink{classsf_1_1_sound}{Sound}} file providing access to the new loaded sound\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-True on successful initialization, false on failure 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classsf_1_1_sound_buffer_a2be6a8025c97eb622a7dff6cf2594394}\label{classsf_1_1_sound_buffer_a2be6a8025c97eb622a7dff6cf2594394}} 
 \index{sf::SoundBuffer@{sf::SoundBuffer}!loadFromFile@{loadFromFile}}
 \index{loadFromFile@{loadFromFile}!sf::SoundBuffer@{sf::SoundBuffer}}
@@ -828,46 +664,6 @@ True if saving succeeded, false if it failed
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{classsf_1_1_sound_buffer_a2be6a8025c97eb622a7dff6cf2594394}{load\+From\+File}}, \mbox{\hyperlink{classsf_1_1_sound_buffer_af8cfa5599739a7edae69c5cba273d33f}{load\+From\+Memory}}, \mbox{\hyperlink{classsf_1_1_sound_buffer_a42d51ce4bb3b60c7ea06f63c273fd063}{load\+From\+Samples}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{classsf_1_1_sound_buffer_afaa542a4b59ac4e8c4f4d163ea61c7e6}\label{classsf_1_1_sound_buffer_afaa542a4b59ac4e8c4f4d163ea61c7e6}} 
-\index{sf::SoundBuffer@{sf::SoundBuffer}!update@{update}}
-\index{update@{update}!sf::SoundBuffer@{sf::SoundBuffer}}
-\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily bool sf\+::\+Sound\+Buffer\+::update (\begin{DoxyParamCaption}\item[{unsigned int}]{channel\+Count,  }\item[{unsigned int}]{sample\+Rate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Update the internal buffer with the cached audio samples. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em channel\+Count} & Number of channels \\
-\hline
-{\em sample\+Rate} & Sample rate (number of samples per second)\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-True on success, false if any error happened 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classsf_1_1_sound_buffer_afaa542a4b59ac4e8c4f4d163ea61c7e6}\label{classsf_1_1_sound_buffer_afaa542a4b59ac4e8c4f4d163ea61c7e6}} 
-\index{sf::SoundBuffer@{sf::SoundBuffer}!update@{update}}
-\index{update@{update}!sf::SoundBuffer@{sf::SoundBuffer}}
-\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily bool sf\+::\+Sound\+Buffer\+::update (\begin{DoxyParamCaption}\item[{unsigned int}]{channel\+Count,  }\item[{unsigned int}]{sample\+Rate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Update the internal buffer with the cached audio samples. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em channel\+Count} & Number of channels \\
-\hline
-{\em sample\+Rate} & Sample rate (number of samples per second)\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-True on success, false if any error happened 
-\end{DoxyReturn}
 
 
 \doxysubsection{Friends And Related Function Documentation}
@@ -880,65 +676,6 @@ True on success, false if any error happened
 
 
 Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_buffer_8hpp_source_l00228}{228}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_buffer_8hpp_source}{Sound\+Buffer.\+hpp}}.
-
-
-
-\doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{classsf_1_1_sound_buffer_a90bd207655b9b1a312f6ebb7ae783da2}\label{classsf_1_1_sound_buffer_a90bd207655b9b1a312f6ebb7ae783da2}} 
-\index{sf::SoundBuffer@{sf::SoundBuffer}!m\_buffer@{m\_buffer}}
-\index{m\_buffer@{m\_buffer}!sf::SoundBuffer@{sf::SoundBuffer}}
-\doxysubsubsection{\texorpdfstring{m\_buffer}{m\_buffer}}
-{\footnotesize\ttfamily unsigned int sf\+::\+Sound\+Buffer\+::m\+\_\+buffer\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Open\+AL buffer identifier. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_buffer_8hpp_source_l00275}{275}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_buffer_8hpp_source}{Sound\+Buffer.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_sound_buffer_ad7a031590faff910c94cc442864eabd3}\label{classsf_1_1_sound_buffer_ad7a031590faff910c94cc442864eabd3}} 
-\index{sf::SoundBuffer@{sf::SoundBuffer}!m\_duration@{m\_duration}}
-\index{m\_duration@{m\_duration}!sf::SoundBuffer@{sf::SoundBuffer}}
-\doxysubsubsection{\texorpdfstring{m\_duration}{m\_duration}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_time}{Time}} sf\+::\+Sound\+Buffer\+::m\+\_\+duration\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-\mbox{\hyperlink{classsf_1_1_sound}{Sound}} duration. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_buffer_8hpp_source_l00277}{277}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_buffer_8hpp_source}{Sound\+Buffer.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_sound_buffer_a059715cfba0f0b42fc027101d44ab625}\label{classsf_1_1_sound_buffer_a059715cfba0f0b42fc027101d44ab625}} 
-\index{sf::SoundBuffer@{sf::SoundBuffer}!m\_samples@{m\_samples}}
-\index{m\_samples@{m\_samples}!sf::SoundBuffer@{sf::SoundBuffer}}
-\doxysubsubsection{\texorpdfstring{m\_samples}{m\_samples}}
-{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{namespacesf_a3c8e10435e2a310a7741755e66b5c94e}{Int16}} $>$ sf\+::\+Sound\+Buffer\+::m\+\_\+samples\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Samples buffer. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_buffer_8hpp_source_l00276}{276}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_buffer_8hpp_source}{Sound\+Buffer.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_sound_buffer_aa6fc10c994c0aaca70567e8fd1ddabc3}\label{classsf_1_1_sound_buffer_aa6fc10c994c0aaca70567e8fd1ddabc3}} 
-\index{sf::SoundBuffer@{sf::SoundBuffer}!m\_sounds@{m\_sounds}}
-\index{m\_sounds@{m\_sounds}!sf::SoundBuffer@{sf::SoundBuffer}}
-\doxysubsubsection{\texorpdfstring{m\_sounds}{m\_sounds}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_sound_buffer_a0c4edd90a4c83b07369e84f14b385196}{Sound\+List}} sf\+::\+Sound\+Buffer\+::m\+\_\+sounds\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
-
-
-
-List of sounds that are using this buffer. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_buffer_8hpp_source_l00278}{278}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_buffer_8hpp_source}{Sound\+Buffer.\+hpp}}.
 
 
 

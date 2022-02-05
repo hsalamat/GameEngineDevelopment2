@@ -39,13 +39,5 @@ var classsf_1_1_transformable =
     [ "setScale", "classsf_1_1_transformable.html#a4c48a87f1626047e448f9c1a68ff167e", null ],
     [ "setScale", "classsf_1_1_transformable.html#a4c48a87f1626047e448f9c1a68ff167e", null ],
     [ "setScale", "classsf_1_1_transformable.html#aaec50b46b3f41b054763304d1e727471", null ],
-    [ "setScale", "classsf_1_1_transformable.html#aaec50b46b3f41b054763304d1e727471", null ],
-    [ "m_inverseTransform", "classsf_1_1_transformable.html#a6538c7efb49ad3a430d45c8a52368f36", null ],
-    [ "m_inverseTransformNeedUpdate", "classsf_1_1_transformable.html#afbb99d25b4ea10943e883d45a7594761", null ],
-    [ "m_origin", "classsf_1_1_transformable.html#ad52a72593cb43a30a0cac33737a3a60c", null ],
-    [ "m_position", "classsf_1_1_transformable.html#a7081bf508f612cb63e9ce3b149758217", null ],
-    [ "m_rotation", "classsf_1_1_transformable.html#a206c593d926ee30a3c79520c2fae448b", null ],
-    [ "m_scale", "classsf_1_1_transformable.html#adf2c5e463aefb41c6d43a140c0ad151f", null ],
-    [ "m_transform", "classsf_1_1_transformable.html#ae7451ed9c4d1065fc050ce3e5ad7b34c", null ],
-    [ "m_transformNeedUpdate", "classsf_1_1_transformable.html#a394b22bfe9e9e44c672244e4da0b3c58", null ]
+    [ "setScale", "classsf_1_1_transformable.html#aaec50b46b3f41b054763304d1e727471", null ]
 ];

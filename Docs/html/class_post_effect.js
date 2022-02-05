@@ -1,6 +1,5 @@
 var class_post_effect =
 [
-    [ "RenderTextureArray", "class_post_effect.html#aacdee41227b41a22dae5305b18f836f6", null ],
     [ "PostEffect", "class_post_effect.html#a62c362aa9f707282bebdab594e4d9882", null ],
     [ "~PostEffect", "class_post_effect.html#a32f18bcd9c45994f86ce402a82285172", null ],
     [ "~PostEffect", "class_post_effect.html#a77f443593499b185f4aadee58d13d3a5", null ],
@@ -11,7 +10,6 @@ var class_post_effect =
     [ "~PostEffect", "class_post_effect.html#a77f443593499b185f4aadee58d13d3a5", null ],
     [ "~PostEffect", "class_post_effect.html#a77f443593499b185f4aadee58d13d3a5", null ],
     [ "~PostEffect", "class_post_effect.html#a77f443593499b185f4aadee58d13d3a5", null ],
-    [ "add", "class_post_effect.html#aa833d29d7ad30f2a50395c7d353b216e", null ],
     [ "apply", "class_post_effect.html#a799e646a9c3fc3b8ef51f6d16bbd6e85", null ],
     [ "apply", "class_post_effect.html#a1985593ce1a74dbf8380d5d8c9e89d06", null ],
     [ "apply", "class_post_effect.html#a1985593ce1a74dbf8380d5d8c9e89d06", null ],
@@ -20,14 +18,5 @@ var class_post_effect =
     [ "apply", "class_post_effect.html#a1985593ce1a74dbf8380d5d8c9e89d06", null ],
     [ "apply", "class_post_effect.html#a1985593ce1a74dbf8380d5d8c9e89d06", null ],
     [ "apply", "class_post_effect.html#a1985593ce1a74dbf8380d5d8c9e89d06", null ],
-    [ "apply", "class_post_effect.html#a1985593ce1a74dbf8380d5d8c9e89d06", null ],
-    [ "blur", "class_post_effect.html#acd855cb79cfd2933a4e33d8355169931", null ],
-    [ "blurMultipass", "class_post_effect.html#a6ddc29ca5d6aeb99a738edd634dc0e90", null ],
-    [ "downsample", "class_post_effect.html#ad54cb93226484ecefc28602c87e73fa5", null ],
-    [ "filterBright", "class_post_effect.html#a4362a20468079c26f2b90623b24ea81e", null ],
-    [ "prepareTextures", "class_post_effect.html#aaa1aade5b70429cb9bf19df4c0f01ea3", null ],
-    [ "mBrightnessTexture", "class_post_effect.html#a69e879539d82ffa557a993b4a6789dbe", null ],
-    [ "mFirstPassTextures", "class_post_effect.html#a5de5ae6582a63a73d9b2082492e166ed", null ],
-    [ "mSecondPassTextures", "class_post_effect.html#a6f725a554a0d617081161b00568c7cb1", null ],
-    [ "mShaders", "class_post_effect.html#a54b194b05b1d520b0c5ff19a8cda6f96", null ]
+    [ "apply", "class_post_effect.html#a1985593ce1a74dbf8380d5d8c9e89d06", null ]
 ];

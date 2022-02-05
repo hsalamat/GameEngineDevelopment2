@@ -53,8 +53,5 @@ var class_player2 =
     [ "getSprite", "class_player2.html#acd42ba38f07095814e97ac6e683142c9", null ],
     [ "getSprite", "class_player2.html#acd42ba38f07095814e97ac6e683142c9", null ],
     [ "update", "class_player2.html#a6f2076b2b9ca1ec7f6ef4a6c565ed637", null ],
-    [ "update", "class_player2.html#a6f2076b2b9ca1ec7f6ef4a6c565ed637", null ],
-    [ "mSprite", "class_player2.html#a775018b7853d055db2e221d98ecb0762", null ],
-    [ "texture2", "class_player2.html#a437166faa1ecf695d4a0d9b7b7244554", null ],
-    [ "textures", "class_player2.html#a5f682aa1a7d05cb1448a3a76d8cad438", null ]
+    [ "update", "class_player2.html#a6f2076b2b9ca1ec7f6ef4a6c565ed637", null ]
 ];

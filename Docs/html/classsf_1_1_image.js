@@ -31,7 +31,5 @@ var classsf_1_1_image =
     [ "saveToFile", "classsf_1_1_image.html#a51537fb667f47cbe80395cfd7f9e72a4", null ],
     [ "saveToFile", "classsf_1_1_image.html#a51537fb667f47cbe80395cfd7f9e72a4", null ],
     [ "setPixel", "classsf_1_1_image.html#a9fd329b8cd7d4439e07fb5d3bb2d9744", null ],
-    [ "setPixel", "classsf_1_1_image.html#a9fd329b8cd7d4439e07fb5d3bb2d9744", null ],
-    [ "m_pixels", "classsf_1_1_image.html#a1a1cd65e67a6bd7fea084f94ad9fcf60", null ],
-    [ "m_size", "classsf_1_1_image.html#a4cdfbac3fe04c8bc764b8a0082e77a28", null ]
+    [ "setPixel", "classsf_1_1_image.html#a9fd329b8cd7d4439e07fb5d3bb2d9744", null ]
 ];

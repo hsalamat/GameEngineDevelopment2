@@ -1,10 +1,6 @@
 var classsf_1_1_shader =
 [
     [ "CurrentTextureType", "structsf_1_1_shader_1_1_current_texture_type.html", null ],
-    [ "TextureTable", "classsf_1_1_shader.html#a9a60c773571550fd54a394d4ce83f4a3", null ],
-    [ "TextureTable", "classsf_1_1_shader.html#a9a60c773571550fd54a394d4ce83f4a3", null ],
-    [ "UniformTable", "classsf_1_1_shader.html#a010c8213c1f81acd3b285566f6c8fced", null ],
-    [ "UniformTable", "classsf_1_1_shader.html#a010c8213c1f81acd3b285566f6c8fced", null ],
     [ "Type", "classsf_1_1_shader.html#afaa1aa65e5de37b74d047da9def9f9b3", [
       [ "Vertex", "classsf_1_1_shader.html#afaa1aa65e5de37b74d047da9def9f9b3ac6677cff2fb888f93e247591d886a791", null ],
       [ "Geometry", "classsf_1_1_shader.html#afaa1aa65e5de37b74d047da9def9f9b3ae4df6eca15fba5a8c8b75892009508bc", null ],
@@ -25,14 +21,8 @@ var classsf_1_1_shader =
     [ "~Shader", "classsf_1_1_shader.html#a4bac6cc8b046ecd8fb967c145a2380e6", null ],
     [ "Shader", "classsf_1_1_shader.html#a1d7f28f26b4122959fcafec871c2c3c5", null ],
     [ "~Shader", "classsf_1_1_shader.html#a4bac6cc8b046ecd8fb967c145a2380e6", null ],
-    [ "bindTextures", "classsf_1_1_shader.html#a091595f44919468606a36e3414b5106e", null ],
-    [ "bindTextures", "classsf_1_1_shader.html#a091595f44919468606a36e3414b5106e", null ],
-    [ "compile", "classsf_1_1_shader.html#ae83560b673e726e48fc032f62584d606", null ],
-    [ "compile", "classsf_1_1_shader.html#ae83560b673e726e48fc032f62584d606", null ],
     [ "getNativeHandle", "classsf_1_1_shader.html#ac14d0bf7afe7b6bb415d309f9c707188", null ],
     [ "getNativeHandle", "classsf_1_1_shader.html#ac14d0bf7afe7b6bb415d309f9c707188", null ],
-    [ "getUniformLocation", "classsf_1_1_shader.html#a2127d2ac6030a825cdcb5605791d3d8a", null ],
-    [ "getUniformLocation", "classsf_1_1_shader.html#a2127d2ac6030a825cdcb5605791d3d8a", null ],
     [ "loadFromFile", "classsf_1_1_shader.html#a053a5632848ebaca2fcd8ba29abe9e6e", null ],
     [ "loadFromFile", "classsf_1_1_shader.html#a053a5632848ebaca2fcd8ba29abe9e6e", null ],
     [ "loadFromFile", "classsf_1_1_shader.html#ac9d7289966fcef562eeb92271c03e3dc", null ],
@@ -114,9 +104,5 @@ var classsf_1_1_shader =
     [ "setUniformArray", "classsf_1_1_shader.html#aeae884292fed977bbea5039818f208e7", null ],
     [ "setUniformArray", "classsf_1_1_shader.html#aeae884292fed977bbea5039818f208e7", null ],
     [ "setUniformArray", "classsf_1_1_shader.html#aa89ac1ea7918c9b1c2232df59affb7fa", null ],
-    [ "setUniformArray", "classsf_1_1_shader.html#aa89ac1ea7918c9b1c2232df59affb7fa", null ],
-    [ "m_currentTexture", "classsf_1_1_shader.html#a5d7b43495def6cc6bd91b6c5d167a485", null ],
-    [ "m_shaderProgram", "classsf_1_1_shader.html#a72169743cfd7206fd49759f705a15466", null ],
-    [ "m_textures", "classsf_1_1_shader.html#a3daecf04a0045a1d7445959432b5a52f", null ],
-    [ "m_uniforms", "classsf_1_1_shader.html#a1bf3ba9e8ca3842a9b4cb084443d0477", null ]
+    [ "setUniformArray", "classsf_1_1_shader.html#aa89ac1ea7918c9b1c2232df59affb7fa", null ]
 ];

@@ -98,6 +98,5 @@ var class_command_queue =
     [ "push", "class_command_queue.html#ad444e0d7af45d9e09b834f0cec1e1f43", null ],
     [ "push", "class_command_queue.html#ad444e0d7af45d9e09b834f0cec1e1f43", null ],
     [ "push", "class_command_queue.html#ad444e0d7af45d9e09b834f0cec1e1f43", null ],
-    [ "push", "class_command_queue.html#ad444e0d7af45d9e09b834f0cec1e1f43", null ],
-    [ "mQueue", "class_command_queue.html#a7b870208a46a21d2878ac4a43c4efc21", null ]
+    [ "push", "class_command_queue.html#ad444e0d7af45d9e09b834f0cec1e1f43", null ]
 ];

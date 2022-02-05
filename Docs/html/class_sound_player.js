@@ -32,7 +32,5 @@ var class_sound_player =
     [ "setListenerPosition", "class_sound_player.html#abfd270417c9490f1c0f92b0c4986fa52", null ],
     [ "setListenerPosition", "class_sound_player.html#abfd270417c9490f1c0f92b0c4986fa52", null ],
     [ "setListenerPosition", "class_sound_player.html#abfd270417c9490f1c0f92b0c4986fa52", null ],
-    [ "setListenerPosition", "class_sound_player.html#abfd270417c9490f1c0f92b0c4986fa52", null ],
-    [ "mSoundBuffers", "class_sound_player.html#ad3e9174521bdf0ddc6e7618a4e6d4212", null ],
-    [ "mSounds", "class_sound_player.html#ad01264344ccdd855bcbcc9c3d65fd9f4", null ]
+    [ "setListenerPosition", "class_sound_player.html#abfd270417c9490f1c0f92b0c4986fa52", null ]
 ];

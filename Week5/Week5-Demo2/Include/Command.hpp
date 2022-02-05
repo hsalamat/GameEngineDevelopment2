@@ -20,7 +20,7 @@ struct Command
 template <typename GameObject, typename Function>
 std::function<void(SceneNode&, sf::Time)> derivedAction(Function fn)
 {
-	return [=](SceneNode& node, sf::Time dt)
+	return [=](SceneNode& node, sf::Time dt)  //yes you can replace = to fn if you want to be more precise!
 	{
 		// Check if cast is safe
 		assert(dynamic_cast<GameObject*>(&node) != nullptr);

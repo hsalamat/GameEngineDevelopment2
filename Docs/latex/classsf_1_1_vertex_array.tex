@@ -62,20 +62,6 @@ void \mbox{\hyperlink{classsf_1_1_vertex_array_aa38c10707c28a97f4627ae8b2f3ad969
 \begin{DoxyCompactList}\small\item\em Get the type of primitives drawn by the vertex array. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{Float\+Rect}} \mbox{\hyperlink{classsf_1_1_vertex_array_abd57744c732abfc7d4c98d8e1d4ccca1}{get\+Bounds}} () const
 \begin{DoxyCompactList}\small\item\em Compute the bounding rectangle of the vertex array. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-virtual void \mbox{\hyperlink{classsf_1_1_vertex_array_aa461f084e4a65fabfa4992885dabbea6}{draw}} (\mbox{\hyperlink{classsf_1_1_render_target}{Render\+Target}} \&target, \mbox{\hyperlink{classsf_1_1_render_states}{Render\+States}} states) const
-\begin{DoxyCompactList}\small\item\em Draw the vertex array to a render target. \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{classsf_1_1_vertex_array_aa461f084e4a65fabfa4992885dabbea6}{draw}} (\mbox{\hyperlink{classsf_1_1_render_target}{Render\+Target}} \&target, \mbox{\hyperlink{classsf_1_1_render_states}{Render\+States}} states) const
-\begin{DoxyCompactList}\small\item\em Draw the vertex array to a render target. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-std\+::vector$<$ \mbox{\hyperlink{classsf_1_1_vertex}{Vertex}} $>$ \mbox{\hyperlink{classsf_1_1_vertex_array_ab93e889cc2408ce50ea2dd943d08a1ae}{m\+\_\+vertices}}
-\begin{DoxyCompactList}\small\item\em Vertices contained in the array. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__graphics_ga5ee56ac1339984909610713096283b1b}{Primitive\+Type}} \mbox{\hyperlink{classsf_1_1_vertex_array_a5d1b94b429267b30301430b4974c5f48}{m\+\_\+primitive\+Type}}
-\begin{DoxyCompactList}\small\item\em Type of primitives to draw. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
@@ -216,49 +202,7 @@ This function removes all the vertices from the array. It doesn\textquotesingle{
 
 Clear the vertex array. 
 
-This function removes all the vertices from the array. It doesn\textquotesingle{}t deallocate the corresponding memory, so that adding new vertices after clearing doesn\textquotesingle{}t involve reallocating all the memory. \mbox{\Hypertarget{classsf_1_1_vertex_array_aa461f084e4a65fabfa4992885dabbea6}\label{classsf_1_1_vertex_array_aa461f084e4a65fabfa4992885dabbea6}} 
-\index{sf::VertexArray@{sf::VertexArray}!draw@{draw}}
-\index{draw@{draw}!sf::VertexArray@{sf::VertexArray}}
-\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily virtual void sf\+::\+Vertex\+Array\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_render_target}{Render\+Target}} \&}]{target,  }\item[{\mbox{\hyperlink{classsf_1_1_render_states}{Render\+States}}}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
-
-
-
-Draw the vertex array to a render target. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em target} & Render target to draw to \\
-\hline
-{\em states} & Current render states \\
-\hline
-\end{DoxyParams}
-
-
-Implements \mbox{\hyperlink{classsf_1_1_drawable_a90d2c88bba9b035a0844eccb380ef631}{sf\+::\+Drawable}}.
-
-\mbox{\Hypertarget{classsf_1_1_vertex_array_aa461f084e4a65fabfa4992885dabbea6}\label{classsf_1_1_vertex_array_aa461f084e4a65fabfa4992885dabbea6}} 
-\index{sf::VertexArray@{sf::VertexArray}!draw@{draw}}
-\index{draw@{draw}!sf::VertexArray@{sf::VertexArray}}
-\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily virtual void sf\+::\+Vertex\+Array\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_render_target}{Render\+Target}} \&}]{target,  }\item[{\mbox{\hyperlink{classsf_1_1_render_states}{Render\+States}}}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
-
-
-
-Draw the vertex array to a render target. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em target} & Render target to draw to \\
-\hline
-{\em states} & Current render states \\
-\hline
-\end{DoxyParams}
-
-
-Implements \mbox{\hyperlink{classsf_1_1_drawable_a90d2c88bba9b035a0844eccb380ef631}{sf\+::\+Drawable}}.
-
-\mbox{\Hypertarget{classsf_1_1_vertex_array_abd57744c732abfc7d4c98d8e1d4ccca1}\label{classsf_1_1_vertex_array_abd57744c732abfc7d4c98d8e1d4ccca1}} 
+This function removes all the vertices from the array. It doesn\textquotesingle{}t deallocate the corresponding memory, so that adding new vertices after clearing doesn\textquotesingle{}t involve reallocating all the memory. \mbox{\Hypertarget{classsf_1_1_vertex_array_abd57744c732abfc7d4c98d8e1d4ccca1}\label{classsf_1_1_vertex_array_abd57744c732abfc7d4c98d8e1d4ccca1}} 
 \index{sf::VertexArray@{sf::VertexArray}!getBounds@{getBounds}}
 \index{getBounds@{getBounds}!sf::VertexArray@{sf::VertexArray}}
 \doxysubsubsection{\texorpdfstring{getBounds()}{getBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -500,37 +444,6 @@ This function defines how the vertices must be interpreted when it\textquotesing
 {\em type} & Type of primitive \\
 \hline
 \end{DoxyParams}
-
-
-\doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{classsf_1_1_vertex_array_a5d1b94b429267b30301430b4974c5f48}\label{classsf_1_1_vertex_array_a5d1b94b429267b30301430b4974c5f48}} 
-\index{sf::VertexArray@{sf::VertexArray}!m\_primitiveType@{m\_primitiveType}}
-\index{m\_primitiveType@{m\_primitiveType}!sf::VertexArray@{sf::VertexArray}}
-\doxysubsubsection{\texorpdfstring{m\_primitiveType}{m\_primitiveType}}
-{\footnotesize\ttfamily \mbox{\hyperlink{group__graphics_ga5ee56ac1339984909610713096283b1b}{Primitive\+Type}} sf\+::\+Vertex\+Array\+::m\+\_\+primitive\+Type\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Type of primitives to draw. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_array_8hpp_source_l00191}{191}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_array_8hpp_source}{Vertex\+Array.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_vertex_array_ab93e889cc2408ce50ea2dd943d08a1ae}\label{classsf_1_1_vertex_array_ab93e889cc2408ce50ea2dd943d08a1ae}} 
-\index{sf::VertexArray@{sf::VertexArray}!m\_vertices@{m\_vertices}}
-\index{m\_vertices@{m\_vertices}!sf::VertexArray@{sf::VertexArray}}
-\doxysubsubsection{\texorpdfstring{m\_vertices}{m\_vertices}}
-{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classsf_1_1_vertex}{Vertex}} $>$ sf\+::\+Vertex\+Array\+::m\+\_\+vertices\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Vertices contained in the array. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_array_8hpp_source_l00190}{190}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_array_8hpp_source}{Vertex\+Array.\+hpp}}.
-
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

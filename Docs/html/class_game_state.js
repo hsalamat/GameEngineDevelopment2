@@ -111,8 +111,5 @@ var class_game_state =
     [ "update", "class_game_state.html#a0b13d7c27239f0cfc7260955a960d045", null ],
     [ "update", "class_game_state.html#a0b13d7c27239f0cfc7260955a960d045", null ],
     [ "update", "class_game_state.html#a0b13d7c27239f0cfc7260955a960d045", null ],
-    [ "update", "class_game_state.html#a0b13d7c27239f0cfc7260955a960d045", null ],
-    [ "mPlayer", "class_game_state.html#ace97ddede15b11df84d98dbb5ac56a06", null ],
-    [ "mPlayer", "class_game_state.html#a638d795d11457e380bcac135e0d19fce", null ],
-    [ "mWorld", "class_game_state.html#abae3784758f93e8affba727139d51455", null ]
+    [ "update", "class_game_state.html#a0b13d7c27239f0cfc7260955a960d045", null ]
 ];

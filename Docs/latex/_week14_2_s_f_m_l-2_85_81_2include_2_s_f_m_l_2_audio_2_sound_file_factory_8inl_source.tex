@@ -48,7 +48,7 @@
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00048}00048     factory.create = \&priv::createReader<T>;}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00049}00049 }
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00050}00050     \textcolor{comment}{// Add it}}
-\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00051}00051     \mbox{\hyperlink{classsf_1_1_sound_file_factory_a5003b7cae1046435992ffa7433024964}{s\_readers}}.push\_back(factory);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00051}00051     s\_readers.push\_back(factory);}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00052}00052 \}}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00053}00053 }
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00054}00054 }
@@ -56,10 +56,10 @@
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00057}00057 \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_sound_file_factory_a9e6765c41e2784bc755388afb4a2f432}{SoundFileFactory::unregisterReader}}()}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00058}00058 \{}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00059}00059     \textcolor{comment}{// Remove the instance(s) of the reader from the array of factories}}
-\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00060}00060     \textcolor{keywordflow}{for} (ReaderFactoryArray::iterator it = \mbox{\hyperlink{classsf_1_1_sound_file_factory_a5003b7cae1046435992ffa7433024964}{s\_readers}}.begin(); it != \mbox{\hyperlink{classsf_1_1_sound_file_factory_a5003b7cae1046435992ffa7433024964}{s\_readers}}.end(); )}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00060}00060     \textcolor{keywordflow}{for} (ReaderFactoryArray::iterator it = s\_readers.begin(); it != s\_readers.end(); )}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00061}00061     \{}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00062}00062         \textcolor{keywordflow}{if} (it-\/>create == \&priv::createReader<T>)}
-\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00063}00063             it = \mbox{\hyperlink{classsf_1_1_sound_file_factory_a5003b7cae1046435992ffa7433024964}{s\_readers}}.erase(it);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00063}00063             it = s\_readers.erase(it);}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00064}00064         \textcolor{keywordflow}{else}}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00065}00065             ++it;}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00066}00066     \}}
@@ -77,7 +77,7 @@
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00079}00079     factory.create = \&priv::createWriter<T>;}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00080}00080 }
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00081}00081     \textcolor{comment}{// Add it}}
-\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00082}00082     \mbox{\hyperlink{classsf_1_1_sound_file_factory_af0d25a94d7788fc06714fd90aee2b5a6}{s\_writers}}.push\_back(factory);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00082}00082     s\_writers.push\_back(factory);}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00083}00083 \}}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00084}00084 }
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00085}00085 }
@@ -85,10 +85,10 @@
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00088}00088 \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_sound_file_factory_a2306f90d1f72e474732e4bcceeb34215}{SoundFileFactory::unregisterWriter}}()}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00089}00089 \{}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00090}00090     \textcolor{comment}{// Remove the instance(s) of the writer from the array of factories}}
-\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00091}00091     \textcolor{keywordflow}{for} (WriterFactoryArray::iterator it = \mbox{\hyperlink{classsf_1_1_sound_file_factory_af0d25a94d7788fc06714fd90aee2b5a6}{s\_writers}}.begin(); it != \mbox{\hyperlink{classsf_1_1_sound_file_factory_af0d25a94d7788fc06714fd90aee2b5a6}{s\_writers}}.end(); )}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00091}00091     \textcolor{keywordflow}{for} (WriterFactoryArray::iterator it = s\_writers.begin(); it != s\_writers.end(); )}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00092}00092     \{}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00093}00093         \textcolor{keywordflow}{if} (it-\/>create == \&priv::createWriter<T>)}
-\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00094}00094             it = \mbox{\hyperlink{classsf_1_1_sound_file_factory_af0d25a94d7788fc06714fd90aee2b5a6}{s\_writers}}.erase(it);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00094}00094             it = s\_writers.erase(it);}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00095}00095         \textcolor{keywordflow}{else}}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00096}00096             ++it;}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source_l00097}00097     \}}

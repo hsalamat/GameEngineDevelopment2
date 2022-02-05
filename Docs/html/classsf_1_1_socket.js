@@ -52,8 +52,5 @@ var classsf_1_1_socket =
     [ "isBlocking", "classsf_1_1_socket.html#ab1ceca9ac114b8baeeda3b34a0aca468", null ],
     [ "setBlocking", "classsf_1_1_socket.html#a165fc1423e281ea2714c70303d3a9782", null ],
     [ "setBlocking", "classsf_1_1_socket.html#a165fc1423e281ea2714c70303d3a9782", null ],
-    [ "SocketSelector", "classsf_1_1_socket.html#a4d597c43b180384801eff14207b0e137", null ],
-    [ "m_isBlocking", "classsf_1_1_socket.html#a0eed7647c471354050aef148bf43081f", null ],
-    [ "m_socket", "classsf_1_1_socket.html#a83b63e07a0cfdb2bb1852990afe7762d", null ],
-    [ "m_type", "classsf_1_1_socket.html#a0c41f91229069c06859746a458731617", null ]
+    [ "SocketSelector", "classsf_1_1_socket.html#a4d597c43b180384801eff14207b0e137", null ]
 ];

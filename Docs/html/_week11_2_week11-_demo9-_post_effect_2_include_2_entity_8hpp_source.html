@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Game Engine Development II: Week11/Week11-Demo9-PostEffect/Include/Entity.hpp Source File</title>
+<title>My Project: Week11/Week11-Demo9-PostEffect/Include/Entity.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Game Engine Development II
+   <div id="projectname">My Project
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -123,8 +123,8 @@ $(document).ready(function(){initNavTree('_week11_2_week11-_demo9-_post_effect_2
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <a class="code hl_class" href="classsf_1_1_vector2.html">sf::Vector2f</a>        <a class="code hl_variable" href="class_entity.html#ae6c40df3cd7d4357c2fd9ee4924bfb14">mVelocity</a>;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordtype">int</span>                 <a class="code hl_variable" href="class_entity.html#a1d394931fe49170aadf8d098fd048988">mHitpoints</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <a class="code hl_class" href="classsf_1_1_vector2.html">sf::Vector2f</a>        mVelocity;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordtype">int</span>                 mHitpoints;</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>};</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#endif </span><span class="comment">// BOOK_ENTITY_HPP</span></div>
@@ -132,7 +132,6 @@ $(document).ready(function(){initNavTree('_week11_2_week11-_demo9-_post_effect_2
 <div class="ttc" id="aclass_command_queue_html"><div class="ttname"><a href="class_command_queue.html">CommandQueue</a></div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_command_queue_8hpp_source.html#l00009">CommandQueue.hpp:10</a></div></div>
 <div class="ttc" id="aclass_entity_html"><div class="ttname"><a href="class_entity.html">Entity</a></div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_entity_8hpp_source.html#l00007">Entity.hpp:8</a></div></div>
 <div class="ttc" id="aclass_entity_html_a15660fa13012dbca80c8047e2cc6f1f5"><div class="ttname"><a href="class_entity.html#a15660fa13012dbca80c8047e2cc6f1f5">Entity::damage</a></div><div class="ttdeci">void damage(int points)</div></div>
-<div class="ttc" id="aclass_entity_html_a1d394931fe49170aadf8d098fd048988"><div class="ttname"><a href="class_entity.html#a1d394931fe49170aadf8d098fd048988">Entity::mHitpoints</a></div><div class="ttdeci">int mHitpoints</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_entity_8hpp_source.html#l00031">Entity.hpp:31</a></div></div>
 <div class="ttc" id="aclass_entity_html_a2ff2403c455f15b3fe5d04e922b3943d"><div class="ttname"><a href="class_entity.html#a2ff2403c455f15b3fe5d04e922b3943d">Entity::accelerate</a></div><div class="ttdeci">void accelerate(float vx, float vy)</div></div>
 <div class="ttc" id="aclass_entity_html_a305ac3dd729c288ab23db531fa3fb7e6"><div class="ttname"><a href="class_entity.html#a305ac3dd729c288ab23db531fa3fb7e6">Entity::Entity</a></div><div class="ttdeci">Entity(int hitpoints)</div></div>
 <div class="ttc" id="aclass_entity_html_a354ea9f771b0758f8e70bdfac9a740b4"><div class="ttname"><a href="class_entity.html#a354ea9f771b0758f8e70bdfac9a740b4">Entity::repair</a></div><div class="ttdeci">void repair(int points)</div></div>
@@ -144,7 +143,6 @@ $(document).ready(function(){initNavTree('_week11_2_week11-_demo9-_post_effect_2
 <div class="ttc" id="aclass_entity_html_a9a97806a9fa91b35945d5bbaa40b07fc"><div class="ttname"><a href="class_entity.html#a9a97806a9fa91b35945d5bbaa40b07fc">Entity::remove</a></div><div class="ttdeci">virtual void remove()</div></div>
 <div class="ttc" id="aclass_entity_html_ac51115aa45bb22eb2e450fe5eecd9a91"><div class="ttname"><a href="class_entity.html#ac51115aa45bb22eb2e450fe5eecd9a91">Entity::isDestroyed</a></div><div class="ttdeci">virtual bool isDestroyed() const</div></div>
 <div class="ttc" id="aclass_entity_html_ade4af3619c02f07429981259bacc881b"><div class="ttname"><a href="class_entity.html#ade4af3619c02f07429981259bacc881b">Entity::getHitpoints</a></div><div class="ttdeci">int getHitpoints() const</div></div>
-<div class="ttc" id="aclass_entity_html_ae6c40df3cd7d4357c2fd9ee4924bfb14"><div class="ttname"><a href="class_entity.html#ae6c40df3cd7d4357c2fd9ee4924bfb14">Entity::mVelocity</a></div><div class="ttdeci">sf::Vector2f mVelocity</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_entity_8hpp_source.html#l00030">Entity.hpp:30</a></div></div>
 <div class="ttc" id="aclass_entity_html_ae7518a0181de088e0de2eacd1a13d656"><div class="ttname"><a href="class_entity.html#ae7518a0181de088e0de2eacd1a13d656">Entity::getVelocity</a></div><div class="ttdeci">sf::Vector2f getVelocity() const</div></div>
 <div class="ttc" id="aclass_scene_node_html"><div class="ttname"><a href="class_scene_node.html">SceneNode</a></div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_scene_node_8hpp_source.html#l00019">SceneNode.hpp:20</a></div></div>
 <div class="ttc" id="aclasssf_1_1_time_html"><div class="ttname"><a href="classsf_1_1_time.html">sf::Time</a></div><div class="ttdoc">Represents a time value.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_time_8hpp_source.html#l00040">Time.hpp:41</a></div></div>

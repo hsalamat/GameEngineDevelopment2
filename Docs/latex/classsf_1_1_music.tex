@@ -77,32 +77,6 @@ virtual void \mbox{\hyperlink{classsf_1_1_music_a15119cc0419c16bb334fa0698699c02
 \begin{DoxyCompactList}\small\item\em Change the current playing position in the stream source. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}} \mbox{\hyperlink{classsf_1_1_music_aa68a64bdaf5d16e9ed64f202f5c45e03}{on\+Loop}} ()
 \begin{DoxyCompactList}\small\item\em Change the current playing position in the stream source to the loop offset. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-void \mbox{\hyperlink{classsf_1_1_music_a5da7929d371fda9bb5fdbb0ee0fdce5f}{initialize}} ()
-\begin{DoxyCompactList}\small\item\em Initialize the internal state after loading a new music. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} \mbox{\hyperlink{classsf_1_1_music_a172e5bfd83235c471c96004f93c4bd0d}{time\+To\+Samples}} (\mbox{\hyperlink{classsf_1_1_time}{Time}} position) const
-\begin{DoxyCompactList}\small\item\em Helper to convert an \mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} to a sample position. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classsf_1_1_time}{Time}} \mbox{\hyperlink{classsf_1_1_music_aa6e80347f64dde5dcd4a260e42358ac5}{samples\+To\+Time}} (\mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} samples) const
-\begin{DoxyCompactList}\small\item\em Helper to convert a sample position to an \mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsf_1_1_music_a5da7929d371fda9bb5fdbb0ee0fdce5f}{initialize}} ()
-\begin{DoxyCompactList}\small\item\em Initialize the internal state after loading a new music. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} \mbox{\hyperlink{classsf_1_1_music_a172e5bfd83235c471c96004f93c4bd0d}{time\+To\+Samples}} (\mbox{\hyperlink{classsf_1_1_time}{Time}} position) const
-\begin{DoxyCompactList}\small\item\em Helper to convert an \mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} to a sample position. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classsf_1_1_time}{Time}} \mbox{\hyperlink{classsf_1_1_music_aa6e80347f64dde5dcd4a260e42358ac5}{samples\+To\+Time}} (\mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} samples) const
-\begin{DoxyCompactList}\small\item\em Helper to convert a sample position to an \mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{classsf_1_1_input_sound_file}{Input\+Sound\+File}} \mbox{\hyperlink{classsf_1_1_music_a902ed2518e4597b0d22c47c6ab418b08}{m\+\_\+file}}
-\begin{DoxyCompactList}\small\item\em The streamed music file. \end{DoxyCompactList}\item 
-std\+::vector$<$ \mbox{\hyperlink{namespacesf_a3c8e10435e2a310a7741755e66b5c94e}{Int16}} $>$ \mbox{\hyperlink{classsf_1_1_music_a536092d1c89f4f0ebb76f491918c6252}{m\+\_\+samples}}
-\begin{DoxyCompactList}\small\item\em Temporary buffer of samples. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classsf_1_1_mutex}{Mutex}} \mbox{\hyperlink{classsf_1_1_music_a47cf4b92edf2f2e936a91b8a5cfa6824}{m\+\_\+mutex}}
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsf_1_1_mutex}{Mutex}} protecting the data. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structsf_1_1_music_1_1_span}{Span}}$<$ \mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} $>$ \mbox{\hyperlink{classsf_1_1_music_af801d83c26753ce8c041e7031ee2e0c2}{m\+\_\+loop\+Span}}
-\begin{DoxyCompactList}\small\item\em Loop Range Specifier. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
@@ -280,26 +254,6 @@ Since \mbox{\hyperlink{classsf_1_1_music_ae7b339f0a957dfad045f3f28083a015e}{set\
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{classsf_1_1_music_ae7b339f0a957dfad045f3f28083a015e}{set\+Loop\+Points}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{classsf_1_1_music_a5da7929d371fda9bb5fdbb0ee0fdce5f}\label{classsf_1_1_music_a5da7929d371fda9bb5fdbb0ee0fdce5f}} 
-\index{sf::Music@{sf::Music}!initialize@{initialize}}
-\index{initialize@{initialize}!sf::Music@{sf::Music}}
-\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void sf\+::\+Music\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Initialize the internal state after loading a new music. 
-
-\mbox{\Hypertarget{classsf_1_1_music_a5da7929d371fda9bb5fdbb0ee0fdce5f}\label{classsf_1_1_music_a5da7929d371fda9bb5fdbb0ee0fdce5f}} 
-\index{sf::Music@{sf::Music}!initialize@{initialize}}
-\index{initialize@{initialize}!sf::Music@{sf::Music}}
-\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void sf\+::\+Music\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Initialize the internal state after loading a new music. 
-
 \mbox{\Hypertarget{classsf_1_1_music_aca1bcb4e5d56a854133e74bd86374463}\label{classsf_1_1_music_aca1bcb4e5d56a854133e74bd86374463}} 
 \index{sf::Music@{sf::Music}!onGetData@{onGetData}}
 \index{onGetData@{onGetData}!sf::Music@{sf::Music}}
@@ -584,42 +538,6 @@ True if loading succeeded, false if it failed
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{classsf_1_1_music_a3edc66e5f5b3f11e84b90eaec9c7d7c0}{open\+From\+File}}, \mbox{\hyperlink{classsf_1_1_music_ae93b21bcf28ff0b5fec458039111386e}{open\+From\+Memory}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{classsf_1_1_music_aa6e80347f64dde5dcd4a260e42358ac5}\label{classsf_1_1_music_aa6e80347f64dde5dcd4a260e42358ac5}} 
-\index{sf::Music@{sf::Music}!samplesToTime@{samplesToTime}}
-\index{samplesToTime@{samplesToTime}!sf::Music@{sf::Music}}
-\doxysubsubsection{\texorpdfstring{samplesToTime()}{samplesToTime()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_time}{Time}} sf\+::\+Music\+::samples\+To\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}}}]{samples }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Helper to convert a sample position to an \mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em samples} & Sample count to convert to \mbox{\hyperlink{classsf_1_1_time}{Time}}\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-The \mbox{\hyperlink{classsf_1_1_time}{Time}} position of the given sample 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classsf_1_1_music_aa6e80347f64dde5dcd4a260e42358ac5}\label{classsf_1_1_music_aa6e80347f64dde5dcd4a260e42358ac5}} 
-\index{sf::Music@{sf::Music}!samplesToTime@{samplesToTime}}
-\index{samplesToTime@{samplesToTime}!sf::Music@{sf::Music}}
-\doxysubsubsection{\texorpdfstring{samplesToTime()}{samplesToTime()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_time}{Time}} sf\+::\+Music\+::samples\+To\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}}}]{samples }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Helper to convert a sample position to an \mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em samples} & Sample count to convert to \mbox{\hyperlink{classsf_1_1_time}{Time}}\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-The \mbox{\hyperlink{classsf_1_1_time}{Time}} position of the given sample 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classsf_1_1_music_ae7b339f0a957dfad045f3f28083a015e}\label{classsf_1_1_music_ae7b339f0a957dfad045f3f28083a015e}} 
 \index{sf::Music@{sf::Music}!setLoopPoints@{setLoopPoints}}
 \index{setLoopPoints@{setLoopPoints}!sf::Music@{sf::Music}}
@@ -666,101 +584,6 @@ Setting the loop points while the stream\textquotesingle{}s status is Paused wil
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{classsf_1_1_music_aae3451cad5c16ee6a6e124e62ed61361}{get\+Loop\+Points}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{classsf_1_1_music_a172e5bfd83235c471c96004f93c4bd0d}\label{classsf_1_1_music_a172e5bfd83235c471c96004f93c4bd0d}} 
-\index{sf::Music@{sf::Music}!timeToSamples@{timeToSamples}}
-\index{timeToSamples@{timeToSamples}!sf::Music@{sf::Music}}
-\doxysubsubsection{\texorpdfstring{timeToSamples()}{timeToSamples()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} sf\+::\+Music\+::time\+To\+Samples (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{Time}}}]{position }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Helper to convert an \mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} to a sample position. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em position} & \mbox{\hyperlink{classsf_1_1_time}{Time}} to convert to samples\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-The number of samples elapsed at the given time 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classsf_1_1_music_a172e5bfd83235c471c96004f93c4bd0d}\label{classsf_1_1_music_a172e5bfd83235c471c96004f93c4bd0d}} 
-\index{sf::Music@{sf::Music}!timeToSamples@{timeToSamples}}
-\index{timeToSamples@{timeToSamples}!sf::Music@{sf::Music}}
-\doxysubsubsection{\texorpdfstring{timeToSamples()}{timeToSamples()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} sf\+::\+Music\+::time\+To\+Samples (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{Time}}}]{position }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Helper to convert an \mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} to a sample position. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em position} & \mbox{\hyperlink{classsf_1_1_time}{Time}} to convert to samples\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-The number of samples elapsed at the given time 
-\end{DoxyReturn}
-
-
-\doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{classsf_1_1_music_a902ed2518e4597b0d22c47c6ab418b08}\label{classsf_1_1_music_a902ed2518e4597b0d22c47c6ab418b08}} 
-\index{sf::Music@{sf::Music}!m\_file@{m\_file}}
-\index{m\_file@{m\_file}!sf::Music@{sf::Music}}
-\doxysubsubsection{\texorpdfstring{m\_file}{m\_file}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_input_sound_file}{Input\+Sound\+File}} sf\+::\+Music\+::m\+\_\+file\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-The streamed music file. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_music_8hpp_source_l00279}{279}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_music_8hpp_source}{Music.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_music_af801d83c26753ce8c041e7031ee2e0c2}\label{classsf_1_1_music_af801d83c26753ce8c041e7031ee2e0c2}} 
-\index{sf::Music@{sf::Music}!m\_loopSpan@{m\_loopSpan}}
-\index{m\_loopSpan@{m\_loopSpan}!sf::Music@{sf::Music}}
-\doxysubsubsection{\texorpdfstring{m\_loopSpan}{m\_loopSpan}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structsf_1_1_music_1_1_span}{Span}}$<$ \mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} $>$ sf\+::\+Music\+::m\+\_\+loop\+Span\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Loop Range Specifier. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_music_8hpp_source_l00282}{282}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_music_8hpp_source}{Music.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_music_a47cf4b92edf2f2e936a91b8a5cfa6824}\label{classsf_1_1_music_a47cf4b92edf2f2e936a91b8a5cfa6824}} 
-\index{sf::Music@{sf::Music}!m\_mutex@{m\_mutex}}
-\index{m\_mutex@{m\_mutex}!sf::Music@{sf::Music}}
-\doxysubsubsection{\texorpdfstring{m\_mutex}{m\_mutex}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_mutex}{Mutex}} sf\+::\+Music\+::m\+\_\+mutex\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-\mbox{\hyperlink{classsf_1_1_mutex}{Mutex}} protecting the data. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_music_8hpp_source_l00281}{281}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_music_8hpp_source}{Music.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_music_a536092d1c89f4f0ebb76f491918c6252}\label{classsf_1_1_music_a536092d1c89f4f0ebb76f491918c6252}} 
-\index{sf::Music@{sf::Music}!m\_samples@{m\_samples}}
-\index{m\_samples@{m\_samples}!sf::Music@{sf::Music}}
-\doxysubsubsection{\texorpdfstring{m\_samples}{m\_samples}}
-{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{namespacesf_a3c8e10435e2a310a7741755e66b5c94e}{Int16}} $>$ sf\+::\+Music\+::m\+\_\+samples\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Temporary buffer of samples. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_music_8hpp_source_l00280}{280}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_music_8hpp_source}{Music.\+hpp}}.
-
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

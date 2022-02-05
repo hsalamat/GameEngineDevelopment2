@@ -40,8 +40,7 @@ var dir_38954d5c02054c11dacdbb40a1097124 =
     ] ],
     [ "StateIdentifiers.hpp", "_week6_2_week6-_demo4-_game_state_2_include_2_state_identifiers_8hpp.html", "_week6_2_week6-_demo4-_game_state_2_include_2_state_identifiers_8hpp" ],
     [ "StateStack.hpp", "_week6_2_week6-_demo4-_game_state_2_include_2_state_stack_8hpp.html", [
-      [ "StateStack", "class_state_stack.html", "class_state_stack" ],
-      [ "StateStack::PendingChange", "struct_state_stack_1_1_pending_change.html", "struct_state_stack_1_1_pending_change" ]
+      [ "StateStack", "class_state_stack.html", "class_state_stack" ]
     ] ],
     [ "StringHelpers.hpp", "_week6_2_week6-_demo4-_game_state_2_include_2_string_helpers_8hpp.html", "_week6_2_week6-_demo4-_game_state_2_include_2_string_helpers_8hpp" ],
     [ "StringHelpers.inl", "_week6_2_week6-_demo4-_game_state_2_include_2_string_helpers_8inl.html", "_week6_2_week6-_demo4-_game_state_2_include_2_string_helpers_8inl" ],

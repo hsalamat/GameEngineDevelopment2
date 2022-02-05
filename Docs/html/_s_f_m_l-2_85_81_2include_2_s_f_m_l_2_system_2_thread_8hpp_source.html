@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Game Engine Development II: SFML-2.5.1/include/SFML/System/Thread.hpp Source File</title>
+<title>My Project: SFML-2.5.1/include/SFML/System/Thread.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Game Engine Development II
+   <div id="projectname">My Project
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -159,11 +159,11 @@ $(document).ready(function(){initNavTree('_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
 <div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="classsf_1_1_thread.html#a82dc12d2e90bdc557f3a20c61ac27700">  176</a></span>    <span class="keyword">friend</span> <span class="keyword">class </span>priv::ThreadImpl;</div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="classsf_1_1_thread.html#a593508379bd38e0b42ebf9f5a7e2829c">  184</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classsf_1_1_thread.html#a593508379bd38e0b42ebf9f5a7e2829c">run</a>();</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <span class="keywordtype">void</span> run();</div>
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    <span class="comment">// Member data</span></div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno"><a class="line" href="classsf_1_1_thread.html#a7d46a61ae85bb1424b7d4c578015b364">  189</a></span><span class="comment"></span>    priv::ThreadImpl* <a class="code hl_variable" href="classsf_1_1_thread.html#a7d46a61ae85bb1424b7d4c578015b364">m_impl</a>;       </div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="classsf_1_1_thread.html#a64132525f67596d2908ebcea2ba72c31">  190</a></span>    <a class="code hl_struct" href="structpriv_1_1_thread_func.html">priv::ThreadFunc</a>* <a class="code hl_variable" href="classsf_1_1_thread.html#a64132525f67596d2908ebcea2ba72c31">m_entryPoint</a>; </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="comment"></span>    priv::ThreadImpl* m_impl;       </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <a class="code hl_struct" href="structpriv_1_1_thread_func.html">priv::ThreadFunc</a>* m_entryPoint; </div>
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>};</div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="preprocessor">#include &lt;SFML/System/Thread.inl&gt;</span></div>
@@ -177,12 +177,9 @@ $(document).ready(function(){initNavTree('_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_
 <div class="ttc" id="aclasssf_1_1_non_copyable_html"><div class="ttname"><a href="classsf_1_1_non_copyable.html">sf::NonCopyable</a></div><div class="ttdoc">Utility class that makes any derived class non-copyable.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_non_copyable_8hpp_source.html#l00041">NonCopyable.hpp:42</a></div></div>
 <div class="ttc" id="aclasssf_1_1_thread_html"><div class="ttname"><a href="classsf_1_1_thread.html">sf::Thread</a></div><div class="ttdoc">Utility class to manipulate threads.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8hpp_source.html#l00048">Thread.hpp:49</a></div></div>
 <div class="ttc" id="aclasssf_1_1_thread_html_a4cc65399bbb111cf8132537783b8e96c"><div class="ttname"><a href="classsf_1_1_thread.html#a4cc65399bbb111cf8132537783b8e96c">sf::Thread::Thread</a></div><div class="ttdeci">Thread(F function)</div><div class="ttdoc">Construct the thread from a functor with no argument.</div></div>
-<div class="ttc" id="aclasssf_1_1_thread_html_a593508379bd38e0b42ebf9f5a7e2829c"><div class="ttname"><a href="classsf_1_1_thread.html#a593508379bd38e0b42ebf9f5a7e2829c">sf::Thread::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Internal entry point of the thread.</div></div>
-<div class="ttc" id="aclasssf_1_1_thread_html_a64132525f67596d2908ebcea2ba72c31"><div class="ttname"><a href="classsf_1_1_thread.html#a64132525f67596d2908ebcea2ba72c31">sf::Thread::m_entryPoint</a></div><div class="ttdeci">priv::ThreadFunc * m_entryPoint</div><div class="ttdoc">Abstraction of the function to run.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8hpp_source.html#l00190">Thread.hpp:190</a></div></div>
 <div class="ttc" id="aclasssf_1_1_thread_html_a719b2cc067d92d52c35064a49d850a53"><div class="ttname"><a href="classsf_1_1_thread.html#a719b2cc067d92d52c35064a49d850a53">sf::Thread::Thread</a></div><div class="ttdeci">Thread(F function, A argument)</div><div class="ttdoc">Construct the thread from a functor with an argument.</div></div>
 <div class="ttc" id="aclasssf_1_1_thread_html_a724b1f94c2d54f84280f2f78bde95fa0"><div class="ttname"><a href="classsf_1_1_thread.html#a724b1f94c2d54f84280f2f78bde95fa0">sf::Thread::wait</a></div><div class="ttdeci">void wait()</div><div class="ttdoc">Wait until the thread finishes.</div></div>
 <div class="ttc" id="aclasssf_1_1_thread_html_a74f75a9e86e1eb47479496314048b5f6"><div class="ttname"><a href="classsf_1_1_thread.html#a74f75a9e86e1eb47479496314048b5f6">sf::Thread::launch</a></div><div class="ttdeci">void launch()</div><div class="ttdoc">Run the thread.</div></div>
-<div class="ttc" id="aclasssf_1_1_thread_html_a7d46a61ae85bb1424b7d4c578015b364"><div class="ttname"><a href="classsf_1_1_thread.html#a7d46a61ae85bb1424b7d4c578015b364">sf::Thread::m_impl</a></div><div class="ttdeci">priv::ThreadImpl * m_impl</div><div class="ttdoc">OS-specific implementation of the thread.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8hpp_source.html#l00189">Thread.hpp:189</a></div></div>
 <div class="ttc" id="aclasssf_1_1_thread_html_aa9f473c8cbb078900c62b1fd14a83a34"><div class="ttname"><a href="classsf_1_1_thread.html#aa9f473c8cbb078900c62b1fd14a83a34">sf::Thread::Thread</a></div><div class="ttdeci">Thread(void(C::*function)(), C *object)</div><div class="ttdoc">Construct the thread from a member function and an object.</div></div>
 <div class="ttc" id="aclasssf_1_1_thread_html_ad6b205d4f1ce38b8d44bba0f5501477c"><div class="ttname"><a href="classsf_1_1_thread.html#ad6b205d4f1ce38b8d44bba0f5501477c">sf::Thread::terminate</a></div><div class="ttdeci">void terminate()</div><div class="ttdoc">Terminate the thread.</div></div>
 <div class="ttc" id="aclasssf_1_1_thread_html_af77942fc1730af7c31bc4c3a913a9c1d"><div class="ttname"><a href="classsf_1_1_thread.html#af77942fc1730af7c31bc4c3a913a9c1d">sf::Thread::~Thread</a></div><div class="ttdeci">~Thread()</div><div class="ttdoc">Destructor.</div></div>

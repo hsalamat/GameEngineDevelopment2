@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Game Engine Development II: sf::Ftp::Response Class Reference</title>
+<title>My Project: sf::Ftp::Response Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Game Engine Development II
+   <div id="projectname">My Project
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -94,7 +94,6 @@ $(document).ready(function(){initNavTree('classsf_1_1_ftp_1_1_response.html','')
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classsf_1_1_ftp_1_1_response-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">sf::Ftp::Response Class Reference</div></div>
 </div><!--header-->
@@ -370,15 +369,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adc2890c93c9f8ee997b828fcbef82c97"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1_ftp_1_1_response.html#adc2890c93c9f8ee997b828fcbef82c97">getMessage</a> () const</td></tr>
 <tr class="memdesc:adc2890c93c9f8ee997b828fcbef82c97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the full message contained in the response.  <a href="classsf_1_1_ftp_1_1_response.html#adc2890c93c9f8ee997b828fcbef82c97">More...</a><br /></td></tr>
 <tr class="separator:adc2890c93c9f8ee997b828fcbef82c97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:af3a8918ddd408ff8fbcce5c0beda11d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsf_1_1_ftp_1_1_response.html#af81738f06b6f571761696291276acb3b">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1_ftp_1_1_response.html#af3a8918ddd408ff8fbcce5c0beda11d4">m_status</a></td></tr>
-<tr class="memdesc:af3a8918ddd408ff8fbcce5c0beda11d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Status code returned from the server.  <a href="classsf_1_1_ftp_1_1_response.html#af3a8918ddd408ff8fbcce5c0beda11d4">More...</a><br /></td></tr>
-<tr class="separator:af3a8918ddd408ff8fbcce5c0beda11d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf692d0df6066d4a1f4d0677869b8f7b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1_ftp_1_1_response.html#aaf692d0df6066d4a1f4d0677869b8f7b">m_message</a></td></tr>
-<tr class="memdesc:aaf692d0df6066d4a1f4d0677869b8f7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Last message received from the server.  <a href="classsf_1_1_ftp_1_1_response.html#aaf692d0df6066d4a1f4d0677869b8f7b">More...</a><br /></td></tr>
-<tr class="separator:aaf692d0df6066d4a1f4d0677869b8f7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Define a FTP response. </p>
@@ -982,59 +972,6 @@ Private Attributes</h2></td></tr>
 <p>Check if the status code means a success. </p>
 <p >This function is defined for convenience, it is equivalent to testing if the status code is &lt; 400.</p>
 <dl class="section return"><dt>Returns</dt><dd>True if the status is a success, false if it is a failure </dd></dl>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="aaf692d0df6066d4a1f4d0677869b8f7b" name="aaf692d0df6066d4a1f4d0677869b8f7b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf692d0df6066d4a1f4d0677869b8f7b">&#9670;&nbsp;</a></span>m_message</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string sf::Ftp::Response::m_message</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Last message received from the server. </p>
-
-<p class="definition">Definition at line <a class="el" href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ftp_8hpp_source.html#l00181">181</a> of file <a class="el" href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ftp_8hpp_source.html">Ftp.hpp</a>.</p>
-
-</div>
-</div>
-<a id="af3a8918ddd408ff8fbcce5c0beda11d4" name="af3a8918ddd408ff8fbcce5c0beda11d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3a8918ddd408ff8fbcce5c0beda11d4">&#9670;&nbsp;</a></span>m_status</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classsf_1_1_ftp_1_1_response.html#af81738f06b6f571761696291276acb3b">Status</a> sf::Ftp::Response::m_status</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Status code returned from the server. </p>
-
-<p class="definition">Definition at line <a class="el" href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ftp_8hpp_source.html#l00180">180</a> of file <a class="el" href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ftp_8hpp_source.html">Ftp.hpp</a>.</p>
 
 </div>
 </div>

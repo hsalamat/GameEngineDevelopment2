@@ -1,7 +1,5 @@
 var classsf_1_1_http_1_1_request =
 [
-    [ "FieldTable", "classsf_1_1_http_1_1_request.html#a0a7c6144d2f18977068655c96c8cf298", null ],
-    [ "FieldTable", "classsf_1_1_http_1_1_request.html#a0a7c6144d2f18977068655c96c8cf298", null ],
     [ "Method", "classsf_1_1_http_1_1_request.html#a620f8bff6f43e1378f321bf53fbf5598", [
       [ "Get", "classsf_1_1_http_1_1_request.html#a620f8bff6f43e1378f321bf53fbf5598a24d06852a988a57bbc05874f675ea34b", null ],
       [ "Post", "classsf_1_1_http_1_1_request.html#a620f8bff6f43e1378f321bf53fbf5598a092cffa0afe3e0295202bd6c4b9f8b7b", null ],
@@ -28,10 +26,6 @@ var classsf_1_1_http_1_1_request =
     ] ],
     [ "Request", "classsf_1_1_http_1_1_request.html#a8e89d9e8ffcc1163259b35d79809a61c", null ],
     [ "Request", "classsf_1_1_http_1_1_request.html#a8e89d9e8ffcc1163259b35d79809a61c", null ],
-    [ "hasField", "classsf_1_1_http_1_1_request.html#a5f54bdf9da421af7bf4eb1a5b0c12447", null ],
-    [ "hasField", "classsf_1_1_http_1_1_request.html#a5f54bdf9da421af7bf4eb1a5b0c12447", null ],
-    [ "prepare", "classsf_1_1_http_1_1_request.html#a4f53faef789d95aa21d72264adc74fba", null ],
-    [ "prepare", "classsf_1_1_http_1_1_request.html#a4f53faef789d95aa21d72264adc74fba", null ],
     [ "setBody", "classsf_1_1_http_1_1_request.html#ae9f61ec3fa1639c70e9b5780cb35578e", null ],
     [ "setBody", "classsf_1_1_http_1_1_request.html#ae9f61ec3fa1639c70e9b5780cb35578e", null ],
     [ "setField", "classsf_1_1_http_1_1_request.html#aea672fae5dd089f4b6b3745ed46210d2", null ],
@@ -42,11 +36,5 @@ var classsf_1_1_http_1_1_request =
     [ "setMethod", "classsf_1_1_http_1_1_request.html#abab148554e873e80d2e41376fde1cb62", null ],
     [ "setUri", "classsf_1_1_http_1_1_request.html#a3723de4b4f1a14b744477841c4ac22e6", null ],
     [ "setUri", "classsf_1_1_http_1_1_request.html#a3723de4b4f1a14b744477841c4ac22e6", null ],
-    [ "Http", "classsf_1_1_http_1_1_request.html#ad44371f4a337a0f6537733cdf6df8e76", null ],
-    [ "m_body", "classsf_1_1_http_1_1_request.html#a3f4e4882547f34b7e6be3becdc291979", null ],
-    [ "m_fields", "classsf_1_1_http_1_1_request.html#a956e3ad74753c26c817fca64af7c79af", null ],
-    [ "m_majorVersion", "classsf_1_1_http_1_1_request.html#a13d0fd10599606b0ff24469286a40256", null ],
-    [ "m_method", "classsf_1_1_http_1_1_request.html#a5f6cecce1933263483692ead4f1b1dde", null ],
-    [ "m_minorVersion", "classsf_1_1_http_1_1_request.html#a43358640d27bfba18c2fce2bcbb0de5b", null ],
-    [ "m_uri", "classsf_1_1_http_1_1_request.html#ac02540198edb59c49b3996dc02200991", null ]
+    [ "Http", "classsf_1_1_http_1_1_request.html#ad44371f4a337a0f6537733cdf6df8e76", null ]
 ];

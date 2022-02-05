@@ -9,6 +9,5 @@ var classsf_1_1_rectangle_shape =
     [ "getSize", "classsf_1_1_rectangle_shape.html#af6819a7b842b83863f21e7a9c63097e7", null ],
     [ "getSize", "classsf_1_1_rectangle_shape.html#af6819a7b842b83863f21e7a9c63097e7", null ],
     [ "setSize", "classsf_1_1_rectangle_shape.html#a5c65d374d4a259dfdc24efdd24a5dbec", null ],
-    [ "setSize", "classsf_1_1_rectangle_shape.html#a5c65d374d4a259dfdc24efdd24a5dbec", null ],
-    [ "m_size", "classsf_1_1_rectangle_shape.html#ab97ec42ef436e2a622b7a853c9202118", null ]
+    [ "setSize", "classsf_1_1_rectangle_shape.html#a5c65d374d4a259dfdc24efdd24a5dbec", null ]
 ];

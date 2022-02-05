@@ -29,9 +29,5 @@ var class_loading_state =
     [ "update", "class_loading_state.html#a457c7db7de70d4fa5ab5b639d1aa7889", null ],
     [ "update", "class_loading_state.html#a457c7db7de70d4fa5ab5b639d1aa7889", null ],
     [ "update", "class_loading_state.html#a457c7db7de70d4fa5ab5b639d1aa7889", null ],
-    [ "update", "class_loading_state.html#a457c7db7de70d4fa5ab5b639d1aa7889", null ],
-    [ "mLoadingTask", "class_loading_state.html#aac9710902986a85fa6a749053fafef91", null ],
-    [ "mLoadingText", "class_loading_state.html#ac780b12d873881bd86e2a7e1e29c9bb3", null ],
-    [ "mProgressBar", "class_loading_state.html#a6aeae8b8cae8cc80ea304ebcb225a225", null ],
-    [ "mProgressBarBackground", "class_loading_state.html#a159c4bfc07ec13cb88bfd3c1e64d020a", null ]
+    [ "update", "class_loading_state.html#a457c7db7de70d4fa5ab5b639d1aa7889", null ]
 ];

@@ -11,8 +11,6 @@ var classsf_1_1_music =
     [ "getDuration", "classsf_1_1_music.html#a288ef6f552a136b0e56952dcada3d672", null ],
     [ "getLoopPoints", "classsf_1_1_music.html#aae3451cad5c16ee6a6e124e62ed61361", null ],
     [ "getLoopPoints", "classsf_1_1_music.html#aae3451cad5c16ee6a6e124e62ed61361", null ],
-    [ "initialize", "classsf_1_1_music.html#a5da7929d371fda9bb5fdbb0ee0fdce5f", null ],
-    [ "initialize", "classsf_1_1_music.html#a5da7929d371fda9bb5fdbb0ee0fdce5f", null ],
     [ "onGetData", "classsf_1_1_music.html#aca1bcb4e5d56a854133e74bd86374463", null ],
     [ "onGetData", "classsf_1_1_music.html#aca1bcb4e5d56a854133e74bd86374463", null ],
     [ "onLoop", "classsf_1_1_music.html#aa68a64bdaf5d16e9ed64f202f5c45e03", null ],
@@ -25,14 +23,6 @@ var classsf_1_1_music =
     [ "openFromMemory", "classsf_1_1_music.html#ae93b21bcf28ff0b5fec458039111386e", null ],
     [ "openFromStream", "classsf_1_1_music.html#a4e55d1910a26858b44778c26b237d673", null ],
     [ "openFromStream", "classsf_1_1_music.html#a4e55d1910a26858b44778c26b237d673", null ],
-    [ "samplesToTime", "classsf_1_1_music.html#aa6e80347f64dde5dcd4a260e42358ac5", null ],
-    [ "samplesToTime", "classsf_1_1_music.html#aa6e80347f64dde5dcd4a260e42358ac5", null ],
     [ "setLoopPoints", "classsf_1_1_music.html#ae7b339f0a957dfad045f3f28083a015e", null ],
-    [ "setLoopPoints", "classsf_1_1_music.html#ae7b339f0a957dfad045f3f28083a015e", null ],
-    [ "timeToSamples", "classsf_1_1_music.html#a172e5bfd83235c471c96004f93c4bd0d", null ],
-    [ "timeToSamples", "classsf_1_1_music.html#a172e5bfd83235c471c96004f93c4bd0d", null ],
-    [ "m_file", "classsf_1_1_music.html#a902ed2518e4597b0d22c47c6ab418b08", null ],
-    [ "m_loopSpan", "classsf_1_1_music.html#af801d83c26753ce8c041e7031ee2e0c2", null ],
-    [ "m_mutex", "classsf_1_1_music.html#a47cf4b92edf2f2e936a91b8a5cfa6824", null ],
-    [ "m_samples", "classsf_1_1_music.html#a536092d1c89f4f0ebb76f491918c6252", null ]
+    [ "setLoopPoints", "classsf_1_1_music.html#ae7b339f0a957dfad045f3f28083a015e", null ]
 ];

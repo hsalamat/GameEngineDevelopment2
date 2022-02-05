@@ -8,8 +8,6 @@ var classsf_1_1_vertex_array =
     [ "append", "classsf_1_1_vertex_array.html#a80c8f6865e53bd21fc6cb10fffa10035", null ],
     [ "clear", "classsf_1_1_vertex_array.html#a3654c424aca1f9e468f369bc777c839c", null ],
     [ "clear", "classsf_1_1_vertex_array.html#a3654c424aca1f9e468f369bc777c839c", null ],
-    [ "draw", "classsf_1_1_vertex_array.html#aa461f084e4a65fabfa4992885dabbea6", null ],
-    [ "draw", "classsf_1_1_vertex_array.html#aa461f084e4a65fabfa4992885dabbea6", null ],
     [ "getBounds", "classsf_1_1_vertex_array.html#abd57744c732abfc7d4c98d8e1d4ccca1", null ],
     [ "getBounds", "classsf_1_1_vertex_array.html#abd57744c732abfc7d4c98d8e1d4ccca1", null ],
     [ "getPrimitiveType", "classsf_1_1_vertex_array.html#aa1a60d84543aa6e220683349b645f130", null ],
@@ -23,7 +21,5 @@ var classsf_1_1_vertex_array =
     [ "resize", "classsf_1_1_vertex_array.html#a0c0fe239e8f9a54e64d3bbc96bf548c0", null ],
     [ "resize", "classsf_1_1_vertex_array.html#a0c0fe239e8f9a54e64d3bbc96bf548c0", null ],
     [ "setPrimitiveType", "classsf_1_1_vertex_array.html#aa38c10707c28a97f4627ae8b2f3ad969", null ],
-    [ "setPrimitiveType", "classsf_1_1_vertex_array.html#aa38c10707c28a97f4627ae8b2f3ad969", null ],
-    [ "m_primitiveType", "classsf_1_1_vertex_array.html#a5d1b94b429267b30301430b4974c5f48", null ],
-    [ "m_vertices", "classsf_1_1_vertex_array.html#ab93e889cc2408ce50ea2dd943d08a1ae", null ]
+    [ "setPrimitiveType", "classsf_1_1_vertex_array.html#aa38c10707c28a97f4627ae8b2f3ad969", null ]
 ];

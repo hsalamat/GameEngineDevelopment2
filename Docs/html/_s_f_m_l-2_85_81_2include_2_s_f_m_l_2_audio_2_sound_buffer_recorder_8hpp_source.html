@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Game Engine Development II: SFML-2.5.1/include/SFML/Audio/SoundBufferRecorder.hpp Source File</title>
+<title>My Project: SFML-2.5.1/include/SFML/Audio/SoundBufferRecorder.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Game Engine Development II
+   <div id="projectname">My Project
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -148,8 +148,8 @@ $(document).ready(function(){initNavTree('_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="comment">// Member data</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="classsf_1_1_sound_buffer_recorder.html#ae7554a537ae41c6acc94f32c66e9c74f">   99</a></span><span class="comment"></span>    std::vector&lt;Int16&gt; <a class="code hl_variable" href="classsf_1_1_sound_buffer_recorder.html#ae7554a537ae41c6acc94f32c66e9c74f">m_samples</a>; </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="classsf_1_1_sound_buffer_recorder.html#aacf0812e6e930cbd815073911da4626b">  100</a></span>    <a class="code hl_class" href="classsf_1_1_sound_buffer.html">SoundBuffer</a>        <a class="code hl_variable" href="classsf_1_1_sound_buffer_recorder.html#aacf0812e6e930cbd815073911da4626b">m_buffer</a>;  </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="comment"></span>    std::vector&lt;Int16&gt; m_samples; </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <a class="code hl_class" href="classsf_1_1_sound_buffer.html">SoundBuffer</a>        m_buffer;  </div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>};</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>} <span class="comment">// namespace sf</span></div>
@@ -164,9 +164,7 @@ $(document).ready(function(){initNavTree('_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_
 <div class="ttc" id="aclasssf_1_1_sound_buffer_recorder_html_a350f7f885ccfd12b4c6c120c23695637"><div class="ttname"><a href="classsf_1_1_sound_buffer_recorder.html#a350f7f885ccfd12b4c6c120c23695637">sf::SoundBufferRecorder::~SoundBufferRecorder</a></div><div class="ttdeci">~SoundBufferRecorder()</div><div class="ttdoc">destructor</div></div>
 <div class="ttc" id="aclasssf_1_1_sound_buffer_recorder_html_a531a7445fc8a48eaf9fc039c83f17c6f"><div class="ttname"><a href="classsf_1_1_sound_buffer_recorder.html#a531a7445fc8a48eaf9fc039c83f17c6f">sf::SoundBufferRecorder::onStart</a></div><div class="ttdeci">virtual bool onStart()</div><div class="ttdoc">Start capturing audio data.</div></div>
 <div class="ttc" id="aclasssf_1_1_sound_buffer_recorder_html_a9ceb94de14632ae8c1b78faf603b4767"><div class="ttname"><a href="classsf_1_1_sound_buffer_recorder.html#a9ceb94de14632ae8c1b78faf603b4767">sf::SoundBufferRecorder::onProcessSamples</a></div><div class="ttdeci">virtual bool onProcessSamples(const Int16 *samples, std::size_t sampleCount)</div><div class="ttdoc">Process a new chunk of recorded samples.</div></div>
-<div class="ttc" id="aclasssf_1_1_sound_buffer_recorder_html_aacf0812e6e930cbd815073911da4626b"><div class="ttname"><a href="classsf_1_1_sound_buffer_recorder.html#aacf0812e6e930cbd815073911da4626b">sf::SoundBufferRecorder::m_buffer</a></div><div class="ttdeci">SoundBuffer m_buffer</div><div class="ttdoc">Sound buffer that will contain the recorded data.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_buffer_recorder_8hpp_source.html#l00100">SoundBufferRecorder.hpp:100</a></div></div>
 <div class="ttc" id="aclasssf_1_1_sound_buffer_recorder_html_ab8e53849312413431873a5869d509f1e"><div class="ttname"><a href="classsf_1_1_sound_buffer_recorder.html#ab8e53849312413431873a5869d509f1e">sf::SoundBufferRecorder::onStop</a></div><div class="ttdeci">virtual void onStop()</div><div class="ttdoc">Stop capturing audio data.</div></div>
-<div class="ttc" id="aclasssf_1_1_sound_buffer_recorder_html_ae7554a537ae41c6acc94f32c66e9c74f"><div class="ttname"><a href="classsf_1_1_sound_buffer_recorder.html#ae7554a537ae41c6acc94f32c66e9c74f">sf::SoundBufferRecorder::m_samples</a></div><div class="ttdeci">std::vector&lt; Int16 &gt; m_samples</div><div class="ttdoc">Temporary sample buffer to hold the recorded data.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_buffer_recorder_8hpp_source.html#l00099">SoundBufferRecorder.hpp:99</a></div></div>
 <div class="ttc" id="aclasssf_1_1_sound_recorder_html"><div class="ttname"><a href="classsf_1_1_sound_recorder.html">sf::SoundRecorder</a></div><div class="ttdoc">Abstract base class for capturing sound data.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_recorder_8hpp_source.html#l00045">SoundRecorder.hpp:46</a></div></div>
 <div class="ttc" id="anamespacesf_html"><div class="ttname"><a href="namespacesf.html">sf</a></div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_al_resource_8hpp_source.html#l00034">AlResource.hpp:35</a></div></div>
 <div class="ttc" id="anamespacesf_html_a3c8e10435e2a310a7741755e66b5c94e"><div class="ttname"><a href="namespacesf.html#a3c8e10435e2a310a7741755e66b5c94e">sf::Int16</a></div><div class="ttdeci">signed short Int16</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_config_8hpp_source.html#l00217">Config.hpp:217</a></div></div>

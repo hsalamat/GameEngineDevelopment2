@@ -11,6 +11,5 @@ var class_network_node =
     [ "notifyGameAction", "class_network_node.html#a76c8daddb63d9d2ea57a1e3096b0fcc1", null ],
     [ "pollGameAction", "class_network_node.html#a324d5374146ccb8e1a77c932623464c1", null ],
     [ "pollGameAction", "class_network_node.html#a324d5374146ccb8e1a77c932623464c1", null ],
-    [ "pollGameAction", "class_network_node.html#a324d5374146ccb8e1a77c932623464c1", null ],
-    [ "mPendingActions", "class_network_node.html#ac97682252e2e21694af40b8f1abf8972", null ]
+    [ "pollGameAction", "class_network_node.html#a324d5374146ccb8e1a77c932623464c1", null ]
 ];

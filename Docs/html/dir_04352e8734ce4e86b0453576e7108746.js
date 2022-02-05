@@ -61,8 +61,7 @@ var dir_04352e8734ce4e86b0453576e7108746 =
     ] ],
     [ "StateIdentifiers.hpp", "_week9-10_2_week10-_demo6-_missiles_2_include_2_state_identifiers_8hpp.html", "_week9-10_2_week10-_demo6-_missiles_2_include_2_state_identifiers_8hpp" ],
     [ "StateStack.hpp", "_week9-10_2_week10-_demo6-_missiles_2_include_2_state_stack_8hpp.html", [
-      [ "StateStack", "class_state_stack.html", "class_state_stack" ],
-      [ "StateStack::PendingChange", "struct_state_stack_1_1_pending_change.html", "struct_state_stack_1_1_pending_change" ]
+      [ "StateStack", "class_state_stack.html", "class_state_stack" ]
     ] ],
     [ "TextNode.hpp", "_week9-10_2_week10-_demo6-_missiles_2_include_2_text_node_8hpp.html", [
       [ "TextNode", "class_text_node.html", "class_text_node" ]
@@ -73,7 +72,6 @@ var dir_04352e8734ce4e86b0453576e7108746 =
     [ "Utility.hpp", "_week9-10_2_week10-_demo6-_missiles_2_include_2_utility_8hpp.html", "_week9-10_2_week10-_demo6-_missiles_2_include_2_utility_8hpp" ],
     [ "Utility.inl", "_week9-10_2_week10-_demo6-_missiles_2_include_2_utility_8inl.html", "_week9-10_2_week10-_demo6-_missiles_2_include_2_utility_8inl" ],
     [ "World.hpp", "_week9-10_2_week10-_demo6-_missiles_2_include_2_world_8hpp.html", [
-      [ "World", "class_world.html", "class_world" ],
-      [ "World::SpawnPoint", "struct_world_1_1_spawn_point.html", "struct_world_1_1_spawn_point" ]
+      [ "World", "class_world.html", "class_world" ]
     ] ]
 ];

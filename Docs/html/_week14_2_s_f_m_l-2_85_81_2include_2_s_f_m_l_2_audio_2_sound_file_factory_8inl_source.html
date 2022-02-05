@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Game Engine Development II: Week14/SFML-2.5.1/include/SFML/Audio/SoundFileFactory.inl Source File</title>
+<title>My Project: Week14/SFML-2.5.1/include/SFML/Audio/SoundFileFactory.inl Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Game Engine Development II
+   <div id="projectname">My Project
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -140,7 +140,7 @@ $(document).ready(function(){initNavTree('_week14_2_s_f_m_l-2_85_81_2include_2_s
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    factory.create = &amp;priv::createReader&lt;T&gt;;</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="comment">// Add it</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <a class="code hl_variable" href="classsf_1_1_sound_file_factory.html#a5003b7cae1046435992ffa7433024964">s_readers</a>.push_back(factory);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    s_readers.push_back(factory);</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>}</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
@@ -148,10 +148,10 @@ $(document).ready(function(){initNavTree('_week14_2_s_f_m_l-2_85_81_2include_2_s
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keywordtype">void</span> <a class="code hl_function" href="classsf_1_1_sound_file_factory.html#a9e6765c41e2784bc755388afb4a2f432">SoundFileFactory::unregisterReader</a>()</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>{</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="comment">// Remove the instance(s) of the reader from the array of factories</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">for</span> (ReaderFactoryArray::iterator it = <a class="code hl_variable" href="classsf_1_1_sound_file_factory.html#a5003b7cae1046435992ffa7433024964">s_readers</a>.begin(); it != <a class="code hl_variable" href="classsf_1_1_sound_file_factory.html#a5003b7cae1046435992ffa7433024964">s_readers</a>.end(); )</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">for</span> (ReaderFactoryArray::iterator it = s_readers.begin(); it != s_readers.end(); )</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    {</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordflow">if</span> (it-&gt;create == &amp;priv::createReader&lt;T&gt;)</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            it = <a class="code hl_variable" href="classsf_1_1_sound_file_factory.html#a5003b7cae1046435992ffa7433024964">s_readers</a>.erase(it);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            it = s_readers.erase(it);</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            ++it;</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
@@ -169,7 +169,7 @@ $(document).ready(function(){initNavTree('_week14_2_s_f_m_l-2_85_81_2include_2_s
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    factory.create = &amp;priv::createWriter&lt;T&gt;;</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="comment">// Add it</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <a class="code hl_variable" href="classsf_1_1_sound_file_factory.html#af0d25a94d7788fc06714fd90aee2b5a6">s_writers</a>.push_back(factory);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    s_writers.push_back(factory);</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>}</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
@@ -177,10 +177,10 @@ $(document).ready(function(){initNavTree('_week14_2_s_f_m_l-2_85_81_2include_2_s
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keywordtype">void</span> <a class="code hl_function" href="classsf_1_1_sound_file_factory.html#a2306f90d1f72e474732e4bcceeb34215">SoundFileFactory::unregisterWriter</a>()</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>{</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="comment">// Remove the instance(s) of the writer from the array of factories</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordflow">for</span> (WriterFactoryArray::iterator it = <a class="code hl_variable" href="classsf_1_1_sound_file_factory.html#af0d25a94d7788fc06714fd90aee2b5a6">s_writers</a>.begin(); it != <a class="code hl_variable" href="classsf_1_1_sound_file_factory.html#af0d25a94d7788fc06714fd90aee2b5a6">s_writers</a>.end(); )</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordflow">for</span> (WriterFactoryArray::iterator it = s_writers.begin(); it != s_writers.end(); )</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    {</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="keywordflow">if</span> (it-&gt;create == &amp;priv::createWriter&lt;T&gt;)</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            it = <a class="code hl_variable" href="classsf_1_1_sound_file_factory.html#af0d25a94d7788fc06714fd90aee2b5a6">s_writers</a>.erase(it);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            it = s_writers.erase(it);</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            ++it;</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
@@ -189,10 +189,8 @@ $(document).ready(function(){initNavTree('_week14_2_s_f_m_l-2_85_81_2include_2_s
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>} <span class="comment">// namespace sf</span></div>
 <div class="ttc" id="aclasssf_1_1_sound_file_factory_html_a2306f90d1f72e474732e4bcceeb34215"><div class="ttname"><a href="classsf_1_1_sound_file_factory.html#a2306f90d1f72e474732e4bcceeb34215">sf::SoundFileFactory::unregisterWriter</a></div><div class="ttdeci">static void unregisterWriter()</div><div class="ttdoc">Unregister a writer.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source.html#l00088">SoundFileFactory.inl:88</a></div></div>
 <div class="ttc" id="aclasssf_1_1_sound_file_factory_html_a3a59140e6ccf1f252f721b790eddd661"><div class="ttname"><a href="classsf_1_1_sound_file_factory.html#a3a59140e6ccf1f252f721b790eddd661">sf::SoundFileFactory::registerWriter</a></div><div class="ttdeci">static void registerWriter()</div><div class="ttdoc">Register a new writer.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source.html#l00071">SoundFileFactory.inl:71</a></div></div>
-<div class="ttc" id="aclasssf_1_1_sound_file_factory_html_a5003b7cae1046435992ffa7433024964"><div class="ttname"><a href="classsf_1_1_sound_file_factory.html#a5003b7cae1046435992ffa7433024964">sf::SoundFileFactory::s_readers</a></div><div class="ttdeci">static ReaderFactoryArray s_readers</div><div class="ttdoc">List of all registered readers.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source.html#l00163">SoundFileFactory.hpp:163</a></div></div>
 <div class="ttc" id="aclasssf_1_1_sound_file_factory_html_a9e6765c41e2784bc755388afb4a2f432"><div class="ttname"><a href="classsf_1_1_sound_file_factory.html#a9e6765c41e2784bc755388afb4a2f432">sf::SoundFileFactory::unregisterReader</a></div><div class="ttdeci">static void unregisterReader()</div><div class="ttdoc">Unregister a reader.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source.html#l00057">SoundFileFactory.inl:57</a></div></div>
 <div class="ttc" id="aclasssf_1_1_sound_file_factory_html_acaf1f0bf1b7c7b9988ec76b33e33fe95"><div class="ttname"><a href="classsf_1_1_sound_file_factory.html#acaf1f0bf1b7c7b9988ec76b33e33fe95">sf::SoundFileFactory::registerReader</a></div><div class="ttdeci">static void registerReader()</div><div class="ttdoc">Register a new reader.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source.html#l00040">SoundFileFactory.inl:40</a></div></div>
-<div class="ttc" id="aclasssf_1_1_sound_file_factory_html_af0d25a94d7788fc06714fd90aee2b5a6"><div class="ttname"><a href="classsf_1_1_sound_file_factory.html#af0d25a94d7788fc06714fd90aee2b5a6">sf::SoundFileFactory::s_writers</a></div><div class="ttdeci">static WriterFactoryArray s_writers</div><div class="ttdoc">List of all registered writers.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp_source.html#l00164">SoundFileFactory.hpp:164</a></div></div>
 <div class="ttc" id="anamespacepriv_html"><div class="ttname"><a href="namespacepriv.html">priv</a></div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8inl_source.html#l00025">Thread.inl:26</a></div></div>
 <div class="ttc" id="anamespacesf_1_1priv_html_aaa8b548de29fc4570064f372b4df8df0"><div class="ttname"><a href="namespacesf_1_1priv.html#aaa8b548de29fc4570064f372b4df8df0">sf::priv::createWriter</a></div><div class="ttdeci">SoundFileWriter * createWriter()</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source.html#l00035">SoundFileFactory.inl:35</a></div></div>
 <div class="ttc" id="anamespacesf_1_1priv_html_aca30ad5e6ee22353d72145af1af53b78"><div class="ttname"><a href="namespacesf_1_1priv.html#aca30ad5e6ee22353d72145af1af53b78">sf::priv::createReader</a></div><div class="ttdeci">SoundFileReader * createReader()</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl_source.html#l00034">SoundFileFactory.inl:34</a></div></div>

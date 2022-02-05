@@ -11,10 +11,7 @@ var dir_03ba16c4096b3184fa8eb41259b2946c =
     [ "Sound.hpp", "_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_8hpp.html", null ],
     [ "SoundBuffer.hpp", "_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_buffer_8hpp.html", null ],
     [ "SoundBufferRecorder.hpp", "_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_buffer_recorder_8hpp.html", null ],
-    [ "SoundFileFactory.hpp", "_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp.html", [
-      [ "sf::SoundFileFactory::ReaderFactory", "structsf_1_1_sound_file_factory_1_1_reader_factory.html", "structsf_1_1_sound_file_factory_1_1_reader_factory" ],
-      [ "sf::SoundFileFactory::WriterFactory", "structsf_1_1_sound_file_factory_1_1_writer_factory.html", "structsf_1_1_sound_file_factory_1_1_writer_factory" ]
-    ] ],
+    [ "SoundFileFactory.hpp", "_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8hpp.html", null ],
     [ "SoundFileFactory.inl", "_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl.html", "_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_factory_8inl" ],
     [ "SoundFileReader.hpp", "_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_file_reader_8hpp.html", [
       [ "sf::SoundFileReader::Info", "structsf_1_1_sound_file_reader_1_1_info.html", "structsf_1_1_sound_file_reader_1_1_info" ]

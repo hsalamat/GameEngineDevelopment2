@@ -11,7 +11,5 @@ var classsf_1_1_circle_shape =
     [ "setPointCount", "classsf_1_1_circle_shape.html#a16590ee7bdf5c9f752275468a4997bed", null ],
     [ "setPointCount", "classsf_1_1_circle_shape.html#a16590ee7bdf5c9f752275468a4997bed", null ],
     [ "setRadius", "classsf_1_1_circle_shape.html#a21cdf85fc2f201e10222a241af864be0", null ],
-    [ "setRadius", "classsf_1_1_circle_shape.html#a21cdf85fc2f201e10222a241af864be0", null ],
-    [ "m_pointCount", "classsf_1_1_circle_shape.html#adb17b4b4a80acf58f03cbb03f720393a", null ],
-    [ "m_radius", "classsf_1_1_circle_shape.html#a5a82c296c19e0a374c46204a8870fa1c", null ]
+    [ "setRadius", "classsf_1_1_circle_shape.html#a21cdf85fc2f201e10222a241af864be0", null ]
 ];

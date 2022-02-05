@@ -8,19 +8,19 @@
 \DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_command_queue_8cpp_source_l00004}00004 }
 \DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_command_queue_8cpp_source_l00005}00005 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_command_queue_ad444e0d7af45d9e09b834f0cec1e1f43}{CommandQueue::push}}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_command}{Command}}\& command)}
 \DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_command_queue_8cpp_source_l00006}00006 \{}
-\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_command_queue_8cpp_source_l00007}00007     \mbox{\hyperlink{class_command_queue_a7b870208a46a21d2878ac4a43c4efc21}{mQueue}}.push(command);}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_command_queue_8cpp_source_l00007}00007     mQueue.push(command);}
 \DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_command_queue_8cpp_source_l00008}00008 \}}
 \DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_command_queue_8cpp_source_l00009}00009 }
 \DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_command_queue_8cpp_source_l00010}00010 \mbox{\hyperlink{struct_command}{Command}} \mbox{\hyperlink{class_command_queue_ac2dde510222b8df393b55978f4594194}{CommandQueue::pop}}()}
 \DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_command_queue_8cpp_source_l00011}00011 \{}
-\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_command_queue_8cpp_source_l00012}00012     \mbox{\hyperlink{struct_command}{Command}} command = \mbox{\hyperlink{class_command_queue_a7b870208a46a21d2878ac4a43c4efc21}{mQueue}}.front();}
-\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_command_queue_8cpp_source_l00013}00013     \mbox{\hyperlink{class_command_queue_a7b870208a46a21d2878ac4a43c4efc21}{mQueue}}.pop();}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_command_queue_8cpp_source_l00012}00012     \mbox{\hyperlink{struct_command}{Command}} command = mQueue.front();}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_command_queue_8cpp_source_l00013}00013     mQueue.pop();}
 \DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_command_queue_8cpp_source_l00014}00014     \textcolor{keywordflow}{return} command;}
 \DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_command_queue_8cpp_source_l00015}00015 \}}
 \DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_command_queue_8cpp_source_l00016}00016 }
 \DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_command_queue_8cpp_source_l00017}00017 \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_command_queue_a3a6eb6a7c83d9b20ad7a6cac63795ec1}{CommandQueue::isEmpty}}()\textcolor{keyword}{ const}}
 \DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_command_queue_8cpp_source_l00018}00018 \textcolor{keyword}{}\{}
-\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_command_queue_8cpp_source_l00019}00019     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_command_queue_a7b870208a46a21d2878ac4a43c4efc21}{mQueue}}.empty();}
+\DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_command_queue_8cpp_source_l00019}00019     \textcolor{keywordflow}{return} mQueue.empty();}
 \DoxyCodeLine{\Hypertarget{_week14_2_week14-_demo1-_multiplayer_2_source_2_command_queue_8cpp_source_l00020}00020 \}}
 
 \end{DoxyCode}

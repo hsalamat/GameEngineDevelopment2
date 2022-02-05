@@ -62,30 +62,6 @@ const \mbox{\hyperlink{classsf_1_1_color}{Color}} \& \mbox{\hyperlink{classsf_1_
 \begin{DoxyCompactList}\small\item\em Get the local bounding rectangle of the entity. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespacesf_ab0d978f5903922a6bdfca1736b71ccc9}{Float\+Rect}} \mbox{\hyperlink{classsf_1_1_sprite_aa795483096b90745b2e799532963e271}{get\+Global\+Bounds}} () const
 \begin{DoxyCompactList}\small\item\em Get the global bounding rectangle of the entity. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-virtual void \mbox{\hyperlink{classsf_1_1_sprite_ad6ab20148c4ba6d6fc33a4aaf5eb838b}{draw}} (\mbox{\hyperlink{classsf_1_1_render_target}{Render\+Target}} \&target, \mbox{\hyperlink{classsf_1_1_render_states}{Render\+States}} states) const
-\begin{DoxyCompactList}\small\item\em Draw the sprite to a render target. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsf_1_1_sprite_adc47a06b1f326ee3eb2dea65167c8b43}{update\+Positions}} ()
-\begin{DoxyCompactList}\small\item\em Update the vertices\textquotesingle{} positions. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsf_1_1_sprite_ae5e26f96031b2c0727fc27fd602feb5c}{update\+Tex\+Coords}} ()
-\begin{DoxyCompactList}\small\item\em Update the vertices\textquotesingle{} texture coordinates. \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{classsf_1_1_sprite_ad6ab20148c4ba6d6fc33a4aaf5eb838b}{draw}} (\mbox{\hyperlink{classsf_1_1_render_target}{Render\+Target}} \&target, \mbox{\hyperlink{classsf_1_1_render_states}{Render\+States}} states) const
-\begin{DoxyCompactList}\small\item\em Draw the sprite to a render target. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsf_1_1_sprite_adc47a06b1f326ee3eb2dea65167c8b43}{update\+Positions}} ()
-\begin{DoxyCompactList}\small\item\em Update the vertices\textquotesingle{} positions. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsf_1_1_sprite_ae5e26f96031b2c0727fc27fd602feb5c}{update\+Tex\+Coords}} ()
-\begin{DoxyCompactList}\small\item\em Update the vertices\textquotesingle{} texture coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{classsf_1_1_vertex}{Vertex}} \mbox{\hyperlink{classsf_1_1_sprite_a77ee99c351f62e9c09ccec00b38a0d94}{m\+\_\+vertices}} \mbox{[}4\mbox{]}
-\begin{DoxyCompactList}\small\item\em Vertices defining the sprite\textquotesingle{}s geometry. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{classsf_1_1_texture}{Texture}} $\ast$ \mbox{\hyperlink{classsf_1_1_sprite_a9e45115fcc6a6ac416a0f5ad17f2f93e}{m\+\_\+texture}}
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsf_1_1_texture}{Texture}} of the sprite. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespacesf_a1b1279ab06950b96686cffaacb72fed5}{Int\+Rect}} \mbox{\hyperlink{classsf_1_1_sprite_ab944868894cfac8bfeed1b06a3295876}{m\+\_\+texture\+Rect}}
-\begin{DoxyCompactList}\small\item\em Rectangle defining the area of the source texture to display. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
@@ -232,48 +208,6 @@ Construct the sprite from a sub-\/rectangle of a source texture.
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classsf_1_1_sprite_ad6ab20148c4ba6d6fc33a4aaf5eb838b}\label{classsf_1_1_sprite_ad6ab20148c4ba6d6fc33a4aaf5eb838b}} 
-\index{sf::Sprite@{sf::Sprite}!draw@{draw}}
-\index{draw@{draw}!sf::Sprite@{sf::Sprite}}
-\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily virtual void sf\+::\+Sprite\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_render_target}{Render\+Target}} \&}]{target,  }\item[{\mbox{\hyperlink{classsf_1_1_render_states}{Render\+States}}}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
-
-
-
-Draw the sprite to a render target. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em target} & Render target to draw to \\
-\hline
-{\em states} & Current render states \\
-\hline
-\end{DoxyParams}
-
-
-Implements \mbox{\hyperlink{classsf_1_1_drawable_a90d2c88bba9b035a0844eccb380ef631}{sf\+::\+Drawable}}.
-
-\mbox{\Hypertarget{classsf_1_1_sprite_ad6ab20148c4ba6d6fc33a4aaf5eb838b}\label{classsf_1_1_sprite_ad6ab20148c4ba6d6fc33a4aaf5eb838b}} 
-\index{sf::Sprite@{sf::Sprite}!draw@{draw}}
-\index{draw@{draw}!sf::Sprite@{sf::Sprite}}
-\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily virtual void sf\+::\+Sprite\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_render_target}{Render\+Target}} \&}]{target,  }\item[{\mbox{\hyperlink{classsf_1_1_render_states}{Render\+States}}}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
-
-
-
-Draw the sprite to a render target. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em target} & Render target to draw to \\
-\hline
-{\em states} & Current render states \\
-\hline
-\end{DoxyParams}
-
-
-Implements \mbox{\hyperlink{classsf_1_1_drawable_a90d2c88bba9b035a0844eccb380ef631}{sf\+::\+Drawable}}.
-
 \mbox{\Hypertarget{classsf_1_1_sprite_af4a3ee8177fdd6e472a360a0a837d7cf}\label{classsf_1_1_sprite_af4a3ee8177fdd6e472a360a0a837d7cf}} 
 \index{sf::Sprite@{sf::Sprite}!getColor@{getColor}}
 \index{getColor@{getColor}!sf::Sprite@{sf::Sprite}}
@@ -558,91 +492,6 @@ The texture rect is useful when you don\textquotesingle{}t want to display the w
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{classsf_1_1_sprite_afb19e5b4f39d17cf4d95752b3a79bcb6}{get\+Texture\+Rect}}, \mbox{\hyperlink{classsf_1_1_sprite_a3729c88d88ac38c19317c18e87242560}{set\+Texture}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{classsf_1_1_sprite_adc47a06b1f326ee3eb2dea65167c8b43}\label{classsf_1_1_sprite_adc47a06b1f326ee3eb2dea65167c8b43}} 
-\index{sf::Sprite@{sf::Sprite}!updatePositions@{updatePositions}}
-\index{updatePositions@{updatePositions}!sf::Sprite@{sf::Sprite}}
-\doxysubsubsection{\texorpdfstring{updatePositions()}{updatePositions()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void sf\+::\+Sprite\+::update\+Positions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Update the vertices\textquotesingle{} positions. 
-
-\mbox{\Hypertarget{classsf_1_1_sprite_adc47a06b1f326ee3eb2dea65167c8b43}\label{classsf_1_1_sprite_adc47a06b1f326ee3eb2dea65167c8b43}} 
-\index{sf::Sprite@{sf::Sprite}!updatePositions@{updatePositions}}
-\index{updatePositions@{updatePositions}!sf::Sprite@{sf::Sprite}}
-\doxysubsubsection{\texorpdfstring{updatePositions()}{updatePositions()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void sf\+::\+Sprite\+::update\+Positions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Update the vertices\textquotesingle{} positions. 
-
-\mbox{\Hypertarget{classsf_1_1_sprite_ae5e26f96031b2c0727fc27fd602feb5c}\label{classsf_1_1_sprite_ae5e26f96031b2c0727fc27fd602feb5c}} 
-\index{sf::Sprite@{sf::Sprite}!updateTexCoords@{updateTexCoords}}
-\index{updateTexCoords@{updateTexCoords}!sf::Sprite@{sf::Sprite}}
-\doxysubsubsection{\texorpdfstring{updateTexCoords()}{updateTexCoords()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void sf\+::\+Sprite\+::update\+Tex\+Coords (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Update the vertices\textquotesingle{} texture coordinates. 
-
-\mbox{\Hypertarget{classsf_1_1_sprite_ae5e26f96031b2c0727fc27fd602feb5c}\label{classsf_1_1_sprite_ae5e26f96031b2c0727fc27fd602feb5c}} 
-\index{sf::Sprite@{sf::Sprite}!updateTexCoords@{updateTexCoords}}
-\index{updateTexCoords@{updateTexCoords}!sf::Sprite@{sf::Sprite}}
-\doxysubsubsection{\texorpdfstring{updateTexCoords()}{updateTexCoords()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void sf\+::\+Sprite\+::update\+Tex\+Coords (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Update the vertices\textquotesingle{} texture coordinates. 
-
-
-
-\doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{classsf_1_1_sprite_a9e45115fcc6a6ac416a0f5ad17f2f93e}\label{classsf_1_1_sprite_a9e45115fcc6a6ac416a0f5ad17f2f93e}} 
-\index{sf::Sprite@{sf::Sprite}!m\_texture@{m\_texture}}
-\index{m\_texture@{m\_texture}!sf::Sprite@{sf::Sprite}}
-\doxysubsubsection{\texorpdfstring{m\_texture}{m\_texture}}
-{\footnotesize\ttfamily const \mbox{\hyperlink{classsf_1_1_texture}{Texture}} $\ast$ sf\+::\+Sprite\+::m\+\_\+texture\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-\mbox{\hyperlink{classsf_1_1_texture}{Texture}} of the sprite. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00219}{219}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source}{Sprite.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_sprite_ab944868894cfac8bfeed1b06a3295876}\label{classsf_1_1_sprite_ab944868894cfac8bfeed1b06a3295876}} 
-\index{sf::Sprite@{sf::Sprite}!m\_textureRect@{m\_textureRect}}
-\index{m\_textureRect@{m\_textureRect}!sf::Sprite@{sf::Sprite}}
-\doxysubsubsection{\texorpdfstring{m\_textureRect}{m\_textureRect}}
-{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_a1b1279ab06950b96686cffaacb72fed5}{Int\+Rect}} sf\+::\+Sprite\+::m\+\_\+texture\+Rect\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Rectangle defining the area of the source texture to display. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00220}{220}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source}{Sprite.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_sprite_a77ee99c351f62e9c09ccec00b38a0d94}\label{classsf_1_1_sprite_a77ee99c351f62e9c09ccec00b38a0d94}} 
-\index{sf::Sprite@{sf::Sprite}!m\_vertices@{m\_vertices}}
-\index{m\_vertices@{m\_vertices}!sf::Sprite@{sf::Sprite}}
-\doxysubsubsection{\texorpdfstring{m\_vertices}{m\_vertices}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_vertex}{Vertex}} sf\+::\+Sprite\+::m\+\_\+vertices\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Vertices defining the sprite\textquotesingle{}s geometry. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source_l00218}{218}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_sprite_8hpp_source}{Sprite.\+hpp}}.
-
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

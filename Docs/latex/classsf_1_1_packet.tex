@@ -183,39 +183,6 @@ virtual const void $\ast$ \mbox{\hyperlink{classsf_1_1_packet_af0003506bcb290407
 \begin{DoxyCompactList}\small\item\em Called before the packet is sent over the network. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classsf_1_1_packet_ab71a31ef0f1d5d856de6f9fc75434128}{on\+Receive}} (const void $\ast$data, std\+::size\+\_\+t size)
 \begin{DoxyCompactList}\small\item\em Called after the packet is received over the network. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Types}
-\begin{DoxyCompactItemize}
-\item 
-typedef bool(Packet\+::$\ast$ \mbox{\hyperlink{classsf_1_1_packet_af4e23b49b9465634c0b23aaabd94b820}{Bool\+Type}}) (std\+::size\+\_\+t)
-\item 
-typedef bool(Packet\+::$\ast$ \mbox{\hyperlink{classsf_1_1_packet_af4e23b49b9465634c0b23aaabd94b820}{Bool\+Type}}) (std\+::size\+\_\+t)
-\end{DoxyCompactItemize}
-\doxysubsection*{Private Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-bool \mbox{\hyperlink{classsf_1_1_packet_aa3136a586a93cde1f54e669b7430dcc9}{operator==}} (const \mbox{\hyperlink{classsf_1_1_packet}{Packet}} \&right) const
-\begin{DoxyCompactList}\small\item\em Disallow comparisons between packets. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classsf_1_1_packet_aba88e3aab53d6991bf7c001f8a416871}{operator!=}} (const \mbox{\hyperlink{classsf_1_1_packet}{Packet}} \&right) const
-\item 
-bool \mbox{\hyperlink{classsf_1_1_packet_a54bea2433002686cf1de8c5c6466fe5f}{check\+Size}} (std\+::size\+\_\+t size)
-\begin{DoxyCompactList}\small\item\em Check if the packet can extract a given number of bytes. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classsf_1_1_packet_aa3136a586a93cde1f54e669b7430dcc9}{operator==}} (const \mbox{\hyperlink{classsf_1_1_packet}{Packet}} \&right) const
-\begin{DoxyCompactList}\small\item\em Disallow comparisons between packets. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classsf_1_1_packet_aba88e3aab53d6991bf7c001f8a416871}{operator!=}} (const \mbox{\hyperlink{classsf_1_1_packet}{Packet}} \&right) const
-\item 
-bool \mbox{\hyperlink{classsf_1_1_packet_a54bea2433002686cf1de8c5c6466fe5f}{check\+Size}} (std\+::size\+\_\+t size)
-\begin{DoxyCompactList}\small\item\em Check if the packet can extract a given number of bytes. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-std\+::vector$<$ char $>$ \mbox{\hyperlink{classsf_1_1_packet_a026c8781fb0845f794ced3d212ea0efd}{m\+\_\+data}}
-\begin{DoxyCompactList}\small\item\em Data stored in the packet. \end{DoxyCompactList}\item 
-std\+::size\+\_\+t \mbox{\hyperlink{classsf_1_1_packet_a874eea8a5654957a404c3b40b7ef9284}{m\+\_\+read\+Pos}}
-\begin{DoxyCompactList}\small\item\em Current reading position in the packet. \end{DoxyCompactList}\item 
-std\+::size\+\_\+t \mbox{\hyperlink{classsf_1_1_packet_a321ac7748c681850fad1c52fa265434d}{m\+\_\+send\+Pos}}
-\begin{DoxyCompactList}\small\item\em Current send position in the packet (for handling partial sends) \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classsf_1_1_packet_a7119dcd69dbd57041e60a3062ced96e6}{m\+\_\+is\+Valid}}
-\begin{DoxyCompactList}\small\item\em Reading state of the packet. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -333,29 +300,6 @@ Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_networ
 
 
 
-\doxysubsection{Member Typedef Documentation}
-\mbox{\Hypertarget{classsf_1_1_packet_af4e23b49b9465634c0b23aaabd94b820}\label{classsf_1_1_packet_af4e23b49b9465634c0b23aaabd94b820}} 
-\index{sf::Packet@{sf::Packet}!BoolType@{BoolType}}
-\index{BoolType@{BoolType}!sf::Packet@{sf::Packet}}
-\doxysubsubsection{\texorpdfstring{BoolType}{BoolType}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily typedef bool(Packet\+::$\ast$ sf\+::\+Packet\+::\+Bool\+Type) (std\+::size\+\_\+t)\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_packet_8hpp_source_l00050}{50}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_packet_8hpp_source}{Packet.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_packet_af4e23b49b9465634c0b23aaabd94b820}\label{classsf_1_1_packet_af4e23b49b9465634c0b23aaabd94b820}} 
-\index{sf::Packet@{sf::Packet}!BoolType@{BoolType}}
-\index{BoolType@{BoolType}!sf::Packet@{sf::Packet}}
-\doxysubsubsection{\texorpdfstring{BoolType}{BoolType}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily typedef bool(Packet\+::$\ast$ sf\+::\+Packet\+::\+Bool\+Type) (std\+::size\+\_\+t)\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_packet_8hpp_source_l00050}{50}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_packet_8hpp_source}{Packet.\+hpp}}.
-
-
-
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classsf_1_1_packet_a786e5d4ced83992ceefa1799963ea858}\label{classsf_1_1_packet_a786e5d4ced83992ceefa1799963ea858}} 
 \index{sf::Packet@{sf::Packet}!Packet@{Packet}}
@@ -440,46 +384,6 @@ Append data to the end of the packet.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{classsf_1_1_packet_a133ea8b8fe6e93c230f0d79f19a3bf0d}{clear}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{classsf_1_1_packet_a54bea2433002686cf1de8c5c6466fe5f}\label{classsf_1_1_packet_a54bea2433002686cf1de8c5c6466fe5f}} 
-\index{sf::Packet@{sf::Packet}!checkSize@{checkSize}}
-\index{checkSize@{checkSize}!sf::Packet@{sf::Packet}}
-\doxysubsubsection{\texorpdfstring{checkSize()}{checkSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily bool sf\+::\+Packet\+::check\+Size (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Check if the packet can extract a given number of bytes. 
-
-This function updates accordingly the state of the packet.
-
-
-\begin{DoxyParams}{Parameters}
-{\em size} & Size to check\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-True if {\itshape size} bytes can be read from the packet 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classsf_1_1_packet_a54bea2433002686cf1de8c5c6466fe5f}\label{classsf_1_1_packet_a54bea2433002686cf1de8c5c6466fe5f}} 
-\index{sf::Packet@{sf::Packet}!checkSize@{checkSize}}
-\index{checkSize@{checkSize}!sf::Packet@{sf::Packet}}
-\doxysubsubsection{\texorpdfstring{checkSize()}{checkSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily bool sf\+::\+Packet\+::check\+Size (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Check if the packet can extract a given number of bytes. 
-
-This function updates accordingly the state of the packet.
-
-
-\begin{DoxyParams}{Parameters}
-{\em size} & Size to check\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-True if {\itshape size} bytes can be read from the packet 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classsf_1_1_packet_a133ea8b8fe6e93c230f0d79f19a3bf0d}\label{classsf_1_1_packet_a133ea8b8fe6e93c230f0d79f19a3bf0d}} 
 \index{sf::Packet@{sf::Packet}!clear@{clear}}
 \index{clear@{clear}!sf::Packet@{sf::Packet}}
@@ -712,7 +616,7 @@ Pointer to the array of bytes to send
 \index{sf::Packet@{sf::Packet}!operator BoolType@{operator BoolType}}
 \index{operator BoolType@{operator BoolType}!sf::Packet@{sf::Packet}}
 \doxysubsubsection{\texorpdfstring{operator BoolType()}{operator BoolType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily sf\+::\+Packet\+::operator \mbox{\hyperlink{classsf_1_1_packet_af4e23b49b9465634c0b23aaabd94b820}{Bool\+Type}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily sf\+::\+Packet\+::operator Bool\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -756,7 +660,7 @@ True if last data extraction from packet was successful
 \index{sf::Packet@{sf::Packet}!operator BoolType@{operator BoolType}}
 \index{operator BoolType@{operator BoolType}!sf::Packet@{sf::Packet}}
 \doxysubsubsection{\texorpdfstring{operator BoolType()}{operator BoolType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily sf\+::\+Packet\+::operator \mbox{\hyperlink{classsf_1_1_packet_af4e23b49b9465634c0b23aaabd94b820}{Bool\+Type}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily sf\+::\+Packet\+::operator Bool\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -796,18 +700,6 @@ True if last data extraction from packet was successful
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{classsf_1_1_packet_a61e354fa670da053907c14b738839560}{end\+Of\+Packet}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{classsf_1_1_packet_aba88e3aab53d6991bf7c001f8a416871}\label{classsf_1_1_packet_aba88e3aab53d6991bf7c001f8a416871}} 
-\index{sf::Packet@{sf::Packet}!operator"!=@{operator"!=}}
-\index{operator"!=@{operator"!=}!sf::Packet@{sf::Packet}}
-\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily bool sf\+::\+Packet\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_packet}{Packet}} \&}]{right }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
-
-\mbox{\Hypertarget{classsf_1_1_packet_aba88e3aab53d6991bf7c001f8a416871}\label{classsf_1_1_packet_aba88e3aab53d6991bf7c001f8a416871}} 
-\index{sf::Packet@{sf::Packet}!operator"!=@{operator"!=}}
-\index{operator"!=@{operator"!=}!sf::Packet@{sf::Packet}}
-\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily bool sf\+::\+Packet\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_packet}{Packet}} \&}]{right }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
-
 \mbox{\Hypertarget{classsf_1_1_packet_ae02c874e0aac18a0497fca982a8f9083}\label{classsf_1_1_packet_ae02c874e0aac18a0497fca982a8f9083}} 
 \index{sf::Packet@{sf::Packet}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!sf::Packet@{sf::Packet}}
@@ -1127,26 +1019,6 @@ This is an overloaded member function, provided for convenience. It differs from
 
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
-
-\mbox{\Hypertarget{classsf_1_1_packet_aa3136a586a93cde1f54e669b7430dcc9}\label{classsf_1_1_packet_aa3136a586a93cde1f54e669b7430dcc9}} 
-\index{sf::Packet@{sf::Packet}!operator==@{operator==}}
-\index{operator==@{operator==}!sf::Packet@{sf::Packet}}
-\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily bool sf\+::\+Packet\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_packet}{Packet}} \&}]{right }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Disallow comparisons between packets. 
-
-\mbox{\Hypertarget{classsf_1_1_packet_aa3136a586a93cde1f54e669b7430dcc9}\label{classsf_1_1_packet_aa3136a586a93cde1f54e669b7430dcc9}} 
-\index{sf::Packet@{sf::Packet}!operator==@{operator==}}
-\index{operator==@{operator==}!sf::Packet@{sf::Packet}}
-\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily bool sf\+::\+Packet\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_packet}{Packet}} \&}]{right }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Disallow comparisons between packets. 
 
 \mbox{\Hypertarget{classsf_1_1_packet_a8b6403506fec6b69f033278de33c8145}\label{classsf_1_1_packet_a8b6403506fec6b69f033278de33c8145}} 
 \index{sf::Packet@{sf::Packet}!operator$>$$>$@{operator$>$$>$}}
@@ -1490,65 +1362,6 @@ Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_networ
 
 
 Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_packet_8hpp_source_l00338}{338}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_packet_8hpp_source}{Packet.\+hpp}}.
-
-
-
-\doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{classsf_1_1_packet_a026c8781fb0845f794ced3d212ea0efd}\label{classsf_1_1_packet_a026c8781fb0845f794ced3d212ea0efd}} 
-\index{sf::Packet@{sf::Packet}!m\_data@{m\_data}}
-\index{m\_data@{m\_data}!sf::Packet@{sf::Packet}}
-\doxysubsubsection{\texorpdfstring{m\_data}{m\_data}}
-{\footnotesize\ttfamily std\+::vector$<$ char $>$ sf\+::\+Packet\+::m\+\_\+data\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Data stored in the packet. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_packet_8hpp_source_l00403}{403}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_packet_8hpp_source}{Packet.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_packet_a7119dcd69dbd57041e60a3062ced96e6}\label{classsf_1_1_packet_a7119dcd69dbd57041e60a3062ced96e6}} 
-\index{sf::Packet@{sf::Packet}!m\_isValid@{m\_isValid}}
-\index{m\_isValid@{m\_isValid}!sf::Packet@{sf::Packet}}
-\doxysubsubsection{\texorpdfstring{m\_isValid}{m\_isValid}}
-{\footnotesize\ttfamily bool sf\+::\+Packet\+::m\+\_\+is\+Valid\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Reading state of the packet. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_packet_8hpp_source_l00406}{406}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_packet_8hpp_source}{Packet.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_packet_a874eea8a5654957a404c3b40b7ef9284}\label{classsf_1_1_packet_a874eea8a5654957a404c3b40b7ef9284}} 
-\index{sf::Packet@{sf::Packet}!m\_readPos@{m\_readPos}}
-\index{m\_readPos@{m\_readPos}!sf::Packet@{sf::Packet}}
-\doxysubsubsection{\texorpdfstring{m\_readPos}{m\_readPos}}
-{\footnotesize\ttfamily std\+::size\+\_\+t sf\+::\+Packet\+::m\+\_\+read\+Pos\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Current reading position in the packet. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_packet_8hpp_source_l00404}{404}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_packet_8hpp_source}{Packet.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_packet_a321ac7748c681850fad1c52fa265434d}\label{classsf_1_1_packet_a321ac7748c681850fad1c52fa265434d}} 
-\index{sf::Packet@{sf::Packet}!m\_sendPos@{m\_sendPos}}
-\index{m\_sendPos@{m\_sendPos}!sf::Packet@{sf::Packet}}
-\doxysubsubsection{\texorpdfstring{m\_sendPos}{m\_sendPos}}
-{\footnotesize\ttfamily std\+::size\+\_\+t sf\+::\+Packet\+::m\+\_\+send\+Pos\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Current send position in the packet (for handling partial sends) 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_packet_8hpp_source_l00405}{405}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_packet_8hpp_source}{Packet.\+hpp}}.
 
 
 

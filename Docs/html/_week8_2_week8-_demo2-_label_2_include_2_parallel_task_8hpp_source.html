@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Game Engine Development II: Week8/Week8-Demo2-Label/Include/ParallelTask.hpp Source File</title>
+<title>My Project: Week8/Week8-Demo2-Label/Include/ParallelTask.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Game Engine Development II
+   <div id="projectname">My Project
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -112,26 +112,21 @@ $(document).ready(function(){initNavTree('_week8_2_week8-_demo2-_label_2_include
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_parallel_task.html#ada45e4db1aa8a89f20ab0b8662c6dabc">   16</a></span>        <span class="keywordtype">float</span>               <a class="code hl_function" href="class_parallel_task.html#ada45e4db1aa8a89f20ab0b8662c6dabc">getCompletion</a>();</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_parallel_task.html#adbf1aac46693ef846c9d16c83abdc7f6">   19</a></span>        <span class="keywordtype">void</span>                <a class="code hl_function" href="class_parallel_task.html#adbf1aac46693ef846c9d16c83abdc7f6">runTask</a>();</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordtype">void</span>                runTask();</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <a class="code hl_class" href="classsf_1_1_thread.html">sf::Thread</a>          <a class="code hl_variable" href="class_parallel_task.html#ada5f52d4158652618ca62cc19cd42f61">mThread</a>;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordtype">bool</span>                <a class="code hl_variable" href="class_parallel_task.html#a5981c9dd221384fb5ce8b9ea7846fda8">mFinished</a>;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <a class="code hl_class" href="classsf_1_1_clock.html">sf::Clock</a>           <a class="code hl_variable" href="class_parallel_task.html#a37d0bd559ac88231912979139b13b196">mElapsedTime</a>;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <a class="code hl_class" href="classsf_1_1_mutex.html">sf::Mutex</a>           <a class="code hl_variable" href="class_parallel_task.html#a55079481579b8d853c5e62d1153b5f6b">mMutex</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <a class="code hl_class" href="classsf_1_1_thread.html">sf::Thread</a>          mThread;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordtype">bool</span>                mFinished;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <a class="code hl_class" href="classsf_1_1_clock.html">sf::Clock</a>           mElapsedTime;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <a class="code hl_class" href="classsf_1_1_mutex.html">sf::Mutex</a>           mMutex;</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>};</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#endif </span><span class="comment">// BOOK_PARALLELTASK_HPP</span></div>
 <div class="ttc" id="aclass_parallel_task_html"><div class="ttname"><a href="class_parallel_task.html">ParallelTask</a></div><div class="ttdef"><b>Definition:</b> <a href="_week6_2_week6-_demo5-_pause_state_2_include_2_parallel_task_8hpp_source.html#l00011">ParallelTask.hpp:12</a></div></div>
 <div class="ttc" id="aclass_parallel_task_html_a1a67f547aa382fac2087184b2eb19148"><div class="ttname"><a href="class_parallel_task.html#a1a67f547aa382fac2087184b2eb19148">ParallelTask::isFinished</a></div><div class="ttdeci">bool isFinished()</div></div>
 <div class="ttc" id="aclass_parallel_task_html_a32cb3c361f7b4373f941f0993940576f"><div class="ttname"><a href="class_parallel_task.html#a32cb3c361f7b4373f941f0993940576f">ParallelTask::ParallelTask</a></div><div class="ttdeci">ParallelTask()</div></div>
-<div class="ttc" id="aclass_parallel_task_html_a37d0bd559ac88231912979139b13b196"><div class="ttname"><a href="class_parallel_task.html#a37d0bd559ac88231912979139b13b196">ParallelTask::mElapsedTime</a></div><div class="ttdeci">sf::Clock mElapsedTime</div><div class="ttdef"><b>Definition:</b> <a href="_week6_2_week6-_demo5-_pause_state_2_include_2_parallel_task_8hpp_source.html#l00025">ParallelTask.hpp:25</a></div></div>
-<div class="ttc" id="aclass_parallel_task_html_a55079481579b8d853c5e62d1153b5f6b"><div class="ttname"><a href="class_parallel_task.html#a55079481579b8d853c5e62d1153b5f6b">ParallelTask::mMutex</a></div><div class="ttdeci">sf::Mutex mMutex</div><div class="ttdef"><b>Definition:</b> <a href="_week6_2_week6-_demo5-_pause_state_2_include_2_parallel_task_8hpp_source.html#l00026">ParallelTask.hpp:26</a></div></div>
-<div class="ttc" id="aclass_parallel_task_html_a5981c9dd221384fb5ce8b9ea7846fda8"><div class="ttname"><a href="class_parallel_task.html#a5981c9dd221384fb5ce8b9ea7846fda8">ParallelTask::mFinished</a></div><div class="ttdeci">bool mFinished</div><div class="ttdef"><b>Definition:</b> <a href="_week6_2_week6-_demo5-_pause_state_2_include_2_parallel_task_8hpp_source.html#l00024">ParallelTask.hpp:24</a></div></div>
 <div class="ttc" id="aclass_parallel_task_html_ad1e7ba9134cc7961ab178a2f47cf54be"><div class="ttname"><a href="class_parallel_task.html#ad1e7ba9134cc7961ab178a2f47cf54be">ParallelTask::execute</a></div><div class="ttdeci">void execute()</div></div>
 <div class="ttc" id="aclass_parallel_task_html_ada45e4db1aa8a89f20ab0b8662c6dabc"><div class="ttname"><a href="class_parallel_task.html#ada45e4db1aa8a89f20ab0b8662c6dabc">ParallelTask::getCompletion</a></div><div class="ttdeci">float getCompletion()</div></div>
-<div class="ttc" id="aclass_parallel_task_html_ada5f52d4158652618ca62cc19cd42f61"><div class="ttname"><a href="class_parallel_task.html#ada5f52d4158652618ca62cc19cd42f61">ParallelTask::mThread</a></div><div class="ttdeci">sf::Thread mThread</div><div class="ttdef"><b>Definition:</b> <a href="_week6_2_week6-_demo5-_pause_state_2_include_2_parallel_task_8hpp_source.html#l00023">ParallelTask.hpp:23</a></div></div>
-<div class="ttc" id="aclass_parallel_task_html_adbf1aac46693ef846c9d16c83abdc7f6"><div class="ttname"><a href="class_parallel_task.html#adbf1aac46693ef846c9d16c83abdc7f6">ParallelTask::runTask</a></div><div class="ttdeci">void runTask()</div></div>
 <div class="ttc" id="aclasssf_1_1_clock_html"><div class="ttname"><a href="classsf_1_1_clock.html">sf::Clock</a></div><div class="ttdoc">Utility class that measures the elapsed time.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_clock_8hpp_source.html#l00041">Clock.hpp:42</a></div></div>
 <div class="ttc" id="aclasssf_1_1_mutex_html"><div class="ttname"><a href="classsf_1_1_mutex.html">sf::Mutex</a></div><div class="ttdoc">Blocks concurrent access to shared resources from multiple threads.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_mutex_8hpp_source.html#l00047">Mutex.hpp:48</a></div></div>
 <div class="ttc" id="aclasssf_1_1_thread_html"><div class="ttname"><a href="classsf_1_1_thread.html">sf::Thread</a></div><div class="ttdoc">Utility class to manipulate threads.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8hpp_source.html#l00048">Thread.hpp:49</a></div></div>

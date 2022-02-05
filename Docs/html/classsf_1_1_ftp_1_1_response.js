@@ -183,7 +183,5 @@ var classsf_1_1_ftp_1_1_response =
     [ "getStatus", "classsf_1_1_ftp_1_1_response.html#a52bbca9fbf5451157bc055e3d8430c25", null ],
     [ "getStatus", "classsf_1_1_ftp_1_1_response.html#a52bbca9fbf5451157bc055e3d8430c25", null ],
     [ "isOk", "classsf_1_1_ftp_1_1_response.html#a5102552955a2652c1a39e9046e617b36", null ],
-    [ "isOk", "classsf_1_1_ftp_1_1_response.html#a5102552955a2652c1a39e9046e617b36", null ],
-    [ "m_message", "classsf_1_1_ftp_1_1_response.html#aaf692d0df6066d4a1f4d0677869b8f7b", null ],
-    [ "m_status", "classsf_1_1_ftp_1_1_response.html#af3a8918ddd408ff8fbcce5c0beda11d4", null ]
+    [ "isOk", "classsf_1_1_ftp_1_1_response.html#a5102552955a2652c1a39e9046e617b36", null ]
 ];

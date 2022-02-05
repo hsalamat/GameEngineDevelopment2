@@ -124,24 +124,6 @@ static void \mbox{\hyperlink{classsf_1_1_vertex_buffer_a1c623e9701b43125e4b3661b
 \begin{DoxyCompactList}\small\item\em Bind a vertex buffer for rendering. \end{DoxyCompactList}\item 
 static bool \mbox{\hyperlink{classsf_1_1_vertex_buffer_a6304bc4134dc0164dc94eff887b08847}{is\+Available}} ()
 \begin{DoxyCompactList}\small\item\em Tell whether or not the system supports vertex buffers. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-virtual void \mbox{\hyperlink{classsf_1_1_vertex_buffer_a3591a7fd52f502033b40755af71edc17}{draw}} (\mbox{\hyperlink{classsf_1_1_render_target}{Render\+Target}} \&target, \mbox{\hyperlink{classsf_1_1_render_states}{Render\+States}} states) const
-\begin{DoxyCompactList}\small\item\em Draw the vertex buffer to a render target. \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{classsf_1_1_vertex_buffer_a3591a7fd52f502033b40755af71edc17}{draw}} (\mbox{\hyperlink{classsf_1_1_render_target}{Render\+Target}} \&target, \mbox{\hyperlink{classsf_1_1_render_states}{Render\+States}} states) const
-\begin{DoxyCompactList}\small\item\em Draw the vertex buffer to a render target. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-unsigned int \mbox{\hyperlink{classsf_1_1_vertex_buffer_aab0082f19be0290bcbaf308379e5d60a}{m\+\_\+buffer}}
-\begin{DoxyCompactList}\small\item\em Internal buffer identifier. \end{DoxyCompactList}\item 
-std\+::size\+\_\+t \mbox{\hyperlink{classsf_1_1_vertex_buffer_a962780c0687af7aeb1d0555fd1baa445}{m\+\_\+size}}
-\begin{DoxyCompactList}\small\item\em Size in Vertexes of the currently allocated buffer. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__graphics_ga5ee56ac1339984909610713096283b1b}{Primitive\+Type}} \mbox{\hyperlink{classsf_1_1_vertex_buffer_a958cf85fc5426b5b5490a201087046ac}{m\+\_\+primitive\+Type}}
-\begin{DoxyCompactList}\small\item\em Type of primitives to draw. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classsf_1_1_vertex_buffer_a3a531528684e63ecb45edd51282f5cb7}{Usage}} \mbox{\hyperlink{classsf_1_1_vertex_buffer_ab056efbd5d04372e9054a0e41bd9acfe}{m\+\_\+usage}}
-\begin{DoxyCompactList}\small\item\em How this vertex buffer is to be used. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
@@ -555,48 +537,6 @@ In order to deallocate previously allocated memory pass 0 as {\ttfamily vertex\+
 \begin{DoxyReturn}{Returns}
 True if creation was successful 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classsf_1_1_vertex_buffer_a3591a7fd52f502033b40755af71edc17}\label{classsf_1_1_vertex_buffer_a3591a7fd52f502033b40755af71edc17}} 
-\index{sf::VertexBuffer@{sf::VertexBuffer}!draw@{draw}}
-\index{draw@{draw}!sf::VertexBuffer@{sf::VertexBuffer}}
-\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily virtual void sf\+::\+Vertex\+Buffer\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_render_target}{Render\+Target}} \&}]{target,  }\item[{\mbox{\hyperlink{classsf_1_1_render_states}{Render\+States}}}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
-
-
-
-Draw the vertex buffer to a render target. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em target} & Render target to draw to \\
-\hline
-{\em states} & Current render states \\
-\hline
-\end{DoxyParams}
-
-
-Implements \mbox{\hyperlink{classsf_1_1_drawable_a90d2c88bba9b035a0844eccb380ef631}{sf\+::\+Drawable}}.
-
-\mbox{\Hypertarget{classsf_1_1_vertex_buffer_a3591a7fd52f502033b40755af71edc17}\label{classsf_1_1_vertex_buffer_a3591a7fd52f502033b40755af71edc17}} 
-\index{sf::VertexBuffer@{sf::VertexBuffer}!draw@{draw}}
-\index{draw@{draw}!sf::VertexBuffer@{sf::VertexBuffer}}
-\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily virtual void sf\+::\+Vertex\+Buffer\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_render_target}{Render\+Target}} \&}]{target,  }\item[{\mbox{\hyperlink{classsf_1_1_render_states}{Render\+States}}}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
-
-
-
-Draw the vertex buffer to a render target. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em target} & Render target to draw to \\
-\hline
-{\em states} & Current render states \\
-\hline
-\end{DoxyParams}
-
-
-Implements \mbox{\hyperlink{classsf_1_1_drawable_a90d2c88bba9b035a0844eccb380ef631}{sf\+::\+Drawable}}.
-
 \mbox{\Hypertarget{classsf_1_1_vertex_buffer_a343fa0a240c91bc4203a6727fcd9b920}\label{classsf_1_1_vertex_buffer_a343fa0a240c91bc4203a6727fcd9b920}} 
 \index{sf::VertexBuffer@{sf::VertexBuffer}!getNativeHandle@{getNativeHandle}}
 \index{getNativeHandle@{getNativeHandle}!sf::VertexBuffer@{sf::VertexBuffer}}
@@ -1033,65 +973,6 @@ Copy the contents of another buffer into this buffer.
 \begin{DoxyReturn}{Returns}
 True if the copy was successful 
 \end{DoxyReturn}
-
-
-\doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{classsf_1_1_vertex_buffer_aab0082f19be0290bcbaf308379e5d60a}\label{classsf_1_1_vertex_buffer_aab0082f19be0290bcbaf308379e5d60a}} 
-\index{sf::VertexBuffer@{sf::VertexBuffer}!m\_buffer@{m\_buffer}}
-\index{m\_buffer@{m\_buffer}!sf::VertexBuffer@{sf::VertexBuffer}}
-\doxysubsubsection{\texorpdfstring{m\_buffer}{m\_buffer}}
-{\footnotesize\ttfamily unsigned int sf\+::\+Vertex\+Buffer\+::m\+\_\+buffer\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Internal buffer identifier. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_buffer_8hpp_source_l00337}{337}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_buffer_8hpp_source}{Vertex\+Buffer.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_vertex_buffer_a958cf85fc5426b5b5490a201087046ac}\label{classsf_1_1_vertex_buffer_a958cf85fc5426b5b5490a201087046ac}} 
-\index{sf::VertexBuffer@{sf::VertexBuffer}!m\_primitiveType@{m\_primitiveType}}
-\index{m\_primitiveType@{m\_primitiveType}!sf::VertexBuffer@{sf::VertexBuffer}}
-\doxysubsubsection{\texorpdfstring{m\_primitiveType}{m\_primitiveType}}
-{\footnotesize\ttfamily \mbox{\hyperlink{group__graphics_ga5ee56ac1339984909610713096283b1b}{Primitive\+Type}} sf\+::\+Vertex\+Buffer\+::m\+\_\+primitive\+Type\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Type of primitives to draw. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_buffer_8hpp_source_l00339}{339}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_buffer_8hpp_source}{Vertex\+Buffer.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_vertex_buffer_a962780c0687af7aeb1d0555fd1baa445}\label{classsf_1_1_vertex_buffer_a962780c0687af7aeb1d0555fd1baa445}} 
-\index{sf::VertexBuffer@{sf::VertexBuffer}!m\_size@{m\_size}}
-\index{m\_size@{m\_size}!sf::VertexBuffer@{sf::VertexBuffer}}
-\doxysubsubsection{\texorpdfstring{m\_size}{m\_size}}
-{\footnotesize\ttfamily std\+::size\+\_\+t sf\+::\+Vertex\+Buffer\+::m\+\_\+size\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Size in Vertexes of the currently allocated buffer. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_buffer_8hpp_source_l00338}{338}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_buffer_8hpp_source}{Vertex\+Buffer.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_vertex_buffer_ab056efbd5d04372e9054a0e41bd9acfe}\label{classsf_1_1_vertex_buffer_ab056efbd5d04372e9054a0e41bd9acfe}} 
-\index{sf::VertexBuffer@{sf::VertexBuffer}!m\_usage@{m\_usage}}
-\index{m\_usage@{m\_usage}!sf::VertexBuffer@{sf::VertexBuffer}}
-\doxysubsubsection{\texorpdfstring{m\_usage}{m\_usage}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_vertex_buffer_a3a531528684e63ecb45edd51282f5cb7}{Usage}} sf\+::\+Vertex\+Buffer\+::m\+\_\+usage\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-How this vertex buffer is to be used. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_buffer_8hpp_source_l00340}{340}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_vertex_buffer_8hpp_source}{Vertex\+Buffer.\+hpp}}.
-
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

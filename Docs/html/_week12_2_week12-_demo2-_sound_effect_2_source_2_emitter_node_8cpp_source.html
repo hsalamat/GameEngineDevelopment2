@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Game Engine Development II: Week12/Week12-Demo2-SoundEffect/Source/EmitterNode.cpp Source File</title>
+<title>My Project: Week12/Week12-Demo2-SoundEffect/Source/EmitterNode.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Game Engine Development II
+   <div id="projectname">My Project
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -108,19 +108,19 @@ $(document).ready(function(){initNavTree('_week12_2_week12-_demo2-_sound_effect_
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>}</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keywordtype">void</span> <a class="code hl_function" href="class_emitter_node.html#a4bfb774fba949847999f5aac6b2c4f41">EmitterNode::updateCurrent</a>(<a class="code hl_class" href="classsf_1_1_time.html">sf::Time</a> dt, <a class="code hl_class" href="class_command_queue.html">CommandQueue</a>&amp; commands)</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keywordtype">void</span> EmitterNode::updateCurrent(<a class="code hl_class" href="classsf_1_1_time.html">sf::Time</a> dt, <a class="code hl_class" href="class_command_queue.html">CommandQueue</a>&amp; commands)</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_emitter_node.html#ad7af4e0c0aefb23f87420f01d5796ad5">mParticleSystem</a>)</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordflow">if</span> (mParticleSystem)</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <a class="code hl_function" href="class_emitter_node.html#a3c1ab4ddc676626e91ebcbd817a9521a">emitParticles</a>(dt);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        emitParticles(dt);</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    }</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    {</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="comment">// Find particle node with the same type as emitter node</span></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keyword">auto</span> finder = [<span class="keyword">this</span>] (<a class="code hl_class" href="class_particle_node.html">ParticleNode</a>&amp; container, <a class="code hl_class" href="classsf_1_1_time.html">sf::Time</a>)</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            <span class="keywordflow">if</span> (container.<a class="code hl_function" href="class_particle_node.html#aa0e084971d3c1649077cfeacc75faabd">getParticleType</a>() == <a class="code hl_variable" href="class_emitter_node.html#a6c540c46433fb2a909b00153c10de094">mType</a>)</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                <a class="code hl_variable" href="class_emitter_node.html#ad7af4e0c0aefb23f87420f01d5796ad5">mParticleSystem</a> = &amp;container;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            <span class="keywordflow">if</span> (container.<a class="code hl_function" href="class_particle_node.html#aa0e084971d3c1649077cfeacc75faabd">getParticleType</a>() == mType)</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                mParticleSystem = &amp;container;</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        };</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <a class="code hl_struct" href="struct_command.html">Command</a> command;</div>
@@ -131,27 +131,22 @@ $(document).ready(function(){initNavTree('_week12_2_week12-_demo2-_sound_effect_
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keywordtype">void</span> <a class="code hl_function" href="class_emitter_node.html#a3c1ab4ddc676626e91ebcbd817a9521a">EmitterNode::emitParticles</a>(<a class="code hl_class" href="classsf_1_1_time.html">sf::Time</a> dt)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keywordtype">void</span> EmitterNode::emitParticles(<a class="code hl_class" href="classsf_1_1_time.html">sf::Time</a> dt)</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>{</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">const</span> <span class="keywordtype">float</span> emissionRate = 30.f;</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">const</span> <a class="code hl_class" href="classsf_1_1_time.html">sf::Time</a> interval = sf::seconds(1.f) / emissionRate;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_variable" href="class_emitter_node.html#a87550296157e496215a5a0933aec027d">mAccumulatedTime</a> += dt;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    mAccumulatedTime += dt;</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">while</span> (<a class="code hl_variable" href="class_emitter_node.html#a87550296157e496215a5a0933aec027d">mAccumulatedTime</a> &gt; interval)</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">while</span> (mAccumulatedTime &gt; interval)</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    {</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <a class="code hl_variable" href="class_emitter_node.html#a87550296157e496215a5a0933aec027d">mAccumulatedTime</a> -= interval;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <a class="code hl_variable" href="class_emitter_node.html#ad7af4e0c0aefb23f87420f01d5796ad5">mParticleSystem</a>-&gt;<a class="code hl_function" href="class_particle_node.html#aba35c74ce9a85194489726b82ab53f80">addParticle</a>(<a class="code hl_function" href="class_scene_node.html#a43061f972f26184b271e6c56723a29c2">getWorldPosition</a>());</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        mAccumulatedTime -= interval;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        mParticleSystem-&gt;<a class="code hl_function" href="class_particle_node.html#aba35c74ce9a85194489726b82ab53f80">addParticle</a>(<a class="code hl_function" href="class_scene_node.html#a43061f972f26184b271e6c56723a29c2">getWorldPosition</a>());</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}</div>
 <div class="ttc" id="aclass_command_queue_html"><div class="ttname"><a href="class_command_queue.html">CommandQueue</a></div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_command_queue_8hpp_source.html#l00009">CommandQueue.hpp:10</a></div></div>
 <div class="ttc" id="aclass_command_queue_html_ad444e0d7af45d9e09b834f0cec1e1f43"><div class="ttname"><a href="class_command_queue.html#ad444e0d7af45d9e09b834f0cec1e1f43">CommandQueue::push</a></div><div class="ttdeci">void push(const Command &amp;command)</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_source_2_command_queue_8cpp_source.html#l00005">CommandQueue.cpp:5</a></div></div>
-<div class="ttc" id="aclass_emitter_node_html_a3c1ab4ddc676626e91ebcbd817a9521a"><div class="ttname"><a href="class_emitter_node.html#a3c1ab4ddc676626e91ebcbd817a9521a">EmitterNode::emitParticles</a></div><div class="ttdeci">void emitParticles(sf::Time dt)</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo5-_particle_2_source_2_emitter_node_8cpp_source.html#l00039">EmitterNode.cpp:39</a></div></div>
-<div class="ttc" id="aclass_emitter_node_html_a4bfb774fba949847999f5aac6b2c4f41"><div class="ttname"><a href="class_emitter_node.html#a4bfb774fba949847999f5aac6b2c4f41">EmitterNode::updateCurrent</a></div><div class="ttdeci">virtual void updateCurrent(sf::Time dt, CommandQueue &amp;commands)</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo5-_particle_2_source_2_emitter_node_8cpp_source.html#l00016">EmitterNode.cpp:16</a></div></div>
-<div class="ttc" id="aclass_emitter_node_html_a6c540c46433fb2a909b00153c10de094"><div class="ttname"><a href="class_emitter_node.html#a6c540c46433fb2a909b00153c10de094">EmitterNode::mType</a></div><div class="ttdeci">Particle::Type mType</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo5-_particle_2_include_2_emitter_node_8hpp_source.html#l00029">EmitterNode.hpp:29</a></div></div>
-<div class="ttc" id="aclass_emitter_node_html_a87550296157e496215a5a0933aec027d"><div class="ttname"><a href="class_emitter_node.html#a87550296157e496215a5a0933aec027d">EmitterNode::mAccumulatedTime</a></div><div class="ttdeci">sf::Time mAccumulatedTime</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo5-_particle_2_include_2_emitter_node_8hpp_source.html#l00028">EmitterNode.hpp:28</a></div></div>
 <div class="ttc" id="aclass_emitter_node_html_a8a6ba67d44a62d87448fab0959e15646"><div class="ttname"><a href="class_emitter_node.html#a8a6ba67d44a62d87448fab0959e15646">EmitterNode::EmitterNode</a></div><div class="ttdeci">EmitterNode(Particle::Type type)</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo5-_particle_2_source_2_emitter_node_8cpp_source.html#l00008">EmitterNode.cpp:8</a></div></div>
-<div class="ttc" id="aclass_emitter_node_html_ad7af4e0c0aefb23f87420f01d5796ad5"><div class="ttname"><a href="class_emitter_node.html#ad7af4e0c0aefb23f87420f01d5796ad5">EmitterNode::mParticleSystem</a></div><div class="ttdeci">ParticleNode * mParticleSystem</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo5-_particle_2_include_2_emitter_node_8hpp_source.html#l00030">EmitterNode.hpp:30</a></div></div>
 <div class="ttc" id="aclass_particle_node_html"><div class="ttname"><a href="class_particle_node.html">ParticleNode</a></div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo5-_particle_2_include_2_particle_node_8hpp_source.html#l00013">ParticleNode.hpp:14</a></div></div>
 <div class="ttc" id="aclass_particle_node_html_aa0e084971d3c1649077cfeacc75faabd"><div class="ttname"><a href="class_particle_node.html#aa0e084971d3c1649077cfeacc75faabd">ParticleNode::getParticleType</a></div><div class="ttdeci">Particle::Type getParticleType() const</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo5-_particle_2_source_2_particle_node_8cpp_source.html#l00039">ParticleNode.cpp:39</a></div></div>
 <div class="ttc" id="aclass_particle_node_html_aba35c74ce9a85194489726b82ab53f80"><div class="ttname"><a href="class_particle_node.html#aba35c74ce9a85194489726b82ab53f80">ParticleNode::addParticle</a></div><div class="ttdeci">void addParticle(sf::Vector2f position)</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo5-_particle_2_source_2_particle_node_8cpp_source.html#l00028">ParticleNode.cpp:28</a></div></div>

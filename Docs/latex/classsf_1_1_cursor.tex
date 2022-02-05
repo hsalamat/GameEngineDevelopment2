@@ -107,18 +107,6 @@ bool \mbox{\hyperlink{classsf_1_1_cursor_ac24ecf82ac7d9ba6703389397f948b3a}{load
 \begin{DoxyCompactList}\small\item\em Create a cursor with the provided image. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classsf_1_1_cursor_ad41999c8633c2fbaa2364e379c1ab25b}{load\+From\+System}} (\mbox{\hyperlink{classsf_1_1_cursor_ab9ab152aec1f8a4955e34ccae08f930a}{Type}} type)
 \begin{DoxyCompactList}\small\item\em Create a native system cursor. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-const priv\+::\+Cursor\+Impl \& \mbox{\hyperlink{classsf_1_1_cursor_a4219624c65ae8349bdec6841cc9b5fdf}{get\+Impl}} () const
-\begin{DoxyCompactList}\small\item\em Get access to the underlying implementation. \end{DoxyCompactList}\item 
-const priv\+::\+Cursor\+Impl \& \mbox{\hyperlink{classsf_1_1_cursor_a4219624c65ae8349bdec6841cc9b5fdf}{get\+Impl}} () const
-\begin{DoxyCompactList}\small\item\em Get access to the underlying implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-priv\+::\+Cursor\+Impl $\ast$ \mbox{\hyperlink{classsf_1_1_cursor_a3d6ca47bf8db47b818308f874e7f042f}{m\+\_\+impl}}
-\begin{DoxyCompactList}\small\item\em Platform-\/specific implementation of the cursor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -509,36 +497,6 @@ Destructor.
 This destructor releases the system resources associated with this cursor, if any. 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classsf_1_1_cursor_a4219624c65ae8349bdec6841cc9b5fdf}\label{classsf_1_1_cursor_a4219624c65ae8349bdec6841cc9b5fdf}} 
-\index{sf::Cursor@{sf::Cursor}!getImpl@{getImpl}}
-\index{getImpl@{getImpl}!sf::Cursor@{sf::Cursor}}
-\doxysubsubsection{\texorpdfstring{getImpl()}{getImpl()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily const priv\+::\+Cursor\+Impl \& sf\+::\+Cursor\+::get\+Impl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Get access to the underlying implementation. 
-
-This is primarily designed for \mbox{\hyperlink{classsf_1_1_window_aab7a05baece72b08ad120063b143d19b}{sf\+::\+Window\+::set\+Mouse\+Cursor}}, hence the friendship.
-
-\begin{DoxyReturn}{Returns}
-a reference to the OS-\/specific implementation 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classsf_1_1_cursor_a4219624c65ae8349bdec6841cc9b5fdf}\label{classsf_1_1_cursor_a4219624c65ae8349bdec6841cc9b5fdf}} 
-\index{sf::Cursor@{sf::Cursor}!getImpl@{getImpl}}
-\index{getImpl@{getImpl}!sf::Cursor@{sf::Cursor}}
-\doxysubsubsection{\texorpdfstring{getImpl()}{getImpl()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily const priv\+::\+Cursor\+Impl \& sf\+::\+Cursor\+::get\+Impl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Get access to the underlying implementation. 
-
-This is primarily designed for \mbox{\hyperlink{classsf_1_1_window_aab7a05baece72b08ad120063b143d19b}{sf\+::\+Window\+::set\+Mouse\+Cursor}}, hence the friendship.
-
-\begin{DoxyReturn}{Returns}
-a reference to the OS-\/specific implementation 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classsf_1_1_cursor_ac24ecf82ac7d9ba6703389397f948b3a}\label{classsf_1_1_cursor_ac24ecf82ac7d9ba6703389397f948b3a}} 
 \index{sf::Cursor@{sf::Cursor}!loadFromPixels@{loadFromPixels}}
 \index{loadFromPixels@{loadFromPixels}!sf::Cursor@{sf::Cursor}}
@@ -653,23 +611,6 @@ true if and only if the corresponding cursor is natively supported by the operat
 
 
 Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_cursor_8hpp_source_l00164}{164}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_cursor_8hpp_source}{Cursor.\+hpp}}.
-
-
-
-\doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{classsf_1_1_cursor_a3d6ca47bf8db47b818308f874e7f042f}\label{classsf_1_1_cursor_a3d6ca47bf8db47b818308f874e7f042f}} 
-\index{sf::Cursor@{sf::Cursor}!m\_impl@{m\_impl}}
-\index{m\_impl@{m\_impl}!sf::Cursor@{sf::Cursor}}
-\doxysubsubsection{\texorpdfstring{m\_impl}{m\_impl}}
-{\footnotesize\ttfamily priv\+::\+Cursor\+Impl $\ast$ sf\+::\+Cursor\+::m\+\_\+impl\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Platform-\/specific implementation of the cursor. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_cursor_8hpp_source_l00182}{182}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_cursor_8hpp_source}{Cursor.\+hpp}}.
 
 
 

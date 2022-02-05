@@ -274,7 +274,5 @@ var class_g_u_i_1_1_component =
     [ "select", "class_g_u_i_1_1_component.html#ae807056061554da9c0e99b380eb9e480", null ],
     [ "select", "class_g_u_i_1_1_component.html#ae807056061554da9c0e99b380eb9e480", null ],
     [ "select", "class_g_u_i_1_1_component.html#ae807056061554da9c0e99b380eb9e480", null ],
-    [ "select", "class_g_u_i_1_1_component.html#ae807056061554da9c0e99b380eb9e480", null ],
-    [ "mIsActive", "class_g_u_i_1_1_component.html#a5de9ebcdc35b8df0add871777fa6d96e", null ],
-    [ "mIsSelected", "class_g_u_i_1_1_component.html#afd3e1d088cc58227eb35e7ca79ef76a4", null ]
+    [ "select", "class_g_u_i_1_1_component.html#ae807056061554da9c0e99b380eb9e480", null ]
 ];

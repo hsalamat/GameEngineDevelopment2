@@ -13,39 +13,39 @@
 \DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00009}00009 }
 \DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00010}00010 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_parallel_task_ad1e7ba9134cc7961ab178a2f47cf54be}{ParallelTask::execute}}()}
 \DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00011}00011 \{}
-\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00012}00012     \mbox{\hyperlink{class_parallel_task_a5981c9dd221384fb5ce8b9ea7846fda8}{mFinished}} = \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00013}00013     \mbox{\hyperlink{class_parallel_task_a37d0bd559ac88231912979139b13b196}{mElapsedTime}}.\mbox{\hyperlink{classsf_1_1_clock_a123e2627f2943e5ecaa1db0c7df3231b}{restart}}();}
-\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00014}00014     \mbox{\hyperlink{class_parallel_task_ada5f52d4158652618ca62cc19cd42f61}{mThread}}.\mbox{\hyperlink{classsf_1_1_thread_a74f75a9e86e1eb47479496314048b5f6}{launch}}();}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00012}00012     mFinished = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00013}00013     mElapsedTime.\mbox{\hyperlink{classsf_1_1_clock_a123e2627f2943e5ecaa1db0c7df3231b}{restart}}();}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00014}00014     mThread.\mbox{\hyperlink{classsf_1_1_thread_a74f75a9e86e1eb47479496314048b5f6}{launch}}();}
 \DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00015}00015 \}}
 \DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00016}00016 }
 \DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00017}00017 \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_parallel_task_a1a67f547aa382fac2087184b2eb19148}{ParallelTask::isFinished}}()}
 \DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00018}00018 \{}
-\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00019}00019     \mbox{\hyperlink{classsf_1_1_lock}{sf::Lock}} lock(\mbox{\hyperlink{class_parallel_task_a55079481579b8d853c5e62d1153b5f6b}{mMutex}});}
-\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00020}00020     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_parallel_task_a5981c9dd221384fb5ce8b9ea7846fda8}{mFinished}};}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00019}00019     \mbox{\hyperlink{classsf_1_1_lock}{sf::Lock}} lock(mMutex);}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00020}00020     \textcolor{keywordflow}{return} mFinished;}
 \DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00021}00021 \}}
 \DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00022}00022 }
 \DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00023}00023 \textcolor{keywordtype}{float} \mbox{\hyperlink{class_parallel_task_ada45e4db1aa8a89f20ab0b8662c6dabc}{ParallelTask::getCompletion}}()}
 \DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00024}00024 \{}
-\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00025}00025     \mbox{\hyperlink{classsf_1_1_lock}{sf::Lock}} lock(\mbox{\hyperlink{class_parallel_task_a55079481579b8d853c5e62d1153b5f6b}{mMutex}});}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00025}00025     \mbox{\hyperlink{classsf_1_1_lock}{sf::Lock}} lock(mMutex);}
 \DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00026}00026 }
 \DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00027}00027     \textcolor{comment}{// 100\% at 10 seconds of elapsed time}}
-\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00028}00028     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_parallel_task_a37d0bd559ac88231912979139b13b196}{mElapsedTime}}.\mbox{\hyperlink{classsf_1_1_clock_abe889b42a65bcd8eefc16419645d08a7}{getElapsedTime}}().\mbox{\hyperlink{classsf_1_1_time_aa3df2f992d0b0041b4eb02258d43f0e3}{asSeconds}}() / 10.f;}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00028}00028     \textcolor{keywordflow}{return} mElapsedTime.\mbox{\hyperlink{classsf_1_1_clock_abe889b42a65bcd8eefc16419645d08a7}{getElapsedTime}}().\mbox{\hyperlink{classsf_1_1_time_aa3df2f992d0b0041b4eb02258d43f0e3}{asSeconds}}() / 10.f;}
 \DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00029}00029 \}}
 \DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00030}00030 }
-\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00031}00031 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_parallel_task_adbf1aac46693ef846c9d16c83abdc7f6}{ParallelTask::runTask}}()}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00031}00031 \textcolor{keywordtype}{void} ParallelTask::runTask()}
 \DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00032}00032 \{}
 \DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00033}00033     \textcolor{comment}{// Dummy task -\/ stall 10 seconds}}
 \DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00034}00034     \textcolor{keywordtype}{bool} ended = \textcolor{keyword}{false};}
 \DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00035}00035     \textcolor{keywordflow}{while} (!ended)}
 \DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00036}00036     \{}
-\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00037}00037         \mbox{\hyperlink{classsf_1_1_lock}{sf::Lock}} lock(\mbox{\hyperlink{class_parallel_task_a55079481579b8d853c5e62d1153b5f6b}{mMutex}}); \textcolor{comment}{// Protect the clock }}
-\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00038}00038         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_parallel_task_a37d0bd559ac88231912979139b13b196}{mElapsedTime}}.\mbox{\hyperlink{classsf_1_1_clock_abe889b42a65bcd8eefc16419645d08a7}{getElapsedTime}}().\mbox{\hyperlink{classsf_1_1_time_aa3df2f992d0b0041b4eb02258d43f0e3}{asSeconds}}() >= 10.f)}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00037}00037         \mbox{\hyperlink{classsf_1_1_lock}{sf::Lock}} lock(mMutex); \textcolor{comment}{// Protect the clock }}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00038}00038         \textcolor{keywordflow}{if} (mElapsedTime.\mbox{\hyperlink{classsf_1_1_clock_abe889b42a65bcd8eefc16419645d08a7}{getElapsedTime}}().\mbox{\hyperlink{classsf_1_1_time_aa3df2f992d0b0041b4eb02258d43f0e3}{asSeconds}}() >= 10.f)}
 \DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00039}00039             ended = \textcolor{keyword}{true};}
 \DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00040}00040     \}}
 \DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00041}00041 }
 \DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00042}00042     \{ \textcolor{comment}{// mFinished may be accessed from multiple threads, protect it}}
-\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00043}00043         \mbox{\hyperlink{classsf_1_1_lock}{sf::Lock}} lock(\mbox{\hyperlink{class_parallel_task_a55079481579b8d853c5e62d1153b5f6b}{mMutex}});}
-\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00044}00044         \mbox{\hyperlink{class_parallel_task_a5981c9dd221384fb5ce8b9ea7846fda8}{mFinished}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00043}00043         \mbox{\hyperlink{classsf_1_1_lock}{sf::Lock}} lock(mMutex);}
+\DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00044}00044         mFinished = \textcolor{keyword}{true};}
 \DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00045}00045     \}   }
 \DoxyCodeLine{\Hypertarget{_week8_2_week8-_demo3-_button_2_source_2_parallel_task_8cpp_source_l00046}00046 \}}
 

@@ -58,20 +58,6 @@ void \mbox{\hyperlink{classsf_1_1_thread_ad6b205d4f1ce38b8d44bba0f5501477c}{term
 \item 
 {\footnotesize template$<$typename C $>$ }\\\mbox{\hyperlink{classsf_1_1_thread_aa9f473c8cbb078900c62b1fd14a83a34}{Thread}} (void(C\+::$\ast$function)(), C $\ast$object)
 \end{DoxyCompactItemize}
-\doxysubsection*{Private Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-void \mbox{\hyperlink{classsf_1_1_thread_a593508379bd38e0b42ebf9f5a7e2829c}{run}} ()
-\begin{DoxyCompactList}\small\item\em Internal entry point of the thread. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsf_1_1_thread_a593508379bd38e0b42ebf9f5a7e2829c}{run}} ()
-\begin{DoxyCompactList}\small\item\em Internal entry point of the thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-priv\+::\+Thread\+Impl $\ast$ \mbox{\hyperlink{classsf_1_1_thread_a7d46a61ae85bb1424b7d4c578015b364}{m\+\_\+impl}}
-\begin{DoxyCompactList}\small\item\em OS-\/specific implementation of the thread. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structpriv_1_1_thread_func}{priv\+::\+Thread\+Func}} $\ast$ \mbox{\hyperlink{classsf_1_1_thread_a64132525f67596d2908ebcea2ba72c31}{m\+\_\+entry\+Point}}
-\begin{DoxyCompactList}\small\item\em Abstraction of the function to run. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -114,7 +100,7 @@ Usage examples\+:
 \DoxyCodeLine{\textcolor{keyword}{class }Task}
 \DoxyCodeLine{\{}
 \DoxyCodeLine{\textcolor{keyword}{public}:}
-\DoxyCodeLine{    \textcolor{keywordtype}{void} \mbox{\hyperlink{classsf_1_1_thread_a593508379bd38e0b42ebf9f5a7e2829c}{run}}()}
+\DoxyCodeLine{    \textcolor{keywordtype}{void} run()}
 \DoxyCodeLine{    \{}
 \DoxyCodeLine{        ...}
 \DoxyCodeLine{    \}}
@@ -458,27 +444,7 @@ This function starts the entry point passed to the thread\textquotesingle{}s con
 
 Run the thread. 
 
-This function starts the entry point passed to the thread\textquotesingle{}s constructor, and returns immediately. After this function returns, the thread\textquotesingle{}s function is running in parallel to the calling code. \mbox{\Hypertarget{classsf_1_1_thread_a593508379bd38e0b42ebf9f5a7e2829c}\label{classsf_1_1_thread_a593508379bd38e0b42ebf9f5a7e2829c}} 
-\index{sf::Thread@{sf::Thread}!run@{run}}
-\index{run@{run}!sf::Thread@{sf::Thread}}
-\doxysubsubsection{\texorpdfstring{run()}{run()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void sf\+::\+Thread\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Internal entry point of the thread. 
-
-This function is called by the thread implementation. \mbox{\Hypertarget{classsf_1_1_thread_a593508379bd38e0b42ebf9f5a7e2829c}\label{classsf_1_1_thread_a593508379bd38e0b42ebf9f5a7e2829c}} 
-\index{sf::Thread@{sf::Thread}!run@{run}}
-\index{run@{run}!sf::Thread@{sf::Thread}}
-\doxysubsubsection{\texorpdfstring{run()}{run()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void sf\+::\+Thread\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Internal entry point of the thread. 
-
-This function is called by the thread implementation. \mbox{\Hypertarget{classsf_1_1_thread_ad6b205d4f1ce38b8d44bba0f5501477c}\label{classsf_1_1_thread_ad6b205d4f1ce38b8d44bba0f5501477c}} 
+This function starts the entry point passed to the thread\textquotesingle{}s constructor, and returns immediately. After this function returns, the thread\textquotesingle{}s function is running in parallel to the calling code. \mbox{\Hypertarget{classsf_1_1_thread_ad6b205d4f1ce38b8d44bba0f5501477c}\label{classsf_1_1_thread_ad6b205d4f1ce38b8d44bba0f5501477c}} 
 \index{sf::Thread@{sf::Thread}!terminate@{terminate}}
 \index{terminate@{terminate}!sf::Thread@{sf::Thread}}
 \doxysubsubsection{\texorpdfstring{terminate()}{terminate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -530,37 +496,6 @@ This function will block the execution until the thread\textquotesingle{}s funct
 
 
 Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8hpp_source_l00176}{176}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8hpp_source}{Thread.\+hpp}}.
-
-
-
-\doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{classsf_1_1_thread_a64132525f67596d2908ebcea2ba72c31}\label{classsf_1_1_thread_a64132525f67596d2908ebcea2ba72c31}} 
-\index{sf::Thread@{sf::Thread}!m\_entryPoint@{m\_entryPoint}}
-\index{m\_entryPoint@{m\_entryPoint}!sf::Thread@{sf::Thread}}
-\doxysubsubsection{\texorpdfstring{m\_entryPoint}{m\_entryPoint}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structpriv_1_1_thread_func}{priv\+::\+Thread\+Func}} $\ast$ sf\+::\+Thread\+::m\+\_\+entry\+Point\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Abstraction of the function to run. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8hpp_source_l00190}{190}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8hpp_source}{Thread.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_thread_a7d46a61ae85bb1424b7d4c578015b364}\label{classsf_1_1_thread_a7d46a61ae85bb1424b7d4c578015b364}} 
-\index{sf::Thread@{sf::Thread}!m\_impl@{m\_impl}}
-\index{m\_impl@{m\_impl}!sf::Thread@{sf::Thread}}
-\doxysubsubsection{\texorpdfstring{m\_impl}{m\_impl}}
-{\footnotesize\ttfamily priv\+::\+Thread\+Impl $\ast$ sf\+::\+Thread\+::m\+\_\+impl\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-OS-\/specific implementation of the thread. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8hpp_source_l00189}{189}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_thread_8hpp_source}{Thread.\+hpp}}.
 
 
 

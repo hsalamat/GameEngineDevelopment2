@@ -91,9 +91,7 @@ var group__graphics =
       [ "setPointCount", "classsf_1_1_circle_shape.html#a16590ee7bdf5c9f752275468a4997bed", null ],
       [ "setPointCount", "classsf_1_1_circle_shape.html#a16590ee7bdf5c9f752275468a4997bed", null ],
       [ "setRadius", "classsf_1_1_circle_shape.html#a21cdf85fc2f201e10222a241af864be0", null ],
-      [ "setRadius", "classsf_1_1_circle_shape.html#a21cdf85fc2f201e10222a241af864be0", null ],
-      [ "m_pointCount", "classsf_1_1_circle_shape.html#adb17b4b4a80acf58f03cbb03f720393a", null ],
-      [ "m_radius", "classsf_1_1_circle_shape.html#a5a82c296c19e0a374c46204a8870fa1c", null ]
+      [ "setRadius", "classsf_1_1_circle_shape.html#a21cdf85fc2f201e10222a241af864be0", null ]
     ] ],
     [ "sf::Color", "classsf_1_1_color.html", [
       [ "Color", "classsf_1_1_color.html#ac2eb4393fb11ad3fa3ccf34e92fe08e4", null ],
@@ -135,8 +133,7 @@ var group__graphics =
       [ "setPoint", "classsf_1_1_convex_shape.html#a5929e0ab0ba5ca1f102b40c234a8e92d", null ],
       [ "setPoint", "classsf_1_1_convex_shape.html#a5929e0ab0ba5ca1f102b40c234a8e92d", null ],
       [ "setPointCount", "classsf_1_1_convex_shape.html#a56e6e79ade6dd651cc1a0e39cb68deae", null ],
-      [ "setPointCount", "classsf_1_1_convex_shape.html#a56e6e79ade6dd651cc1a0e39cb68deae", null ],
-      [ "m_points", "classsf_1_1_convex_shape.html#a871048e947b419fcc7d17182acc98c08", null ]
+      [ "setPointCount", "classsf_1_1_convex_shape.html#a56e6e79ade6dd651cc1a0e39cb68deae", null ]
     ] ],
     [ "sf::Drawable", "classsf_1_1_drawable.html", [
       [ "~Drawable", "classsf_1_1_drawable.html#a906002f2df7beb5edbddf5bbef96f120", null ],
@@ -149,35 +146,12 @@ var group__graphics =
       [ "Info", "structsf_1_1_font_1_1_info.html", [
         [ "family", "structsf_1_1_font_1_1_info.html#a008413b4b6cf621eb92668a11098a519", null ]
       ] ],
-      [ "Page", "structsf_1_1_font_1_1_page.html", [
-        [ "Page", "structsf_1_1_font_1_1_page.html#af212a845d8348886e4631b7728df9fcb", null ],
-        [ "Page", "structsf_1_1_font_1_1_page.html#af212a845d8348886e4631b7728df9fcb", null ],
-        [ "glyphs", "structsf_1_1_font_1_1_page.html#aa18080b87d7485ead1d4a03b97a76a14", null ],
-        [ "nextRow", "structsf_1_1_font_1_1_page.html#a936ba5f21d0b3e22d34bc00231fb6cfa", null ],
-        [ "rows", "structsf_1_1_font_1_1_page.html#ae153909ffd53a9f2162b346b4f0e2ddb", null ],
-        [ "texture", "structsf_1_1_font_1_1_page.html#a8225fe677a1759c3b3995af8a11ac3bf", null ]
-      ] ],
-      [ "Row", "structsf_1_1_font_1_1_row.html", [
-        [ "Row", "structsf_1_1_font_1_1_row.html#a687164fb6d3379578bfbfdde772466ce", null ],
-        [ "Row", "structsf_1_1_font_1_1_row.html#a687164fb6d3379578bfbfdde772466ce", null ],
-        [ "height", "structsf_1_1_font_1_1_row.html#a45d788ba76d57cf78b172ce24971086b", null ],
-        [ "top", "structsf_1_1_font_1_1_row.html#a167288f1fdae3de1113efecb6bb094ef", null ],
-        [ "width", "structsf_1_1_font_1_1_row.html#a1c8f9b1ec539530e2005480d7fe16239", null ]
-      ] ],
-      [ "GlyphTable", "classsf_1_1_font.html#a952841b9f01447562e2cd9c6e41d3a58", null ],
-      [ "GlyphTable", "classsf_1_1_font.html#a952841b9f01447562e2cd9c6e41d3a58", null ],
-      [ "PageTable", "classsf_1_1_font.html#a1aca3fb29fc050f48949610be1f40a05", null ],
-      [ "PageTable", "classsf_1_1_font.html#a1aca3fb29fc050f48949610be1f40a05", null ],
       [ "Font", "classsf_1_1_font.html#a506404655b8869ed60d1e7709812f583", null ],
       [ "Font", "classsf_1_1_font.html#a72d7322b355ee2f1be4500f530e98081", null ],
       [ "~Font", "classsf_1_1_font.html#aa18a3c62e6e01e9a21c531b5cad4b7f2", null ],
       [ "Font", "classsf_1_1_font.html#a506404655b8869ed60d1e7709812f583", null ],
       [ "Font", "classsf_1_1_font.html#a72d7322b355ee2f1be4500f530e98081", null ],
       [ "~Font", "classsf_1_1_font.html#aa18a3c62e6e01e9a21c531b5cad4b7f2", null ],
-      [ "cleanup", "classsf_1_1_font.html#aa730fde783fa25a369941a12ae9d1e8e", null ],
-      [ "cleanup", "classsf_1_1_font.html#aa730fde783fa25a369941a12ae9d1e8e", null ],
-      [ "findGlyphRect", "classsf_1_1_font.html#a9201f9699d7c2c22975fa405465aa933", null ],
-      [ "findGlyphRect", "classsf_1_1_font.html#a9201f9699d7c2c22975fa405465aa933", null ],
       [ "getGlyph", "classsf_1_1_font.html#a4fa68953025b5357b5683297a3104070", null ],
       [ "getGlyph", "classsf_1_1_font.html#a4fa68953025b5357b5683297a3104070", null ],
       [ "getInfo", "classsf_1_1_font.html#a86f7a72943c428cac8fa6adaaa69c722", null ],
@@ -198,20 +172,8 @@ var group__graphics =
       [ "loadFromMemory", "classsf_1_1_font.html#abf2f8d6de31eb4e1db02e061c323e346", null ],
       [ "loadFromStream", "classsf_1_1_font.html#abc3f37a354ce8b9a21f8eb93bd9fdafb", null ],
       [ "loadFromStream", "classsf_1_1_font.html#abc3f37a354ce8b9a21f8eb93bd9fdafb", null ],
-      [ "loadGlyph", "classsf_1_1_font.html#aa85d44ca0c95b5826cb4adf96a5076ba", null ],
-      [ "loadGlyph", "classsf_1_1_font.html#aa85d44ca0c95b5826cb4adf96a5076ba", null ],
       [ "operator=", "classsf_1_1_font.html#af9be4336df9121ec1b6f14fa9063e46e", null ],
-      [ "operator=", "classsf_1_1_font.html#af9be4336df9121ec1b6f14fa9063e46e", null ],
-      [ "setCurrentSize", "classsf_1_1_font.html#ad1fb7470094a4298932dde878a0ad1c3", null ],
-      [ "setCurrentSize", "classsf_1_1_font.html#ad1fb7470094a4298932dde878a0ad1c3", null ],
-      [ "m_face", "classsf_1_1_font.html#a5375da985800e2a443b8c7b7342937b7", null ],
-      [ "m_info", "classsf_1_1_font.html#a22f08c57808a1621269e6f634cca0307", null ],
-      [ "m_library", "classsf_1_1_font.html#aae34ebb7d006f23c09b39f2f7aefd06c", null ],
-      [ "m_pages", "classsf_1_1_font.html#a14350f915f1596032463350fe22eb773", null ],
-      [ "m_pixelBuffer", "classsf_1_1_font.html#abc76961ecb1b39e0e78ea1e96ce35538", null ],
-      [ "m_refCount", "classsf_1_1_font.html#a63935e8969dc7ec450ba6e722726e276", null ],
-      [ "m_streamRec", "classsf_1_1_font.html#a6d92ea98819fc107a5d3514e4ed527e0", null ],
-      [ "m_stroker", "classsf_1_1_font.html#af23de4937a234bd37d290b39e2251d89", null ]
+      [ "operator=", "classsf_1_1_font.html#af9be4336df9121ec1b6f14fa9063e46e", null ]
     ] ],
     [ "sf::Glyph", "classsf_1_1_glyph.html", [
       [ "Glyph", "classsf_1_1_glyph.html#ab15cfc37eb7b40a94b3b3aedf934010b", null ],
@@ -252,9 +214,7 @@ var group__graphics =
       [ "saveToFile", "classsf_1_1_image.html#a51537fb667f47cbe80395cfd7f9e72a4", null ],
       [ "saveToFile", "classsf_1_1_image.html#a51537fb667f47cbe80395cfd7f9e72a4", null ],
       [ "setPixel", "classsf_1_1_image.html#a9fd329b8cd7d4439e07fb5d3bb2d9744", null ],
-      [ "setPixel", "classsf_1_1_image.html#a9fd329b8cd7d4439e07fb5d3bb2d9744", null ],
-      [ "m_pixels", "classsf_1_1_image.html#a1a1cd65e67a6bd7fea084f94ad9fcf60", null ],
-      [ "m_size", "classsf_1_1_image.html#a4cdfbac3fe04c8bc764b8a0082e77a28", null ]
+      [ "setPixel", "classsf_1_1_image.html#a9fd329b8cd7d4439e07fb5d3bb2d9744", null ]
     ] ],
     [ "sf::Rect< T >", "classsf_1_1_rect.html", [
       [ "Rect", "classsf_1_1_rect.html#a0f87ebaef9722a6222fd2e04ce8efb37", null ],
@@ -300,8 +260,7 @@ var group__graphics =
       [ "getSize", "classsf_1_1_rectangle_shape.html#af6819a7b842b83863f21e7a9c63097e7", null ],
       [ "getSize", "classsf_1_1_rectangle_shape.html#af6819a7b842b83863f21e7a9c63097e7", null ],
       [ "setSize", "classsf_1_1_rectangle_shape.html#a5c65d374d4a259dfdc24efdd24a5dbec", null ],
-      [ "setSize", "classsf_1_1_rectangle_shape.html#a5c65d374d4a259dfdc24efdd24a5dbec", null ],
-      [ "m_size", "classsf_1_1_rectangle_shape.html#ab97ec42ef436e2a622b7a853c9202118", null ]
+      [ "setSize", "classsf_1_1_rectangle_shape.html#a5c65d374d4a259dfdc24efdd24a5dbec", null ]
     ] ],
     [ "sf::RenderStates", "classsf_1_1_render_states.html", [
       [ "RenderStates", "classsf_1_1_render_states.html#a885bf14070d0d5391f062f62b270b7d0", null ],
@@ -322,32 +281,10 @@ var group__graphics =
       [ "transform", "classsf_1_1_render_states.html#a1f737981a0f2f0d4bb8dac866a8d1149", null ]
     ] ],
     [ "sf::RenderTarget", "classsf_1_1_render_target.html", [
-      [ "StatesCache", "structsf_1_1_render_target_1_1_states_cache.html", [
-        [ "enable", "structsf_1_1_render_target_1_1_states_cache.html#afe18ed60c54c1acacc318f8745f891ba", null ],
-        [ "glStatesSet", "structsf_1_1_render_target_1_1_states_cache.html#a72b00743fb5bd49128f5e99e05feef4c", null ],
-        [ "lastBlendMode", "structsf_1_1_render_target_1_1_states_cache.html#af2567b7c8f2fe811f28c78426b1a7be9", null ],
-        [ "lastTextureId", "structsf_1_1_render_target_1_1_states_cache.html#acdcd0a6ef1410c9cd63f9c4b9115f8d5", null ],
-        [ "texCoordsArrayEnabled", "structsf_1_1_render_target_1_1_states_cache.html#a7f83a1139be25ac92a118dfbb26154be", null ],
-        [ "useVertexCache", "structsf_1_1_render_target_1_1_states_cache.html#ab112b32284a6cadb5d2b2fd68b0a5f03", null ],
-        [ "vertexCache", "structsf_1_1_render_target_1_1_states_cache.html#ae41fc6ef172bc440a56884736923fc92", null ],
-        [ "viewChanged", "structsf_1_1_render_target_1_1_states_cache.html#a187e43ee4890f6c276ab8376f92e8695", null ]
-      ] ],
       [ "~RenderTarget", "classsf_1_1_render_target.html#a9abd1654a99fba46f6887b9c625b9b06", null ],
       [ "RenderTarget", "classsf_1_1_render_target.html#a2997c96cbd93cb8ce0aba2ddae35b86f", null ],
       [ "~RenderTarget", "classsf_1_1_render_target.html#a9abd1654a99fba46f6887b9c625b9b06", null ],
       [ "RenderTarget", "classsf_1_1_render_target.html#a2997c96cbd93cb8ce0aba2ddae35b86f", null ],
-      [ "applyBlendMode", "classsf_1_1_render_target.html#ac1e4b4f29386768a626233f14b6eb745", null ],
-      [ "applyBlendMode", "classsf_1_1_render_target.html#ac1e4b4f29386768a626233f14b6eb745", null ],
-      [ "applyCurrentView", "classsf_1_1_render_target.html#a3ed439c5445e9c7d7ff786ff37005efa", null ],
-      [ "applyCurrentView", "classsf_1_1_render_target.html#a3ed439c5445e9c7d7ff786ff37005efa", null ],
-      [ "applyShader", "classsf_1_1_render_target.html#a6f8bc92f07c70ccd57cbf632fe9de0ba", null ],
-      [ "applyShader", "classsf_1_1_render_target.html#a6f8bc92f07c70ccd57cbf632fe9de0ba", null ],
-      [ "applyTexture", "classsf_1_1_render_target.html#afb8a49305171aad158a27e0dfbb03709", null ],
-      [ "applyTexture", "classsf_1_1_render_target.html#afb8a49305171aad158a27e0dfbb03709", null ],
-      [ "applyTransform", "classsf_1_1_render_target.html#a0b23bd7c287d0fc12b0521b649a0a0e0", null ],
-      [ "applyTransform", "classsf_1_1_render_target.html#a0b23bd7c287d0fc12b0521b649a0a0e0", null ],
-      [ "cleanupDraw", "classsf_1_1_render_target.html#a48aa78fe0a1779fd8695a95b2a64bcea", null ],
-      [ "cleanupDraw", "classsf_1_1_render_target.html#a48aa78fe0a1779fd8695a95b2a64bcea", null ],
       [ "clear", "classsf_1_1_render_target.html#a6bb6f0ba348f2b1e2f46114aeaf60f26", null ],
       [ "clear", "classsf_1_1_render_target.html#a6bb6f0ba348f2b1e2f46114aeaf60f26", null ],
       [ "draw", "classsf_1_1_render_target.html#a12417a3bcc245c41d957b29583556f39", null ],
@@ -358,8 +295,6 @@ var group__graphics =
       [ "draw", "classsf_1_1_render_target.html#a3dc4d06f081d36ca1e8f1a1298d49abc", null ],
       [ "draw", "classsf_1_1_render_target.html#a07cb25d4557a30146b24b25b242310ea", null ],
       [ "draw", "classsf_1_1_render_target.html#a07cb25d4557a30146b24b25b242310ea", null ],
-      [ "drawPrimitives", "classsf_1_1_render_target.html#ab0a53b442b70a6f7fbc72e44005767b0", null ],
-      [ "drawPrimitives", "classsf_1_1_render_target.html#ab0a53b442b70a6f7fbc72e44005767b0", null ],
       [ "getDefaultView", "classsf_1_1_render_target.html#a7741129e3ef7ab4f0a40024fca13480c", null ],
       [ "getDefaultView", "classsf_1_1_render_target.html#a7741129e3ef7ab4f0a40024fca13480c", null ],
       [ "getSize", "classsf_1_1_render_target.html#a2e5ade2457d9fb4c4907ae5b3d9e94a5", null ],
@@ -386,14 +321,8 @@ var group__graphics =
       [ "resetGLStates", "classsf_1_1_render_target.html#aac7504990d27dada4bfe3c7866920765", null ],
       [ "setActive", "classsf_1_1_render_target.html#adc225ead22a70843ffa9b7eebefa0ce1", null ],
       [ "setActive", "classsf_1_1_render_target.html#adc225ead22a70843ffa9b7eebefa0ce1", null ],
-      [ "setupDraw", "classsf_1_1_render_target.html#a92af454dcbd48a1d211411cbb306754e", null ],
-      [ "setupDraw", "classsf_1_1_render_target.html#a92af454dcbd48a1d211411cbb306754e", null ],
       [ "setView", "classsf_1_1_render_target.html#a063db6dd0a14913504af30e50cb6d946", null ],
-      [ "setView", "classsf_1_1_render_target.html#a063db6dd0a14913504af30e50cb6d946", null ],
-      [ "m_cache", "classsf_1_1_render_target.html#a56e47f258d99513328806b5a3482c933", null ],
-      [ "m_defaultView", "classsf_1_1_render_target.html#ada0c3aefe9963dc780ac4fd32287c97e", null ],
-      [ "m_id", "classsf_1_1_render_target.html#a1ac05ada49d916a46b69b0a21eea1c6d", null ],
-      [ "m_view", "classsf_1_1_render_target.html#a141bf3439a6031b1c767ce1fadb81b53", null ]
+      [ "setView", "classsf_1_1_render_target.html#a063db6dd0a14913504af30e50cb6d946", null ]
     ] ],
     [ "sf::RenderTexture", "classsf_1_1_render_texture.html", [
       [ "RenderTexture", "classsf_1_1_render_texture.html#a19ee6e5b4c40ad251803389b3953a9c6", null ],
@@ -421,9 +350,7 @@ var group__graphics =
       [ "setRepeated", "classsf_1_1_render_texture.html#af8f97b33512bf7d5b6be3da6f65f7365", null ],
       [ "setRepeated", "classsf_1_1_render_texture.html#af8f97b33512bf7d5b6be3da6f65f7365", null ],
       [ "setSmooth", "classsf_1_1_render_texture.html#af08991e63c6020865dd07b20e27305b6", null ],
-      [ "setSmooth", "classsf_1_1_render_texture.html#af08991e63c6020865dd07b20e27305b6", null ],
-      [ "m_impl", "classsf_1_1_render_texture.html#abf0e572bb61af80ec4432bb6c13caae7", null ],
-      [ "m_texture", "classsf_1_1_render_texture.html#ae4638299a9022d2ba2d0fc29b5d550e8", null ]
+      [ "setSmooth", "classsf_1_1_render_texture.html#af08991e63c6020865dd07b20e27305b6", null ]
     ] ],
     [ "sf::RenderWindow", "classsf_1_1_render_window.html", [
       [ "RenderWindow", "classsf_1_1_render_window.html#a839bbf336bdcafb084dafc3076fc9021", null ],
@@ -447,10 +374,6 @@ var group__graphics =
     ] ],
     [ "sf::Shader", "classsf_1_1_shader.html", [
       [ "CurrentTextureType", "structsf_1_1_shader_1_1_current_texture_type.html", null ],
-      [ "TextureTable", "classsf_1_1_shader.html#a9a60c773571550fd54a394d4ce83f4a3", null ],
-      [ "TextureTable", "classsf_1_1_shader.html#a9a60c773571550fd54a394d4ce83f4a3", null ],
-      [ "UniformTable", "classsf_1_1_shader.html#a010c8213c1f81acd3b285566f6c8fced", null ],
-      [ "UniformTable", "classsf_1_1_shader.html#a010c8213c1f81acd3b285566f6c8fced", null ],
       [ "Type", "classsf_1_1_shader.html#afaa1aa65e5de37b74d047da9def9f9b3", [
         [ "Vertex", "classsf_1_1_shader.html#afaa1aa65e5de37b74d047da9def9f9b3ac6677cff2fb888f93e247591d886a791", null ],
         [ "Geometry", "classsf_1_1_shader.html#afaa1aa65e5de37b74d047da9def9f9b3ae4df6eca15fba5a8c8b75892009508bc", null ],
@@ -471,14 +394,8 @@ var group__graphics =
       [ "~Shader", "classsf_1_1_shader.html#a4bac6cc8b046ecd8fb967c145a2380e6", null ],
       [ "Shader", "classsf_1_1_shader.html#a1d7f28f26b4122959fcafec871c2c3c5", null ],
       [ "~Shader", "classsf_1_1_shader.html#a4bac6cc8b046ecd8fb967c145a2380e6", null ],
-      [ "bindTextures", "classsf_1_1_shader.html#a091595f44919468606a36e3414b5106e", null ],
-      [ "bindTextures", "classsf_1_1_shader.html#a091595f44919468606a36e3414b5106e", null ],
-      [ "compile", "classsf_1_1_shader.html#ae83560b673e726e48fc032f62584d606", null ],
-      [ "compile", "classsf_1_1_shader.html#ae83560b673e726e48fc032f62584d606", null ],
       [ "getNativeHandle", "classsf_1_1_shader.html#ac14d0bf7afe7b6bb415d309f9c707188", null ],
       [ "getNativeHandle", "classsf_1_1_shader.html#ac14d0bf7afe7b6bb415d309f9c707188", null ],
-      [ "getUniformLocation", "classsf_1_1_shader.html#a2127d2ac6030a825cdcb5605791d3d8a", null ],
-      [ "getUniformLocation", "classsf_1_1_shader.html#a2127d2ac6030a825cdcb5605791d3d8a", null ],
       [ "loadFromFile", "classsf_1_1_shader.html#a053a5632848ebaca2fcd8ba29abe9e6e", null ],
       [ "loadFromFile", "classsf_1_1_shader.html#a053a5632848ebaca2fcd8ba29abe9e6e", null ],
       [ "loadFromFile", "classsf_1_1_shader.html#ac9d7289966fcef562eeb92271c03e3dc", null ],
@@ -560,19 +477,13 @@ var group__graphics =
       [ "setUniformArray", "classsf_1_1_shader.html#aeae884292fed977bbea5039818f208e7", null ],
       [ "setUniformArray", "classsf_1_1_shader.html#aeae884292fed977bbea5039818f208e7", null ],
       [ "setUniformArray", "classsf_1_1_shader.html#aa89ac1ea7918c9b1c2232df59affb7fa", null ],
-      [ "setUniformArray", "classsf_1_1_shader.html#aa89ac1ea7918c9b1c2232df59affb7fa", null ],
-      [ "m_currentTexture", "classsf_1_1_shader.html#a5d7b43495def6cc6bd91b6c5d167a485", null ],
-      [ "m_shaderProgram", "classsf_1_1_shader.html#a72169743cfd7206fd49759f705a15466", null ],
-      [ "m_textures", "classsf_1_1_shader.html#a3daecf04a0045a1d7445959432b5a52f", null ],
-      [ "m_uniforms", "classsf_1_1_shader.html#a1bf3ba9e8ca3842a9b4cb084443d0477", null ]
+      [ "setUniformArray", "classsf_1_1_shader.html#aa89ac1ea7918c9b1c2232df59affb7fa", null ]
     ] ],
     [ "sf::Shape", "classsf_1_1_shape.html", [
       [ "~Shape", "classsf_1_1_shape.html#a2262aceb9df52d4275c19633592f19bf", null ],
       [ "Shape", "classsf_1_1_shape.html#a413a457f720835b9f5d8e97ca8b80960", null ],
       [ "~Shape", "classsf_1_1_shape.html#a2262aceb9df52d4275c19633592f19bf", null ],
       [ "Shape", "classsf_1_1_shape.html#a413a457f720835b9f5d8e97ca8b80960", null ],
-      [ "draw", "classsf_1_1_shape.html#af335b88097f1db83afdfafa0cd66d04d", null ],
-      [ "draw", "classsf_1_1_shape.html#af335b88097f1db83afdfafa0cd66d04d", null ],
       [ "getFillColor", "classsf_1_1_shape.html#aa5da23e522d2dd11e3e7661c26164c78", null ],
       [ "getFillColor", "classsf_1_1_shape.html#aa5da23e522d2dd11e3e7661c26164c78", null ],
       [ "getGlobalBounds", "classsf_1_1_shape.html#ac0e29425d908d5442060cc44790fe4da", null ],
@@ -602,24 +513,7 @@ var group__graphics =
       [ "setTextureRect", "classsf_1_1_shape.html#a2029cc820d1740d14ac794b82525e157", null ],
       [ "setTextureRect", "classsf_1_1_shape.html#a2029cc820d1740d14ac794b82525e157", null ],
       [ "update", "classsf_1_1_shape.html#adfb2bd966c8edbc5d6c92ebc375e4ac1", null ],
-      [ "update", "classsf_1_1_shape.html#adfb2bd966c8edbc5d6c92ebc375e4ac1", null ],
-      [ "updateFillColors", "classsf_1_1_shape.html#a371b37d672f96660dcf70aa06b2fab77", null ],
-      [ "updateFillColors", "classsf_1_1_shape.html#a371b37d672f96660dcf70aa06b2fab77", null ],
-      [ "updateOutline", "classsf_1_1_shape.html#a1364b357a1041ff38c872871a5c28623", null ],
-      [ "updateOutline", "classsf_1_1_shape.html#a1364b357a1041ff38c872871a5c28623", null ],
-      [ "updateOutlineColors", "classsf_1_1_shape.html#a55d37129600d23db54d5b6cacb2d6d67", null ],
-      [ "updateOutlineColors", "classsf_1_1_shape.html#a55d37129600d23db54d5b6cacb2d6d67", null ],
-      [ "updateTexCoords", "classsf_1_1_shape.html#a4a7ea7b0254b26ac36c27a5ff545f4b3", null ],
-      [ "updateTexCoords", "classsf_1_1_shape.html#a4a7ea7b0254b26ac36c27a5ff545f4b3", null ],
-      [ "m_bounds", "classsf_1_1_shape.html#ad1d06d0e65b363f6b62f6794454a1d2b", null ],
-      [ "m_fillColor", "classsf_1_1_shape.html#afdd52ef012f4a4843fd89793d01bcfdc", null ],
-      [ "m_insideBounds", "classsf_1_1_shape.html#a4bf719be26d465b86024232097d34494", null ],
-      [ "m_outlineColor", "classsf_1_1_shape.html#a65c07a005b8e9b8a335a24f678e4dea4", null ],
-      [ "m_outlineThickness", "classsf_1_1_shape.html#a0c11dc8ff170665c01c96a667807925f", null ],
-      [ "m_outlineVertices", "classsf_1_1_shape.html#a822af4e3f583a069e2de6482edfacd4a", null ],
-      [ "m_texture", "classsf_1_1_shape.html#a644478b7195bd1e0c529ed9b43de1383", null ],
-      [ "m_textureRect", "classsf_1_1_shape.html#a45b33e918d0f061e81de4fb1746c8e28", null ],
-      [ "m_vertices", "classsf_1_1_shape.html#a51ef27e5e9dc2419354fd036cf581201", null ]
+      [ "update", "classsf_1_1_shape.html#adfb2bd966c8edbc5d6c92ebc375e4ac1", null ]
     ] ],
     [ "sf::Sprite", "classsf_1_1_sprite.html", [
       [ "Sprite", "classsf_1_1_sprite.html#a92559fbca895a96758abf5eabab96984", null ],
@@ -628,8 +522,6 @@ var group__graphics =
       [ "Sprite", "classsf_1_1_sprite.html#a92559fbca895a96758abf5eabab96984", null ],
       [ "Sprite", "classsf_1_1_sprite.html#a2a9fca374d7abf084bb1c143a879ff4a", null ],
       [ "Sprite", "classsf_1_1_sprite.html#a01cfe1402372d243dbaa2ffa96020206", null ],
-      [ "draw", "classsf_1_1_sprite.html#ad6ab20148c4ba6d6fc33a4aaf5eb838b", null ],
-      [ "draw", "classsf_1_1_sprite.html#ad6ab20148c4ba6d6fc33a4aaf5eb838b", null ],
       [ "getColor", "classsf_1_1_sprite.html#af4a3ee8177fdd6e472a360a0a837d7cf", null ],
       [ "getColor", "classsf_1_1_sprite.html#af4a3ee8177fdd6e472a360a0a837d7cf", null ],
       [ "getGlobalBounds", "classsf_1_1_sprite.html#aa795483096b90745b2e799532963e271", null ],
@@ -645,14 +537,7 @@ var group__graphics =
       [ "setTexture", "classsf_1_1_sprite.html#a3729c88d88ac38c19317c18e87242560", null ],
       [ "setTexture", "classsf_1_1_sprite.html#a3729c88d88ac38c19317c18e87242560", null ],
       [ "setTextureRect", "classsf_1_1_sprite.html#a3fefec419a4e6a90c0fd54c793d82ec2", null ],
-      [ "setTextureRect", "classsf_1_1_sprite.html#a3fefec419a4e6a90c0fd54c793d82ec2", null ],
-      [ "updatePositions", "classsf_1_1_sprite.html#adc47a06b1f326ee3eb2dea65167c8b43", null ],
-      [ "updatePositions", "classsf_1_1_sprite.html#adc47a06b1f326ee3eb2dea65167c8b43", null ],
-      [ "updateTexCoords", "classsf_1_1_sprite.html#ae5e26f96031b2c0727fc27fd602feb5c", null ],
-      [ "updateTexCoords", "classsf_1_1_sprite.html#ae5e26f96031b2c0727fc27fd602feb5c", null ],
-      [ "m_texture", "classsf_1_1_sprite.html#a9e45115fcc6a6ac416a0f5ad17f2f93e", null ],
-      [ "m_textureRect", "classsf_1_1_sprite.html#ab944868894cfac8bfeed1b06a3295876", null ],
-      [ "m_vertices", "classsf_1_1_sprite.html#a77ee99c351f62e9c09ccec00b38a0d94", null ]
+      [ "setTextureRect", "classsf_1_1_sprite.html#a3fefec419a4e6a90c0fd54c793d82ec2", null ]
     ] ],
     [ "sf::Text", "classsf_1_1_text.html", [
       [ "Style", "classsf_1_1_text.html#aa8add4aef484c6e6b20faff07452bd82", [
@@ -683,10 +568,6 @@ var group__graphics =
       [ "Text", "classsf_1_1_text.html#a614019e0b5c0ed39a99d32483a51f2c5", null ],
       [ "Text", "classsf_1_1_text.html#aff7cab6a92e5948c9d1481cb2d87eb84", null ],
       [ "Text", "classsf_1_1_text.html#a614019e0b5c0ed39a99d32483a51f2c5", null ],
-      [ "draw", "classsf_1_1_text.html#a42f0cd394f76f4c0998114918cb3f11c", null ],
-      [ "draw", "classsf_1_1_text.html#a42f0cd394f76f4c0998114918cb3f11c", null ],
-      [ "ensureGeometryUpdate", "classsf_1_1_text.html#a4cd48624a76df98f048eaaee69cfb0ad", null ],
-      [ "ensureGeometryUpdate", "classsf_1_1_text.html#a4cd48624a76df98f048eaaee69cfb0ad", null ],
       [ "findCharacterPos", "classsf_1_1_text.html#a2e252d8dcae3eb61c6c962c0bc674b12", null ],
       [ "findCharacterPos", "classsf_1_1_text.html#a2e252d8dcae3eb61c6c962c0bc674b12", null ],
       [ "getCharacterSize", "classsf_1_1_text.html#a46d1d7f1d513bb8d434e985a93ea5224", null ],
@@ -732,21 +613,7 @@ var group__graphics =
       [ "setString", "classsf_1_1_text.html#a7d3b3359f286fd9503d1ced25b7b6c33", null ],
       [ "setString", "classsf_1_1_text.html#a7d3b3359f286fd9503d1ced25b7b6c33", null ],
       [ "setStyle", "classsf_1_1_text.html#ad791702bc2d1b6590a1719aa60635edf", null ],
-      [ "setStyle", "classsf_1_1_text.html#ad791702bc2d1b6590a1719aa60635edf", null ],
-      [ "m_bounds", "classsf_1_1_text.html#a73d20a8736e2a402859afe77f085a226", null ],
-      [ "m_characterSize", "classsf_1_1_text.html#a5a066742cdc44db9f2c871fdb03f2ad6", null ],
-      [ "m_fillColor", "classsf_1_1_text.html#a5fdc28e0b845d72204225237f1af6473", null ],
-      [ "m_font", "classsf_1_1_text.html#a26afd30fcb82c0474c15501e86ff0344", null ],
-      [ "m_fontTextureId", "classsf_1_1_text.html#a97c0049579b10d545118298b23f78f30", null ],
-      [ "m_geometryNeedUpdate", "classsf_1_1_text.html#a29af9fa585a8fcb7ef3cf53d0a6baf17", null ],
-      [ "m_letterSpacingFactor", "classsf_1_1_text.html#afb9a3c69064eaae9a61232f1a3339b27", null ],
-      [ "m_lineSpacingFactor", "classsf_1_1_text.html#a56893f600ec4c6018f35345c39349344", null ],
-      [ "m_outlineColor", "classsf_1_1_text.html#ad50d23c5c38bf11250c28b43e0cc3da2", null ],
-      [ "m_outlineThickness", "classsf_1_1_text.html#abf2a59406720c1a4cff8d0f8d9bfb7a8", null ],
-      [ "m_outlineVertices", "classsf_1_1_text.html#a7e58a0f2e2be3c6988cfc7956c7f6c7c", null ],
-      [ "m_string", "classsf_1_1_text.html#a10080b61057e2f76e2c2dc2a61633130", null ],
-      [ "m_style", "classsf_1_1_text.html#aaf9d652e6ea1bb3f1fdedb041b2f85ae", null ],
-      [ "m_vertices", "classsf_1_1_text.html#aaafa2ed1db18952c9ded3ef1ceeee32e", null ]
+      [ "setStyle", "classsf_1_1_text.html#ad791702bc2d1b6590a1719aa60635edf", null ]
     ] ],
     [ "sf::Texture", "classsf_1_1_texture.html", [
       [ "CoordinateType", "classsf_1_1_texture.html#aa6fd3bbe3c334b3c4428edfb2765a82e", [
@@ -777,8 +644,6 @@ var group__graphics =
       [ "getNativeHandle", "classsf_1_1_texture.html#a674b632608747bfc27b53a4935c835b0", null ],
       [ "getSize", "classsf_1_1_texture.html#a9f86b8cc670c6399c539d4ce07ae5c8a", null ],
       [ "getSize", "classsf_1_1_texture.html#a9f86b8cc670c6399c539d4ce07ae5c8a", null ],
-      [ "invalidateMipmap", "classsf_1_1_texture.html#a7657c59adfbc0c640e54f7e3f12787aa", null ],
-      [ "invalidateMipmap", "classsf_1_1_texture.html#a7657c59adfbc0c640e54f7e3f12787aa", null ],
       [ "isRepeated", "classsf_1_1_texture.html#af1a1a32ca5c799204b2bea4040df7647", null ],
       [ "isRepeated", "classsf_1_1_texture.html#af1a1a32ca5c799204b2bea4040df7647", null ],
       [ "isSmooth", "classsf_1_1_texture.html#a3ebb050b5a71e1d40ba66eb1a060e103", null ],
@@ -821,17 +686,7 @@ var group__graphics =
       [ "update", "classsf_1_1_texture.html#a154f246eb8059b602076009ab1cfd175", null ],
       [ "RenderTarget", "classsf_1_1_texture.html#a564c389faf3e8638c546c12cdbdda81d", null ],
       [ "RenderTexture", "classsf_1_1_texture.html#a96c222b24c6d9ddbc3666f7981622156", null ],
-      [ "Text", "classsf_1_1_texture.html#ab54cabecd48a4eb41ddb3c17c26eb6fb", null ],
-      [ "m_actualSize", "classsf_1_1_texture.html#af059062d695a8ea9a47c3790814f4dc5", null ],
-      [ "m_cacheId", "classsf_1_1_texture.html#ad4a4da7eb383fb5444a04736c9b6c197", null ],
-      [ "m_fboAttachment", "classsf_1_1_texture.html#adb1aa659ccb31d7f319a367cfdbd582d", null ],
-      [ "m_hasMipmap", "classsf_1_1_texture.html#a144afc747d7890b759d82b54c3e3c40f", null ],
-      [ "m_isRepeated", "classsf_1_1_texture.html#a9c2e3a838e2f2d028a2059f99ad19994", null ],
-      [ "m_isSmooth", "classsf_1_1_texture.html#a9b2f59e799c9d039146c8379abee3d2e", null ],
-      [ "m_pixelsFlipped", "classsf_1_1_texture.html#ae9409203ce5434396909e81c95ee1f6f", null ],
-      [ "m_size", "classsf_1_1_texture.html#a7904180a15769d35bed34aa2b543a2fe", null ],
-      [ "m_sRgb", "classsf_1_1_texture.html#a4df1e92fd3d8e2b14a140ffbc3d0c6ae", null ],
-      [ "m_texture", "classsf_1_1_texture.html#a2a15d3a9ae9267fa5325eeab0f854b41", null ]
+      [ "Text", "classsf_1_1_texture.html#ab54cabecd48a4eb41ddb3c17c26eb6fb", null ]
     ] ],
     [ "sf::Transform", "classsf_1_1_transform.html", [
       [ "Transform", "classsf_1_1_transform.html#ac32de51bd0b9f3d52fbe0838225ee83b", null ],
@@ -877,8 +732,7 @@ var group__graphics =
       [ "operator*=", "classsf_1_1_transform.html#a45a9de70a463117f851f1264a6f558ba", null ],
       [ "operator*=", "classsf_1_1_transform.html#a45a9de70a463117f851f1264a6f558ba", null ],
       [ "operator==", "classsf_1_1_transform.html#a542b6e28b891d92b68acbb6cf4c1165e", null ],
-      [ "operator==", "classsf_1_1_transform.html#a542b6e28b891d92b68acbb6cf4c1165e", null ],
-      [ "m_matrix", "classsf_1_1_transform.html#ab975893ebb64fa6a5b4ebe22fc5534fc", null ]
+      [ "operator==", "classsf_1_1_transform.html#a542b6e28b891d92b68acbb6cf4c1165e", null ]
     ] ],
     [ "sf::Transformable", "classsf_1_1_transformable.html", [
       [ "Transformable", "classsf_1_1_transformable.html#ae71710de0fef423121bab1c684954a2e", null ],
@@ -920,15 +774,7 @@ var group__graphics =
       [ "setScale", "classsf_1_1_transformable.html#a4c48a87f1626047e448f9c1a68ff167e", null ],
       [ "setScale", "classsf_1_1_transformable.html#a4c48a87f1626047e448f9c1a68ff167e", null ],
       [ "setScale", "classsf_1_1_transformable.html#aaec50b46b3f41b054763304d1e727471", null ],
-      [ "setScale", "classsf_1_1_transformable.html#aaec50b46b3f41b054763304d1e727471", null ],
-      [ "m_inverseTransform", "classsf_1_1_transformable.html#a6538c7efb49ad3a430d45c8a52368f36", null ],
-      [ "m_inverseTransformNeedUpdate", "classsf_1_1_transformable.html#afbb99d25b4ea10943e883d45a7594761", null ],
-      [ "m_origin", "classsf_1_1_transformable.html#ad52a72593cb43a30a0cac33737a3a60c", null ],
-      [ "m_position", "classsf_1_1_transformable.html#a7081bf508f612cb63e9ce3b149758217", null ],
-      [ "m_rotation", "classsf_1_1_transformable.html#a206c593d926ee30a3c79520c2fae448b", null ],
-      [ "m_scale", "classsf_1_1_transformable.html#adf2c5e463aefb41c6d43a140c0ad151f", null ],
-      [ "m_transform", "classsf_1_1_transformable.html#ae7451ed9c4d1065fc050ce3e5ad7b34c", null ],
-      [ "m_transformNeedUpdate", "classsf_1_1_transformable.html#a394b22bfe9e9e44c672244e4da0b3c58", null ]
+      [ "setScale", "classsf_1_1_transformable.html#aaec50b46b3f41b054763304d1e727471", null ]
     ] ],
     [ "sf::Vertex", "classsf_1_1_vertex.html", [
       [ "Vertex", "classsf_1_1_vertex.html#a6b4c79cd69f7ec1296fede536f39e9c8", null ],
@@ -954,8 +800,6 @@ var group__graphics =
       [ "append", "classsf_1_1_vertex_array.html#a80c8f6865e53bd21fc6cb10fffa10035", null ],
       [ "clear", "classsf_1_1_vertex_array.html#a3654c424aca1f9e468f369bc777c839c", null ],
       [ "clear", "classsf_1_1_vertex_array.html#a3654c424aca1f9e468f369bc777c839c", null ],
-      [ "draw", "classsf_1_1_vertex_array.html#aa461f084e4a65fabfa4992885dabbea6", null ],
-      [ "draw", "classsf_1_1_vertex_array.html#aa461f084e4a65fabfa4992885dabbea6", null ],
       [ "getBounds", "classsf_1_1_vertex_array.html#abd57744c732abfc7d4c98d8e1d4ccca1", null ],
       [ "getBounds", "classsf_1_1_vertex_array.html#abd57744c732abfc7d4c98d8e1d4ccca1", null ],
       [ "getPrimitiveType", "classsf_1_1_vertex_array.html#aa1a60d84543aa6e220683349b645f130", null ],
@@ -969,9 +813,7 @@ var group__graphics =
       [ "resize", "classsf_1_1_vertex_array.html#a0c0fe239e8f9a54e64d3bbc96bf548c0", null ],
       [ "resize", "classsf_1_1_vertex_array.html#a0c0fe239e8f9a54e64d3bbc96bf548c0", null ],
       [ "setPrimitiveType", "classsf_1_1_vertex_array.html#aa38c10707c28a97f4627ae8b2f3ad969", null ],
-      [ "setPrimitiveType", "classsf_1_1_vertex_array.html#aa38c10707c28a97f4627ae8b2f3ad969", null ],
-      [ "m_primitiveType", "classsf_1_1_vertex_array.html#a5d1b94b429267b30301430b4974c5f48", null ],
-      [ "m_vertices", "classsf_1_1_vertex_array.html#ab93e889cc2408ce50ea2dd943d08a1ae", null ]
+      [ "setPrimitiveType", "classsf_1_1_vertex_array.html#aa38c10707c28a97f4627ae8b2f3ad969", null ]
     ] ],
     [ "sf::VertexBuffer", "classsf_1_1_vertex_buffer.html", [
       [ "Usage", "classsf_1_1_vertex_buffer.html#a3a531528684e63ecb45edd51282f5cb7", [
@@ -1004,8 +846,6 @@ var group__graphics =
       [ "~VertexBuffer", "classsf_1_1_vertex_buffer.html#acfbb3b16221bfb9406fcaa18cfcac3e7", null ],
       [ "create", "classsf_1_1_vertex_buffer.html#aa68e128d59c7f7d5eb0d4d94125439a5", null ],
       [ "create", "classsf_1_1_vertex_buffer.html#aa68e128d59c7f7d5eb0d4d94125439a5", null ],
-      [ "draw", "classsf_1_1_vertex_buffer.html#a3591a7fd52f502033b40755af71edc17", null ],
-      [ "draw", "classsf_1_1_vertex_buffer.html#a3591a7fd52f502033b40755af71edc17", null ],
       [ "getNativeHandle", "classsf_1_1_vertex_buffer.html#a343fa0a240c91bc4203a6727fcd9b920", null ],
       [ "getNativeHandle", "classsf_1_1_vertex_buffer.html#a343fa0a240c91bc4203a6727fcd9b920", null ],
       [ "getPrimitiveType", "classsf_1_1_vertex_buffer.html#a02061d85472ff69e7ad14dc72f8fcaa4", null ],
@@ -1027,11 +867,7 @@ var group__graphics =
       [ "update", "classsf_1_1_vertex_buffer.html#ae6c8649a64861507010d21e77fbd53fa", null ],
       [ "update", "classsf_1_1_vertex_buffer.html#ae6c8649a64861507010d21e77fbd53fa", null ],
       [ "update", "classsf_1_1_vertex_buffer.html#a41f8bbcf07f403e7fe29b1b905dc7544", null ],
-      [ "update", "classsf_1_1_vertex_buffer.html#a41f8bbcf07f403e7fe29b1b905dc7544", null ],
-      [ "m_buffer", "classsf_1_1_vertex_buffer.html#aab0082f19be0290bcbaf308379e5d60a", null ],
-      [ "m_primitiveType", "classsf_1_1_vertex_buffer.html#a958cf85fc5426b5b5490a201087046ac", null ],
-      [ "m_size", "classsf_1_1_vertex_buffer.html#a962780c0687af7aeb1d0555fd1baa445", null ],
-      [ "m_usage", "classsf_1_1_vertex_buffer.html#ab056efbd5d04372e9054a0e41bd9acfe", null ]
+      [ "update", "classsf_1_1_vertex_buffer.html#a41f8bbcf07f403e7fe29b1b905dc7544", null ]
     ] ],
     [ "sf::View", "classsf_1_1_view.html", [
       [ "View", "classsf_1_1_view.html#a28c38308ff089ae5bdacd001d12286d3", null ],
@@ -1073,15 +909,7 @@ var group__graphics =
       [ "setViewport", "classsf_1_1_view.html#a8eaec46b7d332fe834f016d0187d4b4a", null ],
       [ "setViewport", "classsf_1_1_view.html#a8eaec46b7d332fe834f016d0187d4b4a", null ],
       [ "zoom", "classsf_1_1_view.html#a4a72a360a5792fbe4e99cd6feaf7726e", null ],
-      [ "zoom", "classsf_1_1_view.html#a4a72a360a5792fbe4e99cd6feaf7726e", null ],
-      [ "m_center", "classsf_1_1_view.html#a2aafc31cea5b8f9afd273df7f33198be", null ],
-      [ "m_inverseTransform", "classsf_1_1_view.html#a2913d790e9dfb0e433ced3589be5182e", null ],
-      [ "m_invTransformUpdated", "classsf_1_1_view.html#a4fc36421401c03bd9c3f556023e891f7", null ],
-      [ "m_rotation", "classsf_1_1_view.html#a7f1500a1904edffffc5daa76f2f95037", null ],
-      [ "m_size", "classsf_1_1_view.html#ab7eb79d4cbfb717cfd5a4ad3c6d19dd5", null ],
-      [ "m_transform", "classsf_1_1_view.html#ab27082a1c1fb6b00bd44d2aa322082aa", null ],
-      [ "m_transformUpdated", "classsf_1_1_view.html#a64c4c557714b453d1e75b937e56eedd5", null ],
-      [ "m_viewport", "classsf_1_1_view.html#a2d89b9e2b7ae058c98f1f80c132ae8d6", null ]
+      [ "zoom", "classsf_1_1_view.html#a4a72a360a5792fbe4e99cd6feaf7726e", null ]
     ] ],
     [ "sf::PrimitiveType", "group__graphics.html#ga5ee56ac1339984909610713096283b1b", [
       [ "sf::Points", "group__graphics.html#gga5ee56ac1339984909610713096283b1ba85cf551ca780a29ec5df3ee9fc282c22", null ],

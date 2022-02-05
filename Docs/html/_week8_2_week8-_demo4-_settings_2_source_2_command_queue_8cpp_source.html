@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Game Engine Development II: Week8/Week8-Demo4-Settings/Source/CommandQueue.cpp Source File</title>
+<title>My Project: Week8/Week8-Demo4-Settings/Source/CommandQueue.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Game Engine Development II
+   <div id="projectname">My Project
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -100,22 +100,21 @@ $(document).ready(function(){initNavTree('_week8_2_week8-_demo4-_settings_2_sour
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keywordtype">void</span> <a class="code hl_function" href="class_command_queue.html#ad444e0d7af45d9e09b834f0cec1e1f43">CommandQueue::push</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_command.html">Command</a>&amp; command)</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <a class="code hl_variable" href="class_command_queue.html#a7b870208a46a21d2878ac4a43c4efc21">mQueue</a>.push(command);</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    mQueue.push(command);</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>}</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><a class="code hl_struct" href="struct_command.html">Command</a> <a class="code hl_function" href="class_command_queue.html#ac2dde510222b8df393b55978f4594194">CommandQueue::pop</a>()</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <a class="code hl_struct" href="struct_command.html">Command</a> command = <a class="code hl_variable" href="class_command_queue.html#a7b870208a46a21d2878ac4a43c4efc21">mQueue</a>.front();</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <a class="code hl_variable" href="class_command_queue.html#a7b870208a46a21d2878ac4a43c4efc21">mQueue</a>.pop();</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <a class="code hl_struct" href="struct_command.html">Command</a> command = mQueue.front();</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    mQueue.pop();</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordflow">return</span> command;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>}</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keywordtype">bool</span> <a class="code hl_function" href="class_command_queue.html#a3a6eb6a7c83d9b20ad7a6cac63795ec1">CommandQueue::isEmpty</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_command_queue.html#a7b870208a46a21d2878ac4a43c4efc21">mQueue</a>.empty();</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">return</span> mQueue.empty();</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
 <div class="ttc" id="aclass_command_queue_html_a3a6eb6a7c83d9b20ad7a6cac63795ec1"><div class="ttname"><a href="class_command_queue.html#a3a6eb6a7c83d9b20ad7a6cac63795ec1">CommandQueue::isEmpty</a></div><div class="ttdeci">bool isEmpty() const</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_source_2_command_queue_8cpp_source.html#l00017">CommandQueue.cpp:17</a></div></div>
-<div class="ttc" id="aclass_command_queue_html_a7b870208a46a21d2878ac4a43c4efc21"><div class="ttname"><a href="class_command_queue.html#a7b870208a46a21d2878ac4a43c4efc21">CommandQueue::mQueue</a></div><div class="ttdeci">std::queue&lt; Command &gt; mQueue</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_command_queue_8hpp_source.html#l00018">CommandQueue.hpp:18</a></div></div>
 <div class="ttc" id="aclass_command_queue_html_ac2dde510222b8df393b55978f4594194"><div class="ttname"><a href="class_command_queue.html#ac2dde510222b8df393b55978f4594194">CommandQueue::pop</a></div><div class="ttdeci">Command pop()</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_source_2_command_queue_8cpp_source.html#l00010">CommandQueue.cpp:10</a></div></div>
 <div class="ttc" id="aclass_command_queue_html_ad444e0d7af45d9e09b834f0cec1e1f43"><div class="ttname"><a href="class_command_queue.html#ad444e0d7af45d9e09b834f0cec1e1f43">CommandQueue::push</a></div><div class="ttdeci">void push(const Command &amp;command)</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_source_2_command_queue_8cpp_source.html#l00005">CommandQueue.cpp:5</a></div></div>
 <div class="ttc" id="astruct_command_html"><div class="ttname"><a href="struct_command.html">Command</a></div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_command_8hpp_source.html#l00014">Command.hpp:15</a></div></div>

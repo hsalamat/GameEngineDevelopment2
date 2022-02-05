@@ -1,17 +1,11 @@
 var classsf_1_1_sound_buffer =
 [
-    [ "SoundList", "classsf_1_1_sound_buffer.html#a0c4edd90a4c83b07369e84f14b385196", null ],
-    [ "SoundList", "classsf_1_1_sound_buffer.html#a0c4edd90a4c83b07369e84f14b385196", null ],
     [ "SoundBuffer", "classsf_1_1_sound_buffer.html#a0cabfbfe19b831bf7d5c9592d92ef233", null ],
     [ "SoundBuffer", "classsf_1_1_sound_buffer.html#aaf000fc741ff27015907e8588263f4a6", null ],
     [ "~SoundBuffer", "classsf_1_1_sound_buffer.html#aea240161724ffba74a0d6a9e277d3cd5", null ],
     [ "SoundBuffer", "classsf_1_1_sound_buffer.html#a0cabfbfe19b831bf7d5c9592d92ef233", null ],
     [ "SoundBuffer", "classsf_1_1_sound_buffer.html#aaf000fc741ff27015907e8588263f4a6", null ],
     [ "~SoundBuffer", "classsf_1_1_sound_buffer.html#aea240161724ffba74a0d6a9e277d3cd5", null ],
-    [ "attachSound", "classsf_1_1_sound_buffer.html#a2761144856e452446cc26fda484b2b16", null ],
-    [ "attachSound", "classsf_1_1_sound_buffer.html#a2761144856e452446cc26fda484b2b16", null ],
-    [ "detachSound", "classsf_1_1_sound_buffer.html#a02732b7adfaad67c931e2494a14a7027", null ],
-    [ "detachSound", "classsf_1_1_sound_buffer.html#a02732b7adfaad67c931e2494a14a7027", null ],
     [ "getChannelCount", "classsf_1_1_sound_buffer.html#a127707b831d875ed790eef1aa2b9fcc3", null ],
     [ "getChannelCount", "classsf_1_1_sound_buffer.html#a127707b831d875ed790eef1aa2b9fcc3", null ],
     [ "getDuration", "classsf_1_1_sound_buffer.html#a280a581d9b360fd16121714c51fc8261", null ],
@@ -22,8 +16,6 @@ var classsf_1_1_sound_buffer =
     [ "getSampleRate", "classsf_1_1_sound_buffer.html#a2c2cf0078ce0549246ecc4a1646212b4", null ],
     [ "getSamples", "classsf_1_1_sound_buffer.html#a3d5571a5231d3aea0d2cea933c38cc9e", null ],
     [ "getSamples", "classsf_1_1_sound_buffer.html#a3d5571a5231d3aea0d2cea933c38cc9e", null ],
-    [ "initialize", "classsf_1_1_sound_buffer.html#aa3c563ecb5a554c8975d93044be6fc54", null ],
-    [ "initialize", "classsf_1_1_sound_buffer.html#aa3c563ecb5a554c8975d93044be6fc54", null ],
     [ "loadFromFile", "classsf_1_1_sound_buffer.html#a2be6a8025c97eb622a7dff6cf2594394", null ],
     [ "loadFromFile", "classsf_1_1_sound_buffer.html#a2be6a8025c97eb622a7dff6cf2594394", null ],
     [ "loadFromMemory", "classsf_1_1_sound_buffer.html#af8cfa5599739a7edae69c5cba273d33f", null ],
@@ -36,11 +28,5 @@ var classsf_1_1_sound_buffer =
     [ "operator=", "classsf_1_1_sound_buffer.html#ad0b6f45d3008cd7d29d340195e68459a", null ],
     [ "saveToFile", "classsf_1_1_sound_buffer.html#aade64260c6375580a085314a30be007e", null ],
     [ "saveToFile", "classsf_1_1_sound_buffer.html#aade64260c6375580a085314a30be007e", null ],
-    [ "update", "classsf_1_1_sound_buffer.html#afaa542a4b59ac4e8c4f4d163ea61c7e6", null ],
-    [ "update", "classsf_1_1_sound_buffer.html#afaa542a4b59ac4e8c4f4d163ea61c7e6", null ],
-    [ "Sound", "classsf_1_1_sound_buffer.html#a78d488655886fd6a1355b1162fba927f", null ],
-    [ "m_buffer", "classsf_1_1_sound_buffer.html#a90bd207655b9b1a312f6ebb7ae783da2", null ],
-    [ "m_duration", "classsf_1_1_sound_buffer.html#ad7a031590faff910c94cc442864eabd3", null ],
-    [ "m_samples", "classsf_1_1_sound_buffer.html#a059715cfba0f0b42fc027101d44ab625", null ],
-    [ "m_sounds", "classsf_1_1_sound_buffer.html#aa6fc10c994c0aaca70567e8fd1ddabc3", null ]
+    [ "Sound", "classsf_1_1_sound_buffer.html#a78d488655886fd6a1355b1162fba927f", null ]
 ];

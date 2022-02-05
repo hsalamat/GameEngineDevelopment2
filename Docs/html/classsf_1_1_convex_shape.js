@@ -9,6 +9,5 @@ var classsf_1_1_convex_shape =
     [ "setPoint", "classsf_1_1_convex_shape.html#a5929e0ab0ba5ca1f102b40c234a8e92d", null ],
     [ "setPoint", "classsf_1_1_convex_shape.html#a5929e0ab0ba5ca1f102b40c234a8e92d", null ],
     [ "setPointCount", "classsf_1_1_convex_shape.html#a56e6e79ade6dd651cc1a0e39cb68deae", null ],
-    [ "setPointCount", "classsf_1_1_convex_shape.html#a56e6e79ade6dd651cc1a0e39cb68deae", null ],
-    [ "m_points", "classsf_1_1_convex_shape.html#a871048e947b419fcc7d17182acc98c08", null ]
+    [ "setPointCount", "classsf_1_1_convex_shape.html#a56e6e79ade6dd651cc1a0e39cb68deae", null ]
 ];

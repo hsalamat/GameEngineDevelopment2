@@ -3,7 +3,6 @@ var hierarchy =
     [ "GameActions::Action", "struct_game_actions_1_1_action.html", null ],
     [ "AircraftData", "struct_aircraft_data.html", null ],
     [ "AircraftFireTrigger", "struct_aircraft_fire_trigger.html", null ],
-    [ "GameServer::AircraftInfo", "struct_game_server_1_1_aircraft_info.html", null ],
     [ "AircraftMissileTrigger", "struct_aircraft_missile_trigger.html", null ],
     [ "AircraftMover", "struct_aircraft_mover.html", null ],
     [ "sf::AlResource", "classsf_1_1_al_resource.html", [
@@ -550,6 +549,7 @@ var hierarchy =
       [ "Game", "class_game.html", null ],
       [ "Game", "class_game.html", null ],
       [ "Game", "class_game.html", null ],
+      [ "Game", "class_game.html", null ],
       [ "Game2", "class_game2.html", null ],
       [ "MusicPlayer", "class_music_player.html", null ],
       [ "MusicPlayer", "class_music_player.html", null ],
@@ -736,21 +736,16 @@ var hierarchy =
     ] ],
     [ "ObjectConstants", "struct_object_constants.html", null ],
     [ "sf::Packet", "classsf_1_1_packet.html", null ],
-    [ "sf::Font::Page", "structsf_1_1_font_1_1_page.html", null ],
     [ "ParallelTask", "class_parallel_task.html", null ],
     [ "Game::Particle", "struct_game_1_1_particle.html", null ],
     [ "Particle", "struct_particle.html", null ],
     [ "ParticleData", "struct_particle_data.html", null ],
     [ "PassConstants", "struct_pass_constants.html", null ],
-    [ "StateStack::PendingChange", "struct_state_stack_1_1_pending_change.html", null ],
-    [ "sf::TcpSocket::PendingPacket", "structsf_1_1_tcp_socket_1_1_pending_packet.html", null ],
     [ "PickupData", "struct_pickup_data.html", null ],
     [ "ProjectileData", "struct_projectile_data.html", null ],
-    [ "sf::SoundFileFactory::ReaderFactory", "structsf_1_1_sound_file_factory_1_1_reader_factory.html", null ],
     [ "sf::Rect< T >", "classsf_1_1_rect.html", null ],
     [ "sf::Rect< float >", "classsf_1_1_rect.html", null ],
     [ "sf::Rect< int >", "classsf_1_1_rect.html", null ],
-    [ "GameServer::RemotePeer", "struct_game_server_1_1_remote_peer.html", null ],
     [ "RenderItem", "struct_render_item.html", null ],
     [ "sf::RenderStates", "classsf_1_1_render_states.html", null ],
     [ "sf::Http::Request", "classsf_1_1_http_1_1_request.html", null ],
@@ -766,7 +761,6 @@ var hierarchy =
       [ "sf::Ftp::ListingResponse", "classsf_1_1_ftp_1_1_listing_response.html", null ]
     ] ],
     [ "sf::Http::Response", "classsf_1_1_http_1_1_response.html", null ],
-    [ "sf::Font::Row", "structsf_1_1_font_1_1_row.html", null ],
     [ "SConversion", "struct_s_conversion.html", null ],
     [ "sf::Sensor", "classsf_1_1_sensor.html", null ],
     [ "sf::Event::SensorEvent", "structsf_1_1_event_1_1_sensor_event.html", null ],
@@ -776,7 +770,6 @@ var hierarchy =
     [ "sf::SoundFileReader", "classsf_1_1_sound_file_reader.html", null ],
     [ "sf::SoundFileWriter", "classsf_1_1_sound_file_writer.html", null ],
     [ "sf::Music::Span< T >", "structsf_1_1_music_1_1_span.html", null ],
-    [ "World::SpawnPoint", "struct_world_1_1_spawn_point.html", null ],
     [ "State", "class_state.html", [
       [ "GameOverState", "class_game_over_state.html", null ],
       [ "GameOverState", "class_game_over_state.html", null ],
@@ -939,7 +932,6 @@ var hierarchy =
       [ "TitleState", "class_title_state.html", null ],
       [ "TitleState", "class_title_state.html", null ]
     ] ],
-    [ "sf::RenderTarget::StatesCache", "structsf_1_1_render_target_1_1_states_cache.html", null ],
     [ "sf::String", "classsf_1_1_string.html", null ],
     [ "SubmeshGeometry", "struct_submesh_geometry.html", null ],
     [ "SValue", "struct_s_value.html", null ],
@@ -1059,6 +1051,5 @@ var hierarchy =
     [ "sf::View", "classsf_1_1_view.html", null ],
     [ "DirectX::WAVData", "struct_direct_x_1_1_w_a_v_data.html", null ],
     [ "DirectX::WaveBankReader", "class_direct_x_1_1_wave_bank_reader.html", null ],
-    [ "WaveFile", "struct_wave_file.html", null ],
-    [ "sf::SoundFileFactory::WriterFactory", "structsf_1_1_sound_file_factory_1_1_writer_factory.html", null ]
+    [ "WaveFile", "struct_wave_file.html", null ]
 ];

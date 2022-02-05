@@ -38,9 +38,7 @@ var dir_87c0a13a28316158b546f17c0a14823b =
       [ "GameOverState", "class_game_over_state.html", "class_game_over_state" ]
     ] ],
     [ "GameServer.hpp", "_s_f_m_l-2_85_81_2include_2_game_server_8hpp.html", [
-      [ "GameServer", "class_game_server.html", "class_game_server" ],
-      [ "GameServer::RemotePeer", "struct_game_server_1_1_remote_peer.html", "struct_game_server_1_1_remote_peer" ],
-      [ "GameServer::AircraftInfo", "struct_game_server_1_1_aircraft_info.html", "struct_game_server_1_1_aircraft_info" ]
+      [ "GameServer", "class_game_server.html", "class_game_server" ]
     ] ],
     [ "GameState.hpp", "_week14_2_s_f_m_l-2_85_81_2include_2_game_state_8hpp.html", [
       [ "GameState", "class_game_state.html", "class_game_state" ]
@@ -107,8 +105,7 @@ var dir_87c0a13a28316158b546f17c0a14823b =
     ] ],
     [ "StateIdentifiers.hpp", "_week14_2_s_f_m_l-2_85_81_2include_2_state_identifiers_8hpp.html", "_week14_2_s_f_m_l-2_85_81_2include_2_state_identifiers_8hpp" ],
     [ "StateStack.hpp", "_week14_2_s_f_m_l-2_85_81_2include_2_state_stack_8hpp.html", [
-      [ "StateStack", "class_state_stack.html", "class_state_stack" ],
-      [ "StateStack::PendingChange", "struct_state_stack_1_1_pending_change.html", "struct_state_stack_1_1_pending_change" ]
+      [ "StateStack", "class_state_stack.html", "class_state_stack" ]
     ] ],
     [ "TextNode.hpp", "_week14_2_s_f_m_l-2_85_81_2include_2_text_node_8hpp.html", [
       [ "TextNode", "class_text_node.html", "class_text_node" ]
@@ -119,7 +116,6 @@ var dir_87c0a13a28316158b546f17c0a14823b =
     [ "Utility.hpp", "_week14_2_s_f_m_l-2_85_81_2include_2_utility_8hpp.html", "_week14_2_s_f_m_l-2_85_81_2include_2_utility_8hpp" ],
     [ "Utility.inl", "_week14_2_s_f_m_l-2_85_81_2include_2_utility_8inl.html", "_week14_2_s_f_m_l-2_85_81_2include_2_utility_8inl" ],
     [ "World.hpp", "_week14_2_s_f_m_l-2_85_81_2include_2_world_8hpp.html", [
-      [ "World", "class_world.html", "class_world" ],
-      [ "World::SpawnPoint", "struct_world_1_1_spawn_point.html", "struct_world_1_1_spawn_point" ]
+      [ "World", "class_world.html", "class_world" ]
     ] ]
 ];

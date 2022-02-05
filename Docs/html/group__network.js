@@ -5,15 +5,13 @@ var group__network =
         [ "DirectoryResponse", "classsf_1_1_ftp_1_1_directory_response.html#a36b6d2728fa53c4ad37b7a6307f4d388", null ],
         [ "DirectoryResponse", "classsf_1_1_ftp_1_1_directory_response.html#a36b6d2728fa53c4ad37b7a6307f4d388", null ],
         [ "getDirectory", "classsf_1_1_ftp_1_1_directory_response.html#a983b0ce3d99c687e0862212040158d67", null ],
-        [ "getDirectory", "classsf_1_1_ftp_1_1_directory_response.html#a983b0ce3d99c687e0862212040158d67", null ],
-        [ "m_directory", "classsf_1_1_ftp_1_1_directory_response.html#a3f782abfe5fbe7ee6c2748d3b4ae6a40", null ]
+        [ "getDirectory", "classsf_1_1_ftp_1_1_directory_response.html#a983b0ce3d99c687e0862212040158d67", null ]
       ] ],
       [ "ListingResponse", "classsf_1_1_ftp_1_1_listing_response.html", [
         [ "ListingResponse", "classsf_1_1_ftp_1_1_listing_response.html#a7e98d0aed70105c71adb52e5b6ce0bb8", null ],
         [ "ListingResponse", "classsf_1_1_ftp_1_1_listing_response.html#a7e98d0aed70105c71adb52e5b6ce0bb8", null ],
         [ "getListing", "classsf_1_1_ftp_1_1_listing_response.html#a0d0579db7e0531761992dbbae1174bf2", null ],
-        [ "getListing", "classsf_1_1_ftp_1_1_listing_response.html#a0d0579db7e0531761992dbbae1174bf2", null ],
-        [ "m_listing", "classsf_1_1_ftp_1_1_listing_response.html#a3d5fe7be48ab0ca2e1fba360b2a4e112", null ]
+        [ "getListing", "classsf_1_1_ftp_1_1_listing_response.html#a0d0579db7e0531761992dbbae1174bf2", null ]
       ] ],
       [ "Response", "classsf_1_1_ftp_1_1_response.html", [
         [ "Status", "classsf_1_1_ftp_1_1_response.html#af81738f06b6f571761696291276acb3b", [
@@ -199,9 +197,7 @@ var group__network =
         [ "getStatus", "classsf_1_1_ftp_1_1_response.html#a52bbca9fbf5451157bc055e3d8430c25", null ],
         [ "getStatus", "classsf_1_1_ftp_1_1_response.html#a52bbca9fbf5451157bc055e3d8430c25", null ],
         [ "isOk", "classsf_1_1_ftp_1_1_response.html#a5102552955a2652c1a39e9046e617b36", null ],
-        [ "isOk", "classsf_1_1_ftp_1_1_response.html#a5102552955a2652c1a39e9046e617b36", null ],
-        [ "m_message", "classsf_1_1_ftp_1_1_response.html#aaf692d0df6066d4a1f4d0677869b8f7b", null ],
-        [ "m_status", "classsf_1_1_ftp_1_1_response.html#af3a8918ddd408ff8fbcce5c0beda11d4", null ]
+        [ "isOk", "classsf_1_1_ftp_1_1_response.html#a5102552955a2652c1a39e9046e617b36", null ]
       ] ],
       [ "TransferMode", "classsf_1_1_ftp.html#a1cd6b89ad23253f6d97e6d4ca4d558cb", [
         [ "Binary", "classsf_1_1_ftp.html#a1cd6b89ad23253f6d97e6d4ca4d558cba8d9a3497be63da2bf7ed663b1bfd7449", null ],
@@ -237,8 +233,6 @@ var group__network =
       [ "download", "classsf_1_1_ftp.html#a20c1600ec5fd6f5a2ad1429ab8aa5df4", null ],
       [ "getDirectoryListing", "classsf_1_1_ftp.html#a8f37258e461fcb9e2a0655e9df0be4a0", null ],
       [ "getDirectoryListing", "classsf_1_1_ftp.html#a8f37258e461fcb9e2a0655e9df0be4a0", null ],
-      [ "getResponse", "classsf_1_1_ftp.html#a605a3ecae3bbba58fd1f250be500e741", null ],
-      [ "getResponse", "classsf_1_1_ftp.html#a605a3ecae3bbba58fd1f250be500e741", null ],
       [ "getWorkingDirectory", "classsf_1_1_ftp.html#a79c654fcdd0c81e68c4fa29af3b45e0c", null ],
       [ "getWorkingDirectory", "classsf_1_1_ftp.html#a79c654fcdd0c81e68c4fa29af3b45e0c", null ],
       [ "keepAlive", "classsf_1_1_ftp.html#aa1127d442b4acb2105aa8060a39d04fc", null ],
@@ -255,14 +249,10 @@ var group__network =
       [ "sendCommand", "classsf_1_1_ftp.html#a44e095103ecbce175a33eaf0820440ff", null ],
       [ "upload", "classsf_1_1_ftp.html#a0402d2cec27a197ffba34c88ffaddeac", null ],
       [ "upload", "classsf_1_1_ftp.html#a0402d2cec27a197ffba34c88ffaddeac", null ],
-      [ "DataChannel", "classsf_1_1_ftp.html#aafee9e6471e9ba6590613dc367c65503", null ],
-      [ "m_commandSocket", "classsf_1_1_ftp.html#a36e68897d2219b1a56f1c30545bc6cce", null ],
-      [ "m_receiveBuffer", "classsf_1_1_ftp.html#a24e8c6bd093823fb24caab23f9c798a0", null ]
+      [ "DataChannel", "classsf_1_1_ftp.html#aafee9e6471e9ba6590613dc367c65503", null ]
     ] ],
     [ "sf::Http", "classsf_1_1_http.html", [
       [ "Request", "classsf_1_1_http_1_1_request.html", [
-        [ "FieldTable", "classsf_1_1_http_1_1_request.html#a0a7c6144d2f18977068655c96c8cf298", null ],
-        [ "FieldTable", "classsf_1_1_http_1_1_request.html#a0a7c6144d2f18977068655c96c8cf298", null ],
         [ "Method", "classsf_1_1_http_1_1_request.html#a620f8bff6f43e1378f321bf53fbf5598", [
           [ "Get", "classsf_1_1_http_1_1_request.html#a620f8bff6f43e1378f321bf53fbf5598a24d06852a988a57bbc05874f675ea34b", null ],
           [ "Post", "classsf_1_1_http_1_1_request.html#a620f8bff6f43e1378f321bf53fbf5598a092cffa0afe3e0295202bd6c4b9f8b7b", null ],
@@ -289,10 +279,6 @@ var group__network =
         ] ],
         [ "Request", "classsf_1_1_http_1_1_request.html#a8e89d9e8ffcc1163259b35d79809a61c", null ],
         [ "Request", "classsf_1_1_http_1_1_request.html#a8e89d9e8ffcc1163259b35d79809a61c", null ],
-        [ "hasField", "classsf_1_1_http_1_1_request.html#a5f54bdf9da421af7bf4eb1a5b0c12447", null ],
-        [ "hasField", "classsf_1_1_http_1_1_request.html#a5f54bdf9da421af7bf4eb1a5b0c12447", null ],
-        [ "prepare", "classsf_1_1_http_1_1_request.html#a4f53faef789d95aa21d72264adc74fba", null ],
-        [ "prepare", "classsf_1_1_http_1_1_request.html#a4f53faef789d95aa21d72264adc74fba", null ],
         [ "setBody", "classsf_1_1_http_1_1_request.html#ae9f61ec3fa1639c70e9b5780cb35578e", null ],
         [ "setBody", "classsf_1_1_http_1_1_request.html#ae9f61ec3fa1639c70e9b5780cb35578e", null ],
         [ "setField", "classsf_1_1_http_1_1_request.html#aea672fae5dd089f4b6b3745ed46210d2", null ],
@@ -303,17 +289,9 @@ var group__network =
         [ "setMethod", "classsf_1_1_http_1_1_request.html#abab148554e873e80d2e41376fde1cb62", null ],
         [ "setUri", "classsf_1_1_http_1_1_request.html#a3723de4b4f1a14b744477841c4ac22e6", null ],
         [ "setUri", "classsf_1_1_http_1_1_request.html#a3723de4b4f1a14b744477841c4ac22e6", null ],
-        [ "Http", "classsf_1_1_http_1_1_request.html#ad44371f4a337a0f6537733cdf6df8e76", null ],
-        [ "m_body", "classsf_1_1_http_1_1_request.html#a3f4e4882547f34b7e6be3becdc291979", null ],
-        [ "m_fields", "classsf_1_1_http_1_1_request.html#a956e3ad74753c26c817fca64af7c79af", null ],
-        [ "m_majorVersion", "classsf_1_1_http_1_1_request.html#a13d0fd10599606b0ff24469286a40256", null ],
-        [ "m_method", "classsf_1_1_http_1_1_request.html#a5f6cecce1933263483692ead4f1b1dde", null ],
-        [ "m_minorVersion", "classsf_1_1_http_1_1_request.html#a43358640d27bfba18c2fce2bcbb0de5b", null ],
-        [ "m_uri", "classsf_1_1_http_1_1_request.html#ac02540198edb59c49b3996dc02200991", null ]
+        [ "Http", "classsf_1_1_http_1_1_request.html#ad44371f4a337a0f6537733cdf6df8e76", null ]
       ] ],
       [ "Response", "classsf_1_1_http_1_1_response.html", [
-        [ "FieldTable", "classsf_1_1_http_1_1_response.html#af5d44ad22fb2e643522c7057bc1b55ee", null ],
-        [ "FieldTable", "classsf_1_1_http_1_1_response.html#af5d44ad22fb2e643522c7057bc1b55ee", null ],
         [ "Status", "classsf_1_1_http_1_1_response.html#a663e071978e30fbbeb20ed045be874d8", [
           [ "Ok", "classsf_1_1_http_1_1_response.html#a663e071978e30fbbeb20ed045be874d8a1c0988840633e4f4836b7813c85a6720", null ],
           [ "Created", "classsf_1_1_http_1_1_response.html#a663e071978e30fbbeb20ed045be874d8a1459dbf2b1416eafbfeb4403c9f4eef0", null ],
@@ -422,16 +400,7 @@ var group__network =
         [ "getMinorHttpVersion", "classsf_1_1_http_1_1_response.html#af3c649568d2e291e71c3a7da546bb392", null ],
         [ "getStatus", "classsf_1_1_http_1_1_response.html#a4271651703764fd9a7d2c0315aff20de", null ],
         [ "getStatus", "classsf_1_1_http_1_1_response.html#a4271651703764fd9a7d2c0315aff20de", null ],
-        [ "parse", "classsf_1_1_http_1_1_response.html#aeba90e07eedc362c460590f5e11b9fb2", null ],
-        [ "parse", "classsf_1_1_http_1_1_response.html#aeba90e07eedc362c460590f5e11b9fb2", null ],
-        [ "parseFields", "classsf_1_1_http_1_1_response.html#a545515d6e68a5ce179e522aad427c7ef", null ],
-        [ "parseFields", "classsf_1_1_http_1_1_response.html#a545515d6e68a5ce179e522aad427c7ef", null ],
-        [ "Http", "classsf_1_1_http_1_1_response.html#ad44371f4a337a0f6537733cdf6df8e76", null ],
-        [ "m_body", "classsf_1_1_http_1_1_response.html#a16a7f803d919b49584c603f19588a8c4", null ],
-        [ "m_fields", "classsf_1_1_http_1_1_response.html#a2b0e1335e9fcc5b5393c58b9dc1a58a7", null ],
-        [ "m_majorVersion", "classsf_1_1_http_1_1_response.html#a4c560f422ab1e85ba658df940f43be8f", null ],
-        [ "m_minorVersion", "classsf_1_1_http_1_1_response.html#af513722f2cdad00823ff3adb84616afa", null ],
-        [ "m_status", "classsf_1_1_http_1_1_response.html#a977aa5c93dcee966dbb6f39d49092503", null ]
+        [ "Http", "classsf_1_1_http_1_1_response.html#ad44371f4a337a0f6537733cdf6df8e76", null ]
       ] ],
       [ "Http", "classsf_1_1_http.html#abe2360194f99bdde402c9f97a85cf067", null ],
       [ "Http", "classsf_1_1_http.html#a79efd844a735f083fcce0edbf1092385", null ],
@@ -440,11 +409,7 @@ var group__network =
       [ "sendRequest", "classsf_1_1_http.html#aaf09ebfb5e00dcc82e0d494d5c6a9e2a", null ],
       [ "sendRequest", "classsf_1_1_http.html#aaf09ebfb5e00dcc82e0d494d5c6a9e2a", null ],
       [ "setHost", "classsf_1_1_http.html#a55121d543b61c41cf20b885a97b04e65", null ],
-      [ "setHost", "classsf_1_1_http.html#a55121d543b61c41cf20b885a97b04e65", null ],
-      [ "m_connection", "classsf_1_1_http.html#aa51e5fe5f6b85b2057906f762241ed4f", null ],
-      [ "m_host", "classsf_1_1_http.html#ae4504e74ccaa6afb696f431dc438f794", null ],
-      [ "m_hostName", "classsf_1_1_http.html#a4a1ab171a8fa06e0428ec80c4a80891a", null ],
-      [ "m_port", "classsf_1_1_http.html#a3adcf3462408aa990c9737425bf320a9", null ]
+      [ "setHost", "classsf_1_1_http.html#a55121d543b61c41cf20b885a97b04e65", null ]
     ] ],
     [ "sf::IpAddress", "classsf_1_1_ip_address.html", [
       [ "IpAddress", "classsf_1_1_ip_address.html#af32a0574baa0f46e48deb2d83ca7658b", null ],
@@ -457,28 +422,20 @@ var group__network =
       [ "IpAddress", "classsf_1_1_ip_address.html#a92f2a9be74334a61b96c2fc79fe6eb78", null ],
       [ "IpAddress", "classsf_1_1_ip_address.html#a1d289dcb9ce7a64c600c6f84cba88cc6", null ],
       [ "IpAddress", "classsf_1_1_ip_address.html#a8ed34ba3a40d70eb9f09ac5ae779a162", null ],
-      [ "resolve", "classsf_1_1_ip_address.html#aa6e114d1a8cb977aff6132d490e4a6b1", null ],
-      [ "resolve", "classsf_1_1_ip_address.html#aa6e114d1a8cb977aff6132d490e4a6b1", null ],
       [ "toInteger", "classsf_1_1_ip_address.html#ae7911c5ea9562f9602c3e29cd54b15e9", null ],
       [ "toInteger", "classsf_1_1_ip_address.html#ae7911c5ea9562f9602c3e29cd54b15e9", null ],
       [ "toString", "classsf_1_1_ip_address.html#a88507954142d7fc2176cce7f36422340", null ],
       [ "toString", "classsf_1_1_ip_address.html#a88507954142d7fc2176cce7f36422340", null ],
       [ "operator<", "classsf_1_1_ip_address.html#a1c4ae6b26e9df765ca57d2715e9a7885", null ],
-      [ "operator<", "classsf_1_1_ip_address.html#a1c4ae6b26e9df765ca57d2715e9a7885", null ],
-      [ "m_address", "classsf_1_1_ip_address.html#ac8c48a38d66259b4f94f456664dc6511", null ],
-      [ "m_valid", "classsf_1_1_ip_address.html#aa4640b45da3e619bad98ba3702f13395", null ]
+      [ "operator<", "classsf_1_1_ip_address.html#a1c4ae6b26e9df765ca57d2715e9a7885", null ]
     ] ],
     [ "sf::Packet", "classsf_1_1_packet.html", [
-      [ "BoolType", "classsf_1_1_packet.html#af4e23b49b9465634c0b23aaabd94b820", null ],
-      [ "BoolType", "classsf_1_1_packet.html#af4e23b49b9465634c0b23aaabd94b820", null ],
       [ "Packet", "classsf_1_1_packet.html#a786e5d4ced83992ceefa1799963ea858", null ],
       [ "~Packet", "classsf_1_1_packet.html#adc0490ca3c7c3d1e321bd742e5213913", null ],
       [ "Packet", "classsf_1_1_packet.html#a786e5d4ced83992ceefa1799963ea858", null ],
       [ "~Packet", "classsf_1_1_packet.html#adc0490ca3c7c3d1e321bd742e5213913", null ],
       [ "append", "classsf_1_1_packet.html#a7dd6e429b87520008326c4d71f1cf011", null ],
       [ "append", "classsf_1_1_packet.html#a7dd6e429b87520008326c4d71f1cf011", null ],
-      [ "checkSize", "classsf_1_1_packet.html#a54bea2433002686cf1de8c5c6466fe5f", null ],
-      [ "checkSize", "classsf_1_1_packet.html#a54bea2433002686cf1de8c5c6466fe5f", null ],
       [ "clear", "classsf_1_1_packet.html#a133ea8b8fe6e93c230f0d79f19a3bf0d", null ],
       [ "clear", "classsf_1_1_packet.html#a133ea8b8fe6e93c230f0d79f19a3bf0d", null ],
       [ "endOfPacket", "classsf_1_1_packet.html#a61e354fa670da053907c14b738839560", null ],
@@ -493,8 +450,6 @@ var group__network =
       [ "onSend", "classsf_1_1_packet.html#af0003506bcb290407dcf5fe7f13a887d", null ],
       [ "operator BoolType", "classsf_1_1_packet.html#a8ab20be4a63921b7cb1a4d8ca5c30f75", null ],
       [ "operator BoolType", "classsf_1_1_packet.html#a8ab20be4a63921b7cb1a4d8ca5c30f75", null ],
-      [ "operator!=", "classsf_1_1_packet.html#aba88e3aab53d6991bf7c001f8a416871", null ],
-      [ "operator!=", "classsf_1_1_packet.html#aba88e3aab53d6991bf7c001f8a416871", null ],
       [ "operator<<", "classsf_1_1_packet.html#ae02c874e0aac18a0497fca982a8f9083", null ],
       [ "operator<<", "classsf_1_1_packet.html#ae02c874e0aac18a0497fca982a8f9083", null ],
       [ "operator<<", "classsf_1_1_packet.html#a94522071d95189ddff1ae7ca832695ff", null ],
@@ -527,8 +482,6 @@ var group__network =
       [ "operator<<", "classsf_1_1_packet.html#af3802406ed3430e20259e8551fa6554b", null ],
       [ "operator<<", "classsf_1_1_packet.html#ad5cc1857ed14878ab7a8509db8d99335", null ],
       [ "operator<<", "classsf_1_1_packet.html#ad5cc1857ed14878ab7a8509db8d99335", null ],
-      [ "operator==", "classsf_1_1_packet.html#aa3136a586a93cde1f54e669b7430dcc9", null ],
-      [ "operator==", "classsf_1_1_packet.html#aa3136a586a93cde1f54e669b7430dcc9", null ],
       [ "operator>>", "classsf_1_1_packet.html#a8b6403506fec6b69f033278de33c8145", null ],
       [ "operator>>", "classsf_1_1_packet.html#a8b6403506fec6b69f033278de33c8145", null ],
       [ "operator>>", "classsf_1_1_packet.html#aaed01fec1a3eae27a028506195607f82", null ],
@@ -562,11 +515,7 @@ var group__network =
       [ "operator>>", "classsf_1_1_packet.html#a8805e66013f9f84ec8a883e42ae259d4", null ],
       [ "operator>>", "classsf_1_1_packet.html#a8805e66013f9f84ec8a883e42ae259d4", null ],
       [ "TcpSocket", "classsf_1_1_packet.html#ae50c91e8e9046881024f96682796ccfa", null ],
-      [ "UdpSocket", "classsf_1_1_packet.html#a7e0415ed4a34b5104f6b34682f602c6e", null ],
-      [ "m_data", "classsf_1_1_packet.html#a026c8781fb0845f794ced3d212ea0efd", null ],
-      [ "m_isValid", "classsf_1_1_packet.html#a7119dcd69dbd57041e60a3062ced96e6", null ],
-      [ "m_readPos", "classsf_1_1_packet.html#a874eea8a5654957a404c3b40b7ef9284", null ],
-      [ "m_sendPos", "classsf_1_1_packet.html#a321ac7748c681850fad1c52fa265434d", null ]
+      [ "UdpSocket", "classsf_1_1_packet.html#a7e0415ed4a34b5104f6b34682f602c6e", null ]
     ] ],
     [ "sf::Socket", "classsf_1_1_socket.html", [
       [ "Status", "classsf_1_1_socket.html#a51bf0fd51057b98a10fbb866246176dc", [
@@ -621,10 +570,7 @@ var group__network =
       [ "isBlocking", "classsf_1_1_socket.html#ab1ceca9ac114b8baeeda3b34a0aca468", null ],
       [ "setBlocking", "classsf_1_1_socket.html#a165fc1423e281ea2714c70303d3a9782", null ],
       [ "setBlocking", "classsf_1_1_socket.html#a165fc1423e281ea2714c70303d3a9782", null ],
-      [ "SocketSelector", "classsf_1_1_socket.html#a4d597c43b180384801eff14207b0e137", null ],
-      [ "m_isBlocking", "classsf_1_1_socket.html#a0eed7647c471354050aef148bf43081f", null ],
-      [ "m_socket", "classsf_1_1_socket.html#a83b63e07a0cfdb2bb1852990afe7762d", null ],
-      [ "m_type", "classsf_1_1_socket.html#a0c41f91229069c06859746a458731617", null ]
+      [ "SocketSelector", "classsf_1_1_socket.html#a4d597c43b180384801eff14207b0e137", null ]
     ] ],
     [ "sf::SocketSelector", "classsf_1_1_socket_selector.html", [
       [ "SocketSelector", "classsf_1_1_socket_selector.html#a741959c5158aeb1e4457cad47d90f76b", null ],
@@ -644,8 +590,7 @@ var group__network =
       [ "remove", "classsf_1_1_socket_selector.html#a98b6ab693a65b82caa375639232357c1", null ],
       [ "remove", "classsf_1_1_socket_selector.html#a98b6ab693a65b82caa375639232357c1", null ],
       [ "wait", "classsf_1_1_socket_selector.html#a9cfda5475f17925e65889394d70af702", null ],
-      [ "wait", "classsf_1_1_socket_selector.html#a9cfda5475f17925e65889394d70af702", null ],
-      [ "m_impl", "classsf_1_1_socket_selector.html#ab2806d98cc558f10d4bc6719c2e64ef9", null ]
+      [ "wait", "classsf_1_1_socket_selector.html#a9cfda5475f17925e65889394d70af702", null ]
     ] ],
     [ "sf::TcpListener", "classsf_1_1_tcp_listener.html", [
       [ "TcpListener", "classsf_1_1_tcp_listener.html#a59a1db5b6f4711a3e57390da2f8d9630", null ],
@@ -660,13 +605,6 @@ var group__network =
       [ "listen", "classsf_1_1_tcp_listener.html#a9504758ea3570e62cb20b209c11776a1", null ]
     ] ],
     [ "sf::TcpSocket", "classsf_1_1_tcp_socket.html", [
-      [ "PendingPacket", "structsf_1_1_tcp_socket_1_1_pending_packet.html", [
-        [ "PendingPacket", "structsf_1_1_tcp_socket_1_1_pending_packet.html#aacd99bc4b0bb1ab937db0dae4b9fa61e", null ],
-        [ "PendingPacket", "structsf_1_1_tcp_socket_1_1_pending_packet.html#aacd99bc4b0bb1ab937db0dae4b9fa61e", null ],
-        [ "Data", "structsf_1_1_tcp_socket_1_1_pending_packet.html#a5cc705c1e011419a2ba4ed426286505d", null ],
-        [ "Size", "structsf_1_1_tcp_socket_1_1_pending_packet.html#a99f5a620c08f0dc81aee252846455f7b", null ],
-        [ "SizeReceived", "structsf_1_1_tcp_socket_1_1_pending_packet.html#abb050cdf4dab2d1dc0c55bed6a085941", null ]
-      ] ],
       [ "TcpSocket", "classsf_1_1_tcp_socket.html#a62a9bf81fd7f15fedb29fd1348483236", null ],
       [ "TcpSocket", "classsf_1_1_tcp_socket.html#a62a9bf81fd7f15fedb29fd1348483236", null ],
       [ "connect", "classsf_1_1_tcp_socket.html#a68cd42d5ab70ab54b16787f555951c40", null ],
@@ -689,8 +627,7 @@ var group__network =
       [ "send", "classsf_1_1_tcp_socket.html#a31f5b280126a96c6f3ad430f4cbcb54d", null ],
       [ "send", "classsf_1_1_tcp_socket.html#a0f8276e2b1c75aac4a7b0a707b250f44", null ],
       [ "send", "classsf_1_1_tcp_socket.html#a0f8276e2b1c75aac4a7b0a707b250f44", null ],
-      [ "TcpListener", "classsf_1_1_tcp_socket.html#a0a6bae466f66732c4d05d5335d705d64", null ],
-      [ "m_pendingPacket", "classsf_1_1_tcp_socket.html#ab46b6b5cfafbc4255d8bdca3148584a8", null ]
+      [ "TcpListener", "classsf_1_1_tcp_socket.html#a0a6bae466f66732c4d05d5335d705d64", null ]
     ] ],
     [ "sf::UdpSocket", "classsf_1_1_udp_socket.html", [
       [ "UdpSocket", "classsf_1_1_udp_socket.html#abb10725e26dee9d3a8165fe87ffb71bb", null ],
@@ -708,7 +645,6 @@ var group__network =
       [ "send", "classsf_1_1_udp_socket.html#a48969a62c80d40fd74293a740798e435", null ],
       [ "send", "classsf_1_1_udp_socket.html#a48969a62c80d40fd74293a740798e435", null ],
       [ "unbind", "classsf_1_1_udp_socket.html#a2c4abb8102a1bd31f51fcfe7f15427a3", null ],
-      [ "unbind", "classsf_1_1_udp_socket.html#a2c4abb8102a1bd31f51fcfe7f15427a3", null ],
-      [ "m_buffer", "classsf_1_1_udp_socket.html#ab1c3a202b6fefe0ec61912c6a42833dd", null ]
+      [ "unbind", "classsf_1_1_udp_socket.html#a2c4abb8102a1bd31f51fcfe7f15427a3", null ]
     ] ]
 ];

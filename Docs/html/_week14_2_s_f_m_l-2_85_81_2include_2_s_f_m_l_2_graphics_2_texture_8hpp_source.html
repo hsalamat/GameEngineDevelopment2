@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Game Engine Development II: Week14/SFML-2.5.1/include/SFML/Graphics/Texture.hpp Source File</title>
+<title>My Project: Week14/SFML-2.5.1/include/SFML/Graphics/Texture.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Game Engine Development II
+   <div id="projectname">My Project
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -212,9 +212,9 @@ $(document).ready(function(){initNavTree('_week14_2_s_f_m_l-2_85_81_2include_2_s
 <div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="classsf_1_1_render_texture.html">RenderTexture</a>;</div>
 <div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="classsf_1_1_render_target.html">RenderTarget</a>;</div>
 <div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span> </div>
-<div class="line"><a id="l00605" name="l00605"></a><span class="lineno"><a class="line" href="classsf_1_1_texture.html#a8a2aea2ef4e24f5f8eb25374631a1802">  605</a></span>    <span class="keyword">static</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classsf_1_1_texture.html#a8a2aea2ef4e24f5f8eb25374631a1802">getValidSize</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size);</div>
+<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span>    <span class="keyword">static</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> getValidSize(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size);</div>
 <div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span> </div>
-<div class="line"><a id="l00614" name="l00614"></a><span class="lineno"><a class="line" href="classsf_1_1_texture.html#a7657c59adfbc0c640e54f7e3f12787aa">  614</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classsf_1_1_texture.html#a7657c59adfbc0c640e54f7e3f12787aa">invalidateMipmap</a>();</div>
+<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span>    <span class="keywordtype">void</span> invalidateMipmap();</div>
 <div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span> </div>
 <div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>    <span class="comment">// Member data</span></div>
 <div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span><span class="comment"></span>    <a class="code hl_class" href="classsf_1_1_vector2.html">Vector2u</a>     m_size;          </div>
@@ -252,14 +252,12 @@ $(document).ready(function(){initNavTree('_week14_2_s_f_m_l-2_85_81_2include_2_s
 <div class="ttc" id="aclasssf_1_1_texture_html_a3ebb050b5a71e1d40ba66eb1a060e103"><div class="ttname"><a href="classsf_1_1_texture.html#a3ebb050b5a71e1d40ba66eb1a060e103">sf::Texture::isSmooth</a></div><div class="ttdeci">bool isSmooth() const</div><div class="ttdoc">Tell whether the smooth filter is enabled or not.</div></div>
 <div class="ttc" id="aclasssf_1_1_texture_html_a524855cbf89de3b74be84d385fd229de"><div class="ttname"><a href="classsf_1_1_texture.html#a524855cbf89de3b74be84d385fd229de">sf::Texture::Texture</a></div><div class="ttdeci">Texture(const Texture &amp;copy)</div><div class="ttdoc">Copy constructor.</div></div>
 <div class="ttc" id="aclasssf_1_1_texture_html_a674b632608747bfc27b53a4935c835b0"><div class="ttname"><a href="classsf_1_1_texture.html#a674b632608747bfc27b53a4935c835b0">sf::Texture::getNativeHandle</a></div><div class="ttdeci">unsigned int getNativeHandle() const</div><div class="ttdoc">Get the underlying OpenGL handle of the texture.</div></div>
-<div class="ttc" id="aclasssf_1_1_texture_html_a7657c59adfbc0c640e54f7e3f12787aa"><div class="ttname"><a href="classsf_1_1_texture.html#a7657c59adfbc0c640e54f7e3f12787aa">sf::Texture::invalidateMipmap</a></div><div class="ttdeci">void invalidateMipmap()</div><div class="ttdoc">Invalidate the mipmap if one exists.</div></div>
 <div class="ttc" id="aclasssf_1_1_texture_html_a7779a75c0324b5faff77602f871710a9"><div class="ttname"><a href="classsf_1_1_texture.html#a7779a75c0324b5faff77602f871710a9">sf::Texture::generateMipmap</a></div><div class="ttdeci">bool generateMipmap()</div><div class="ttdoc">Generate a mipmap using the current texture data.</div></div>
 <div class="ttc" id="aclasssf_1_1_texture_html_a77e18a70de2e525ac5e4a7cd95f614b9"><div class="ttname"><a href="classsf_1_1_texture.html#a77e18a70de2e525ac5e4a7cd95f614b9">sf::Texture::copyToImage</a></div><div class="ttdeci">Image copyToImage() const</div><div class="ttdoc">Copy the texture pixels to an image.</div></div>
 <div class="ttc" id="aclasssf_1_1_texture_html_a786b486a46b1c6d1c16ff4af61ecc601"><div class="ttname"><a href="classsf_1_1_texture.html#a786b486a46b1c6d1c16ff4af61ecc601">sf::Texture::loadFromStream</a></div><div class="ttdeci">bool loadFromStream(InputStream &amp;stream, const IntRect &amp;area=IntRect())</div><div class="ttdoc">Load the texture from a custom stream.</div></div>
 <div class="ttc" id="aclasssf_1_1_texture_html_a87f916490b757fe900798eedf3abf3ba"><div class="ttname"><a href="classsf_1_1_texture.html#a87f916490b757fe900798eedf3abf3ba">sf::Texture::update</a></div><div class="ttdeci">void update(const Image &amp;image, unsigned int x, unsigned int y)</div><div class="ttdoc">Update a part of the texture from an image.</div></div>
 <div class="ttc" id="aclasssf_1_1_texture_html_a89b4c7d204acf1033c3a1b6e0a3ad0a3"><div class="ttname"><a href="classsf_1_1_texture.html#a89b4c7d204acf1033c3a1b6e0a3ad0a3">sf::Texture::create</a></div><div class="ttdeci">bool create(unsigned int width, unsigned int height)</div><div class="ttdoc">Create the texture.</div></div>
 <div class="ttc" id="aclasssf_1_1_texture_html_a89beb474da1da84b5e38c9fc0b441fe4"><div class="ttname"><a href="classsf_1_1_texture.html#a89beb474da1da84b5e38c9fc0b441fe4">sf::Texture::update</a></div><div class="ttdeci">void update(const Texture &amp;texture, unsigned int x, unsigned int y)</div><div class="ttdoc">Update a part of this texture from another texture.</div></div>
-<div class="ttc" id="aclasssf_1_1_texture_html_a8a2aea2ef4e24f5f8eb25374631a1802"><div class="ttname"><a href="classsf_1_1_texture.html#a8a2aea2ef4e24f5f8eb25374631a1802">sf::Texture::getValidSize</a></div><div class="ttdeci">static unsigned int getValidSize(unsigned int size)</div><div class="ttdoc">Get a valid image size according to hardware support.</div></div>
 <div class="ttc" id="aclasssf_1_1_texture_html_a8e1b56eabfe33e2e0e1cb03712c7fcc7"><div class="ttname"><a href="classsf_1_1_texture.html#a8e1b56eabfe33e2e0e1cb03712c7fcc7">sf::Texture::loadFromFile</a></div><div class="ttdeci">bool loadFromFile(const std::string &amp;filename, const IntRect &amp;area=IntRect())</div><div class="ttdoc">Load the texture from a file on disk.</div></div>
 <div class="ttc" id="aclasssf_1_1_texture_html_a9243470c64b7ff0d231e00663e495798"><div class="ttname"><a href="classsf_1_1_texture.html#a9243470c64b7ff0d231e00663e495798">sf::Texture::swap</a></div><div class="ttdeci">void swap(Texture &amp;right)</div><div class="ttdoc">Swap the contents of this texture with those of another.</div></div>
 <div class="ttc" id="aclasssf_1_1_texture_html_a9c5354ad40eb1c5aeeeb21f57ccd7e6c"><div class="ttname"><a href="classsf_1_1_texture.html#a9c5354ad40eb1c5aeeeb21f57ccd7e6c">sf::Texture::~Texture</a></div><div class="ttdeci">~Texture()</div><div class="ttdoc">Destructor.</div></div>

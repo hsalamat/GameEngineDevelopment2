@@ -15,6 +15,14 @@ struct AircraftMover
 	{
 	}
 
+	//void operator() (SceneNode& node, sf::Time) const
+	//{
+	//	assert(dynamic_cast<Aircraft*>(&node) != nullptr);
+	//	Aircraft& aircraft = static_cast<Aircraft&>(node);
+	//	aircraft.accelerate(velocity);
+	//}
+
+
 	void operator() (Aircraft& aircraft, sf::Time) const
 	{
 		aircraft.accelerate(velocity);

@@ -7,9 +7,7 @@ var dir_f0caa66aa14ee7abd2b16ce9adddfa2e =
     [ "Drawable.hpp", "_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_drawable_8hpp.html", null ],
     [ "Export.hpp", "_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_export_8hpp.html", "_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_export_8hpp" ],
     [ "Font.hpp", "_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_font_8hpp.html", [
-      [ "sf::Font::Info", "structsf_1_1_font_1_1_info.html", "structsf_1_1_font_1_1_info" ],
-      [ "sf::Font::Row", "structsf_1_1_font_1_1_row.html", "structsf_1_1_font_1_1_row" ],
-      [ "sf::Font::Page", "structsf_1_1_font_1_1_page.html", "structsf_1_1_font_1_1_page" ]
+      [ "sf::Font::Info", "structsf_1_1_font_1_1_info.html", "structsf_1_1_font_1_1_info" ]
     ] ],
     [ "Glsl.hpp", "_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8hpp.html", null ],
     [ "Glsl.inl", "_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl.html", "_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl" ],
@@ -20,9 +18,7 @@ var dir_f0caa66aa14ee7abd2b16ce9adddfa2e =
     [ "Rect.inl", "_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_rect_8inl.html", "_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_rect_8inl" ],
     [ "RectangleShape.hpp", "_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_rectangle_shape_8hpp.html", null ],
     [ "RenderStates.hpp", "_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_render_states_8hpp.html", null ],
-    [ "RenderTarget.hpp", "_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_render_target_8hpp.html", [
-      [ "sf::RenderTarget::StatesCache", "structsf_1_1_render_target_1_1_states_cache.html", "structsf_1_1_render_target_1_1_states_cache" ]
-    ] ],
+    [ "RenderTarget.hpp", "_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_render_target_8hpp.html", null ],
     [ "RenderTexture.hpp", "_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_render_texture_8hpp.html", null ],
     [ "RenderWindow.hpp", "_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_render_window_8hpp.html", null ],
     [ "Shader.hpp", "_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp.html", [

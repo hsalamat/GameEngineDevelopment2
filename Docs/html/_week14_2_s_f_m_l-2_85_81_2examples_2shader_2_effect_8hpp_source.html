@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Game Engine Development II: Week14/SFML-2.5.1/examples/shader/Effect.hpp Source File</title>
+<title>My Project: Week14/SFML-2.5.1/examples/shader/Effect.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Game Engine Development II
+   <div id="projectname">My Project
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -114,30 +114,30 @@ $(document).ready(function(){initNavTree('_week14_2_s_f_m_l-2_85_81_2examples_2s
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_effect.html#a2a4eaf667af8ea6498b77fe532c5a43d">   23</a></span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_effect.html#a2a4eaf667af8ea6498b77fe532c5a43d">setFont</a>(<span class="keyword">const</span> <a class="code hl_class" href="classsf_1_1_font.html">sf::Font</a>&amp; font)</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <a class="code hl_variable" href="class_effect.html#afa8f3dbd6bb7adb50b1e4b49eb336a3e">s_font</a> = &amp;font;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        s_font = &amp;font;</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    }</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_effect.html#a409291db11c835d76ee94a2abfc90983">   28</a></span>    <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="class_effect.html#a409291db11c835d76ee94a2abfc90983">getName</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="class_effect.html#a1214e326c9fa35050ca780af647d7587">m_name</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordflow">return</span> m_name;</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    }</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_effect.html#a7f926c8c6b21664461745f4c62cf7d0b">   33</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_effect.html#a7f926c8c6b21664461745f4c62cf7d0b">load</a>()</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <a class="code hl_variable" href="class_effect.html#a41cc273840974c40da4985c10783fa22">m_isLoaded</a> = <a class="code hl_function" href="classsf_1_1_shader.html#ad22474690bafe4a305c1b9826b1bd86a">sf::Shader::isAvailable</a>() &amp;&amp; <a class="code hl_function" href="class_effect.html#a43713a92e87e731ddfebdfa18996baaa">onLoad</a>();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        m_isLoaded = <a class="code hl_function" href="classsf_1_1_shader.html#ad22474690bafe4a305c1b9826b1bd86a">sf::Shader::isAvailable</a>() &amp;&amp; onLoad();</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    }</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="class_effect.html#a857a5b45439813ecc71e8e931c98f6a2">   38</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_effect.html#a857a5b45439813ecc71e8e931c98f6a2">update</a>(<span class="keywordtype">float</span> time, <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y)</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_effect.html#a41cc273840974c40da4985c10783fa22">m_isLoaded</a>)</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <a class="code hl_function" href="class_effect.html#a2e33e1902383f350a873f61d0fb67c4e">onUpdate</a>(time, x, y);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordflow">if</span> (m_isLoaded)</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            onUpdate(time, x, y);</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_effect.html#a6a3a393e127581c7f84e1278b5be0438">   44</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_effect.html#a6a3a393e127581c7f84e1278b5be0438">draw</a>(<a class="code hl_class" href="classsf_1_1_render_target.html">sf::RenderTarget</a>&amp; target, <a class="code hl_class" href="classsf_1_1_render_states.html">sf::RenderStates</a> states)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_effect.html#a41cc273840974c40da4985c10783fa22">m_isLoaded</a>)</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">if</span> (m_isLoaded)</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        {</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <a class="code hl_function" href="class_effect.html#abb5811a89ac41358261e658f6682516a">onDraw</a>(target, states);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            onDraw(target, states);</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        }</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        {</div>
@@ -151,48 +151,42 @@ $(document).ready(function(){initNavTree('_week14_2_s_f_m_l-2_85_81_2examples_2s
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keyword">protected</span>:</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="class_effect.html#a6c1c4ec803a1aa5dcbd34a6cf92fd8d5">   61</a></span>    <a class="code hl_function" href="class_effect.html#a6c1c4ec803a1aa5dcbd34a6cf92fd8d5">Effect</a>(<span class="keyword">const</span> std::string&amp; name) :</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_variable" href="class_effect.html#a1214e326c9fa35050ca780af647d7587">m_name</a>(name),</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_variable" href="class_effect.html#a41cc273840974c40da4985c10783fa22">m_isLoaded</a>(false)</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    m_name(name),</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    m_isLoaded(false)</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    {</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    }</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_effect.html#aa66af317229f52d12619b7e720c500d3">   67</a></span>    <span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_class" href="classsf_1_1_font.html">sf::Font</a>&amp; <a class="code hl_function" href="class_effect.html#aa66af317229f52d12619b7e720c500d3">getFont</a>()</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    {</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        assert(<a class="code hl_variable" href="class_effect.html#afa8f3dbd6bb7adb50b1e4b49eb336a3e">s_font</a> != NULL);</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keywordflow">return</span> *<a class="code hl_variable" href="class_effect.html#afa8f3dbd6bb7adb50b1e4b49eb336a3e">s_font</a>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        assert(s_font != NULL);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keywordflow">return</span> *s_font;</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    }</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="comment">// Virtual functions to be implemented in derived effects</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="class_effect.html#a43713a92e87e731ddfebdfa18996baaa">   76</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_effect.html#a43713a92e87e731ddfebdfa18996baaa">onLoad</a>() = 0;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="class_effect.html#a2e33e1902383f350a873f61d0fb67c4e">   77</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_effect.html#a2e33e1902383f350a873f61d0fb67c4e">onUpdate</a>(<span class="keywordtype">float</span> time, <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y) = 0;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="class_effect.html#abb5811a89ac41358261e658f6682516a">   78</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_effect.html#abb5811a89ac41358261e658f6682516a">onDraw</a>(<a class="code hl_class" href="classsf_1_1_render_target.html">sf::RenderTarget</a>&amp; target, <a class="code hl_class" href="classsf_1_1_render_states.html">sf::RenderStates</a> states) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> onLoad() = 0;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> onUpdate(<span class="keywordtype">float</span> time, <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y) = 0;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> onDraw(<a class="code hl_class" href="classsf_1_1_render_target.html">sf::RenderTarget</a>&amp; target, <a class="code hl_class" href="classsf_1_1_render_states.html">sf::RenderStates</a> states) <span class="keyword">const</span> = 0;</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    std::string <a class="code hl_variable" href="class_effect.html#a1214e326c9fa35050ca780af647d7587">m_name</a>;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_effect.html#a41cc273840974c40da4985c10783fa22">m_isLoaded</a>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    std::string m_name;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordtype">bool</span> m_isLoaded;</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_class" href="classsf_1_1_font.html">sf::Font</a>* <a class="code hl_variable" href="class_effect.html#afa8f3dbd6bb7adb50b1e4b49eb336a3e">s_font</a>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_class" href="classsf_1_1_font.html">sf::Font</a>* s_font;</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>};</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="preprocessor">#endif </span><span class="comment">// EFFECT_HPP</span></div>
 <div class="ttc" id="aclass_effect_html"><div class="ttname"><a href="class_effect.html">Effect</a></div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source.html#l00015">Effect.hpp:16</a></div></div>
-<div class="ttc" id="aclass_effect_html_a1214e326c9fa35050ca780af647d7587"><div class="ttname"><a href="class_effect.html#a1214e326c9fa35050ca780af647d7587">Effect::m_name</a></div><div class="ttdeci">std::string m_name</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source.html#l00082">Effect.hpp:82</a></div></div>
 <div class="ttc" id="aclass_effect_html_a2a4eaf667af8ea6498b77fe532c5a43d"><div class="ttname"><a href="class_effect.html#a2a4eaf667af8ea6498b77fe532c5a43d">Effect::setFont</a></div><div class="ttdeci">static void setFont(const sf::Font &amp;font)</div><div class="ttdef"><b>Definition:</b> <a href="_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source.html#l00023">Effect.hpp:23</a></div></div>
-<div class="ttc" id="aclass_effect_html_a2e33e1902383f350a873f61d0fb67c4e"><div class="ttname"><a href="class_effect.html#a2e33e1902383f350a873f61d0fb67c4e">Effect::onUpdate</a></div><div class="ttdeci">virtual void onUpdate(float time, float x, float y)=0</div></div>
 <div class="ttc" id="aclass_effect_html_a409291db11c835d76ee94a2abfc90983"><div class="ttname"><a href="class_effect.html#a409291db11c835d76ee94a2abfc90983">Effect::getName</a></div><div class="ttdeci">const std::string &amp; getName() const</div><div class="ttdef"><b>Definition:</b> <a href="_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source.html#l00028">Effect.hpp:28</a></div></div>
-<div class="ttc" id="aclass_effect_html_a41cc273840974c40da4985c10783fa22"><div class="ttname"><a href="class_effect.html#a41cc273840974c40da4985c10783fa22">Effect::m_isLoaded</a></div><div class="ttdeci">bool m_isLoaded</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source.html#l00083">Effect.hpp:83</a></div></div>
-<div class="ttc" id="aclass_effect_html_a43713a92e87e731ddfebdfa18996baaa"><div class="ttname"><a href="class_effect.html#a43713a92e87e731ddfebdfa18996baaa">Effect::onLoad</a></div><div class="ttdeci">virtual bool onLoad()=0</div></div>
 <div class="ttc" id="aclass_effect_html_a6a3a393e127581c7f84e1278b5be0438"><div class="ttname"><a href="class_effect.html#a6a3a393e127581c7f84e1278b5be0438">Effect::draw</a></div><div class="ttdeci">void draw(sf::RenderTarget &amp;target, sf::RenderStates states) const</div><div class="ttdoc">Draw the object to a render target.</div><div class="ttdef"><b>Definition:</b> <a href="_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source.html#l00044">Effect.hpp:44</a></div></div>
 <div class="ttc" id="aclass_effect_html_a6c1c4ec803a1aa5dcbd34a6cf92fd8d5"><div class="ttname"><a href="class_effect.html#a6c1c4ec803a1aa5dcbd34a6cf92fd8d5">Effect::Effect</a></div><div class="ttdeci">Effect(const std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source.html#l00061">Effect.hpp:61</a></div></div>
 <div class="ttc" id="aclass_effect_html_a7f926c8c6b21664461745f4c62cf7d0b"><div class="ttname"><a href="class_effect.html#a7f926c8c6b21664461745f4c62cf7d0b">Effect::load</a></div><div class="ttdeci">void load()</div><div class="ttdef"><b>Definition:</b> <a href="_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source.html#l00033">Effect.hpp:33</a></div></div>
 <div class="ttc" id="aclass_effect_html_a857a5b45439813ecc71e8e931c98f6a2"><div class="ttname"><a href="class_effect.html#a857a5b45439813ecc71e8e931c98f6a2">Effect::update</a></div><div class="ttdeci">void update(float time, float x, float y)</div><div class="ttdef"><b>Definition:</b> <a href="_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source.html#l00038">Effect.hpp:38</a></div></div>
 <div class="ttc" id="aclass_effect_html_aa66af317229f52d12619b7e720c500d3"><div class="ttname"><a href="class_effect.html#aa66af317229f52d12619b7e720c500d3">Effect::getFont</a></div><div class="ttdeci">static const sf::Font &amp; getFont()</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source.html#l00067">Effect.hpp:67</a></div></div>
 <div class="ttc" id="aclass_effect_html_ab0f471df484d3ef351b704fef39a7072"><div class="ttname"><a href="class_effect.html#ab0f471df484d3ef351b704fef39a7072">Effect::~Effect</a></div><div class="ttdeci">virtual ~Effect()</div><div class="ttdef"><b>Definition:</b> <a href="_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source.html#l00019">Effect.hpp:19</a></div></div>
-<div class="ttc" id="aclass_effect_html_abb5811a89ac41358261e658f6682516a"><div class="ttname"><a href="class_effect.html#abb5811a89ac41358261e658f6682516a">Effect::onDraw</a></div><div class="ttdeci">virtual void onDraw(sf::RenderTarget &amp;target, sf::RenderStates states) const =0</div></div>
-<div class="ttc" id="aclass_effect_html_afa8f3dbd6bb7adb50b1e4b49eb336a3e"><div class="ttname"><a href="class_effect.html#afa8f3dbd6bb7adb50b1e4b49eb336a3e">Effect::s_font</a></div><div class="ttdeci">static const sf::Font * s_font</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source.html#l00085">Effect.hpp:85</a></div></div>
 <div class="ttc" id="aclasssf_1_1_drawable_html"><div class="ttname"><a href="classsf_1_1_drawable.html">sf::Drawable</a></div><div class="ttdoc">Abstract base class for objects that can be drawn to a render target.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_drawable_8hpp_source.html#l00044">Drawable.hpp:45</a></div></div>
 <div class="ttc" id="aclasssf_1_1_font_html"><div class="ttname"><a href="classsf_1_1_font.html">sf::Font</a></div><div class="ttdoc">Class for loading and manipulating character fonts.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_font_8hpp_source.html#l00050">Font.hpp:51</a></div></div>
 <div class="ttc" id="aclasssf_1_1_render_states_html"><div class="ttname"><a href="classsf_1_1_render_states.html">sf::RenderStates</a></div><div class="ttdoc">Define the states used for drawing to a RenderTarget.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_render_states_8hpp_source.html#l00045">RenderStates.hpp:46</a></div></div>

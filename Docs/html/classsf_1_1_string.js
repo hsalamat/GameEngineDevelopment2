@@ -99,6 +99,5 @@ var classsf_1_1_string =
     [ "operator>", "classsf_1_1_string.html#a5efc1eca58cf5c17d01eb8501d303538", null ],
     [ "operator>", "classsf_1_1_string.html#a5efc1eca58cf5c17d01eb8501d303538", null ],
     [ "operator>=", "classsf_1_1_string.html#a8d2979d7829d6616330a768956f251e1", null ],
-    [ "operator>=", "classsf_1_1_string.html#a8d2979d7829d6616330a768956f251e1", null ],
-    [ "m_string", "classsf_1_1_string.html#a7050a47879be90602a72837b93ecb210", null ]
+    [ "operator>=", "classsf_1_1_string.html#a8d2979d7829d6616330a768956f251e1", null ]
 ];

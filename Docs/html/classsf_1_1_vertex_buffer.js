@@ -30,8 +30,6 @@ var classsf_1_1_vertex_buffer =
     [ "~VertexBuffer", "classsf_1_1_vertex_buffer.html#acfbb3b16221bfb9406fcaa18cfcac3e7", null ],
     [ "create", "classsf_1_1_vertex_buffer.html#aa68e128d59c7f7d5eb0d4d94125439a5", null ],
     [ "create", "classsf_1_1_vertex_buffer.html#aa68e128d59c7f7d5eb0d4d94125439a5", null ],
-    [ "draw", "classsf_1_1_vertex_buffer.html#a3591a7fd52f502033b40755af71edc17", null ],
-    [ "draw", "classsf_1_1_vertex_buffer.html#a3591a7fd52f502033b40755af71edc17", null ],
     [ "getNativeHandle", "classsf_1_1_vertex_buffer.html#a343fa0a240c91bc4203a6727fcd9b920", null ],
     [ "getNativeHandle", "classsf_1_1_vertex_buffer.html#a343fa0a240c91bc4203a6727fcd9b920", null ],
     [ "getPrimitiveType", "classsf_1_1_vertex_buffer.html#a02061d85472ff69e7ad14dc72f8fcaa4", null ],
@@ -53,9 +51,5 @@ var classsf_1_1_vertex_buffer =
     [ "update", "classsf_1_1_vertex_buffer.html#ae6c8649a64861507010d21e77fbd53fa", null ],
     [ "update", "classsf_1_1_vertex_buffer.html#ae6c8649a64861507010d21e77fbd53fa", null ],
     [ "update", "classsf_1_1_vertex_buffer.html#a41f8bbcf07f403e7fe29b1b905dc7544", null ],
-    [ "update", "classsf_1_1_vertex_buffer.html#a41f8bbcf07f403e7fe29b1b905dc7544", null ],
-    [ "m_buffer", "classsf_1_1_vertex_buffer.html#aab0082f19be0290bcbaf308379e5d60a", null ],
-    [ "m_primitiveType", "classsf_1_1_vertex_buffer.html#a958cf85fc5426b5b5490a201087046ac", null ],
-    [ "m_size", "classsf_1_1_vertex_buffer.html#a962780c0687af7aeb1d0555fd1baa445", null ],
-    [ "m_usage", "classsf_1_1_vertex_buffer.html#ab056efbd5d04372e9054a0e41bd9acfe", null ]
+    [ "update", "classsf_1_1_vertex_buffer.html#a41f8bbcf07f403e7fe29b1b905dc7544", null ]
 ];

@@ -37,21 +37,21 @@
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00033}00033 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_key_binding_a88b4df445ff9d050723710cd75a8cd3f}{KeyBinding::assignKey}}(\mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2}{Action}} action, \mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142}{sf::Keyboard::Key}} key)}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00034}00034 \{}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00035}00035     \textcolor{comment}{// Remove all keys that already map to action}}
-\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00036}00036     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} itr = \mbox{\hyperlink{class_key_binding_abb5950536b53d4b40e3ee56049244aa1}{mKeyMap}}.begin(); itr != \mbox{\hyperlink{class_key_binding_abb5950536b53d4b40e3ee56049244aa1}{mKeyMap}}.end(); )}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00036}00036     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} itr = mKeyMap.begin(); itr != mKeyMap.end(); )}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00037}00037     \{}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00038}00038         \textcolor{keywordflow}{if} (itr-\/>second == action)}
-\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00039}00039             \mbox{\hyperlink{class_key_binding_abb5950536b53d4b40e3ee56049244aa1}{mKeyMap}}.erase(itr++);}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00039}00039             mKeyMap.erase(itr++);}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00040}00040         \textcolor{keywordflow}{else}}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00041}00041             ++itr;}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00042}00042     \}}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00043}00043 }
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00044}00044     \textcolor{comment}{// Insert new binding}}
-\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00045}00045     \mbox{\hyperlink{class_key_binding_abb5950536b53d4b40e3ee56049244aa1}{mKeyMap}}[key] = action;}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00045}00045     mKeyMap[key] = action;}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00046}00046 \}}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00047}00047 }
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00048}00048 \mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142}{sf::Keyboard::Key}} \mbox{\hyperlink{class_key_binding_af55da9ca1a666a2617b7f32a51e1b466}{KeyBinding::getAssignedKey}}(\mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2}{Action}} action)\textcolor{keyword}{ const}}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00049}00049 \textcolor{keyword}{}\{}
-\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00050}00050     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} pair : \mbox{\hyperlink{class_key_binding_abb5950536b53d4b40e3ee56049244aa1}{mKeyMap}})}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00050}00050     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} pair : mKeyMap)}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00051}00051     \{}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00052}00052         \textcolor{keywordflow}{if} (pair.second == action)}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00053}00053             \textcolor{keywordflow}{return} pair.first;}
@@ -62,8 +62,8 @@
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00058}00058 }
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00059}00059 \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_key_binding_aa11ef504d52c2a05e2a43bc833f28408}{KeyBinding::checkAction}}(\mbox{\hyperlink{classsf_1_1_keyboard_acb4cacd7cc5802dec45724cf3314a142}{sf::Keyboard::Key}} key, \mbox{\hyperlink{namespace_player_actions_a91477c99e0c44a0a9d0cc8153359ace2}{Action}}\& out)\textcolor{keyword}{ const}}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00060}00060 \textcolor{keyword}{}\{}
-\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00061}00061     \textcolor{keyword}{auto} found = \mbox{\hyperlink{class_key_binding_abb5950536b53d4b40e3ee56049244aa1}{mKeyMap}}.find(key);}
-\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00062}00062     \textcolor{keywordflow}{if} (found == \mbox{\hyperlink{class_key_binding_abb5950536b53d4b40e3ee56049244aa1}{mKeyMap}}.end())}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00061}00061     \textcolor{keyword}{auto} found = mKeyMap.find(key);}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00062}00062     \textcolor{keywordflow}{if} (found == mKeyMap.end())}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00063}00063     \{}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00064}00064         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00065}00065     \}}
@@ -79,7 +79,7 @@
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00075}00075     \textcolor{comment}{// Return all realtime actions that are currently active.}}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00076}00076     std::vector<Action> actions;}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00077}00077 }
-\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00078}00078     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} pair : \mbox{\hyperlink{class_key_binding_abb5950536b53d4b40e3ee56049244aa1}{mKeyMap}})}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00078}00078     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} pair : mKeyMap)}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00079}00079     \{}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00080}00080         \textcolor{comment}{// If key is pressed and an action is a realtime action, store it}}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_key_binding_8cpp_source_l00081}00081         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classsf_1_1_keyboard_a80a04b2f53005886957f49eee3531599}{sf::Keyboard::isKeyPressed}}(pair.first) \&\& \mbox{\hyperlink{_s_f_m_l-2_85_81_2_source_2_key_binding_8cpp_ab14ad3e465986d56cb34829d409cfa98}{isRealtimeAction}}(pair.second))}

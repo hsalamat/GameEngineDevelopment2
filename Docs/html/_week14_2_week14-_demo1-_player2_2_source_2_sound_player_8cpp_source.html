@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Game Engine Development II: Week14/Week14-Demo1-Player2/Source/SoundPlayer.cpp Source File</title>
+<title>My Project: Week14/Week14-Demo1-Player2/Source/SoundPlayer.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Game Engine Development II
+   <div id="projectname">My Project
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -134,10 +134,10 @@ $(document).ready(function(){initNavTree('_week14_2_week14-_demo1-_player2_2_sou
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keywordtype">void</span> <a class="code hl_function" href="class_sound_player.html#aa0b85f15f5b13bc41c71eeee6b0a7779">SoundPlayer::play</a>(<a class="code hl_enumeration" href="namespace_sound_effect.html#a11ffbf1eb89e85a34cbfd5a59b2cd9cb">SoundEffect::ID</a> effect, <a class="code hl_class" href="classsf_1_1_vector2.html">sf::Vector2f</a> position)</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>{</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_variable" href="class_sound_player.html#ad01264344ccdd855bcbcc9c3d65fd9f4">mSounds</a>.push_back(<a class="code hl_class" href="classsf_1_1_sound.html">sf::Sound</a>());</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <a class="code hl_class" href="classsf_1_1_sound.html">sf::Sound</a>&amp; sound = <a class="code hl_variable" href="class_sound_player.html#ad01264344ccdd855bcbcc9c3d65fd9f4">mSounds</a>.back();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    mSounds.push_back(<a class="code hl_class" href="classsf_1_1_sound.html">sf::Sound</a>());</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <a class="code hl_class" href="classsf_1_1_sound.html">sf::Sound</a>&amp; sound = mSounds.back();</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    sound.<a class="code hl_function" href="classsf_1_1_sound.html#a8b395e9713d0efa48a18628c8ec1972e">setBuffer</a>(<a class="code hl_variable" href="class_sound_player.html#ad3e9174521bdf0ddc6e7618a4e6d4212">mSoundBuffers</a>.<a class="code hl_function" href="class_resource_holder.html#a6452638a75b6df7ea7d610f204632850">get</a>(effect));</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    sound.<a class="code hl_function" href="classsf_1_1_sound.html#a8b395e9713d0efa48a18628c8ec1972e">setBuffer</a>(mSoundBuffers.<a class="code hl_function" href="class_resource_holder.html#a6452638a75b6df7ea7d610f204632850">get</a>(effect));</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    sound.<a class="code hl_function" href="classsf_1_1_sound_source.html#a0480257ea25d986eba6cc3c1a6f8d7c2">setPosition</a>(position.<a class="code hl_variable" href="classsf_1_1_vector2.html#a1e6ad77fa155f3753bfb92699bd28141">x</a>, -position.<a class="code hl_variable" href="classsf_1_1_vector2.html#a420f2481b015f4eb929c75f2af564299">y</a>, 0.f);</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    sound.<a class="code hl_function" href="classsf_1_1_sound_source.html#aa2adff44cd2f8b4e3c7315d7c2a45626">setAttenuation</a>(Attenuation);</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    sound.<a class="code hl_function" href="classsf_1_1_sound_source.html#a75bbc2c34addc8b25a14edb908508afe">setMinDistance</a>(MinDistance3D);</div>
@@ -147,7 +147,7 @@ $(document).ready(function(){initNavTree('_week14_2_week14-_demo1-_player2_2_sou
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keywordtype">void</span> <a class="code hl_function" href="class_sound_player.html#a3fd165dadf60b580b16367b81d84681b">SoundPlayer::removeStoppedSounds</a>()</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>{</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <a class="code hl_variable" href="class_sound_player.html#ad01264344ccdd855bcbcc9c3d65fd9f4">mSounds</a>.remove_if([] (<span class="keyword">const</span> <a class="code hl_class" href="classsf_1_1_sound.html">sf::Sound</a>&amp; s)</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    mSounds.remove_if([] (<span class="keyword">const</span> <a class="code hl_class" href="classsf_1_1_sound.html">sf::Sound</a>&amp; s)</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    {</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordflow">return</span> s.<a class="code hl_function" href="classsf_1_1_sound.html#a406fc363594a7718a53ebef49a870f51">getStatus</a>() == <a class="code hl_enumvalue" href="classsf_1_1_sound_source.html#ac43af72c98c077500b239bc75b812f03ad00854a77b49463ac52454a98f1ba0ed">sf::Sound::Stopped</a>;</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    });</div>
@@ -169,8 +169,6 @@ $(document).ready(function(){initNavTree('_week14_2_week14-_demo1-_player2_2_sou
 <div class="ttc" id="aclass_sound_player_html_aa0b85f15f5b13bc41c71eeee6b0a7779"><div class="ttname"><a href="class_sound_player.html#aa0b85f15f5b13bc41c71eeee6b0a7779">SoundPlayer::play</a></div><div class="ttdeci">void play(SoundEffect::ID effect)</div><div class="ttdef"><b>Definition:</b> <a href="_week12_2_week12-_demo2-_sound_effect_2_source_2_sound_player_8cpp_source.html#l00025">SoundPlayer.cpp:25</a></div></div>
 <div class="ttc" id="aclass_sound_player_html_abfd270417c9490f1c0f92b0c4986fa52"><div class="ttname"><a href="class_sound_player.html#abfd270417c9490f1c0f92b0c4986fa52">SoundPlayer::setListenerPosition</a></div><div class="ttdeci">void setListenerPosition(sf::Vector2f position)</div><div class="ttdef"><b>Definition:</b> <a href="_week12_2_week12-_demo3-3_d_sound_2_source_2_sound_player_8cpp_source.html#l00080">SoundPlayer.cpp:80</a></div></div>
 <div class="ttc" id="aclass_sound_player_html_ac7107aecd54bdcfac29486487768ebc6"><div class="ttname"><a href="class_sound_player.html#ac7107aecd54bdcfac29486487768ebc6">SoundPlayer::SoundPlayer</a></div><div class="ttdeci">SoundPlayer()</div><div class="ttdef"><b>Definition:</b> <a href="_week12_2_week12-_demo2-_sound_effect_2_source_2_sound_player_8cpp_source.html#l00009">SoundPlayer.cpp:9</a></div></div>
-<div class="ttc" id="aclass_sound_player_html_ad01264344ccdd855bcbcc9c3d65fd9f4"><div class="ttname"><a href="class_sound_player.html#ad01264344ccdd855bcbcc9c3d65fd9f4">SoundPlayer::mSounds</a></div><div class="ttdeci">std::list&lt; sf::Sound &gt; mSounds</div><div class="ttdef"><b>Definition:</b> <a href="_week12_2_week12-_demo2-_sound_effect_2_include_2_sound_player_8hpp_source.html#l00027">SoundPlayer.hpp:27</a></div></div>
-<div class="ttc" id="aclass_sound_player_html_ad3e9174521bdf0ddc6e7618a4e6d4212"><div class="ttname"><a href="class_sound_player.html#ad3e9174521bdf0ddc6e7618a4e6d4212">SoundPlayer::mSoundBuffers</a></div><div class="ttdeci">SoundBufferHolder mSoundBuffers</div><div class="ttdef"><b>Definition:</b> <a href="_week12_2_week12-_demo2-_sound_effect_2_include_2_sound_player_8hpp_source.html#l00026">SoundPlayer.hpp:26</a></div></div>
 <div class="ttc" id="aclasssf_1_1_listener_html_a5bc2d8d18ea2d8f339d23cbf17678564"><div class="ttname"><a href="classsf_1_1_listener.html#a5bc2d8d18ea2d8f339d23cbf17678564">sf::Listener::setPosition</a></div><div class="ttdeci">static void setPosition(float x, float y, float z)</div><div class="ttdoc">Set the position of the listener in the scene.</div></div>
 <div class="ttc" id="aclasssf_1_1_listener_html_acd7ee65bc948ca38e1c669aa12340c54"><div class="ttname"><a href="classsf_1_1_listener.html#acd7ee65bc948ca38e1c669aa12340c54">sf::Listener::getPosition</a></div><div class="ttdeci">static Vector3f getPosition()</div><div class="ttdoc">Get the current position of the listener in the scene.</div></div>
 <div class="ttc" id="aclasssf_1_1_listener_html_ae479dc15513c6557984d26e32d06d06e"><div class="ttname"><a href="classsf_1_1_listener.html#ae479dc15513c6557984d26e32d06d06e">sf::Listener::setDirection</a></div><div class="ttdeci">static void setDirection(float x, float y, float z)</div><div class="ttdoc">Set the forward vector of the listener in the scene.</div></div>

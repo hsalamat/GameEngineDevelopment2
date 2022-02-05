@@ -17,6 +17,5 @@ var classsf_1_1_socket_selector =
     [ "remove", "classsf_1_1_socket_selector.html#a98b6ab693a65b82caa375639232357c1", null ],
     [ "remove", "classsf_1_1_socket_selector.html#a98b6ab693a65b82caa375639232357c1", null ],
     [ "wait", "classsf_1_1_socket_selector.html#a9cfda5475f17925e65889394d70af702", null ],
-    [ "wait", "classsf_1_1_socket_selector.html#a9cfda5475f17925e65889394d70af702", null ],
-    [ "m_impl", "classsf_1_1_socket_selector.html#ab2806d98cc558f10d4bc6719c2e64ef9", null ]
+    [ "wait", "classsf_1_1_socket_selector.html#a9cfda5475f17925e65889394d70af702", null ]
 ];

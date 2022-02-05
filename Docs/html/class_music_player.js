@@ -34,8 +34,5 @@ var class_music_player =
     [ "stop", "class_music_player.html#a54e47a9e937730493d886aa5624c44d1", null ],
     [ "stop", "class_music_player.html#a54e47a9e937730493d886aa5624c44d1", null ],
     [ "stop", "class_music_player.html#a54e47a9e937730493d886aa5624c44d1", null ],
-    [ "stop", "class_music_player.html#a54e47a9e937730493d886aa5624c44d1", null ],
-    [ "mFilenames", "class_music_player.html#a56ec3cf00ff836dc378dd228443fbc87", null ],
-    [ "mMusic", "class_music_player.html#ad18cdf29e5ebac13d62185a9e1b646d5", null ],
-    [ "mVolume", "class_music_player.html#ad4d026091511aa086cd96047c1adfd97", null ]
+    [ "stop", "class_music_player.html#a54e47a9e937730493d886aa5624c44d1", null ]
 ];

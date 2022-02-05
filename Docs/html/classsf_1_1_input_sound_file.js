@@ -4,8 +4,6 @@ var classsf_1_1_input_sound_file =
     [ "~InputSoundFile", "classsf_1_1_input_sound_file.html#a326a1a486587038123de0c187bf5c635", null ],
     [ "InputSoundFile", "classsf_1_1_input_sound_file.html#a3b95347de25d1d93a3230287cf47a077", null ],
     [ "~InputSoundFile", "classsf_1_1_input_sound_file.html#a326a1a486587038123de0c187bf5c635", null ],
-    [ "close", "classsf_1_1_input_sound_file.html#ad28182aea9dc9f7d0dfc7f78691825b4", null ],
-    [ "close", "classsf_1_1_input_sound_file.html#ad28182aea9dc9f7d0dfc7f78691825b4", null ],
     [ "getChannelCount", "classsf_1_1_input_sound_file.html#a54307c308ba05dea63aba54a29c804a4", null ],
     [ "getChannelCount", "classsf_1_1_input_sound_file.html#a54307c308ba05dea63aba54a29c804a4", null ],
     [ "getDuration", "classsf_1_1_input_sound_file.html#aa081bd4d9732408d10b48227a360778e", null ],
@@ -29,12 +27,5 @@ var classsf_1_1_input_sound_file =
     [ "seek", "classsf_1_1_input_sound_file.html#a8eee7af58ad75ddc61f93ad72e2d66c1", null ],
     [ "seek", "classsf_1_1_input_sound_file.html#a8eee7af58ad75ddc61f93ad72e2d66c1", null ],
     [ "seek", "classsf_1_1_input_sound_file.html#aaf97be15020a42e159ff88f76f22af20", null ],
-    [ "seek", "classsf_1_1_input_sound_file.html#aaf97be15020a42e159ff88f76f22af20", null ],
-    [ "m_channelCount", "classsf_1_1_input_sound_file.html#a8139ba49fe8f159bc338766d7c761f2d", null ],
-    [ "m_reader", "classsf_1_1_input_sound_file.html#abcab8c8227c67460963451af69f724fd", null ],
-    [ "m_sampleCount", "classsf_1_1_input_sound_file.html#a6cac79628c9ae40da0db0a218304c3b6", null ],
-    [ "m_sampleOffset", "classsf_1_1_input_sound_file.html#a616395e2cbf4ff2f23aa7f7e4fb731a9", null ],
-    [ "m_sampleRate", "classsf_1_1_input_sound_file.html#a7ce1620cc87d165b3ab9c4f623cad57d", null ],
-    [ "m_stream", "classsf_1_1_input_sound_file.html#a7c16814d792d67386712a07388ce64d6", null ],
-    [ "m_streamOwned", "classsf_1_1_input_sound_file.html#a6dd8c6ef3876d886a9d4c2df538bd3a4", null ]
+    [ "seek", "classsf_1_1_input_sound_file.html#aaf97be15020a42e159ff88f76f22af20", null ]
 ];

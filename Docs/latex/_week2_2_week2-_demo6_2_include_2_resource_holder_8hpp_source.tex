@@ -2,49 +2,47 @@
 \label{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source}\index{Week2/Week2-\/Demo6/Include/ResourceHolder.hpp@{Week2/Week2-\/Demo6/Include/ResourceHolder.hpp}}
 \mbox{\hyperlink{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma region Step1}}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
 \DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00002}00002 }
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00003}00003 \textcolor{preprocessor}{\#ifndef BOOK\_RESOURCEHOLDER\_HPP}}
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#define BOOK\_RESOURCEHOLDER\_HPP}}
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00005}00005 }
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00006}00006 \textcolor{preprocessor}{\#include <map>}}
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00007}00007 \textcolor{preprocessor}{\#include <string>}}
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00008}00008 \textcolor{preprocessor}{\#include <memory>}}
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00009}00009 \textcolor{preprocessor}{\#include <stdexcept>}}
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00010}00010 \textcolor{preprocessor}{\#include <cassert>}}
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00011}00011 \textcolor{preprocessor}{\#include <SFML\(\backslash\)Graphics.hpp>}}
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00012}00012 \textcolor{comment}{//namespace Textures}}
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00013}00013 \textcolor{comment}{//\{}}
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00014}00014 \textcolor{comment}{//  enum ID}}
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00015}00015 \textcolor{comment}{//  \{}}
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00016}00016 \textcolor{comment}{//      Landscape,}}
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00017}00017 \textcolor{comment}{//      Airplane,}}
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00018}00018 \textcolor{comment}{//  \};}}
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00019}00019 \textcolor{comment}{//\}}}
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00020}00020 }
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00021}00021 \textcolor{comment}{//class TextureHolder}}
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00022}00022 \textcolor{keyword}{template} <\textcolor{keyword}{typename} Resource, \textcolor{keyword}{typename} Identifier>}
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00023}00023 \textcolor{keyword}{class }\mbox{\hyperlink{class_resource_holder}{ResourceHolder}}}
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00024}00024 \{}
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00025}00025 \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00026}00026     \textcolor{comment}{//void                      load(Textures::ID id, const std::string\& filename);}}
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00027}\mbox{\hyperlink{class_resource_holder_accb6a2b6bd2da503ddfd57b5c0028a16}{00027}}     \textcolor{keywordtype}{void}                        \mbox{\hyperlink{class_resource_holder_accb6a2b6bd2da503ddfd57b5c0028a16}{load}}(Identifier \textcolor{keywordtype}{id}, \textcolor{keyword}{const} std::string\& filename);}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00003}00003 \textcolor{preprocessor}{\#pragma region Step1}}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00005}00005 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00006}00006 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00007}00007 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00008}00008 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00009}00009 \textcolor{preprocessor}{\#include <cassert>}}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00010}00010 \textcolor{preprocessor}{\#include <SFML\(\backslash\)Graphics.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00011}00011 \textcolor{comment}{//namespace Textures}}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00012}00012 \textcolor{comment}{//\{}}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00013}00013 \textcolor{comment}{//  enum ID}}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00014}00014 \textcolor{comment}{//  \{}}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00015}00015 \textcolor{comment}{//      Landscape,}}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00016}00016 \textcolor{comment}{//      Airplane,}}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00017}00017 \textcolor{comment}{//  \};}}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00018}00018 \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00020}00020 \textcolor{comment}{//class TextureHolder}}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00021}00021 \textcolor{keyword}{template} <\textcolor{keyword}{typename} Resource, \textcolor{keyword}{typename} Identifier>}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00022}00022 \textcolor{keyword}{class }\mbox{\hyperlink{class_resource_holder}{ResourceHolder}}}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00023}00023 \{}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00024}00024 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00025}00025     \textcolor{comment}{//void                      load(Textures::ID id, const std::string\& filename);}}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00026}\mbox{\hyperlink{class_resource_holder_accb6a2b6bd2da503ddfd57b5c0028a16}{00026}}     \textcolor{keywordtype}{void}                        \mbox{\hyperlink{class_resource_holder_accb6a2b6bd2da503ddfd57b5c0028a16}{load}}(Identifier \textcolor{keywordtype}{id}, \textcolor{keyword}{const} std::string\& filename);}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00027}00027 }
 \DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00028}00028 }
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00029}00029 }
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00030}00030     \textcolor{comment}{//sf::Texture\&                  get(Textures::ID id);}}
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00031}00031     \textcolor{comment}{//const sf::Texture\&            get(Textures::ID id) const;}}
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00032}\mbox{\hyperlink{class_resource_holder_a6452638a75b6df7ea7d610f204632850}{00032}}     Resource\&                   \mbox{\hyperlink{class_resource_holder_a6452638a75b6df7ea7d610f204632850}{get}}(Identifier \textcolor{keywordtype}{id});}
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00033}\mbox{\hyperlink{class_resource_holder_aaf453199dbdfb9b8395c52b29eb915c2}{00033}}     \textcolor{keyword}{const} Resource\&             \mbox{\hyperlink{class_resource_holder_aaf453199dbdfb9b8395c52b29eb915c2}{get}}(Identifier \textcolor{keywordtype}{id}) \textcolor{keyword}{const};}
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00034}00034 }
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00035}00035 \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00036}00036     \textcolor{comment}{//std::map<Textures::ID, std::unique\_ptr<sf::Texture>>  mTextureMap;}}
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00037}00037     std::map<Identifier, std::unique\_ptr<Resource>> \mbox{\hyperlink{class_resource_holder_affad09342aee1638649cf5b41415703a}{mResourceMap}};}
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00038}00038 }
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00039}00039 \};}
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00040}00040 }
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00041}00041 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_include_2_resource_holder_8inl}{ResourceHolder.inl}}"{}}}
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00042}00042 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// BOOK\_RESOURCEHOLDER\_HPP}}
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00043}00043 }
-\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00044}00044 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00029}00029     \textcolor{comment}{//sf::Texture\&                  get(Textures::ID id);}}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00030}00030     \textcolor{comment}{//const sf::Texture\&            get(Textures::ID id) const;}}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00031}\mbox{\hyperlink{class_resource_holder_a6452638a75b6df7ea7d610f204632850}{00031}}     Resource\&                   \mbox{\hyperlink{class_resource_holder_a6452638a75b6df7ea7d610f204632850}{get}}(Identifier \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00032}\mbox{\hyperlink{class_resource_holder_aaf453199dbdfb9b8395c52b29eb915c2}{00032}}     \textcolor{keyword}{const} Resource\&             \mbox{\hyperlink{class_resource_holder_aaf453199dbdfb9b8395c52b29eb915c2}{get}}(Identifier \textcolor{keywordtype}{id}) \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00034}00034 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00035}00035     \textcolor{comment}{//std::map<Textures::ID, std::unique\_ptr<sf::Texture>>  mTextureMap;}}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00036}00036     std::map<Identifier, std::unique\_ptr<Resource>> mResourceMap;}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00038}00038 \};}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00040}00040 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_include_2_resource_holder_8inl}{ResourceHolder.inl}}"{}}}
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{_week2_2_week2-_demo6_2_include_2_resource_holder_8hpp_source_l00042}00042 \textcolor{preprocessor}{\#pragma endregion}}
 
 \end{DoxyCode}

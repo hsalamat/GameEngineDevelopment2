@@ -30,17 +30,17 @@
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_container_8hpp_source_l00026}00026 }
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_container_8hpp_source_l00027}00027 }
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_container_8hpp_source_l00028}00028     \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_container_8hpp_source_l00029}\mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{00029}}         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}        \mbox{\hyperlink{class_g_u_i_1_1_container_aa0b0a2311d97c209c8fe6dbe3f1d0e7c}{draw}}(\mbox{\hyperlink{classsf_1_1_render_target}{sf::RenderTarget}}\& target, \mbox{\hyperlink{classsf_1_1_render_states}{sf::RenderStates}} states) \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_container_8hpp_source_l00029}00029         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}        draw(\mbox{\hyperlink{classsf_1_1_render_target}{sf::RenderTarget}}\& target, \mbox{\hyperlink{classsf_1_1_render_states}{sf::RenderStates}} states) \textcolor{keyword}{const};}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_container_8hpp_source_l00030}00030 }
-\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_container_8hpp_source_l00031}\mbox{\hyperlink{class_g_u_i_1_1_container_a1402c6167b65daac7d31a669dd1c4263}{00031}}         \textcolor{keywordtype}{bool}                \mbox{\hyperlink{class_g_u_i_1_1_container_a1402c6167b65daac7d31a669dd1c4263}{hasSelection}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_container_8hpp_source_l00032}\mbox{\hyperlink{class_g_u_i_1_1_container_a270c45fb9148bf56d8b178df27cb4c5b}{00032}}         \textcolor{keywordtype}{void}                \mbox{\hyperlink{class_g_u_i_1_1_container_a270c45fb9148bf56d8b178df27cb4c5b}{select}}(std::size\_t index);}
-\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_container_8hpp_source_l00033}\mbox{\hyperlink{class_g_u_i_1_1_container_a7264469c99757382583094036ffa7942}{00033}}         \textcolor{keywordtype}{void}                \mbox{\hyperlink{class_g_u_i_1_1_container_a7264469c99757382583094036ffa7942}{selectNext}}();}
-\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_container_8hpp_source_l00034}\mbox{\hyperlink{class_g_u_i_1_1_container_a405e33ffbec3e7f9d10b147607f8baef}{00034}}         \textcolor{keywordtype}{void}                \mbox{\hyperlink{class_g_u_i_1_1_container_a405e33ffbec3e7f9d10b147607f8baef}{selectPrevious}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_container_8hpp_source_l00031}00031         \textcolor{keywordtype}{bool}                hasSelection() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_container_8hpp_source_l00032}00032         \textcolor{keywordtype}{void}                \mbox{\hyperlink{class_g_u_i_1_1_component_ad0f7d6cc692edf2b0e426bfbd584be45}{select}}(std::size\_t index);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_container_8hpp_source_l00033}00033         \textcolor{keywordtype}{void}                selectNext();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_container_8hpp_source_l00034}00034         \textcolor{keywordtype}{void}                selectPrevious();}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_container_8hpp_source_l00035}00035 }
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_container_8hpp_source_l00036}00036 }
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_container_8hpp_source_l00037}00037     \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_container_8hpp_source_l00038}00038         std::vector<Component::Ptr>     \mbox{\hyperlink{class_g_u_i_1_1_container_a4b9763d59d947aa36c627798f72d31b6}{mChildren}};}
-\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_container_8hpp_source_l00039}00039         \textcolor{keywordtype}{int}                             \mbox{\hyperlink{class_g_u_i_1_1_container_aa62abbcae1590236215472c38523dcfc}{mSelectedChild}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_container_8hpp_source_l00038}00038         std::vector<Component::Ptr>     mChildren;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_container_8hpp_source_l00039}00039         \textcolor{keywordtype}{int}                             mSelectedChild;}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_container_8hpp_source_l00040}00040 \};}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_container_8hpp_source_l00041}00041 }
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2include_2_container_8hpp_source_l00042}00042 \}}

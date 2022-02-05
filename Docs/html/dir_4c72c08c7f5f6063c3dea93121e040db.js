@@ -7,9 +7,7 @@ var dir_4c72c08c7f5f6063c3dea93121e040db =
     [ "Drawable.hpp", "_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_drawable_8hpp.html", null ],
     [ "Export.hpp", "_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_export_8hpp.html", "_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_export_8hpp" ],
     [ "Font.hpp", "_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_font_8hpp.html", [
-      [ "sf::Font::Info", "structsf_1_1_font_1_1_info.html", "structsf_1_1_font_1_1_info" ],
-      [ "sf::Font::Row", "structsf_1_1_font_1_1_row.html", "structsf_1_1_font_1_1_row" ],
-      [ "sf::Font::Page", "structsf_1_1_font_1_1_page.html", "structsf_1_1_font_1_1_page" ]
+      [ "sf::Font::Info", "structsf_1_1_font_1_1_info.html", "structsf_1_1_font_1_1_info" ]
     ] ],
     [ "Glsl.hpp", "_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8hpp.html", "_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8hpp" ],
     [ "Glsl.inl", "_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl.html", "_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_glsl_8inl" ],
@@ -20,9 +18,7 @@ var dir_4c72c08c7f5f6063c3dea93121e040db =
     [ "Rect.inl", "_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_rect_8inl.html", "_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_rect_8inl" ],
     [ "RectangleShape.hpp", "_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_rectangle_shape_8hpp.html", null ],
     [ "RenderStates.hpp", "_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_render_states_8hpp.html", null ],
-    [ "RenderTarget.hpp", "_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_render_target_8hpp.html", [
-      [ "sf::RenderTarget::StatesCache", "structsf_1_1_render_target_1_1_states_cache.html", "structsf_1_1_render_target_1_1_states_cache" ]
-    ] ],
+    [ "RenderTarget.hpp", "_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_render_target_8hpp.html", null ],
     [ "RenderTexture.hpp", "_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_render_texture_8hpp.html", null ],
     [ "RenderWindow.hpp", "_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_render_window_8hpp.html", null ],
     [ "Shader.hpp", "_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp.html", [

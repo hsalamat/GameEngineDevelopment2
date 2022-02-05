@@ -25,7 +25,5 @@ var classsf_1_1_render_texture =
     [ "setRepeated", "classsf_1_1_render_texture.html#af8f97b33512bf7d5b6be3da6f65f7365", null ],
     [ "setRepeated", "classsf_1_1_render_texture.html#af8f97b33512bf7d5b6be3da6f65f7365", null ],
     [ "setSmooth", "classsf_1_1_render_texture.html#af08991e63c6020865dd07b20e27305b6", null ],
-    [ "setSmooth", "classsf_1_1_render_texture.html#af08991e63c6020865dd07b20e27305b6", null ],
-    [ "m_impl", "classsf_1_1_render_texture.html#abf0e572bb61af80ec4432bb6c13caae7", null ],
-    [ "m_texture", "classsf_1_1_render_texture.html#ae4638299a9022d2ba2d0fc29b5d550e8", null ]
+    [ "setSmooth", "classsf_1_1_render_texture.html#af08991e63c6020865dd07b20e27305b6", null ]
 ];

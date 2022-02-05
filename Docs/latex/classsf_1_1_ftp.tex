@@ -118,20 +118,6 @@ enum \mbox{\hyperlink{classsf_1_1_ftp_a1cd6b89ad23253f6d97e6d4ca4d558cb}{Transfe
 \begin{DoxyCompactList}\small\item\em Upload a file to the server. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classsf_1_1_ftp_1_1_response}{Response}} \mbox{\hyperlink{classsf_1_1_ftp_a44e095103ecbce175a33eaf0820440ff}{send\+Command}} (const std\+::string \&command, const std\+::string \&parameter=\char`\"{}\char`\"{})
 \begin{DoxyCompactList}\small\item\em Send a command to the FTP server. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{classsf_1_1_ftp_1_1_response}{Response}} \mbox{\hyperlink{classsf_1_1_ftp_a605a3ecae3bbba58fd1f250be500e741}{get\+Response}} ()
-\begin{DoxyCompactList}\small\item\em Receive a response from the server. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classsf_1_1_ftp_1_1_response}{Response}} \mbox{\hyperlink{classsf_1_1_ftp_a605a3ecae3bbba58fd1f250be500e741}{get\+Response}} ()
-\begin{DoxyCompactList}\small\item\em Receive a response from the server. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{classsf_1_1_tcp_socket}{Tcp\+Socket}} \mbox{\hyperlink{classsf_1_1_ftp_a36e68897d2219b1a56f1c30545bc6cce}{m\+\_\+command\+Socket}}
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsf_1_1_socket}{Socket}} holding the control connection with the server. \end{DoxyCompactList}\item 
-std\+::string \mbox{\hyperlink{classsf_1_1_ftp_a24e8c6bd093823fb24caab23f9c798a0}{m\+\_\+receive\+Buffer}}
-\begin{DoxyCompactList}\small\item\em Received command data that is yet to be processed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -676,36 +662,6 @@ This function retrieves the sub-\/directories and files contained in the given d
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{classsf_1_1_ftp_a79c654fcdd0c81e68c4fa29af3b45e0c}{get\+Working\+Directory}}, \mbox{\hyperlink{classsf_1_1_ftp_a7e93488ea6330dd4dd76e428da9bb6d3}{change\+Directory}}, \mbox{\hyperlink{classsf_1_1_ftp_ad295cf77f30f9ad07b5c401fd9849189}{parent\+Directory}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{classsf_1_1_ftp_a605a3ecae3bbba58fd1f250be500e741}\label{classsf_1_1_ftp_a605a3ecae3bbba58fd1f250be500e741}} 
-\index{sf::Ftp@{sf::Ftp}!getResponse@{getResponse}}
-\index{getResponse@{getResponse}!sf::Ftp@{sf::Ftp}}
-\doxysubsubsection{\texorpdfstring{getResponse()}{getResponse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_ftp_1_1_response}{Response}} sf\+::\+Ftp\+::get\+Response (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Receive a response from the server. 
-
-This function must be called after each call to send\+Command that expects a response.
-
-\begin{DoxyReturn}{Returns}
-\mbox{\hyperlink{namespace_server}{Server}} response to the request 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classsf_1_1_ftp_a605a3ecae3bbba58fd1f250be500e741}\label{classsf_1_1_ftp_a605a3ecae3bbba58fd1f250be500e741}} 
-\index{sf::Ftp@{sf::Ftp}!getResponse@{getResponse}}
-\index{getResponse@{getResponse}!sf::Ftp@{sf::Ftp}}
-\doxysubsubsection{\texorpdfstring{getResponse()}{getResponse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_ftp_1_1_response}{Response}} sf\+::\+Ftp\+::get\+Response (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Receive a response from the server. 
-
-This function must be called after each call to send\+Command that expects a response.
-
-\begin{DoxyReturn}{Returns}
-\mbox{\hyperlink{namespace_server}{Server}} response to the request 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classsf_1_1_ftp_a79c654fcdd0c81e68c4fa29af3b45e0c}\label{classsf_1_1_ftp_a79c654fcdd0c81e68c4fa29af3b45e0c}} 
 \index{sf::Ftp@{sf::Ftp}!getWorkingDirectory@{getWorkingDirectory}}
 \index{getWorkingDirectory@{getWorkingDirectory}!sf::Ftp@{sf::Ftp}}
@@ -1046,37 +1002,6 @@ The append parameter controls whether the remote file is appended to or overwrit
 
 
 Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ftp_8hpp_source_l00531}{531}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ftp_8hpp_source}{Ftp.\+hpp}}.
-
-
-
-\doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{classsf_1_1_ftp_a36e68897d2219b1a56f1c30545bc6cce}\label{classsf_1_1_ftp_a36e68897d2219b1a56f1c30545bc6cce}} 
-\index{sf::Ftp@{sf::Ftp}!m\_commandSocket@{m\_commandSocket}}
-\index{m\_commandSocket@{m\_commandSocket}!sf::Ftp@{sf::Ftp}}
-\doxysubsubsection{\texorpdfstring{m\_commandSocket}{m\_commandSocket}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_tcp_socket}{Tcp\+Socket}} sf\+::\+Ftp\+::m\+\_\+command\+Socket\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-\mbox{\hyperlink{classsf_1_1_socket}{Socket}} holding the control connection with the server. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ftp_8hpp_source_l00536}{536}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ftp_8hpp_source}{Ftp.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_ftp_a24e8c6bd093823fb24caab23f9c798a0}\label{classsf_1_1_ftp_a24e8c6bd093823fb24caab23f9c798a0}} 
-\index{sf::Ftp@{sf::Ftp}!m\_receiveBuffer@{m\_receiveBuffer}}
-\index{m\_receiveBuffer@{m\_receiveBuffer}!sf::Ftp@{sf::Ftp}}
-\doxysubsubsection{\texorpdfstring{m\_receiveBuffer}{m\_receiveBuffer}}
-{\footnotesize\ttfamily std\+::string sf\+::\+Ftp\+::m\+\_\+receive\+Buffer\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Received command data that is yet to be processed. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ftp_8hpp_source_l00537}{537}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_network_2_ftp_8hpp_source}{Ftp.\+hpp}}.
 
 
 

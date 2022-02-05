@@ -39,13 +39,5 @@ var classsf_1_1_view =
     [ "setViewport", "classsf_1_1_view.html#a8eaec46b7d332fe834f016d0187d4b4a", null ],
     [ "setViewport", "classsf_1_1_view.html#a8eaec46b7d332fe834f016d0187d4b4a", null ],
     [ "zoom", "classsf_1_1_view.html#a4a72a360a5792fbe4e99cd6feaf7726e", null ],
-    [ "zoom", "classsf_1_1_view.html#a4a72a360a5792fbe4e99cd6feaf7726e", null ],
-    [ "m_center", "classsf_1_1_view.html#a2aafc31cea5b8f9afd273df7f33198be", null ],
-    [ "m_inverseTransform", "classsf_1_1_view.html#a2913d790e9dfb0e433ced3589be5182e", null ],
-    [ "m_invTransformUpdated", "classsf_1_1_view.html#a4fc36421401c03bd9c3f556023e891f7", null ],
-    [ "m_rotation", "classsf_1_1_view.html#a7f1500a1904edffffc5daa76f2f95037", null ],
-    [ "m_size", "classsf_1_1_view.html#ab7eb79d4cbfb717cfd5a4ad3c6d19dd5", null ],
-    [ "m_transform", "classsf_1_1_view.html#ab27082a1c1fb6b00bd44d2aa322082aa", null ],
-    [ "m_transformUpdated", "classsf_1_1_view.html#a64c4c557714b453d1e75b937e56eedd5", null ],
-    [ "m_viewport", "classsf_1_1_view.html#a2d89b9e2b7ae058c98f1f80c132ae8d6", null ]
+    [ "zoom", "classsf_1_1_view.html#a4a72a360a5792fbe4e99cd6feaf7726e", null ]
 ];

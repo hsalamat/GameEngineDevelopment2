@@ -1,6 +1,4 @@
 #include <Game.hpp>
-#include <StringHelpers.hpp>
-
 #include <SFML/Window/Event.hpp>
 
 
@@ -48,9 +46,10 @@ void Game::processEvents()
 	sf::Event event;
 	while (mWindow.pollEvent(event))
 	{
+		mPlayer.handleEvent(event, commands);
+
 		switch (event.type)
 		{
-			mPlayer.handleEvent(event, commands);
 			case sf::Event::Closed:
 				mWindow.close();
 				break;
@@ -85,8 +84,8 @@ void Game::updateStatistics(sf::Time elapsedTime)
 	if (mStatisticsUpdateTime >= sf::seconds(1.0f))
 	{
 		mStatisticsText.setString(
-			"Frames / Second = " + toString(mStatisticsNumFrames) + "\n" +
-			"Time / Update = " + toString(mStatisticsUpdateTime.asMicroseconds() / mStatisticsNumFrames) + "us");
+			"Frames / Second = " + std::to_string(mStatisticsNumFrames) + "\n" +
+			"Time / Update = " + std::to_string(mStatisticsUpdateTime.asMicroseconds() / mStatisticsNumFrames) + "us");
 							 
 		mStatisticsUpdateTime -= sf::seconds(1.0f);
 		mStatisticsNumFrames = 0;

@@ -22,30 +22,30 @@
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00022}00022 }
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00023}\mbox{\hyperlink{class_effect_a2a4eaf667af8ea6498b77fe532c5a43d}{00023}}     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_effect_a2a4eaf667af8ea6498b77fe532c5a43d}{setFont}}(\textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_font}{sf::Font}}\& font)}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00024}00024     \{}
-\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00025}00025         \mbox{\hyperlink{class_effect_afa8f3dbd6bb7adb50b1e4b49eb336a3e}{s\_font}} = \&font;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00025}00025         s\_font = \&font;}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00026}00026     \}}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00027}00027 }
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00028}\mbox{\hyperlink{class_effect_a409291db11c835d76ee94a2abfc90983}{00028}}     \textcolor{keyword}{const} std::string\& \mbox{\hyperlink{class_effect_a409291db11c835d76ee94a2abfc90983}{getName}}()\textcolor{keyword}{ const}}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00029}00029 \textcolor{keyword}{    }\{}
-\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00030}00030         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_effect_a1214e326c9fa35050ca780af647d7587}{m\_name}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00030}00030         \textcolor{keywordflow}{return} m\_name;}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00031}00031     \}}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00032}00032 }
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00033}\mbox{\hyperlink{class_effect_a7f926c8c6b21664461745f4c62cf7d0b}{00033}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_effect_a7f926c8c6b21664461745f4c62cf7d0b}{load}}()}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00034}00034     \{}
-\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00035}00035         \mbox{\hyperlink{class_effect_a41cc273840974c40da4985c10783fa22}{m\_isLoaded}} = \mbox{\hyperlink{classsf_1_1_shader_ad22474690bafe4a305c1b9826b1bd86a}{sf::Shader::isAvailable}}() \&\& \mbox{\hyperlink{class_effect_a43713a92e87e731ddfebdfa18996baaa}{onLoad}}();}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00035}00035         m\_isLoaded = \mbox{\hyperlink{classsf_1_1_shader_ad22474690bafe4a305c1b9826b1bd86a}{sf::Shader::isAvailable}}() \&\& onLoad();}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00036}00036     \}}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00037}00037 }
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00038}\mbox{\hyperlink{class_effect_a857a5b45439813ecc71e8e931c98f6a2}{00038}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_effect_a857a5b45439813ecc71e8e931c98f6a2}{update}}(\textcolor{keywordtype}{float} time, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y)}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00039}00039     \{}
-\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00040}00040         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_effect_a41cc273840974c40da4985c10783fa22}{m\_isLoaded}})}
-\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00041}00041             \mbox{\hyperlink{class_effect_a2e33e1902383f350a873f61d0fb67c4e}{onUpdate}}(time, x, y);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00040}00040         \textcolor{keywordflow}{if} (m\_isLoaded)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00041}00041             onUpdate(time, x, y);}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00042}00042     \}}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00043}00043 }
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00044}\mbox{\hyperlink{class_effect_a6a3a393e127581c7f84e1278b5be0438}{00044}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_effect_a6a3a393e127581c7f84e1278b5be0438}{draw}}(\mbox{\hyperlink{classsf_1_1_render_target}{sf::RenderTarget}}\& target, \mbox{\hyperlink{classsf_1_1_render_states}{sf::RenderStates}} states)\textcolor{keyword}{ const}}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00045}00045 \textcolor{keyword}{    }\{}
-\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00046}00046         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_effect_a41cc273840974c40da4985c10783fa22}{m\_isLoaded}})}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00046}00046         \textcolor{keywordflow}{if} (m\_isLoaded)}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00047}00047         \{}
-\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00048}00048             \mbox{\hyperlink{class_effect_abb5811a89ac41358261e658f6682516a}{onDraw}}(target, states);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00048}00048             onDraw(target, states);}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00049}00049         \}}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00050}00050         \textcolor{keywordflow}{else}}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00051}00051         \{}
@@ -59,30 +59,30 @@
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00059}00059 \textcolor{keyword}{protected}:}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00060}00060 }
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00061}\mbox{\hyperlink{class_effect_a6c1c4ec803a1aa5dcbd34a6cf92fd8d5}{00061}}     \mbox{\hyperlink{class_effect_a6c1c4ec803a1aa5dcbd34a6cf92fd8d5}{Effect}}(\textcolor{keyword}{const} std::string\& name) :}
-\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00062}00062     \mbox{\hyperlink{class_effect_a1214e326c9fa35050ca780af647d7587}{m\_name}}(name),}
-\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00063}00063     \mbox{\hyperlink{class_effect_a41cc273840974c40da4985c10783fa22}{m\_isLoaded}}(false)}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00062}00062     m\_name(name),}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00063}00063     m\_isLoaded(false)}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00064}00064     \{}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00065}00065     \}}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00066}00066 }
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00067}\mbox{\hyperlink{class_effect_aa66af317229f52d12619b7e720c500d3}{00067}}     \textcolor{keyword}{static} \textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_font}{sf::Font}}\& \mbox{\hyperlink{class_effect_aa66af317229f52d12619b7e720c500d3}{getFont}}()}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00068}00068     \{}
-\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00069}00069         assert(\mbox{\hyperlink{class_effect_afa8f3dbd6bb7adb50b1e4b49eb336a3e}{s\_font}} != NULL);}
-\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00070}00070         \textcolor{keywordflow}{return} *\mbox{\hyperlink{class_effect_afa8f3dbd6bb7adb50b1e4b49eb336a3e}{s\_font}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00069}00069         assert(s\_font != NULL);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00070}00070         \textcolor{keywordflow}{return} *s\_font;}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00071}00071     \}}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00072}00072 }
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00073}00073 \textcolor{keyword}{private}:}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00074}00074 }
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00075}00075     \textcolor{comment}{// Virtual functions to be implemented in derived effects}}
-\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00076}\mbox{\hyperlink{class_effect_a43713a92e87e731ddfebdfa18996baaa}{00076}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_effect_a43713a92e87e731ddfebdfa18996baaa}{onLoad}}() = 0;}
-\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00077}\mbox{\hyperlink{class_effect_a2e33e1902383f350a873f61d0fb67c4e}{00077}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_effect_a2e33e1902383f350a873f61d0fb67c4e}{onUpdate}}(\textcolor{keywordtype}{float} time, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y) = 0;}
-\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00078}\mbox{\hyperlink{class_effect_abb5811a89ac41358261e658f6682516a}{00078}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_effect_abb5811a89ac41358261e658f6682516a}{onDraw}}(\mbox{\hyperlink{classsf_1_1_render_target}{sf::RenderTarget}}\& target, \mbox{\hyperlink{classsf_1_1_render_states}{sf::RenderStates}} states) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00076}00076     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} onLoad() = 0;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00077}00077     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} onUpdate(\textcolor{keywordtype}{float} time, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y) = 0;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00078}00078     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} onDraw(\mbox{\hyperlink{classsf_1_1_render_target}{sf::RenderTarget}}\& target, \mbox{\hyperlink{classsf_1_1_render_states}{sf::RenderStates}} states) \textcolor{keyword}{const} = 0;}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00079}00079 }
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00080}00080 \textcolor{keyword}{private}:}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00081}00081 }
-\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00082}00082     std::string \mbox{\hyperlink{class_effect_a1214e326c9fa35050ca780af647d7587}{m\_name}};}
-\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00083}00083     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_effect_a41cc273840974c40da4985c10783fa22}{m\_isLoaded}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00082}00082     std::string m\_name;}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00083}00083     \textcolor{keywordtype}{bool} m\_isLoaded;}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00084}00084 }
-\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00085}00085     \textcolor{keyword}{static} \textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_font}{sf::Font}}* \mbox{\hyperlink{class_effect_afa8f3dbd6bb7adb50b1e4b49eb336a3e}{s\_font}};}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00085}00085     \textcolor{keyword}{static} \textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_font}{sf::Font}}* s\_font;}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00086}00086 \};}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00087}00087 }
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2shader_2_effect_8hpp_source_l00088}00088 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// EFFECT\_HPP}}

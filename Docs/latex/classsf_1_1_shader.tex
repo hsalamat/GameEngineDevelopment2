@@ -242,44 +242,6 @@ static bool \mbox{\hyperlink{classsf_1_1_shader_a45db14baf1bbc688577f81813b1fce9
 \item 
 static \mbox{\hyperlink{structsf_1_1_shader_1_1_current_texture_type}{Current\+Texture\+Type}} \mbox{\hyperlink{classsf_1_1_shader_ad679e434fc4f1a1af65f3815b2310fb5}{Current\+Texture}}
 \begin{DoxyCompactList}\small\item\em Represents the texture of the object being drawn. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Types}
-\begin{DoxyCompactItemize}
-\item 
-typedef std\+::map$<$ int, const \mbox{\hyperlink{classsf_1_1_texture}{Texture}} $\ast$ $>$ \mbox{\hyperlink{classsf_1_1_shader_a9a60c773571550fd54a394d4ce83f4a3}{Texture\+Table}}
-\item 
-typedef std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classsf_1_1_shader_a010c8213c1f81acd3b285566f6c8fced}{Uniform\+Table}}
-\item 
-typedef std\+::map$<$ int, const \mbox{\hyperlink{classsf_1_1_texture}{Texture}} $\ast$ $>$ \mbox{\hyperlink{classsf_1_1_shader_a9a60c773571550fd54a394d4ce83f4a3}{Texture\+Table}}
-\item 
-typedef std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classsf_1_1_shader_a010c8213c1f81acd3b285566f6c8fced}{Uniform\+Table}}
-\end{DoxyCompactItemize}
-\doxysubsection*{Private Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-bool \mbox{\hyperlink{classsf_1_1_shader_ae83560b673e726e48fc032f62584d606}{compile}} (const char $\ast$vertex\+Shader\+Code, const char $\ast$geometry\+Shader\+Code, const char $\ast$fragment\+Shader\+Code)
-\begin{DoxyCompactList}\small\item\em Compile the shader(s) and create the program. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsf_1_1_shader_a091595f44919468606a36e3414b5106e}{bind\+Textures}} () const
-\begin{DoxyCompactList}\small\item\em Bind all the textures used by the shader. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{classsf_1_1_shader_a2127d2ac6030a825cdcb5605791d3d8a}{get\+Uniform\+Location}} (const std\+::string \&name)
-\begin{DoxyCompactList}\small\item\em Get the location ID of a shader uniform. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classsf_1_1_shader_ae83560b673e726e48fc032f62584d606}{compile}} (const char $\ast$vertex\+Shader\+Code, const char $\ast$geometry\+Shader\+Code, const char $\ast$fragment\+Shader\+Code)
-\begin{DoxyCompactList}\small\item\em Compile the shader(s) and create the program. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsf_1_1_shader_a091595f44919468606a36e3414b5106e}{bind\+Textures}} () const
-\begin{DoxyCompactList}\small\item\em Bind all the textures used by the shader. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{classsf_1_1_shader_a2127d2ac6030a825cdcb5605791d3d8a}{get\+Uniform\+Location}} (const std\+::string \&name)
-\begin{DoxyCompactList}\small\item\em Get the location ID of a shader uniform. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-unsigned int \mbox{\hyperlink{classsf_1_1_shader_a72169743cfd7206fd49759f705a15466}{m\+\_\+shader\+Program}}
-\begin{DoxyCompactList}\small\item\em Open\+GL identifier for the program. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{classsf_1_1_shader_a5d7b43495def6cc6bd91b6c5d167a485}{m\+\_\+current\+Texture}}
-\begin{DoxyCompactList}\small\item\em Location of the current texture in the shader. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classsf_1_1_shader_a9a60c773571550fd54a394d4ce83f4a3}{Texture\+Table}} \mbox{\hyperlink{classsf_1_1_shader_a3daecf04a0045a1d7445959432b5a52f}{m\+\_\+textures}}
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsf_1_1_texture}{Texture}} variables in the shader, mapped to their location. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classsf_1_1_shader_a010c8213c1f81acd3b285566f6c8fced}{Uniform\+Table}} \mbox{\hyperlink{classsf_1_1_shader_a1bf3ba9e8ca3842a9b4cb084443d0477}{m\+\_\+uniforms}}
-\begin{DoxyCompactList}\small\item\em Parameters location cache. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Additional Inherited Members}
 
 
 \doxysubsection{Detailed Description}
@@ -362,49 +324,6 @@ Like \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} that can be used as
 
 
 Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source_l00052}{52}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source}{Shader.\+hpp}}.
-
-
-
-\doxysubsection{Member Typedef Documentation}
-\mbox{\Hypertarget{classsf_1_1_shader_a9a60c773571550fd54a394d4ce83f4a3}\label{classsf_1_1_shader_a9a60c773571550fd54a394d4ce83f4a3}} 
-\index{sf::Shader@{sf::Shader}!TextureTable@{TextureTable}}
-\index{TextureTable@{TextureTable}!sf::Shader@{sf::Shader}}
-\doxysubsubsection{\texorpdfstring{TextureTable}{TextureTable}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily typedef std\+::map$<$int, const \mbox{\hyperlink{classsf_1_1_texture}{Texture}}$\ast$$>$ \mbox{\hyperlink{classsf_1_1_shader_a9a60c773571550fd54a394d4ce83f4a3}{sf\+::\+Shader\+::\+Texture\+Table}}\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source_l00742}{742}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source}{Shader.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_shader_a9a60c773571550fd54a394d4ce83f4a3}\label{classsf_1_1_shader_a9a60c773571550fd54a394d4ce83f4a3}} 
-\index{sf::Shader@{sf::Shader}!TextureTable@{TextureTable}}
-\index{TextureTable@{TextureTable}!sf::Shader@{sf::Shader}}
-\doxysubsubsection{\texorpdfstring{TextureTable}{TextureTable}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily typedef std\+::map$<$int, const \mbox{\hyperlink{classsf_1_1_texture}{Texture}}$\ast$$>$ \mbox{\hyperlink{classsf_1_1_shader_a9a60c773571550fd54a394d4ce83f4a3}{sf\+::\+Shader\+::\+Texture\+Table}}\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source_l00742}{742}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source}{Shader.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_shader_a010c8213c1f81acd3b285566f6c8fced}\label{classsf_1_1_shader_a010c8213c1f81acd3b285566f6c8fced}} 
-\index{sf::Shader@{sf::Shader}!UniformTable@{UniformTable}}
-\index{UniformTable@{UniformTable}!sf::Shader@{sf::Shader}}
-\doxysubsubsection{\texorpdfstring{UniformTable}{UniformTable}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily typedef std\+::map$<$std\+::string, int$>$ \mbox{\hyperlink{classsf_1_1_shader_a010c8213c1f81acd3b285566f6c8fced}{sf\+::\+Shader\+::\+Uniform\+Table}}\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source_l00743}{743}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source}{Shader.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_shader_a010c8213c1f81acd3b285566f6c8fced}\label{classsf_1_1_shader_a010c8213c1f81acd3b285566f6c8fced}} 
-\index{sf::Shader@{sf::Shader}!UniformTable@{UniformTable}}
-\index{UniformTable@{UniformTable}!sf::Shader@{sf::Shader}}
-\doxysubsubsection{\texorpdfstring{UniformTable}{UniformTable}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily typedef std\+::map$<$std\+::string, int$>$ \mbox{\hyperlink{classsf_1_1_shader_a010c8213c1f81acd3b285566f6c8fced}{sf\+::\+Shader\+::\+Uniform\+Table}}\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source_l00743}{743}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source}{Shader.\+hpp}}.
 
 
 
@@ -597,74 +516,6 @@ This function is not part of the graphics API, it mustn\textquotesingle{}t be us
 {\em shader} & \mbox{\hyperlink{classsf_1_1_shader}{Shader}} to bind, can be null to use no shader \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classsf_1_1_shader_a091595f44919468606a36e3414b5106e}\label{classsf_1_1_shader_a091595f44919468606a36e3414b5106e}} 
-\index{sf::Shader@{sf::Shader}!bindTextures@{bindTextures}}
-\index{bindTextures@{bindTextures}!sf::Shader@{sf::Shader}}
-\doxysubsubsection{\texorpdfstring{bindTextures()}{bindTextures()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void sf\+::\+Shader\+::bind\+Textures (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Bind all the textures used by the shader. 
-
-This function each texture to a different unit, and updates the corresponding variables in the shader accordingly. \mbox{\Hypertarget{classsf_1_1_shader_a091595f44919468606a36e3414b5106e}\label{classsf_1_1_shader_a091595f44919468606a36e3414b5106e}} 
-\index{sf::Shader@{sf::Shader}!bindTextures@{bindTextures}}
-\index{bindTextures@{bindTextures}!sf::Shader@{sf::Shader}}
-\doxysubsubsection{\texorpdfstring{bindTextures()}{bindTextures()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void sf\+::\+Shader\+::bind\+Textures (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Bind all the textures used by the shader. 
-
-This function each texture to a different unit, and updates the corresponding variables in the shader accordingly. \mbox{\Hypertarget{classsf_1_1_shader_ae83560b673e726e48fc032f62584d606}\label{classsf_1_1_shader_ae83560b673e726e48fc032f62584d606}} 
-\index{sf::Shader@{sf::Shader}!compile@{compile}}
-\index{compile@{compile}!sf::Shader@{sf::Shader}}
-\doxysubsubsection{\texorpdfstring{compile()}{compile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily bool sf\+::\+Shader\+::compile (\begin{DoxyParamCaption}\item[{const char $\ast$}]{vertex\+Shader\+Code,  }\item[{const char $\ast$}]{geometry\+Shader\+Code,  }\item[{const char $\ast$}]{fragment\+Shader\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Compile the shader(s) and create the program. 
-
-If one of the arguments is NULL, the corresponding shader is not created.
-
-
-\begin{DoxyParams}{Parameters}
-{\em vertex\+Shader\+Code} & Source code of the vertex shader \\
-\hline
-{\em geometry\+Shader\+Code} & Source code of the geometry shader \\
-\hline
-{\em fragment\+Shader\+Code} & Source code of the fragment shader\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-True on success, false if any error happened 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classsf_1_1_shader_ae83560b673e726e48fc032f62584d606}\label{classsf_1_1_shader_ae83560b673e726e48fc032f62584d606}} 
-\index{sf::Shader@{sf::Shader}!compile@{compile}}
-\index{compile@{compile}!sf::Shader@{sf::Shader}}
-\doxysubsubsection{\texorpdfstring{compile()}{compile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily bool sf\+::\+Shader\+::compile (\begin{DoxyParamCaption}\item[{const char $\ast$}]{vertex\+Shader\+Code,  }\item[{const char $\ast$}]{geometry\+Shader\+Code,  }\item[{const char $\ast$}]{fragment\+Shader\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Compile the shader(s) and create the program. 
-
-If one of the arguments is NULL, the corresponding shader is not created.
-
-
-\begin{DoxyParams}{Parameters}
-{\em vertex\+Shader\+Code} & Source code of the vertex shader \\
-\hline
-{\em geometry\+Shader\+Code} & Source code of the geometry shader \\
-\hline
-{\em fragment\+Shader\+Code} & Source code of the fragment shader\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-True on success, false if any error happened 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classsf_1_1_shader_ac14d0bf7afe7b6bb415d309f9c707188}\label{classsf_1_1_shader_ac14d0bf7afe7b6bb415d309f9c707188}} 
 \index{sf::Shader@{sf::Shader}!getNativeHandle@{getNativeHandle}}
 \index{getNativeHandle@{getNativeHandle}!sf::Shader@{sf::Shader}}
@@ -694,42 +545,6 @@ You shouldn\textquotesingle{}t need to use this function, unless you have very s
 
 \begin{DoxyReturn}{Returns}
 Open\+GL handle of the shader or 0 if not yet loaded 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classsf_1_1_shader_a2127d2ac6030a825cdcb5605791d3d8a}\label{classsf_1_1_shader_a2127d2ac6030a825cdcb5605791d3d8a}} 
-\index{sf::Shader@{sf::Shader}!getUniformLocation@{getUniformLocation}}
-\index{getUniformLocation@{getUniformLocation}!sf::Shader@{sf::Shader}}
-\doxysubsubsection{\texorpdfstring{getUniformLocation()}{getUniformLocation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily int sf\+::\+Shader\+::get\+Uniform\+Location (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Get the location ID of a shader uniform. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em name} & Name of the uniform variable to search\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Location ID of the uniform, or -\/1 if not found 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classsf_1_1_shader_a2127d2ac6030a825cdcb5605791d3d8a}\label{classsf_1_1_shader_a2127d2ac6030a825cdcb5605791d3d8a}} 
-\index{sf::Shader@{sf::Shader}!getUniformLocation@{getUniformLocation}}
-\index{getUniformLocation@{getUniformLocation}!sf::Shader@{sf::Shader}}
-\doxysubsubsection{\texorpdfstring{getUniformLocation()}{getUniformLocation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily int sf\+::\+Shader\+::get\+Uniform\+Location (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Get the location ID of a shader uniform. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em name} & Name of the uniform variable to search\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Location ID of the uniform, or -\/1 if not found 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classsf_1_1_shader_ad22474690bafe4a305c1b9826b1bd86a}\label{classsf_1_1_shader_ad22474690bafe4a305c1b9826b1bd86a}} 
 \index{sf::Shader@{sf::Shader}!isAvailable@{isAvailable}}
@@ -2378,62 +2193,6 @@ Represents the texture of the object being drawn.
 
 
 Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source_l00082}{82}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source}{Shader.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_shader_a5d7b43495def6cc6bd91b6c5d167a485}\label{classsf_1_1_shader_a5d7b43495def6cc6bd91b6c5d167a485}} 
-\index{sf::Shader@{sf::Shader}!m\_currentTexture@{m\_currentTexture}}
-\index{m\_currentTexture@{m\_currentTexture}!sf::Shader@{sf::Shader}}
-\doxysubsubsection{\texorpdfstring{m\_currentTexture}{m\_currentTexture}}
-{\footnotesize\ttfamily int sf\+::\+Shader\+::m\+\_\+current\+Texture\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Location of the current texture in the shader. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source_l00749}{749}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source}{Shader.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_shader_a72169743cfd7206fd49759f705a15466}\label{classsf_1_1_shader_a72169743cfd7206fd49759f705a15466}} 
-\index{sf::Shader@{sf::Shader}!m\_shaderProgram@{m\_shaderProgram}}
-\index{m\_shaderProgram@{m\_shaderProgram}!sf::Shader@{sf::Shader}}
-\doxysubsubsection{\texorpdfstring{m\_shaderProgram}{m\_shaderProgram}}
-{\footnotesize\ttfamily unsigned int sf\+::\+Shader\+::m\+\_\+shader\+Program\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Open\+GL identifier for the program. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source_l00748}{748}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source}{Shader.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_shader_a3daecf04a0045a1d7445959432b5a52f}\label{classsf_1_1_shader_a3daecf04a0045a1d7445959432b5a52f}} 
-\index{sf::Shader@{sf::Shader}!m\_textures@{m\_textures}}
-\index{m\_textures@{m\_textures}!sf::Shader@{sf::Shader}}
-\doxysubsubsection{\texorpdfstring{m\_textures}{m\_textures}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_shader_a9a60c773571550fd54a394d4ce83f4a3}{Texture\+Table}} sf\+::\+Shader\+::m\+\_\+textures\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-\mbox{\hyperlink{classsf_1_1_texture}{Texture}} variables in the shader, mapped to their location. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source_l00750}{750}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source}{Shader.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_shader_a1bf3ba9e8ca3842a9b4cb084443d0477}\label{classsf_1_1_shader_a1bf3ba9e8ca3842a9b4cb084443d0477}} 
-\index{sf::Shader@{sf::Shader}!m\_uniforms@{m\_uniforms}}
-\index{m\_uniforms@{m\_uniforms}!sf::Shader@{sf::Shader}}
-\doxysubsubsection{\texorpdfstring{m\_uniforms}{m\_uniforms}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_shader_a010c8213c1f81acd3b285566f6c8fced}{Uniform\+Table}} sf\+::\+Shader\+::m\+\_\+uniforms\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Parameters location cache. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source_l00751}{751}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_shader_8hpp_source}{Shader.\+hpp}}.
 
 
 

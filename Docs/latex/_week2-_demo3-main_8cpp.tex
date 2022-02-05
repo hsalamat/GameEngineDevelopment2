@@ -1,0 +1,60 @@
+\hypertarget{_week2-_demo3-main_8cpp}{}\doxysection{Week2/\+Week2-\/\+Demo3/\+Source/\+Week2-\/\+Demo3-\/main.cpp File Reference}
+\label{_week2-_demo3-main_8cpp}\index{Week2/Week2-\/Demo3/Source/Week2-\/Demo3-\/main.cpp@{Week2/Week2-\/Demo3/Source/Week2-\/Demo3-\/main.cpp}}
+
+
+change \mbox{\hyperlink{namespace_music}{Music}} parameters, create your own image and move the player with the mouse Demo m\+Music.\+set\+Position(0, 0, 0); //!  
+
+
+{\ttfamily \#include \char`\"{}Game.\+hpp\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_week2-_demo3-main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+change \mbox{\hyperlink{namespace_music}{Music}} parameters, create your own image and move the player with the mouse Demo m\+Music.\+set\+Position(0, 0, 0); //! 
+
+
+\begin{DoxyParams}{Parameters}
+{\em set\+Position} & change its 3D position -\/ the default position is (0,0,0) m\+Music.\+set\+Pitch(2); //!\\
+\hline
+{\em set\+Pitch} & increase the pitch -\/ pitch represents the perceived fundamental frequency of a sound such as modifying the playing speed of the sound m\+Music.\+set\+Volume(50); //!\\
+\hline
+{\em set\+Volume} & reduce the volume m\+Music.\+set\+Attenuation(100); //!\\
+\hline
+{\em set\+Attenuation} & an attenuation value of 100 will make the sound fade out very quicky as it gets further from the listener -\/ default value is 1 m\+Music.\+set\+Loop(true); //!\\
+\hline
+{\em set\+Loop} & make it loop\\
+\hline
+\end{DoxyParams}
+Move the player with the mouse\+: if (sf\+::\+Mouse\+::is\+Button\+Pressed(sf\+::\+Mouse\+::\+Left)) \{ \mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} mouse\+Position = sf\+::\+Mouse\+::get\+Position(m\+Window); m\+Player.\+set\+Position((float)mouse\+Position.\+x, (float)mouse\+Position.\+y); \}
+
+You could also create your own image m\+Icon.\+create(20, 20, sf\+::\+Color\+::\+Red); \mbox{\hyperlink{classsf_1_1_color}{sf\+::\+Color}} color = m\+Icon.\+get\+Pixel(0, 0); color.\+a = 0; //make the top-\/left pixel transparent color.\+r = 0; //set the r = 0 (rgb) from the color m\+Icon.\+set\+Pixel(0, 0, color);
+
+\begin{DoxyAttention}{Attention}
+\+: the sf\+::\+Texture\+::load\+From\+X() functions are just a shortcut for combined sf\+::\+Image\+::load\+From\+X() and \mbox{\hyperlink{classsf_1_1_texture_abec4567ad9856a3596dc74803f26fba2}{sf\+::\+Texture\+::load\+From\+Image()}} calls.
+\end{DoxyAttention}
+\begin{DoxyAuthor}{Author}
+Hooman Salamat 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000003}{Bug}}]No known bugs. \end{DoxyRefDesc}
+
+
+Definition in file \mbox{\hyperlink{_week2-_demo3-main_8cpp_source}{Week2-\/\+Demo3-\/main.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_week2-_demo3-main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{_week2-_demo3-main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{Week2-\/Demo3-\/main.cpp@{Week2-\/Demo3-\/main.cpp}!main@{main}}
+\index{main@{main}!Week2-\/Demo3-\/main.cpp@{Week2-\/Demo3-\/main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_week2-_demo3-main_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{_week2-_demo3-main_8cpp_source}{Week2-\/\+Demo3-\/main.\+cpp}}.
+

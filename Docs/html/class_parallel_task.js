@@ -23,15 +23,5 @@ var class_parallel_task =
     [ "isFinished", "class_parallel_task.html#a1a67f547aa382fac2087184b2eb19148", null ],
     [ "isFinished", "class_parallel_task.html#a1a67f547aa382fac2087184b2eb19148", null ],
     [ "isFinished", "class_parallel_task.html#a1a67f547aa382fac2087184b2eb19148", null ],
-    [ "isFinished", "class_parallel_task.html#a1a67f547aa382fac2087184b2eb19148", null ],
-    [ "runTask", "class_parallel_task.html#adbf1aac46693ef846c9d16c83abdc7f6", null ],
-    [ "runTask", "class_parallel_task.html#adbf1aac46693ef846c9d16c83abdc7f6", null ],
-    [ "runTask", "class_parallel_task.html#adbf1aac46693ef846c9d16c83abdc7f6", null ],
-    [ "runTask", "class_parallel_task.html#adbf1aac46693ef846c9d16c83abdc7f6", null ],
-    [ "runTask", "class_parallel_task.html#adbf1aac46693ef846c9d16c83abdc7f6", null ],
-    [ "runTask", "class_parallel_task.html#adbf1aac46693ef846c9d16c83abdc7f6", null ],
-    [ "mElapsedTime", "class_parallel_task.html#a37d0bd559ac88231912979139b13b196", null ],
-    [ "mFinished", "class_parallel_task.html#a5981c9dd221384fb5ce8b9ea7846fda8", null ],
-    [ "mMutex", "class_parallel_task.html#a55079481579b8d853c5e62d1153b5f6b", null ],
-    [ "mThread", "class_parallel_task.html#ada5f52d4158652618ca62cc19cd42f61", null ]
+    [ "isFinished", "class_parallel_task.html#a1a67f547aa382fac2087184b2eb19148", null ]
 ];

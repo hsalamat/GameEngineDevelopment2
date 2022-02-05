@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Game Engine Development II: Week9-10/Week10-Demo5-Projectiles/Source/Entity.cpp Source File</title>
+<title>My Project: Week9-10/Week10-Demo5-Projectiles/Source/Entity.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Game Engine Development II
+   <div id="projectname">My Project
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -105,63 +105,63 @@ $(document).ready(function(){initNavTree('_week9-10_2_week10-_demo5-_projectiles
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keywordtype">int</span> <a class="code hl_function" href="class_entity.html#ade4af3619c02f07429981259bacc881b">Entity::getHitpoints</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_entity.html#a1d394931fe49170aadf8d098fd048988">mHitpoints</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordflow">return</span> mHitpoints;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>}</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keywordtype">void</span> <a class="code hl_function" href="class_entity.html#a354ea9f771b0758f8e70bdfac9a740b4">Entity::repair</a>(<span class="keywordtype">int</span> points)</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    assert(points &gt; 0);</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_variable" href="class_entity.html#a1d394931fe49170aadf8d098fd048988">mHitpoints</a> += points;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    mHitpoints += points;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keywordtype">void</span> <a class="code hl_function" href="class_entity.html#a15660fa13012dbca80c8047e2cc6f1f5">Entity::damage</a>(<span class="keywordtype">int</span> points)</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    assert(points &gt; 0);</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_variable" href="class_entity.html#a1d394931fe49170aadf8d098fd048988">mHitpoints</a> -= points;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    mHitpoints -= points;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keywordtype">void</span> <a class="code hl_function" href="class_entity.html#a691dbe5f9ec930c27af2af0b97907a9e">Entity::destroy</a>()</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>{</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_variable" href="class_entity.html#a1d394931fe49170aadf8d098fd048988">mHitpoints</a> = 0;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    mHitpoints = 0;</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keywordtype">bool</span> <a class="code hl_function" href="class_entity.html#a938cddf03ff5239be09195452142c5e6">Entity::isDestroyed</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_entity.html#a1d394931fe49170aadf8d098fd048988">mHitpoints</a> &lt;= 0;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">return</span> mHitpoints &lt;= 0;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keywordtype">void</span> <a class="code hl_function" href="class_entity.html#a3d9ad14643b61864cf60ea7f0738146b">Entity::updateCurrent</a>(<a class="code hl_class" href="classsf_1_1_time.html">sf::Time</a> dt, <a class="code hl_class" href="class_command_queue.html">CommandQueue</a>&amp;)</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>{</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_function" href="classsf_1_1_transformable.html#a86b461d6a941ad390c2ad8b6a4a20391">move</a>(<a class="code hl_variable" href="class_entity.html#ae6c40df3cd7d4357c2fd9ee4924bfb14">mVelocity</a> * dt.<a class="code hl_function" href="classsf_1_1_time.html#aa3df2f992d0b0041b4eb02258d43f0e3">asSeconds</a>());</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_function" href="classsf_1_1_transformable.html#a86b461d6a941ad390c2ad8b6a4a20391">move</a>(mVelocity * dt.<a class="code hl_function" href="classsf_1_1_time.html#aa3df2f992d0b0041b4eb02258d43f0e3">asSeconds</a>());</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>}</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keywordtype">void</span> <a class="code hl_function" href="class_entity.html#a5bf79843c973eac1fdbebfd1fc83a1e8">Entity::setVelocity</a>(<a class="code hl_class" href="classsf_1_1_vector2.html">sf::Vector2f</a> velocity)</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>{</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_variable" href="class_entity.html#ae6c40df3cd7d4357c2fd9ee4924bfb14">mVelocity</a> = velocity;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    mVelocity = velocity;</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keywordtype">void</span> <a class="code hl_function" href="class_entity.html#a5bf79843c973eac1fdbebfd1fc83a1e8">Entity::setVelocity</a>(<span class="keywordtype">float</span> vx, <span class="keywordtype">float</span> vy)</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>{</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <a class="code hl_variable" href="class_entity.html#ae6c40df3cd7d4357c2fd9ee4924bfb14">mVelocity</a>.<a class="code hl_variable" href="classsf_1_1_vector2.html#a1e6ad77fa155f3753bfb92699bd28141">x</a> = vx;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_variable" href="class_entity.html#ae6c40df3cd7d4357c2fd9ee4924bfb14">mVelocity</a>.<a class="code hl_variable" href="classsf_1_1_vector2.html#a420f2481b015f4eb929c75f2af564299">y</a> = vy;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    mVelocity.<a class="code hl_variable" href="classsf_1_1_vector2.html#a1e6ad77fa155f3753bfb92699bd28141">x</a> = vx;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    mVelocity.<a class="code hl_variable" href="classsf_1_1_vector2.html#a420f2481b015f4eb929c75f2af564299">y</a> = vy;</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><a class="code hl_class" href="classsf_1_1_vector2.html">sf::Vector2f</a> <a class="code hl_function" href="class_entity.html#ae7518a0181de088e0de2eacd1a13d656">Entity::getVelocity</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_entity.html#ae6c40df3cd7d4357c2fd9ee4924bfb14">mVelocity</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">return</span> mVelocity;</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>}</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keywordtype">void</span> <a class="code hl_function" href="class_entity.html#a80cdb89f11d47716781bc567efd2bcda">Entity::accelerate</a>(<a class="code hl_class" href="classsf_1_1_vector2.html">sf::Vector2f</a> velocity)</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>{</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_variable" href="class_entity.html#ae6c40df3cd7d4357c2fd9ee4924bfb14">mVelocity</a> += velocity;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    mVelocity += velocity;</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keywordtype">void</span> <a class="code hl_function" href="class_entity.html#a80cdb89f11d47716781bc567efd2bcda">Entity::accelerate</a>(<span class="keywordtype">float</span> vx, <span class="keywordtype">float</span> vy)</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>{</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <a class="code hl_variable" href="class_entity.html#ae6c40df3cd7d4357c2fd9ee4924bfb14">mVelocity</a>.<a class="code hl_variable" href="classsf_1_1_vector2.html#a1e6ad77fa155f3753bfb92699bd28141">x</a> += vx;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <a class="code hl_variable" href="class_entity.html#ae6c40df3cd7d4357c2fd9ee4924bfb14">mVelocity</a>.<a class="code hl_variable" href="classsf_1_1_vector2.html#a420f2481b015f4eb929c75f2af564299">y</a> += vy;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    mVelocity.<a class="code hl_variable" href="classsf_1_1_vector2.html#a1e6ad77fa155f3753bfb92699bd28141">x</a> += vx;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    mVelocity.<a class="code hl_variable" href="classsf_1_1_vector2.html#a420f2481b015f4eb929c75f2af564299">y</a> += vy;</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
@@ -169,7 +169,6 @@ $(document).ready(function(){initNavTree('_week9-10_2_week10-_demo5-_projectiles
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
 <div class="ttc" id="aclass_command_queue_html"><div class="ttname"><a href="class_command_queue.html">CommandQueue</a></div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_command_queue_8hpp_source.html#l00009">CommandQueue.hpp:10</a></div></div>
 <div class="ttc" id="aclass_entity_html_a15660fa13012dbca80c8047e2cc6f1f5"><div class="ttname"><a href="class_entity.html#a15660fa13012dbca80c8047e2cc6f1f5">Entity::damage</a></div><div class="ttdeci">void damage(int points)</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_source_2_entity_8cpp_source.html#l00051">Entity.cpp:51</a></div></div>
-<div class="ttc" id="aclass_entity_html_a1d394931fe49170aadf8d098fd048988"><div class="ttname"><a href="class_entity.html#a1d394931fe49170aadf8d098fd048988">Entity::mHitpoints</a></div><div class="ttdeci">int mHitpoints</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_entity_8hpp_source.html#l00031">Entity.hpp:31</a></div></div>
 <div class="ttc" id="aclass_entity_html_a305ac3dd729c288ab23db531fa3fb7e6"><div class="ttname"><a href="class_entity.html#a305ac3dd729c288ab23db531fa3fb7e6">Entity::Entity</a></div><div class="ttdeci">Entity(int hitpoints)</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_source_2_entity_8cpp_source.html#l00006">Entity.cpp:6</a></div></div>
 <div class="ttc" id="aclass_entity_html_a354ea9f771b0758f8e70bdfac9a740b4"><div class="ttname"><a href="class_entity.html#a354ea9f771b0758f8e70bdfac9a740b4">Entity::repair</a></div><div class="ttdeci">void repair(int points)</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_source_2_entity_8cpp_source.html#l00044">Entity.cpp:44</a></div></div>
 <div class="ttc" id="aclass_entity_html_a3d9ad14643b61864cf60ea7f0738146b"><div class="ttname"><a href="class_entity.html#a3d9ad14643b61864cf60ea7f0738146b">Entity::updateCurrent</a></div><div class="ttdeci">virtual void updateCurrent(sf::Time dt, CommandQueue &amp;commands)</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_source_2_entity_8cpp_source.html#l00068">Entity.cpp:68</a></div></div>
@@ -178,7 +177,6 @@ $(document).ready(function(){initNavTree('_week9-10_2_week10-_demo5-_projectiles
 <div class="ttc" id="aclass_entity_html_a80cdb89f11d47716781bc567efd2bcda"><div class="ttname"><a href="class_entity.html#a80cdb89f11d47716781bc567efd2bcda">Entity::accelerate</a></div><div class="ttdeci">void accelerate(sf::Vector2f velocity)</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_source_2_entity_8cpp_source.html#l00028">Entity.cpp:28</a></div></div>
 <div class="ttc" id="aclass_entity_html_a938cddf03ff5239be09195452142c5e6"><div class="ttname"><a href="class_entity.html#a938cddf03ff5239be09195452142c5e6">Entity::isDestroyed</a></div><div class="ttdeci">virtual bool isDestroyed() const</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_source_2_entity_8cpp_source.html#l00063">Entity.cpp:63</a></div></div>
 <div class="ttc" id="aclass_entity_html_ade4af3619c02f07429981259bacc881b"><div class="ttname"><a href="class_entity.html#ade4af3619c02f07429981259bacc881b">Entity::getHitpoints</a></div><div class="ttdeci">int getHitpoints() const</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_source_2_entity_8cpp_source.html#l00039">Entity.cpp:39</a></div></div>
-<div class="ttc" id="aclass_entity_html_ae6c40df3cd7d4357c2fd9ee4924bfb14"><div class="ttname"><a href="class_entity.html#ae6c40df3cd7d4357c2fd9ee4924bfb14">Entity::mVelocity</a></div><div class="ttdeci">sf::Vector2f mVelocity</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_entity_8hpp_source.html#l00030">Entity.hpp:30</a></div></div>
 <div class="ttc" id="aclass_entity_html_ae7518a0181de088e0de2eacd1a13d656"><div class="ttname"><a href="class_entity.html#ae7518a0181de088e0de2eacd1a13d656">Entity::getVelocity</a></div><div class="ttdeci">sf::Vector2f getVelocity() const</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_source_2_entity_8cpp_source.html#l00023">Entity.cpp:23</a></div></div>
 <div class="ttc" id="aclasssf_1_1_time_html"><div class="ttname"><a href="classsf_1_1_time.html">sf::Time</a></div><div class="ttdoc">Represents a time value.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_time_8hpp_source.html#l00040">Time.hpp:41</a></div></div>
 <div class="ttc" id="aclasssf_1_1_time_html_aa3df2f992d0b0041b4eb02258d43f0e3"><div class="ttname"><a href="classsf_1_1_time.html#aa3df2f992d0b0041b4eb02258d43f0e3">sf::Time::asSeconds</a></div><div class="ttdeci">float asSeconds() const</div><div class="ttdoc">Return the time value as a number of seconds.</div></div>

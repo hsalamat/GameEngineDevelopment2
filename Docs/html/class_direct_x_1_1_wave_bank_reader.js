@@ -21,6 +21,5 @@ var class_direct_x_1_1_wave_bank_reader =
     [ "Open", "class_direct_x_1_1_wave_bank_reader.html#a2ec9adf03d35e11cf51a13b12c54b6b2", null ],
     [ "operator=", "class_direct_x_1_1_wave_bank_reader.html#a86b2375a09e88ec857fb187afdc5f0d7", null ],
     [ "operator=", "class_direct_x_1_1_wave_bank_reader.html#a5829d53f6a9f17f18c156d1f8df924a9", null ],
-    [ "WaitOnPrepare", "class_direct_x_1_1_wave_bank_reader.html#a3a1e4c9f86b27da3d51dbff448fffd09", null ],
-    [ "pImpl", "class_direct_x_1_1_wave_bank_reader.html#ad1f5898bf1cd5d15ae963f11c31cfd8e", null ]
+    [ "WaitOnPrepare", "class_direct_x_1_1_wave_bank_reader.html#a3a1e4c9f86b27da3d51dbff448fffd09", null ]
 ];

@@ -93,56 +93,12 @@ static void \mbox{\hyperlink{class_post_effect_a7b88194a1bf36a3108adf2811304383c
 \item 
 static void \mbox{\hyperlink{class_post_effect_a7b88194a1bf36a3108adf2811304383c}{apply\+Shader}} (const \mbox{\hyperlink{classsf_1_1_shader}{sf\+::\+Shader}} \&shader, \mbox{\hyperlink{classsf_1_1_render_target}{sf\+::\+Render\+Target}} \&output)
 \end{DoxyCompactItemize}
-\doxysubsection*{Private Types}
-\begin{DoxyCompactItemize}
-\item 
-typedef std\+::array$<$ \mbox{\hyperlink{classsf_1_1_render_texture}{sf\+::\+Render\+Texture}}, 2 $>$ \mbox{\hyperlink{class_post_effect_aacdee41227b41a22dae5305b18f836f6}{Render\+Texture\+Array}}
-\end{DoxyCompactItemize}
-\doxysubsection*{Private Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-void \mbox{\hyperlink{class_post_effect_aaa1aade5b70429cb9bf19df4c0f01ea3}{prepare\+Textures}} (\mbox{\hyperlink{namespacesf_a41039649eb65ea7646e2b97cfe124b4f}{sf\+::\+Vector2u}} size)
-\item 
-void \mbox{\hyperlink{class_post_effect_a4362a20468079c26f2b90623b24ea81e}{filter\+Bright}} (const \mbox{\hyperlink{classsf_1_1_render_texture}{sf\+::\+Render\+Texture}} \&input, \mbox{\hyperlink{classsf_1_1_render_texture}{sf\+::\+Render\+Texture}} \&output)
-\item 
-void \mbox{\hyperlink{class_post_effect_acd855cb79cfd2933a4e33d8355169931}{blur}} (const \mbox{\hyperlink{classsf_1_1_render_texture}{sf\+::\+Render\+Texture}} \&input, \mbox{\hyperlink{classsf_1_1_render_texture}{sf\+::\+Render\+Texture}} \&output, \mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{sf\+::\+Vector2f}} offset\+Factor)
-\item 
-void \mbox{\hyperlink{class_post_effect_a6ddc29ca5d6aeb99a738edd634dc0e90}{blur\+Multipass}} (\mbox{\hyperlink{class_post_effect_aacdee41227b41a22dae5305b18f836f6}{Render\+Texture\+Array}} \&render\+Textures)
-\item 
-void \mbox{\hyperlink{class_post_effect_ad54cb93226484ecefc28602c87e73fa5}{downsample}} (const \mbox{\hyperlink{classsf_1_1_render_texture}{sf\+::\+Render\+Texture}} \&input, \mbox{\hyperlink{classsf_1_1_render_texture}{sf\+::\+Render\+Texture}} \&output)
-\item 
-void \mbox{\hyperlink{class_post_effect_aa833d29d7ad30f2a50395c7d353b216e}{add}} (const \mbox{\hyperlink{classsf_1_1_render_texture}{sf\+::\+Render\+Texture}} \&source, const \mbox{\hyperlink{classsf_1_1_render_texture}{sf\+::\+Render\+Texture}} \&bloom, \mbox{\hyperlink{classsf_1_1_render_target}{sf\+::\+Render\+Target}} \&target)
-\end{DoxyCompactItemize}
-\doxysubsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{_week11_2_week11-_demo9-_post_effect_2_include_2_resource_identifiers_8hpp_a4706ce8b6fb3fa40eb84ae53d373e07a}{Shader\+Holder}} \mbox{\hyperlink{class_post_effect_a54b194b05b1d520b0c5ff19a8cda6f96}{m\+Shaders}}
-\item 
-\mbox{\hyperlink{classsf_1_1_render_texture}{sf\+::\+Render\+Texture}} \mbox{\hyperlink{class_post_effect_a69e879539d82ffa557a993b4a6789dbe}{m\+Brightness\+Texture}}
-\item 
-\mbox{\hyperlink{class_post_effect_aacdee41227b41a22dae5305b18f836f6}{Render\+Texture\+Array}} \mbox{\hyperlink{class_post_effect_a5de5ae6582a63a73d9b2082492e166ed}{m\+First\+Pass\+Textures}}
-\item 
-\mbox{\hyperlink{class_post_effect_aacdee41227b41a22dae5305b18f836f6}{Render\+Texture\+Array}} \mbox{\hyperlink{class_post_effect_a6f725a554a0d617081161b00568c7cb1}{m\+Second\+Pass\+Textures}}
-\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 
 
 Definition at line \mbox{\hyperlink{_week11_2_week11-_demo9-_post_effect_2_include_2_post_effect_8hpp_source_l00017}{17}} of file \mbox{\hyperlink{_week11_2_week11-_demo9-_post_effect_2_include_2_post_effect_8hpp_source}{Post\+Effect.\+hpp}}.
-
-
-
-\doxysubsection{Member Typedef Documentation}
-\mbox{\Hypertarget{class_post_effect_aacdee41227b41a22dae5305b18f836f6}\label{class_post_effect_aacdee41227b41a22dae5305b18f836f6}} 
-\index{PostEffect@{PostEffect}!RenderTextureArray@{RenderTextureArray}}
-\index{RenderTextureArray@{RenderTextureArray}!PostEffect@{PostEffect}}
-\doxysubsubsection{\texorpdfstring{RenderTextureArray}{RenderTextureArray}}
-{\footnotesize\ttfamily typedef std\+::array$<$\mbox{\hyperlink{classsf_1_1_render_texture}{sf\+::\+Render\+Texture}}, 2$>$ \mbox{\hyperlink{class_post_effect_aacdee41227b41a22dae5305b18f836f6}{Post\+Effect\+::\+Render\+Texture\+Array}}\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Definition at line \mbox{\hyperlink{_week11_2_week11-_demo9-_post_effect_2_include_2_post_effect_8hpp_source_l00032}{32}} of file \mbox{\hyperlink{_week11_2_week11-_demo9-_post_effect_2_include_2_post_effect_8hpp_source}{Post\+Effect.\+hpp}}.
 
 
 
@@ -218,16 +174,6 @@ Definition at line \mbox{\hyperlink{_week11_2_week11-_demo9-_post_effect_2_sourc
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_post_effect_aa833d29d7ad30f2a50395c7d353b216e}\label{class_post_effect_aa833d29d7ad30f2a50395c7d353b216e}} 
-\index{PostEffect@{PostEffect}!add@{add}}
-\index{add@{add}!PostEffect@{PostEffect}}
-\doxysubsubsection{\texorpdfstring{add()}{add()}}
-{\footnotesize\ttfamily void Post\+Effect\+::add (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_render_texture}{sf\+::\+Render\+Texture}} \&}]{source,  }\item[{const \mbox{\hyperlink{classsf_1_1_render_texture}{sf\+::\+Render\+Texture}} \&}]{bloom,  }\item[{\mbox{\hyperlink{classsf_1_1_render_target}{sf\+::\+Render\+Target}} \&}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Definition at line \mbox{\hyperlink{_week11_2_week11-_demo9-_post_effect_2_source_2_post_effect_8cpp_source_l00122}{122}} of file \mbox{\hyperlink{_week11_2_week11-_demo9-_post_effect_2_source_2_post_effect_8cpp_source}{Post\+Effect.\+cpp}}.
-
 \mbox{\Hypertarget{class_post_effect_a799e646a9c3fc3b8ef51f6d16bbd6e85}\label{class_post_effect_a799e646a9c3fc3b8ef51f6d16bbd6e85}} 
 \index{PostEffect@{PostEffect}!apply@{apply}}
 \index{apply@{apply}!PostEffect@{PostEffect}}
@@ -380,46 +326,6 @@ Definition at line \mbox{\hyperlink{_week11_2_week11-_demo9-_post_effect_2_sourc
 \doxysubsubsection{\texorpdfstring{applyShader()}{applyShader()}\hspace{0.1cm}{\footnotesize\ttfamily [9/9]}}
 {\footnotesize\ttfamily static void Post\+Effect\+::apply\+Shader (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_shader}{sf\+::\+Shader}} \&}]{shader,  }\item[{\mbox{\hyperlink{classsf_1_1_render_target}{sf\+::\+Render\+Target}} \&}]{output }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
 
-\mbox{\Hypertarget{class_post_effect_acd855cb79cfd2933a4e33d8355169931}\label{class_post_effect_acd855cb79cfd2933a4e33d8355169931}} 
-\index{PostEffect@{PostEffect}!blur@{blur}}
-\index{blur@{blur}!PostEffect@{PostEffect}}
-\doxysubsubsection{\texorpdfstring{blur()}{blur()}}
-{\footnotesize\ttfamily void Post\+Effect\+::blur (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_render_texture}{sf\+::\+Render\+Texture}} \&}]{input,  }\item[{\mbox{\hyperlink{classsf_1_1_render_texture}{sf\+::\+Render\+Texture}} \&}]{output,  }\item[{\mbox{\hyperlink{namespacesf_a80cea3c46537294fd1d8d428566ad8b2}{sf\+::\+Vector2f}}}]{offset\+Factor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Definition at line \mbox{\hyperlink{_week11_2_week11-_demo9-_post_effect_2_source_2_post_effect_8cpp_source_l00091}{91}} of file \mbox{\hyperlink{_week11_2_week11-_demo9-_post_effect_2_source_2_post_effect_8cpp_source}{Post\+Effect.\+cpp}}.
-
-\mbox{\Hypertarget{class_post_effect_a6ddc29ca5d6aeb99a738edd634dc0e90}\label{class_post_effect_a6ddc29ca5d6aeb99a738edd634dc0e90}} 
-\index{PostEffect@{PostEffect}!blurMultipass@{blurMultipass}}
-\index{blurMultipass@{blurMultipass}!PostEffect@{PostEffect}}
-\doxysubsubsection{\texorpdfstring{blurMultipass()}{blurMultipass()}}
-{\footnotesize\ttfamily void Post\+Effect\+::blur\+Multipass (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_post_effect_aacdee41227b41a22dae5305b18f836f6}{Render\+Texture\+Array}} \&}]{render\+Textures }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Definition at line \mbox{\hyperlink{_week11_2_week11-_demo9-_post_effect_2_source_2_post_effect_8cpp_source_l00101}{101}} of file \mbox{\hyperlink{_week11_2_week11-_demo9-_post_effect_2_source_2_post_effect_8cpp_source}{Post\+Effect.\+cpp}}.
-
-\mbox{\Hypertarget{class_post_effect_ad54cb93226484ecefc28602c87e73fa5}\label{class_post_effect_ad54cb93226484ecefc28602c87e73fa5}} 
-\index{PostEffect@{PostEffect}!downsample@{downsample}}
-\index{downsample@{downsample}!PostEffect@{PostEffect}}
-\doxysubsubsection{\texorpdfstring{downsample()}{downsample()}}
-{\footnotesize\ttfamily void Post\+Effect\+::downsample (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_render_texture}{sf\+::\+Render\+Texture}} \&}]{input,  }\item[{\mbox{\hyperlink{classsf_1_1_render_texture}{sf\+::\+Render\+Texture}} \&}]{output }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Definition at line \mbox{\hyperlink{_week11_2_week11-_demo9-_post_effect_2_source_2_post_effect_8cpp_source_l00112}{112}} of file \mbox{\hyperlink{_week11_2_week11-_demo9-_post_effect_2_source_2_post_effect_8cpp_source}{Post\+Effect.\+cpp}}.
-
-\mbox{\Hypertarget{class_post_effect_a4362a20468079c26f2b90623b24ea81e}\label{class_post_effect_a4362a20468079c26f2b90623b24ea81e}} 
-\index{PostEffect@{PostEffect}!filterBright@{filterBright}}
-\index{filterBright@{filterBright}!PostEffect@{PostEffect}}
-\doxysubsubsection{\texorpdfstring{filterBright()}{filterBright()}}
-{\footnotesize\ttfamily void Post\+Effect\+::filter\+Bright (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_render_texture}{sf\+::\+Render\+Texture}} \&}]{input,  }\item[{\mbox{\hyperlink{classsf_1_1_render_texture}{sf\+::\+Render\+Texture}} \&}]{output }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Definition at line \mbox{\hyperlink{_week11_2_week11-_demo9-_post_effect_2_source_2_post_effect_8cpp_source_l00064}{64}} of file \mbox{\hyperlink{_week11_2_week11-_demo9-_post_effect_2_source_2_post_effect_8cpp_source}{Post\+Effect.\+cpp}}.
-
 \mbox{\Hypertarget{class_post_effect_a2fd17f2ecf85d27716dd056cd543ed32}\label{class_post_effect_a2fd17f2ecf85d27716dd056cd543ed32}} 
 \index{PostEffect@{PostEffect}!isSupported@{isSupported}}
 \index{isSupported@{isSupported}!PostEffect@{PostEffect}}
@@ -477,59 +383,6 @@ Definition at line \mbox{\hyperlink{_week11_2_week11-_demo9-_post_effect_2_sourc
 \index{isSupported@{isSupported}!PostEffect@{PostEffect}}
 \doxysubsubsection{\texorpdfstring{isSupported()}{isSupported()}\hspace{0.1cm}{\footnotesize\ttfamily [9/9]}}
 {\footnotesize\ttfamily static bool Post\+Effect\+::is\+Supported (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{class_post_effect_aaa1aade5b70429cb9bf19df4c0f01ea3}\label{class_post_effect_aaa1aade5b70429cb9bf19df4c0f01ea3}} 
-\index{PostEffect@{PostEffect}!prepareTextures@{prepareTextures}}
-\index{prepareTextures@{prepareTextures}!PostEffect@{PostEffect}}
-\doxysubsubsection{\texorpdfstring{prepareTextures()}{prepareTextures()}}
-{\footnotesize\ttfamily void Post\+Effect\+::prepare\+Textures (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesf_a41039649eb65ea7646e2b97cfe124b4f}{sf\+::\+Vector2u}}}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Definition at line \mbox{\hyperlink{_week11_2_week11-_demo9-_post_effect_2_source_2_post_effect_8cpp_source_l00073}{73}} of file \mbox{\hyperlink{_week11_2_week11-_demo9-_post_effect_2_source_2_post_effect_8cpp_source}{Post\+Effect.\+cpp}}.
-
-
-
-\doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{class_post_effect_a69e879539d82ffa557a993b4a6789dbe}\label{class_post_effect_a69e879539d82ffa557a993b4a6789dbe}} 
-\index{PostEffect@{PostEffect}!mBrightnessTexture@{mBrightnessTexture}}
-\index{mBrightnessTexture@{mBrightnessTexture}!PostEffect@{PostEffect}}
-\doxysubsubsection{\texorpdfstring{mBrightnessTexture}{mBrightnessTexture}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_render_texture}{sf\+::\+Render\+Texture}} Post\+Effect\+::m\+Brightness\+Texture\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Definition at line \mbox{\hyperlink{_week11_2_week11-_demo9-_post_effect_2_include_2_post_effect_8hpp_source_l00034}{34}} of file \mbox{\hyperlink{_week11_2_week11-_demo9-_post_effect_2_include_2_post_effect_8hpp_source}{Post\+Effect.\+hpp}}.
-
-\mbox{\Hypertarget{class_post_effect_a5de5ae6582a63a73d9b2082492e166ed}\label{class_post_effect_a5de5ae6582a63a73d9b2082492e166ed}} 
-\index{PostEffect@{PostEffect}!mFirstPassTextures@{mFirstPassTextures}}
-\index{mFirstPassTextures@{mFirstPassTextures}!PostEffect@{PostEffect}}
-\doxysubsubsection{\texorpdfstring{mFirstPassTextures}{mFirstPassTextures}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_post_effect_aacdee41227b41a22dae5305b18f836f6}{Render\+Texture\+Array}} Post\+Effect\+::m\+First\+Pass\+Textures\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Definition at line \mbox{\hyperlink{_week11_2_week11-_demo9-_post_effect_2_include_2_post_effect_8hpp_source_l00035}{35}} of file \mbox{\hyperlink{_week11_2_week11-_demo9-_post_effect_2_include_2_post_effect_8hpp_source}{Post\+Effect.\+hpp}}.
-
-\mbox{\Hypertarget{class_post_effect_a6f725a554a0d617081161b00568c7cb1}\label{class_post_effect_a6f725a554a0d617081161b00568c7cb1}} 
-\index{PostEffect@{PostEffect}!mSecondPassTextures@{mSecondPassTextures}}
-\index{mSecondPassTextures@{mSecondPassTextures}!PostEffect@{PostEffect}}
-\doxysubsubsection{\texorpdfstring{mSecondPassTextures}{mSecondPassTextures}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_post_effect_aacdee41227b41a22dae5305b18f836f6}{Render\+Texture\+Array}} Post\+Effect\+::m\+Second\+Pass\+Textures\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Definition at line \mbox{\hyperlink{_week11_2_week11-_demo9-_post_effect_2_include_2_post_effect_8hpp_source_l00036}{36}} of file \mbox{\hyperlink{_week11_2_week11-_demo9-_post_effect_2_include_2_post_effect_8hpp_source}{Post\+Effect.\+hpp}}.
-
-\mbox{\Hypertarget{class_post_effect_a54b194b05b1d520b0c5ff19a8cda6f96}\label{class_post_effect_a54b194b05b1d520b0c5ff19a8cda6f96}} 
-\index{PostEffect@{PostEffect}!mShaders@{mShaders}}
-\index{mShaders@{mShaders}!PostEffect@{PostEffect}}
-\doxysubsubsection{\texorpdfstring{mShaders}{mShaders}}
-{\footnotesize\ttfamily \mbox{\hyperlink{_week11_2_week11-_demo9-_post_effect_2_include_2_resource_identifiers_8hpp_a4706ce8b6fb3fa40eb84ae53d373e07a}{Shader\+Holder}} Post\+Effect\+::m\+Shaders\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Definition at line \mbox{\hyperlink{_week11_2_week11-_demo9-_post_effect_2_include_2_post_effect_8hpp_source_l00031}{31}} of file \mbox{\hyperlink{_week11_2_week11-_demo9-_post_effect_2_include_2_post_effect_8hpp_source}{Post\+Effect.\+hpp}}.
 
 
 

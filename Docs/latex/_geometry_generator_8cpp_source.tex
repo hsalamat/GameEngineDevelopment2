@@ -245,9 +245,9 @@
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00241}00241         \textcolor{comment}{// Generate the midpoints.}}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00242}00242         \textcolor{comment}{//}}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00243}00243 }
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00244}00244         \mbox{\hyperlink{struct_geometry_generator_1_1_vertex}{Vertex}} m0 = \mbox{\hyperlink{class_geometry_generator_a1a2bcb829312312463ae4cbed9357445}{MidPoint}}(v0, v1);}
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00245}00245         \mbox{\hyperlink{struct_geometry_generator_1_1_vertex}{Vertex}} m1 = \mbox{\hyperlink{class_geometry_generator_a1a2bcb829312312463ae4cbed9357445}{MidPoint}}(v1, v2);}
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00246}00246         \mbox{\hyperlink{struct_geometry_generator_1_1_vertex}{Vertex}} m2 = \mbox{\hyperlink{class_geometry_generator_a1a2bcb829312312463ae4cbed9357445}{MidPoint}}(v0, v2);}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00244}00244         \mbox{\hyperlink{struct_geometry_generator_1_1_vertex}{Vertex}} m0 = MidPoint(v0, v1);}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00245}00245         \mbox{\hyperlink{struct_geometry_generator_1_1_vertex}{Vertex}} m1 = MidPoint(v1, v2);}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00246}00246         \mbox{\hyperlink{struct_geometry_generator_1_1_vertex}{Vertex}} m2 = MidPoint(v0, v2);}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00247}00247 }
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00248}00248         \textcolor{comment}{//}}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00249}00249         \textcolor{comment}{// Add new geometry.}}
@@ -278,19 +278,19 @@
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00274}00274     \}}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00275}00275 \}}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00276}00276 }
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00277}\mbox{\hyperlink{class_geometry_generator_a1a2bcb829312312463ae4cbed9357445}{00277}} \mbox{\hyperlink{struct_geometry_generator_1_1_vertex}{GeometryGenerator::Vertex}} \mbox{\hyperlink{class_geometry_generator_a1a2bcb829312312463ae4cbed9357445}{GeometryGenerator::MidPoint}}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_geometry_generator_1_1_vertex}{Vertex}}\& v0, \textcolor{keyword}{const} \mbox{\hyperlink{struct_geometry_generator_1_1_vertex}{Vertex}}\& v1)}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00277}00277 \mbox{\hyperlink{struct_geometry_generator_1_1_vertex}{GeometryGenerator::Vertex}} GeometryGenerator::MidPoint(\textcolor{keyword}{const} \mbox{\hyperlink{struct_vertex}{Vertex}}\& v0, \textcolor{keyword}{const} \mbox{\hyperlink{struct_vertex}{Vertex}}\& v1)}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00278}00278 \{}
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00279}00279     XMVECTOR p0 = XMLoadFloat3(\&v0.\mbox{\hyperlink{struct_geometry_generator_1_1_vertex_ad31c2a7a30542745c70422a0cb34d22d}{Position}});}
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00280}00280     XMVECTOR p1 = XMLoadFloat3(\&v1.\mbox{\hyperlink{struct_geometry_generator_1_1_vertex_ad31c2a7a30542745c70422a0cb34d22d}{Position}});}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00279}00279     XMVECTOR p0 = XMLoadFloat3(\&v0.Position);}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00280}00280     XMVECTOR p1 = XMLoadFloat3(\&v1.Position);}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00281}00281 }
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00282}00282     XMVECTOR n0 = XMLoadFloat3(\&v0.\mbox{\hyperlink{struct_geometry_generator_1_1_vertex_ab09e39b41f227072d8d24768b464eaa8}{Normal}});}
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00283}00283     XMVECTOR n1 = XMLoadFloat3(\&v1.\mbox{\hyperlink{struct_geometry_generator_1_1_vertex_ab09e39b41f227072d8d24768b464eaa8}{Normal}});}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00282}00282     XMVECTOR n0 = XMLoadFloat3(\&v0.\mbox{\hyperlink{struct_vertex_a553ed48ae98dda36da8e57cfa53877d4}{Normal}});}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00283}00283     XMVECTOR n1 = XMLoadFloat3(\&v1.\mbox{\hyperlink{struct_vertex_a553ed48ae98dda36da8e57cfa53877d4}{Normal}});}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00284}00284 }
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00285}00285     XMVECTOR tan0 = XMLoadFloat3(\&v0.\mbox{\hyperlink{struct_geometry_generator_1_1_vertex_a717df2eee4e35bb0eb8f4ecf262edf4f}{TangentU}});}
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00286}00286     XMVECTOR tan1 = XMLoadFloat3(\&v1.\mbox{\hyperlink{struct_geometry_generator_1_1_vertex_a717df2eee4e35bb0eb8f4ecf262edf4f}{TangentU}});}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00285}00285     XMVECTOR tan0 = XMLoadFloat3(\&v0.TangentU);}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00286}00286     XMVECTOR tan1 = XMLoadFloat3(\&v1.TangentU);}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00287}00287 }
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00288}00288     XMVECTOR tex0 = XMLoadFloat2(\&v0.\mbox{\hyperlink{struct_geometry_generator_1_1_vertex_ab18dadcdb6a57e997bfd6d0e53e426c6}{TexC}});}
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00289}00289     XMVECTOR tex1 = XMLoadFloat2(\&v1.\mbox{\hyperlink{struct_geometry_generator_1_1_vertex_ab18dadcdb6a57e997bfd6d0e53e426c6}{TexC}});}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00288}00288     XMVECTOR tex0 = XMLoadFloat2(\&v0.\mbox{\hyperlink{struct_vertex_a43e8c374e56c6ed3acc708ba2de1c70c}{TexC}});}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00289}00289     XMVECTOR tex1 = XMLoadFloat2(\&v1.\mbox{\hyperlink{struct_vertex_a43e8c374e56c6ed3acc708ba2de1c70c}{TexC}});}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00290}00290 }
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00291}00291     \textcolor{comment}{// Compute the midpoints of all the attributes.  Vectors need to be normalized}}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00292}00292     \textcolor{comment}{// since linear interpolating can make them not unit length.  }}
@@ -299,11 +299,11 @@
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00295}00295     XMVECTOR tangent = XMVector3Normalize(0.5f*(tan0+tan1));}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00296}00296     XMVECTOR tex = 0.5f*(tex0 + tex1);}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00297}00297 }
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00298}00298     \mbox{\hyperlink{struct_geometry_generator_1_1_vertex}{Vertex}} v;}
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00299}00299     XMStoreFloat3(\&v.\mbox{\hyperlink{struct_geometry_generator_1_1_vertex_ad31c2a7a30542745c70422a0cb34d22d}{Position}}, pos);}
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00300}00300     XMStoreFloat3(\&v.\mbox{\hyperlink{struct_geometry_generator_1_1_vertex_ab09e39b41f227072d8d24768b464eaa8}{Normal}}, normal);}
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00301}00301     XMStoreFloat3(\&v.\mbox{\hyperlink{struct_geometry_generator_1_1_vertex_a717df2eee4e35bb0eb8f4ecf262edf4f}{TangentU}}, tangent);}
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00302}00302     XMStoreFloat2(\&v.\mbox{\hyperlink{struct_geometry_generator_1_1_vertex_ab18dadcdb6a57e997bfd6d0e53e426c6}{TexC}}, tex);}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00298}00298     \mbox{\hyperlink{struct_vertex}{Vertex}} v;}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00299}00299     XMStoreFloat3(\&v.Position, pos);}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00300}00300     XMStoreFloat3(\&v.\mbox{\hyperlink{struct_vertex_a553ed48ae98dda36da8e57cfa53877d4}{Normal}}, normal);}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00301}00301     XMStoreFloat3(\&v.TangentU, tangent);}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00302}00302     XMStoreFloat2(\&v.\mbox{\hyperlink{struct_vertex_a43e8c374e56c6ed3acc708ba2de1c70c}{TexC}}, tex);}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00303}00303 }
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00304}00304     \textcolor{keywordflow}{return} v;}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00305}00305 \}}
@@ -471,16 +471,16 @@
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00467}00467         \}}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00468}00468     \}}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00469}00469 }
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00470}00470     \mbox{\hyperlink{class_geometry_generator_aa26957ba52636b68c234d284759116b0}{BuildCylinderTopCap}}(bottomRadius, topRadius, height, sliceCount, stackCount, meshData);}
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00471}00471     \mbox{\hyperlink{class_geometry_generator_a623d5e6167d7e9454a55f57e84bbcb35}{BuildCylinderBottomCap}}(bottomRadius, topRadius, height, sliceCount, stackCount, meshData);}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00470}00470     BuildCylinderTopCap(bottomRadius, topRadius, height, sliceCount, stackCount, meshData);}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00471}00471     BuildCylinderBottomCap(bottomRadius, topRadius, height, sliceCount, stackCount, meshData);}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00472}00472 }
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00473}00473     \textcolor{keywordflow}{return} meshData;}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00474}00474 \}}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00475}00475 }
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00476}\mbox{\hyperlink{class_geometry_generator_aa26957ba52636b68c234d284759116b0}{00476}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_geometry_generator_aa26957ba52636b68c234d284759116b0}{GeometryGenerator::BuildCylinderTopCap}}(\textcolor{keywordtype}{float} bottomRadius, \textcolor{keywordtype}{float} topRadius, \textcolor{keywordtype}{float} height,}
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00477}00477                                             \mbox{\hyperlink{class_geometry_generator_a37fc6dd464913f90a718f59862a9beeb}{uint32}} sliceCount, \mbox{\hyperlink{class_geometry_generator_a37fc6dd464913f90a718f59862a9beeb}{uint32}} stackCount, \mbox{\hyperlink{struct_geometry_generator_1_1_mesh_data}{MeshData}}\& meshData)}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00476}00476 \textcolor{keywordtype}{void} GeometryGenerator::BuildCylinderTopCap(\textcolor{keywordtype}{float} bottomRadius, \textcolor{keywordtype}{float} topRadius, \textcolor{keywordtype}{float} height,}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00477}00477                                             uint32 sliceCount, uint32 stackCount, MeshData\& meshData)}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00478}00478 \{}
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00479}00479     \mbox{\hyperlink{class_geometry_generator_a37fc6dd464913f90a718f59862a9beeb}{uint32}} baseIndex = (\mbox{\hyperlink{class_geometry_generator_a37fc6dd464913f90a718f59862a9beeb}{uint32}})meshData.\mbox{\hyperlink{struct_geometry_generator_1_1_mesh_data_a2a85f97f9a84b4f68d71cdcd41a7198b}{Vertices}}.size();}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00479}00479     \mbox{\hyperlink{class_geometry_generator_a37fc6dd464913f90a718f59862a9beeb}{uint32}} baseIndex = (\mbox{\hyperlink{class_geometry_generator_a37fc6dd464913f90a718f59862a9beeb}{uint32}})meshData.Vertices.size();}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00480}00480 }
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00481}00481     \textcolor{keywordtype}{float} y = 0.5f*height;}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00482}00482     \textcolor{keywordtype}{float} dTheta = 2.0f*XM\_PI/sliceCount;}
@@ -496,31 +496,31 @@
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00492}00492         \textcolor{keywordtype}{float} u = x/height + 0.5f;}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00493}00493         \textcolor{keywordtype}{float} v = z/height + 0.5f;}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00494}00494 }
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00495}00495         meshData.\mbox{\hyperlink{struct_geometry_generator_1_1_mesh_data_a2a85f97f9a84b4f68d71cdcd41a7198b}{Vertices}}.push\_back( \mbox{\hyperlink{struct_geometry_generator_1_1_vertex}{Vertex}}(x, y, z, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 0.0f, u, v) );}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00495}00495         meshData.Vertices.push\_back( \mbox{\hyperlink{struct_vertex}{Vertex}}(x, y, z, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 0.0f, u, v) );}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00496}00496     \}}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00497}00497 }
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00498}00498     \textcolor{comment}{// Cap center vertex.}}
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00499}00499     meshData.\mbox{\hyperlink{struct_geometry_generator_1_1_mesh_data_a2a85f97f9a84b4f68d71cdcd41a7198b}{Vertices}}.push\_back( \mbox{\hyperlink{struct_geometry_generator_1_1_vertex}{Vertex}}(0.0f, y, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.5f, 0.5f) );}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00499}00499     meshData.Vertices.push\_back( \mbox{\hyperlink{struct_vertex}{Vertex}}(0.0f, y, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.5f, 0.5f) );}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00500}00500 }
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00501}00501     \textcolor{comment}{// Index of center vertex.}}
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00502}00502     \mbox{\hyperlink{class_geometry_generator_a37fc6dd464913f90a718f59862a9beeb}{uint32}} centerIndex = (\mbox{\hyperlink{class_geometry_generator_a37fc6dd464913f90a718f59862a9beeb}{uint32}})meshData.\mbox{\hyperlink{struct_geometry_generator_1_1_mesh_data_a2a85f97f9a84b4f68d71cdcd41a7198b}{Vertices}}.size()-\/1;}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00502}00502     \mbox{\hyperlink{class_geometry_generator_a37fc6dd464913f90a718f59862a9beeb}{uint32}} centerIndex = (\mbox{\hyperlink{class_geometry_generator_a37fc6dd464913f90a718f59862a9beeb}{uint32}})meshData.Vertices.size()-\/1;}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00503}00503 }
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00504}00504     \textcolor{keywordflow}{for}(\mbox{\hyperlink{class_geometry_generator_a37fc6dd464913f90a718f59862a9beeb}{uint32}} i = 0; i < sliceCount; ++i)}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00505}00505     \{}
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00506}00506         meshData.\mbox{\hyperlink{struct_geometry_generator_1_1_mesh_data_af32ad2f27a3c6c78700f726050e2eb73}{Indices32}}.push\_back(centerIndex);}
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00507}00507         meshData.\mbox{\hyperlink{struct_geometry_generator_1_1_mesh_data_af32ad2f27a3c6c78700f726050e2eb73}{Indices32}}.push\_back(baseIndex + i+1);}
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00508}00508         meshData.\mbox{\hyperlink{struct_geometry_generator_1_1_mesh_data_af32ad2f27a3c6c78700f726050e2eb73}{Indices32}}.push\_back(baseIndex + i);}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00506}00506         meshData.Indices32.push\_back(centerIndex);}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00507}00507         meshData.Indices32.push\_back(baseIndex + i+1);}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00508}00508         meshData.Indices32.push\_back(baseIndex + i);}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00509}00509     \}}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00510}00510 \}}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00511}00511 }
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00512}\mbox{\hyperlink{class_geometry_generator_a623d5e6167d7e9454a55f57e84bbcb35}{00512}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_geometry_generator_a623d5e6167d7e9454a55f57e84bbcb35}{GeometryGenerator::BuildCylinderBottomCap}}(\textcolor{keywordtype}{float} bottomRadius, \textcolor{keywordtype}{float} topRadius, \textcolor{keywordtype}{float} height,}
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00513}00513                                                \mbox{\hyperlink{class_geometry_generator_a37fc6dd464913f90a718f59862a9beeb}{uint32}} sliceCount, \mbox{\hyperlink{class_geometry_generator_a37fc6dd464913f90a718f59862a9beeb}{uint32}} stackCount, \mbox{\hyperlink{struct_geometry_generator_1_1_mesh_data}{MeshData}}\& meshData)}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00512}00512 \textcolor{keywordtype}{void} GeometryGenerator::BuildCylinderBottomCap(\textcolor{keywordtype}{float} bottomRadius, \textcolor{keywordtype}{float} topRadius, \textcolor{keywordtype}{float} height,}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00513}00513                                                uint32 sliceCount, uint32 stackCount, MeshData\& meshData)}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00514}00514 \{}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00515}00515     \textcolor{comment}{// }}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00516}00516     \textcolor{comment}{// Build bottom cap.}}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00517}00517     \textcolor{comment}{//}}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00518}00518 }
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00519}00519     \mbox{\hyperlink{class_geometry_generator_a37fc6dd464913f90a718f59862a9beeb}{uint32}} baseIndex = (\mbox{\hyperlink{class_geometry_generator_a37fc6dd464913f90a718f59862a9beeb}{uint32}})meshData.\mbox{\hyperlink{struct_geometry_generator_1_1_mesh_data_a2a85f97f9a84b4f68d71cdcd41a7198b}{Vertices}}.size();}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00519}00519     \mbox{\hyperlink{class_geometry_generator_a37fc6dd464913f90a718f59862a9beeb}{uint32}} baseIndex = (\mbox{\hyperlink{class_geometry_generator_a37fc6dd464913f90a718f59862a9beeb}{uint32}})meshData.Vertices.size();}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00520}00520     \textcolor{keywordtype}{float} y = -\/0.5f*height;}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00521}00521 }
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00522}00522     \textcolor{comment}{// vertices of ring}}
@@ -535,20 +535,20 @@
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00531}00531         \textcolor{keywordtype}{float} u = x/height + 0.5f;}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00532}00532         \textcolor{keywordtype}{float} v = z/height + 0.5f;}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00533}00533 }
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00534}00534         meshData.\mbox{\hyperlink{struct_geometry_generator_1_1_mesh_data_a2a85f97f9a84b4f68d71cdcd41a7198b}{Vertices}}.push\_back( \mbox{\hyperlink{struct_geometry_generator_1_1_vertex}{Vertex}}(x, y, z, 0.0f, -\/1.0f, 0.0f, 1.0f, 0.0f, 0.0f, u, v) );}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00534}00534         meshData.Vertices.push\_back( \mbox{\hyperlink{struct_vertex}{Vertex}}(x, y, z, 0.0f, -\/1.0f, 0.0f, 1.0f, 0.0f, 0.0f, u, v) );}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00535}00535     \}}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00536}00536 }
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00537}00537     \textcolor{comment}{// Cap center vertex.}}
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00538}00538     meshData.\mbox{\hyperlink{struct_geometry_generator_1_1_mesh_data_a2a85f97f9a84b4f68d71cdcd41a7198b}{Vertices}}.push\_back( \mbox{\hyperlink{struct_geometry_generator_1_1_vertex}{Vertex}}(0.0f, y, 0.0f, 0.0f, -\/1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.5f, 0.5f) );}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00538}00538     meshData.Vertices.push\_back( \mbox{\hyperlink{struct_vertex}{Vertex}}(0.0f, y, 0.0f, 0.0f, -\/1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.5f, 0.5f) );}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00539}00539 }
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00540}00540     \textcolor{comment}{// Cache the index of center vertex.}}
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00541}00541     \mbox{\hyperlink{class_geometry_generator_a37fc6dd464913f90a718f59862a9beeb}{uint32}} centerIndex = (\mbox{\hyperlink{class_geometry_generator_a37fc6dd464913f90a718f59862a9beeb}{uint32}})meshData.\mbox{\hyperlink{struct_geometry_generator_1_1_mesh_data_a2a85f97f9a84b4f68d71cdcd41a7198b}{Vertices}}.size()-\/1;}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00541}00541     \mbox{\hyperlink{class_geometry_generator_a37fc6dd464913f90a718f59862a9beeb}{uint32}} centerIndex = (\mbox{\hyperlink{class_geometry_generator_a37fc6dd464913f90a718f59862a9beeb}{uint32}})meshData.Vertices.size()-\/1;}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00542}00542 }
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00543}00543     \textcolor{keywordflow}{for}(\mbox{\hyperlink{class_geometry_generator_a37fc6dd464913f90a718f59862a9beeb}{uint32}} i = 0; i < sliceCount; ++i)}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00544}00544     \{}
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00545}00545         meshData.\mbox{\hyperlink{struct_geometry_generator_1_1_mesh_data_af32ad2f27a3c6c78700f726050e2eb73}{Indices32}}.push\_back(centerIndex);}
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00546}00546         meshData.\mbox{\hyperlink{struct_geometry_generator_1_1_mesh_data_af32ad2f27a3c6c78700f726050e2eb73}{Indices32}}.push\_back(baseIndex + i);}
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00547}00547         meshData.\mbox{\hyperlink{struct_geometry_generator_1_1_mesh_data_af32ad2f27a3c6c78700f726050e2eb73}{Indices32}}.push\_back(baseIndex + i+1);}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00545}00545         meshData.Indices32.push\_back(centerIndex);}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00546}00546         meshData.Indices32.push\_back(baseIndex + i);}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00547}00547         meshData.Indices32.push\_back(baseIndex + i+1);}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00548}00548     \}}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00549}00549 \}}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00550}00550 }

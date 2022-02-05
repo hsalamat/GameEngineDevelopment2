@@ -99,61 +99,6 @@ virtual void \mbox{\hyperlink{classsf_1_1_sound_stream_a907036dd2ca7d3af5ead316e
 \begin{DoxyCompactList}\small\item\em Change the current playing position in the stream source. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}} \mbox{\hyperlink{classsf_1_1_sound_stream_a3f717d18846f261fc375d71d6c7e41da}{on\+Loop}} ()
 \begin{DoxyCompactList}\small\item\em Change the current playing position in the stream source to the beginning of the loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Types}
-\begin{DoxyCompactItemize}
-\item 
-enum \{ \mbox{\hyperlink{classsf_1_1_sound_stream_aa6e54c13c704dcf56fbac5e909424059affb4e358f25c46689ca8d700ab384393}{Buffer\+Count}} = 3
-, \mbox{\hyperlink{classsf_1_1_sound_stream_aa6e54c13c704dcf56fbac5e909424059a206372e5bea183d5fc4c26682c34fa1a}{Buffer\+Retries}} = 2
- \}
-\item 
-enum \{ \mbox{\hyperlink{classsf_1_1_sound_stream_aa6e54c13c704dcf56fbac5e909424059affb4e358f25c46689ca8d700ab384393}{Buffer\+Count}} = 3
-, \mbox{\hyperlink{classsf_1_1_sound_stream_aa6e54c13c704dcf56fbac5e909424059a206372e5bea183d5fc4c26682c34fa1a}{Buffer\+Retries}} = 2
- \}
-\end{DoxyCompactItemize}
-\doxysubsection*{Private Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-void \mbox{\hyperlink{classsf_1_1_sound_stream_a08c54af1f433424ac627d1a30021f5e9}{stream\+Data}} ()
-\begin{DoxyCompactList}\small\item\em Function called as the entry point of the thread. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classsf_1_1_sound_stream_ad3e04f1b4df1fbe0ffd474f47ed91f4a}{fill\+And\+Push\+Buffer}} (unsigned int buffer\+Num, bool immediate\+Loop=false)
-\begin{DoxyCompactList}\small\item\em Fill a new buffer with audio samples, and append it to the playing queue. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classsf_1_1_sound_stream_abf8cdcc65da5e31c14f9bddccb53fb72}{fill\+Queue}} ()
-\begin{DoxyCompactList}\small\item\em Fill the audio buffers and put them all into the playing queue. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsf_1_1_sound_stream_ac0fdfe8ec3e5b662f0b7956ba894f5bc}{clear\+Queue}} ()
-\begin{DoxyCompactList}\small\item\em Clear all the audio buffers and empty the playing queue. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsf_1_1_sound_stream_a08c54af1f433424ac627d1a30021f5e9}{stream\+Data}} ()
-\begin{DoxyCompactList}\small\item\em Function called as the entry point of the thread. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classsf_1_1_sound_stream_ad3e04f1b4df1fbe0ffd474f47ed91f4a}{fill\+And\+Push\+Buffer}} (unsigned int buffer\+Num, bool immediate\+Loop=false)
-\begin{DoxyCompactList}\small\item\em Fill a new buffer with audio samples, and append it to the playing queue. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classsf_1_1_sound_stream_abf8cdcc65da5e31c14f9bddccb53fb72}{fill\+Queue}} ()
-\begin{DoxyCompactList}\small\item\em Fill the audio buffers and put them all into the playing queue. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsf_1_1_sound_stream_ac0fdfe8ec3e5b662f0b7956ba894f5bc}{clear\+Queue}} ()
-\begin{DoxyCompactList}\small\item\em Clear all the audio buffers and empty the playing queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{classsf_1_1_thread}{Thread}} \mbox{\hyperlink{classsf_1_1_sound_stream_a004d1b16c81698be55779efe0f2b5ed3}{m\+\_\+thread}}
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsf_1_1_thread}{Thread}} running the background tasks. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classsf_1_1_mutex}{Mutex}} \mbox{\hyperlink{classsf_1_1_sound_stream_a134d03a5d3075f6a98a85a2edff9ac7d}{m\+\_\+thread\+Mutex}}
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsf_1_1_thread}{Thread}} mutex. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classsf_1_1_sound_source_ac43af72c98c077500b239bc75b812f03}{Status}} \mbox{\hyperlink{classsf_1_1_sound_stream_a2e06f2688d7fcf777a9779168067f302}{m\+\_\+thread\+Start\+State}}
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_state}{State}} the thread starts in (Playing, Paused, Stopped) \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classsf_1_1_sound_stream_afa20ca6cbb29ee2355d986a3faa7a38f}{m\+\_\+is\+Streaming}}
-\begin{DoxyCompactList}\small\item\em Streaming state (true = playing, false = stopped) \end{DoxyCompactList}\item 
-unsigned int \mbox{\hyperlink{classsf_1_1_sound_stream_abdfe9b84c86d44297f8f62a7ca93cfbd}{m\+\_\+buffers}} \mbox{[}\mbox{\hyperlink{classsf_1_1_sound_stream_aa6e54c13c704dcf56fbac5e909424059affb4e358f25c46689ca8d700ab384393}{Buffer\+Count}}\mbox{]}
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsf_1_1_sound}{Sound}} buffers used to store temporary audio data. \end{DoxyCompactList}\item 
-unsigned int \mbox{\hyperlink{classsf_1_1_sound_stream_ad7c1a66f24be5e58ed275fd06e24294e}{m\+\_\+channel\+Count}}
-\begin{DoxyCompactList}\small\item\em Number of channels (1 = mono, 2 = stereo, ...) \end{DoxyCompactList}\item 
-unsigned int \mbox{\hyperlink{classsf_1_1_sound_stream_ac6cf65793e01b6b5f6bf6b555b1c1dfd}{m\+\_\+sample\+Rate}}
-\begin{DoxyCompactList}\small\item\em Frequency (samples / second) \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} \mbox{\hyperlink{classsf_1_1_sound_stream_a5c91434e0f1c2e4445e01b3de578af49}{m\+\_\+format}}
-\begin{DoxyCompactList}\small\item\em Format of the internal sound buffers. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classsf_1_1_sound_stream_a32ee01b984f74c9e0857d676bc33ad9f}{m\+\_\+loop}}
-\begin{DoxyCompactList}\small\item\em Loop flag (true to loop, false to play once) \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} \mbox{\hyperlink{classsf_1_1_sound_stream_a7365a2ec97b89cec15577b31461ff4be}{m\+\_\+samples\+Processed}}
-\begin{DoxyCompactList}\small\item\em Number of buffers processed since beginning of the stream. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}} \mbox{\hyperlink{classsf_1_1_sound_stream_af073ef053abd8c0f39fadb0d475b4a06}{m\+\_\+buffer\+Seeks}} \mbox{[}\mbox{\hyperlink{classsf_1_1_sound_stream_aa6e54c13c704dcf56fbac5e909424059affb4e358f25c46689ca8d700ab384393}{Buffer\+Count}}\mbox{]}
-\begin{DoxyCompactList}\small\item\em If buffer is an \char`\"{}end buffer\char`\"{}, holds next seek position, else No\+Loop. For play offset calculation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
@@ -241,24 +186,6 @@ No\+Loop&\char`\"{}\+Invalid\char`\"{} end\+Seeks value, telling us to continue 
 
 Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source_l00183}{183}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source}{Sound\+Stream.\+hpp}}.
 
-\mbox{\Hypertarget{classsf_1_1_sound_stream_a2419ce94e45f7d4d0302b7963282c40c}\label{classsf_1_1_sound_stream_a2419ce94e45f7d4d0302b7963282c40c}} 
-\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
-{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
-
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{BufferCount@{BufferCount}!sf::SoundStream@{sf::SoundStream}}\index{sf::SoundStream@{sf::SoundStream}!BufferCount@{BufferCount}}}\mbox{\Hypertarget{classsf_1_1_sound_stream_aa6e54c13c704dcf56fbac5e909424059affb4e358f25c46689ca8d700ab384393}\label{classsf_1_1_sound_stream_aa6e54c13c704dcf56fbac5e909424059affb4e358f25c46689ca8d700ab384393}} 
-Buffer\+Count&Number of audio buffers used by the streaming loop. \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{BufferRetries@{BufferRetries}!sf::SoundStream@{sf::SoundStream}}\index{sf::SoundStream@{sf::SoundStream}!BufferRetries@{BufferRetries}}}\mbox{\Hypertarget{classsf_1_1_sound_stream_aa6e54c13c704dcf56fbac5e909424059a206372e5bea183d5fc4c26682c34fa1a}\label{classsf_1_1_sound_stream_aa6e54c13c704dcf56fbac5e909424059a206372e5bea183d5fc4c26682c34fa1a}} 
-Buffer\+Retries&Number of retries (excluding initial try) for \mbox{\hyperlink{classsf_1_1_sound_stream_a968ec024a6e45490962c8a1121cb7c5f}{on\+Get\+Data()}} \\
-\hline
-
-\end{DoxyEnumFields}
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source_l00300}{300}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source}{Sound\+Stream.\+hpp}}.
-
 \mbox{\Hypertarget{classsf_1_1_sound_stream_af58d652c948e4fe8e92a3c983c585184}\label{classsf_1_1_sound_stream_af58d652c948e4fe8e92a3c983c585184}} 
 \doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
 {\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [protected]}}
@@ -272,24 +199,6 @@ No\+Loop&\char`\"{}\+Invalid\char`\"{} end\+Seeks value, telling us to continue 
 
 
 Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source_l00183}{183}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source}{Sound\+Stream.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_sound_stream_aa6e54c13c704dcf56fbac5e909424059}\label{classsf_1_1_sound_stream_aa6e54c13c704dcf56fbac5e909424059}} 
-\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
-{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
-
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{BufferCount@{BufferCount}!sf::SoundStream@{sf::SoundStream}}\index{sf::SoundStream@{sf::SoundStream}!BufferCount@{BufferCount}}}\mbox{\Hypertarget{classsf_1_1_sound_stream_aa6e54c13c704dcf56fbac5e909424059affb4e358f25c46689ca8d700ab384393}\label{classsf_1_1_sound_stream_aa6e54c13c704dcf56fbac5e909424059affb4e358f25c46689ca8d700ab384393}} 
-Buffer\+Count&Number of audio buffers used by the streaming loop. \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{BufferRetries@{BufferRetries}!sf::SoundStream@{sf::SoundStream}}\index{sf::SoundStream@{sf::SoundStream}!BufferRetries@{BufferRetries}}}\mbox{\Hypertarget{classsf_1_1_sound_stream_aa6e54c13c704dcf56fbac5e909424059a206372e5bea183d5fc4c26682c34fa1a}\label{classsf_1_1_sound_stream_aa6e54c13c704dcf56fbac5e909424059a206372e5bea183d5fc4c26682c34fa1a}} 
-Buffer\+Retries&Number of retries (excluding initial try) for \mbox{\hyperlink{classsf_1_1_sound_stream_a968ec024a6e45490962c8a1121cb7c5f}{on\+Get\+Data()}} \\
-\hline
-
-\end{DoxyEnumFields}
-
-
-Definition at line \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source_l00300}{300}} of file \mbox{\hyperlink{_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source}{Sound\+Stream.\+hpp}}.
 
 
 
@@ -337,100 +246,6 @@ Default constructor.
 This constructor is only meant to be called by derived classes. 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classsf_1_1_sound_stream_ac0fdfe8ec3e5b662f0b7956ba894f5bc}\label{classsf_1_1_sound_stream_ac0fdfe8ec3e5b662f0b7956ba894f5bc}} 
-\index{sf::SoundStream@{sf::SoundStream}!clearQueue@{clearQueue}}
-\index{clearQueue@{clearQueue}!sf::SoundStream@{sf::SoundStream}}
-\doxysubsubsection{\texorpdfstring{clearQueue()}{clearQueue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void sf\+::\+Sound\+Stream\+::clear\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Clear all the audio buffers and empty the playing queue. 
-
-This function is called when the stream is stopped. \mbox{\Hypertarget{classsf_1_1_sound_stream_ac0fdfe8ec3e5b662f0b7956ba894f5bc}\label{classsf_1_1_sound_stream_ac0fdfe8ec3e5b662f0b7956ba894f5bc}} 
-\index{sf::SoundStream@{sf::SoundStream}!clearQueue@{clearQueue}}
-\index{clearQueue@{clearQueue}!sf::SoundStream@{sf::SoundStream}}
-\doxysubsubsection{\texorpdfstring{clearQueue()}{clearQueue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void sf\+::\+Sound\+Stream\+::clear\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Clear all the audio buffers and empty the playing queue. 
-
-This function is called when the stream is stopped. \mbox{\Hypertarget{classsf_1_1_sound_stream_ad3e04f1b4df1fbe0ffd474f47ed91f4a}\label{classsf_1_1_sound_stream_ad3e04f1b4df1fbe0ffd474f47ed91f4a}} 
-\index{sf::SoundStream@{sf::SoundStream}!fillAndPushBuffer@{fillAndPushBuffer}}
-\index{fillAndPushBuffer@{fillAndPushBuffer}!sf::SoundStream@{sf::SoundStream}}
-\doxysubsubsection{\texorpdfstring{fillAndPushBuffer()}{fillAndPushBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily bool sf\+::\+Sound\+Stream\+::fill\+And\+Push\+Buffer (\begin{DoxyParamCaption}\item[{unsigned int}]{buffer\+Num,  }\item[{bool}]{immediate\+Loop = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Fill a new buffer with audio samples, and append it to the playing queue. 
-
-This function is called as soon as a buffer has been fully consumed; it fills it again and inserts it back into the playing queue.
-
-
-\begin{DoxyParams}{Parameters}
-{\em buffer\+Num} & Number of the buffer to fill (in \mbox{[}0, Buffer\+Count\mbox{]}) \\
-\hline
-{\em immediate\+Loop} & Treat empty buffers as spent, and act on loops immediately\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-True if the stream source has requested to stop, false otherwise 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classsf_1_1_sound_stream_ad3e04f1b4df1fbe0ffd474f47ed91f4a}\label{classsf_1_1_sound_stream_ad3e04f1b4df1fbe0ffd474f47ed91f4a}} 
-\index{sf::SoundStream@{sf::SoundStream}!fillAndPushBuffer@{fillAndPushBuffer}}
-\index{fillAndPushBuffer@{fillAndPushBuffer}!sf::SoundStream@{sf::SoundStream}}
-\doxysubsubsection{\texorpdfstring{fillAndPushBuffer()}{fillAndPushBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily bool sf\+::\+Sound\+Stream\+::fill\+And\+Push\+Buffer (\begin{DoxyParamCaption}\item[{unsigned int}]{buffer\+Num,  }\item[{bool}]{immediate\+Loop = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Fill a new buffer with audio samples, and append it to the playing queue. 
-
-This function is called as soon as a buffer has been fully consumed; it fills it again and inserts it back into the playing queue.
-
-
-\begin{DoxyParams}{Parameters}
-{\em buffer\+Num} & Number of the buffer to fill (in \mbox{[}0, Buffer\+Count\mbox{]}) \\
-\hline
-{\em immediate\+Loop} & Treat empty buffers as spent, and act on loops immediately\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-True if the stream source has requested to stop, false otherwise 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classsf_1_1_sound_stream_abf8cdcc65da5e31c14f9bddccb53fb72}\label{classsf_1_1_sound_stream_abf8cdcc65da5e31c14f9bddccb53fb72}} 
-\index{sf::SoundStream@{sf::SoundStream}!fillQueue@{fillQueue}}
-\index{fillQueue@{fillQueue}!sf::SoundStream@{sf::SoundStream}}
-\doxysubsubsection{\texorpdfstring{fillQueue()}{fillQueue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily bool sf\+::\+Sound\+Stream\+::fill\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Fill the audio buffers and put them all into the playing queue. 
-
-This function is called when playing starts and the playing queue is empty.
-
-\begin{DoxyReturn}{Returns}
-True if the derived class has requested to stop, false otherwise 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classsf_1_1_sound_stream_abf8cdcc65da5e31c14f9bddccb53fb72}\label{classsf_1_1_sound_stream_abf8cdcc65da5e31c14f9bddccb53fb72}} 
-\index{sf::SoundStream@{sf::SoundStream}!fillQueue@{fillQueue}}
-\index{fillQueue@{fillQueue}!sf::SoundStream@{sf::SoundStream}}
-\doxysubsubsection{\texorpdfstring{fillQueue()}{fillQueue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily bool sf\+::\+Sound\+Stream\+::fill\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Fill the audio buffers and put them all into the playing queue. 
-
-This function is called when playing starts and the playing queue is empty.
-
-\begin{DoxyReturn}{Returns}
-True if the derived class has requested to stop, false otherwise 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classsf_1_1_sound_stream_a1f70933912dd9498f4dc99feefed27f3}\label{classsf_1_1_sound_stream_a1f70933912dd9498f4dc99feefed27f3}} 
 \index{sf::SoundStream@{sf::SoundStream}!getChannelCount@{getChannelCount}}
 \index{getChannelCount@{getChannelCount}!sf::SoundStream@{sf::SoundStream}}
@@ -649,7 +464,7 @@ True to continue playback, false to stop
 \end{DoxyReturn}
 
 
-Implemented in \mbox{\hyperlink{classsf_1_1_music_aca1bcb4e5d56a854133e74bd86374463}{sf\+::\+Music}}, \mbox{\hyperlink{classsf_1_1_music_aca1bcb4e5d56a854133e74bd86374463}{sf\+::\+Music}}, \mbox{\hyperlink{class_network_audio_stream_a7a2a574aec42b199788346ad6acd7914}{Network\+Audio\+Stream}}, and \mbox{\hyperlink{class_network_audio_stream_a7a2a574aec42b199788346ad6acd7914}{Network\+Audio\+Stream}}.
+Implemented in \mbox{\hyperlink{classsf_1_1_music_aca1bcb4e5d56a854133e74bd86374463}{sf\+::\+Music}}, and \mbox{\hyperlink{classsf_1_1_music_aca1bcb4e5d56a854133e74bd86374463}{sf\+::\+Music}}.
 
 \mbox{\Hypertarget{classsf_1_1_sound_stream_a968ec024a6e45490962c8a1121cb7c5f}\label{classsf_1_1_sound_stream_a968ec024a6e45490962c8a1121cb7c5f}} 
 \index{sf::SoundStream@{sf::SoundStream}!onGetData@{onGetData}}
@@ -673,7 +488,7 @@ True to continue playback, false to stop
 \end{DoxyReturn}
 
 
-Implemented in \mbox{\hyperlink{classsf_1_1_music_aca1bcb4e5d56a854133e74bd86374463}{sf\+::\+Music}}, \mbox{\hyperlink{classsf_1_1_music_aca1bcb4e5d56a854133e74bd86374463}{sf\+::\+Music}}, \mbox{\hyperlink{class_network_audio_stream_a7a2a574aec42b199788346ad6acd7914}{Network\+Audio\+Stream}}, and \mbox{\hyperlink{class_network_audio_stream_a7a2a574aec42b199788346ad6acd7914}{Network\+Audio\+Stream}}.
+Implemented in \mbox{\hyperlink{classsf_1_1_music_aca1bcb4e5d56a854133e74bd86374463}{sf\+::\+Music}}, and \mbox{\hyperlink{classsf_1_1_music_aca1bcb4e5d56a854133e74bd86374463}{sf\+::\+Music}}.
 
 \mbox{\Hypertarget{classsf_1_1_sound_stream_a3f717d18846f261fc375d71d6c7e41da}\label{classsf_1_1_sound_stream_a3f717d18846f261fc375d71d6c7e41da}} 
 \index{sf::SoundStream@{sf::SoundStream}!onLoop@{onLoop}}
@@ -732,7 +547,7 @@ This function must be overridden by derived classes to allow random seeking into
 \end{DoxyParams}
 
 
-Implemented in \mbox{\hyperlink{class_network_audio_stream_adab7ec817f075ee5c9d403d641ab5c78}{Network\+Audio\+Stream}}, \mbox{\hyperlink{class_network_audio_stream_adab7ec817f075ee5c9d403d641ab5c78}{Network\+Audio\+Stream}}, \mbox{\hyperlink{classsf_1_1_music_a15119cc0419c16bb334fa0698699c02e}{sf\+::\+Music}}, and \mbox{\hyperlink{classsf_1_1_music_a15119cc0419c16bb334fa0698699c02e}{sf\+::\+Music}}.
+Implemented in \mbox{\hyperlink{classsf_1_1_music_a15119cc0419c16bb334fa0698699c02e}{sf\+::\+Music}}, and \mbox{\hyperlink{classsf_1_1_music_a15119cc0419c16bb334fa0698699c02e}{sf\+::\+Music}}.
 
 \mbox{\Hypertarget{classsf_1_1_sound_stream_a907036dd2ca7d3af5ead316e54b75997}\label{classsf_1_1_sound_stream_a907036dd2ca7d3af5ead316e54b75997}} 
 \index{sf::SoundStream@{sf::SoundStream}!onSeek@{onSeek}}
@@ -753,7 +568,7 @@ This function must be overridden by derived classes to allow random seeking into
 \end{DoxyParams}
 
 
-Implemented in \mbox{\hyperlink{class_network_audio_stream_adab7ec817f075ee5c9d403d641ab5c78}{Network\+Audio\+Stream}}, \mbox{\hyperlink{class_network_audio_stream_adab7ec817f075ee5c9d403d641ab5c78}{Network\+Audio\+Stream}}, \mbox{\hyperlink{classsf_1_1_music_a15119cc0419c16bb334fa0698699c02e}{sf\+::\+Music}}, and \mbox{\hyperlink{classsf_1_1_music_a15119cc0419c16bb334fa0698699c02e}{sf\+::\+Music}}.
+Implemented in \mbox{\hyperlink{classsf_1_1_music_a15119cc0419c16bb334fa0698699c02e}{sf\+::\+Music}}, and \mbox{\hyperlink{classsf_1_1_music_a15119cc0419c16bb334fa0698699c02e}{sf\+::\+Music}}.
 
 \mbox{\Hypertarget{classsf_1_1_sound_stream_a932ff181e661503cad288b4bb6fe45ca}\label{classsf_1_1_sound_stream_a932ff181e661503cad288b4bb6fe45ca}} 
 \index{sf::SoundStream@{sf::SoundStream}!pause@{pause}}
@@ -948,183 +763,6 @@ This function stops the stream if it was playing or paused, and does nothing if 
 
 
 Implements \mbox{\hyperlink{classsf_1_1_sound_source_a06501a25b12376befcc7ee1ed4865fda}{sf\+::\+Sound\+Source}}.
-
-\mbox{\Hypertarget{classsf_1_1_sound_stream_a08c54af1f433424ac627d1a30021f5e9}\label{classsf_1_1_sound_stream_a08c54af1f433424ac627d1a30021f5e9}} 
-\index{sf::SoundStream@{sf::SoundStream}!streamData@{streamData}}
-\index{streamData@{streamData}!sf::SoundStream@{sf::SoundStream}}
-\doxysubsubsection{\texorpdfstring{streamData()}{streamData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void sf\+::\+Sound\+Stream\+::stream\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Function called as the entry point of the thread. 
-
-This function starts the streaming loop, and returns only when the sound is stopped. \mbox{\Hypertarget{classsf_1_1_sound_stream_a08c54af1f433424ac627d1a30021f5e9}\label{classsf_1_1_sound_stream_a08c54af1f433424ac627d1a30021f5e9}} 
-\index{sf::SoundStream@{sf::SoundStream}!streamData@{streamData}}
-\index{streamData@{streamData}!sf::SoundStream@{sf::SoundStream}}
-\doxysubsubsection{\texorpdfstring{streamData()}{streamData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void sf\+::\+Sound\+Stream\+::stream\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Function called as the entry point of the thread. 
-
-This function starts the streaming loop, and returns only when the sound is stopped. 
-
-\doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{classsf_1_1_sound_stream_abdfe9b84c86d44297f8f62a7ca93cfbd}\label{classsf_1_1_sound_stream_abdfe9b84c86d44297f8f62a7ca93cfbd}} 
-\index{sf::SoundStream@{sf::SoundStream}!m\_buffers@{m\_buffers}}
-\index{m\_buffers@{m\_buffers}!sf::SoundStream@{sf::SoundStream}}
-\doxysubsubsection{\texorpdfstring{m\_buffers}{m\_buffers}}
-{\footnotesize\ttfamily unsigned int sf\+::\+Sound\+Stream\+::m\+\_\+buffers\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-\mbox{\hyperlink{classsf_1_1_sound}{Sound}} buffers used to store temporary audio data. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source_l00313}{313}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source}{Sound\+Stream.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_sound_stream_af073ef053abd8c0f39fadb0d475b4a06}\label{classsf_1_1_sound_stream_af073ef053abd8c0f39fadb0d475b4a06}} 
-\index{sf::SoundStream@{sf::SoundStream}!m\_bufferSeeks@{m\_bufferSeeks}}
-\index{m\_bufferSeeks@{m\_bufferSeeks}!sf::SoundStream@{sf::SoundStream}}
-\doxysubsubsection{\texorpdfstring{m\_bufferSeeks}{m\_bufferSeeks}}
-{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_a2840579fed3494d9f330baf7a5a19903}{Int64}} sf\+::\+Sound\+Stream\+::m\+\_\+buffer\+Seeks\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-If buffer is an \char`\"{}end buffer\char`\"{}, holds next seek position, else No\+Loop. For play offset calculation. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source_l00319}{319}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source}{Sound\+Stream.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_sound_stream_ad7c1a66f24be5e58ed275fd06e24294e}\label{classsf_1_1_sound_stream_ad7c1a66f24be5e58ed275fd06e24294e}} 
-\index{sf::SoundStream@{sf::SoundStream}!m\_channelCount@{m\_channelCount}}
-\index{m\_channelCount@{m\_channelCount}!sf::SoundStream@{sf::SoundStream}}
-\doxysubsubsection{\texorpdfstring{m\_channelCount}{m\_channelCount}}
-{\footnotesize\ttfamily unsigned int sf\+::\+Sound\+Stream\+::m\+\_\+channel\+Count\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Number of channels (1 = mono, 2 = stereo, ...) 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source_l00314}{314}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source}{Sound\+Stream.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_sound_stream_a5c91434e0f1c2e4445e01b3de578af49}\label{classsf_1_1_sound_stream_a5c91434e0f1c2e4445e01b3de578af49}} 
-\index{sf::SoundStream@{sf::SoundStream}!m\_format@{m\_format}}
-\index{m\_format@{m\_format}!sf::SoundStream@{sf::SoundStream}}
-\doxysubsubsection{\texorpdfstring{m\_format}{m\_format}}
-{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} sf\+::\+Sound\+Stream\+::m\+\_\+format\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Format of the internal sound buffers. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source_l00316}{316}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source}{Sound\+Stream.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_sound_stream_afa20ca6cbb29ee2355d986a3faa7a38f}\label{classsf_1_1_sound_stream_afa20ca6cbb29ee2355d986a3faa7a38f}} 
-\index{sf::SoundStream@{sf::SoundStream}!m\_isStreaming@{m\_isStreaming}}
-\index{m\_isStreaming@{m\_isStreaming}!sf::SoundStream@{sf::SoundStream}}
-\doxysubsubsection{\texorpdfstring{m\_isStreaming}{m\_isStreaming}}
-{\footnotesize\ttfamily bool sf\+::\+Sound\+Stream\+::m\+\_\+is\+Streaming\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Streaming state (true = playing, false = stopped) 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source_l00312}{312}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source}{Sound\+Stream.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_sound_stream_a32ee01b984f74c9e0857d676bc33ad9f}\label{classsf_1_1_sound_stream_a32ee01b984f74c9e0857d676bc33ad9f}} 
-\index{sf::SoundStream@{sf::SoundStream}!m\_loop@{m\_loop}}
-\index{m\_loop@{m\_loop}!sf::SoundStream@{sf::SoundStream}}
-\doxysubsubsection{\texorpdfstring{m\_loop}{m\_loop}}
-{\footnotesize\ttfamily bool sf\+::\+Sound\+Stream\+::m\+\_\+loop\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Loop flag (true to loop, false to play once) 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source_l00317}{317}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source}{Sound\+Stream.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_sound_stream_ac6cf65793e01b6b5f6bf6b555b1c1dfd}\label{classsf_1_1_sound_stream_ac6cf65793e01b6b5f6bf6b555b1c1dfd}} 
-\index{sf::SoundStream@{sf::SoundStream}!m\_sampleRate@{m\_sampleRate}}
-\index{m\_sampleRate@{m\_sampleRate}!sf::SoundStream@{sf::SoundStream}}
-\doxysubsubsection{\texorpdfstring{m\_sampleRate}{m\_sampleRate}}
-{\footnotesize\ttfamily unsigned int sf\+::\+Sound\+Stream\+::m\+\_\+sample\+Rate\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Frequency (samples / second) 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source_l00315}{315}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source}{Sound\+Stream.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_sound_stream_a7365a2ec97b89cec15577b31461ff4be}\label{classsf_1_1_sound_stream_a7365a2ec97b89cec15577b31461ff4be}} 
-\index{sf::SoundStream@{sf::SoundStream}!m\_samplesProcessed@{m\_samplesProcessed}}
-\index{m\_samplesProcessed@{m\_samplesProcessed}!sf::SoundStream@{sf::SoundStream}}
-\doxysubsubsection{\texorpdfstring{m\_samplesProcessed}{m\_samplesProcessed}}
-{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} sf\+::\+Sound\+Stream\+::m\+\_\+samples\+Processed\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Number of buffers processed since beginning of the stream. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source_l00318}{318}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source}{Sound\+Stream.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_sound_stream_a004d1b16c81698be55779efe0f2b5ed3}\label{classsf_1_1_sound_stream_a004d1b16c81698be55779efe0f2b5ed3}} 
-\index{sf::SoundStream@{sf::SoundStream}!m\_thread@{m\_thread}}
-\index{m\_thread@{m\_thread}!sf::SoundStream@{sf::SoundStream}}
-\doxysubsubsection{\texorpdfstring{m\_thread}{m\_thread}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_thread}{Thread}} sf\+::\+Sound\+Stream\+::m\+\_\+thread\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-\mbox{\hyperlink{classsf_1_1_thread}{Thread}} running the background tasks. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source_l00309}{309}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source}{Sound\+Stream.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_sound_stream_a134d03a5d3075f6a98a85a2edff9ac7d}\label{classsf_1_1_sound_stream_a134d03a5d3075f6a98a85a2edff9ac7d}} 
-\index{sf::SoundStream@{sf::SoundStream}!m\_threadMutex@{m\_threadMutex}}
-\index{m\_threadMutex@{m\_threadMutex}!sf::SoundStream@{sf::SoundStream}}
-\doxysubsubsection{\texorpdfstring{m\_threadMutex}{m\_threadMutex}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_mutex}{Mutex}} sf\+::\+Sound\+Stream\+::m\+\_\+thread\+Mutex\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
-
-
-
-\mbox{\hyperlink{classsf_1_1_thread}{Thread}} mutex. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source_l00310}{310}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source}{Sound\+Stream.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_sound_stream_a2e06f2688d7fcf777a9779168067f302}\label{classsf_1_1_sound_stream_a2e06f2688d7fcf777a9779168067f302}} 
-\index{sf::SoundStream@{sf::SoundStream}!m\_threadStartState@{m\_threadStartState}}
-\index{m\_threadStartState@{m\_threadStartState}!sf::SoundStream@{sf::SoundStream}}
-\doxysubsubsection{\texorpdfstring{m\_threadStartState}{m\_threadStartState}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_sound_source_ac43af72c98c077500b239bc75b812f03}{Status}} sf\+::\+Sound\+Stream\+::m\+\_\+thread\+Start\+State\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-\mbox{\hyperlink{class_state}{State}} the thread starts in (Playing, Paused, Stopped) 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source_l00311}{311}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source}{Sound\+Stream.\+hpp}}.
 
 
 

@@ -416,9 +416,9 @@
 \DoxyCodeLine{\Hypertarget{_wave_bank_reader_8cpp_source_l00412}00412         memset(\&\mbox{\hyperlink{class_wave_bank_reader_1_1_impl_a67df206186ec44d748c0ee8e445dc74b}{m\_data}}, 0, \textcolor{keyword}{sizeof}(BANKDATA));}
 \DoxyCodeLine{\Hypertarget{_wave_bank_reader_8cpp_source_l00413}00413 }
 \DoxyCodeLine{\Hypertarget{_wave_bank_reader_8cpp_source_l00414}00414         \mbox{\hyperlink{class_wave_bank_reader_1_1_impl_a30297e6512c5cfa4d6c8225c01a5a079}{m\_names}}.clear();}
-\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8cpp_source_l00415}00415         \mbox{\hyperlink{class_wave_bank_reader_1_1_impl_ab553a9bdf6f980dee7afcf9c7ae7ff56}{m\_entries}}.reset();}
-\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8cpp_source_l00416}00416         \mbox{\hyperlink{class_wave_bank_reader_1_1_impl_a4c543a32858393cf58f569c23c844c9b}{m\_seekData}}.reset();}
-\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8cpp_source_l00417}00417         \mbox{\hyperlink{class_wave_bank_reader_1_1_impl_afdc86417bd5faa65b026a6802250c6b6}{m\_waveData}}.reset();}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8cpp_source_l00415}00415         m\_entries.reset();}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8cpp_source_l00416}00416         m\_seekData.reset();}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8cpp_source_l00417}00417         m\_waveData.reset();}
 \DoxyCodeLine{\Hypertarget{_wave_bank_reader_8cpp_source_l00418}00418     \}}
 \DoxyCodeLine{\Hypertarget{_wave_bank_reader_8cpp_source_l00419}00419 }
 \DoxyCodeLine{\Hypertarget{_wave_bank_reader_8cpp_source_l00420}\mbox{\hyperlink{class_wave_bank_reader_1_1_impl_ab8f389a1facf854c0f4732dc13ec367e}{00420}}     HANDLE                              \mbox{\hyperlink{class_wave_bank_reader_1_1_impl_ab8f389a1facf854c0f4732dc13ec367e}{m\_async}};}
@@ -431,9 +431,9 @@
 \DoxyCodeLine{\Hypertarget{_wave_bank_reader_8cpp_source_l00427}\mbox{\hyperlink{class_wave_bank_reader_1_1_impl_a30297e6512c5cfa4d6c8225c01a5a079}{00427}}     std::map<std::string, uint32\_t>     \mbox{\hyperlink{class_wave_bank_reader_1_1_impl_a30297e6512c5cfa4d6c8225c01a5a079}{m\_names}};}
 \DoxyCodeLine{\Hypertarget{_wave_bank_reader_8cpp_source_l00428}00428 }
 \DoxyCodeLine{\Hypertarget{_wave_bank_reader_8cpp_source_l00429}00429 \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8cpp_source_l00430}\mbox{\hyperlink{class_wave_bank_reader_1_1_impl_ab553a9bdf6f980dee7afcf9c7ae7ff56}{00430}}     std::unique\_ptr<uint8\_t[]>          \mbox{\hyperlink{class_wave_bank_reader_1_1_impl_ab553a9bdf6f980dee7afcf9c7ae7ff56}{m\_entries}};}
-\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8cpp_source_l00431}\mbox{\hyperlink{class_wave_bank_reader_1_1_impl_a4c543a32858393cf58f569c23c844c9b}{00431}}     std::unique\_ptr<uint8\_t[]>          \mbox{\hyperlink{class_wave_bank_reader_1_1_impl_a4c543a32858393cf58f569c23c844c9b}{m\_seekData}};}
-\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8cpp_source_l00432}\mbox{\hyperlink{class_wave_bank_reader_1_1_impl_afdc86417bd5faa65b026a6802250c6b6}{00432}}     std::unique\_ptr<uint8\_t[]>          \mbox{\hyperlink{class_wave_bank_reader_1_1_impl_afdc86417bd5faa65b026a6802250c6b6}{m\_waveData}};}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8cpp_source_l00430}00430     std::unique\_ptr<uint8\_t[]>          m\_entries;}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8cpp_source_l00431}00431     std::unique\_ptr<uint8\_t[]>          m\_seekData;}
+\DoxyCodeLine{\Hypertarget{_wave_bank_reader_8cpp_source_l00432}00432     std::unique\_ptr<uint8\_t[]>          m\_waveData;}
 \DoxyCodeLine{\Hypertarget{_wave_bank_reader_8cpp_source_l00433}00433 \};}
 \DoxyCodeLine{\Hypertarget{_wave_bank_reader_8cpp_source_l00434}00434 }
 \DoxyCodeLine{\Hypertarget{_wave_bank_reader_8cpp_source_l00435}00435 }

@@ -15,11 +15,6 @@ Inheritance diagram for sf\+::Render\+Target\+:\begin{figure}[H]
 \includegraphics[height=3.000000cm]{classsf_1_1_render_target}
 \end{center}
 \end{figure}
-\doxysubsection*{Classes}
-\begin{DoxyCompactItemize}
-\item 
-struct \mbox{\hyperlink{structsf_1_1_render_target_1_1_states_cache}{States\+Cache}}
-\begin{DoxyCompactList}\small\item\em Render states cache. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -110,52 +105,6 @@ void \mbox{\hyperlink{classsf_1_1_render_target_af530274b34159d644e509b4b4dc43eb
 \begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classsf_1_1_render_target_af530274b34159d644e509b4b4dc43eb7}{initialize}} ()
 \begin{DoxyCompactList}\small\item\em Performs the common initialization step after creation. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-void \mbox{\hyperlink{classsf_1_1_render_target_a3ed439c5445e9c7d7ff786ff37005efa}{apply\+Current\+View}} ()
-\begin{DoxyCompactList}\small\item\em Apply the current view. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsf_1_1_render_target_ac1e4b4f29386768a626233f14b6eb745}{apply\+Blend\+Mode}} (const \mbox{\hyperlink{structsf_1_1_blend_mode}{Blend\+Mode}} \&mode)
-\begin{DoxyCompactList}\small\item\em Apply a new blending mode. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsf_1_1_render_target_a0b23bd7c287d0fc12b0521b649a0a0e0}{apply\+Transform}} (const \mbox{\hyperlink{classsf_1_1_transform}{Transform}} \&transform)
-\begin{DoxyCompactList}\small\item\em Apply a new transform. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsf_1_1_render_target_afb8a49305171aad158a27e0dfbb03709}{apply\+Texture}} (const \mbox{\hyperlink{classsf_1_1_texture}{Texture}} $\ast$texture)
-\begin{DoxyCompactList}\small\item\em Apply a new texture. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsf_1_1_render_target_a6f8bc92f07c70ccd57cbf632fe9de0ba}{apply\+Shader}} (const \mbox{\hyperlink{classsf_1_1_shader}{Shader}} $\ast$shader)
-\begin{DoxyCompactList}\small\item\em Apply a new shader. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsf_1_1_render_target_a92af454dcbd48a1d211411cbb306754e}{setup\+Draw}} (bool use\+Vertex\+Cache, const \mbox{\hyperlink{classsf_1_1_render_states}{Render\+States}} \&states)
-\begin{DoxyCompactList}\small\item\em Setup environment for drawing. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsf_1_1_render_target_ab0a53b442b70a6f7fbc72e44005767b0}{draw\+Primitives}} (\mbox{\hyperlink{group__graphics_ga5ee56ac1339984909610713096283b1b}{Primitive\+Type}} type, std\+::size\+\_\+t first\+Vertex, std\+::size\+\_\+t vertex\+Count)
-\begin{DoxyCompactList}\small\item\em Draw the primitives. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsf_1_1_render_target_a48aa78fe0a1779fd8695a95b2a64bcea}{cleanup\+Draw}} (const \mbox{\hyperlink{classsf_1_1_render_states}{Render\+States}} \&states)
-\begin{DoxyCompactList}\small\item\em Clean up environment after drawing. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsf_1_1_render_target_a3ed439c5445e9c7d7ff786ff37005efa}{apply\+Current\+View}} ()
-\begin{DoxyCompactList}\small\item\em Apply the current view. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsf_1_1_render_target_ac1e4b4f29386768a626233f14b6eb745}{apply\+Blend\+Mode}} (const \mbox{\hyperlink{structsf_1_1_blend_mode}{Blend\+Mode}} \&mode)
-\begin{DoxyCompactList}\small\item\em Apply a new blending mode. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsf_1_1_render_target_a0b23bd7c287d0fc12b0521b649a0a0e0}{apply\+Transform}} (const \mbox{\hyperlink{classsf_1_1_transform}{Transform}} \&transform)
-\begin{DoxyCompactList}\small\item\em Apply a new transform. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsf_1_1_render_target_afb8a49305171aad158a27e0dfbb03709}{apply\+Texture}} (const \mbox{\hyperlink{classsf_1_1_texture}{Texture}} $\ast$texture)
-\begin{DoxyCompactList}\small\item\em Apply a new texture. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsf_1_1_render_target_a6f8bc92f07c70ccd57cbf632fe9de0ba}{apply\+Shader}} (const \mbox{\hyperlink{classsf_1_1_shader}{Shader}} $\ast$shader)
-\begin{DoxyCompactList}\small\item\em Apply a new shader. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsf_1_1_render_target_a92af454dcbd48a1d211411cbb306754e}{setup\+Draw}} (bool use\+Vertex\+Cache, const \mbox{\hyperlink{classsf_1_1_render_states}{Render\+States}} \&states)
-\begin{DoxyCompactList}\small\item\em Setup environment for drawing. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsf_1_1_render_target_ab0a53b442b70a6f7fbc72e44005767b0}{draw\+Primitives}} (\mbox{\hyperlink{group__graphics_ga5ee56ac1339984909610713096283b1b}{Primitive\+Type}} type, std\+::size\+\_\+t first\+Vertex, std\+::size\+\_\+t vertex\+Count)
-\begin{DoxyCompactList}\small\item\em Draw the primitives. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsf_1_1_render_target_a48aa78fe0a1779fd8695a95b2a64bcea}{cleanup\+Draw}} (const \mbox{\hyperlink{classsf_1_1_render_states}{Render\+States}} \&states)
-\begin{DoxyCompactList}\small\item\em Clean up environment after drawing. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{classsf_1_1_view}{View}} \mbox{\hyperlink{classsf_1_1_render_target_ada0c3aefe9963dc780ac4fd32287c97e}{m\+\_\+default\+View}}
-\begin{DoxyCompactList}\small\item\em Default view. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classsf_1_1_view}{View}} \mbox{\hyperlink{classsf_1_1_render_target_a141bf3439a6031b1c767ce1fadb81b53}{m\+\_\+view}}
-\begin{DoxyCompactList}\small\item\em Current view. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structsf_1_1_render_target_1_1_states_cache}{States\+Cache}} \mbox{\hyperlink{classsf_1_1_render_target_a56e47f258d99513328806b5a3482c933}{m\+\_\+cache}}
-\begin{DoxyCompactList}\small\item\em Render states cache. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} \mbox{\hyperlink{classsf_1_1_render_target_a1ac05ada49d916a46b69b0a21eea1c6d}{m\+\_\+id}}
-\begin{DoxyCompactList}\small\item\em Unique number that identifies the \mbox{\hyperlink{classsf_1_1_render_target}{Render\+Target}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -222,176 +171,6 @@ Default constructor.
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classsf_1_1_render_target_ac1e4b4f29386768a626233f14b6eb745}\label{classsf_1_1_render_target_ac1e4b4f29386768a626233f14b6eb745}} 
-\index{sf::RenderTarget@{sf::RenderTarget}!applyBlendMode@{applyBlendMode}}
-\index{applyBlendMode@{applyBlendMode}!sf::RenderTarget@{sf::RenderTarget}}
-\doxysubsubsection{\texorpdfstring{applyBlendMode()}{applyBlendMode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void sf\+::\+Render\+Target\+::apply\+Blend\+Mode (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsf_1_1_blend_mode}{Blend\+Mode}} \&}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Apply a new blending mode. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em mode} & Blending mode to apply \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classsf_1_1_render_target_ac1e4b4f29386768a626233f14b6eb745}\label{classsf_1_1_render_target_ac1e4b4f29386768a626233f14b6eb745}} 
-\index{sf::RenderTarget@{sf::RenderTarget}!applyBlendMode@{applyBlendMode}}
-\index{applyBlendMode@{applyBlendMode}!sf::RenderTarget@{sf::RenderTarget}}
-\doxysubsubsection{\texorpdfstring{applyBlendMode()}{applyBlendMode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void sf\+::\+Render\+Target\+::apply\+Blend\+Mode (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsf_1_1_blend_mode}{Blend\+Mode}} \&}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Apply a new blending mode. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em mode} & Blending mode to apply \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classsf_1_1_render_target_a3ed439c5445e9c7d7ff786ff37005efa}\label{classsf_1_1_render_target_a3ed439c5445e9c7d7ff786ff37005efa}} 
-\index{sf::RenderTarget@{sf::RenderTarget}!applyCurrentView@{applyCurrentView}}
-\index{applyCurrentView@{applyCurrentView}!sf::RenderTarget@{sf::RenderTarget}}
-\doxysubsubsection{\texorpdfstring{applyCurrentView()}{applyCurrentView()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void sf\+::\+Render\+Target\+::apply\+Current\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Apply the current view. 
-
-\mbox{\Hypertarget{classsf_1_1_render_target_a3ed439c5445e9c7d7ff786ff37005efa}\label{classsf_1_1_render_target_a3ed439c5445e9c7d7ff786ff37005efa}} 
-\index{sf::RenderTarget@{sf::RenderTarget}!applyCurrentView@{applyCurrentView}}
-\index{applyCurrentView@{applyCurrentView}!sf::RenderTarget@{sf::RenderTarget}}
-\doxysubsubsection{\texorpdfstring{applyCurrentView()}{applyCurrentView()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void sf\+::\+Render\+Target\+::apply\+Current\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Apply the current view. 
-
-\mbox{\Hypertarget{classsf_1_1_render_target_a6f8bc92f07c70ccd57cbf632fe9de0ba}\label{classsf_1_1_render_target_a6f8bc92f07c70ccd57cbf632fe9de0ba}} 
-\index{sf::RenderTarget@{sf::RenderTarget}!applyShader@{applyShader}}
-\index{applyShader@{applyShader}!sf::RenderTarget@{sf::RenderTarget}}
-\doxysubsubsection{\texorpdfstring{applyShader()}{applyShader()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void sf\+::\+Render\+Target\+::apply\+Shader (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_shader}{Shader}} $\ast$}]{shader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Apply a new shader. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em shader} & \mbox{\hyperlink{classsf_1_1_shader}{Shader}} to apply \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classsf_1_1_render_target_a6f8bc92f07c70ccd57cbf632fe9de0ba}\label{classsf_1_1_render_target_a6f8bc92f07c70ccd57cbf632fe9de0ba}} 
-\index{sf::RenderTarget@{sf::RenderTarget}!applyShader@{applyShader}}
-\index{applyShader@{applyShader}!sf::RenderTarget@{sf::RenderTarget}}
-\doxysubsubsection{\texorpdfstring{applyShader()}{applyShader()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void sf\+::\+Render\+Target\+::apply\+Shader (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_shader}{Shader}} $\ast$}]{shader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Apply a new shader. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em shader} & \mbox{\hyperlink{classsf_1_1_shader}{Shader}} to apply \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classsf_1_1_render_target_afb8a49305171aad158a27e0dfbb03709}\label{classsf_1_1_render_target_afb8a49305171aad158a27e0dfbb03709}} 
-\index{sf::RenderTarget@{sf::RenderTarget}!applyTexture@{applyTexture}}
-\index{applyTexture@{applyTexture}!sf::RenderTarget@{sf::RenderTarget}}
-\doxysubsubsection{\texorpdfstring{applyTexture()}{applyTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void sf\+::\+Render\+Target\+::apply\+Texture (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_texture}{Texture}} $\ast$}]{texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Apply a new texture. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em texture} & \mbox{\hyperlink{classsf_1_1_texture}{Texture}} to apply \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classsf_1_1_render_target_afb8a49305171aad158a27e0dfbb03709}\label{classsf_1_1_render_target_afb8a49305171aad158a27e0dfbb03709}} 
-\index{sf::RenderTarget@{sf::RenderTarget}!applyTexture@{applyTexture}}
-\index{applyTexture@{applyTexture}!sf::RenderTarget@{sf::RenderTarget}}
-\doxysubsubsection{\texorpdfstring{applyTexture()}{applyTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void sf\+::\+Render\+Target\+::apply\+Texture (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_texture}{Texture}} $\ast$}]{texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Apply a new texture. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em texture} & \mbox{\hyperlink{classsf_1_1_texture}{Texture}} to apply \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classsf_1_1_render_target_a0b23bd7c287d0fc12b0521b649a0a0e0}\label{classsf_1_1_render_target_a0b23bd7c287d0fc12b0521b649a0a0e0}} 
-\index{sf::RenderTarget@{sf::RenderTarget}!applyTransform@{applyTransform}}
-\index{applyTransform@{applyTransform}!sf::RenderTarget@{sf::RenderTarget}}
-\doxysubsubsection{\texorpdfstring{applyTransform()}{applyTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void sf\+::\+Render\+Target\+::apply\+Transform (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_transform}{Transform}} \&}]{transform }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Apply a new transform. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em transform} & \mbox{\hyperlink{classsf_1_1_transform}{Transform}} to apply \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classsf_1_1_render_target_a0b23bd7c287d0fc12b0521b649a0a0e0}\label{classsf_1_1_render_target_a0b23bd7c287d0fc12b0521b649a0a0e0}} 
-\index{sf::RenderTarget@{sf::RenderTarget}!applyTransform@{applyTransform}}
-\index{applyTransform@{applyTransform}!sf::RenderTarget@{sf::RenderTarget}}
-\doxysubsubsection{\texorpdfstring{applyTransform()}{applyTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void sf\+::\+Render\+Target\+::apply\+Transform (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_transform}{Transform}} \&}]{transform }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Apply a new transform. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em transform} & \mbox{\hyperlink{classsf_1_1_transform}{Transform}} to apply \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classsf_1_1_render_target_a48aa78fe0a1779fd8695a95b2a64bcea}\label{classsf_1_1_render_target_a48aa78fe0a1779fd8695a95b2a64bcea}} 
-\index{sf::RenderTarget@{sf::RenderTarget}!cleanupDraw@{cleanupDraw}}
-\index{cleanupDraw@{cleanupDraw}!sf::RenderTarget@{sf::RenderTarget}}
-\doxysubsubsection{\texorpdfstring{cleanupDraw()}{cleanupDraw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void sf\+::\+Render\+Target\+::cleanup\+Draw (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_render_states}{Render\+States}} \&}]{states }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Clean up environment after drawing. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em states} & Render states used for drawing \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classsf_1_1_render_target_a48aa78fe0a1779fd8695a95b2a64bcea}\label{classsf_1_1_render_target_a48aa78fe0a1779fd8695a95b2a64bcea}} 
-\index{sf::RenderTarget@{sf::RenderTarget}!cleanupDraw@{cleanupDraw}}
-\index{cleanupDraw@{cleanupDraw}!sf::RenderTarget@{sf::RenderTarget}}
-\doxysubsubsection{\texorpdfstring{cleanupDraw()}{cleanupDraw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void sf\+::\+Render\+Target\+::cleanup\+Draw (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_render_states}{Render\+States}} \&}]{states }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Clean up environment after drawing. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em states} & Render states used for drawing \\
-\hline
-\end{DoxyParams}
 \mbox{\Hypertarget{classsf_1_1_render_target_a6bb6f0ba348f2b1e2f46114aeaf60f26}\label{classsf_1_1_render_target_a6bb6f0ba348f2b1e2f46114aeaf60f26}} 
 \index{sf::RenderTarget@{sf::RenderTarget}!clear@{clear}}
 \index{clear@{clear}!sf::RenderTarget@{sf::RenderTarget}}
@@ -576,44 +355,6 @@ Draw primitives defined by a vertex buffer.
 {\em vertex\+Count} & Number of vertices to render \\
 \hline
 {\em states} & Render states to use for drawing \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classsf_1_1_render_target_ab0a53b442b70a6f7fbc72e44005767b0}\label{classsf_1_1_render_target_ab0a53b442b70a6f7fbc72e44005767b0}} 
-\index{sf::RenderTarget@{sf::RenderTarget}!drawPrimitives@{drawPrimitives}}
-\index{drawPrimitives@{drawPrimitives}!sf::RenderTarget@{sf::RenderTarget}}
-\doxysubsubsection{\texorpdfstring{drawPrimitives()}{drawPrimitives()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void sf\+::\+Render\+Target\+::draw\+Primitives (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__graphics_ga5ee56ac1339984909610713096283b1b}{Primitive\+Type}}}]{type,  }\item[{std\+::size\+\_\+t}]{first\+Vertex,  }\item[{std\+::size\+\_\+t}]{vertex\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Draw the primitives. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em type} & Type of primitives to draw \\
-\hline
-{\em first\+Vertex} & Index of the first vertex to use when drawing \\
-\hline
-{\em vertex\+Count} & Number of vertices to use when drawing \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classsf_1_1_render_target_ab0a53b442b70a6f7fbc72e44005767b0}\label{classsf_1_1_render_target_ab0a53b442b70a6f7fbc72e44005767b0}} 
-\index{sf::RenderTarget@{sf::RenderTarget}!drawPrimitives@{drawPrimitives}}
-\index{drawPrimitives@{drawPrimitives}!sf::RenderTarget@{sf::RenderTarget}}
-\doxysubsubsection{\texorpdfstring{drawPrimitives()}{drawPrimitives()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void sf\+::\+Render\+Target\+::draw\+Primitives (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__graphics_ga5ee56ac1339984909610713096283b1b}{Primitive\+Type}}}]{type,  }\item[{std\+::size\+\_\+t}]{first\+Vertex,  }\item[{std\+::size\+\_\+t}]{vertex\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Draw the primitives. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em type} & Type of primitives to draw \\
-\hline
-{\em first\+Vertex} & Index of the first vertex to use when drawing \\
-\hline
-{\em vertex\+Count} & Number of vertices to use when drawing \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classsf_1_1_render_target_a7741129e3ef7ab4f0a40024fca13480c}\label{classsf_1_1_render_target_a7741129e3ef7ab4f0a40024fca13480c}} 
@@ -1192,40 +933,6 @@ True if operation was successful, false otherwise
 
 Reimplemented in \mbox{\hyperlink{classsf_1_1_render_texture_a5da95ecdbce615a80bb78399012508cf}{sf\+::\+Render\+Texture}}, \mbox{\hyperlink{classsf_1_1_render_window_aee6c53eced675e885931eb3e91f11155}{sf\+::\+Render\+Window}}, \mbox{\hyperlink{classsf_1_1_render_texture_a5da95ecdbce615a80bb78399012508cf}{sf\+::\+Render\+Texture}}, and \mbox{\hyperlink{classsf_1_1_render_window_aee6c53eced675e885931eb3e91f11155}{sf\+::\+Render\+Window}}.
 
-\mbox{\Hypertarget{classsf_1_1_render_target_a92af454dcbd48a1d211411cbb306754e}\label{classsf_1_1_render_target_a92af454dcbd48a1d211411cbb306754e}} 
-\index{sf::RenderTarget@{sf::RenderTarget}!setupDraw@{setupDraw}}
-\index{setupDraw@{setupDraw}!sf::RenderTarget@{sf::RenderTarget}}
-\doxysubsubsection{\texorpdfstring{setupDraw()}{setupDraw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void sf\+::\+Render\+Target\+::setup\+Draw (\begin{DoxyParamCaption}\item[{bool}]{use\+Vertex\+Cache,  }\item[{const \mbox{\hyperlink{classsf_1_1_render_states}{Render\+States}} \&}]{states }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Setup environment for drawing. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em use\+Vertex\+Cache} & Are we going to use the vertex cache? \\
-\hline
-{\em states} & Render states to use for drawing \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classsf_1_1_render_target_a92af454dcbd48a1d211411cbb306754e}\label{classsf_1_1_render_target_a92af454dcbd48a1d211411cbb306754e}} 
-\index{sf::RenderTarget@{sf::RenderTarget}!setupDraw@{setupDraw}}
-\index{setupDraw@{setupDraw}!sf::RenderTarget@{sf::RenderTarget}}
-\doxysubsubsection{\texorpdfstring{setupDraw()}{setupDraw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void sf\+::\+Render\+Target\+::setup\+Draw (\begin{DoxyParamCaption}\item[{bool}]{use\+Vertex\+Cache,  }\item[{const \mbox{\hyperlink{classsf_1_1_render_states}{Render\+States}} \&}]{states }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Setup environment for drawing. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em use\+Vertex\+Cache} & Are we going to use the vertex cache? \\
-\hline
-{\em states} & Render states to use for drawing \\
-\hline
-\end{DoxyParams}
 \mbox{\Hypertarget{classsf_1_1_render_target_a063db6dd0a14913504af30e50cb6d946}\label{classsf_1_1_render_target_a063db6dd0a14913504af30e50cb6d946}} 
 \index{sf::RenderTarget@{sf::RenderTarget}!setView@{setView}}
 \index{setView@{setView}!sf::RenderTarget@{sf::RenderTarget}}
@@ -1266,65 +973,6 @@ The view is like a 2D camera, it controls which part of the 2D scene is visible,
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{classsf_1_1_render_target_adbf8dc5a1f4abbe15a3fbb915844c7ea}{get\+View}}, \mbox{\hyperlink{classsf_1_1_render_target_a7741129e3ef7ab4f0a40024fca13480c}{get\+Default\+View}} 
 \end{DoxySeeAlso}
-
-
-\doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{classsf_1_1_render_target_a56e47f258d99513328806b5a3482c933}\label{classsf_1_1_render_target_a56e47f258d99513328806b5a3482c933}} 
-\index{sf::RenderTarget@{sf::RenderTarget}!m\_cache@{m\_cache}}
-\index{m\_cache@{m\_cache}!sf::RenderTarget@{sf::RenderTarget}}
-\doxysubsubsection{\texorpdfstring{m\_cache}{m\_cache}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structsf_1_1_render_target_1_1_states_cache}{States\+Cache}} sf\+::\+Render\+Target\+::m\+\_\+cache\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Render states cache. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_render_target_8hpp_source_l00476}{476}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_render_target_8hpp_source}{Render\+Target.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_render_target_ada0c3aefe9963dc780ac4fd32287c97e}\label{classsf_1_1_render_target_ada0c3aefe9963dc780ac4fd32287c97e}} 
-\index{sf::RenderTarget@{sf::RenderTarget}!m\_defaultView@{m\_defaultView}}
-\index{m\_defaultView@{m\_defaultView}!sf::RenderTarget@{sf::RenderTarget}}
-\doxysubsubsection{\texorpdfstring{m\_defaultView}{m\_defaultView}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_view}{View}} sf\+::\+Render\+Target\+::m\+\_\+default\+View\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Default view. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_render_target_8hpp_source_l00474}{474}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_render_target_8hpp_source}{Render\+Target.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_render_target_a1ac05ada49d916a46b69b0a21eea1c6d}\label{classsf_1_1_render_target_a1ac05ada49d916a46b69b0a21eea1c6d}} 
-\index{sf::RenderTarget@{sf::RenderTarget}!m\_id@{m\_id}}
-\index{m\_id@{m\_id}!sf::RenderTarget@{sf::RenderTarget}}
-\doxysubsubsection{\texorpdfstring{m\_id}{m\_id}}
-{\footnotesize\ttfamily \mbox{\hyperlink{namespacesf_add9ac83466d96b9f50a009b9f4064266}{Uint64}} sf\+::\+Render\+Target\+::m\+\_\+id\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Unique number that identifies the \mbox{\hyperlink{classsf_1_1_render_target}{Render\+Target}}. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_render_target_8hpp_source_l00477}{477}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_render_target_8hpp_source}{Render\+Target.\+hpp}}.
-
-\mbox{\Hypertarget{classsf_1_1_render_target_a141bf3439a6031b1c767ce1fadb81b53}\label{classsf_1_1_render_target_a141bf3439a6031b1c767ce1fadb81b53}} 
-\index{sf::RenderTarget@{sf::RenderTarget}!m\_view@{m\_view}}
-\index{m\_view@{m\_view}!sf::RenderTarget@{sf::RenderTarget}}
-\doxysubsubsection{\texorpdfstring{m\_view}{m\_view}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classsf_1_1_view}{View}} sf\+::\+Render\+Target\+::m\+\_\+view\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Current view. 
-
-
-
-Definition at line \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_render_target_8hpp_source_l00475}{475}} of file \mbox{\hyperlink{_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_render_target_8hpp_source}{Render\+Target.\+hpp}}.
-
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

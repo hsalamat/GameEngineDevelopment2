@@ -31,6 +31,5 @@ var classsf_1_1_sound =
     [ "setPlayingOffset", "classsf_1_1_sound.html#ab905677846558042022dd6ab15cddff0", null ],
     [ "setPlayingOffset", "classsf_1_1_sound.html#ab905677846558042022dd6ab15cddff0", null ],
     [ "stop", "classsf_1_1_sound.html#aa9c91c34f7c6d344d5ee9b997511f754", null ],
-    [ "stop", "classsf_1_1_sound.html#aa9c91c34f7c6d344d5ee9b997511f754", null ],
-    [ "m_buffer", "classsf_1_1_sound.html#aa33c121885579cb44e1e0e7bb76534be", null ]
+    [ "stop", "classsf_1_1_sound.html#aa9c91c34f7c6d344d5ee9b997511f754", null ]
 ];

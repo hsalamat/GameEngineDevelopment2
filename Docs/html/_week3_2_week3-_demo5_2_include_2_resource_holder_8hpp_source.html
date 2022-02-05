@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Game Engine Development II: Week3/Week3-Demo5/Include/ResourceHolder.hpp Source File</title>
+<title>My Project: Week3/Week3-Demo5/Include/ResourceHolder.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Game Engine Development II
+   <div id="projectname">My Project
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -117,23 +117,21 @@ $(document).ready(function(){initNavTree('_week3_2_week3-_demo5_2_include_2_reso
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_resource_holder.html#a6381699fda014a3da5aad6d4bb1b6fa5">   24</a></span>        <span class="keywordtype">void</span>                        <a class="code hl_function" href="class_resource_holder.html#a6381699fda014a3da5aad6d4bb1b6fa5">insertResource</a>(Identifier <span class="keywordtype">id</span>, std::unique_ptr&lt;Resource&gt; resource);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordtype">void</span>                        insertResource(Identifier <span class="keywordtype">id</span>, std::unique_ptr&lt;Resource&gt; resource);</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        std::map&lt;Identifier, std::unique_ptr&lt;Resource&gt;&gt; <a class="code hl_variable" href="class_resource_holder.html#affad09342aee1638649cf5b41415703a">mResourceMap</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        std::map&lt;Identifier, std::unique_ptr&lt;Resource&gt;&gt; mResourceMap;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>};</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &quot;<a class="code" href="_week9-10_2_week10-_demo9-_game_over_2_include_2_resource_holder_8inl.html">ResourceHolder.inl</a>&quot;</span></div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
 <div class="ttc" id="a_week9-10_2_week10-_demo9-_game_over_2_include_2_resource_holder_8inl_html"><div class="ttname"><a href="_week9-10_2_week10-_demo9-_game_over_2_include_2_resource_holder_8inl.html">ResourceHolder.inl</a></div></div>
 <div class="ttc" id="aclass_resource_holder_html"><div class="ttname"><a href="class_resource_holder.html">ResourceHolder</a></div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_resource_holder_8hpp_source.html#l00012">ResourceHolder.hpp:13</a></div></div>
-<div class="ttc" id="aclass_resource_holder_html_a6381699fda014a3da5aad6d4bb1b6fa5"><div class="ttname"><a href="class_resource_holder.html#a6381699fda014a3da5aad6d4bb1b6fa5">ResourceHolder::insertResource</a></div><div class="ttdeci">void insertResource(Identifier id, std::unique_ptr&lt; Resource &gt; resource)</div></div>
 <div class="ttc" id="aclass_resource_holder_html_a6452638a75b6df7ea7d610f204632850"><div class="ttname"><a href="class_resource_holder.html#a6452638a75b6df7ea7d610f204632850">ResourceHolder::get</a></div><div class="ttdeci">Resource &amp; get(Identifier id)</div></div>
 <div class="ttc" id="aclass_resource_holder_html_aaf453199dbdfb9b8395c52b29eb915c2"><div class="ttname"><a href="class_resource_holder.html#aaf453199dbdfb9b8395c52b29eb915c2">ResourceHolder::get</a></div><div class="ttdeci">const Resource &amp; get(Identifier id) const</div></div>
 <div class="ttc" id="aclass_resource_holder_html_accb6a2b6bd2da503ddfd57b5c0028a16"><div class="ttname"><a href="class_resource_holder.html#accb6a2b6bd2da503ddfd57b5c0028a16">ResourceHolder::load</a></div><div class="ttdeci">void load(Identifier id, const std::string &amp;filename)</div></div>
 <div class="ttc" id="aclass_resource_holder_html_ae83a7a88b2b2a74b6143796eb4452110"><div class="ttname"><a href="class_resource_holder.html#ae83a7a88b2b2a74b6143796eb4452110">ResourceHolder::load</a></div><div class="ttdeci">void load(Identifier id, const std::string &amp;filename, const Parameter &amp;secondParam)</div></div>
-<div class="ttc" id="aclass_resource_holder_html_affad09342aee1638649cf5b41415703a"><div class="ttname"><a href="class_resource_holder.html#affad09342aee1638649cf5b41415703a">ResourceHolder::mResourceMap</a></div><div class="ttdeci">std::map&lt; Identifier, std::unique_ptr&lt; Resource &gt; &gt; mResourceMap</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_resource_holder_8hpp_source.html#l00029">ResourceHolder.hpp:29</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

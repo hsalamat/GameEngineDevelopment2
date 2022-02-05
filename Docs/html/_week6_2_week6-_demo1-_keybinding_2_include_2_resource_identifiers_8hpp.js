@@ -114,6 +114,8 @@ var _week6_2_week6__demo1__keybinding_2_include_2_resource_identifiers_8hpp =
       [ "Airplane", "_week6_2_week6-_demo1-_keybinding_2_include_2_resource_identifiers_8hpp.html#a2cfe2099537d4e80b08437b4978301a5a69e6f38969d2fb852a9aaac8bb74ddfd", null ],
       [ "Landscape", "_week6_2_week6-_demo1-_keybinding_2_include_2_resource_identifiers_8hpp.html#a2cfe2099537d4e80b08437b4978301a5a147ca4f7c5ec17c0c61af3c70934d861", null ],
       [ "Airplane", "_week6_2_week6-_demo1-_keybinding_2_include_2_resource_identifiers_8hpp.html#a2cfe2099537d4e80b08437b4978301a5a69e6f38969d2fb852a9aaac8bb74ddfd", null ],
+      [ "Landscape", "_week6_2_week6-_demo1-_keybinding_2_include_2_resource_identifiers_8hpp.html#a2cfe2099537d4e80b08437b4978301a5a147ca4f7c5ec17c0c61af3c70934d861", null ],
+      [ "Airplane", "_week6_2_week6-_demo1-_keybinding_2_include_2_resource_identifiers_8hpp.html#a2cfe2099537d4e80b08437b4978301a5a69e6f38969d2fb852a9aaac8bb74ddfd", null ],
       [ "Eagle", "_week6_2_week6-_demo1-_keybinding_2_include_2_resource_identifiers_8hpp.html#a2cfe2099537d4e80b08437b4978301a5a925b3740f89bba053050ed5879b5ca2f", null ],
       [ "Raptor", "_week6_2_week6-_demo1-_keybinding_2_include_2_resource_identifiers_8hpp.html#a2cfe2099537d4e80b08437b4978301a5a24fb8bfe84a35db5b7e83ed50d5b0d44", null ],
       [ "Desert", "_week6_2_week6-_demo1-_keybinding_2_include_2_resource_identifiers_8hpp.html#a2cfe2099537d4e80b08437b4978301a5ae0e91c2b0491c097f186d91f48d88784", null ],

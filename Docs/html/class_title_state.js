@@ -119,9 +119,5 @@ var class_title_state =
     [ "update", "class_title_state.html#a722fcb2a30f05ea3821ea1ed4c841eec", null ],
     [ "update", "class_title_state.html#a722fcb2a30f05ea3821ea1ed4c841eec", null ],
     [ "update", "class_title_state.html#a722fcb2a30f05ea3821ea1ed4c841eec", null ],
-    [ "update", "class_title_state.html#a722fcb2a30f05ea3821ea1ed4c841eec", null ],
-    [ "mBackgroundSprite", "class_title_state.html#afca87e4a291c9dc13c1c3ae43161f3e5", null ],
-    [ "mShowText", "class_title_state.html#a39ca2d577793818b9417017247d5c98c", null ],
-    [ "mText", "class_title_state.html#a73b7c3e01214d0fff03d0d2a96df8421", null ],
-    [ "mTextEffectTime", "class_title_state.html#a2250b3d758d7c303b4da2824c5571454", null ]
+    [ "update", "class_title_state.html#a722fcb2a30f05ea3821ea1ed4c841eec", null ]
 ];

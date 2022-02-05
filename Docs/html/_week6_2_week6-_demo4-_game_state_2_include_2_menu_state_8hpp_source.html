@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Game Engine Development II: Week6/Week6-Demo4-GameState/Include/MenuState.hpp Source File</title>
+<title>My Project: Week6/Week6-Demo4-GameState/Include/MenuState.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Game Engine Development II
+   <div id="projectname">My Project
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -113,32 +113,26 @@ $(document).ready(function(){initNavTree('_week6_2_week6-_demo4-_game_state_2_in
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_menu_state.html#a80ae3c69b90b9a776d9cfedf34a6b5a5">   20</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="class_menu_state.html#a80ae3c69b90b9a776d9cfedf34a6b5a5">OptionNames</a></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">enum</span> OptionNames</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <a class="code hl_enumvalue" href="class_menu_state.html#a80ae3c69b90b9a776d9cfedf34a6b5a5ac44db2585a0345c7c8dd7499781ccb96">Play</a>,</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <a class="code hl_enumvalue" href="class_menu_state.html#a80ae3c69b90b9a776d9cfedf34a6b5a5a0b6109f545ace2298a384acf8f880b9c">Exit</a>,</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        Play,</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        Exit,</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    };</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_class" href="classsf_1_1_sprite.html">sf::Sprite</a>              <a class="code hl_variable" href="class_menu_state.html#a7c6855c2037ee7e4e1b07b7ce1fccd6c">mBackgroundSprite</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_class" href="classsf_1_1_sprite.html">sf::Sprite</a>              mBackgroundSprite;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    std::vector&lt;sf::Text&gt;   <a class="code hl_variable" href="class_menu_state.html#a7835085567742e3f01553f18312c7ccd">mOptions</a>;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    std::size_t             <a class="code hl_variable" href="class_menu_state.html#a1abcaaa822c84cd963dd6aa4e11bd531">mOptionIndex</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    std::vector&lt;sf::Text&gt;   mOptions;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    std::size_t             mOptionIndex;</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>};</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
 <div class="ttc" id="a_week9-10_2_week10-_demo9-_game_over_2_include_2_state_8hpp_html"><div class="ttname"><a href="_week9-10_2_week10-_demo9-_game_over_2_include_2_state_8hpp.html">State.hpp</a></div></div>
 <div class="ttc" id="aclass_menu_state_html"><div class="ttname"><a href="class_menu_state.html">MenuState</a></div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_menu_state_8hpp_source.html#l00011">MenuState.hpp:12</a></div></div>
-<div class="ttc" id="aclass_menu_state_html_a1abcaaa822c84cd963dd6aa4e11bd531"><div class="ttname"><a href="class_menu_state.html#a1abcaaa822c84cd963dd6aa4e11bd531">MenuState::mOptionIndex</a></div><div class="ttdeci">std::size_t mOptionIndex</div><div class="ttdef"><b>Definition:</b> <a href="_week6_2_week6-_demo3-_menu_state_2_include_2_menu_state_8hpp_source.html#l00032">MenuState.hpp:32</a></div></div>
 <div class="ttc" id="aclass_menu_state_html_a588a73443b2eca91edc895fe5a2a94ce"><div class="ttname"><a href="class_menu_state.html#a588a73443b2eca91edc895fe5a2a94ce">MenuState::update</a></div><div class="ttdeci">virtual bool update(sf::Time dt)</div></div>
 <div class="ttc" id="aclass_menu_state_html_a6e7034c57bf83f24aa8f4321d3d210a5"><div class="ttname"><a href="class_menu_state.html#a6e7034c57bf83f24aa8f4321d3d210a5">MenuState::MenuState</a></div><div class="ttdeci">MenuState(StateStack &amp;stack, Context context)</div></div>
 <div class="ttc" id="aclass_menu_state_html_a6ebbcdc8f6e81cd654b8b7c9a5bbae09"><div class="ttname"><a href="class_menu_state.html#a6ebbcdc8f6e81cd654b8b7c9a5bbae09">MenuState::updateOptionText</a></div><div class="ttdeci">void updateOptionText()</div></div>
 <div class="ttc" id="aclass_menu_state_html_a7214f8d8b7ecd282100d1ca1a1dc168f"><div class="ttname"><a href="class_menu_state.html#a7214f8d8b7ecd282100d1ca1a1dc168f">MenuState::draw</a></div><div class="ttdeci">virtual void draw()</div></div>
-<div class="ttc" id="aclass_menu_state_html_a7835085567742e3f01553f18312c7ccd"><div class="ttname"><a href="class_menu_state.html#a7835085567742e3f01553f18312c7ccd">MenuState::mOptions</a></div><div class="ttdeci">std::vector&lt; sf::Text &gt; mOptions</div><div class="ttdef"><b>Definition:</b> <a href="_week6_2_week6-_demo3-_menu_state_2_include_2_menu_state_8hpp_source.html#l00031">MenuState.hpp:31</a></div></div>
-<div class="ttc" id="aclass_menu_state_html_a7c6855c2037ee7e4e1b07b7ce1fccd6c"><div class="ttname"><a href="class_menu_state.html#a7c6855c2037ee7e4e1b07b7ce1fccd6c">MenuState::mBackgroundSprite</a></div><div class="ttdeci">sf::Sprite mBackgroundSprite</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_menu_state_8hpp_source.html#l00022">MenuState.hpp:22</a></div></div>
-<div class="ttc" id="aclass_menu_state_html_a80ae3c69b90b9a776d9cfedf34a6b5a5"><div class="ttname"><a href="class_menu_state.html#a80ae3c69b90b9a776d9cfedf34a6b5a5">MenuState::OptionNames</a></div><div class="ttdeci">OptionNames</div><div class="ttdef"><b>Definition:</b> <a href="_week6_2_week6-_demo3-_menu_state_2_include_2_menu_state_8hpp_source.html#l00021">MenuState.hpp:22</a></div></div>
-<div class="ttc" id="aclass_menu_state_html_a80ae3c69b90b9a776d9cfedf34a6b5a5a0b6109f545ace2298a384acf8f880b9c"><div class="ttname"><a href="class_menu_state.html#a80ae3c69b90b9a776d9cfedf34a6b5a5a0b6109f545ace2298a384acf8f880b9c">MenuState::Exit</a></div><div class="ttdeci">@ Exit</div><div class="ttdef"><b>Definition:</b> <a href="_week6_2_week6-_demo3-_menu_state_2_include_2_menu_state_8hpp_source.html#l00024">MenuState.hpp:24</a></div></div>
-<div class="ttc" id="aclass_menu_state_html_a80ae3c69b90b9a776d9cfedf34a6b5a5ac44db2585a0345c7c8dd7499781ccb96"><div class="ttname"><a href="class_menu_state.html#a80ae3c69b90b9a776d9cfedf34a6b5a5ac44db2585a0345c7c8dd7499781ccb96">MenuState::Play</a></div><div class="ttdeci">@ Play</div><div class="ttdef"><b>Definition:</b> <a href="_week6_2_week6-_demo3-_menu_state_2_include_2_menu_state_8hpp_source.html#l00023">MenuState.hpp:23</a></div></div>
 <div class="ttc" id="aclass_menu_state_html_a985853550bfe9569b2e446f1b9ecb5af"><div class="ttname"><a href="class_menu_state.html#a985853550bfe9569b2e446f1b9ecb5af">MenuState::handleEvent</a></div><div class="ttdeci">virtual bool handleEvent(const sf::Event &amp;event)</div></div>
 <div class="ttc" id="aclass_state_html"><div class="ttname"><a href="class_state.html">State</a></div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_state_8hpp_source.html#l00021">State.hpp:22</a></div></div>
 <div class="ttc" id="aclass_state_stack_html"><div class="ttname"><a href="class_state_stack.html">StateStack</a></div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_state_stack_8hpp_source.html#l00023">StateStack.hpp:24</a></div></div>

@@ -320,19 +320,6 @@ var class_entity =
     [ "updateCurrent", "class_entity.html#a2ff6dc0d8d5f207de169b6f5a36dd42d", null ],
     [ "updateCurrent", "class_entity.html#acfc81fc2a381fda27021ea8d6b20527e", null ],
     [ "updateCurrent", "class_entity.html#acfc81fc2a381fda27021ea8d6b20527e", null ],
-    [ "updateCurrent", "class_entity.html#acfc81fc2a381fda27021ea8d6b20527e", null ],
-    [ "updateCurrent", "class_entity.html#acfc81fc2a381fda27021ea8d6b20527e", null ],
-    [ "updateCurrent", "class_entity.html#acfc81fc2a381fda27021ea8d6b20527e", null ],
-    [ "updateCurrent", "class_entity.html#acfc81fc2a381fda27021ea8d6b20527e", null ],
-    [ "updateCurrent", "class_entity.html#acfc81fc2a381fda27021ea8d6b20527e", null ],
-    [ "updateCurrent", "class_entity.html#acfc81fc2a381fda27021ea8d6b20527e", null ],
-    [ "updateCurrent", "class_entity.html#acfc81fc2a381fda27021ea8d6b20527e", null ],
-    [ "updateCurrent", "class_entity.html#acfc81fc2a381fda27021ea8d6b20527e", null ],
-    [ "updateCurrent", "class_entity.html#acfc81fc2a381fda27021ea8d6b20527e", null ],
-    [ "updateCurrent", "class_entity.html#acfc81fc2a381fda27021ea8d6b20527e", null ],
-    [ "updateCurrent", "class_entity.html#acfc81fc2a381fda27021ea8d6b20527e", null ],
-    [ "updateCurrent", "class_entity.html#acfc81fc2a381fda27021ea8d6b20527e", null ],
-    [ "updateCurrent", "class_entity.html#acfc81fc2a381fda27021ea8d6b20527e", null ],
     [ "updateCurrent", "class_entity.html#a3d9ad14643b61864cf60ea7f0738146b", null ],
     [ "updateCurrent", "class_entity.html#a4ebebbbb20fcac7024fb3a9985ed2eff", null ],
     [ "updateCurrent", "class_entity.html#a4ebebbbb20fcac7024fb3a9985ed2eff", null ],
@@ -352,7 +339,5 @@ var class_entity =
     [ "updateCurrent", "class_entity.html#a4ebebbbb20fcac7024fb3a9985ed2eff", null ],
     [ "updateCurrent", "class_entity.html#a4ebebbbb20fcac7024fb3a9985ed2eff", null ],
     [ "updateCurrent", "class_entity.html#a4ebebbbb20fcac7024fb3a9985ed2eff", null ],
-    [ "updateCurrent", "class_entity.html#a4ebebbbb20fcac7024fb3a9985ed2eff", null ],
-    [ "mHitpoints", "class_entity.html#a1d394931fe49170aadf8d098fd048988", null ],
-    [ "mVelocity", "class_entity.html#ae6c40df3cd7d4357c2fd9ee4924bfb14", null ]
+    [ "updateCurrent", "class_entity.html#a4ebebbbb20fcac7024fb3a9985ed2eff", null ]
 ];

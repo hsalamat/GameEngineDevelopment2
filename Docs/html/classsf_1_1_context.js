@@ -9,6 +9,5 @@ var classsf_1_1_context =
     [ "getSettings", "classsf_1_1_context.html#a5aace0ecfcf9552e97eed9ae88d01f71", null ],
     [ "getSettings", "classsf_1_1_context.html#a5aace0ecfcf9552e97eed9ae88d01f71", null ],
     [ "setActive", "classsf_1_1_context.html#a0806f915ea81ae1f4e8135a7a3696562", null ],
-    [ "setActive", "classsf_1_1_context.html#a0806f915ea81ae1f4e8135a7a3696562", null ],
-    [ "m_context", "classsf_1_1_context.html#aed2ee6e7409507fbb3ffd953d79d08c5", null ]
+    [ "setActive", "classsf_1_1_context.html#a0806f915ea81ae1f4e8135a7a3696562", null ]
 ];

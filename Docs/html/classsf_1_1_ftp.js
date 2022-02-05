@@ -37,8 +37,6 @@ var classsf_1_1_ftp =
     [ "download", "classsf_1_1_ftp.html#a20c1600ec5fd6f5a2ad1429ab8aa5df4", null ],
     [ "getDirectoryListing", "classsf_1_1_ftp.html#a8f37258e461fcb9e2a0655e9df0be4a0", null ],
     [ "getDirectoryListing", "classsf_1_1_ftp.html#a8f37258e461fcb9e2a0655e9df0be4a0", null ],
-    [ "getResponse", "classsf_1_1_ftp.html#a605a3ecae3bbba58fd1f250be500e741", null ],
-    [ "getResponse", "classsf_1_1_ftp.html#a605a3ecae3bbba58fd1f250be500e741", null ],
     [ "getWorkingDirectory", "classsf_1_1_ftp.html#a79c654fcdd0c81e68c4fa29af3b45e0c", null ],
     [ "getWorkingDirectory", "classsf_1_1_ftp.html#a79c654fcdd0c81e68c4fa29af3b45e0c", null ],
     [ "keepAlive", "classsf_1_1_ftp.html#aa1127d442b4acb2105aa8060a39d04fc", null ],
@@ -55,7 +53,5 @@ var classsf_1_1_ftp =
     [ "sendCommand", "classsf_1_1_ftp.html#a44e095103ecbce175a33eaf0820440ff", null ],
     [ "upload", "classsf_1_1_ftp.html#a0402d2cec27a197ffba34c88ffaddeac", null ],
     [ "upload", "classsf_1_1_ftp.html#a0402d2cec27a197ffba34c88ffaddeac", null ],
-    [ "DataChannel", "classsf_1_1_ftp.html#aafee9e6471e9ba6590613dc367c65503", null ],
-    [ "m_commandSocket", "classsf_1_1_ftp.html#a36e68897d2219b1a56f1c30545bc6cce", null ],
-    [ "m_receiveBuffer", "classsf_1_1_ftp.html#a24e8c6bd093823fb24caab23f9c798a0", null ]
+    [ "DataChannel", "classsf_1_1_ftp.html#aafee9e6471e9ba6590613dc367c65503", null ]
 ];

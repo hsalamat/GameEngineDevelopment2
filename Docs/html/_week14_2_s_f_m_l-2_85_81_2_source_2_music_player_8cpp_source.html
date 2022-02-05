@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Game Engine Development II: Week14/SFML-2.5.1/Source/MusicPlayer.cpp Source File</title>
+<title>My Project: Week14/SFML-2.5.1/Source/MusicPlayer.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Game Engine Development II
+   <div id="projectname">My Project
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -108,41 +108,38 @@ $(document).ready(function(){initNavTree('_week14_2_s_f_m_l-2_85_81_2_source_2_m
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keywordtype">void</span> <a class="code hl_function" href="class_music_player.html#a8a10a649154c8b7af3031c5f36cb53ca">MusicPlayer::play</a>(<a class="code hl_enumeration" href="namespace_music.html#ad5e0c8c2e2e7bdcbffbb125051531b86">Music::ID</a> theme)</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    std::string filename = <a class="code hl_variable" href="class_music_player.html#a56ec3cf00ff836dc378dd228443fbc87">mFilenames</a>[theme];</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    std::string filename = mFilenames[theme];</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_music_player.html#ad18cdf29e5ebac13d62185a9e1b646d5">mMusic</a>.<a class="code hl_function" href="classsf_1_1_music.html#a3edc66e5f5b3f11e84b90eaec9c7d7c0">openFromFile</a>(filename))</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordflow">if</span> (!mMusic.<a class="code hl_function" href="classsf_1_1_music.html#a3edc66e5f5b3f11e84b90eaec9c7d7c0">openFromFile</a>(filename))</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Music &quot;</span> + filename + <span class="stringliteral">&quot; could not be loaded.&quot;</span>);</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_variable" href="class_music_player.html#ad18cdf29e5ebac13d62185a9e1b646d5">mMusic</a>.<a class="code hl_function" href="classsf_1_1_sound_source.html#a2f192f2b49fb8e2b82f3498d3663fcc2">setVolume</a>(<a class="code hl_variable" href="class_music_player.html#ad4d026091511aa086cd96047c1adfd97">mVolume</a>);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_variable" href="class_music_player.html#ad18cdf29e5ebac13d62185a9e1b646d5">mMusic</a>.<a class="code hl_function" href="classsf_1_1_sound_stream.html#a43fade018ffba7e4f847a9f00b353f3d">setLoop</a>(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_variable" href="class_music_player.html#ad18cdf29e5ebac13d62185a9e1b646d5">mMusic</a>.<a class="code hl_function" href="classsf_1_1_sound_stream.html#afdc08b69cab5f243d9324940a85a1144">play</a>();</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    mMusic.<a class="code hl_function" href="classsf_1_1_sound_source.html#a2f192f2b49fb8e2b82f3498d3663fcc2">setVolume</a>(mVolume);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    mMusic.<a class="code hl_function" href="classsf_1_1_sound_stream.html#a43fade018ffba7e4f847a9f00b353f3d">setLoop</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    mMusic.<a class="code hl_function" href="classsf_1_1_sound_stream.html#afdc08b69cab5f243d9324940a85a1144">play</a>();</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keywordtype">void</span> <a class="code hl_function" href="class_music_player.html#a54e47a9e937730493d886aa5624c44d1">MusicPlayer::stop</a>()</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>{</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_variable" href="class_music_player.html#ad18cdf29e5ebac13d62185a9e1b646d5">mMusic</a>.<a class="code hl_function" href="classsf_1_1_sound_stream.html#a16cc6a0404b32e42c4dce184bb94d0f4">stop</a>();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    mMusic.<a class="code hl_function" href="classsf_1_1_sound_stream.html#a16cc6a0404b32e42c4dce184bb94d0f4">stop</a>();</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keywordtype">void</span> <a class="code hl_function" href="class_music_player.html#a361cbcbfb31d3c0c841d0b67a79c5cdd">MusicPlayer::setVolume</a>(<span class="keywordtype">float</span> volume)</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>{</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_variable" href="class_music_player.html#ad4d026091511aa086cd96047c1adfd97">mVolume</a> = volume;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    mVolume = volume;</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keywordtype">void</span> <a class="code hl_function" href="class_music_player.html#a59b313a9a9eb850e590f9c6555ad80cf">MusicPlayer::setPaused</a>(<span class="keywordtype">bool</span> paused)</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>{</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">if</span> (paused)</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <a class="code hl_variable" href="class_music_player.html#ad18cdf29e5ebac13d62185a9e1b646d5">mMusic</a>.<a class="code hl_function" href="classsf_1_1_sound_stream.html#a932ff181e661503cad288b4bb6fe45ca">pause</a>();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        mMusic.<a class="code hl_function" href="classsf_1_1_sound_stream.html#a932ff181e661503cad288b4bb6fe45ca">pause</a>();</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <a class="code hl_variable" href="class_music_player.html#ad18cdf29e5ebac13d62185a9e1b646d5">mMusic</a>.<a class="code hl_function" href="classsf_1_1_sound_stream.html#afdc08b69cab5f243d9324940a85a1144">play</a>();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        mMusic.<a class="code hl_function" href="classsf_1_1_sound_stream.html#afdc08b69cab5f243d9324940a85a1144">play</a>();</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
 <div class="ttc" id="aclass_music_player_html_a157211d92ff78fe87fdef2bb77a2b5fa"><div class="ttname"><a href="class_music_player.html#a157211d92ff78fe87fdef2bb77a2b5fa">MusicPlayer::MusicPlayer</a></div><div class="ttdeci">MusicPlayer()</div><div class="ttdef"><b>Definition:</b> <a href="_week12_2_week12-_demo1-_music_player_2_source_2_music_player_8cpp_source.html#l00005">MusicPlayer.cpp:5</a></div></div>
 <div class="ttc" id="aclass_music_player_html_a361cbcbfb31d3c0c841d0b67a79c5cdd"><div class="ttname"><a href="class_music_player.html#a361cbcbfb31d3c0c841d0b67a79c5cdd">MusicPlayer::setVolume</a></div><div class="ttdeci">void setVolume(float volume)</div><div class="ttdef"><b>Definition:</b> <a href="_week12_2_week12-_demo1-_music_player_2_source_2_music_player_8cpp_source.html#l00031">MusicPlayer.cpp:31</a></div></div>
 <div class="ttc" id="aclass_music_player_html_a54e47a9e937730493d886aa5624c44d1"><div class="ttname"><a href="class_music_player.html#a54e47a9e937730493d886aa5624c44d1">MusicPlayer::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdef"><b>Definition:</b> <a href="_week12_2_week12-_demo1-_music_player_2_source_2_music_player_8cpp_source.html#l00026">MusicPlayer.cpp:26</a></div></div>
-<div class="ttc" id="aclass_music_player_html_a56ec3cf00ff836dc378dd228443fbc87"><div class="ttname"><a href="class_music_player.html#a56ec3cf00ff836dc378dd228443fbc87">MusicPlayer::mFilenames</a></div><div class="ttdeci">std::map&lt; Music::ID, std::string &gt; mFilenames</div><div class="ttdef"><b>Definition:</b> <a href="_week12_2_week12-_demo1-_music_player_2_include_2_music_player_8hpp_source.html#l00029">MusicPlayer.hpp:29</a></div></div>
 <div class="ttc" id="aclass_music_player_html_a59b313a9a9eb850e590f9c6555ad80cf"><div class="ttname"><a href="class_music_player.html#a59b313a9a9eb850e590f9c6555ad80cf">MusicPlayer::setPaused</a></div><div class="ttdeci">void setPaused(bool paused)</div><div class="ttdef"><b>Definition:</b> <a href="_week12_2_week12-_demo1-_music_player_2_source_2_music_player_8cpp_source.html#l00036">MusicPlayer.cpp:36</a></div></div>
 <div class="ttc" id="aclass_music_player_html_a8a10a649154c8b7af3031c5f36cb53ca"><div class="ttname"><a href="class_music_player.html#a8a10a649154c8b7af3031c5f36cb53ca">MusicPlayer::play</a></div><div class="ttdeci">void play(Music::ID theme)</div><div class="ttdef"><b>Definition:</b> <a href="_week12_2_week12-_demo1-_music_player_2_source_2_music_player_8cpp_source.html#l00014">MusicPlayer.cpp:14</a></div></div>
-<div class="ttc" id="aclass_music_player_html_ad18cdf29e5ebac13d62185a9e1b646d5"><div class="ttname"><a href="class_music_player.html#ad18cdf29e5ebac13d62185a9e1b646d5">MusicPlayer::mMusic</a></div><div class="ttdeci">sf::Music mMusic</div><div class="ttdef"><b>Definition:</b> <a href="_week12_2_week12-_demo1-_music_player_2_include_2_music_player_8hpp_source.html#l00028">MusicPlayer.hpp:28</a></div></div>
-<div class="ttc" id="aclass_music_player_html_ad4d026091511aa086cd96047c1adfd97"><div class="ttname"><a href="class_music_player.html#ad4d026091511aa086cd96047c1adfd97">MusicPlayer::mVolume</a></div><div class="ttdeci">float mVolume</div><div class="ttdef"><b>Definition:</b> <a href="_week12_2_week12-_demo1-_music_player_2_include_2_music_player_8hpp_source.html#l00030">MusicPlayer.hpp:30</a></div></div>
 <div class="ttc" id="aclasssf_1_1_music_html_a3edc66e5f5b3f11e84b90eaec9c7d7c0"><div class="ttname"><a href="classsf_1_1_music.html#a3edc66e5f5b3f11e84b90eaec9c7d7c0">sf::Music::openFromFile</a></div><div class="ttdeci">bool openFromFile(const std::string &amp;filename)</div><div class="ttdoc">Open a music from an audio file.</div></div>
 <div class="ttc" id="aclasssf_1_1_sound_source_html_a2f192f2b49fb8e2b82f3498d3663fcc2"><div class="ttname"><a href="classsf_1_1_sound_source.html#a2f192f2b49fb8e2b82f3498d3663fcc2">sf::SoundSource::setVolume</a></div><div class="ttdeci">void setVolume(float volume)</div><div class="ttdoc">Set the volume of the sound.</div></div>
 <div class="ttc" id="aclasssf_1_1_sound_stream_html_a16cc6a0404b32e42c4dce184bb94d0f4"><div class="ttname"><a href="classsf_1_1_sound_stream.html#a16cc6a0404b32e42c4dce184bb94d0f4">sf::SoundStream::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Stop playing the audio stream.</div></div>

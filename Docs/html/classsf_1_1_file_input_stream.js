@@ -13,6 +13,5 @@ var classsf_1_1_file_input_stream =
     [ "seek", "classsf_1_1_file_input_stream.html#abdaf5700d4e1de07568e7829106b4eb9", null ],
     [ "seek", "classsf_1_1_file_input_stream.html#abdaf5700d4e1de07568e7829106b4eb9", null ],
     [ "tell", "classsf_1_1_file_input_stream.html#a768c5fdb3be79e2d71d1bce911f8741c", null ],
-    [ "tell", "classsf_1_1_file_input_stream.html#a768c5fdb3be79e2d71d1bce911f8741c", null ],
-    [ "m_file", "classsf_1_1_file_input_stream.html#a1760b69800b52ee252fbf1ee530fd28d", null ]
+    [ "tell", "classsf_1_1_file_input_stream.html#a768c5fdb3be79e2d71d1bce911f8741c", null ]
 ];

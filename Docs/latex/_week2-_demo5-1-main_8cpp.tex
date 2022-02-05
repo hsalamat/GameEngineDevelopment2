@@ -1,0 +1,48 @@
+\hypertarget{_week2-_demo5-1-main_8cpp}{}\doxysection{Week2/\+Week2-\/\+Demo5-\/1/\+Source/\+Week2-\/\+Demo5-\/1-\/main.cpp File Reference}
+\label{_week2-_demo5-1-main_8cpp}\index{Week2/Week2-\/Demo5-\/1/Source/Week2-\/Demo5-\/1-\/main.cpp@{Week2/Week2-\/Demo5-\/1/Source/Week2-\/Demo5-\/1-\/main.cpp}}
+
+
+\mbox{\hyperlink{class_texture_holder}{Texture\+Holder}} using type inference We write a method get() that returns a reference to a texture.  
+
+
+{\ttfamily \#include \char`\"{}Game.\+hpp\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_week2-_demo5-1-main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_texture_holder}{Texture\+Holder}} using type inference We write a method get() that returns a reference to a texture. 
+
+The method has one parameter, namely the identifier for the resource. The method signature looks as follows\+: \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}}\& get(\+Textures\+::\+ID id);
+
+m\+Airplane\+Texture = textures.\+get(\+Textures\+::\+Airplane); //airplane.set\+Texture(m\+Airplane\+Texture); //!@ note now you can use the following airplane.\+set\+Texture(textures.\+get(\+Textures\+::\+Airplane));
+
+Type inference is a language feature that has been introduced with C++11, which allows the compiler to find out the type of expressions. auto found = m\+Texture\+Map.\+find(id);
+
+The macro assert evaluates its expression; if it is false in debug mode, a breakpoint is triggered, halting the program execution and directly pointing to the source of the error. In release mode, assertions are optimized away, so we do not waste any performance to check for errors that cannot occur. assert(found != m\+Texture\+Map.\+end());
+
+\begin{DoxyAuthor}{Author}
+Hooman Salamat 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000005}{Bug}}]No known bugs. \end{DoxyRefDesc}
+
+
+Definition in file \mbox{\hyperlink{_week2-_demo5-1-main_8cpp_source}{Week2-\/\+Demo5-\/1-\/main.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_week2-_demo5-1-main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{_week2-_demo5-1-main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{Week2-\/Demo5-\/1-\/main.cpp@{Week2-\/Demo5-\/1-\/main.cpp}!main@{main}}
+\index{main@{main}!Week2-\/Demo5-\/1-\/main.cpp@{Week2-\/Demo5-\/1-\/main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_week2-_demo5-1-main_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{_week2-_demo5-1-main_8cpp_source}{Week2-\/\+Demo5-\/1-\/main.\+cpp}}.
+

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Game Engine Development II: SFML-2.5.1/include/SFML/Graphics/Image.hpp Source File</title>
+<title>My Project: SFML-2.5.1/include/SFML/Graphics/Image.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Game Engine Development II
+   <div id="projectname">My Project
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -171,8 +171,8 @@ $(document).ready(function(){initNavTree('_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_
 <div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span> </div>
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    <span class="comment">// Member data</span></div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno"><a class="line" href="classsf_1_1_image.html#a4cdfbac3fe04c8bc764b8a0082e77a28">  266</a></span><span class="comment"></span>    <a class="code hl_class" href="classsf_1_1_vector2.html">Vector2u</a>           <a class="code hl_variable" href="classsf_1_1_image.html#a4cdfbac3fe04c8bc764b8a0082e77a28">m_size</a>;   </div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno"><a class="line" href="classsf_1_1_image.html#a1a1cd65e67a6bd7fea084f94ad9fcf60">  267</a></span>    std::vector&lt;Uint8&gt; <a class="code hl_variable" href="classsf_1_1_image.html#a1a1cd65e67a6bd7fea084f94ad9fcf60">m_pixels</a>; </div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span><span class="comment"></span>    <a class="code hl_class" href="classsf_1_1_vector2.html">Vector2u</a>           m_size;   </div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    std::vector&lt;Uint8&gt; m_pixels; </div>
 <div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>};</div>
 <div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span> </div>
 <div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>} <span class="comment">// namespace sf</span></div>
@@ -185,13 +185,11 @@ $(document).ready(function(){initNavTree('_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_
 <div class="ttc" id="aclasssf_1_1_color_html"><div class="ttname"><a href="classsf_1_1_color.html">sf::Color</a></div><div class="ttdoc">Utility class for manipulating RGBA colors.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_color_8hpp_source.html#l00040">Color.hpp:41</a></div></div>
 <div class="ttc" id="aclasssf_1_1_image_html"><div class="ttname"><a href="classsf_1_1_image.html">sf::Image</a></div><div class="ttdoc">Class for loading, manipulating and saving images.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_image_8hpp_source.html#l00046">Image.hpp:47</a></div></div>
 <div class="ttc" id="aclasssf_1_1_image_html_a0ba22a38e6c96e3b37dd88198046de83"><div class="ttname"><a href="classsf_1_1_image.html#a0ba22a38e6c96e3b37dd88198046de83">sf::Image::~Image</a></div><div class="ttdeci">~Image()</div><div class="ttdoc">Destructor.</div></div>
-<div class="ttc" id="aclasssf_1_1_image_html_a1a1cd65e67a6bd7fea084f94ad9fcf60"><div class="ttname"><a href="classsf_1_1_image.html#a1a1cd65e67a6bd7fea084f94ad9fcf60">sf::Image::m_pixels</a></div><div class="ttdeci">std::vector&lt; Uint8 &gt; m_pixels</div><div class="ttdoc">Pixels of the image.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_image_8hpp_source.html#l00267">Image.hpp:267</a></div></div>
 <div class="ttc" id="aclasssf_1_1_image_html_a1c2b960ea12bdbb29e80934ce5268ebf"><div class="ttname"><a href="classsf_1_1_image.html#a1c2b960ea12bdbb29e80934ce5268ebf">sf::Image::create</a></div><div class="ttdeci">void create(unsigned int width, unsigned int height, const Uint8 *pixels)</div><div class="ttdoc">Create the image from an array of pixels.</div></div>
 <div class="ttc" id="aclasssf_1_1_image_html_a21122ded0e8368bb06ed3b9acfbfb501"><div class="ttname"><a href="classsf_1_1_image.html#a21122ded0e8368bb06ed3b9acfbfb501">sf::Image::loadFromStream</a></div><div class="ttdeci">bool loadFromStream(InputStream &amp;stream)</div><div class="ttdoc">Load the image from a custom stream.</div></div>
 <div class="ttc" id="aclasssf_1_1_image_html_a22f13f8c242a6b38eb73cc176b37ae34"><div class="ttname"><a href="classsf_1_1_image.html#a22f13f8c242a6b38eb73cc176b37ae34">sf::Image::createMaskFromColor</a></div><div class="ttdeci">void createMaskFromColor(const Color &amp;color, Uint8 alpha=0)</div><div class="ttdoc">Create a transparency mask from a specified color-key.</div></div>
 <div class="ttc" id="aclasssf_1_1_image_html_a2a67930e2fd9ad97cf004e918cf5832b"><div class="ttname"><a href="classsf_1_1_image.html#a2a67930e2fd9ad97cf004e918cf5832b">sf::Image::create</a></div><div class="ttdeci">void create(unsigned int width, unsigned int height, const Color &amp;color=Color(0, 0, 0))</div><div class="ttdoc">Create the image and fill it with a unique color.</div></div>
 <div class="ttc" id="aclasssf_1_1_image_html_a2f49e69b6c6257b19b4d911993075c40"><div class="ttname"><a href="classsf_1_1_image.html#a2f49e69b6c6257b19b4d911993075c40">sf::Image::getPixelsPtr</a></div><div class="ttdeci">const Uint8 * getPixelsPtr() const</div><div class="ttdoc">Get a read-only pointer to the array of pixels.</div></div>
-<div class="ttc" id="aclasssf_1_1_image_html_a4cdfbac3fe04c8bc764b8a0082e77a28"><div class="ttname"><a href="classsf_1_1_image.html#a4cdfbac3fe04c8bc764b8a0082e77a28">sf::Image::m_size</a></div><div class="ttdeci">Vector2u m_size</div><div class="ttdoc">Image size.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_image_8hpp_source.html#l00266">Image.hpp:266</a></div></div>
 <div class="ttc" id="aclasssf_1_1_image_html_a51537fb667f47cbe80395cfd7f9e72a4"><div class="ttname"><a href="classsf_1_1_image.html#a51537fb667f47cbe80395cfd7f9e72a4">sf::Image::saveToFile</a></div><div class="ttdeci">bool saveToFile(const std::string &amp;filename) const</div><div class="ttdoc">Save the image to a file on disk.</div></div>
 <div class="ttc" id="aclasssf_1_1_image_html_a57168e7bc29190e08bbd6c9c19f4bb2c"><div class="ttname"><a href="classsf_1_1_image.html#a57168e7bc29190e08bbd6c9c19f4bb2c">sf::Image::flipHorizontally</a></div><div class="ttdeci">void flipHorizontally()</div><div class="ttdoc">Flip the image horizontally (left &lt;-&gt; right)</div></div>
 <div class="ttc" id="aclasssf_1_1_image_html_a78a702a7e49d1de2dec9894da99d279c"><div class="ttname"><a href="classsf_1_1_image.html#a78a702a7e49d1de2dec9894da99d279c">sf::Image::flipVertically</a></div><div class="ttdeci">void flipVertically()</div><div class="ttdoc">Flip the image vertically (top &lt;-&gt; bottom)</div></div>

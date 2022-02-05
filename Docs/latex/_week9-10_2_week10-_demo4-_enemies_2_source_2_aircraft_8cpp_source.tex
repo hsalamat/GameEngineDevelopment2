@@ -38,14 +38,14 @@
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00034}00034 }
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00035}00035 }
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00036}00036 }
-\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00037}00037 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_aircraft_a7f4f9a8ca342eaa182fd3ec6a17433c8}{Aircraft::drawCurrent}}(\mbox{\hyperlink{classsf_1_1_render_target}{sf::RenderTarget}}\& target, \mbox{\hyperlink{classsf_1_1_render_states}{sf::RenderStates}} states)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00037}00037 \textcolor{keywordtype}{void} Aircraft::drawCurrent(\mbox{\hyperlink{classsf_1_1_render_target}{sf::RenderTarget}}\& target, \mbox{\hyperlink{classsf_1_1_render_states}{sf::RenderStates}} states)\textcolor{keyword}{ const}}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00038}00038 \textcolor{keyword}{}\{}
-\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00039}00039     target.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(\mbox{\hyperlink{class_aircraft_a29b30f294572850c57961753ecae302e}{mSprite}}, states);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00039}00039     target.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(mSprite, states);}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00040}00040 \}}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00041}00041 }
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00042}00042 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_aircraft_a01f9042934c08ef18b62351e6bca320d}{Aircraft::getCategory}}()\textcolor{keyword}{ const}}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00043}00043 \textcolor{keyword}{}\{}
-\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00044}00044     \textcolor{keywordflow}{switch} (\mbox{\hyperlink{class_aircraft_a4228cdd5cf4f8b1b41ad481446b7ee4c}{mType}})}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00044}00044     \textcolor{keywordflow}{switch} (mType)}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00045}00045     \{}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00046}00046         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_aircraft_a7dae28542933e088032b753600046acda9ea6cee76436b5677fc48c31cd9b4ef2}{Eagle}}:}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00047}00047             \textcolor{keywordflow}{return} \mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0a3f2a4ef7f8a61dd9956cd394fc569498}{Category::PlayerAircraft}};}
@@ -55,59 +55,59 @@
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00051}00051     \}}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00052}00052 \}}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00053}00053 }
-\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00054}00054 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_aircraft_a2d3f4b6725f6d58c47e5b4b4a1515135}{Aircraft::updateTexts}}()}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00054}00054 \textcolor{keywordtype}{void} Aircraft::updateTexts()}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00055}00055 \{}
-\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00056}00056     \mbox{\hyperlink{class_aircraft_aea938bb083a5d7e4053e5d786ce0182a}{mHealthDisplay}}-\/>\mbox{\hyperlink{class_text_node_a51c396c803287f43ee640c6b6421a212}{setString}}(\mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_a1e803cea7d2670ece91f5465281446ba}{toString}}(\mbox{\hyperlink{class_entity_ade4af3619c02f07429981259bacc881b}{getHitpoints}}()) + \textcolor{stringliteral}{"{} HP"{}});}
-\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00057}00057     \mbox{\hyperlink{class_aircraft_aea938bb083a5d7e4053e5d786ce0182a}{mHealthDisplay}}-\/>\mbox{\hyperlink{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{setPosition}}(0.f, 50.f);}
-\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00058}00058     \mbox{\hyperlink{class_aircraft_aea938bb083a5d7e4053e5d786ce0182a}{mHealthDisplay}}-\/>\mbox{\hyperlink{classsf_1_1_transformable_a32baf2bf1a74699b03bf8c95030a38ed}{setRotation}}(-\/\mbox{\hyperlink{classsf_1_1_transformable_aa00b5c5d4a06ac24a94dd72c56931d3a}{getRotation}}());}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00056}00056     mHealthDisplay-\/>\mbox{\hyperlink{class_text_node_a51c396c803287f43ee640c6b6421a212}{setString}}(\mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_a1e803cea7d2670ece91f5465281446ba}{toString}}(\mbox{\hyperlink{class_entity_ade4af3619c02f07429981259bacc881b}{getHitpoints}}()) + \textcolor{stringliteral}{"{} HP"{}});}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00057}00057     mHealthDisplay-\/>\mbox{\hyperlink{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{setPosition}}(0.f, 50.f);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00058}00058     mHealthDisplay-\/>\mbox{\hyperlink{classsf_1_1_transformable_a32baf2bf1a74699b03bf8c95030a38ed}{setRotation}}(-\/\mbox{\hyperlink{classsf_1_1_transformable_aa00b5c5d4a06ac24a94dd72c56931d3a}{getRotation}}());}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00059}00059 \}}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00060}00060 }
-\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00061}00061 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_aircraft_a4883a799ad2f779dcbcef43d78343e96}{Aircraft::updateCurrent}}(\mbox{\hyperlink{classsf_1_1_time}{sf::Time}} dt, \mbox{\hyperlink{class_command_queue}{CommandQueue}}\& commands)}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00061}00061 \textcolor{keywordtype}{void} Aircraft::updateCurrent(\mbox{\hyperlink{classsf_1_1_time}{sf::Time}} dt, \mbox{\hyperlink{class_command_queue}{CommandQueue}}\& commands)}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00062}00062 \{}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00063}00063 \textcolor{preprocessor}{\#pragma region step 4-\/2}}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00064}00064     \textcolor{comment}{// Update enemy movement pattern; apply velocity}}
-\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00065}00065     \mbox{\hyperlink{class_aircraft_aa28617508de48df07a58f5ac043a5896}{updateMovementPattern}}(dt);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00065}00065     updateMovementPattern(dt);}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00066}00066 \textcolor{preprocessor}{\#pragma endregion}}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00067}00067 }
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00068}00068 }
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00069}00069     \mbox{\hyperlink{class_entity_a3d9ad14643b61864cf60ea7f0738146b}{Entity::updateCurrent}}(dt, commands);}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00070}00070     \textcolor{comment}{// Update texts}}
-\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00071}00071     \mbox{\hyperlink{class_aircraft_a2d3f4b6725f6d58c47e5b4b4a1515135}{updateTexts}}();}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00071}00071     updateTexts();}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00072}00072 \}}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00073}00073 }
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00074}00074 \textcolor{preprocessor}{\#pragma region step 4-\/3}}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00075}00075 }
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00076}00076 \textcolor{keywordtype}{float} \mbox{\hyperlink{class_aircraft_a64e22bc8086cd2d4c15a2b2b6be3b98c}{Aircraft::getMaxSpeed}}()\textcolor{keyword}{ const}}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00077}00077 \textcolor{keyword}{}\{}
-\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00078}00078     \textcolor{keywordflow}{return} Table[\mbox{\hyperlink{class_aircraft_a4228cdd5cf4f8b1b41ad481446b7ee4c}{mType}}].speed;}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00078}00078     \textcolor{keywordflow}{return} Table[mType].speed;}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00079}00079 \}}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00080}00080 }
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00081}00081 }
-\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00082}00082 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_aircraft_aa28617508de48df07a58f5ac043a5896}{Aircraft::updateMovementPattern}}(\mbox{\hyperlink{classsf_1_1_time}{sf::Time}} dt)}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00082}00082 \textcolor{keywordtype}{void} Aircraft::updateMovementPattern(\mbox{\hyperlink{classsf_1_1_time}{sf::Time}} dt)}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00083}00083 \{}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00084}00084     \textcolor{comment}{// Enemy airplane: Retrieve the movement pattern}}
-\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00085}00085     \textcolor{keyword}{const} std::vector<Direction>\& directions = Table[\mbox{\hyperlink{class_aircraft_a4228cdd5cf4f8b1b41ad481446b7ee4c}{mType}}].directions;}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00085}00085     \textcolor{keyword}{const} std::vector<Direction>\& directions = Table[mType].directions;}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00086}00086     \textcolor{comment}{//Only proceed if there are movement pattern}}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00087}00087     \textcolor{keywordflow}{if} (!directions.empty())}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00088}00088     \{}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00089}00089         \textcolor{comment}{//Check if the current direction has already been passed by the plane}}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00090}00090         \textcolor{comment}{// If so, moved long enough in current direction: Change direction}}
-\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00091}00091         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_aircraft_a063104d82e3dbf6a3979492664e2c30c}{mTravelledDistance}} > directions[\mbox{\hyperlink{class_aircraft_a1b91995fca258702edf7782f0e0cca4d}{mDirectionIndex}}].\mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_scene_node_8hpp_a7b80a3dcfdac5445e81c0d5baa0e18af}{distance}})}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00091}00091         \textcolor{keywordflow}{if} (mTravelledDistance > directions[mDirectionIndex].\mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_scene_node_8hpp_a7b80a3dcfdac5445e81c0d5baa0e18af}{distance}})}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00092}00092         \{}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00093}00093             \textcolor{comment}{//After finishing the lst direction, the plane begins again with the first one}}
-\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00094}00094             \mbox{\hyperlink{class_aircraft_a1b91995fca258702edf7782f0e0cca4d}{mDirectionIndex}} = (\mbox{\hyperlink{class_aircraft_a1b91995fca258702edf7782f0e0cca4d}{mDirectionIndex}} + 1) \% directions.size();}
-\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00095}00095             \mbox{\hyperlink{class_aircraft_a063104d82e3dbf6a3979492664e2c30c}{mTravelledDistance}} = 0.f;}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00094}00094             mDirectionIndex = (mDirectionIndex + 1) \% directions.size();}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00095}00095             mTravelledDistance = 0.f;}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00096}00096         \}}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00097}00097 }
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00098}00098         \textcolor{comment}{// Compute velocity vector from direction's angle (toRadian method to be added to utility class!)}}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00099}00099         \textcolor{comment}{// Add 90 degrees to fly downwards}}
-\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00100}00100         \textcolor{keywordtype}{float} radians = \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_ae54253eaf1757c529de9ffcbf6c28e47}{toRadian}}(directions[\mbox{\hyperlink{class_aircraft_a1b91995fca258702edf7782f0e0cca4d}{mDirectionIndex}}].angle + 90.f);}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00100}00100         \textcolor{keywordtype}{float} radians = \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_ae54253eaf1757c529de9ffcbf6c28e47}{toRadian}}(directions[mDirectionIndex].angle + 90.f);}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00101}00101         \textcolor{keywordtype}{float} vx = \mbox{\hyperlink{class_aircraft_a64e22bc8086cd2d4c15a2b2b6be3b98c}{getMaxSpeed}}() * std::cos(radians);}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00102}00102         \textcolor{keywordtype}{float} vy = \mbox{\hyperlink{class_aircraft_a64e22bc8086cd2d4c15a2b2b6be3b98c}{getMaxSpeed}}() * std::sin(radians);}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00103}00103 }
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00104}00104         \mbox{\hyperlink{class_entity_a5bf79843c973eac1fdbebfd1fc83a1e8}{setVelocity}}(vx, vy);}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00105}00105 }
-\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00106}00106         \mbox{\hyperlink{class_aircraft_a063104d82e3dbf6a3979492664e2c30c}{mTravelledDistance}} += \mbox{\hyperlink{class_aircraft_a64e22bc8086cd2d4c15a2b2b6be3b98c}{getMaxSpeed}}() * dt.\mbox{\hyperlink{classsf_1_1_time_aa3df2f992d0b0041b4eb02258d43f0e3}{asSeconds}}();}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00106}00106         mTravelledDistance += \mbox{\hyperlink{class_aircraft_a64e22bc8086cd2d4c15a2b2b6be3b98c}{getMaxSpeed}}() * dt.\mbox{\hyperlink{classsf_1_1_time_aa3df2f992d0b0041b4eb02258d43f0e3}{asSeconds}}();}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00107}00107     \}}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00108}00108 \}}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo4-_enemies_2_source_2_aircraft_8cpp_source_l00109}00109 \textcolor{preprocessor}{\#pragma endregion}}

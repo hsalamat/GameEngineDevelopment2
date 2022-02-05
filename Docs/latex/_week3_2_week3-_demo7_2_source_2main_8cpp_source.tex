@@ -2,12 +2,22 @@
 \label{_week3_2_week3-_demo7_2_source_2main_8cpp_source}\index{Week3/Week3-\/Demo7/Source/main.cpp@{Week3/Week3-\/Demo7/Source/main.cpp}}
 \mbox{\hyperlink{_week3_2_week3-_demo7_2_source_2main_8cpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo7_2_source_2main_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}Game.hpp"{}}}
-\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo7_2_source_2main_8cpp_source_l00002}00002 }
-\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo7_2_source_2main_8cpp_source_l00003}\mbox{\hyperlink{_week3_2_week3-_demo7_2_source_2main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00003}} \textcolor{keywordtype}{int} \mbox{\hyperlink{_week1_2_week1-_demo1_2_source_2main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
-\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo7_2_source_2main_8cpp_source_l00004}00004 \{}
-\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo7_2_source_2main_8cpp_source_l00005}00005     \mbox{\hyperlink{class_game}{Game}} game;}
-\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo7_2_source_2main_8cpp_source_l00006}00006     game.\mbox{\hyperlink{class_game_a1ab78f5ed0d5ea879157357cf2fb2afa}{run}}();}
-\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo7_2_source_2main_8cpp_source_l00007}00007 \}}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo7_2_source_2main_8cpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo7_2_source_2main_8cpp_source_l00021}00021 \textcolor{preprocessor}{\#include "{}Game.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo7_2_source_2main_8cpp_source_l00022}00022 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo7_2_source_2main_8cpp_source_l00023}00023 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo7_2_source_2main_8cpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo7_2_source_2main_8cpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo7_2_source_2main_8cpp_source_l00026}\mbox{\hyperlink{_week3_2_week3-_demo7_2_source_2main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00026}} \textcolor{keywordtype}{int} \mbox{\hyperlink{_week1_2_week1-_demo1_2_source_2main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo7_2_source_2main_8cpp_source_l00027}00027 \{}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo7_2_source_2main_8cpp_source_l00028}00028     \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo7_2_source_2main_8cpp_source_l00029}00029         \mbox{\hyperlink{class_game}{Game}} game;}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo7_2_source_2main_8cpp_source_l00030}00030         game.\mbox{\hyperlink{class_game_a1ab78f5ed0d5ea879157357cf2fb2afa}{run}}();}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo7_2_source_2main_8cpp_source_l00031}00031     \}}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo7_2_source_2main_8cpp_source_l00032}00032     \textcolor{keywordflow}{catch} (std::exception\& e)}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo7_2_source_2main_8cpp_source_l00033}00033     \{}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo7_2_source_2main_8cpp_source_l00034}00034         std::cout << \textcolor{stringliteral}{"{}\(\backslash\)nEXCEPTION: "{}} << e.what() << std::endl;}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo7_2_source_2main_8cpp_source_l00035}00035     \}}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo7_2_source_2main_8cpp_source_l00036}00036 \}}
 
 \end{DoxyCode}

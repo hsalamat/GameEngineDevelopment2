@@ -1,6 +1,5 @@
 var classsf_1_1_tcp_socket =
 [
-    [ "PendingPacket", "structsf_1_1_tcp_socket_1_1_pending_packet.html", "structsf_1_1_tcp_socket_1_1_pending_packet" ],
     [ "TcpSocket", "classsf_1_1_tcp_socket.html#a62a9bf81fd7f15fedb29fd1348483236", null ],
     [ "TcpSocket", "classsf_1_1_tcp_socket.html#a62a9bf81fd7f15fedb29fd1348483236", null ],
     [ "connect", "classsf_1_1_tcp_socket.html#a68cd42d5ab70ab54b16787f555951c40", null ],
@@ -23,6 +22,5 @@ var classsf_1_1_tcp_socket =
     [ "send", "classsf_1_1_tcp_socket.html#a31f5b280126a96c6f3ad430f4cbcb54d", null ],
     [ "send", "classsf_1_1_tcp_socket.html#a0f8276e2b1c75aac4a7b0a707b250f44", null ],
     [ "send", "classsf_1_1_tcp_socket.html#a0f8276e2b1c75aac4a7b0a707b250f44", null ],
-    [ "TcpListener", "classsf_1_1_tcp_socket.html#a0a6bae466f66732c4d05d5335d705d64", null ],
-    [ "m_pendingPacket", "classsf_1_1_tcp_socket.html#ab46b6b5cfafbc4255d8bdca3148584a8", null ]
+    [ "TcpListener", "classsf_1_1_tcp_socket.html#a0a6bae466f66732c4d05d5335d705d64", null ]
 ];

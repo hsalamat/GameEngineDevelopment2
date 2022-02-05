@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['usage_0',['Usage',['../classsf_1_1_vertex_buffer.html#a3a531528684e63ecb45edd51282f5cb7',1,'sf::VertexBuffer::Usage()'],['../classsf_1_1_vertex_buffer.html#a3a531528684e63ecb45edd51282f5cb7',1,'sf::VertexBuffer::Usage()']]]
+  ['wheel_0',['Wheel',['../classsf_1_1_mouse.html#a60dd479a43f26f200e7957aa11803ff4',1,'sf::Mouse::Wheel()'],['../classsf_1_1_mouse.html#a60dd479a43f26f200e7957aa11803ff4',1,'sf::Mouse::Wheel()']]]
 ];

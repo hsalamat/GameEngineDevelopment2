@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Game Engine Development II: Week11/Week11-Demo9-PostEffect/Include/SettingsState.hpp Source File</title>
+<title>My Project: Week11/Week11-Demo9-PostEffect/Include/SettingsState.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Game Engine Development II
+   <div id="projectname">My Project
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -120,15 +120,15 @@ $(document).ready(function(){initNavTree('_week11_2_week11-_demo9-_post_effect_2
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_settings_state.html#aa2fd6104ce36f628a0159f5507421f48">   27</a></span>        <span class="keywordtype">void</span>                            <a class="code hl_function" href="class_settings_state.html#aa2fd6104ce36f628a0159f5507421f48">updateLabels</a>();</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_settings_state.html#a96b70621f867f2ac70ca49a4f858439d">   28</a></span>        <span class="keywordtype">void</span>                            <a class="code hl_function" href="class_settings_state.html#a96b70621f867f2ac70ca49a4f858439d">addButtonLabel</a>(<a class="code hl_enumeration" href="class_player.html#a2da5df212d083bbb1460237f34ab0d88">Player::Action</a> action, <span class="keywordtype">float</span> y, <span class="keyword">const</span> std::string&amp; text, <a class="code hl_struct" href="struct_state_1_1_context.html">Context</a> context);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordtype">void</span>                            updateLabels();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordtype">void</span>                            addButtonLabel(<a class="code hl_enumeration" href="class_player.html#a2da5df212d083bbb1460237f34ab0d88">Player::Action</a> action, <span class="keywordtype">float</span> y, <span class="keyword">const</span> std::string&amp; text, <a class="code hl_struct" href="struct_state_1_1_context.html">Context</a> context);</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <a class="code hl_class" href="classsf_1_1_sprite.html">sf::Sprite</a>                                          <a class="code hl_variable" href="class_settings_state.html#aced272c18d367f85cce2a02b714c592b">mBackgroundSprite</a>;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <a class="code hl_class" href="class_g_u_i_1_1_container.html">GUI::Container</a>                                      <a class="code hl_variable" href="class_settings_state.html#a3a4504cf7d3480f2dc01505d2e963c7e">mGUIContainer</a>;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        std::array&lt;GUI::Button::Ptr, Player::ActionCount&gt;   <a class="code hl_variable" href="class_settings_state.html#a74908003d2e92eb9a3d322231c65dd5e">mBindingButtons</a>;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        std::array&lt;GUI::Label::Ptr, Player::ActionCount&gt;    <a class="code hl_variable" href="class_settings_state.html#a914de42718a8088e57bd56e953ccb714">mBindingLabels</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <a class="code hl_class" href="classsf_1_1_sprite.html">sf::Sprite</a>                                          mBackgroundSprite;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <a class="code hl_class" href="class_g_u_i_1_1_container.html">GUI::Container</a>                                      mGUIContainer;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        std::array&lt;GUI::Button::Ptr, Player::ActionCount&gt;   mBindingButtons;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        std::array&lt;GUI::Label::Ptr, Player::ActionCount&gt;    mBindingLabels;</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>};</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#endif </span><span class="comment">// BOOK_SETTINGSSTATE_HPP</span></div>
@@ -141,15 +141,9 @@ $(document).ready(function(){initNavTree('_week11_2_week11-_demo9-_post_effect_2
 <div class="ttc" id="aclass_player_html_a2da5df212d083bbb1460237f34ab0d88"><div class="ttname"><a href="class_player.html#a2da5df212d083bbb1460237f34ab0d88">Player::Action</a></div><div class="ttdeci">Action</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_player_8hpp_source.html#l00015">Player.hpp:16</a></div></div>
 <div class="ttc" id="aclass_settings_state_html"><div class="ttname"><a href="class_settings_state.html">SettingsState</a></div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_settings_state_8hpp_source.html#l00016">SettingsState.hpp:17</a></div></div>
 <div class="ttc" id="aclass_settings_state_html_a2514872c685a2da59ca903aa82fa22a9"><div class="ttname"><a href="class_settings_state.html#a2514872c685a2da59ca903aa82fa22a9">SettingsState::update</a></div><div class="ttdeci">virtual bool update(sf::Time dt)</div></div>
-<div class="ttc" id="aclass_settings_state_html_a3a4504cf7d3480f2dc01505d2e963c7e"><div class="ttname"><a href="class_settings_state.html#a3a4504cf7d3480f2dc01505d2e963c7e">SettingsState::mGUIContainer</a></div><div class="ttdeci">GUI::Container mGUIContainer</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_settings_state_8hpp_source.html#l00033">SettingsState.hpp:33</a></div></div>
 <div class="ttc" id="aclass_settings_state_html_a4398844b0b4a5945159d1396759dc870"><div class="ttname"><a href="class_settings_state.html#a4398844b0b4a5945159d1396759dc870">SettingsState::draw</a></div><div class="ttdeci">virtual void draw()</div></div>
 <div class="ttc" id="aclass_settings_state_html_a4cc7a66d730634afa6fcefff96f82268"><div class="ttname"><a href="class_settings_state.html#a4cc7a66d730634afa6fcefff96f82268">SettingsState::handleEvent</a></div><div class="ttdeci">virtual bool handleEvent(const sf::Event &amp;event)</div></div>
-<div class="ttc" id="aclass_settings_state_html_a74908003d2e92eb9a3d322231c65dd5e"><div class="ttname"><a href="class_settings_state.html#a74908003d2e92eb9a3d322231c65dd5e">SettingsState::mBindingButtons</a></div><div class="ttdeci">std::array&lt; GUI::Button::Ptr, Player::ActionCount &gt; mBindingButtons</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_settings_state_8hpp_source.html#l00034">SettingsState.hpp:34</a></div></div>
-<div class="ttc" id="aclass_settings_state_html_a914de42718a8088e57bd56e953ccb714"><div class="ttname"><a href="class_settings_state.html#a914de42718a8088e57bd56e953ccb714">SettingsState::mBindingLabels</a></div><div class="ttdeci">std::array&lt; GUI::Label::Ptr, Player::ActionCount &gt; mBindingLabels</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_settings_state_8hpp_source.html#l00035">SettingsState.hpp:35</a></div></div>
 <div class="ttc" id="aclass_settings_state_html_a949344118b93b89df8426ff84bac3d3b"><div class="ttname"><a href="class_settings_state.html#a949344118b93b89df8426ff84bac3d3b">SettingsState::SettingsState</a></div><div class="ttdeci">SettingsState(StateStack &amp;stack, Context context)</div></div>
-<div class="ttc" id="aclass_settings_state_html_a96b70621f867f2ac70ca49a4f858439d"><div class="ttname"><a href="class_settings_state.html#a96b70621f867f2ac70ca49a4f858439d">SettingsState::addButtonLabel</a></div><div class="ttdeci">void addButtonLabel(Player::Action action, float y, const std::string &amp;text, Context context)</div></div>
-<div class="ttc" id="aclass_settings_state_html_aa2fd6104ce36f628a0159f5507421f48"><div class="ttname"><a href="class_settings_state.html#aa2fd6104ce36f628a0159f5507421f48">SettingsState::updateLabels</a></div><div class="ttdeci">void updateLabels()</div></div>
-<div class="ttc" id="aclass_settings_state_html_aced272c18d367f85cce2a02b714c592b"><div class="ttname"><a href="class_settings_state.html#aced272c18d367f85cce2a02b714c592b">SettingsState::mBackgroundSprite</a></div><div class="ttdeci">sf::Sprite mBackgroundSprite</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_settings_state_8hpp_source.html#l00032">SettingsState.hpp:32</a></div></div>
 <div class="ttc" id="aclass_state_html"><div class="ttname"><a href="class_state.html">State</a></div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_state_8hpp_source.html#l00021">State.hpp:22</a></div></div>
 <div class="ttc" id="aclass_state_stack_html"><div class="ttname"><a href="class_state_stack.html">StateStack</a></div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_state_stack_8hpp_source.html#l00023">StateStack.hpp:24</a></div></div>
 <div class="ttc" id="aclasssf_1_1_event_html"><div class="ttname"><a href="classsf_1_1_event.html">sf::Event</a></div><div class="ttdoc">Defines a system event and its parameters.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source.html#l00044">Event.hpp:45</a></div></div>

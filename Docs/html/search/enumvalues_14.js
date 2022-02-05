@@ -7,6 +7,5 @@ var searchData=
   ['unknown_4',['Unknown',['../classsf_1_1_keyboard.html#acb4cacd7cc5802dec45724cf3314a142a670ce574a758266c69ebb10696d7d0ce',1,'sf::Keyboard']]],
   ['up_5',['Up',['../classsf_1_1_keyboard.html#acb4cacd7cc5802dec45724cf3314a142aa0cd0ee9f2d03294d7ca25b21068fa22',1,'sf::Keyboard']]],
   ['updateclientstate_6',['UpdateClientState',['../namespace_server.html#a3f01a66639d25aac95a4f661182e2220a2bc55dcb334ed968816aa4ff901e205a',1,'Server']]],
-  ['upperair_7',['UpperAir',['../class_world.html#a7580b1f38bb9018be3eeef74462b4b2fa86679ce132507c816d8189ec2219636e',1,'World']]],
-  ['useracceleration_8',['UserAcceleration',['../classsf_1_1_sensor.html#a687375af3ab77b818fca73735bcaea84a34768d68b445e72ff6a43fde92a7b921',1,'sf::Sensor']]]
+  ['useracceleration_7',['UserAcceleration',['../classsf_1_1_sensor.html#a687375af3ab77b818fca73735bcaea84a34768d68b445e72ff6a43fde92a7b921',1,'sf::Sensor']]]
 ];

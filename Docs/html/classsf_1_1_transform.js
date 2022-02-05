@@ -43,6 +43,5 @@ var classsf_1_1_transform =
     [ "operator*=", "classsf_1_1_transform.html#a45a9de70a463117f851f1264a6f558ba", null ],
     [ "operator*=", "classsf_1_1_transform.html#a45a9de70a463117f851f1264a6f558ba", null ],
     [ "operator==", "classsf_1_1_transform.html#a542b6e28b891d92b68acbb6cf4c1165e", null ],
-    [ "operator==", "classsf_1_1_transform.html#a542b6e28b891d92b68acbb6cf4c1165e", null ],
-    [ "m_matrix", "classsf_1_1_transform.html#ab975893ebb64fa6a5b4ebe22fc5534fc", null ]
+    [ "operator==", "classsf_1_1_transform.html#a542b6e28b891d92b68acbb6cf4c1165e", null ]
 ];

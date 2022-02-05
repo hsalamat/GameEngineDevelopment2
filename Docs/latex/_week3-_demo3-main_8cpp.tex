@@ -1,0 +1,42 @@
+\hypertarget{_week3-_demo3-main_8cpp}{}\doxysection{Week3/\+Week3-\/\+Demo3/\+Source/\+Week3-\/\+Demo3-\/main.cpp File Reference}
+\label{_week3-_demo3-main_8cpp}\index{Week3/Week3-\/Demo3/Source/Week3-\/Demo3-\/main.cpp@{Week3/Week3-\/Demo3/Source/Week3-\/Demo3-\/main.cpp}}
+
+
+View \& Viewport \mbox{\hyperlink{classsf_1_1_view}{sf\+::\+View}} class acts as a viewing lens, which ensures that anything you attempt to draw to the screen that is outside the view\textquotesingle{}s rectangle will remain unseen.  
+
+
+{\ttfamily \#include \char`\"{}Game.\+hpp\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_week3-_demo3-main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+View \& Viewport \mbox{\hyperlink{classsf_1_1_view}{sf\+::\+View}} class acts as a viewing lens, which ensures that anything you attempt to draw to the screen that is outside the view\textquotesingle{}s rectangle will remain unseen. 
+
+Besides the viewing rectangle, another parameter that defines the \mbox{\hyperlink{classsf_1_1_view}{sf\+::\+View}} class is the viewport, which gives us control over how to map the viewing rectangle to the actual application window. So, a viewport rectangle starting at (0, 0) and ending in (1, 1) means essentially that the entire window area will be used to render the world. having their viewport rectangles defined as, respectively, (left=0, top=0, width=1, height=0.\+5) and (left=0, top=0.\+5, width=1, height=0.\+5). This would immediately mean that we would have two distinct \char`\"{}eyes\char`\"{} looking at the world, and that they would only render in their own viewports The \mbox{\hyperlink{classsf_1_1_view}{sf\+::\+View}} utility gives us another two features\+: zooming and rotating our view. In every step of the game loop, when updating the state of the world, we also scroll the view a little. We do this at a constant speed towards the negative y axis (up), so we see a little further at each time step. Of course, we also move the player\textquotesingle{}s aircraft by the exact same distance, so it won\textquotesingle{}t get left behind, but remains in action. This incremental and automatic scrolling operation of the view is simply done in the update code, by doing\+: m\+World\+View.\+move(0.\+f, m\+Scroll\+Speed $\ast$ dt.\+as\+Seconds());
+
+\begin{DoxyAuthor}{Author}
+Hooman Salamat 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000011}{Bug}}]No known bugs. \end{DoxyRefDesc}
+
+
+Definition in file \mbox{\hyperlink{_week3-_demo3-main_8cpp_source}{Week3-\/\+Demo3-\/main.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_week3-_demo3-main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{_week3-_demo3-main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{Week3-\/Demo3-\/main.cpp@{Week3-\/Demo3-\/main.cpp}!main@{main}}
+\index{main@{main}!Week3-\/Demo3-\/main.cpp@{Week3-\/Demo3-\/main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_week3-_demo3-main_8cpp_source_l00027}{27}} of file \mbox{\hyperlink{_week3-_demo3-main_8cpp_source}{Week3-\/\+Demo3-\/main.\+cpp}}.
+

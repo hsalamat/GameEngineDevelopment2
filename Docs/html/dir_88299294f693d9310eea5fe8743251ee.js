@@ -87,8 +87,7 @@ var dir_88299294f693d9310eea5fe8743251ee =
     ] ],
     [ "StateIdentifiers.hpp", "_week12_2_week12-_demo1-_music_player_2_include_2_state_identifiers_8hpp.html", "_week12_2_week12-_demo1-_music_player_2_include_2_state_identifiers_8hpp" ],
     [ "StateStack.hpp", "_week12_2_week12-_demo1-_music_player_2_include_2_state_stack_8hpp.html", [
-      [ "StateStack", "class_state_stack.html", "class_state_stack" ],
-      [ "StateStack::PendingChange", "struct_state_stack_1_1_pending_change.html", "struct_state_stack_1_1_pending_change" ]
+      [ "StateStack", "class_state_stack.html", "class_state_stack" ]
     ] ],
     [ "TextNode.hpp", "_week12_2_week12-_demo1-_music_player_2_include_2_text_node_8hpp.html", [
       [ "TextNode", "class_text_node.html", "class_text_node" ]
@@ -99,7 +98,6 @@ var dir_88299294f693d9310eea5fe8743251ee =
     [ "Utility.hpp", "_week12_2_week12-_demo1-_music_player_2_include_2_utility_8hpp.html", "_week12_2_week12-_demo1-_music_player_2_include_2_utility_8hpp" ],
     [ "Utility.inl", "_week12_2_week12-_demo1-_music_player_2_include_2_utility_8inl.html", "_week12_2_week12-_demo1-_music_player_2_include_2_utility_8inl" ],
     [ "World.hpp", "_week12_2_week12-_demo1-_music_player_2_include_2_world_8hpp.html", [
-      [ "World", "class_world.html", "class_world" ],
-      [ "World::SpawnPoint", "struct_world_1_1_spawn_point.html", "struct_world_1_1_spawn_point" ]
+      [ "World", "class_world.html", "class_world" ]
     ] ]
 ];

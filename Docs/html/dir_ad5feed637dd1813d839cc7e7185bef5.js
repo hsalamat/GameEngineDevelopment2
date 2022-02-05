@@ -60,8 +60,7 @@ var dir_ad5feed637dd1813d839cc7e7185bef5 =
     ] ],
     [ "StateIdentifiers.hpp", "_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_state_identifiers_8hpp.html", "_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_state_identifiers_8hpp" ],
     [ "StateStack.hpp", "_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_state_stack_8hpp.html", [
-      [ "StateStack", "class_state_stack.html", "class_state_stack" ],
-      [ "StateStack::PendingChange", "struct_state_stack_1_1_pending_change.html", "struct_state_stack_1_1_pending_change" ]
+      [ "StateStack", "class_state_stack.html", "class_state_stack" ]
     ] ],
     [ "TextNode.hpp", "_week9-10_2_week10-_demo3-_update_hitpoints_2_include_2_text_node_8hpp.html", [
       [ "TextNode", "class_text_node.html", "class_text_node" ]

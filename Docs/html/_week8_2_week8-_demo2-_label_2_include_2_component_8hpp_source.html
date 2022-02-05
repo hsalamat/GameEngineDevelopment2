@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Game Engine Development II: Week8/Week8-Demo2-Label/Include/Component.hpp Source File</title>
+<title>My Project: Week8/Week8-Demo2-Label/Include/Component.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Game Engine Development II
+   <div id="projectname">My Project
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -135,8 +135,8 @@ $(document).ready(function(){initNavTree('_week8_2_week8-_demo2-_label_2_include
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordtype">bool</span>                <a class="code hl_variable" href="class_g_u_i_1_1_component.html#afd3e1d088cc58227eb35e7ca79ef76a4">mIsSelected</a>;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordtype">bool</span>                <a class="code hl_variable" href="class_g_u_i_1_1_component.html#a5de9ebcdc35b8df0add871777fa6d96e">mIsActive</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordtype">bool</span>                mIsSelected;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordtype">bool</span>                mIsActive;</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    };</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
@@ -147,7 +147,6 @@ $(document).ready(function(){initNavTree('_week8_2_week8-_demo2-_label_2_include
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
 <div class="ttc" id="aclass_g_u_i_1_1_component_html_a44d14506c9a1dbc839e05a6bf99c341b"><div class="ttname"><a href="class_g_u_i_1_1_component.html#a44d14506c9a1dbc839e05a6bf99c341b">GUI::Component::isSelectable</a></div><div class="ttdeci">virtual bool isSelectable() const =0</div></div>
 <div class="ttc" id="aclass_g_u_i_1_1_component_html_a456e20a33a9ee778b0eda2641147724e"><div class="ttname"><a href="class_g_u_i_1_1_component.html#a456e20a33a9ee778b0eda2641147724e">GUI::Component::isSelected</a></div><div class="ttdeci">bool isSelected() const</div></div>
-<div class="ttc" id="aclass_g_u_i_1_1_component_html_a5de9ebcdc35b8df0add871777fa6d96e"><div class="ttname"><a href="class_g_u_i_1_1_component.html#a5de9ebcdc35b8df0add871777fa6d96e">GUI::Component::mIsActive</a></div><div class="ttdeci">bool mIsActive</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_component_8hpp_source.html#l00043">Component.hpp:43</a></div></div>
 <div class="ttc" id="aclass_g_u_i_1_1_component_html_a6673ce538cbcf479ce67fa57dc28e506"><div class="ttname"><a href="class_g_u_i_1_1_component.html#a6673ce538cbcf479ce67fa57dc28e506">GUI::Component::isActive</a></div><div class="ttdeci">virtual bool isActive() const</div></div>
 <div class="ttc" id="aclass_g_u_i_1_1_component_html_a6a06664380a3d66ee8bcf3a41d760955"><div class="ttname"><a href="class_g_u_i_1_1_component.html#a6a06664380a3d66ee8bcf3a41d760955">GUI::Component::Component</a></div><div class="ttdeci">Component()</div></div>
 <div class="ttc" id="aclass_g_u_i_1_1_component_html_a6c2bfb067dc3bfa9dc833cd3e6cba807"><div class="ttname"><a href="class_g_u_i_1_1_component.html#a6c2bfb067dc3bfa9dc833cd3e6cba807">GUI::Component::activate</a></div><div class="ttdeci">virtual void activate()</div></div>
@@ -157,7 +156,6 @@ $(document).ready(function(){initNavTree('_week8_2_week8-_demo2-_label_2_include
 <div class="ttc" id="aclass_g_u_i_1_1_component_html_acd7bf93ec3553fdbdfadc8402ee967df"><div class="ttname"><a href="class_g_u_i_1_1_component.html#acd7bf93ec3553fdbdfadc8402ee967df">GUI::Component::deselect</a></div><div class="ttdeci">virtual void deselect()</div></div>
 <div class="ttc" id="aclass_g_u_i_1_1_component_html_adca7b246109fa739ebcd608637746364"><div class="ttname"><a href="class_g_u_i_1_1_component.html#adca7b246109fa739ebcd608637746364">GUI::Component::deactivate</a></div><div class="ttdeci">virtual void deactivate()</div></div>
 <div class="ttc" id="aclass_g_u_i_1_1_component_html_ae807056061554da9c0e99b380eb9e480"><div class="ttname"><a href="class_g_u_i_1_1_component.html#ae807056061554da9c0e99b380eb9e480">GUI::Component::select</a></div><div class="ttdeci">virtual void select()</div></div>
-<div class="ttc" id="aclass_g_u_i_1_1_component_html_afd3e1d088cc58227eb35e7ca79ef76a4"><div class="ttname"><a href="class_g_u_i_1_1_component.html#afd3e1d088cc58227eb35e7ca79ef76a4">GUI::Component::mIsSelected</a></div><div class="ttdeci">bool mIsSelected</div><div class="ttdef"><b>Definition:</b> <a href="_week11_2_week11-_demo1-_game_over_2_include_2_component_8hpp_source.html#l00042">Component.hpp:42</a></div></div>
 <div class="ttc" id="aclasssf_1_1_drawable_html"><div class="ttname"><a href="classsf_1_1_drawable.html">sf::Drawable</a></div><div class="ttdoc">Abstract base class for objects that can be drawn to a render target.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_drawable_8hpp_source.html#l00044">Drawable.hpp:45</a></div></div>
 <div class="ttc" id="aclasssf_1_1_event_html"><div class="ttname"><a href="classsf_1_1_event.html">sf::Event</a></div><div class="ttdoc">Defines a system event and its parameters.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_window_2_event_8hpp_source.html#l00044">Event.hpp:45</a></div></div>
 <div class="ttc" id="aclasssf_1_1_non_copyable_html"><div class="ttname"><a href="classsf_1_1_non_copyable.html">sf::NonCopyable</a></div><div class="ttdoc">Utility class that makes any derived class non-copyable.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_system_2_non_copyable_8hpp_source.html#l00041">NonCopyable.hpp:42</a></div></div>

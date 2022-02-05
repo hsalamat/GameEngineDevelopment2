@@ -60,12 +60,9 @@ var classsf_1_1_cursor =
     [ "~Cursor", "classsf_1_1_cursor.html#a777ba6a1d0d68f8eb9dc85976a5b9727", null ],
     [ "Cursor", "classsf_1_1_cursor.html#a6a36a0a5943b22b77b00cac839dd715c", null ],
     [ "~Cursor", "classsf_1_1_cursor.html#a777ba6a1d0d68f8eb9dc85976a5b9727", null ],
-    [ "getImpl", "classsf_1_1_cursor.html#a4219624c65ae8349bdec6841cc9b5fdf", null ],
-    [ "getImpl", "classsf_1_1_cursor.html#a4219624c65ae8349bdec6841cc9b5fdf", null ],
     [ "loadFromPixels", "classsf_1_1_cursor.html#ac24ecf82ac7d9ba6703389397f948b3a", null ],
     [ "loadFromPixels", "classsf_1_1_cursor.html#ac24ecf82ac7d9ba6703389397f948b3a", null ],
     [ "loadFromSystem", "classsf_1_1_cursor.html#ad41999c8633c2fbaa2364e379c1ab25b", null ],
     [ "loadFromSystem", "classsf_1_1_cursor.html#ad41999c8633c2fbaa2364e379c1ab25b", null ],
-    [ "Window", "classsf_1_1_cursor.html#a6f567238a0aaa00ab1b336d0cf0faf4b", null ],
-    [ "m_impl", "classsf_1_1_cursor.html#a3d6ca47bf8db47b818308f874e7f042f", null ]
+    [ "Window", "classsf_1_1_cursor.html#a6f567238a0aaa00ab1b336d0cf0faf4b", null ]
 ];

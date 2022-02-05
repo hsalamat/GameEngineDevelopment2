@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Game Engine Development II: sf::SoundStream Class Reference</title>
+<title>My Project: sf::SoundStream Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Game Engine Development II
+   <div id="projectname">My Project
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -96,9 +96,6 @@ $(document).ready(function(){initNavTree('classsf_1_1_sound_stream.html',''); in
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-types">Protected Types</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pri-types">Private Types</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classsf_1_1_sound_stream-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">sf::SoundStream Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span><div class="ingroups"><a class="el" href="group__audio.html">Audio module</a></div></div></div>
 </div><!--header-->
@@ -348,80 +345,6 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:aefa4bd4460f387d81a0637d293979436 inherit pro_methods_classsf_1_1_sound_source"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="classsf_1_1_sound_source.html#aefa4bd4460f387d81a0637d293979436">More...</a><br /></td></tr>
 <tr class="separator:aefa4bd4460f387d81a0637d293979436 inherit pro_methods_classsf_1_1_sound_source"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
-Private Types</h2></td></tr>
-<tr class="memitem:a2419ce94e45f7d4d0302b7963282c40c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="classsf_1_1_sound_stream.html#aa6e54c13c704dcf56fbac5e909424059affb4e358f25c46689ca8d700ab384393">BufferCount</a> = 3
-, <a class="el" href="classsf_1_1_sound_stream.html#aa6e54c13c704dcf56fbac5e909424059a206372e5bea183d5fc4c26682c34fa1a">BufferRetries</a> = 2
- }</td></tr>
-<tr class="separator:a2419ce94e45f7d4d0302b7963282c40c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6e54c13c704dcf56fbac5e909424059"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="classsf_1_1_sound_stream.html#aa6e54c13c704dcf56fbac5e909424059affb4e358f25c46689ca8d700ab384393">BufferCount</a> = 3
-, <a class="el" href="classsf_1_1_sound_stream.html#aa6e54c13c704dcf56fbac5e909424059a206372e5bea183d5fc4c26682c34fa1a">BufferRetries</a> = 2
- }</td></tr>
-<tr class="separator:aa6e54c13c704dcf56fbac5e909424059"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:a08c54af1f433424ac627d1a30021f5e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1_sound_stream.html#a08c54af1f433424ac627d1a30021f5e9">streamData</a> ()</td></tr>
-<tr class="memdesc:a08c54af1f433424ac627d1a30021f5e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function called as the entry point of the thread.  <a href="classsf_1_1_sound_stream.html#a08c54af1f433424ac627d1a30021f5e9">More...</a><br /></td></tr>
-<tr class="separator:a08c54af1f433424ac627d1a30021f5e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3e04f1b4df1fbe0ffd474f47ed91f4a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1_sound_stream.html#ad3e04f1b4df1fbe0ffd474f47ed91f4a">fillAndPushBuffer</a> (unsigned int bufferNum, bool immediateLoop=false)</td></tr>
-<tr class="memdesc:ad3e04f1b4df1fbe0ffd474f47ed91f4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill a new buffer with audio samples, and append it to the playing queue.  <a href="classsf_1_1_sound_stream.html#ad3e04f1b4df1fbe0ffd474f47ed91f4a">More...</a><br /></td></tr>
-<tr class="separator:ad3e04f1b4df1fbe0ffd474f47ed91f4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf8cdcc65da5e31c14f9bddccb53fb72"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1_sound_stream.html#abf8cdcc65da5e31c14f9bddccb53fb72">fillQueue</a> ()</td></tr>
-<tr class="memdesc:abf8cdcc65da5e31c14f9bddccb53fb72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill the audio buffers and put them all into the playing queue.  <a href="classsf_1_1_sound_stream.html#abf8cdcc65da5e31c14f9bddccb53fb72">More...</a><br /></td></tr>
-<tr class="separator:abf8cdcc65da5e31c14f9bddccb53fb72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0fdfe8ec3e5b662f0b7956ba894f5bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1_sound_stream.html#ac0fdfe8ec3e5b662f0b7956ba894f5bc">clearQueue</a> ()</td></tr>
-<tr class="memdesc:ac0fdfe8ec3e5b662f0b7956ba894f5bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all the audio buffers and empty the playing queue.  <a href="classsf_1_1_sound_stream.html#ac0fdfe8ec3e5b662f0b7956ba894f5bc">More...</a><br /></td></tr>
-<tr class="separator:ac0fdfe8ec3e5b662f0b7956ba894f5bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08c54af1f433424ac627d1a30021f5e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1_sound_stream.html#a08c54af1f433424ac627d1a30021f5e9">streamData</a> ()</td></tr>
-<tr class="memdesc:a08c54af1f433424ac627d1a30021f5e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function called as the entry point of the thread.  <a href="classsf_1_1_sound_stream.html#a08c54af1f433424ac627d1a30021f5e9">More...</a><br /></td></tr>
-<tr class="separator:a08c54af1f433424ac627d1a30021f5e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3e04f1b4df1fbe0ffd474f47ed91f4a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1_sound_stream.html#ad3e04f1b4df1fbe0ffd474f47ed91f4a">fillAndPushBuffer</a> (unsigned int bufferNum, bool immediateLoop=false)</td></tr>
-<tr class="memdesc:ad3e04f1b4df1fbe0ffd474f47ed91f4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill a new buffer with audio samples, and append it to the playing queue.  <a href="classsf_1_1_sound_stream.html#ad3e04f1b4df1fbe0ffd474f47ed91f4a">More...</a><br /></td></tr>
-<tr class="separator:ad3e04f1b4df1fbe0ffd474f47ed91f4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf8cdcc65da5e31c14f9bddccb53fb72"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1_sound_stream.html#abf8cdcc65da5e31c14f9bddccb53fb72">fillQueue</a> ()</td></tr>
-<tr class="memdesc:abf8cdcc65da5e31c14f9bddccb53fb72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill the audio buffers and put them all into the playing queue.  <a href="classsf_1_1_sound_stream.html#abf8cdcc65da5e31c14f9bddccb53fb72">More...</a><br /></td></tr>
-<tr class="separator:abf8cdcc65da5e31c14f9bddccb53fb72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0fdfe8ec3e5b662f0b7956ba894f5bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1_sound_stream.html#ac0fdfe8ec3e5b662f0b7956ba894f5bc">clearQueue</a> ()</td></tr>
-<tr class="memdesc:ac0fdfe8ec3e5b662f0b7956ba894f5bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all the audio buffers and empty the playing queue.  <a href="classsf_1_1_sound_stream.html#ac0fdfe8ec3e5b662f0b7956ba894f5bc">More...</a><br /></td></tr>
-<tr class="separator:ac0fdfe8ec3e5b662f0b7956ba894f5bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a004d1b16c81698be55779efe0f2b5ed3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsf_1_1_thread.html">Thread</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1_sound_stream.html#a004d1b16c81698be55779efe0f2b5ed3">m_thread</a></td></tr>
-<tr class="memdesc:a004d1b16c81698be55779efe0f2b5ed3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classsf_1_1_thread.html" title="Utility class to manipulate threads.">Thread</a> running the background tasks.  <a href="classsf_1_1_sound_stream.html#a004d1b16c81698be55779efe0f2b5ed3">More...</a><br /></td></tr>
-<tr class="separator:a004d1b16c81698be55779efe0f2b5ed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a134d03a5d3075f6a98a85a2edff9ac7d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsf_1_1_mutex.html">Mutex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1_sound_stream.html#a134d03a5d3075f6a98a85a2edff9ac7d">m_threadMutex</a></td></tr>
-<tr class="memdesc:a134d03a5d3075f6a98a85a2edff9ac7d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classsf_1_1_thread.html" title="Utility class to manipulate threads.">Thread</a> mutex.  <a href="classsf_1_1_sound_stream.html#a134d03a5d3075f6a98a85a2edff9ac7d">More...</a><br /></td></tr>
-<tr class="separator:a134d03a5d3075f6a98a85a2edff9ac7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e06f2688d7fcf777a9779168067f302"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsf_1_1_sound_source.html#ac43af72c98c077500b239bc75b812f03">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1_sound_stream.html#a2e06f2688d7fcf777a9779168067f302">m_threadStartState</a></td></tr>
-<tr class="memdesc:a2e06f2688d7fcf777a9779168067f302"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_state.html">State</a> the thread starts in (Playing, Paused, Stopped)  <a href="classsf_1_1_sound_stream.html#a2e06f2688d7fcf777a9779168067f302">More...</a><br /></td></tr>
-<tr class="separator:a2e06f2688d7fcf777a9779168067f302"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa20ca6cbb29ee2355d986a3faa7a38f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1_sound_stream.html#afa20ca6cbb29ee2355d986a3faa7a38f">m_isStreaming</a></td></tr>
-<tr class="memdesc:afa20ca6cbb29ee2355d986a3faa7a38f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Streaming state (true = playing, false = stopped)  <a href="classsf_1_1_sound_stream.html#afa20ca6cbb29ee2355d986a3faa7a38f">More...</a><br /></td></tr>
-<tr class="separator:afa20ca6cbb29ee2355d986a3faa7a38f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdfe9b84c86d44297f8f62a7ca93cfbd"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1_sound_stream.html#abdfe9b84c86d44297f8f62a7ca93cfbd">m_buffers</a> [<a class="el" href="classsf_1_1_sound_stream.html#aa6e54c13c704dcf56fbac5e909424059affb4e358f25c46689ca8d700ab384393">BufferCount</a>]</td></tr>
-<tr class="memdesc:abdfe9b84c86d44297f8f62a7ca93cfbd"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classsf_1_1_sound.html" title="Regular sound that can be played in the audio environment.">Sound</a> buffers used to store temporary audio data.  <a href="classsf_1_1_sound_stream.html#abdfe9b84c86d44297f8f62a7ca93cfbd">More...</a><br /></td></tr>
-<tr class="separator:abdfe9b84c86d44297f8f62a7ca93cfbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7c1a66f24be5e58ed275fd06e24294e"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1_sound_stream.html#ad7c1a66f24be5e58ed275fd06e24294e">m_channelCount</a></td></tr>
-<tr class="memdesc:ad7c1a66f24be5e58ed275fd06e24294e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of channels (1 = mono, 2 = stereo, ...)  <a href="classsf_1_1_sound_stream.html#ad7c1a66f24be5e58ed275fd06e24294e">More...</a><br /></td></tr>
-<tr class="separator:ad7c1a66f24be5e58ed275fd06e24294e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6cf65793e01b6b5f6bf6b555b1c1dfd"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1_sound_stream.html#ac6cf65793e01b6b5f6bf6b555b1c1dfd">m_sampleRate</a></td></tr>
-<tr class="memdesc:ac6cf65793e01b6b5f6bf6b555b1c1dfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frequency (samples / second)  <a href="classsf_1_1_sound_stream.html#ac6cf65793e01b6b5f6bf6b555b1c1dfd">More...</a><br /></td></tr>
-<tr class="separator:ac6cf65793e01b6b5f6bf6b555b1c1dfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c91434e0f1c2e4445e01b3de578af49"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacesf.html#aa746fb1ddef4410bddf198ebb27e727c">Uint32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1_sound_stream.html#a5c91434e0f1c2e4445e01b3de578af49">m_format</a></td></tr>
-<tr class="memdesc:a5c91434e0f1c2e4445e01b3de578af49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Format of the internal sound buffers.  <a href="classsf_1_1_sound_stream.html#a5c91434e0f1c2e4445e01b3de578af49">More...</a><br /></td></tr>
-<tr class="separator:a5c91434e0f1c2e4445e01b3de578af49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32ee01b984f74c9e0857d676bc33ad9f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1_sound_stream.html#a32ee01b984f74c9e0857d676bc33ad9f">m_loop</a></td></tr>
-<tr class="memdesc:a32ee01b984f74c9e0857d676bc33ad9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loop flag (true to loop, false to play once)  <a href="classsf_1_1_sound_stream.html#a32ee01b984f74c9e0857d676bc33ad9f">More...</a><br /></td></tr>
-<tr class="separator:a32ee01b984f74c9e0857d676bc33ad9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7365a2ec97b89cec15577b31461ff4be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacesf.html#add9ac83466d96b9f50a009b9f4064266">Uint64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1_sound_stream.html#a7365a2ec97b89cec15577b31461ff4be">m_samplesProcessed</a></td></tr>
-<tr class="memdesc:a7365a2ec97b89cec15577b31461ff4be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of buffers processed since beginning of the stream.  <a href="classsf_1_1_sound_stream.html#a7365a2ec97b89cec15577b31461ff4be">More...</a><br /></td></tr>
-<tr class="separator:a7365a2ec97b89cec15577b31461ff4be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af073ef053abd8c0f39fadb0d475b4a06"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacesf.html#a2840579fed3494d9f330baf7a5a19903">Int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1_sound_stream.html#af073ef053abd8c0f39fadb0d475b4a06">m_bufferSeeks</a> [<a class="el" href="classsf_1_1_sound_stream.html#aa6e54c13c704dcf56fbac5e909424059affb4e358f25c46689ca8d700ab384393">BufferCount</a>]</td></tr>
-<tr class="memdesc:af073ef053abd8c0f39fadb0d475b4a06"><td class="mdescLeft">&#160;</td><td class="mdescRight">If buffer is an "end buffer", holds next seek position, else NoLoop. For play offset calculation.  <a href="classsf_1_1_sound_stream.html#af073ef053abd8c0f39fadb0d475b4a06">More...</a><br /></td></tr>
-<tr class="separator:af073ef053abd8c0f39fadb0d475b4a06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_types_classsf_1_1_sound_source"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classsf_1_1_sound_source')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classsf_1_1_sound_source.html">sf::SoundSource</a></td></tr>
@@ -541,36 +464,6 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a2419ce94e45f7d4d0302b7963282c40c" name="a2419ce94e45f7d4d0302b7963282c40c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2419ce94e45f7d4d0302b7963282c40c">&#9670;&nbsp;</a></span>anonymous enum</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">anonymous enum</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa6e54c13c704dcf56fbac5e909424059affb4e358f25c46689ca8d700ab384393" name="aa6e54c13c704dcf56fbac5e909424059affb4e358f25c46689ca8d700ab384393"></a>BufferCount&#160;</td><td class="fielddoc"><p >Number of audio buffers used by the streaming loop. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aa6e54c13c704dcf56fbac5e909424059a206372e5bea183d5fc4c26682c34fa1a" name="aa6e54c13c704dcf56fbac5e909424059a206372e5bea183d5fc4c26682c34fa1a"></a>BufferRetries&#160;</td><td class="fielddoc"><p >Number of retries (excluding initial try) for <a class="el" href="classsf_1_1_sound_stream.html#a968ec024a6e45490962c8a1121cb7c5f" title="Request a new chunk of audio samples from the stream source.">onGetData()</a> </p>
-</td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source.html#l00300">300</a> of file <a class="el" href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source.html">SoundStream.hpp</a>.</p>
-
-</div>
-</div>
 <a id="af58d652c948e4fe8e92a3c983c585184" name="af58d652c948e4fe8e92a3c983c585184"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af58d652c948e4fe8e92a3c983c585184">&#9670;&nbsp;</a></span>anonymous enum</h2>
 
@@ -596,36 +489,6 @@ Additional Inherited Members</h2></td></tr>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source.html#l00183">183</a> of file <a class="el" href="_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source.html">SoundStream.hpp</a>.</p>
-
-</div>
-</div>
-<a id="aa6e54c13c704dcf56fbac5e909424059" name="aa6e54c13c704dcf56fbac5e909424059"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6e54c13c704dcf56fbac5e909424059">&#9670;&nbsp;</a></span>anonymous enum</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">anonymous enum</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa6e54c13c704dcf56fbac5e909424059affb4e358f25c46689ca8d700ab384393" name="aa6e54c13c704dcf56fbac5e909424059affb4e358f25c46689ca8d700ab384393"></a>BufferCount&#160;</td><td class="fielddoc"><p >Number of audio buffers used by the streaming loop. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aa6e54c13c704dcf56fbac5e909424059a206372e5bea183d5fc4c26682c34fa1a" name="aa6e54c13c704dcf56fbac5e909424059a206372e5bea183d5fc4c26682c34fa1a"></a>BufferRetries&#160;</td><td class="fielddoc"><p >Number of retries (excluding initial try) for <a class="el" href="classsf_1_1_sound_stream.html#a968ec024a6e45490962c8a1121cb7c5f" title="Request a new chunk of audio samples from the stream source.">onGetData()</a> </p>
-</td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source.html#l00300">300</a> of file <a class="el" href="_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source.html">SoundStream.hpp</a>.</p>
 
 </div>
 </div>
@@ -741,214 +604,6 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ac0fdfe8ec3e5b662f0b7956ba894f5bc" name="ac0fdfe8ec3e5b662f0b7956ba894f5bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0fdfe8ec3e5b662f0b7956ba894f5bc">&#9670;&nbsp;</a></span>clearQueue() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void sf::SoundStream::clearQueue </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Clear all the audio buffers and empty the playing queue. </p>
-<p >This function is called when the stream is stopped. </p>
-
-</div>
-</div>
-<a id="ac0fdfe8ec3e5b662f0b7956ba894f5bc" name="ac0fdfe8ec3e5b662f0b7956ba894f5bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0fdfe8ec3e5b662f0b7956ba894f5bc">&#9670;&nbsp;</a></span>clearQueue() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void sf::SoundStream::clearQueue </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Clear all the audio buffers and empty the playing queue. </p>
-<p >This function is called when the stream is stopped. </p>
-
-</div>
-</div>
-<a id="ad3e04f1b4df1fbe0ffd474f47ed91f4a" name="ad3e04f1b4df1fbe0ffd474f47ed91f4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3e04f1b4df1fbe0ffd474f47ed91f4a">&#9670;&nbsp;</a></span>fillAndPushBuffer() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool sf::SoundStream::fillAndPushBuffer </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>bufferNum</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>immediateLoop</em> = <code>false</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Fill a new buffer with audio samples, and append it to the playing queue. </p>
-<p >This function is called as soon as a buffer has been fully consumed; it fills it again and inserts it back into the playing queue.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">bufferNum</td><td>Number of the buffer to fill (in [0, BufferCount]) </td></tr>
-    <tr><td class="paramname">immediateLoop</td><td>Treat empty buffers as spent, and act on loops immediately</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the stream source has requested to stop, false otherwise </dd></dl>
-
-</div>
-</div>
-<a id="ad3e04f1b4df1fbe0ffd474f47ed91f4a" name="ad3e04f1b4df1fbe0ffd474f47ed91f4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3e04f1b4df1fbe0ffd474f47ed91f4a">&#9670;&nbsp;</a></span>fillAndPushBuffer() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool sf::SoundStream::fillAndPushBuffer </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>bufferNum</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>immediateLoop</em> = <code>false</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Fill a new buffer with audio samples, and append it to the playing queue. </p>
-<p >This function is called as soon as a buffer has been fully consumed; it fills it again and inserts it back into the playing queue.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">bufferNum</td><td>Number of the buffer to fill (in [0, BufferCount]) </td></tr>
-    <tr><td class="paramname">immediateLoop</td><td>Treat empty buffers as spent, and act on loops immediately</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the stream source has requested to stop, false otherwise </dd></dl>
-
-</div>
-</div>
-<a id="abf8cdcc65da5e31c14f9bddccb53fb72" name="abf8cdcc65da5e31c14f9bddccb53fb72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf8cdcc65da5e31c14f9bddccb53fb72">&#9670;&nbsp;</a></span>fillQueue() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool sf::SoundStream::fillQueue </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Fill the audio buffers and put them all into the playing queue. </p>
-<p >This function is called when playing starts and the playing queue is empty.</p>
-<dl class="section return"><dt>Returns</dt><dd>True if the derived class has requested to stop, false otherwise </dd></dl>
-
-</div>
-</div>
-<a id="abf8cdcc65da5e31c14f9bddccb53fb72" name="abf8cdcc65da5e31c14f9bddccb53fb72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf8cdcc65da5e31c14f9bddccb53fb72">&#9670;&nbsp;</a></span>fillQueue() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool sf::SoundStream::fillQueue </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Fill the audio buffers and put them all into the playing queue. </p>
-<p >This function is called when playing starts and the playing queue is empty.</p>
-<dl class="section return"><dt>Returns</dt><dd>True if the derived class has requested to stop, false otherwise </dd></dl>
-
-</div>
-</div>
 <a id="a1f70933912dd9498f4dc99feefed27f3" name="a1f70933912dd9498f4dc99feefed27f3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1f70933912dd9498f4dc99feefed27f3">&#9670;&nbsp;</a></span>getChannelCount() <span class="overload">[1/2]</span></h2>
 
@@ -1303,7 +958,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True to continue playback, false to stop </dd></dl>
 
-<p>Implemented in <a class="el" href="classsf_1_1_music.html#aca1bcb4e5d56a854133e74bd86374463">sf::Music</a>, <a class="el" href="classsf_1_1_music.html#aca1bcb4e5d56a854133e74bd86374463">sf::Music</a>, <a class="el" href="class_network_audio_stream.html#a7a2a574aec42b199788346ad6acd7914">NetworkAudioStream</a>, and <a class="el" href="class_network_audio_stream.html#a7a2a574aec42b199788346ad6acd7914">NetworkAudioStream</a>.</p>
+<p>Implemented in <a class="el" href="classsf_1_1_music.html#aca1bcb4e5d56a854133e74bd86374463">sf::Music</a>, and <a class="el" href="classsf_1_1_music.html#aca1bcb4e5d56a854133e74bd86374463">sf::Music</a>.</p>
 
 </div>
 </div>
@@ -1341,7 +996,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True to continue playback, false to stop </dd></dl>
 
-<p>Implemented in <a class="el" href="classsf_1_1_music.html#aca1bcb4e5d56a854133e74bd86374463">sf::Music</a>, <a class="el" href="classsf_1_1_music.html#aca1bcb4e5d56a854133e74bd86374463">sf::Music</a>, <a class="el" href="class_network_audio_stream.html#a7a2a574aec42b199788346ad6acd7914">NetworkAudioStream</a>, and <a class="el" href="class_network_audio_stream.html#a7a2a574aec42b199788346ad6acd7914">NetworkAudioStream</a>.</p>
+<p>Implemented in <a class="el" href="classsf_1_1_music.html#aca1bcb4e5d56a854133e74bd86374463">sf::Music</a>, and <a class="el" href="classsf_1_1_music.html#aca1bcb4e5d56a854133e74bd86374463">sf::Music</a>.</p>
 
 </div>
 </div>
@@ -1440,7 +1095,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="class_network_audio_stream.html#adab7ec817f075ee5c9d403d641ab5c78">NetworkAudioStream</a>, <a class="el" href="class_network_audio_stream.html#adab7ec817f075ee5c9d403d641ab5c78">NetworkAudioStream</a>, <a class="el" href="classsf_1_1_music.html#a15119cc0419c16bb334fa0698699c02e">sf::Music</a>, and <a class="el" href="classsf_1_1_music.html#a15119cc0419c16bb334fa0698699c02e">sf::Music</a>.</p>
+<p>Implemented in <a class="el" href="classsf_1_1_music.html#a15119cc0419c16bb334fa0698699c02e">sf::Music</a>, and <a class="el" href="classsf_1_1_music.html#a15119cc0419c16bb334fa0698699c02e">sf::Music</a>.</p>
 
 </div>
 </div>
@@ -1477,7 +1132,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="class_network_audio_stream.html#adab7ec817f075ee5c9d403d641ab5c78">NetworkAudioStream</a>, <a class="el" href="class_network_audio_stream.html#adab7ec817f075ee5c9d403d641ab5c78">NetworkAudioStream</a>, <a class="el" href="classsf_1_1_music.html#a15119cc0419c16bb334fa0698699c02e">sf::Music</a>, and <a class="el" href="classsf_1_1_music.html#a15119cc0419c16bb334fa0698699c02e">sf::Music</a>.</p>
+<p>Implemented in <a class="el" href="classsf_1_1_music.html#a15119cc0419c16bb334fa0698699c02e">sf::Music</a>, and <a class="el" href="classsf_1_1_music.html#a15119cc0419c16bb334fa0698699c02e">sf::Music</a>.</p>
 
 </div>
 </div>
@@ -1776,349 +1431,6 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classsf_1_1_sound_stream.html#afdc08b69cab5f243d9324940a85a1144" title="Start or resume playing the audio stream.">play</a>, <a class="el" href="classsf_1_1_sound_stream.html#a932ff181e661503cad288b4bb6fe45ca" title="Pause the audio stream.">pause</a> </dd></dl>
 
 <p>Implements <a class="el" href="classsf_1_1_sound_source.html#a06501a25b12376befcc7ee1ed4865fda">sf::SoundSource</a>.</p>
-
-</div>
-</div>
-<a id="a08c54af1f433424ac627d1a30021f5e9" name="a08c54af1f433424ac627d1a30021f5e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08c54af1f433424ac627d1a30021f5e9">&#9670;&nbsp;</a></span>streamData() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void sf::SoundStream::streamData </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Function called as the entry point of the thread. </p>
-<p >This function starts the streaming loop, and returns only when the sound is stopped. </p>
-
-</div>
-</div>
-<a id="a08c54af1f433424ac627d1a30021f5e9" name="a08c54af1f433424ac627d1a30021f5e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08c54af1f433424ac627d1a30021f5e9">&#9670;&nbsp;</a></span>streamData() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void sf::SoundStream::streamData </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Function called as the entry point of the thread. </p>
-<p >This function starts the streaming loop, and returns only when the sound is stopped. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="abdfe9b84c86d44297f8f62a7ca93cfbd" name="abdfe9b84c86d44297f8f62a7ca93cfbd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abdfe9b84c86d44297f8f62a7ca93cfbd">&#9670;&nbsp;</a></span>m_buffers</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned int sf::SoundStream::m_buffers</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><a class="el" href="classsf_1_1_sound.html" title="Regular sound that can be played in the audio environment.">Sound</a> buffers used to store temporary audio data. </p>
-
-<p class="definition">Definition at line <a class="el" href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source.html#l00313">313</a> of file <a class="el" href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source.html">SoundStream.hpp</a>.</p>
-
-</div>
-</div>
-<a id="af073ef053abd8c0f39fadb0d475b4a06" name="af073ef053abd8c0f39fadb0d475b4a06"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af073ef053abd8c0f39fadb0d475b4a06">&#9670;&nbsp;</a></span>m_bufferSeeks</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="namespacesf.html#a2840579fed3494d9f330baf7a5a19903">Int64</a> sf::SoundStream::m_bufferSeeks</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>If buffer is an "end buffer", holds next seek position, else NoLoop. For play offset calculation. </p>
-
-<p class="definition">Definition at line <a class="el" href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source.html#l00319">319</a> of file <a class="el" href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source.html">SoundStream.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ad7c1a66f24be5e58ed275fd06e24294e" name="ad7c1a66f24be5e58ed275fd06e24294e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7c1a66f24be5e58ed275fd06e24294e">&#9670;&nbsp;</a></span>m_channelCount</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned int sf::SoundStream::m_channelCount</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Number of channels (1 = mono, 2 = stereo, ...) </p>
-
-<p class="definition">Definition at line <a class="el" href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source.html#l00314">314</a> of file <a class="el" href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source.html">SoundStream.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a5c91434e0f1c2e4445e01b3de578af49" name="a5c91434e0f1c2e4445e01b3de578af49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c91434e0f1c2e4445e01b3de578af49">&#9670;&nbsp;</a></span>m_format</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="namespacesf.html#aa746fb1ddef4410bddf198ebb27e727c">Uint32</a> sf::SoundStream::m_format</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Format of the internal sound buffers. </p>
-
-<p class="definition">Definition at line <a class="el" href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source.html#l00316">316</a> of file <a class="el" href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source.html">SoundStream.hpp</a>.</p>
-
-</div>
-</div>
-<a id="afa20ca6cbb29ee2355d986a3faa7a38f" name="afa20ca6cbb29ee2355d986a3faa7a38f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa20ca6cbb29ee2355d986a3faa7a38f">&#9670;&nbsp;</a></span>m_isStreaming</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool sf::SoundStream::m_isStreaming</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Streaming state (true = playing, false = stopped) </p>
-
-<p class="definition">Definition at line <a class="el" href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source.html#l00312">312</a> of file <a class="el" href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source.html">SoundStream.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a32ee01b984f74c9e0857d676bc33ad9f" name="a32ee01b984f74c9e0857d676bc33ad9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32ee01b984f74c9e0857d676bc33ad9f">&#9670;&nbsp;</a></span>m_loop</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool sf::SoundStream::m_loop</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Loop flag (true to loop, false to play once) </p>
-
-<p class="definition">Definition at line <a class="el" href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source.html#l00317">317</a> of file <a class="el" href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source.html">SoundStream.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ac6cf65793e01b6b5f6bf6b555b1c1dfd" name="ac6cf65793e01b6b5f6bf6b555b1c1dfd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6cf65793e01b6b5f6bf6b555b1c1dfd">&#9670;&nbsp;</a></span>m_sampleRate</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned int sf::SoundStream::m_sampleRate</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Frequency (samples / second) </p>
-
-<p class="definition">Definition at line <a class="el" href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source.html#l00315">315</a> of file <a class="el" href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source.html">SoundStream.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a7365a2ec97b89cec15577b31461ff4be" name="a7365a2ec97b89cec15577b31461ff4be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7365a2ec97b89cec15577b31461ff4be">&#9670;&nbsp;</a></span>m_samplesProcessed</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="namespacesf.html#add9ac83466d96b9f50a009b9f4064266">Uint64</a> sf::SoundStream::m_samplesProcessed</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Number of buffers processed since beginning of the stream. </p>
-
-<p class="definition">Definition at line <a class="el" href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source.html#l00318">318</a> of file <a class="el" href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source.html">SoundStream.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a004d1b16c81698be55779efe0f2b5ed3" name="a004d1b16c81698be55779efe0f2b5ed3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a004d1b16c81698be55779efe0f2b5ed3">&#9670;&nbsp;</a></span>m_thread</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classsf_1_1_thread.html">Thread</a> sf::SoundStream::m_thread</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><a class="el" href="classsf_1_1_thread.html" title="Utility class to manipulate threads.">Thread</a> running the background tasks. </p>
-
-<p class="definition">Definition at line <a class="el" href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source.html#l00309">309</a> of file <a class="el" href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source.html">SoundStream.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a134d03a5d3075f6a98a85a2edff9ac7d" name="a134d03a5d3075f6a98a85a2edff9ac7d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a134d03a5d3075f6a98a85a2edff9ac7d">&#9670;&nbsp;</a></span>m_threadMutex</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classsf_1_1_mutex.html">Mutex</a> sf::SoundStream::m_threadMutex</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><a class="el" href="classsf_1_1_thread.html" title="Utility class to manipulate threads.">Thread</a> mutex. </p>
-
-<p class="definition">Definition at line <a class="el" href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source.html#l00310">310</a> of file <a class="el" href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source.html">SoundStream.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a2e06f2688d7fcf777a9779168067f302" name="a2e06f2688d7fcf777a9779168067f302"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e06f2688d7fcf777a9779168067f302">&#9670;&nbsp;</a></span>m_threadStartState</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classsf_1_1_sound_source.html#ac43af72c98c077500b239bc75b812f03">Status</a> sf::SoundStream::m_threadStartState</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><a class="el" href="class_state.html">State</a> the thread starts in (Playing, Paused, Stopped) </p>
-
-<p class="definition">Definition at line <a class="el" href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source.html#l00311">311</a> of file <a class="el" href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_audio_2_sound_stream_8hpp_source.html">SoundStream.hpp</a>.</p>
 
 </div>
 </div>

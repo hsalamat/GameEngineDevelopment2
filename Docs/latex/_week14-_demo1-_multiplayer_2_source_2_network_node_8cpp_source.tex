@@ -20,19 +20,19 @@
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00016}00016 }
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00017}00017 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_network_node_a76c8daddb63d9d2ea57a1e3096b0fcc1}{NetworkNode::notifyGameAction}}(\mbox{\hyperlink{namespace_game_actions_a2c10fdbcc811f03c02f357cdd0c4e76d}{GameActions::Type}} type, \mbox{\hyperlink{classsf_1_1_vector2}{sf::Vector2f}} position)}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00018}00018 \{}
-\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00019}00019     \mbox{\hyperlink{class_network_node_ac97682252e2e21694af40b8f1abf8972}{mPendingActions}}.push(\mbox{\hyperlink{struct_game_actions_1_1_action}{GameActions::Action}}(type, position));}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00019}00019     mPendingActions.push(\mbox{\hyperlink{struct_game_actions_1_1_action}{GameActions::Action}}(type, position));}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00020}00020 \}}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00021}00021 }
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00022}00022 \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_network_node_a324d5374146ccb8e1a77c932623464c1}{NetworkNode::pollGameAction}}(\mbox{\hyperlink{struct_game_actions_1_1_action}{GameActions::Action}}\& out)}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00023}00023 \{}
-\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00024}00024     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_network_node_ac97682252e2e21694af40b8f1abf8972}{mPendingActions}}.empty())}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00024}00024     \textcolor{keywordflow}{if} (mPendingActions.empty())}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00025}00025     \{}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00026}00026         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00027}00027     \}}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00028}00028     \textcolor{keywordflow}{else}}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00029}00029     \{}
-\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00030}00030         out = \mbox{\hyperlink{class_network_node_ac97682252e2e21694af40b8f1abf8972}{mPendingActions}}.front();}
-\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00031}00031         \mbox{\hyperlink{class_network_node_ac97682252e2e21694af40b8f1abf8972}{mPendingActions}}.pop();}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00030}00030         out = mPendingActions.front();}
+\DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00031}00031         mPendingActions.pop();}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00032}00032         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00033}00033     \}}
 \DoxyCodeLine{\Hypertarget{_week14-_demo1-_multiplayer_2_source_2_network_node_8cpp_source_l00034}00034 \}}

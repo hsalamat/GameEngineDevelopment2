@@ -114,10 +114,5 @@ var class_pause_state =
     [ "update", "class_pause_state.html#a534fe408bf762e3d0f9b4cc6d4cb4cec", null ],
     [ "update", "class_pause_state.html#a534fe408bf762e3d0f9b4cc6d4cb4cec", null ],
     [ "update", "class_pause_state.html#a534fe408bf762e3d0f9b4cc6d4cb4cec", null ],
-    [ "update", "class_pause_state.html#a534fe408bf762e3d0f9b4cc6d4cb4cec", null ],
-    [ "mBackgroundSprite", "class_pause_state.html#a4589e87560f2ed88ed55da58571cbf42", null ],
-    [ "mGUIContainer", "class_pause_state.html#a2715ebab8df6700b64207b70bdee3228", null ],
-    [ "mInstructionText", "class_pause_state.html#ad285be036072511d3f04deda2341d952", null ],
-    [ "mLetUpdatesThrough", "class_pause_state.html#ab39aeb7c94ee48ac46cdfb544b003e1b", null ],
-    [ "mPausedText", "class_pause_state.html#a879d47437706c607ae1651e6685356e9", null ]
+    [ "update", "class_pause_state.html#a534fe408bf762e3d0f9b4cc6d4cb4cec", null ]
 ];

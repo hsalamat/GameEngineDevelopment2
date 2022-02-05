@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Game Engine Development II: PostEffect Class Reference</title>
+<title>My Project: PostEffect Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Game Engine Development II
+   <div id="projectname">My Project
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -95,9 +95,6 @@ $(document).ready(function(){initNavTree('class_post_effect.html',''); initResiz
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
-<a href="#pri-types">Private Types</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_post_effect-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">PostEffect Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
@@ -212,80 +209,11 @@ Static Protected Member Functions</h2></td></tr>
 <tr class="separator:a7b88194a1bf36a3108adf2811304383c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b88194a1bf36a3108adf2811304383c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_post_effect.html#a7b88194a1bf36a3108adf2811304383c">applyShader</a> (const <a class="el" href="classsf_1_1_shader.html">sf::Shader</a> &amp;shader, <a class="el" href="classsf_1_1_render_target.html">sf::RenderTarget</a> &amp;output)</td></tr>
 <tr class="separator:a7b88194a1bf36a3108adf2811304383c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
-Private Types</h2></td></tr>
-<tr class="memitem:aacdee41227b41a22dae5305b18f836f6"><td class="memItemLeft" align="right" valign="top">typedef std::array&lt; <a class="el" href="classsf_1_1_render_texture.html">sf::RenderTexture</a>, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_post_effect.html#aacdee41227b41a22dae5305b18f836f6">RenderTextureArray</a></td></tr>
-<tr class="separator:aacdee41227b41a22dae5305b18f836f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:aaa1aade5b70429cb9bf19df4c0f01ea3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_post_effect.html#aaa1aade5b70429cb9bf19df4c0f01ea3">prepareTextures</a> (<a class="el" href="namespacesf.html#a41039649eb65ea7646e2b97cfe124b4f">sf::Vector2u</a> size)</td></tr>
-<tr class="separator:aaa1aade5b70429cb9bf19df4c0f01ea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4362a20468079c26f2b90623b24ea81e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_post_effect.html#a4362a20468079c26f2b90623b24ea81e">filterBright</a> (const <a class="el" href="classsf_1_1_render_texture.html">sf::RenderTexture</a> &amp;input, <a class="el" href="classsf_1_1_render_texture.html">sf::RenderTexture</a> &amp;output)</td></tr>
-<tr class="separator:a4362a20468079c26f2b90623b24ea81e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd855cb79cfd2933a4e33d8355169931"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_post_effect.html#acd855cb79cfd2933a4e33d8355169931">blur</a> (const <a class="el" href="classsf_1_1_render_texture.html">sf::RenderTexture</a> &amp;input, <a class="el" href="classsf_1_1_render_texture.html">sf::RenderTexture</a> &amp;output, <a class="el" href="namespacesf.html#a80cea3c46537294fd1d8d428566ad8b2">sf::Vector2f</a> offsetFactor)</td></tr>
-<tr class="separator:acd855cb79cfd2933a4e33d8355169931"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ddc29ca5d6aeb99a738edd634dc0e90"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_post_effect.html#a6ddc29ca5d6aeb99a738edd634dc0e90">blurMultipass</a> (<a class="el" href="class_post_effect.html#aacdee41227b41a22dae5305b18f836f6">RenderTextureArray</a> &amp;renderTextures)</td></tr>
-<tr class="separator:a6ddc29ca5d6aeb99a738edd634dc0e90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad54cb93226484ecefc28602c87e73fa5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_post_effect.html#ad54cb93226484ecefc28602c87e73fa5">downsample</a> (const <a class="el" href="classsf_1_1_render_texture.html">sf::RenderTexture</a> &amp;input, <a class="el" href="classsf_1_1_render_texture.html">sf::RenderTexture</a> &amp;output)</td></tr>
-<tr class="separator:ad54cb93226484ecefc28602c87e73fa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa833d29d7ad30f2a50395c7d353b216e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_post_effect.html#aa833d29d7ad30f2a50395c7d353b216e">add</a> (const <a class="el" href="classsf_1_1_render_texture.html">sf::RenderTexture</a> &amp;source, const <a class="el" href="classsf_1_1_render_texture.html">sf::RenderTexture</a> &amp;bloom, <a class="el" href="classsf_1_1_render_target.html">sf::RenderTarget</a> &amp;target)</td></tr>
-<tr class="separator:aa833d29d7ad30f2a50395c7d353b216e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classsf_1_1_non_copyable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classsf_1_1_non_copyable')"><img src="closed.png" alt="-"/>&#160;Private Member Functions inherited from <a class="el" href="classsf_1_1_non_copyable.html">sf::NonCopyable</a></td></tr>
-<tr class="memitem:a2110add170580fdb946f887719da6860 inherit pub_methods_classsf_1_1_non_copyable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1_non_copyable.html#a2110add170580fdb946f887719da6860">NonCopyable</a> ()</td></tr>
-<tr class="memdesc:a2110add170580fdb946f887719da6860 inherit pub_methods_classsf_1_1_non_copyable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="classsf_1_1_non_copyable.html#a2110add170580fdb946f887719da6860">More...</a><br /></td></tr>
-<tr class="separator:a2110add170580fdb946f887719da6860 inherit pub_methods_classsf_1_1_non_copyable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8274ffbf46014f5f7f364befb52c7728 inherit pub_methods_classsf_1_1_non_copyable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1_non_copyable.html#a8274ffbf46014f5f7f364befb52c7728">~NonCopyable</a> ()</td></tr>
-<tr class="memdesc:a8274ffbf46014f5f7f364befb52c7728 inherit pub_methods_classsf_1_1_non_copyable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <a href="classsf_1_1_non_copyable.html#a8274ffbf46014f5f7f364befb52c7728">More...</a><br /></td></tr>
-<tr class="separator:a8274ffbf46014f5f7f364befb52c7728 inherit pub_methods_classsf_1_1_non_copyable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2110add170580fdb946f887719da6860 inherit pub_methods_classsf_1_1_non_copyable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1_non_copyable.html#a2110add170580fdb946f887719da6860">NonCopyable</a> ()</td></tr>
-<tr class="memdesc:a2110add170580fdb946f887719da6860 inherit pub_methods_classsf_1_1_non_copyable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="classsf_1_1_non_copyable.html#a2110add170580fdb946f887719da6860">More...</a><br /></td></tr>
-<tr class="separator:a2110add170580fdb946f887719da6860 inherit pub_methods_classsf_1_1_non_copyable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8274ffbf46014f5f7f364befb52c7728 inherit pub_methods_classsf_1_1_non_copyable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1_non_copyable.html#a8274ffbf46014f5f7f364befb52c7728">~NonCopyable</a> ()</td></tr>
-<tr class="memdesc:a8274ffbf46014f5f7f364befb52c7728 inherit pub_methods_classsf_1_1_non_copyable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <a href="classsf_1_1_non_copyable.html#a8274ffbf46014f5f7f364befb52c7728">More...</a><br /></td></tr>
-<tr class="separator:a8274ffbf46014f5f7f364befb52c7728 inherit pub_methods_classsf_1_1_non_copyable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a54b194b05b1d520b0c5ff19a8cda6f96"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_week11_2_week11-_demo9-_post_effect_2_include_2_resource_identifiers_8hpp.html#a4706ce8b6fb3fa40eb84ae53d373e07a">ShaderHolder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_post_effect.html#a54b194b05b1d520b0c5ff19a8cda6f96">mShaders</a></td></tr>
-<tr class="separator:a54b194b05b1d520b0c5ff19a8cda6f96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69e879539d82ffa557a993b4a6789dbe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsf_1_1_render_texture.html">sf::RenderTexture</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_post_effect.html#a69e879539d82ffa557a993b4a6789dbe">mBrightnessTexture</a></td></tr>
-<tr class="separator:a69e879539d82ffa557a993b4a6789dbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5de5ae6582a63a73d9b2082492e166ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_post_effect.html#aacdee41227b41a22dae5305b18f836f6">RenderTextureArray</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_post_effect.html#a5de5ae6582a63a73d9b2082492e166ed">mFirstPassTextures</a></td></tr>
-<tr class="separator:a5de5ae6582a63a73d9b2082492e166ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f725a554a0d617081161b00568c7cb1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_post_effect.html#aacdee41227b41a22dae5305b18f836f6">RenderTextureArray</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_post_effect.html#a6f725a554a0d617081161b00568c7cb1">mSecondPassTextures</a></td></tr>
-<tr class="separator:a6f725a554a0d617081161b00568c7cb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="_week11_2_week11-_demo9-_post_effect_2_include_2_post_effect_8hpp_source.html#l00017">17</a> of file <a class="el" href="_week11_2_week11-_demo9-_post_effect_2_include_2_post_effect_8hpp_source.html">PostEffect.hpp</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="aacdee41227b41a22dae5305b18f836f6" name="aacdee41227b41a22dae5305b18f836f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aacdee41227b41a22dae5305b18f836f6">&#9670;&nbsp;</a></span>RenderTextureArray</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef std::array&lt;<a class="el" href="classsf_1_1_render_texture.html">sf::RenderTexture</a>, 2&gt; <a class="el" href="class_post_effect.html#aacdee41227b41a22dae5305b18f836f6">PostEffect::RenderTextureArray</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_week11_2_week11-_demo9-_post_effect_2_include_2_post_effect_8hpp_source.html#l00032">32</a> of file <a class="el" href="_week11_2_week11-_demo9-_post_effect_2_include_2_post_effect_8hpp_source.html">PostEffect.hpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a62c362aa9f707282bebdab594e4d9882" name="a62c362aa9f707282bebdab594e4d9882"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a62c362aa9f707282bebdab594e4d9882">&#9670;&nbsp;</a></span>PostEffect()</h2>
 
@@ -533,50 +461,6 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa833d29d7ad30f2a50395c7d353b216e" name="aa833d29d7ad30f2a50395c7d353b216e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa833d29d7ad30f2a50395c7d353b216e">&#9670;&nbsp;</a></span>add()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void PostEffect::add </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classsf_1_1_render_texture.html">sf::RenderTexture</a> &amp;&#160;</td>
-          <td class="paramname"><em>source</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classsf_1_1_render_texture.html">sf::RenderTexture</a> &amp;&#160;</td>
-          <td class="paramname"><em>bloom</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classsf_1_1_render_target.html">sf::RenderTarget</a> &amp;&#160;</td>
-          <td class="paramname"><em>target</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_week11_2_week11-_demo9-_post_effect_2_source_2_post_effect_8cpp_source.html#l00122">122</a> of file <a class="el" href="_week11_2_week11-_demo9-_post_effect_2_source_2_post_effect_8cpp_source.html">PostEffect.cpp</a>.</p>
-
-</div>
-</div>
 <a id="a799e646a9c3fc3b8ef51f6d16bbd6e85" name="a799e646a9c3fc3b8ef51f6d16bbd6e85"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a799e646a9c3fc3b8ef51f6d16bbd6e85">&#9670;&nbsp;</a></span>apply() <span class="overload">[1/9]</span></h2>
 
@@ -1247,154 +1131,6 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="acd855cb79cfd2933a4e33d8355169931" name="acd855cb79cfd2933a4e33d8355169931"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd855cb79cfd2933a4e33d8355169931">&#9670;&nbsp;</a></span>blur()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void PostEffect::blur </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classsf_1_1_render_texture.html">sf::RenderTexture</a> &amp;&#160;</td>
-          <td class="paramname"><em>input</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classsf_1_1_render_texture.html">sf::RenderTexture</a> &amp;&#160;</td>
-          <td class="paramname"><em>output</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespacesf.html#a80cea3c46537294fd1d8d428566ad8b2">sf::Vector2f</a>&#160;</td>
-          <td class="paramname"><em>offsetFactor</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_week11_2_week11-_demo9-_post_effect_2_source_2_post_effect_8cpp_source.html#l00091">91</a> of file <a class="el" href="_week11_2_week11-_demo9-_post_effect_2_source_2_post_effect_8cpp_source.html">PostEffect.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a6ddc29ca5d6aeb99a738edd634dc0e90" name="a6ddc29ca5d6aeb99a738edd634dc0e90"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ddc29ca5d6aeb99a738edd634dc0e90">&#9670;&nbsp;</a></span>blurMultipass()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void PostEffect::blurMultipass </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_post_effect.html#aacdee41227b41a22dae5305b18f836f6">RenderTextureArray</a> &amp;&#160;</td>
-          <td class="paramname"><em>renderTextures</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_week11_2_week11-_demo9-_post_effect_2_source_2_post_effect_8cpp_source.html#l00101">101</a> of file <a class="el" href="_week11_2_week11-_demo9-_post_effect_2_source_2_post_effect_8cpp_source.html">PostEffect.cpp</a>.</p>
-
-</div>
-</div>
-<a id="ad54cb93226484ecefc28602c87e73fa5" name="ad54cb93226484ecefc28602c87e73fa5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad54cb93226484ecefc28602c87e73fa5">&#9670;&nbsp;</a></span>downsample()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void PostEffect::downsample </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classsf_1_1_render_texture.html">sf::RenderTexture</a> &amp;&#160;</td>
-          <td class="paramname"><em>input</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classsf_1_1_render_texture.html">sf::RenderTexture</a> &amp;&#160;</td>
-          <td class="paramname"><em>output</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_week11_2_week11-_demo9-_post_effect_2_source_2_post_effect_8cpp_source.html#l00112">112</a> of file <a class="el" href="_week11_2_week11-_demo9-_post_effect_2_source_2_post_effect_8cpp_source.html">PostEffect.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a4362a20468079c26f2b90623b24ea81e" name="a4362a20468079c26f2b90623b24ea81e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4362a20468079c26f2b90623b24ea81e">&#9670;&nbsp;</a></span>filterBright()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void PostEffect::filterBright </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classsf_1_1_render_texture.html">sf::RenderTexture</a> &amp;&#160;</td>
-          <td class="paramname"><em>input</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classsf_1_1_render_texture.html">sf::RenderTexture</a> &amp;&#160;</td>
-          <td class="paramname"><em>output</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_week11_2_week11-_demo9-_post_effect_2_source_2_post_effect_8cpp_source.html#l00064">64</a> of file <a class="el" href="_week11_2_week11-_demo9-_post_effect_2_source_2_post_effect_8cpp_source.html">PostEffect.cpp</a>.</p>
-
-</div>
-</div>
 <a id="a2fd17f2ecf85d27716dd056cd543ed32" name="a2fd17f2ecf85d27716dd056cd543ed32"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2fd17f2ecf85d27716dd056cd543ed32">&#9670;&nbsp;</a></span>isSupported() <span class="overload">[1/9]</span></h2>
 
@@ -1619,131 +1355,6 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a id="aaa1aade5b70429cb9bf19df4c0f01ea3" name="aaa1aade5b70429cb9bf19df4c0f01ea3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa1aade5b70429cb9bf19df4c0f01ea3">&#9670;&nbsp;</a></span>prepareTextures()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void PostEffect::prepareTextures </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacesf.html#a41039649eb65ea7646e2b97cfe124b4f">sf::Vector2u</a>&#160;</td>
-          <td class="paramname"><em>size</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_week11_2_week11-_demo9-_post_effect_2_source_2_post_effect_8cpp_source.html#l00073">73</a> of file <a class="el" href="_week11_2_week11-_demo9-_post_effect_2_source_2_post_effect_8cpp_source.html">PostEffect.cpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a69e879539d82ffa557a993b4a6789dbe" name="a69e879539d82ffa557a993b4a6789dbe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69e879539d82ffa557a993b4a6789dbe">&#9670;&nbsp;</a></span>mBrightnessTexture</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classsf_1_1_render_texture.html">sf::RenderTexture</a> PostEffect::mBrightnessTexture</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_week11_2_week11-_demo9-_post_effect_2_include_2_post_effect_8hpp_source.html#l00034">34</a> of file <a class="el" href="_week11_2_week11-_demo9-_post_effect_2_include_2_post_effect_8hpp_source.html">PostEffect.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a5de5ae6582a63a73d9b2082492e166ed" name="a5de5ae6582a63a73d9b2082492e166ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5de5ae6582a63a73d9b2082492e166ed">&#9670;&nbsp;</a></span>mFirstPassTextures</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_post_effect.html#aacdee41227b41a22dae5305b18f836f6">RenderTextureArray</a> PostEffect::mFirstPassTextures</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_week11_2_week11-_demo9-_post_effect_2_include_2_post_effect_8hpp_source.html#l00035">35</a> of file <a class="el" href="_week11_2_week11-_demo9-_post_effect_2_include_2_post_effect_8hpp_source.html">PostEffect.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a6f725a554a0d617081161b00568c7cb1" name="a6f725a554a0d617081161b00568c7cb1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f725a554a0d617081161b00568c7cb1">&#9670;&nbsp;</a></span>mSecondPassTextures</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_post_effect.html#aacdee41227b41a22dae5305b18f836f6">RenderTextureArray</a> PostEffect::mSecondPassTextures</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_week11_2_week11-_demo9-_post_effect_2_include_2_post_effect_8hpp_source.html#l00036">36</a> of file <a class="el" href="_week11_2_week11-_demo9-_post_effect_2_include_2_post_effect_8hpp_source.html">PostEffect.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a54b194b05b1d520b0c5ff19a8cda6f96" name="a54b194b05b1d520b0c5ff19a8cda6f96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54b194b05b1d520b0c5ff19a8cda6f96">&#9670;&nbsp;</a></span>mShaders</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_week11_2_week11-_demo9-_post_effect_2_include_2_resource_identifiers_8hpp.html#a4706ce8b6fb3fa40eb84ae53d373e07a">ShaderHolder</a> PostEffect::mShaders</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_week11_2_week11-_demo9-_post_effect_2_include_2_post_effect_8hpp_source.html#l00031">31</a> of file <a class="el" href="_week11_2_week11-_demo9-_post_effect_2_include_2_post_effect_8hpp_source.html">PostEffect.hpp</a>.</p>
 
 </div>
 </div>

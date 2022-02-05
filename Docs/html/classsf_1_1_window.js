@@ -16,8 +16,6 @@ var classsf_1_1_window =
     [ "create", "classsf_1_1_window.html#acf67483dc21f08d65c8835b3889b41b2", null ],
     [ "display", "classsf_1_1_window.html#adabf839cb103ac96cfc82f781638772a", null ],
     [ "display", "classsf_1_1_window.html#adabf839cb103ac96cfc82f781638772a", null ],
-    [ "filterEvent", "classsf_1_1_window.html#afd3f9e9c21dcd1fd25a38a87026a159b", null ],
-    [ "filterEvent", "classsf_1_1_window.html#afd3f9e9c21dcd1fd25a38a87026a159b", null ],
     [ "getPosition", "classsf_1_1_window.html#a420028b8e4d9baedcaaba7b2047b8cb3", null ],
     [ "getPosition", "classsf_1_1_window.html#a420028b8e4d9baedcaaba7b2047b8cb3", null ],
     [ "getSettings", "classsf_1_1_window.html#a0605afbaceb02b098f9d731b7ab4203d", null ],
@@ -28,8 +26,6 @@ var classsf_1_1_window =
     [ "getSystemHandle", "classsf_1_1_window.html#ad2fa6be5104ec0bfe79af7a5f524ea90", null ],
     [ "hasFocus", "classsf_1_1_window.html#ad8db2e6500d13ca9396281296404ba31", null ],
     [ "hasFocus", "classsf_1_1_window.html#ad8db2e6500d13ca9396281296404ba31", null ],
-    [ "initialize", "classsf_1_1_window.html#a75a8263a54f73f71572ce69f0f0cbbca", null ],
-    [ "initialize", "classsf_1_1_window.html#a75a8263a54f73f71572ce69f0f0cbbca", null ],
     [ "isOpen", "classsf_1_1_window.html#ae873503db7d48157bb9cbf6129562bce", null ],
     [ "isOpen", "classsf_1_1_window.html#ae873503db7d48157bb9cbf6129562bce", null ],
     [ "onCreate", "classsf_1_1_window.html#a106633b9be49b27f83d4712689b493eb", null ],
@@ -67,10 +63,5 @@ var classsf_1_1_window =
     [ "setVisible", "classsf_1_1_window.html#a160f7f11a207603d7e99ce606e749703", null ],
     [ "setVisible", "classsf_1_1_window.html#a160f7f11a207603d7e99ce606e749703", null ],
     [ "waitEvent", "classsf_1_1_window.html#aaf02ab64fbc1d374eef3696df54137bc", null ],
-    [ "waitEvent", "classsf_1_1_window.html#aaf02ab64fbc1d374eef3696df54137bc", null ],
-    [ "m_clock", "classsf_1_1_window.html#ab7722cfc3e60af5e0898c290bee34cb1", null ],
-    [ "m_context", "classsf_1_1_window.html#a3cb481799084a51bc90a30500213e4ab", null ],
-    [ "m_frameTimeLimit", "classsf_1_1_window.html#a218e61a2bf154498c2f2f793b267cf6c", null ],
-    [ "m_impl", "classsf_1_1_window.html#a52048b31ae45683d9536f283137b0cf7", null ],
-    [ "m_size", "classsf_1_1_window.html#a65607b791306694d0f0a4cf2e8fc4559", null ]
+    [ "waitEvent", "classsf_1_1_window.html#aaf02ab64fbc1d374eef3696df54137bc", null ]
 ];

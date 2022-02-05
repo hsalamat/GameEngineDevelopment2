@@ -7,6 +7,5 @@ var classsf_1_1_thread_local =
     [ "getValue", "classsf_1_1_thread_local.html#a3273f1976f96a838e386937eae33fc21", null ],
     [ "getValue", "classsf_1_1_thread_local.html#a3273f1976f96a838e386937eae33fc21", null ],
     [ "setValue", "classsf_1_1_thread_local.html#ab7e334c83d77644a8e67ee31c3230007", null ],
-    [ "setValue", "classsf_1_1_thread_local.html#ab7e334c83d77644a8e67ee31c3230007", null ],
-    [ "m_impl", "classsf_1_1_thread_local.html#a0996c9c9c99f63dcb1b9c5a9ba34952f", null ]
+    [ "setValue", "classsf_1_1_thread_local.html#ab7e334c83d77644a8e67ee31c3230007", null ]
 ];

@@ -5,7 +5,7 @@
 %%For: 
 %Magnification: 1.00
 %%Orientation: Portrait
-%%BoundingBox: 0 0 500 9344.978516
+%%BoundingBox: 0 0 500 9388.646484
 %%Pages: 0
 %%BeginSetup
 %%EndSetup
@@ -19,12 +19,12 @@
 /marginwidth 10 def
 /distx 20 def
 /disty 40 def
-/boundaspect 0.053505 def  % aspect ratio of the BoundingBox (width/height)
+/boundaspect 0.053256 def  % aspect ratio of the BoundingBox (width/height)
 /boundx 500 def
 /boundy boundx boundaspect div def
 /xspacing 0 def
 /yspacing 0 def
-/rows 214 def
+/rows 215 def
 /cols 2 def
 /scalefactor 0 def
 /boxfont /Times-Roman findfont fontheight scalefont def
@@ -228,6 +228,7 @@ boxfont setfont
 (Game) cw
 (Game) cw
 (Game) cw
+(Game) cw
 (Game2) cw
 (MusicPlayer) cw
 (MusicPlayer) cw
@@ -398,7 +399,9 @@ boundx scalefactor div boundy scalefactor div scale
 
 % ----- classes -----
 
- (sf::NonCopyable) 0.000000 213.000000 box
+ (sf::NonCopyable) 0.000000 214.000000 box
+ (GUI::Component) 1.000000 213.000000 box
+1.000000 213.000000 mark
  (GUI::Component) 1.000000 212.000000 box
 1.000000 212.000000 mark
  (GUI::Component) 1.000000 211.000000 box
@@ -447,8 +450,7 @@ boundx scalefactor div boundy scalefactor div scale
 1.000000 190.000000 mark
  (GUI::Component) 1.000000 189.000000 box
 1.000000 189.000000 mark
- (GUI::Component) 1.000000 188.000000 box
-1.000000 188.000000 mark
+ (Game) 1.000000 188.000000 box
  (Game) 1.000000 187.000000 box
  (Game) 1.000000 186.000000 box
  (Game) 1.000000 185.000000 box
@@ -694,7 +696,9 @@ boundx scalefactor div boundy scalefactor div scale
 % ----- relations -----
 
 dotted
-1 0.000000 212.250000 out
+1 0.000000 213.250000 out
+dotted
+0 0.000000 213.500000 hedge
 dotted
 0 0.000000 212.500000 hedge
 dotted
@@ -1122,4 +1126,4 @@ dotted
 dotted
 0 0.000000 0.500000 hedge
 dotted
-0.000000 213.000000 0.500000 vedge
+0.000000 214.000000 0.500000 vedge
