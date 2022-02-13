@@ -2,23 +2,40 @@
 \label{_week5_2_week5-_demo2_2_source_2main_8cpp_source}\index{Week5/Week5-\/Demo2/Source/main.cpp@{Week5/Week5-\/Demo2/Source/main.cpp}}
 \mbox{\hyperlink{_week5_2_week5-_demo2_2_source_2main_8cpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include <Game.hpp>}}
-\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00002}00002 }
-\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <stdexcept>}}
-\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <iostream>}}
-\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00005}00005 }
-\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00006}00006 }
-\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00007}\mbox{\hyperlink{_week5_2_week5-_demo2_2_source_2main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00007}} \textcolor{keywordtype}{int} \mbox{\hyperlink{_week1_2_week1-_demo1_2_source_2main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
-\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00008}00008 \{}
-\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00009}00009     \textcolor{keywordflow}{try}}
-\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00010}00010     \{}
-\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00011}00011         \mbox{\hyperlink{class_game}{Game}} game;}
-\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00012}00012         game.\mbox{\hyperlink{class_game_a1ab78f5ed0d5ea879157357cf2fb2afa}{run}}();}
-\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00013}00013     \}}
-\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00014}00014     \textcolor{keywordflow}{catch} (std::exception\& e)}
-\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00015}00015     \{}
-\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00016}00016         std::cout << \textcolor{stringliteral}{"{}\(\backslash\)nEXCEPTION: "{}} << e.what() << std::endl;}
-\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00017}00017     \}}
-\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00018}00018 \}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00001}00001 \textcolor{comment}{//Commands denote messages that are sent to various game objects.}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00002}00002 \textcolor{comment}{//A command is able to alter the object and to issue orders such as moving an entity,}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00003}00003 \textcolor{comment}{//firing a weapon, and triggering an explosion.}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00004}00004 \textcolor{comment}{//We design a structure Command that contains a function object, which can be called}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00005}00005 \textcolor{comment}{//on any game object represented by a scene node :}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00006}00006 \textcolor{comment}{//struct Command}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00007}00007 \textcolor{comment}{//\{}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00008}00008 \textcolor{comment}{//  std::function<void(SceneNode\&, sf::Time)> action;}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00009}00009 \textcolor{comment}{//\};}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00010}00010 \textcolor{comment}{//std::function is a C++11 class template to implements}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00011}00011 \textcolor{comment}{//callback mechanisms.It treats functions as objects and makes}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00012}00012 \textcolor{comment}{//it possible to copy functions or to store them in containers.The}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00013}00013 \textcolor{comment}{//std::function class is compatible with function pointers,}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00014}00014 \textcolor{comment}{//member function pointers, functors, and lambda expressions.}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00015}00015 \textcolor{comment}{//The template parameter represents the signature of the function}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00016}00016 \textcolor{comment}{//being stored}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00018}00018 \textcolor{preprocessor}{\#include <Game.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00020}00020 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00021}00021 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00024}\mbox{\hyperlink{_week5_2_week5-_demo2_2_source_2main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00024}} \textcolor{keywordtype}{int} \mbox{\hyperlink{_week1_2_week1-_demo1_2_source_2main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00025}00025 \{}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00026}00026     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00027}00027     \{}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00028}00028         \mbox{\hyperlink{class_game}{Game}} game;}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00029}00029         game.\mbox{\hyperlink{class_game_a1ab78f5ed0d5ea879157357cf2fb2afa}{run}}();}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00030}00030     \}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00031}00031     \textcolor{keywordflow}{catch} (std::exception\& e)}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00032}00032     \{}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00033}00033         std::cout << \textcolor{stringliteral}{"{}\(\backslash\)nEXCEPTION: "{}} << e.what() << std::endl;}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00034}00034     \}}
+\DoxyCodeLine{\Hypertarget{_week5_2_week5-_demo2_2_source_2main_8cpp_source_l00035}00035 \}}
 
 \end{DoxyCode}

@@ -9,6 +9,7 @@ var searchData=
   ['gaussianblurpass_6',['GaussianBlurPass',['../namespace_shaders.html#ac69c86b4e324fdda75990b34e9a1dc7eacced3aecad14f8570db2349a2316ce62',1,'Shaders']]],
   ['geometry_7',['Geometry',['../classsf_1_1_shader.html#afaa1aa65e5de37b74d047da9def9f9b3ae4df6eca15fba5a8c8b75892009508bc',1,'sf::Shader']]],
   ['get_8',['Get',['../classsf_1_1_http_1_1_request.html#a620f8bff6f43e1378f321bf53fbf5598a24d06852a988a57bbc05874f675ea34b',1,'sf::Http::Request']]],
-  ['gravity_9',['Gravity',['../classsf_1_1_sensor.html#a687375af3ab77b818fca73735bcaea84a88fc8025c897135e18ea02cfe26c7361',1,'sf::Sensor']]],
-  ['gyroscope_10',['Gyroscope',['../classsf_1_1_sensor.html#a687375af3ab77b818fca73735bcaea84a8a6a136ed089dd78dde8e9f7f3a86265',1,'sf::Sensor']]]
+  ['getposition_9',['GetPosition',['../class_player.html#a2da5df212d083bbb1460237f34ab0d88a5ab2bb88cbfe4421381afd6bf330cc09',1,'Player']]],
+  ['gravity_10',['Gravity',['../classsf_1_1_sensor.html#a687375af3ab77b818fca73735bcaea84a88fc8025c897135e18ea02cfe26c7361',1,'sf::Sensor']]],
+  ['gyroscope_11',['Gyroscope',['../classsf_1_1_sensor.html#a687375af3ab77b818fca73735bcaea84a8a6a136ed089dd78dde8e9f7f3a86265',1,'sf::Sensor']]]
 ];
