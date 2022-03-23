@@ -51,15 +51,6 @@ void Game::run()
 			update(TimePerFrame);			
 		}
 
-		if (clock.getElapsedTime().asSeconds() > 0.1) {
-			opacity -= 0.05;
-			if (opacity < 0.0)
-				opacity = 1.0;
-			
-			//shader.setUniform("opacity", opacity);
-			shader.setUniform("opacity", 0.5f);
-		}
-
 		updateStatistics(elapsedTime);
 		render();
 	}
@@ -81,6 +72,15 @@ void Game::processEvents()
 
 void Game::update(sf::Time elapsedTime)
 {
+
+	if (elapsedTime.asSeconds() > 0.01) {
+		opacity -= 0.05f;
+		if (opacity < 0.0f)
+			opacity = 1.0f;
+
+		shader.setUniform("opacity", opacity);
+		//shader.setUniform("opacity", 0.5f);
+	}
 }
 
 void Game::render()
@@ -99,8 +99,8 @@ void Game::updateStatistics(sf::Time elapsedTime)
 	if (mStatisticsUpdateTime >= sf::seconds(1.0f))
 	{
 		mStatisticsText.setString(
-			"Frames / Second = " + toString(mStatisticsNumFrames) + "\n" +
-			"Time / Update = " + toString(mStatisticsUpdateTime.asMicroseconds() / mStatisticsNumFrames) + "us");
+			"Frames / Second = " + std::to_string(mStatisticsNumFrames) + "\n" +
+			"Time / Update = " + std::to_string(mStatisticsUpdateTime.asMicroseconds() / mStatisticsNumFrames) + "us");
 
 		mStatisticsUpdateTime -= sf::seconds(1.0f);
 		mStatisticsNumFrames = 0;
