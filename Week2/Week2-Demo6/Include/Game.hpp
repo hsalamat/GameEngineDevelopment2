@@ -1,56 +1,29 @@
-#pragma once
+#ifndef BOOK_GAME_HPP
+#define BOOK_GAME_HPP
 
 #include <SFML/Graphics.hpp>
-#include <string>
-#include "ResourceHolder.hpp"
-#include <iostream>
 
-namespace Textures
-{
-	enum ID
-	{
-		Landscape,
-		Airplane,
-	};
-}
-
+//This class makes its instances non-copyable, by explicitly disabling its copy constructor and its assignment operator.
 class Game : private sf::NonCopyable
 {
-	public:
-		Game();
-		void					run();
-		
-	private:
-		void					processEvents();
-		void					update(sf::Time elapsedTime);
-		void					render();
-		void					updateStatistics(sf::Time elapsedTime);	
-		void					handlePlayerInput(sf::Keyboard::Key key, bool isPressed);
-		
-	private:
-		static const float		PlayerSpeed;
-		static const sf::Time	TimePerFrame;
+public:
+	Game();
+	void					run();
 
-		sf::RenderWindow		mWindow;
-		
-		sf::Font				mFont;
-		sf::Text				mStatisticsText;
-		sf::Time				mStatisticsUpdateTime;
 
-		std::size_t				mStatisticsNumFrames;
-		bool					mIsMovingUp;
-		bool					mIsMovingDown;
-		bool					mIsMovingRight;
-		bool					mIsMovingLeft;
+private:
+	void					processEvents();
+	void					update();
+	void					render();
 
-#pragma region step 3
-	    //TextureHolder			 textures;
-		ResourceHolder<sf::Texture, Textures::ID> textures;
-#pragma endregion
 
-		sf::Sprite				airplane;
-		sf::Sprite				landscape;
-		sf::Texture             mBackgroundTexture;
+private:
+
+	sf::RenderWindow		mWindow;
+	sf::Texture				mushroomTexture;
+	sf::Sprite				mushroomSprite;
+	sf::Vector2u			size;
+	sf::Vector2f			increment;
 };
 
-
+#endif // BOOK_GAME_HPP

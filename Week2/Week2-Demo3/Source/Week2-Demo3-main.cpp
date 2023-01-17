@@ -1,30 +1,29 @@
 /** @file Week2-Demo3-main.cpp
- *  @brief change Music parameters, create your own image and move the player with the mouse Demo
- *	mMusic.setPosition(0, 0, 0); //! @param setPosition: change its 3D position - the default position is (0,0,0)
- *	mMusic.setPitch(2); //! @param setPitch: increase the pitch - pitch represents the perceived fundamental frequency of a sound such as modifying the playing speed of the sound
- *	mMusic.setVolume(50); //! @param setVolume: reduce the volume
- *	mMusic.setAttenuation(100); //! @param setAttenuation: an attenuation value of 100 will make the sound fade out very quicky as it gets further from the listener - default value is 1
- *	mMusic.setLoop(true); //! @param setLoop: make it loop
+ *  @brief TextureHolder
+ *  We must find the right data structure to store the textures. We need to choose
+ *  an STL container that does not perform unnecessary copies. std::vector is the
+ *  wrong choice, since inserting new textures can trigger a reallocation of the dynamic
+ *  array and the copying of all textures. Not only is this slow, but also all references
+ *  and pointers to the textures are invalidated. We can access
+ *  the textures by an enum, so the associative container std::map looks like the perfect
+ *  choice.
  *
- *  Move the player with the mouse:
- *  if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
- *		sf::Vector2i mousePosition = sf::Mouse::getPosition(mWindow);
- *		mPlayer.setPosition((float)mousePosition.x, (float)mousePosition.y);
- *	}
+ *  @note: mBackgroundTexture.setRepeated(true);
+ *  Repeating is involved when using texture coordinates outside 
+ *  the texture rectangle [0, 0, width, height]. In this case, if repeat mode is enabled, 
+ *  the whole texture will be repeated as many times as needed to reach the coordinate 
+ *  (for example, if the X texture coordinate is 3 * width, the texture will be repeated 3 times). 
+ *  If repeat mode is disabled, the "extra space" will instead be filled with border pixels. 
  * 
- *  You could also create your own image
- *	mIcon.create(20, 20, sf::Color::Red);
- *	sf::Color color = mIcon.getPixel(0, 0);
- *  color.a = 0; //make the top-left pixel transparent
- *	color.r = 0;   //set the r = 0 (rgb) from the color
- *	mIcon.setPixel(0, 0, color);
- * 
- *  @attention: the sf::Texture::loadFromX() functions are just a shortcut for combined sf::Image::loadFromX() and
- *  sf::Texture::loadFromImage() calls.
+ *  @note: landscape.setTextureRect(sf::IntRect(0, 0, 1200, 800));
+ *  Set the sub-rectangle of the texture that the sprite will display.
+ *
+ *  The texture rect is useful when you don't want to display the whole texture, but rather a part of it. By default, the texture rect covers the entire texture.
  * 
  *  @author Hooman Salamat
  *  @bug No known bugs.
- */ 
+ */
+
 #include "Game.hpp"
 
 int main()

@@ -165,6 +165,10 @@ var _week12_2_week12__demo2__sound_effect_2_include_2_resource_identifiers_8hpp 
       [ "Raptor", "_week12_2_week12-_demo2-_sound_effect_2_include_2_resource_identifiers_8hpp.html#a2cfe2099537d4e80b08437b4978301a5a24fb8bfe84a35db5b7e83ed50d5b0d44", null ],
       [ "Desert", "_week12_2_week12-_demo2-_sound_effect_2_include_2_resource_identifiers_8hpp.html#a2cfe2099537d4e80b08437b4978301a5ae0e91c2b0491c097f186d91f48d88784", null ],
       [ "TitleScreen", "_week12_2_week12-_demo2-_sound_effect_2_include_2_resource_identifiers_8hpp.html#a2cfe2099537d4e80b08437b4978301a5aabc39828e8e6457efd234f73c73e5b8b", null ],
+      [ "Eagle", "_week12_2_week12-_demo2-_sound_effect_2_include_2_resource_identifiers_8hpp.html#a2cfe2099537d4e80b08437b4978301a5a925b3740f89bba053050ed5879b5ca2f", null ],
+      [ "Raptor", "_week12_2_week12-_demo2-_sound_effect_2_include_2_resource_identifiers_8hpp.html#a2cfe2099537d4e80b08437b4978301a5a24fb8bfe84a35db5b7e83ed50d5b0d44", null ],
+      [ "Desert", "_week12_2_week12-_demo2-_sound_effect_2_include_2_resource_identifiers_8hpp.html#a2cfe2099537d4e80b08437b4978301a5ae0e91c2b0491c097f186d91f48d88784", null ],
+      [ "TitleScreen", "_week12_2_week12-_demo2-_sound_effect_2_include_2_resource_identifiers_8hpp.html#a2cfe2099537d4e80b08437b4978301a5aabc39828e8e6457efd234f73c73e5b8b", null ],
       [ "ButtonNormal", "_week12_2_week12-_demo2-_sound_effect_2_include_2_resource_identifiers_8hpp.html#a2cfe2099537d4e80b08437b4978301a5afcf4e9236477a5558479ab41c99801c3", null ],
       [ "ButtonSelected", "_week12_2_week12-_demo2-_sound_effect_2_include_2_resource_identifiers_8hpp.html#a2cfe2099537d4e80b08437b4978301a5a5cdea0aa19de71fc3c79c63341c6dfbc", null ],
       [ "ButtonPressed", "_week12_2_week12-_demo2-_sound_effect_2_include_2_resource_identifiers_8hpp.html#a2cfe2099537d4e80b08437b4978301a5a505b04971831bc2910c1e03175301ae6", null ],
@@ -387,6 +391,7 @@ var _week12_2_week12__demo2__sound_effect_2_include_2_resource_identifiers_8hpp 
       [ "AddPass", "_week12_2_week12-_demo2-_sound_effect_2_include_2_resource_identifiers_8hpp.html#ac69c86b4e324fdda75990b34e9a1dc7ea75f453734d56e9a285cdaf8e24c359f4", null ]
     ] ],
     [ "ID", "_week12_2_week12-_demo2-_sound_effect_2_include_2_resource_identifiers_8hpp.html#a240717ec0dc75e98501af734a02c396d", [
+      [ "Main", "_week12_2_week12-_demo2-_sound_effect_2_include_2_resource_identifiers_8hpp.html#a240717ec0dc75e98501af734a02c396da9e5a008b88415e37d30b922f06c8eabc", null ],
       [ "Main", "_week12_2_week12-_demo2-_sound_effect_2_include_2_resource_identifiers_8hpp.html#a240717ec0dc75e98501af734a02c396da9e5a008b88415e37d30b922f06c8eabc", null ],
       [ "Main", "_week12_2_week12-_demo2-_sound_effect_2_include_2_resource_identifiers_8hpp.html#a240717ec0dc75e98501af734a02c396da9e5a008b88415e37d30b922f06c8eabc", null ],
       [ "Main", "_week12_2_week12-_demo2-_sound_effect_2_include_2_resource_identifiers_8hpp.html#a240717ec0dc75e98501af734a02c396da9e5a008b88415e37d30b922f06c8eabc", null ],

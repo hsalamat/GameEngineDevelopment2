@@ -1,12 +1,12 @@
-#include "Game.hpp"
+#include <Game.hpp>
 
 const float Game::PlayerSpeed = 100.f;
 const sf::Time Game::TimePerFrame = sf::seconds(1.f / 60.f);
 
 Game::Game()
-	: mWindow(sf::VideoMode(640, 480), "SFML Application", sf::Style::Close)
-	, mTexture()
-	, mPlayer()
+	: mWindow(sf::VideoMode(800, 800), "SFML Application", sf::Style::Close)
+	, airplane()
+	, landscape()
 	, mFont()
 	, mStatisticsText()
 	, mStatisticsUpdateTime()
@@ -16,18 +16,36 @@ Game::Game()
 	, mIsMovingRight(false)
 	, mIsMovingLeft(false)
 {
-	if (!mTexture.loadFromFile("Media/Textures/Eagle.png"))
+	try
 	{
-		// Handle loading error
+		textures.load(Textures::Landscape, "Media/Textures/Desert.png");
+		textures.load(Textures::Airplane, "Media/Textures/Eagle.png");
 	}
+	catch (std::runtime_error& e)
+	{
+		std::cout << "Exception: " << e.what() << std::endl;
+		return;
+	}
+#pragma endregion
 
-	mPlayer.setTexture(mTexture);
-	mPlayer.setPosition(100.f, 100.f);
+#pragma region step 6	
+	mAirplaneTexture = textures.get(Textures::Airplane);
+	//airplane.setTexture(mAirplaneTexture);
+	//!@ note now you can use the following 
+	airplane.setTexture(textures.get(Textures::Airplane));
 
-	mFont.loadFromFile("Media/Sansation.ttf");
+	airplane.setPosition(100.f, 100.f);
+
+	if (!mFont.loadFromFile("Media/Sansation.ttf")) return;
 	mStatisticsText.setFont(mFont);
 	mStatisticsText.setPosition(5.f, 5.f);
-	mStatisticsText.setCharacterSize(30);
+	mStatisticsText.setCharacterSize(10);
+	mStatisticsText.setFillColor(sf::Color::Black);
+
+	mBackgroundTexture = textures.get(Textures::Landscape);
+	mBackgroundTexture.setRepeated(true);
+	landscape.setTexture(mBackgroundTexture);
+	landscape.setTextureRect(sf::IntRect(0, 0, 1200, 800));
 }
 
 void Game::run()
@@ -85,13 +103,14 @@ void Game::update(sf::Time elapsedTime)
 	if (mIsMovingRight)
 		movement.x += PlayerSpeed;
 
-	mPlayer.move(movement * elapsedTime.asSeconds());
+	airplane.move(movement * elapsedTime.asSeconds());
 }
 
 void Game::render()
 {
 	mWindow.clear();
-	mWindow.draw(mPlayer);
+	mWindow.draw(landscape);
+	mWindow.draw(airplane);
 	mWindow.draw(mStatisticsText);
 	mWindow.display();
 }
@@ -123,4 +142,3 @@ void Game::handlePlayerInput(sf::Keyboard::Key key, bool isPressed)
 	else if (key == sf::Keyboard::D)
 		mIsMovingRight = isPressed;
 }
-

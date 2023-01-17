@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: sf::SoundStream Class Reference</title>
+<title>GAME3015: sf::SoundStream Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">GAME3015
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -383,7 +383,7 @@ Additional Inherited Members</h2></td></tr>
 <p >Instead, the audio data is acquired continuously while the stream is playing. This behavior allows to play a sound with no loading delay, and keeps the memory consumption very low.</p>
 <p ><a class="el" href="classsf_1_1_sound.html" title="Regular sound that can be played in the audio environment.">Sound</a> sources that need to be streamed are usually big files (compressed audio musics that would eat hundreds of MB in memory) or files that would take a lot of time to be received (sounds played over the network).</p>
 <p ><a class="el" href="classsf_1_1_sound_stream.html" title="Abstract base class for streamed audio sources.">sf::SoundStream</a> is a base class that doesn't care about the stream source, which is left to the derived class. SFML provides a built-in specialization for big files (see <a class="el" href="classsf_1_1_music.html" title="Streamed music played from an audio file.">sf::Music</a>). No network stream source is provided, but you can write your own by combining this class with the network module.</p>
-<p >A derived class has to override two virtual functions: </p><ul>
+<p ><a class="el" href="class_a.html">A</a> derived class has to override two virtual functions: </p><ul>
 <li>onGetData fills a new chunk of audio data to be played </li>
 <li>onSeek changes the current playing position in the source</li>
 </ul>

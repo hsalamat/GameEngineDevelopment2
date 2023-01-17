@@ -11,5 +11,6 @@ var searchData=
   ['get_8',['Get',['../classsf_1_1_http_1_1_request.html#a620f8bff6f43e1378f321bf53fbf5598a24d06852a988a57bbc05874f675ea34b',1,'sf::Http::Request']]],
   ['getposition_9',['GetPosition',['../class_player.html#a2da5df212d083bbb1460237f34ab0d88a5ab2bb88cbfe4421381afd6bf330cc09',1,'Player']]],
   ['gravity_10',['Gravity',['../classsf_1_1_sensor.html#a687375af3ab77b818fca73735bcaea84a88fc8025c897135e18ea02cfe26c7361',1,'sf::Sensor']]],
-  ['gyroscope_11',['Gyroscope',['../classsf_1_1_sensor.html#a687375af3ab77b818fca73735bcaea84a8a6a136ed089dd78dde8e9f7f3a86265',1,'sf::Sensor']]]
+  ['green_11',['green',['../enum_demo6_8cpp.html#a4ac5c93ec163b10d258088039e59f794a6aa25890c44e0aac424e56338abe47ca',1,'green():&#160;enumDemo6.cpp'],['../enum_demo6_8cpp.html#a7131cc6aa048ea96f4d73429efdb4e37a9f27410725ab8cc8854a2769c7a516b8',1,'green():&#160;enumDemo6.cpp']]],
+  ['gyroscope_12',['Gyroscope',['../classsf_1_1_sensor.html#a687375af3ab77b818fca73735bcaea84a8a6a136ed089dd78dde8e9f7f3a86265',1,'sf::Sensor']]]
 ];

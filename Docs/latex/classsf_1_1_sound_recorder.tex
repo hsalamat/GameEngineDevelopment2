@@ -97,11 +97,11 @@ Abstract base class for capturing sound data.
 
 As an abstract base class, it only cares about capturing sound samples, the task of making something useful with them is left to the derived class. Note that SFML provides a built-\/in specialization for saving the captured data to a sound buffer (see \mbox{\hyperlink{classsf_1_1_sound_buffer_recorder}{sf\+::\+Sound\+Buffer\+Recorder}}).
 
-A derived class has only one virtual function to override\+: \begin{DoxyItemize}
+\mbox{\hyperlink{class_a}{A}} derived class has only one virtual function to override\+: \begin{DoxyItemize}
 \item on\+Process\+Samples provides the new chunks of audio samples while the capture happens\end{DoxyItemize}
 Moreover, two additional virtual functions can be overridden as well if necessary\+: \begin{DoxyItemize}
 \item on\+Start is called before the capture happens, to perform custom initializations \item on\+Stop is called after the capture ends, to perform custom cleanup\end{DoxyItemize}
-A derived class can also control the frequency of the on\+Process\+Samples calls, with the set\+Processing\+Interval protected function. The default interval is chosen so that recording thread doesn\textquotesingle{}t consume too much CPU, but it can be changed to a smaller value if you need to process the recorded data in real time, for example.
+\mbox{\hyperlink{class_a}{A}} derived class can also control the frequency of the on\+Process\+Samples calls, with the set\+Processing\+Interval protected function. The default interval is chosen so that recording thread doesn\textquotesingle{}t consume too much CPU, but it can be changed to a smaller value if you need to process the recorded data in real time, for example.
 
 The audio capture feature may not be supported or activated on every platform, thus it is recommended to check its availability with the \mbox{\hyperlink{classsf_1_1_sound_recorder_aab2bd0fee9e48d6cfd449b1cb078ce5a}{is\+Available()}} function. If it returns false, then any attempt to use an audio recorder will fail.
 
@@ -227,7 +227,7 @@ Get a list of the names of all available audio capture devices.
 This function returns a vector of strings, containing the names of all available audio capture devices.
 
 \begin{DoxyReturn}{Returns}
-A vector of strings containing the names 
+\mbox{\hyperlink{class_a}{A}} vector of strings containing the names 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classsf_1_1_sound_recorder_a2a0a831148dcf3d979de42029ec0c280}\label{classsf_1_1_sound_recorder_a2a0a831148dcf3d979de42029ec0c280}} 
 \index{sf::SoundRecorder@{sf::SoundRecorder}!getAvailableDevices@{getAvailableDevices}}
@@ -242,7 +242,7 @@ Get a list of the names of all available audio capture devices.
 This function returns a vector of strings, containing the names of all available audio capture devices.
 
 \begin{DoxyReturn}{Returns}
-A vector of strings containing the names 
+\mbox{\hyperlink{class_a}{A}} vector of strings containing the names 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classsf_1_1_sound_recorder_a610e98e7a73b316ce26b7c55234f86e9}\label{classsf_1_1_sound_recorder_a610e98e7a73b316ce26b7c55234f86e9}} 
 \index{sf::SoundRecorder@{sf::SoundRecorder}!getChannelCount@{getChannelCount}}

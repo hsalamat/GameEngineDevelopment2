@@ -75,11 +75,11 @@
 \DoxyCodeLine{\Hypertarget{_math_helper_8h_source_l00071}00071         \textcolor{comment}{// Inverse-\/transpose is just applied to normals.  So zero out }}
 \DoxyCodeLine{\Hypertarget{_math_helper_8h_source_l00072}00072         \textcolor{comment}{// translation row so that it doesn't get into our inverse-\/transpose}}
 \DoxyCodeLine{\Hypertarget{_math_helper_8h_source_l00073}00073         \textcolor{comment}{// calculation-\/-\/we don't want the inverse-\/transpose of the translation.}}
-\DoxyCodeLine{\Hypertarget{_math_helper_8h_source_l00074}00074         DirectX::XMMATRIX A = M;}
-\DoxyCodeLine{\Hypertarget{_math_helper_8h_source_l00075}00075         A.r[3] = DirectX::XMVectorSet(0.0f, 0.0f, 0.0f, 1.0f);}
+\DoxyCodeLine{\Hypertarget{_math_helper_8h_source_l00074}00074         DirectX::XMMATRIX \mbox{\hyperlink{class_a}{A}} = M;}
+\DoxyCodeLine{\Hypertarget{_math_helper_8h_source_l00075}00075         \mbox{\hyperlink{class_a}{A}}.r[3] = DirectX::XMVectorSet(0.0f, 0.0f, 0.0f, 1.0f);}
 \DoxyCodeLine{\Hypertarget{_math_helper_8h_source_l00076}00076 }
-\DoxyCodeLine{\Hypertarget{_math_helper_8h_source_l00077}00077         DirectX::XMVECTOR det = DirectX::XMMatrixDeterminant(A);}
-\DoxyCodeLine{\Hypertarget{_math_helper_8h_source_l00078}00078         \textcolor{keywordflow}{return} DirectX::XMMatrixTranspose(DirectX::XMMatrixInverse(\&det, A));}
+\DoxyCodeLine{\Hypertarget{_math_helper_8h_source_l00077}00077         DirectX::XMVECTOR det = DirectX::XMMatrixDeterminant(\mbox{\hyperlink{class_a}{A}});}
+\DoxyCodeLine{\Hypertarget{_math_helper_8h_source_l00078}00078         \textcolor{keywordflow}{return} DirectX::XMMatrixTranspose(DirectX::XMMatrixInverse(\&det, \mbox{\hyperlink{class_a}{A}}));}
 \DoxyCodeLine{\Hypertarget{_math_helper_8h_source_l00079}00079     \}}
 \DoxyCodeLine{\Hypertarget{_math_helper_8h_source_l00080}00080 }
 \DoxyCodeLine{\Hypertarget{_math_helper_8h_source_l00081}\mbox{\hyperlink{class_math_helper_a68b4e9af95b1a36aad30ea80839f6b19}{00081}}     \textcolor{keyword}{static} DirectX::XMFLOAT4X4 \mbox{\hyperlink{class_math_helper_a68b4e9af95b1a36aad30ea80839f6b19}{Identity4x4}}()}

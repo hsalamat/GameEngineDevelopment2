@@ -4,9 +4,10 @@ const float Game::PlayerSpeed = 100.f;
 const sf::Time Game::TimePerFrame = sf::seconds(1.f / 60.f);
 
 Game::Game()
-	: mWindow(sf::VideoMode(800, 800), "SFML Application", sf::Style::Close)
+	: mWindow(sf::VideoMode(1200, 800), "SFML Application", sf::Style::Close)
 	, airplane()
 	, landscape()
+	, mBackgroundTexture()	
 	, mFont()
 	, mStatisticsText()
 	, mStatisticsUpdateTime()
@@ -16,6 +17,7 @@ Game::Game()
 	, mIsMovingRight(false)
 	, mIsMovingLeft(false)
 {
+
 	try
 	{
 		textures.load(Textures::Landscape, "Media/Textures/Desert.png");
@@ -26,26 +28,19 @@ Game::Game()
 		std::cout << "Exception: " << e.what() << std::endl;
 		return;
 	}
-#pragma endregion
-
-#pragma region step 6	
-	mAirplaneTexture = textures.get(Textures::Airplane);
-	airplane.setTexture(mAirplaneTexture);
-	//!@ note you cannot use the following "yet"
-	//!airplane.setTexture(textures.get(Textures::Airplane));
-
-	airplane.setPosition(100.f, 100.f);
-
-	if (!mFont.loadFromFile("Media/Sansation.ttf")) return;
-	mStatisticsText.setFont(mFont);
-	mStatisticsText.setPosition(5.f, 5.f);
-	mStatisticsText.setCharacterSize(10);
-	mStatisticsText.setFillColor(sf::Color::Black);
 
 	mBackgroundTexture = textures.get(Textures::Landscape);
 	mBackgroundTexture.setRepeated(true);
 	landscape.setTexture(mBackgroundTexture);
 	landscape.setTextureRect(sf::IntRect(0, 0, 1200, 800));
+
+	airplane.setTexture(textures.get(Textures::Airplane));
+	airplane.setPosition(100.f, 100.f);
+	
+	mFont.loadFromFile("Media/Sansation.ttf");
+	mStatisticsText.setFont(mFont);
+	mStatisticsText.setPosition(5.f, 5.f);
+	mStatisticsText.setCharacterSize(10);
 }
 
 void Game::run()
@@ -104,6 +99,7 @@ void Game::update(sf::Time elapsedTime)
 		movement.x += PlayerSpeed;
 
 	airplane.move(movement * elapsedTime.asSeconds());
+	
 }
 
 void Game::render()

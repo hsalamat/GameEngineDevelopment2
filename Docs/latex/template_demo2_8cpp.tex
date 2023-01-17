@@ -1,0 +1,57 @@
+\hypertarget{template_demo2_8cpp}{}\doxysection{Week2/cplusplusdemo/template\+Demo2.cpp File Reference}
+\label{template_demo2_8cpp}\index{Week2/cplusplusdemo/templateDemo2.cpp@{Week2/cplusplusdemo/templateDemo2.cpp}}
+
+
+Class Template Demo.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_array}{Array$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{class_a}{A$<$ T, U $>$}}
+\item 
+class \mbox{\hyperlink{class_b}{B$<$ T, U $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{template_demo2_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class Template Demo. 
+
+Class Templates like function templates, class templates are useful when a class defines something that is independent of the data type. Can be useful for classes like Linked\+List, Binary\+Tree, Stack, Queue, \mbox{\hyperlink{class_array}{Array}}, etc.
+
+template \texorpdfstring{$<$}{<} typename T \texorpdfstring{$>$}{>} template \texorpdfstring{$<$}{<} class T \texorpdfstring{$>$}{>}
+
+are equivalent. Having said that, there are specific cases where there is a difference between typename and class. The first one is in the case of dependent types. typename is used to declare when you are referencing a nested type that depends on another template parameter, such as the typedef in this example\+:
+
+template$<$typename param\+\_\+t$>$ class Foo \{ typedef typename param\+\_\+t\+::baz sub\+\_\+t; \};
+
+\begin{DoxyAuthor}{Author}
+Hooman Salamat 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000010}{Bug}}]No known bugs. \end{DoxyRefDesc}
+
+
+Definition in file \mbox{\hyperlink{template_demo2_8cpp_source}{template\+Demo2.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{template_demo2_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{template_demo2_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{templateDemo2.cpp@{templateDemo2.cpp}!main@{main}}
+\index{main@{main}!templateDemo2.cpp@{templateDemo2.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{template_demo2_8cpp_source_l00068}{68}} of file \mbox{\hyperlink{template_demo2_8cpp_source}{template\+Demo2.\+cpp}}.
+

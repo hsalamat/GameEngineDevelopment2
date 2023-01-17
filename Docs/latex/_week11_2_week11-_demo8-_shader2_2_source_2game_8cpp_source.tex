@@ -55,36 +55,36 @@
 \DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00051}00051             update(TimePerFrame);           }
 \DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00052}00052         \}}
 \DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00053}00053 }
-\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00054}00054         \textcolor{keywordflow}{if} (clock.\mbox{\hyperlink{classsf_1_1_clock_abe889b42a65bcd8eefc16419645d08a7}{getElapsedTime}}().\mbox{\hyperlink{classsf_1_1_time_aa3df2f992d0b0041b4eb02258d43f0e3}{asSeconds}}() > 0.1) \{}
-\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00055}00055             opacity -\/= 0.05;}
-\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00056}00056             \textcolor{keywordflow}{if} (opacity < 0.0)}
-\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00057}00057                 opacity = 1.0;}
-\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00058}00058             }
-\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00059}00059             \textcolor{comment}{//shader.setUniform("{}opacity"{}, opacity);}}
-\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00060}00060             shader.\mbox{\hyperlink{classsf_1_1_shader_abf78e3bea1e9b0bab850b6b0a0de29c7}{setUniform}}(\textcolor{stringliteral}{"{}opacity"{}}, 0.5f);}
-\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00061}00061         \}}
-\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00062}00062 }
-\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00063}00063         updateStatistics(elapsedTime);}
-\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00064}00064         render();}
-\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00065}00065     \}}
-\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00066}00066 \}}
-\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00067}00067 }
-\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00068}00068 \textcolor{keywordtype}{void} Game::processEvents()}
-\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00069}00069 \{}
-\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00070}00070     \mbox{\hyperlink{classsf_1_1_event}{sf::Event}} event;}
-\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00071}00071     \textcolor{keywordflow}{while} (mWindow.\mbox{\hyperlink{classsf_1_1_window_a338e996585faf82e93069858e3b531b7}{pollEvent}}(event))}
-\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00072}00072     \{}
-\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00073}00073         \textcolor{keywordflow}{switch} (event.\mbox{\hyperlink{classsf_1_1_event_adf2f8044f713fd9d6019077b0d1ffe0a}{type}})}
-\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00074}00074         \{}
-\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00075}00075         \textcolor{keywordflow}{case} \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa4f718a7f43b0f2d46be222fe23198d9e}{sf::Event::Closed}}:}
-\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00076}00076             mWindow.\mbox{\hyperlink{classsf_1_1_window_a99d1e030387b0c26f5995670504fe7b5}{close}}();}
-\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00077}00077             \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00078}00078         \}}
-\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00079}00079     \}}
-\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00080}00080 \}}
-\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00081}00081 }
-\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00082}00082 \textcolor{keywordtype}{void} Game::update(\mbox{\hyperlink{classsf_1_1_time}{sf::Time}} elapsedTime)}
-\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00083}00083 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00054}00054         updateStatistics(elapsedTime);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00055}00055         render();}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00056}00056     \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00057}00057 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00059}00059 \textcolor{keywordtype}{void} Game::processEvents()}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00060}00060 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00061}00061     \mbox{\hyperlink{classsf_1_1_event}{sf::Event}} event;}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00062}00062     \textcolor{keywordflow}{while} (mWindow.\mbox{\hyperlink{classsf_1_1_window_a338e996585faf82e93069858e3b531b7}{pollEvent}}(event))}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00063}00063     \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00064}00064         \textcolor{keywordflow}{switch} (event.\mbox{\hyperlink{classsf_1_1_event_adf2f8044f713fd9d6019077b0d1ffe0a}{type}})}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00065}00065         \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00066}00066         \textcolor{keywordflow}{case} \mbox{\hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa4f718a7f43b0f2d46be222fe23198d9e}{sf::Event::Closed}}:}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00067}00067             mWindow.\mbox{\hyperlink{classsf_1_1_window_a99d1e030387b0c26f5995670504fe7b5}{close}}();}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00068}00068             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00069}00069         \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00070}00070     \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00071}00071 \}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00073}00073 \textcolor{keywordtype}{void} Game::update(\mbox{\hyperlink{classsf_1_1_time}{sf::Time}} elapsedTime)}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00074}00074 \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00076}00076     \textcolor{keywordflow}{if} (elapsedTime.\mbox{\hyperlink{classsf_1_1_time_aa3df2f992d0b0041b4eb02258d43f0e3}{asSeconds}}() > 0.01) \{}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00077}00077         opacity -\/= 0.05f;}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00078}00078         \textcolor{keywordflow}{if} (opacity < 0.0f)}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00079}00079             opacity = 1.0f;}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00081}00081         shader.\mbox{\hyperlink{classsf_1_1_shader_abf78e3bea1e9b0bab850b6b0a0de29c7}{setUniform}}(\textcolor{stringliteral}{"{}opacity"{}}, opacity);}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00082}00082         \textcolor{comment}{//shader.setUniform("{}opacity"{}, 0.5f);}}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00083}00083     \}}
 \DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00084}00084 \}}
 \DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00085}00085 }
 \DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00086}00086 \textcolor{keywordtype}{void} Game::render()}
@@ -103,8 +103,8 @@
 \DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00099}00099     \textcolor{keywordflow}{if} (mStatisticsUpdateTime >= sf::seconds(1.0f))}
 \DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00100}00100     \{}
 \DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00101}00101         mStatisticsText.\mbox{\hyperlink{classsf_1_1_text_a7d3b3359f286fd9503d1ced25b7b6c33}{setString}}(}
-\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00102}00102             \textcolor{stringliteral}{"{}Frames / Second = "{}} + \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_a1e803cea7d2670ece91f5465281446ba}{toString}}(mStatisticsNumFrames) + \textcolor{stringliteral}{"{}\(\backslash\)n"{}} +}
-\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00103}00103             \textcolor{stringliteral}{"{}Time / Update = "{}} + \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_a1e803cea7d2670ece91f5465281446ba}{toString}}(mStatisticsUpdateTime.\mbox{\hyperlink{classsf_1_1_time_a000c2c64b74658ebd228b9294a464275}{asMicroseconds}}() / mStatisticsNumFrames) + \textcolor{stringliteral}{"{}us"{}});}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00102}00102             \textcolor{stringliteral}{"{}Frames / Second = "{}} + std::to\_string(mStatisticsNumFrames) + \textcolor{stringliteral}{"{}\(\backslash\)n"{}} +}
+\DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00103}00103             \textcolor{stringliteral}{"{}Time / Update = "{}} + std::to\_string(mStatisticsUpdateTime.\mbox{\hyperlink{classsf_1_1_time_a000c2c64b74658ebd228b9294a464275}{asMicroseconds}}() / mStatisticsNumFrames) + \textcolor{stringliteral}{"{}us"{}});}
 \DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00104}00104 }
 \DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00105}00105         mStatisticsUpdateTime -\/= sf::seconds(1.0f);}
 \DoxyCodeLine{\Hypertarget{_week11_2_week11-_demo8-_shader2_2_source_2game_8cpp_source_l00106}00106         mStatisticsNumFrames = 0;}

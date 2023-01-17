@@ -41,7 +41,7 @@ Blocks concurrent access to shared resources from multiple threads.
 
 \mbox{\hyperlink{classsf_1_1_mutex}{Mutex}} stands for \char`\"{}\+MUTual EXclusion\char`\"{}.
 
-A mutex is a synchronization object, used when multiple threads are involved.
+\mbox{\hyperlink{class_a}{A}} mutex is a synchronization object, used when multiple threads are involved.
 
 When you want to protect a part of the code from being accessed simultaneously by multiple threads, you typically use a mutex. When a thread is locked by a mutex, any other thread trying to lock it will be blocked until the mutex is released by the thread that locked it. This way, you can allow only one thread at a time to access a critical region of your code.
 
@@ -67,7 +67,7 @@ Usage example\+:
 \end{DoxyCode}
 
 
-Be very careful with mutexes. A bad usage can lead to bad problems, like deadlocks (two threads are waiting for each other and the application is globally stuck).
+Be very careful with mutexes. \mbox{\hyperlink{class_a}{A}} bad usage can lead to bad problems, like deadlocks (two threads are waiting for each other and the application is globally stuck).
 
 To make the usage of mutexes more robust, particularly in environments where exceptions can be thrown, you should use the helper class \mbox{\hyperlink{classsf_1_1_lock}{sf\+::\+Lock}} to lock/unlock mutexes.
 

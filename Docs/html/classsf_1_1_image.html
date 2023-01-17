@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: sf::Image Class Reference</title>
+<title>GAME3015: sf::Image Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">GAME3015
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -207,10 +207,10 @@ Public Member Functions</h2></td></tr>
 <p ><a class="el" href="classsf_1_1_image.html" title="Class for loading, manipulating and saving images.">sf::Image</a> is an abstraction to manipulate images as bidimensional arrays of pixels.</p>
 <p >The class provides functions to load, read, write and save pixels, as well as many other useful functions.</p>
 <p ><a class="el" href="classsf_1_1_image.html" title="Class for loading, manipulating and saving images.">sf::Image</a> can handle a unique internal representation of pixels, which is RGBA 32 bits. This means that a pixel must be composed of 8 bits red, green, blue and alpha channels &ndash; just like a <a class="el" href="classsf_1_1_color.html" title="Utility class for manipulating RGBA colors.">sf::Color</a>. All the functions that return an array of pixels follow this rule, and all parameters that you pass to <a class="el" href="classsf_1_1_image.html" title="Class for loading, manipulating and saving images.">sf::Image</a> functions (such as loadFromMemory) must use this representation as well.</p>
-<p >A <a class="el" href="classsf_1_1_image.html" title="Class for loading, manipulating and saving images.">sf::Image</a> can be copied, but it is a heavy resource and if possible you should always use [const] references to pass or return them to avoid useless copies.</p>
+<p ><a class="el" href="class_a.html">A</a> <a class="el" href="classsf_1_1_image.html" title="Class for loading, manipulating and saving images.">sf::Image</a> can be copied, but it is a heavy resource and if possible you should always use [const] references to pass or return them to avoid useless copies.</p>
 <p >Usage example: </p><div class="fragment"><div class="line"><span class="comment">// Load an image file from a file</span></div>
-<div class="line"><a class="code hl_class" href="classsf_1_1_image.html">sf::Image</a> background;</div>
-<div class="line"><span class="keywordflow">if</span> (!background.<a class="code hl_function" href="classsf_1_1_image.html#a9e4f2aa8e36d0cabde5ed5a4ef80290b">loadFromFile</a>(<span class="stringliteral">&quot;background.jpg&quot;</span>))</div>
+<div class="line"><a class="code hl_class" href="classsf_1_1_image.html">sf::Image</a> <a class="code hl_enumvalue" href="enum_demo1_8cpp.html#ac6a70fa2f77cc3032c1eea5a4c725cffa1667f13aa992e373547cf10fc8c61590">background</a>;</div>
+<div class="line"><span class="keywordflow">if</span> (!<a class="code hl_enumvalue" href="enum_demo1_8cpp.html#ac6a70fa2f77cc3032c1eea5a4c725cffa1667f13aa992e373547cf10fc8c61590">background</a>.loadFromFile(<span class="stringliteral">&quot;background.jpg&quot;</span>))</div>
 <div class="line">    <span class="keywordflow">return</span> -1;</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Create a 20x20 image filled with black color</span></div>
@@ -218,7 +218,7 @@ Public Member Functions</h2></td></tr>
 <div class="line">image.<a class="code hl_function" href="classsf_1_1_image.html#a2a67930e2fd9ad97cf004e918cf5832b">create</a>(20, 20, <a class="code hl_variable" href="classsf_1_1_color.html#a25bf5208c8c7668f1a3836acbbb23986">sf::Color::Black</a>);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Copy image1 on image2 at position (10, 10)</span></div>
-<div class="line">image.<a class="code hl_function" href="classsf_1_1_image.html#ab2fa337c956f85f93377dcb52153a45a">copy</a>(background, 10, 10);</div>
+<div class="line">image.<a class="code hl_function" href="classsf_1_1_image.html#ab2fa337c956f85f93377dcb52153a45a">copy</a>(<a class="code hl_enumvalue" href="enum_demo1_8cpp.html#ac6a70fa2f77cc3032c1eea5a4c725cffa1667f13aa992e373547cf10fc8c61590">background</a>, 10, 10);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Make the top-left pixel transparent</span></div>
 <div class="line"><a class="code hl_class" href="classsf_1_1_color.html">sf::Color</a> color = image.<a class="code hl_function" href="classsf_1_1_image.html#acf278760458433b2c3626a6980388a95">getPixel</a>(0, 0);</div>
@@ -234,10 +234,10 @@ Public Member Functions</h2></td></tr>
 <div class="ttc" id="aclasssf_1_1_image_html"><div class="ttname"><a href="classsf_1_1_image.html">sf::Image</a></div><div class="ttdoc">Class for loading, manipulating and saving images.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_image_8hpp_source.html#l00046">Image.hpp:47</a></div></div>
 <div class="ttc" id="aclasssf_1_1_image_html_a2a67930e2fd9ad97cf004e918cf5832b"><div class="ttname"><a href="classsf_1_1_image.html#a2a67930e2fd9ad97cf004e918cf5832b">sf::Image::create</a></div><div class="ttdeci">void create(unsigned int width, unsigned int height, const Color &amp;color=Color(0, 0, 0))</div><div class="ttdoc">Create the image and fill it with a unique color.</div></div>
 <div class="ttc" id="aclasssf_1_1_image_html_a51537fb667f47cbe80395cfd7f9e72a4"><div class="ttname"><a href="classsf_1_1_image.html#a51537fb667f47cbe80395cfd7f9e72a4">sf::Image::saveToFile</a></div><div class="ttdeci">bool saveToFile(const std::string &amp;filename) const</div><div class="ttdoc">Save the image to a file on disk.</div></div>
-<div class="ttc" id="aclasssf_1_1_image_html_a9e4f2aa8e36d0cabde5ed5a4ef80290b"><div class="ttname"><a href="classsf_1_1_image.html#a9e4f2aa8e36d0cabde5ed5a4ef80290b">sf::Image::loadFromFile</a></div><div class="ttdeci">bool loadFromFile(const std::string &amp;filename)</div><div class="ttdoc">Load the image from a file on disk.</div></div>
 <div class="ttc" id="aclasssf_1_1_image_html_a9fd329b8cd7d4439e07fb5d3bb2d9744"><div class="ttname"><a href="classsf_1_1_image.html#a9fd329b8cd7d4439e07fb5d3bb2d9744">sf::Image::setPixel</a></div><div class="ttdeci">void setPixel(unsigned int x, unsigned int y, const Color &amp;color)</div><div class="ttdoc">Change the color of a pixel.</div></div>
 <div class="ttc" id="aclasssf_1_1_image_html_ab2fa337c956f85f93377dcb52153a45a"><div class="ttname"><a href="classsf_1_1_image.html#ab2fa337c956f85f93377dcb52153a45a">sf::Image::copy</a></div><div class="ttdeci">void copy(const Image &amp;source, unsigned int destX, unsigned int destY, const IntRect &amp;sourceRect=IntRect(0, 0, 0, 0), bool applyAlpha=false)</div><div class="ttdoc">Copy pixels from another image onto this one.</div></div>
 <div class="ttc" id="aclasssf_1_1_image_html_acf278760458433b2c3626a6980388a95"><div class="ttname"><a href="classsf_1_1_image.html#acf278760458433b2c3626a6980388a95">sf::Image::getPixel</a></div><div class="ttdeci">Color getPixel(unsigned int x, unsigned int y) const</div><div class="ttdoc">Get the color of a pixel.</div></div>
+<div class="ttc" id="aenum_demo1_8cpp_html_ac6a70fa2f77cc3032c1eea5a4c725cffa1667f13aa992e373547cf10fc8c61590"><div class="ttname"><a href="enum_demo1_8cpp.html#ac6a70fa2f77cc3032c1eea5a4c725cffa1667f13aa992e373547cf10fc8c61590">background</a></div><div class="ttdeci">@ background</div><div class="ttdef"><b>Definition:</b> <a href="enum_demo1_8cpp_source.html#l00020">enumDemo1.cpp:20</a></div></div>
 </div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="classsf_1_1_texture.html" title="Image living on the graphics card that can be used for drawing.">sf::Texture</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_image_8hpp_source.html#l00046">46</a> of file <a class="el" href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_image_8hpp_source.html">Image.hpp</a>.</p>
@@ -567,7 +567,7 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">width</td><td>Width of the image </td></tr>
     <tr><td class="paramname">height</td><td>Height of the image </td></tr>
-    <tr><td class="paramname">pixels</td><td>Array of pixels to copy to the image </td></tr>
+    <tr><td class="paramname">pixels</td><td><a class="el" href="class_array.html">Array</a> of pixels to copy to the image </td></tr>
   </table>
   </dd>
 </dl>
@@ -612,7 +612,7 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">width</td><td>Width of the image </td></tr>
     <tr><td class="paramname">height</td><td>Height of the image </td></tr>
-    <tr><td class="paramname">pixels</td><td>Array of pixels to copy to the image </td></tr>
+    <tr><td class="paramname">pixels</td><td><a class="el" href="class_array.html">Array</a> of pixels to copy to the image </td></tr>
   </table>
   </dd>
 </dl>

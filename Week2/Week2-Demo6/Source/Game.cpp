@@ -1,65 +1,27 @@
 #include <Game.hpp>
 
-const float Game::PlayerSpeed = 100.f;
-const sf::Time Game::TimePerFrame = sf::seconds(1.f / 60.f);
-
 Game::Game()
-	: mWindow(sf::VideoMode(1200, 800), "SFML Application", sf::Style::Close)
-	, airplane()
-	, landscape()
-	, mBackgroundTexture()	
-	, mFont()
-	, mStatisticsText()
-	, mStatisticsUpdateTime()
-	, mStatisticsNumFrames(0)
-	, mIsMovingUp(false)
-	, mIsMovingDown(false)
-	, mIsMovingRight(false)
-	, mIsMovingLeft(false)
+	: mWindow(sf::VideoMode(640, 480), "Bouncing Mushroom")
+	, mushroomTexture()
+	, mushroomSprite()
+	, increment(0.4f, 0.4f)
 {
 
-	try
-	{
-		textures.load(Textures::Landscape, "Media/Textures/Desert.png");
-		textures.load(Textures::Airplane, "Media/Textures/Eagle.png");
-	}
-	catch (std::runtime_error& e)
-	{
-		std::cout << "Exception: " << e.what() << std::endl;
-		return;
-	}
+	mushroomTexture.loadFromFile("Media/Textures/Mushroom.png");
+	mushroomSprite.setTexture(mushroomTexture);
+	mushroomSprite.setColor(sf::Color(0, 255, 0, 255)); // Green tint
+	size = mushroomTexture.getSize();
+	mushroomSprite.setOrigin(size.x / 2, size.y / 2);
 
-	mBackgroundTexture = textures.get(Textures::Landscape);
-	mBackgroundTexture.setRepeated(true);
-	landscape.setTexture(mBackgroundTexture);
-	landscape.setTextureRect(sf::IntRect(0, 0, 1200, 800));
-
-	airplane.setTexture(textures.get(Textures::Airplane));
-	airplane.setPosition(100.f, 100.f);
-	
-	mFont.loadFromFile("Media/Sansation.ttf");
-	mStatisticsText.setFont(mFont);
-	mStatisticsText.setPosition(5.f, 5.f);
-	mStatisticsText.setCharacterSize(10);
 }
 
 void Game::run()
 {
-	sf::Clock clock;
-	sf::Time timeSinceLastUpdate = sf::Time::Zero;
+
 	while (mWindow.isOpen())
 	{
-		sf::Time elapsedTime = clock.restart();
-		timeSinceLastUpdate += elapsedTime;
-		while (timeSinceLastUpdate > TimePerFrame)
-		{
-			timeSinceLastUpdate -= TimePerFrame;
-
-			processEvents();
-			update(TimePerFrame);
-		}
-
-		updateStatistics(elapsedTime);
+		processEvents();
+		update();
 		render();
 	}
 }
@@ -71,14 +33,6 @@ void Game::processEvents()
 	{
 		switch (event.type)
 		{
-		case sf::Event::KeyPressed:
-			handlePlayerInput(event.key.code, true);
-			break;
-
-		case sf::Event::KeyReleased:
-			handlePlayerInput(event.key.code, false);
-			break;
-
 		case sf::Event::Closed:
 			mWindow.close();
 			break;
@@ -86,55 +40,29 @@ void Game::processEvents()
 	}
 }
 
-void Game::update(sf::Time elapsedTime)
+void Game::update()
 {
-	sf::Vector2f movement(0.f, 0.f);
-	if (mIsMovingUp)
-		movement.y -= PlayerSpeed;
-	if (mIsMovingDown)
-		movement.y += PlayerSpeed;
-	if (mIsMovingLeft)
-		movement.x -= PlayerSpeed;
-	if (mIsMovingRight)
-		movement.x += PlayerSpeed;
+	if ((mushroomSprite.getPosition().x + (size.x / 2) > mWindow.getSize().x && increment.x > 0) || (mushroomSprite.getPosition().x - (size.x / 2) < 0 && increment.x < 0))
+	{
+		//Reverse the direction on X axis
+		increment.x = -increment.x;
+	}
 
-	airplane.move(movement * elapsedTime.asSeconds());
-	
+	if ((mushroomSprite.getPosition().y + (size.y / 2) > mWindow.getSize().y && increment.y > 0) || (mushroomSprite.getPosition().y - (size.y / 2) < 0 && increment.y < 0))
+	{
+		//Reverse the direction on X axis
+		increment.y = -increment.y;
+	}
+
+	mushroomSprite.setPosition(mushroomSprite.getPosition() + increment);
 }
 
 void Game::render()
 {
-	mWindow.clear();
-	mWindow.draw(landscape);
-	mWindow.draw(airplane);
-	mWindow.draw(mStatisticsText);
+	mWindow.clear(sf::Color(16, 16, 16, 255)); //Dark gray
+	mWindow.draw(mushroomSprite);
 	mWindow.display();
 }
 
-void Game::updateStatistics(sf::Time elapsedTime)
-{
-	mStatisticsUpdateTime += elapsedTime;
-	mStatisticsNumFrames += 1;
 
-	if (mStatisticsUpdateTime >= sf::seconds(1.0f))
-	{
-		mStatisticsText.setString(
-			"Frames / Second = " + std::to_string(mStatisticsNumFrames) + "\n" +
-			"Time / Update = " + std::to_string(mStatisticsUpdateTime.asMicroseconds() / mStatisticsNumFrames) + "us");
 
-		mStatisticsUpdateTime -= sf::seconds(1.0f);
-		mStatisticsNumFrames = 0;
-	}
-}
-
-void Game::handlePlayerInput(sf::Keyboard::Key key, bool isPressed)
-{
-	if (key == sf::Keyboard::W)
-		mIsMovingUp = isPressed;
-	else if (key == sf::Keyboard::S)
-		mIsMovingDown = isPressed;
-	else if (key == sf::Keyboard::A)
-		mIsMovingLeft = isPressed;
-	else if (key == sf::Keyboard::D)
-		mIsMovingRight = isPressed;
-}

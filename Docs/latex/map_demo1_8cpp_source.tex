@@ -1,0 +1,45 @@
+\hypertarget{map_demo1_8cpp_source}{}\doxysection{map\+Demo1.\+cpp}
+\label{map_demo1_8cpp_source}\index{Week2/cplusplusdemo/mapDemo1.cpp@{Week2/cplusplusdemo/mapDemo1.cpp}}
+\mbox{\hyperlink{map_demo1_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00026}00026 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00027}00027 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00029}\mbox{\hyperlink{map_demo1_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00029}} \textcolor{keywordtype}{int} \mbox{\hyperlink{map_demo1_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00030}00030 \{}
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00031}00031     \textcolor{comment}{// Create a map of strings to integers}}
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00032}00032     std::map<std::string, int> map;}
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00034}00034     \textcolor{comment}{// Insert some values into the map}}
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00035}00035     map[\textcolor{stringliteral}{"{}one"{}}] = 1;}
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00036}00036     map[\textcolor{stringliteral}{"{}two"{}}] = 2;}
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00037}00037     map[\textcolor{stringliteral}{"{}three"{}}] = 3;}
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00039}00039     \textcolor{comment}{// Get an iterator pointing to the first element in the map}}
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00040}00040     std::map<std::string, int>::iterator it = map.begin();}
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00042}00042     \textcolor{comment}{// Iterate through the map and print the elements}}
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00043}00043     \textcolor{keywordflow}{while} (it != map.end())}
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00044}00044     \{}
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00045}00045         std::cout << \textcolor{stringliteral}{"{}Key: "{}} << it-\/>first << \textcolor{stringliteral}{"{}, Value: "{}} << it-\/>second << std::endl;}
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00046}00046         ++it;}
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00047}00047     \}}
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00049}00049     \textcolor{comment}{// Print the size of the map}}
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00050}00050     std::cout << \textcolor{stringliteral}{"{}Size of map: "{}} << map.size() << std::endl;}
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00052}00052     \textcolor{comment}{// Check if a key is in the map}}
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00053}00053     \textcolor{keywordflow}{if} (map.count(\textcolor{stringliteral}{"{}four"{}}) > 0)}
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00054}00054     \{}
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00055}00055         std::cout << \textcolor{stringliteral}{"{}Key 'four' is in the map"{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00056}00056     \}}
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00057}00057     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00058}00058     \{}
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00059}00059         std::cout << \textcolor{stringliteral}{"{}Key 'four' is not in the map"{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00060}00060     \}}
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00062}00062     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{map_demo1_8cpp_source_l00063}00063 \}}
+
+\end{DoxyCode}

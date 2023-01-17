@@ -1,0 +1,91 @@
+\hypertarget{map_demo2_8cpp_source}{}\doxysection{map\+Demo2.\+cpp}
+\label{map_demo2_8cpp_source}\index{Week2/cplusplusdemo/mapDemo2.cpp@{Week2/cplusplusdemo/mapDemo2.cpp}}
+\mbox{\hyperlink{map_demo2_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00012}00012 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00013}00013 \textcolor{preprocessor}{\#include <iterator>}}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00014}00014 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00016}00016 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00018}\mbox{\hyperlink{map_demo2_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00018}} \textcolor{keywordtype}{int} \mbox{\hyperlink{map_demo2_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00019}00019 \{}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00021}00021     \textcolor{comment}{// empty map container}}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00022}00022     map<int, int> gquiz1;}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00024}00024     \textcolor{comment}{// insert elements in random order}}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00025}00025     gquiz1.insert(pair<int, int>(1, 40));}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00026}00026     gquiz1.insert(pair<int, int>(2, 30));}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00027}00027     gquiz1.insert(pair<int, int>(3, 60));}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00028}00028     gquiz1.insert(pair<int, int>(4, 20));}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00029}00029     gquiz1.insert(pair<int, int>(5, 50));}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00030}00030     gquiz1.insert(pair<int, int>(6, 50));}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00032}00032     gquiz1[7] = 10;     \textcolor{comment}{// another way of inserting a value in a map}}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00035}00035     \textcolor{comment}{// printing map gquiz1}}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00036}00036     map<int, int>::iterator itr;}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00037}00037     cout << \textcolor{stringliteral}{"{}\(\backslash\)nThe map gquiz1 is : \(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00038}00038     cout << \textcolor{stringliteral}{"{}\(\backslash\)tKEY\(\backslash\)tELEMENT\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00039}00039     \textcolor{keywordflow}{for} (itr = gquiz1.begin(); itr != gquiz1.end(); ++itr) \{}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00040}00040         cout << \textcolor{charliteral}{'\(\backslash\)t'} << itr-\/>first << \textcolor{charliteral}{'\(\backslash\)t'} << itr-\/>second}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00041}00041             << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00042}00042     \}}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00043}00043     cout << endl;}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00045}00045     \textcolor{comment}{// assigning the elements from gquiz1 to gquiz2}}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00046}00046     map<int, int> gquiz2(gquiz1.begin(), gquiz1.end());}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00048}00048     \textcolor{comment}{// print all elements of the map gquiz2}}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00049}00049     cout << \textcolor{stringliteral}{"{}\(\backslash\)nThe map gquiz2 after"{}}}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00050}00050         << \textcolor{stringliteral}{"{} assign from gquiz1 is : \(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00051}00051     cout << \textcolor{stringliteral}{"{}\(\backslash\)tKEY\(\backslash\)tELEMENT\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00052}00052     \textcolor{keywordflow}{for} (itr = gquiz2.begin(); itr != gquiz2.end(); ++itr) \{}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00053}00053         cout << \textcolor{charliteral}{'\(\backslash\)t'} << itr-\/>first << \textcolor{charliteral}{'\(\backslash\)t'} << itr-\/>second}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00054}00054             << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00055}00055     \}}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00056}00056     cout << endl;}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00058}00058     \textcolor{comment}{// remove all elements up to}}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00059}00059     \textcolor{comment}{// element with key=3 in gquiz2}}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00060}00060     cout << \textcolor{stringliteral}{"{}\(\backslash\)ngquiz2 after removal of"{}}}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00061}00061 \textcolor{stringliteral}{"{} elements less than key=3 : \(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00062}00062     cout << \textcolor{stringliteral}{"{}\(\backslash\)tKEY\(\backslash\)tELEMENT\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00063}00063     gquiz2.erase(gquiz2.begin(), gquiz2.find(3));}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00064}00064     \textcolor{keywordflow}{for} (itr = gquiz2.begin(); itr != gquiz2.end(); ++itr) \{}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00065}00065         cout << \textcolor{charliteral}{'\(\backslash\)t'} << itr-\/>first << \textcolor{charliteral}{'\(\backslash\)t'} << itr-\/>second}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00066}00066             << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00067}00067     \}}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00069}00069     \textcolor{comment}{// remove all elements with key = 4}}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00070}00070     \textcolor{keywordtype}{int} num;}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00071}00071     num = gquiz2.erase(4);}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00072}00072     cout << \textcolor{stringliteral}{"{}\(\backslash\)ngquiz2.erase(4) : "{}};}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00073}00073     cout << num << \textcolor{stringliteral}{"{} removed \(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00074}00074     cout << \textcolor{stringliteral}{"{}\(\backslash\)tKEY\(\backslash\)tELEMENT\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00075}00075     \textcolor{keywordflow}{for} (itr = gquiz2.begin(); itr != gquiz2.end(); ++itr) \{}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00076}00076         cout << \textcolor{charliteral}{'\(\backslash\)t'} << itr-\/>first << \textcolor{charliteral}{'\(\backslash\)t'} << itr-\/>second}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00077}00077             << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00078}00078     \}}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00080}00080     cout << endl;}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00082}00082     \textcolor{comment}{// lower bound and upper bound for map gquiz1 key = 5}}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00083}00083     cout << \textcolor{stringliteral}{"{}gquiz1.lower\_bound(5) : "{}}}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00084}00084         << \textcolor{stringliteral}{"{}\(\backslash\)tKEY = "{}};}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00085}00085     cout << gquiz1.lower\_bound(5)-\/>first << \textcolor{charliteral}{'\(\backslash\)t'};}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00086}00086     cout << \textcolor{stringliteral}{"{}\(\backslash\)tELEMENT = "{}} << gquiz1.lower\_bound(5)-\/>second}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00087}00087         << endl;}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00088}00088     cout << \textcolor{stringliteral}{"{}gquiz1.upper\_bound(5) : "{}}}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00089}00089         << \textcolor{stringliteral}{"{}\(\backslash\)tKEY = "{}};}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00090}00090     cout << gquiz1.upper\_bound(5)-\/>first << \textcolor{charliteral}{'\(\backslash\)t'};}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00091}00091     cout << \textcolor{stringliteral}{"{}\(\backslash\)tELEMENT = "{}} << gquiz1.upper\_bound(5)-\/>second}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00092}00092         << endl;}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00094}00094     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{map_demo2_8cpp_source_l00095}00095 \}}
+
+\end{DoxyCode}

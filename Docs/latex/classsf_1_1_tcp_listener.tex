@@ -44,7 +44,7 @@ void \mbox{\hyperlink{classsf_1_1_tcp_listener_a3a00a850506bd0f9f48867a0fe59556b
 \doxysubsection{Detailed Description}
 \mbox{\hyperlink{classsf_1_1_socket}{Socket}} that listens to new TCP connections. 
 
-A listener socket is a special type of socket that listens to a given port and waits for connections on that port.
+\mbox{\hyperlink{class_a}{A}} listener socket is a special type of socket that listens to a given port and waits for connections on that port.
 
 This is all it can do.
 
@@ -52,7 +52,7 @@ When a new connection is received, you must call accept and the listener returns
 
 \mbox{\hyperlink{classsf_1_1_listener}{Listener}} sockets are specific to the TCP protocol, UDP sockets are connectionless and can therefore communicate directly. As a consequence, a listener socket will always return the new connections as \mbox{\hyperlink{classsf_1_1_tcp_socket}{sf\+::\+Tcp\+Socket}} instances.
 
-A listener is automatically closed on destruction, like all other types of socket. However if you want to stop listening before the socket is destroyed, you can call its \mbox{\hyperlink{classsf_1_1_tcp_listener_a3a00a850506bd0f9f48867a0fe59556b}{close()}} function.
+\mbox{\hyperlink{class_a}{A}} listener is automatically closed on destruction, like all other types of socket. However if you want to stop listening before the socket is destroyed, you can call its \mbox{\hyperlink{classsf_1_1_tcp_listener_a3a00a850506bd0f9f48867a0fe59556b}{close()}} function.
 
 Usage example\+: 
 \begin{DoxyCode}{0}

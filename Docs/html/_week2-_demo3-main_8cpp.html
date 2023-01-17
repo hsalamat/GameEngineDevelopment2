@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: Week2/Week2-Demo3/Source/Week2-Demo3-main.cpp File Reference</title>
+<title>GAME3015: Week2/Week2-Demo3/Source/Week2-Demo3-main.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">GAME3015
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('_week2-_demo3-main_8cpp.html',''); ini
 </div><!--header-->
 <div class="contents">
 
-<p>change <a class="el" href="namespace_music.html">Music</a> parameters, create your own image and move the player with the mouse Demo mMusic.setPosition(0, 0, 0); //!  
+<p><a class="el" href="class_texture_holder.html">TextureHolder</a> We must find the right data structure to store the textures.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;Game.hpp&quot;</code><br />
 </div>
@@ -109,22 +109,14 @@ Functions</h2></td></tr>
 <tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >change <a class="el" href="namespace_music.html">Music</a> parameters, create your own image and move the player with the mouse Demo mMusic.setPosition(0, 0, 0); //! </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">setPosition</td><td>change its 3D position - the default position is (0,0,0) mMusic.setPitch(2); //!</td></tr>
-    <tr><td class="paramname">setPitch</td><td>increase the pitch - pitch represents the perceived fundamental frequency of a sound such as modifying the playing speed of the sound mMusic.setVolume(50); //!</td></tr>
-    <tr><td class="paramname">setVolume</td><td>reduce the volume mMusic.setAttenuation(100); //!</td></tr>
-    <tr><td class="paramname">setAttenuation</td><td>an attenuation value of 100 will make the sound fade out very quicky as it gets further from the listener - default value is 1 mMusic.setLoop(true); //!</td></tr>
-    <tr><td class="paramname">setLoop</td><td>make it loop</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Move the player with the mouse: if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) { <a class="el" href="namespacesf.html#a0eed58bf66694ebbc55f72ca7de840d9">sf::Vector2i</a> mousePosition = sf::Mouse::getPosition(mWindow); mPlayer.setPosition((float)mousePosition.x, (float)mousePosition.y); }</p>
-<p >You could also create your own image mIcon.create(20, 20, sf::Color::Red); <a class="el" href="classsf_1_1_color.html" title="Utility class for manipulating RGBA colors.">sf::Color</a> color = mIcon.getPixel(0, 0); color.a = 0; //make the top-left pixel transparent color.r = 0; //set the r = 0 (rgb) from the color mIcon.setPixel(0, 0, color);</p>
-<dl class="section attention"><dt>Attention</dt><dd>: the sf::Texture::loadFromX() functions are just a shortcut for combined sf::Image::loadFromX() and <a class="el" href="classsf_1_1_texture.html#abec4567ad9856a3596dc74803f26fba2" title="Load the texture from an image.">sf::Texture::loadFromImage()</a> calls.</dd></dl>
+<div class="textblock"><p ><a class="el" href="class_texture_holder.html">TextureHolder</a> We must find the right data structure to store the textures. </p>
+<p >We need to choose an STL container that does not perform unnecessary copies. std::vector is the wrong choice, since inserting new textures can trigger a reallocation of the dynamic array and the copying of all textures. Not only is this slow, but also all references and pointers to the textures are invalidated. We can access the textures by an enum, so the associative container std::map looks like the perfect choice.</p>
+<dl class="section note"><dt>Note</dt><dd>: mBackgroundTexture.setRepeated(true); Repeating is involved when using texture coordinates outside the texture rectangle [0, 0, width, height]. In this case, if repeat mode is enabled, the whole texture will be repeated as many times as needed to reach the coordinate (for example, if the X texture coordinate is 3 * width, the texture will be repeated 3 times). If repeat mode is disabled, the "extra space" will instead be filled with border pixels.</dd>
+<dd>
+: landscape.setTextureRect(sf::IntRect(0, 0, 1200, 800)); Set the sub-rectangle of the texture that the sprite will display.</dd></dl>
+<p>The texture rect is useful when you don't want to display the whole texture, but rather a part of it. By default, the texture rect covers the entire texture.</p>
 <dl class="section author"><dt>Author</dt><dd>Hooman Salamat </dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000003">Bug:</a></b></dt><dd>No known bugs. </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000013">Bug:</a></b></dt><dd>No known bugs. </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="_week2-_demo3-main_8cpp_source.html">Week2-Demo3-main.cpp</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
@@ -143,7 +135,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_week2-_demo3-main_8cpp_source.html#l00030">30</a> of file <a class="el" href="_week2-_demo3-main_8cpp_source.html">Week2-Demo3-main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_week2-_demo3-main_8cpp_source.html#l00029">29</a> of file <a class="el" href="_week2-_demo3-main_8cpp_source.html">Week2-Demo3-main.cpp</a>.</p>
 
 </div>
 </div>

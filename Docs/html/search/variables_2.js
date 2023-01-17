@@ -18,9 +18,10 @@ var searchData=
   ['colorbytestride_15',['ColorByteStride',['../struct_mesh_geometry.html#a0b2e69dc595217c3f600147e500a4a31',1,'MeshGeometry']]],
   ['colordstfactor_16',['colorDstFactor',['../structsf_1_1_blend_mode.html#adee68ee59e7f1bf71d12db03d251104d',1,'sf::BlendMode']]],
   ['colorequation_17',['colorEquation',['../structsf_1_1_blend_mode.html#aed12f06eb7f50a1b95b892b0964857b1',1,'sf::BlendMode']]],
-  ['colorsrcfactor_18',['colorSrcFactor',['../structsf_1_1_blend_mode.html#a32d1a55dbfada86a06d9b881dc8ccf7b',1,'sf::BlendMode']]],
-  ['control_19',['control',['../structsf_1_1_event_1_1_key_event.html#a9255861c2f88501d80ad6b44a310b62f',1,'sf::Event::KeyEvent']]],
-  ['conv_20',['conv',['../struct_wave_file.html#adeef1a6858c047de8932ba87da0296d3',1,'WaveFile']]],
-  ['currenttexture_21',['CurrentTexture',['../classsf_1_1_shader.html#ad679e434fc4f1a1af65f3815b2310fb5',1,'sf::Shader']]],
-  ['cyan_22',['Cyan',['../classsf_1_1_color.html#a1a5568e8b58269f1c739237e31bed9d8',1,'sf::Color']]]
+  ['colors_18',['colors',['../enum_demo6_8cpp.html#a7749afa28f87d1e7fd963f48f2ab416a',1,'enumDemo6.cpp']]],
+  ['colorsrcfactor_19',['colorSrcFactor',['../structsf_1_1_blend_mode.html#a32d1a55dbfada86a06d9b881dc8ccf7b',1,'sf::BlendMode']]],
+  ['control_20',['control',['../structsf_1_1_event_1_1_key_event.html#a9255861c2f88501d80ad6b44a310b62f',1,'sf::Event::KeyEvent']]],
+  ['conv_21',['conv',['../struct_wave_file.html#adeef1a6858c047de8932ba87da0296d3',1,'WaveFile']]],
+  ['currenttexture_22',['CurrentTexture',['../classsf_1_1_shader.html#ad679e434fc4f1a1af65f3815b2310fb5',1,'sf::Shader']]],
+  ['cyan_23',['Cyan',['../classsf_1_1_color.html#a1a5568e8b58269f1c739237e31bed9d8',1,'sf::Color']]]
 ];

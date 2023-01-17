@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: sf::TcpListener Class Reference</title>
+<title>GAME3015: sf::TcpListener Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">GAME3015
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -263,11 +263,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p ><a class="el" href="classsf_1_1_socket.html" title="Base class for all the socket types.">Socket</a> that listens to new TCP connections. </p>
-<p >A listener socket is a special type of socket that listens to a given port and waits for connections on that port.</p>
+<p ><a class="el" href="class_a.html">A</a> listener socket is a special type of socket that listens to a given port and waits for connections on that port.</p>
 <p >This is all it can do.</p>
 <p >When a new connection is received, you must call accept and the listener returns a new instance of <a class="el" href="classsf_1_1_tcp_socket.html" title="Specialized socket using the TCP protocol.">sf::TcpSocket</a> that is properly initialized and can be used to communicate with the new client.</p>
 <p ><a class="el" href="classsf_1_1_listener.html" title="The audio listener is the point in the scene from where all the sounds are heard.">Listener</a> sockets are specific to the TCP protocol, UDP sockets are connectionless and can therefore communicate directly. As a consequence, a listener socket will always return the new connections as <a class="el" href="classsf_1_1_tcp_socket.html" title="Specialized socket using the TCP protocol.">sf::TcpSocket</a> instances.</p>
-<p >A listener is automatically closed on destruction, like all other types of socket. However if you want to stop listening before the socket is destroyed, you can call its <a class="el" href="classsf_1_1_tcp_listener.html#a3a00a850506bd0f9f48867a0fe59556b" title="Stop listening and close the socket.">close()</a> function.</p>
+<p ><a class="el" href="class_a.html">A</a> listener is automatically closed on destruction, like all other types of socket. However if you want to stop listening before the socket is destroyed, you can call its <a class="el" href="classsf_1_1_tcp_listener.html#a3a00a850506bd0f9f48867a0fe59556b" title="Stop listening and close the socket.">close()</a> function.</p>
 <p >Usage example: </p><div class="fragment"><div class="line"><span class="comment">// Create a listener socket and make it wait for new</span></div>
 <div class="line"><span class="comment">// connections on port 55001</span></div>
 <div class="line"><a class="code hl_class" href="classsf_1_1_tcp_listener.html">sf::TcpListener</a> listener;</div>

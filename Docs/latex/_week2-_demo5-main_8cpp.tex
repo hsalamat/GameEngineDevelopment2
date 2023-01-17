@@ -2,7 +2,7 @@
 \label{_week2-_demo5-main_8cpp}\index{Week2/Week2-\/Demo5/Source/Week2-\/Demo5-\/main.cpp@{Week2/Week2-\/Demo5/Source/Week2-\/Demo5-\/main.cpp}}
 
 
-\mbox{\hyperlink{class_texture_holder}{Texture\+Holder}} We must find the right data structure to store the textures.  
+Generalizing the approach\+: \mbox{\hyperlink{class_resource_holder}{Resource\+Holder}} We have implemented everything we need for textures, but we would like to handle other resources such as fonts and sound buffers too.  
 
 
 {\ttfamily \#include \char`\"{}Game.\+hpp\char`\"{}}\newline
@@ -14,22 +14,15 @@ int \mbox{\hyperlink{_week2-_demo5-main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{
 
 
 \doxysubsection{Detailed Description}
-\mbox{\hyperlink{class_texture_holder}{Texture\+Holder}} We must find the right data structure to store the textures. 
+Generalizing the approach\+: \mbox{\hyperlink{class_resource_holder}{Resource\+Holder}} We have implemented everything we need for textures, but we would like to handle other resources such as fonts and sound buffers too. 
 
-We need to choose an STL container that does not perform unnecessary copies. std\+::vector is the wrong choice, since inserting new textures can trigger a reallocation of the dynamic array and the copying of all textures. Not only is this slow, but also all references and pointers to the textures are invalidated. We can access the textures by an enum, so the associative container std\+::map looks like the perfect choice.
-
-\begin{DoxyNote}{Note}
-\+: m\+Background\+Texture.\+set\+Repeated(true); Repeating is involved when using texture coordinates outside the texture rectangle \mbox{[}0, 0, width, height\mbox{]}. In this case, if repeat mode is enabled, the whole texture will be repeated as many times as needed to reach the coordinate (for example, if the X texture coordinate is 3 $\ast$ width, the texture will be repeated 3 times). If repeat mode is disabled, the \char`\"{}extra space\char`\"{} will instead be filled with border pixels.
-
-\+: landscape.\+set\+Texture\+Rect(sf\+::\+Int\+Rect(0, 0, 1200, 800)); Set the sub-\/rectangle of the texture that the sprite will display.
-\end{DoxyNote}
-The texture rect is useful when you don\textquotesingle{}t want to display the whole texture, but rather a part of it. By default, the texture rect covers the entire texture.
+As the implementation looks extremely similar for them, it would be a bad idea to write new classes Font\+Holder and Sound\+Buffer\+Holder with exactly the same functionality. Instead, we write a class template, which we instantiate for different resource classes. We call our template \mbox{\hyperlink{class_resource_holder}{Resource\+Holder}} and equip it with two template parameters\+: • Resource\+: The type of resource, for example, \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}}. We design the class template to work the SFML classes, but if you have your own resource class which conforms to the required interface (providing load\+From\+File() methods), nothing keeps you from using it together with \mbox{\hyperlink{class_resource_holder}{Resource\+Holder}}. • Identifier\+: The ID type for resource access, for example, \mbox{\hyperlink{namespace_textures_a2cfe2099537d4e80b08437b4978301a5}{Textures\+::\+ID}}. This will usually be an enum, but the type is not restricted to enumerations. Any type that supports an operator\texorpdfstring{$<$}{<} can be used as identifier, for example, std\+::string.
 
 \begin{DoxyAuthor}{Author}
 Hooman Salamat 
 \end{DoxyAuthor}
 \begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000006}{Bug}}]No known bugs. \end{DoxyRefDesc}
+\item[\mbox{\hyperlink{bug__bug000015}{Bug}}]No known bugs. \end{DoxyRefDesc}
 
 
 Definition in file \mbox{\hyperlink{_week2-_demo5-main_8cpp_source}{Week2-\/\+Demo5-\/main.\+cpp}}.
@@ -45,5 +38,5 @@ Definition in file \mbox{\hyperlink{_week2-_demo5-main_8cpp_source}{Week2-\/\+De
 
 
 
-Definition at line \mbox{\hyperlink{_week2-_demo5-main_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{_week2-_demo5-main_8cpp_source}{Week2-\/\+Demo5-\/main.\+cpp}}.
+Definition at line \mbox{\hyperlink{_week2-_demo5-main_8cpp_source_l00025}{25}} of file \mbox{\hyperlink{_week2-_demo5-main_8cpp_source}{Week2-\/\+Demo5-\/main.\+cpp}}.
 

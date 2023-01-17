@@ -113,7 +113,7 @@ Instead, the audio data is acquired continuously while the stream is playing. Th
 
 \mbox{\hyperlink{classsf_1_1_sound_stream}{sf\+::\+Sound\+Stream}} is a base class that doesn\textquotesingle{}t care about the stream source, which is left to the derived class. SFML provides a built-\/in specialization for big files (see \mbox{\hyperlink{classsf_1_1_music}{sf\+::\+Music}}). No network stream source is provided, but you can write your own by combining this class with the network module.
 
-A derived class has to override two virtual functions\+: \begin{DoxyItemize}
+\mbox{\hyperlink{class_a}{A}} derived class has to override two virtual functions\+: \begin{DoxyItemize}
 \item on\+Get\+Data fills a new chunk of audio data to be played \item on\+Seek changes the current playing position in the source\end{DoxyItemize}
 It is important to note that each \mbox{\hyperlink{classsf_1_1_sound_stream}{Sound\+Stream}} is played in its own separate thread, so that the streaming loop doesn\textquotesingle{}t block the rest of the program. In particular, the On\+Get\+Data and On\+Seek virtual functions may sometimes be called from this separate thread. It is important to keep this in mind, because you may have to take care of synchronization issues if you share data between threads.
 

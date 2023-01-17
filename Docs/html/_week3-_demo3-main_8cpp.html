@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: Week3/Week3-Demo3/Source/Week3-Demo3-main.cpp File Reference</title>
+<title>GAME3015: Week3/Week3-Demo3/Source/Week3-Demo3-main.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">GAME3015
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -112,7 +112,7 @@ Functions</h2></td></tr>
 <div class="textblock"><p >View &amp; Viewport <a class="el" href="classsf_1_1_view.html" title="2D camera that defines what region is shown on screen">sf::View</a> class acts as a viewing lens, which ensures that anything you attempt to draw to the screen that is outside the view's rectangle will remain unseen. </p>
 <p >Besides the viewing rectangle, another parameter that defines the <a class="el" href="classsf_1_1_view.html" title="2D camera that defines what region is shown on screen">sf::View</a> class is the viewport, which gives us control over how to map the viewing rectangle to the actual application window. So, a viewport rectangle starting at (0, 0) and ending in (1, 1) means essentially that the entire window area will be used to render the world. having their viewport rectangles defined as, respectively, (left=0, top=0, width=1, height=0.5) and (left=0, top=0.5, width=1, height=0.5). This would immediately mean that we would have two distinct "eyes" looking at the world, and that they would only render in their own viewports The <a class="el" href="classsf_1_1_view.html" title="2D camera that defines what region is shown on screen">sf::View</a> utility gives us another two features: zooming and rotating our view. In every step of the game loop, when updating the state of the world, we also scroll the view a little. We do this at a constant speed towards the negative y axis (up), so we see a little further at each time step. Of course, we also move the player's aircraft by the exact same distance, so it won't get left behind, but remains in action. This incremental and automatic scrolling operation of the view is simply done in the update code, by doing: mWorldView.move(0.f, mScrollSpeed * dt.asSeconds());</p>
 <dl class="section author"><dt>Author</dt><dd>Hooman Salamat </dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000011">Bug:</a></b></dt><dd>No known bugs. </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000019">Bug:</a></b></dt><dd>No known bugs. </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="_week3-_demo3-main_8cpp_source.html">Week3-Demo3-main.cpp</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>

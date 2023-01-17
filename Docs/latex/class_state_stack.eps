@@ -5,7 +5,7 @@
 %%For: 
 %Magnification: 1.00
 %%Orientation: Portrait
-%%BoundingBox: 0 0 500 2743.362793
+%%BoundingBox: 0 0 500 2831.858398
 %%Pages: 0
 %%BeginSetup
 %%EndSetup
@@ -19,12 +19,12 @@
 /marginwidth 10 def
 /distx 20 def
 /disty 40 def
-/boundaspect 0.182258 def  % aspect ratio of the BoundingBox (width/height)
+/boundaspect 0.176563 def  % aspect ratio of the BoundingBox (width/height)
 /boundx 500 def
 /boundy boundx boundaspect div def
 /xspacing 0 def
 /yspacing 0 def
-/rows 31 def
+/rows 32 def
 /cols 2 def
 /scalefactor 0 def
 /boxfont /Times-Roman findfont fontheight scalefont def
@@ -204,6 +204,7 @@ boxfont setfont
 (sf::NonCopyable) cw
 (sf::NonCopyable) cw
 (sf::NonCopyable) cw
+(sf::NonCopyable) cw
 /boxwidth boxwidth marginwidth 2 mul add def
 /xspacing boxwidth distx add def
 /yspacing boxheight disty add def
@@ -246,6 +247,7 @@ boundx scalefactor div boundy scalefactor div scale
  (sf::NonCopyable) 1.000000 28.000000 box
  (sf::NonCopyable) 1.000000 29.000000 box
  (sf::NonCopyable) 1.000000 30.000000 box
+ (sf::NonCopyable) 1.000000 31.000000 box
 
 % ----- relations -----
 
@@ -312,4 +314,6 @@ dotted
 dotted
 1 0.000000 30.500000 hedge
 dotted
-0.000000 1.000000 30.500000 vedge
+1 0.000000 31.500000 hedge
+dotted
+0.000000 1.000000 31.500000 vedge

@@ -33,6 +33,8 @@ var struct_aircraft_mover =
     [ "AircraftMover", "struct_aircraft_mover.html#a663cf13bc8568988fb45195efbea2a3b", null ],
     [ "AircraftMover", "struct_aircraft_mover.html#a663cf13bc8568988fb45195efbea2a3b", null ],
     [ "AircraftMover", "struct_aircraft_mover.html#a663cf13bc8568988fb45195efbea2a3b", null ],
+    [ "AircraftMover", "struct_aircraft_mover.html#a663cf13bc8568988fb45195efbea2a3b", null ],
+    [ "operator()", "struct_aircraft_mover.html#abad36338ec9f30e35e29b725ad731697", null ],
     [ "operator()", "struct_aircraft_mover.html#abad36338ec9f30e35e29b725ad731697", null ],
     [ "operator()", "struct_aircraft_mover.html#abad36338ec9f30e35e29b725ad731697", null ],
     [ "operator()", "struct_aircraft_mover.html#abad36338ec9f30e35e29b725ad731697", null ],

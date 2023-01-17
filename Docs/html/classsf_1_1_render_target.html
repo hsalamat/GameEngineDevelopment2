@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: sf::RenderTarget Class Reference</title>
+<title>GAME3015: sf::RenderTarget Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">GAME3015
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -255,7 +255,7 @@ Protected Member Functions</h2></td></tr>
 <div class="textblock"><p >Base class for all render targets (window, texture, ...) </p>
 <p ><a class="el" href="classsf_1_1_render_target.html" title="Base class for all render targets (window, texture, ...)">sf::RenderTarget</a> defines the common behavior of all the 2D render targets usable in the graphics module.</p>
 <p >It makes it possible to draw 2D entities like sprites, shapes, text without using any OpenGL command directly.</p>
-<p >A <a class="el" href="classsf_1_1_render_target.html" title="Base class for all render targets (window, texture, ...)">sf::RenderTarget</a> is also able to use views (<a class="el" href="classsf_1_1_view.html" title="2D camera that defines what region is shown on screen">sf::View</a>), which are a kind of 2D cameras. With views you can globally scroll, rotate or zoom everything that is drawn, without having to transform every single entity. See the documentation of <a class="el" href="classsf_1_1_view.html" title="2D camera that defines what region is shown on screen">sf::View</a> for more details and sample pieces of code about this class.</p>
+<p ><a class="el" href="class_a.html">A</a> <a class="el" href="classsf_1_1_render_target.html" title="Base class for all render targets (window, texture, ...)">sf::RenderTarget</a> is also able to use views (<a class="el" href="classsf_1_1_view.html" title="2D camera that defines what region is shown on screen">sf::View</a>), which are a kind of 2D cameras. With views you can globally scroll, rotate or zoom everything that is drawn, without having to transform every single entity. See the documentation of <a class="el" href="classsf_1_1_view.html" title="2D camera that defines what region is shown on screen">sf::View</a> for more details and sample pieces of code about this class.</p>
 <p >On top of that, render targets are still able to render direct OpenGL stuff. It is even possible to mix together OpenGL calls and regular SFML drawing commands. When doing so, make sure that OpenGL states are not messed up by calling the pushGLStates/popGLStates functions.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classsf_1_1_render_window.html" title="Window that can serve as a target for 2D drawing.">sf::RenderWindow</a>, <a class="el" href="classsf_1_1_render_texture.html" title="Target for off-screen 2D rendering into a texture.">sf::RenderTexture</a>, <a class="el" href="classsf_1_1_view.html" title="2D camera that defines what region is shown on screen">sf::View</a> </dd></dl>
 
@@ -1503,7 +1503,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Activate or deactivate the render target for rendering. </p>
-<p >This function makes the render target's context current for future OpenGL rendering operations (so you shouldn't care about it if you're not doing direct OpenGL stuff). A render target's context is active only on the current thread, if you want to make it active on another thread you have to deactivate it on the previous thread first if it was active. Only one context can be current in a thread, so if you want to draw OpenGL geometry to another render target don't forget to activate it again. Activating a render target will automatically deactivate the previously active context (if any).</p>
+<p >This function makes the render target's context current for future OpenGL rendering operations (so you shouldn't care about it if you're not doing direct OpenGL stuff). <a class="el" href="class_a.html">A</a> render target's context is active only on the current thread, if you want to make it active on another thread you have to deactivate it on the previous thread first if it was active. Only one context can be current in a thread, so if you want to draw OpenGL geometry to another render target don't forget to activate it again. Activating a render target will automatically deactivate the previously active context (if any).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">active</td><td>True to activate, false to deactivate</td></tr>
@@ -1541,7 +1541,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Activate or deactivate the render target for rendering. </p>
-<p >This function makes the render target's context current for future OpenGL rendering operations (so you shouldn't care about it if you're not doing direct OpenGL stuff). A render target's context is active only on the current thread, if you want to make it active on another thread you have to deactivate it on the previous thread first if it was active. Only one context can be current in a thread, so if you want to draw OpenGL geometry to another render target don't forget to activate it again. Activating a render target will automatically deactivate the previously active context (if any).</p>
+<p >This function makes the render target's context current for future OpenGL rendering operations (so you shouldn't care about it if you're not doing direct OpenGL stuff). <a class="el" href="class_a.html">A</a> render target's context is active only on the current thread, if you want to make it active on another thread you have to deactivate it on the previous thread first if it was active. Only one context can be current in a thread, so if you want to draw OpenGL geometry to another render target don't forget to activate it again. Activating a render target will automatically deactivate the previously active context (if any).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">active</td><td>True to activate, false to deactivate</td></tr>

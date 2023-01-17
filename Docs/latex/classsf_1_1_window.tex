@@ -158,7 +158,7 @@ virtual void \mbox{\hyperlink{classsf_1_1_window_a10f567a387da7b49f417f73321fcf6
 
 It defines an OS window that is able to receive an Open\+GL rendering.
 
-A \mbox{\hyperlink{classsf_1_1_window}{sf\+::\+Window}} can create its own new window, or be embedded into an already existing control using the create(handle) function. This can be useful for embedding an Open\+GL rendering area into a view which is part of a bigger \mbox{\hyperlink{namespace_g_u_i}{GUI}} with existing windows, controls, etc. It can also serve as embedding an Open\+GL rendering area into a window created by another (probably richer) \mbox{\hyperlink{namespace_g_u_i}{GUI}} library like Qt or wx\+Widgets.
+\mbox{\hyperlink{class_a}{A}} \mbox{\hyperlink{classsf_1_1_window}{sf\+::\+Window}} can create its own new window, or be embedded into an already existing control using the create(handle) function. This can be useful for embedding an Open\+GL rendering area into a view which is part of a bigger \mbox{\hyperlink{namespace_g_u_i}{GUI}} with existing windows, controls, etc. It can also serve as embedding an Open\+GL rendering area into a window created by another (probably richer) \mbox{\hyperlink{namespace_g_u_i}{GUI}} library like Qt or wx\+Widgets.
 
 The \mbox{\hyperlink{classsf_1_1_window}{sf\+::\+Window}} class provides a simple interface for manipulating the window\+: move, resize, show/hide, control mouse cursor, etc. It also provides event handling through its \mbox{\hyperlink{classsf_1_1_window_a338e996585faf82e93069858e3b531b7}{poll\+Event()}} and \mbox{\hyperlink{classsf_1_1_window_aaf02ab64fbc1d374eef3696df54137bc}{wait\+Event()}} functions.
 
@@ -824,7 +824,7 @@ At any given time, only one window may have the input focus to receive input eve
 
 Activate or deactivate the window as the current target for Open\+GL rendering. 
 
-A window is active only on the current thread, if you want to make it active on another thread you have to deactivate it on the previous thread first if it was active. Only one window can be active on a thread at a time, thus the window previously active (if any) automatically gets deactivated. This is not to be confused with \mbox{\hyperlink{classsf_1_1_window_a58cf7fa1775e8e7542032e3ecfa83b49}{request\+Focus()}}.
+\mbox{\hyperlink{class_a}{A}} window is active only on the current thread, if you want to make it active on another thread you have to deactivate it on the previous thread first if it was active. Only one window can be active on a thread at a time, thus the window previously active (if any) automatically gets deactivated. This is not to be confused with \mbox{\hyperlink{classsf_1_1_window_a58cf7fa1775e8e7542032e3ecfa83b49}{request\+Focus()}}.
 
 
 \begin{DoxyParams}{Parameters}
@@ -844,7 +844,7 @@ True if operation was successful, false otherwise
 
 Activate or deactivate the window as the current target for Open\+GL rendering. 
 
-A window is active only on the current thread, if you want to make it active on another thread you have to deactivate it on the previous thread first if it was active. Only one window can be active on a thread at a time, thus the window previously active (if any) automatically gets deactivated. This is not to be confused with \mbox{\hyperlink{classsf_1_1_window_a58cf7fa1775e8e7542032e3ecfa83b49}{request\+Focus()}}.
+\mbox{\hyperlink{class_a}{A}} window is active only on the current thread, if you want to make it active on another thread you have to deactivate it on the previous thread first if it was active. Only one window can be active on a thread at a time, thus the window previously active (if any) automatically gets deactivated. This is not to be confused with \mbox{\hyperlink{classsf_1_1_window_a58cf7fa1775e8e7542032e3ecfa83b49}{request\+Focus()}}.
 
 
 \begin{DoxyParams}{Parameters}

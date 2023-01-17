@@ -2,7 +2,7 @@
 \label{_week2-_demo3-main_8cpp}\index{Week2/Week2-\/Demo3/Source/Week2-\/Demo3-\/main.cpp@{Week2/Week2-\/Demo3/Source/Week2-\/Demo3-\/main.cpp}}
 
 
-change \mbox{\hyperlink{namespace_music}{Music}} parameters, create your own image and move the player with the mouse Demo m\+Music.\+set\+Position(0, 0, 0); //!  
+\mbox{\hyperlink{class_texture_holder}{Texture\+Holder}} We must find the right data structure to store the textures.  
 
 
 {\ttfamily \#include \char`\"{}Game.\+hpp\char`\"{}}\newline
@@ -14,33 +14,22 @@ int \mbox{\hyperlink{_week2-_demo3-main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{
 
 
 \doxysubsection{Detailed Description}
-change \mbox{\hyperlink{namespace_music}{Music}} parameters, create your own image and move the player with the mouse Demo m\+Music.\+set\+Position(0, 0, 0); //! 
+\mbox{\hyperlink{class_texture_holder}{Texture\+Holder}} We must find the right data structure to store the textures. 
 
+We need to choose an STL container that does not perform unnecessary copies. std\+::vector is the wrong choice, since inserting new textures can trigger a reallocation of the dynamic array and the copying of all textures. Not only is this slow, but also all references and pointers to the textures are invalidated. We can access the textures by an enum, so the associative container std\+::map looks like the perfect choice.
 
-\begin{DoxyParams}{Parameters}
-{\em set\+Position} & change its 3D position -\/ the default position is (0,0,0) m\+Music.\+set\+Pitch(2); //!\\
-\hline
-{\em set\+Pitch} & increase the pitch -\/ pitch represents the perceived fundamental frequency of a sound such as modifying the playing speed of the sound m\+Music.\+set\+Volume(50); //!\\
-\hline
-{\em set\+Volume} & reduce the volume m\+Music.\+set\+Attenuation(100); //!\\
-\hline
-{\em set\+Attenuation} & an attenuation value of 100 will make the sound fade out very quicky as it gets further from the listener -\/ default value is 1 m\+Music.\+set\+Loop(true); //!\\
-\hline
-{\em set\+Loop} & make it loop\\
-\hline
-\end{DoxyParams}
-Move the player with the mouse\+: if (sf\+::\+Mouse\+::is\+Button\+Pressed(sf\+::\+Mouse\+::\+Left)) \{ \mbox{\hyperlink{namespacesf_a0eed58bf66694ebbc55f72ca7de840d9}{sf\+::\+Vector2i}} mouse\+Position = sf\+::\+Mouse\+::get\+Position(m\+Window); m\+Player.\+set\+Position((float)mouse\+Position.\+x, (float)mouse\+Position.\+y); \}
+\begin{DoxyNote}{Note}
+\+: m\+Background\+Texture.\+set\+Repeated(true); Repeating is involved when using texture coordinates outside the texture rectangle \mbox{[}0, 0, width, height\mbox{]}. In this case, if repeat mode is enabled, the whole texture will be repeated as many times as needed to reach the coordinate (for example, if the X texture coordinate is 3 $\ast$ width, the texture will be repeated 3 times). If repeat mode is disabled, the \char`\"{}extra space\char`\"{} will instead be filled with border pixels.
 
-You could also create your own image m\+Icon.\+create(20, 20, sf\+::\+Color\+::\+Red); \mbox{\hyperlink{classsf_1_1_color}{sf\+::\+Color}} color = m\+Icon.\+get\+Pixel(0, 0); color.\+a = 0; //make the top-\/left pixel transparent color.\+r = 0; //set the r = 0 (rgb) from the color m\+Icon.\+set\+Pixel(0, 0, color);
+\+: landscape.\+set\+Texture\+Rect(sf\+::\+Int\+Rect(0, 0, 1200, 800)); Set the sub-\/rectangle of the texture that the sprite will display.
+\end{DoxyNote}
+The texture rect is useful when you don\textquotesingle{}t want to display the whole texture, but rather a part of it. By default, the texture rect covers the entire texture.
 
-\begin{DoxyAttention}{Attention}
-\+: the sf\+::\+Texture\+::load\+From\+X() functions are just a shortcut for combined sf\+::\+Image\+::load\+From\+X() and \mbox{\hyperlink{classsf_1_1_texture_abec4567ad9856a3596dc74803f26fba2}{sf\+::\+Texture\+::load\+From\+Image()}} calls.
-\end{DoxyAttention}
 \begin{DoxyAuthor}{Author}
 Hooman Salamat 
 \end{DoxyAuthor}
 \begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000003}{Bug}}]No known bugs. \end{DoxyRefDesc}
+\item[\mbox{\hyperlink{bug__bug000013}{Bug}}]No known bugs. \end{DoxyRefDesc}
 
 
 Definition in file \mbox{\hyperlink{_week2-_demo3-main_8cpp_source}{Week2-\/\+Demo3-\/main.\+cpp}}.
@@ -56,5 +45,5 @@ Definition in file \mbox{\hyperlink{_week2-_demo3-main_8cpp_source}{Week2-\/\+De
 
 
 
-Definition at line \mbox{\hyperlink{_week2-_demo3-main_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{_week2-_demo3-main_8cpp_source}{Week2-\/\+Demo3-\/main.\+cpp}}.
+Definition at line \mbox{\hyperlink{_week2-_demo3-main_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{_week2-_demo3-main_8cpp_source}{Week2-\/\+Demo3-\/main.\+cpp}}.
 

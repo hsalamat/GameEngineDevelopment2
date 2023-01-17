@@ -71,5 +71,7 @@ var class_sprite_node =
     [ "SpriteNode", "class_sprite_node.html#ad72b769f4c57e5d77a8d6ba223f487b0", null ],
     [ "SpriteNode", "class_sprite_node.html#ac12927969dcfd6f02da372e7e22c2af1", null ],
     [ "SpriteNode", "class_sprite_node.html#ad72b769f4c57e5d77a8d6ba223f487b0", null ],
+    [ "SpriteNode", "class_sprite_node.html#ac12927969dcfd6f02da372e7e22c2af1", null ],
+    [ "SpriteNode", "class_sprite_node.html#ad72b769f4c57e5d77a8d6ba223f487b0", null ],
     [ "SpriteNode", "class_sprite_node.html#ac12927969dcfd6f02da372e7e22c2af1", null ]
 ];

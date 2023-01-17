@@ -1,5 +1,8 @@
 #include "Game.hpp"
 
+#pragma region Step 2
+const float Game::PlayerSpeed = 100.f;
+#pragma endregion
 
 Game::Game()
 	: mWindow(sf::VideoMode(800, 600), "SFML Application", sf::Style::Close)
@@ -10,7 +13,6 @@ Game::Game()
 	, mMusic()
 	, mFont()
 	, mIcon()
-#pragma region step3
 	, mIsMovingUp(false)
 	, mIsMovingDown(false)
 	, mIsMovingRight(false)
@@ -25,12 +27,16 @@ Game::Game()
 
 	mPlayer.setTexture(mAirplaneTexture);
 	mPlayer.setPosition(100.f, 100.f);
+	mPlayer.setOrigin(20.f, 20.f);
 
+	//mIcon.loadFromFile("Media/Textures/icon.png");
+	//You could also create your own image
+	mIcon.create(20, 20, sf::Color::Red);
+	sf::Color color = mIcon.getPixel(0, 0);
+	//color.a = 0; //make the top-left pixel transparent
+	color.r = 0;   //set the r = 0 (rgb) from the color
+	mIcon.setPixel(0, 0, color);
 
-#pragma endregion
-
-
-	mIcon.loadFromFile("Media/Textures/icon.png");
 	mWindow.setIcon(mIcon.getSize().x, mIcon.getSize().y, mIcon.getPixelsPtr());
 
 	//Load a sprite to display
@@ -50,6 +56,13 @@ Game::Game()
 
 
 	mMusic.openFromFile("Media/Sound/nice_music.ogg");
+
+	//! change Music parameters
+	mMusic.setPosition(0, 0, 0); //! @param setPosition: change its 3D position - the default position is (0,0,0)
+	mMusic.setPitch(2); //! @param setPitch: increase the pitch - pitch represents the perceived fundamental frequency of a sound such as modifying the playing speed of the sound
+	mMusic.setVolume(50); //! @param setVolume: reduce the volume
+	mMusic.setAttenuation(100); //! @param setAttenuation: an attenuation value of 100 will make the sound fade out very quicky as it gets further from the listener - default value is 1
+	mMusic.setLoop(true); //! @param setLoop: make it loop
 	//Play the music
 	//mMusic.play();
 
@@ -60,12 +73,17 @@ Game::Game()
 void Game::run()
 {
 
+#pragma region Step 4
+
+	sf::Clock clock;
 	while (mWindow.isOpen())
 	{
+		sf::Time deltaTime = clock.restart();
 		processEvents();
-		update();
+		update(deltaTime);
 		render();
 	}
+#pragma endregion
 }
 
 void Game::processEvents()
@@ -75,11 +93,6 @@ void Game::processEvents()
 	{
 		switch (event.type)
 		{
-
-#pragma region step 6 
-
-
-
 		case sf::Event::KeyPressed:
 			handlePlayerInput(event.key.code, true);
 			break;
@@ -88,35 +101,36 @@ void Game::processEvents()
 			handlePlayerInput(event.key.code, false);
 			break;
 
-#pragma endregion
-
 		case sf::Event::Closed:
 			mWindow.close();
 			break;
 		}
 	}
+
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+		sf::Vector2i mousePosition = sf::Mouse::getPosition(mWindow);
+		mPlayer.setPosition((float)mousePosition.x, (float)mousePosition.y);
+	}
 }
 
-void Game::update()
+
+
+#pragma region step 3
+void Game::update(sf::Time deltaTime)
 {
-#pragma region step 5
-
-
-
 	sf::Vector2f movement(0.f, 0.f);
 	if (mIsMovingUp)
-		movement.y -= 1.f;
+		movement.y -= PlayerSpeed;
 	if (mIsMovingDown)
-		movement.y += 1.f;
+		movement.y += PlayerSpeed;
 	if (mIsMovingLeft)
-		movement.x -= 1.f;
+		movement.x -= PlayerSpeed;
 	if (mIsMovingRight)
-		movement.x += 1.f;
-
-	mPlayer.move(movement);
+		movement.x += PlayerSpeed;
+	mPlayer.move(movement * deltaTime.asSeconds());
+}
 
 #pragma endregion
-}
 
 void Game::render()
 {
@@ -130,9 +144,6 @@ void Game::render()
 	mWindow.display();
 }
 
-#pragma region step4
-
-
 
 void Game::handlePlayerInput(sf::Keyboard::Key key, bool isPressed)
 {
@@ -144,6 +155,5 @@ void Game::handlePlayerInput(sf::Keyboard::Key key, bool isPressed)
 		mIsMovingLeft = isPressed;
 	else if (key == sf::Keyboard::D)
 		mIsMovingRight = isPressed;
-}
 
-#pragma endregion
+}

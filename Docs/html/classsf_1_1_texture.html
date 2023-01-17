@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: sf::Texture Class Reference</title>
+<title>GAME3015: sf::Texture Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">GAME3015
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -331,10 +331,10 @@ Friends</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p ><a class="el" href="classsf_1_1_image.html" title="Class for loading, manipulating and saving images.">Image</a> living on the graphics card that can be used for drawing. </p>
 <p ><a class="el" href="classsf_1_1_texture.html" title="Image living on the graphics card that can be used for drawing.">sf::Texture</a> stores pixels that can be drawn, with a sprite for example.</p>
-<p >A texture lives in the graphics card memory, therefore it is very fast to draw a texture to a render target, or copy a render target to a texture (the graphics card can access both directly).</p>
-<p >Being stored in the graphics card memory has some drawbacks. A texture cannot be manipulated as freely as a <a class="el" href="classsf_1_1_image.html" title="Class for loading, manipulating and saving images.">sf::Image</a>, you need to prepare the pixels first and then upload them to the texture in a single operation (see <a class="el" href="classsf_1_1_texture.html#ae4eab5c6781316840b0c50ad08370963" title="Update the whole texture from an array of pixels.">Texture::update</a>).</p>
+<p ><a class="el" href="class_a.html">A</a> texture lives in the graphics card memory, therefore it is very fast to draw a texture to a render target, or copy a render target to a texture (the graphics card can access both directly).</p>
+<p >Being stored in the graphics card memory has some drawbacks. <a class="el" href="class_a.html">A</a> texture cannot be manipulated as freely as a <a class="el" href="classsf_1_1_image.html" title="Class for loading, manipulating and saving images.">sf::Image</a>, you need to prepare the pixels first and then upload them to the texture in a single operation (see <a class="el" href="classsf_1_1_texture.html#ae4eab5c6781316840b0c50ad08370963" title="Update the whole texture from an array of pixels.">Texture::update</a>).</p>
 <p ><a class="el" href="classsf_1_1_texture.html" title="Image living on the graphics card that can be used for drawing.">sf::Texture</a> makes it easy to convert from/to <a class="el" href="classsf_1_1_image.html" title="Class for loading, manipulating and saving images.">sf::Image</a>, but keep in mind that these calls require transfers between the graphics card and the central memory, therefore they are slow operations.</p>
-<p >A texture can be loaded from an image, but also directly from a file/memory/stream. The necessary shortcuts are defined so that you don't need an image first for the most common cases. However, if you want to perform some modifications on the pixels before creating the final texture, you can load your file to a <a class="el" href="classsf_1_1_image.html" title="Class for loading, manipulating and saving images.">sf::Image</a>, do whatever you need with the pixels, and then call <a class="el" href="classsf_1_1_texture.html#abec4567ad9856a3596dc74803f26fba2" title="Load the texture from an image.">Texture::loadFromImage</a>.</p>
+<p ><a class="el" href="class_a.html">A</a> texture can be loaded from an image, but also directly from a file/memory/stream. The necessary shortcuts are defined so that you don't need an image first for the most common cases. However, if you want to perform some modifications on the pixels before creating the final texture, you can load your file to a <a class="el" href="classsf_1_1_image.html" title="Class for loading, manipulating and saving images.">sf::Image</a>, do whatever you need with the pixels, and then call <a class="el" href="classsf_1_1_texture.html#abec4567ad9856a3596dc74803f26fba2" title="Load the texture from an image.">Texture::loadFromImage</a>.</p>
 <p >Since they live in the graphics card memory, the pixels of a texture cannot be accessed without a slow copy first. And they cannot be accessed individually. Therefore, if you need to read the texture's pixels (like for pixel-perfect collisions), it is recommended to store the collision information separately, for example in an array of booleans.</p>
 <p >Like <a class="el" href="classsf_1_1_image.html" title="Class for loading, manipulating and saving images.">sf::Image</a>, <a class="el" href="classsf_1_1_texture.html" title="Image living on the graphics card that can be used for drawing.">sf::Texture</a> can handle a unique internal representation of pixels, which is RGBA 32 bits. This means that a pixel must be composed of 8 bits red, green, blue and alpha channels &ndash; just like a <a class="el" href="classsf_1_1_color.html" title="Utility class for manipulating RGBA colors.">sf::Color</a>.</p>
 <p >Usage example: </p><div class="fragment"><div class="line"><span class="comment">// This example shows the most common use of sf::Texture:</span></div>
@@ -2092,7 +2092,7 @@ Friends</h2></td></tr>
 <p >This function does nothing if <em>pixels</em> is null or if the texture was not previously created.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pixels</td><td>Array of pixels to copy to the texture </td></tr>
+    <tr><td class="paramname">pixels</td><td><a class="el" href="class_array.html">Array</a> of pixels to copy to the texture </td></tr>
   </table>
   </dd>
 </dl>
@@ -2121,7 +2121,7 @@ Friends</h2></td></tr>
 <p >This function does nothing if <em>pixels</em> is null or if the texture was not previously created.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pixels</td><td>Array of pixels to copy to the texture </td></tr>
+    <tr><td class="paramname">pixels</td><td><a class="el" href="class_array.html">Array</a> of pixels to copy to the texture </td></tr>
   </table>
   </dd>
 </dl>
@@ -2178,7 +2178,7 @@ Friends</h2></td></tr>
 <p >This function does nothing if <em>pixels</em> is null or if the texture was not previously created.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pixels</td><td>Array of pixels to copy to the texture </td></tr>
+    <tr><td class="paramname">pixels</td><td><a class="el" href="class_array.html">Array</a> of pixels to copy to the texture </td></tr>
     <tr><td class="paramname">width</td><td>Width of the pixel region contained in <em>pixels</em> </td></tr>
     <tr><td class="paramname">height</td><td>Height of the pixel region contained in <em>pixels</em> </td></tr>
     <tr><td class="paramname">x</td><td>X offset in the texture where to copy the source pixels </td></tr>
@@ -2239,7 +2239,7 @@ Friends</h2></td></tr>
 <p >This function does nothing if <em>pixels</em> is null or if the texture was not previously created.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pixels</td><td>Array of pixels to copy to the texture </td></tr>
+    <tr><td class="paramname">pixels</td><td><a class="el" href="class_array.html">Array</a> of pixels to copy to the texture </td></tr>
     <tr><td class="paramname">width</td><td>Width of the pixel region contained in <em>pixels</em> </td></tr>
     <tr><td class="paramname">height</td><td>Height of the pixel region contained in <em>pixels</em> </td></tr>
     <tr><td class="paramname">x</td><td>X offset in the texture where to copy the source pixels </td></tr>

@@ -11,8 +11,8 @@ var searchData=
   ['blendmultiply_8',['BlendMultiply',['../namespacesf.html#ad8622674d06322d447de6ea0c95c83b4',1,'sf']]],
   ['blendnone_9',['BlendNone',['../namespacesf.html#aaa5511bd6fcf3573d61945b6d70a20ab',1,'sf']]],
   ['blue_10',['Blue',['../classsf_1_1_color.html#a6d901f24edce210decaeac1ccfdb28a9',1,'sf::Color']]],
-  ['bounds_11',['bounds',['../classsf_1_1_glyph.html#a6f3c892093167914adc31e52e5923f4b',1,'sf::Glyph']]],
-  ['bounds_12',['Bounds',['../struct_submesh_geometry.html#ac79bad539c71ede2aa15b2527cacaa97',1,'SubmeshGeometry']]],
+  ['bounds_11',['Bounds',['../struct_submesh_geometry.html#ac79bad539c71ede2aa15b2527cacaa97',1,'SubmeshGeometry']]],
+  ['bounds_12',['bounds',['../classsf_1_1_glyph.html#a6f3c892093167914adc31e52e5923f4b',1,'sf::Glyph']]],
   ['broadcast_13',['Broadcast',['../classsf_1_1_ip_address.html#aefb978156901e01e2d9642815be10abe',1,'sf::IpAddress']]],
   ['button_14',['button',['../structsf_1_1_event_1_1_mouse_button_event.html#a5f53725aa7b647705486eeb95f723024',1,'sf::Event::MouseButtonEvent::button()'],['../structsf_1_1_event_1_1_joystick_button_event.html#a6412e698a2f7904c5aa875a0d1b34da4',1,'sf::Event::JoystickButtonEvent::button()'],['../_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp.html#a92decbf8642d08b3993016451fdad8df',1,'button():&#160;Win32.cpp'],['../_week14_2_s_f_m_l-2_85_81_2examples_2win32_2_win32_8cpp.html#a92decbf8642d08b3993016451fdad8df',1,'button():&#160;Win32.cpp']]]
 ];

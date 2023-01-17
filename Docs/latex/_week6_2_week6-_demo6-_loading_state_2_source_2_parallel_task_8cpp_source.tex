@@ -1,0 +1,82 @@
+\hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source}{}\doxysection{Parallel\+Task.\+cpp}
+\label{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source}\index{Week6/Week6-\/Demo6-\/LoadingState/Source/ParallelTask.cpp@{Week6/Week6-\/Demo6-\/LoadingState/Source/ParallelTask.cpp}}
+\mbox{\hyperlink{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma region step 7}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <ParallelTask.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00005}00005 \mbox{\hyperlink{class_parallel_task_a32cb3c361f7b4373f941f0993940576f}{ParallelTask::ParallelTask}}()}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00006}00006 : }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00007}00007     mThread(\&\mbox{\hyperlink{class_parallel_task}{ParallelTask}}::runTask, this), }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00008}00008     mFinished(false)}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00009}00009 \{}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00010}00010     \textcolor{comment}{//mElapsedTime.restart();}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00011}00011     start = std::chrono::steady\_clock::now();}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00012}00012 \}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00014}00014 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_parallel_task_ad1e7ba9134cc7961ab178a2f47cf54be}{ParallelTask::execute}}()}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00015}00015 \{}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00016}00016     mFinished = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00017}00017     \textcolor{comment}{//mElapsedTime.restart();}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00018}00018     \textcolor{comment}{//mThread.launch();}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00019}00019 \}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00021}00021 \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_parallel_task_a1a67f547aa382fac2087184b2eb19148}{ParallelTask::isFinished}}()}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00022}00022 \{}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00023}00023     \textcolor{comment}{//sf::Lock lock(mMutex);}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00024}00024     std::lock\_guard<std::mutex> guard(mMutex);}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00025}00025     \textcolor{keywordflow}{return} mFinished;}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00026}00026 \}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00028}00028 \textcolor{keywordtype}{float} \mbox{\hyperlink{class_parallel_task_ada45e4db1aa8a89f20ab0b8662c6dabc}{ParallelTask::getCompletion}}()}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00029}00029 \{}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00030}00030     \textcolor{comment}{//sf::Lock lock(mMutex);}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00031}00031     std::lock\_guard<std::mutex> guard(mMutex);}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00033}00033     \textcolor{comment}{// 100\% at 10 seconds of elapsed time}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00034}00034     \textcolor{comment}{//return mElapsedTime.getElapsedTime().asSeconds() / 10.f;}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00035}00035     end = std::chrono::steady\_clock::now();}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00036}00036     mElapsedTime = end -\/ start;}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00037}00037     \textcolor{keywordflow}{return} mElapsedTime.count() / 10.f;}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00038}00038 \}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00040}00040 \textcolor{keywordtype}{void} ParallelTask::runTask()}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00041}00041 \{}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00042}00042     \textcolor{comment}{// Dummy task -\/ stall 10 seconds}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00043}00043     std::cout << \textcolor{stringliteral}{"{}Run task started"{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00044}00044     }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00045}00045     \textcolor{comment}{//the following link and while loop basically does the same thing}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00046}00046     std::this\_thread::sleep\_for(std::chrono::seconds(10));}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00048}00048     \textcolor{keywordtype}{bool} ended = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00049}00049     \textcolor{keywordflow}{while} (!ended)}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00050}00050     \{}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00051}00051         \textcolor{comment}{//sf::Lock lock(mMutex); // Protect the clock }}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00052}00052         std::lock\_guard<std::mutex> guard(mMutex);}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00053}00053         \textcolor{comment}{//if (mElapsedTime.getElapsedTime().asSeconds() >= 10.f)}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00054}00054         \textcolor{keywordflow}{if}((std::chrono::steady\_clock::now() -\/ start).count() > 10.0f)}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00055}00055             ended = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00056}00056     \}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00058}00058     \{ \textcolor{comment}{// mFinished may be accessed from multiple threads, protect it}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00059}00059         \textcolor{comment}{//sf::Lock lock(mMutex);}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00060}00060         std::lock\_guard<std::mutex> guard(mMutex);}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00061}00061         mFinished = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00062}00062     \}   }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00065}00065     end = std::chrono::steady\_clock::now();}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00066}00066     mElapsedTime = end -\/ start;}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00067}00067     std::cout << \textcolor{stringliteral}{"{}Elapsed time: "{}} << mElapsedTime.count() << \textcolor{stringliteral}{"{}s\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00068}00068     std::cout << \textcolor{stringliteral}{"{}Run task Ended"{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00070}00070     \textcolor{comment}{//Separates the thread of execution from the thread object, }}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00071}00071     \textcolor{comment}{//allowing execution to continue independently. }}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00072}00072     \textcolor{comment}{//Any allocated resources will be freed once the thread exits.}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00073}00073     mThread.detach();}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00074}00074 \}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_source_2_parallel_task_8cpp_source_l00076}00076 \textcolor{preprocessor}{\#pragma endregion}}
+
+\end{DoxyCode}

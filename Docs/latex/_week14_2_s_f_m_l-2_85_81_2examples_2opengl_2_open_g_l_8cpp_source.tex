@@ -33,7 +33,7 @@
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00037}00037         backgroundTexture.\mbox{\hyperlink{classsf_1_1_texture_af8a38872c50a33ff074bd0865db19dd4}{setSrgb}}(sRgb);}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00038}00038         \textcolor{keywordflow}{if} (!backgroundTexture.\mbox{\hyperlink{classsf_1_1_texture_a8e1b56eabfe33e2e0e1cb03712c7fcc7}{loadFromFile}}(\textcolor{stringliteral}{"{}resources/background.jpg"{}}))}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00039}00039             \textcolor{keywordflow}{return} EXIT\_FAILURE;}
-\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00040}00040         \mbox{\hyperlink{classsf_1_1_sprite}{sf::Sprite}} background(backgroundTexture);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00040}00040         \mbox{\hyperlink{classsf_1_1_sprite}{sf::Sprite}} \mbox{\hyperlink{enum_demo1_8cpp_ac6a70fa2f77cc3032c1eea5a4c725cffa1667f13aa992e373547cf10fc8c61590}{background}}(backgroundTexture);}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00041}00041 }
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00042}00042         \textcolor{comment}{// Create some text to draw on top of our OpenGL object}}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00043}00043         \mbox{\hyperlink{classsf_1_1_font}{sf::Font}} font;}
@@ -211,7 +211,7 @@
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00215}00215 }
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00216}00216             \textcolor{comment}{// Draw the background}}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00217}00217             window.\mbox{\hyperlink{classsf_1_1_render_target_a8d1998464ccc54e789aaf990242b47f7}{pushGLStates}}();}
-\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00218}00218             window.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(background);}
+\DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00218}00218             window.\mbox{\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}}(\mbox{\hyperlink{enum_demo1_8cpp_ac6a70fa2f77cc3032c1eea5a4c725cffa1667f13aa992e373547cf10fc8c61590}{background}});}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00219}00219             window.\mbox{\hyperlink{classsf_1_1_render_target_ad5a98401113df931ddcd54c080f7aa8e}{popGLStates}}();}
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00220}00220 }
 \DoxyCodeLine{\Hypertarget{_week14_2_s_f_m_l-2_85_81_2examples_2opengl_2_open_g_l_8cpp_source_l00221}00221             \textcolor{comment}{// Make the window the active window for OpenGL calls}}

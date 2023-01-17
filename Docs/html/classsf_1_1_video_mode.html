@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: sf::VideoMode Class Reference</title>
+<title>GAME3015: sf::VideoMode Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">GAME3015
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -197,11 +197,11 @@ Related Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p ><a class="el" href="classsf_1_1_video_mode.html" title="VideoMode defines a video mode (width, height, bpp)">VideoMode</a> defines a video mode (width, height, bpp) </p>
-<p >A video mode is defined by a width and a height (in pixels) and a depth (in bits per pixel).</p>
+<p ><a class="el" href="class_a.html">A</a> video mode is defined by a width and a height (in pixels) and a depth (in bits per pixel).</p>
 <p >Video modes are used to setup windows (<a class="el" href="classsf_1_1_window.html" title="Window that serves as a target for OpenGL rendering.">sf::Window</a>) at creation time.</p>
 <p >The main usage of video modes is for fullscreen mode: indeed you must use one of the valid video modes allowed by the OS (which are defined by what the monitor and the graphics card support), otherwise your window creation will just fail.</p>
 <p ><a class="el" href="classsf_1_1_video_mode.html" title="VideoMode defines a video mode (width, height, bpp)">sf::VideoMode</a> provides a static function for retrieving the list of all the video modes supported by the system: <a class="el" href="classsf_1_1_video_mode.html#a0f99e67ef2b51fbdc335d9991232609e" title="Retrieve all the video modes supported in fullscreen mode.">getFullscreenModes()</a>.</p>
-<p >A custom video mode can also be checked directly for fullscreen compatibility with its <a class="el" href="classsf_1_1_video_mode.html#ad5e04c044b0925523c75ecb173d2129a" title="Tell whether or not the video mode is valid.">isValid()</a> function.</p>
+<p ><a class="el" href="class_a.html">A</a> custom video mode can also be checked directly for fullscreen compatibility with its <a class="el" href="classsf_1_1_video_mode.html#ad5e04c044b0925523c75ecb173d2129a" title="Tell whether or not the video mode is valid.">isValid()</a> function.</p>
 <p >Additionally, <a class="el" href="classsf_1_1_video_mode.html" title="VideoMode defines a video mode (width, height, bpp)">sf::VideoMode</a> provides a static function to get the mode currently used by the desktop: <a class="el" href="classsf_1_1_video_mode.html#ac1be160a4342e6eafb2cb0e8c9b18d44" title="Get the current desktop video mode.">getDesktopMode()</a>. This allows to build windows with the same size or pixel depth as the current resolution.</p>
 <p >Usage example: </p><div class="fragment"><div class="line"><span class="comment">// Display the list of all the video modes available for fullscreen</span></div>
 <div class="line">std::vector&lt;sf::VideoMode&gt; modes = <a class="code hl_function" href="classsf_1_1_video_mode.html#a0f99e67ef2b51fbdc335d9991232609e">sf::VideoMode::getFullscreenModes</a>();</div>
@@ -435,7 +435,7 @@ Related Functions</h2></td></tr>
 
 <p>Retrieve all the video modes supported in fullscreen mode. </p>
 <p >When creating a fullscreen window, the video mode is restricted to be compatible with what the graphics driver and monitor support. This function returns the complete list of all video modes that can be used in fullscreen mode. The returned array is sorted from best to worst, so that the first element will always give the best mode (higher width, height and bits-per-pixel).</p>
-<dl class="section return"><dt>Returns</dt><dd>Array containing all the supported fullscreen modes </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_array.html">Array</a> containing all the supported fullscreen modes </dd></dl>
 
 </div>
 </div>
@@ -464,7 +464,7 @@ Related Functions</h2></td></tr>
 
 <p>Retrieve all the video modes supported in fullscreen mode. </p>
 <p >When creating a fullscreen window, the video mode is restricted to be compatible with what the graphics driver and monitor support. This function returns the complete list of all video modes that can be used in fullscreen mode. The returned array is sorted from best to worst, so that the first element will always give the best mode (higher width, height and bits-per-pixel).</p>
-<dl class="section return"><dt>Returns</dt><dd>Array containing all the supported fullscreen modes </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_array.html">Array</a> containing all the supported fullscreen modes </dd></dl>
 
 </div>
 </div>

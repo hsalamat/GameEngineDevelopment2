@@ -1,0 +1,27 @@
+\hypertarget{template_demo1_8cpp_source}{}\doxysection{template\+Demo1.\+cpp}
+\label{template_demo1_8cpp_source}\index{Week2/cplusplusdemo/templateDemo1.cpp@{Week2/cplusplusdemo/templateDemo1.cpp}}
+\mbox{\hyperlink{template_demo1_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{template_demo1_8cpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{template_demo1_8cpp_source_l00012}00012 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{template_demo1_8cpp_source_l00013}00013 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{\Hypertarget{template_demo1_8cpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{template_demo1_8cpp_source_l00015}00015 \textcolor{comment}{// One function works for all data types.  This would work}}
+\DoxyCodeLine{\Hypertarget{template_demo1_8cpp_source_l00016}00016 \textcolor{comment}{// even for user defined types if operator '>' is overloaded}}
+\DoxyCodeLine{\Hypertarget{template_demo1_8cpp_source_l00017}\mbox{\hyperlink{template_demo1_8cpp_a2764960affa910585f916efc904bdc39}{00017}} \textcolor{keyword}{template} <\textcolor{keyword}{typename} T> T \mbox{\hyperlink{template_demo1_8cpp_a2764960affa910585f916efc904bdc39}{myMax}}(T x, T y)}
+\DoxyCodeLine{\Hypertarget{template_demo1_8cpp_source_l00018}00018 \{}
+\DoxyCodeLine{\Hypertarget{template_demo1_8cpp_source_l00019}00019     \textcolor{keywordflow}{return} (x > y) ? x : y;}
+\DoxyCodeLine{\Hypertarget{template_demo1_8cpp_source_l00020}00020 \}}
+\DoxyCodeLine{\Hypertarget{template_demo1_8cpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{template_demo1_8cpp_source_l00022}\mbox{\hyperlink{template_demo1_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00022}} \textcolor{keywordtype}{int} \mbox{\hyperlink{template_demo1_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{template_demo1_8cpp_source_l00023}00023 \{}
+\DoxyCodeLine{\Hypertarget{template_demo1_8cpp_source_l00024}00024     cout << myMax<int>(3, 7) << endl; \textcolor{comment}{// Call myMax for int}}
+\DoxyCodeLine{\Hypertarget{template_demo1_8cpp_source_l00025}00025     cout << myMax<double>(3.0, 7.0)}
+\DoxyCodeLine{\Hypertarget{template_demo1_8cpp_source_l00026}00026         << endl; \textcolor{comment}{// call myMax for double}}
+\DoxyCodeLine{\Hypertarget{template_demo1_8cpp_source_l00027}00027     cout << myMax<char>(\textcolor{charliteral}{'g'}, \textcolor{charliteral}{'e'})}
+\DoxyCodeLine{\Hypertarget{template_demo1_8cpp_source_l00028}00028         << endl; \textcolor{comment}{// call myMax for char}}
+\DoxyCodeLine{\Hypertarget{template_demo1_8cpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{template_demo1_8cpp_source_l00030}00030     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{template_demo1_8cpp_source_l00031}00031 \}}
+
+\end{DoxyCode}

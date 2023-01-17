@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: sf::Window Class Reference</title>
+<title>GAME3015: sf::Window Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">GAME3015
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -320,7 +320,7 @@ Protected Member Functions</h2></td></tr>
 <div class="textblock"><p ><a class="el" href="classsf_1_1_window.html" title="Window that serves as a target for OpenGL rendering.">Window</a> that serves as a target for OpenGL rendering. </p>
 <p ><a class="el" href="classsf_1_1_window.html" title="Window that serves as a target for OpenGL rendering.">sf::Window</a> is the main class of the <a class="el" href="classsf_1_1_window.html" title="Window that serves as a target for OpenGL rendering.">Window</a> module.</p>
 <p >It defines an OS window that is able to receive an OpenGL rendering.</p>
-<p >A <a class="el" href="classsf_1_1_window.html" title="Window that serves as a target for OpenGL rendering.">sf::Window</a> can create its own new window, or be embedded into an already existing control using the create(handle) function. This can be useful for embedding an OpenGL rendering area into a view which is part of a bigger <a class="el" href="namespace_g_u_i.html">GUI</a> with existing windows, controls, etc. It can also serve as embedding an OpenGL rendering area into a window created by another (probably richer) <a class="el" href="namespace_g_u_i.html">GUI</a> library like Qt or wxWidgets.</p>
+<p ><a class="el" href="class_a.html">A</a> <a class="el" href="classsf_1_1_window.html" title="Window that serves as a target for OpenGL rendering.">sf::Window</a> can create its own new window, or be embedded into an already existing control using the create(handle) function. This can be useful for embedding an OpenGL rendering area into a view which is part of a bigger <a class="el" href="namespace_g_u_i.html">GUI</a> with existing windows, controls, etc. It can also serve as embedding an OpenGL rendering area into a window created by another (probably richer) <a class="el" href="namespace_g_u_i.html">GUI</a> library like Qt or wxWidgets.</p>
 <p >The <a class="el" href="classsf_1_1_window.html" title="Window that serves as a target for OpenGL rendering.">sf::Window</a> class provides a simple interface for manipulating the window: move, resize, show/hide, control mouse cursor, etc. It also provides event handling through its <a class="el" href="classsf_1_1_window.html#a338e996585faf82e93069858e3b531b7" title="Pop the event on top of the event queue, if any, and return it.">pollEvent()</a> and <a class="el" href="classsf_1_1_window.html#aaf02ab64fbc1d374eef3696df54137bc" title="Wait for an event and return it.">waitEvent()</a> functions.</p>
 <p >Note that OpenGL experts can pass their own parameters (antialiasing level, bits for the depth and stencil buffers, etc.) to the OpenGL context attached to the window, with the <a class="el" href="structsf_1_1_context_settings.html" title="Structure defining the settings of the OpenGL context attached to a window.">sf::ContextSettings</a> structure which is passed as an optional argument when creating the window.</p>
 <p >On dual-graphics systems consisting of a low-power integrated GPU and a powerful discrete GPU, the driver picks which GPU will run an SFML application. In order to inform the driver that an SFML application can benefit from being run on the more powerful discrete GPU, <a class="el" href="_week14_2_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_gpu_preference_8hpp.html#ab0233c2d867cbd561036ed2440a4fec0" title="A macro to encourage usage of the discrete GPU.">SFML_DEFINE_DISCRETE_GPU_PREFERENCE</a> can be placed in a source file that is compiled and linked into the final application. The macro should be placed outside of any scopes in the global namespace.</p>
@@ -1420,7 +1420,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Activate or deactivate the window as the current target for OpenGL rendering. </p>
-<p >A window is active only on the current thread, if you want to make it active on another thread you have to deactivate it on the previous thread first if it was active. Only one window can be active on a thread at a time, thus the window previously active (if any) automatically gets deactivated. This is not to be confused with <a class="el" href="classsf_1_1_window.html#a58cf7fa1775e8e7542032e3ecfa83b49" title="Request the current window to be made the active foreground window.">requestFocus()</a>.</p>
+<p ><a class="el" href="class_a.html">A</a> window is active only on the current thread, if you want to make it active on another thread you have to deactivate it on the previous thread first if it was active. Only one window can be active on a thread at a time, thus the window previously active (if any) automatically gets deactivated. This is not to be confused with <a class="el" href="classsf_1_1_window.html#a58cf7fa1775e8e7542032e3ecfa83b49" title="Request the current window to be made the active foreground window.">requestFocus()</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">active</td><td>True to activate, false to deactivate</td></tr>
@@ -1448,7 +1448,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Activate or deactivate the window as the current target for OpenGL rendering. </p>
-<p >A window is active only on the current thread, if you want to make it active on another thread you have to deactivate it on the previous thread first if it was active. Only one window can be active on a thread at a time, thus the window previously active (if any) automatically gets deactivated. This is not to be confused with <a class="el" href="classsf_1_1_window.html#a58cf7fa1775e8e7542032e3ecfa83b49" title="Request the current window to be made the active foreground window.">requestFocus()</a>.</p>
+<p ><a class="el" href="class_a.html">A</a> window is active only on the current thread, if you want to make it active on another thread you have to deactivate it on the previous thread first if it was active. Only one window can be active on a thread at a time, thus the window previously active (if any) automatically gets deactivated. This is not to be confused with <a class="el" href="classsf_1_1_window.html#a58cf7fa1775e8e7542032e3ecfa83b49" title="Request the current window to be made the active foreground window.">requestFocus()</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">active</td><td>True to activate, false to deactivate</td></tr>

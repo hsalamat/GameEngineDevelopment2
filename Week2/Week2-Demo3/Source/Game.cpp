@@ -1,89 +1,80 @@
-#include "Game.hpp"
+#include <Game.hpp>
 
-#pragma region Step 2
 const float Game::PlayerSpeed = 100.f;
-#pragma endregion
+const sf::Time Game::TimePerFrame = sf::seconds(1.f / 60.f);
 
 Game::Game()
-	: mWindow(sf::VideoMode(800, 600), "SFML Application", sf::Style::Close)
-	, mTexture()
-	, mBackground()
-	, mAirplaneTexture()
-	, mPlayer()
-	, mMusic()
+	: mWindow(sf::VideoMode(800, 800), "SFML Application", sf::Style::Close)
+	, airplane()
+	, landscape()
 	, mFont()
-	, mIcon()
+	, mStatisticsText()
+	, mStatisticsUpdateTime()
+	, mStatisticsNumFrames(0)
 	, mIsMovingUp(false)
 	, mIsMovingDown(false)
 	, mIsMovingRight(false)
 	, mIsMovingLeft(false)
-
 {
-
-	if (!mAirplaneTexture.loadFromFile("Media/Textures/Eagle.png"))
+	try
 	{
-		// Handle loading error
+		textures.load(Textures::Landscape, "Media/Textures/Desert.png");
+		textures.load(Textures::Airplane, "Media/Textures/Eagle.png");
+
+		textures2.load(TexturesID::Landscape, "Media/Textures/Desert.png");
+		textures2.load(TexturesID::Airplane, "Media/Textures/Eagle.png");
 	}
-
-	mPlayer.setTexture(mAirplaneTexture);
-	mPlayer.setPosition(100.f, 100.f);
-	mPlayer.setOrigin(20.f, 20.f);
-
-	//mIcon.loadFromFile("Media/Textures/icon.png");
-	//You could also create your own image
-	mIcon.create(20, 20, sf::Color::Red);
-	sf::Color color = mIcon.getPixel(0, 0);
-	//color.a = 0; //make the top-left pixel transparent
-	color.r = 0;   //set the r = 0 (rgb) from the color
-	mIcon.setPixel(0, 0, color);
-
-	mWindow.setIcon(mIcon.getSize().x, mIcon.getSize().y, mIcon.getPixelsPtr());
-
-	//Load a sprite to display
-	if (!mTexture.loadFromFile("Media/Textures/cute_image.jpg"))
+	catch (std::runtime_error& e)
+	{
+		std::cout << "Exception: " << e.what() << std::endl;
 		return;
-	mBackground.setTexture(mTexture);
+	}
+#pragma endregion
 
-	if (!mFont.loadFromFile("Media/Sansation.ttf"))
-		return;
+#pragma region step 6	
+	//mAirplaneTexture = textures.get(Textures::Airplane);
+	mAirplaneTexture = textures2.get(TexturesID::Airplane);
 
+	airplane.setTexture(mAirplaneTexture);
+	//!@ note you cannot use the following "yet". check what happens if you use the following line instead. You would get a white square.
+	//!airplane.setTexture(textures.get(Textures::Airplane));
+	//! How would you fix this????
 
-	mText.setString("Hello SFML");
-	mText.setFont(mFont);
-	mText.setPosition(5.f, 5.f);
-	mText.setCharacterSize(50);
-	mText.setFillColor(sf::Color::Black);
+	airplane.setPosition(100.f, 100.f);
 
+	if (!mFont.loadFromFile("Media/Sansation.ttf")) return;
+	mStatisticsText.setFont(mFont);
+	mStatisticsText.setPosition(5.f, 5.f);
+	mStatisticsText.setCharacterSize(10);
+	mStatisticsText.setFillColor(sf::Color::Black);
 
-	mMusic.openFromFile("Media/Sound/nice_music.ogg");
+	//mBackgroundTexture = textures.get(Textures::Landscape);
+	mBackgroundTexture = textures2.get(TexturesID::Landscape);
 
-	//! change Music parameters
-	mMusic.setPosition(0, 0, 0); //! @param setPosition: change its 3D position - the default position is (0,0,0)
-	mMusic.setPitch(2); //! @param setPitch: increase the pitch - pitch represents the perceived fundamental frequency of a sound such as modifying the playing speed of the sound
-	mMusic.setVolume(50); //! @param setVolume: reduce the volume
-	mMusic.setAttenuation(100); //! @param setAttenuation: an attenuation value of 100 will make the sound fade out very quicky as it gets further from the listener - default value is 1
-	mMusic.setLoop(true); //! @param setLoop: make it loop
-	//Play the music
-	//mMusic.play();
-
-
-
+	mBackgroundTexture.setRepeated(true);
+	landscape.setTexture(mBackgroundTexture);
+	landscape.setTextureRect(sf::IntRect(0, 0, 1200, 800));
 }
 
 void Game::run()
 {
-
-#pragma region Step 4
-
 	sf::Clock clock;
+	sf::Time timeSinceLastUpdate = sf::Time::Zero;
 	while (mWindow.isOpen())
 	{
-		sf::Time deltaTime = clock.restart();
-		processEvents();
-		update(deltaTime);
+		sf::Time elapsedTime = clock.restart();
+		timeSinceLastUpdate += elapsedTime;
+		while (timeSinceLastUpdate > TimePerFrame)
+		{
+			timeSinceLastUpdate -= TimePerFrame;
+
+			processEvents();
+			update(TimePerFrame);
+		}
+
+		updateStatistics(elapsedTime);
 		render();
 	}
-#pragma endregion
 }
 
 void Game::processEvents()
@@ -106,17 +97,9 @@ void Game::processEvents()
 			break;
 		}
 	}
-
-	if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
-		sf::Vector2i mousePosition = sf::Mouse::getPosition(mWindow);
-		mPlayer.setPosition((float)mousePosition.x, (float)mousePosition.y);
-	}
 }
 
-
-
-#pragma region step 3
-void Game::update(sf::Time deltaTime)
+void Game::update(sf::Time elapsedTime)
 {
 	sf::Vector2f movement(0.f, 0.f);
 	if (mIsMovingUp)
@@ -127,23 +110,34 @@ void Game::update(sf::Time deltaTime)
 		movement.x -= PlayerSpeed;
 	if (mIsMovingRight)
 		movement.x += PlayerSpeed;
-	mPlayer.move(movement * deltaTime.asSeconds());
-}
 
-#pragma endregion
+	airplane.move(movement * elapsedTime.asSeconds());
+}
 
 void Game::render()
 {
-	//Question: What do you think will it happen if you comment out the following two lines
 	mWindow.clear();
-	mWindow.draw(mBackground);
-	mWindow.draw(mPlayer);
-	mWindow.draw(mText);
-
-	//Update the window
+	mWindow.draw(landscape);
+	mWindow.draw(airplane);
+	mWindow.draw(mStatisticsText);
 	mWindow.display();
 }
 
+void Game::updateStatistics(sf::Time elapsedTime)
+{
+	mStatisticsUpdateTime += elapsedTime;
+	mStatisticsNumFrames += 1;
+
+	if (mStatisticsUpdateTime >= sf::seconds(1.0f))
+	{
+		mStatisticsText.setString(
+			"Frames / Second = " + std::to_string(mStatisticsNumFrames) + "\n" +
+			"Time / Update = " + std::to_string(mStatisticsUpdateTime.asMicroseconds() / mStatisticsNumFrames) + "us");
+
+		mStatisticsUpdateTime -= sf::seconds(1.0f);
+		mStatisticsNumFrames = 0;
+	}
+}
 
 void Game::handlePlayerInput(sf::Keyboard::Key key, bool isPressed)
 {
@@ -155,5 +149,4 @@ void Game::handlePlayerInput(sf::Keyboard::Key key, bool isPressed)
 		mIsMovingLeft = isPressed;
 	else if (key == sf::Keyboard::D)
 		mIsMovingRight = isPressed;
-
 }

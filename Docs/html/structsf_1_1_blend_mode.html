@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: sf::BlendMode Class Reference</title>
+<title>GAME3015: sf::BlendMode Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">GAME3015
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -253,7 +253,7 @@ Related Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Blending modes for drawing. </p>
 <p ><a class="el" href="structsf_1_1_blend_mode.html" title="Blending modes for drawing.">sf::BlendMode</a> is a class that represents a blend mode.</p>
-<p >A blend mode determines how the colors of an object you draw are mixed with the colors that are already in the buffer.</p>
+<p ><a class="el" href="class_a.html">A</a> blend mode determines how the colors of an object you draw are mixed with the colors that are already in the buffer.</p>
 <p >The class is composed of 6 components, each of which has its own public member variable: </p><ul>
 <li>Color Source Factor (<a class="el" href="structsf_1_1_blend_mode.html#a32d1a55dbfada86a06d9b881dc8ccf7b">colorSrcFactor</a>) </li>
 <li>Color Destination Factor (<a class="el" href="structsf_1_1_blend_mode.html#adee68ee59e7f1bf71d12db03d251104d">colorDstFactor</a>) </li>
@@ -263,7 +263,7 @@ Related Functions</h2></td></tr>
 <li>Alpha Blend Equation (<a class="el" href="structsf_1_1_blend_mode.html#a68f5a305e0912946f39ba6c9265710c4">alphaEquation</a>)</li>
 </ul>
 <p>The source factor specifies how the pixel you are drawing contributes to the final color. The destination factor specifies how the pixel already drawn in the buffer contributes to the final color.</p>
-<p >The color channels RGB (red, green, blue; simply referred to as color) and A (alpha; the transparency) can be treated separately. This separation can be useful for specific blend modes, but most often you won't need it and will simply treat the color as a single unit.</p>
+<p >The color channels RGB (red, green, blue; simply referred to as color) and <a class="el" href="class_a.html">A</a> (alpha; the transparency) can be treated separately. This separation can be useful for specific blend modes, but most often you won't need it and will simply treat the color as a single unit.</p>
 <p >The blend factors and equations correspond to their OpenGL equivalents. In general, the color of the resulting pixel is calculated according to the following formula (<em>src</em> is the color of the source pixel, <em>dst</em> the color of the destination pixel, the other variables correspond to the public members, with the equations being + or - operators): </p><div class="fragment"><div class="line">dst.rgb = <a class="code hl_variable" href="structsf_1_1_blend_mode.html#a32d1a55dbfada86a06d9b881dc8ccf7b">colorSrcFactor</a> * src.rgb (<a class="code hl_variable" href="structsf_1_1_blend_mode.html#aed12f06eb7f50a1b95b892b0964857b1">colorEquation</a>) <a class="code hl_variable" href="structsf_1_1_blend_mode.html#adee68ee59e7f1bf71d12db03d251104d">colorDstFactor</a> * dst.rgb</div>
 <div class="line">dst.a   = <a class="code hl_variable" href="structsf_1_1_blend_mode.html#aa94e44f8e1042a7357e8eff78c61a1be">alphaSrcFactor</a> * src.a   (<a class="code hl_variable" href="structsf_1_1_blend_mode.html#a68f5a305e0912946f39ba6c9265710c4">alphaEquation</a>) <a class="code hl_variable" href="structsf_1_1_blend_mode.html#aaf85b6b7943181cc81745569c4851e4e">alphaDstFactor</a> * dst.a</div>
 <div class="ttc" id="astructsf_1_1_blend_mode_html_a32d1a55dbfada86a06d9b881dc8ccf7b"><div class="ttname"><a href="structsf_1_1_blend_mode.html#a32d1a55dbfada86a06d9b881dc8ccf7b">sf::BlendMode::colorSrcFactor</a></div><div class="ttdeci">Factor colorSrcFactor</div><div class="ttdoc">Source blending factor for the color channels.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_blend_mode_8hpp_source.html#l00115">BlendMode.hpp:115</a></div></div>

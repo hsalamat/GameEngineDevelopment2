@@ -1,0 +1,45 @@
+\hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source}{}\doxysection{Parallel\+Task.\+hpp}
+\label{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source}\index{Week6/Week6-\/Demo6-\/LoadingState/Include/ParallelTask.hpp@{Week6/Week6-\/Demo6-\/LoadingState/Include/ParallelTask.hpp}}
+\mbox{\hyperlink{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma region step 6}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include <SFML/System/Thread.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00005}00005 \textcolor{preprocessor}{\#include <SFML/System/Mutex.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00006}00006 \textcolor{preprocessor}{\#include <SFML/System/Lock.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00007}00007 \textcolor{preprocessor}{\#include <SFML/System/Clock.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00008}00008 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00009}00009 \textcolor{preprocessor}{\#include <thread>}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00010}00010 \textcolor{preprocessor}{\#include <mutex>}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00011}00011 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00014}00014 \textcolor{keyword}{class }\mbox{\hyperlink{class_parallel_task}{ParallelTask}}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00015}00015 \{}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00016}00016     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00017}\mbox{\hyperlink{class_parallel_task_a32cb3c361f7b4373f941f0993940576f}{00017}}                             \mbox{\hyperlink{class_parallel_task_a32cb3c361f7b4373f941f0993940576f}{ParallelTask}}();}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00018}\mbox{\hyperlink{class_parallel_task_ad1e7ba9134cc7961ab178a2f47cf54be}{00018}}         \textcolor{keywordtype}{void}                \mbox{\hyperlink{class_parallel_task_ad1e7ba9134cc7961ab178a2f47cf54be}{execute}}();}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00019}\mbox{\hyperlink{class_parallel_task_a1a67f547aa382fac2087184b2eb19148}{00019}}         \textcolor{keywordtype}{bool}                \mbox{\hyperlink{class_parallel_task_a1a67f547aa382fac2087184b2eb19148}{isFinished}}();}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00020}\mbox{\hyperlink{class_parallel_task_ada45e4db1aa8a89f20ab0b8662c6dabc}{00020}}         \textcolor{keywordtype}{float}               \mbox{\hyperlink{class_parallel_task_ada45e4db1aa8a89f20ab0b8662c6dabc}{getCompletion}}();}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00021}00021         }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00022}00022     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00023}00023         \textcolor{keywordtype}{void}                runTask();}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00025}00025     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00026}00026         \textcolor{comment}{//sf::Thread            mThread;}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00027}00027         std::thread         mThread;}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00028}00028         \textcolor{keywordtype}{bool}                mFinished;}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00029}00029         }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00030}00030         \textcolor{comment}{//sf::Clock         mElapsedTime;}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00031}00031         std::chrono::duration<double> mElapsedTime;}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00032}00032         std::chrono::steady\_clock::time\_point start;}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00033}00033         std::chrono::steady\_clock::time\_point end;}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00035}00035         \textcolor{comment}{//sf::Mutex         mMutex;}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00036}00036         std::mutex          mMutex;}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00037}00037 \};}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_parallel_task_8hpp_source_l00039}00039 \textcolor{preprocessor}{\#pragma endregion}}
+
+\end{DoxyCode}

@@ -13,7 +13,9 @@ public:
 
 private:
 	void					processEvents();
-	void					update();
+#pragma region step 1-1
+	void					update(sf::Time elapsedTime);
+#pragma endregion
 	void					render();
 
 #pragma region step1
@@ -22,7 +24,9 @@ private:
 #pragma endregion
 
 private:
-
+#pragma region Step 1-2
+	static const float		PlayerSpeed;
+#pragma endregion
 	sf::RenderWindow		mWindow;
 	sf::Sprite				mPlayer;
 	sf::Sprite				mBackground;

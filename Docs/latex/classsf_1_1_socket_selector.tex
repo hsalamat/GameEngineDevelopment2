@@ -59,7 +59,7 @@ This is convenient when you have multiple sockets that may possibly receive data
 
 All types of sockets can be used in a selector\+: \begin{DoxyItemize}
 \item \mbox{\hyperlink{classsf_1_1_tcp_listener}{sf\+::\+Tcp\+Listener}} \item \mbox{\hyperlink{classsf_1_1_tcp_socket}{sf\+::\+Tcp\+Socket}} \item \mbox{\hyperlink{classsf_1_1_udp_socket}{sf\+::\+Udp\+Socket}}\end{DoxyItemize}
-A selector doesn\textquotesingle{}t store its own copies of the sockets (socket classes are not copyable anyway), it simply keeps a reference to the original sockets that you pass to the \char`\"{}add\char`\"{} function. Therefore, you can\textquotesingle{}t use the selector as a socket container, you must store them outside and make sure that they are alive as long as they are used in the selector.
+\mbox{\hyperlink{class_a}{A}} selector doesn\textquotesingle{}t store its own copies of the sockets (socket classes are not copyable anyway), it simply keeps a reference to the original sockets that you pass to the \char`\"{}add\char`\"{} function. Therefore, you can\textquotesingle{}t use the selector as a socket container, you must store them outside and make sure that they are alive as long as they are used in the selector.
 
 Using a selector is simple\+: \begin{DoxyItemize}
 \item populate the selector with all the sockets that you want to observe \item make it wait until there is data available on any of the sockets \item test each socket to find out which ones are ready\end{DoxyItemize}

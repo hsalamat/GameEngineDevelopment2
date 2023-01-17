@@ -7,7 +7,7 @@
 Inheritance diagram for Loading\+State\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_loading_state}
+\includegraphics[height=1.720430cm]{class_loading_state}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -20,6 +20,16 @@ virtual void \mbox{\hyperlink{class_loading_state_adfe2c002c52cc2c49967ba3ace4aa
 virtual bool \mbox{\hyperlink{class_loading_state_a8f2f50523c1f35e011ddd0839aa66ee4}{update}} (\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} dt)
 \item 
 virtual bool \mbox{\hyperlink{class_loading_state_a37da243eeeca36460bac2f32cef3e368}{handle\+Event}} (const \mbox{\hyperlink{classsf_1_1_event}{sf\+::\+Event}} \&event)
+\item 
+void \mbox{\hyperlink{class_loading_state_a28bee93e7f9818084af8be6b31ee0ba4}{set\+Completion}} (float percent)
+\item 
+\mbox{\hyperlink{class_loading_state_a6830cacada1f9c215f913d31aa1805cf}{Loading\+State}} (\mbox{\hyperlink{class_state_stack}{State\+Stack}} \&stack, \mbox{\hyperlink{struct_state_1_1_context}{Context}} context)
+\item 
+virtual void \mbox{\hyperlink{class_loading_state_ac970b1f7d7ad5a24a84dda1bd02636d6}{draw}} ()
+\item 
+virtual bool \mbox{\hyperlink{class_loading_state_a457c7db7de70d4fa5ab5b639d1aa7889}{update}} (\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}} dt)
+\item 
+virtual bool \mbox{\hyperlink{class_loading_state_adab7f548baa39569ddf7fb87a7a2d201}{handle\+Event}} (const \mbox{\hyperlink{classsf_1_1_event}{sf\+::\+Event}} \&event)
 \item 
 void \mbox{\hyperlink{class_loading_state_a28bee93e7f9818084af8be6b31ee0ba4}{set\+Completion}} (float percent)
 \item 
@@ -87,7 +97,7 @@ Definition at line \mbox{\hyperlink{_week6_2_week6-_demo5-_pause_state_2_include
 \mbox{\Hypertarget{class_loading_state_a6830cacada1f9c215f913d31aa1805cf}\label{class_loading_state_a6830cacada1f9c215f913d31aa1805cf}} 
 \index{LoadingState@{LoadingState}!LoadingState@{LoadingState}}
 \index{LoadingState@{LoadingState}!LoadingState@{LoadingState}}
-\doxysubsubsection{\texorpdfstring{LoadingState()}{LoadingState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+\doxysubsubsection{\texorpdfstring{LoadingState()}{LoadingState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
 {\footnotesize\ttfamily Loading\+State\+::\+Loading\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_state_stack}{State\+Stack}} \&}]{stack,  }\item[{\mbox{\hyperlink{struct_state_1_1_context}{Context}}}]{context }\end{DoxyParamCaption})}
 
 
@@ -97,31 +107,37 @@ Definition at line \mbox{\hyperlink{_week6_2_week6-_demo5-_pause_state_2_source_
 \mbox{\Hypertarget{class_loading_state_a6830cacada1f9c215f913d31aa1805cf}\label{class_loading_state_a6830cacada1f9c215f913d31aa1805cf}} 
 \index{LoadingState@{LoadingState}!LoadingState@{LoadingState}}
 \index{LoadingState@{LoadingState}!LoadingState@{LoadingState}}
-\doxysubsubsection{\texorpdfstring{LoadingState()}{LoadingState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+\doxysubsubsection{\texorpdfstring{LoadingState()}{LoadingState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
 {\footnotesize\ttfamily Loading\+State\+::\+Loading\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_state_stack}{State\+Stack}} \&}]{stack,  }\item[{\mbox{\hyperlink{struct_state_1_1_context}{Context}}}]{context }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{class_loading_state_a6830cacada1f9c215f913d31aa1805cf}\label{class_loading_state_a6830cacada1f9c215f913d31aa1805cf}} 
 \index{LoadingState@{LoadingState}!LoadingState@{LoadingState}}
 \index{LoadingState@{LoadingState}!LoadingState@{LoadingState}}
-\doxysubsubsection{\texorpdfstring{LoadingState()}{LoadingState()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+\doxysubsubsection{\texorpdfstring{LoadingState()}{LoadingState()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
 {\footnotesize\ttfamily Loading\+State\+::\+Loading\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_state_stack}{State\+Stack}} \&}]{stack,  }\item[{\mbox{\hyperlink{struct_state_1_1_context}{Context}}}]{context }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{class_loading_state_a6830cacada1f9c215f913d31aa1805cf}\label{class_loading_state_a6830cacada1f9c215f913d31aa1805cf}} 
 \index{LoadingState@{LoadingState}!LoadingState@{LoadingState}}
 \index{LoadingState@{LoadingState}!LoadingState@{LoadingState}}
-\doxysubsubsection{\texorpdfstring{LoadingState()}{LoadingState()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+\doxysubsubsection{\texorpdfstring{LoadingState()}{LoadingState()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
 {\footnotesize\ttfamily Loading\+State\+::\+Loading\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_state_stack}{State\+Stack}} \&}]{stack,  }\item[{\mbox{\hyperlink{struct_state_1_1_context}{Context}}}]{context }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{class_loading_state_a6830cacada1f9c215f913d31aa1805cf}\label{class_loading_state_a6830cacada1f9c215f913d31aa1805cf}} 
 \index{LoadingState@{LoadingState}!LoadingState@{LoadingState}}
 \index{LoadingState@{LoadingState}!LoadingState@{LoadingState}}
-\doxysubsubsection{\texorpdfstring{LoadingState()}{LoadingState()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+\doxysubsubsection{\texorpdfstring{LoadingState()}{LoadingState()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
 {\footnotesize\ttfamily Loading\+State\+::\+Loading\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_state_stack}{State\+Stack}} \&}]{stack,  }\item[{\mbox{\hyperlink{struct_state_1_1_context}{Context}}}]{context }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{class_loading_state_a6830cacada1f9c215f913d31aa1805cf}\label{class_loading_state_a6830cacada1f9c215f913d31aa1805cf}} 
 \index{LoadingState@{LoadingState}!LoadingState@{LoadingState}}
 \index{LoadingState@{LoadingState}!LoadingState@{LoadingState}}
-\doxysubsubsection{\texorpdfstring{LoadingState()}{LoadingState()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+\doxysubsubsection{\texorpdfstring{LoadingState()}{LoadingState()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily Loading\+State\+::\+Loading\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_state_stack}{State\+Stack}} \&}]{stack,  }\item[{\mbox{\hyperlink{struct_state_1_1_context}{Context}}}]{context }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_loading_state_a6830cacada1f9c215f913d31aa1805cf}\label{class_loading_state_a6830cacada1f9c215f913d31aa1805cf}} 
+\index{LoadingState@{LoadingState}!LoadingState@{LoadingState}}
+\index{LoadingState@{LoadingState}!LoadingState@{LoadingState}}
+\doxysubsubsection{\texorpdfstring{LoadingState()}{LoadingState()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
 {\footnotesize\ttfamily Loading\+State\+::\+Loading\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_state_stack}{State\+Stack}} \&}]{stack,  }\item[{\mbox{\hyperlink{struct_state_1_1_context}{Context}}}]{context }\end{DoxyParamCaption})}
 
 
@@ -130,7 +146,7 @@ Definition at line \mbox{\hyperlink{_week6_2_week6-_demo5-_pause_state_2_source_
 \mbox{\Hypertarget{class_loading_state_adfe2c002c52cc2c49967ba3ace4aa73b}\label{class_loading_state_adfe2c002c52cc2c49967ba3ace4aa73b}} 
 \index{LoadingState@{LoadingState}!draw@{draw}}
 \index{draw@{draw}!LoadingState@{LoadingState}}
-\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
 {\footnotesize\ttfamily void Loading\+State\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
@@ -144,7 +160,7 @@ Definition at line \mbox{\hyperlink{_week6_2_week6-_demo5-_pause_state_2_source_
 \mbox{\Hypertarget{class_loading_state_ac970b1f7d7ad5a24a84dda1bd02636d6}\label{class_loading_state_ac970b1f7d7ad5a24a84dda1bd02636d6}} 
 \index{LoadingState@{LoadingState}!draw@{draw}}
 \index{draw@{draw}!LoadingState@{LoadingState}}
-\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
 {\footnotesize\ttfamily virtual void Loading\+State\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
@@ -154,7 +170,7 @@ Implements \mbox{\hyperlink{class_state_ae261605bc40b7e3959ce5df5457e4942}{State
 \mbox{\Hypertarget{class_loading_state_ac970b1f7d7ad5a24a84dda1bd02636d6}\label{class_loading_state_ac970b1f7d7ad5a24a84dda1bd02636d6}} 
 \index{LoadingState@{LoadingState}!draw@{draw}}
 \index{draw@{draw}!LoadingState@{LoadingState}}
-\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
 {\footnotesize\ttfamily virtual void Loading\+State\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
@@ -164,7 +180,7 @@ Implements \mbox{\hyperlink{class_state_ae261605bc40b7e3959ce5df5457e4942}{State
 \mbox{\Hypertarget{class_loading_state_ac970b1f7d7ad5a24a84dda1bd02636d6}\label{class_loading_state_ac970b1f7d7ad5a24a84dda1bd02636d6}} 
 \index{LoadingState@{LoadingState}!draw@{draw}}
 \index{draw@{draw}!LoadingState@{LoadingState}}
-\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
 {\footnotesize\ttfamily virtual void Loading\+State\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
@@ -174,7 +190,7 @@ Implements \mbox{\hyperlink{class_state_ae261605bc40b7e3959ce5df5457e4942}{State
 \mbox{\Hypertarget{class_loading_state_ac970b1f7d7ad5a24a84dda1bd02636d6}\label{class_loading_state_ac970b1f7d7ad5a24a84dda1bd02636d6}} 
 \index{LoadingState@{LoadingState}!draw@{draw}}
 \index{draw@{draw}!LoadingState@{LoadingState}}
-\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
 {\footnotesize\ttfamily virtual void Loading\+State\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
@@ -184,7 +200,17 @@ Implements \mbox{\hyperlink{class_state_ae261605bc40b7e3959ce5df5457e4942}{State
 \mbox{\Hypertarget{class_loading_state_ac970b1f7d7ad5a24a84dda1bd02636d6}\label{class_loading_state_ac970b1f7d7ad5a24a84dda1bd02636d6}} 
 \index{LoadingState@{LoadingState}!draw@{draw}}
 \index{draw@{draw}!LoadingState@{LoadingState}}
-\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily virtual void Loading\+State\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_state_ae261605bc40b7e3959ce5df5457e4942}{State}}.
+
+\mbox{\Hypertarget{class_loading_state_ac970b1f7d7ad5a24a84dda1bd02636d6}\label{class_loading_state_ac970b1f7d7ad5a24a84dda1bd02636d6}} 
+\index{LoadingState@{LoadingState}!draw@{draw}}
+\index{draw@{draw}!LoadingState@{LoadingState}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
 {\footnotesize\ttfamily virtual void Loading\+State\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
@@ -194,7 +220,7 @@ Implements \mbox{\hyperlink{class_state_ae261605bc40b7e3959ce5df5457e4942}{State
 \mbox{\Hypertarget{class_loading_state_a37da243eeeca36460bac2f32cef3e368}\label{class_loading_state_a37da243eeeca36460bac2f32cef3e368}} 
 \index{LoadingState@{LoadingState}!handleEvent@{handleEvent}}
 \index{handleEvent@{handleEvent}!LoadingState@{LoadingState}}
-\doxysubsubsection{\texorpdfstring{handleEvent()}{handleEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+\doxysubsubsection{\texorpdfstring{handleEvent()}{handleEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
 {\footnotesize\ttfamily bool Loading\+State\+::handle\+Event (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_event}{sf\+::\+Event}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
@@ -208,7 +234,7 @@ Definition at line \mbox{\hyperlink{_week6_2_week6-_demo5-_pause_state_2_source_
 \mbox{\Hypertarget{class_loading_state_adab7f548baa39569ddf7fb87a7a2d201}\label{class_loading_state_adab7f548baa39569ddf7fb87a7a2d201}} 
 \index{LoadingState@{LoadingState}!handleEvent@{handleEvent}}
 \index{handleEvent@{handleEvent}!LoadingState@{LoadingState}}
-\doxysubsubsection{\texorpdfstring{handleEvent()}{handleEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+\doxysubsubsection{\texorpdfstring{handleEvent()}{handleEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
 {\footnotesize\ttfamily virtual bool Loading\+State\+::handle\+Event (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_event}{sf\+::\+Event}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
@@ -218,7 +244,7 @@ Implements \mbox{\hyperlink{class_state_a19965f83460b248c42952aac8d001206}{State
 \mbox{\Hypertarget{class_loading_state_adab7f548baa39569ddf7fb87a7a2d201}\label{class_loading_state_adab7f548baa39569ddf7fb87a7a2d201}} 
 \index{LoadingState@{LoadingState}!handleEvent@{handleEvent}}
 \index{handleEvent@{handleEvent}!LoadingState@{LoadingState}}
-\doxysubsubsection{\texorpdfstring{handleEvent()}{handleEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+\doxysubsubsection{\texorpdfstring{handleEvent()}{handleEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
 {\footnotesize\ttfamily virtual bool Loading\+State\+::handle\+Event (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_event}{sf\+::\+Event}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
@@ -228,7 +254,7 @@ Implements \mbox{\hyperlink{class_state_a19965f83460b248c42952aac8d001206}{State
 \mbox{\Hypertarget{class_loading_state_adab7f548baa39569ddf7fb87a7a2d201}\label{class_loading_state_adab7f548baa39569ddf7fb87a7a2d201}} 
 \index{LoadingState@{LoadingState}!handleEvent@{handleEvent}}
 \index{handleEvent@{handleEvent}!LoadingState@{LoadingState}}
-\doxysubsubsection{\texorpdfstring{handleEvent()}{handleEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+\doxysubsubsection{\texorpdfstring{handleEvent()}{handleEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
 {\footnotesize\ttfamily virtual bool Loading\+State\+::handle\+Event (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_event}{sf\+::\+Event}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
@@ -238,7 +264,7 @@ Implements \mbox{\hyperlink{class_state_a19965f83460b248c42952aac8d001206}{State
 \mbox{\Hypertarget{class_loading_state_adab7f548baa39569ddf7fb87a7a2d201}\label{class_loading_state_adab7f548baa39569ddf7fb87a7a2d201}} 
 \index{LoadingState@{LoadingState}!handleEvent@{handleEvent}}
 \index{handleEvent@{handleEvent}!LoadingState@{LoadingState}}
-\doxysubsubsection{\texorpdfstring{handleEvent()}{handleEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+\doxysubsubsection{\texorpdfstring{handleEvent()}{handleEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
 {\footnotesize\ttfamily virtual bool Loading\+State\+::handle\+Event (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_event}{sf\+::\+Event}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
@@ -248,7 +274,17 @@ Implements \mbox{\hyperlink{class_state_a19965f83460b248c42952aac8d001206}{State
 \mbox{\Hypertarget{class_loading_state_adab7f548baa39569ddf7fb87a7a2d201}\label{class_loading_state_adab7f548baa39569ddf7fb87a7a2d201}} 
 \index{LoadingState@{LoadingState}!handleEvent@{handleEvent}}
 \index{handleEvent@{handleEvent}!LoadingState@{LoadingState}}
-\doxysubsubsection{\texorpdfstring{handleEvent()}{handleEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+\doxysubsubsection{\texorpdfstring{handleEvent()}{handleEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily virtual bool Loading\+State\+::handle\+Event (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_event}{sf\+::\+Event}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_state_a19965f83460b248c42952aac8d001206}{State}}.
+
+\mbox{\Hypertarget{class_loading_state_adab7f548baa39569ddf7fb87a7a2d201}\label{class_loading_state_adab7f548baa39569ddf7fb87a7a2d201}} 
+\index{LoadingState@{LoadingState}!handleEvent@{handleEvent}}
+\index{handleEvent@{handleEvent}!LoadingState@{LoadingState}}
+\doxysubsubsection{\texorpdfstring{handleEvent()}{handleEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
 {\footnotesize\ttfamily virtual bool Loading\+State\+::handle\+Event (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsf_1_1_event}{sf\+::\+Event}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
@@ -258,7 +294,7 @@ Implements \mbox{\hyperlink{class_state_a19965f83460b248c42952aac8d001206}{State
 \mbox{\Hypertarget{class_loading_state_a28bee93e7f9818084af8be6b31ee0ba4}\label{class_loading_state_a28bee93e7f9818084af8be6b31ee0ba4}} 
 \index{LoadingState@{LoadingState}!setCompletion@{setCompletion}}
 \index{setCompletion@{setCompletion}!LoadingState@{LoadingState}}
-\doxysubsubsection{\texorpdfstring{setCompletion()}{setCompletion()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+\doxysubsubsection{\texorpdfstring{setCompletion()}{setCompletion()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
 {\footnotesize\ttfamily void Loading\+State\+::set\+Completion (\begin{DoxyParamCaption}\item[{float}]{percent }\end{DoxyParamCaption})}
 
 
@@ -268,37 +304,43 @@ Definition at line \mbox{\hyperlink{_week6_2_week6-_demo5-_pause_state_2_source_
 \mbox{\Hypertarget{class_loading_state_a28bee93e7f9818084af8be6b31ee0ba4}\label{class_loading_state_a28bee93e7f9818084af8be6b31ee0ba4}} 
 \index{LoadingState@{LoadingState}!setCompletion@{setCompletion}}
 \index{setCompletion@{setCompletion}!LoadingState@{LoadingState}}
-\doxysubsubsection{\texorpdfstring{setCompletion()}{setCompletion()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+\doxysubsubsection{\texorpdfstring{setCompletion()}{setCompletion()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
 {\footnotesize\ttfamily void Loading\+State\+::set\+Completion (\begin{DoxyParamCaption}\item[{float}]{percent }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{class_loading_state_a28bee93e7f9818084af8be6b31ee0ba4}\label{class_loading_state_a28bee93e7f9818084af8be6b31ee0ba4}} 
 \index{LoadingState@{LoadingState}!setCompletion@{setCompletion}}
 \index{setCompletion@{setCompletion}!LoadingState@{LoadingState}}
-\doxysubsubsection{\texorpdfstring{setCompletion()}{setCompletion()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+\doxysubsubsection{\texorpdfstring{setCompletion()}{setCompletion()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
 {\footnotesize\ttfamily void Loading\+State\+::set\+Completion (\begin{DoxyParamCaption}\item[{float}]{percent }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{class_loading_state_a28bee93e7f9818084af8be6b31ee0ba4}\label{class_loading_state_a28bee93e7f9818084af8be6b31ee0ba4}} 
 \index{LoadingState@{LoadingState}!setCompletion@{setCompletion}}
 \index{setCompletion@{setCompletion}!LoadingState@{LoadingState}}
-\doxysubsubsection{\texorpdfstring{setCompletion()}{setCompletion()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+\doxysubsubsection{\texorpdfstring{setCompletion()}{setCompletion()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
 {\footnotesize\ttfamily void Loading\+State\+::set\+Completion (\begin{DoxyParamCaption}\item[{float}]{percent }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{class_loading_state_a28bee93e7f9818084af8be6b31ee0ba4}\label{class_loading_state_a28bee93e7f9818084af8be6b31ee0ba4}} 
 \index{LoadingState@{LoadingState}!setCompletion@{setCompletion}}
 \index{setCompletion@{setCompletion}!LoadingState@{LoadingState}}
-\doxysubsubsection{\texorpdfstring{setCompletion()}{setCompletion()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+\doxysubsubsection{\texorpdfstring{setCompletion()}{setCompletion()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
 {\footnotesize\ttfamily void Loading\+State\+::set\+Completion (\begin{DoxyParamCaption}\item[{float}]{percent }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{class_loading_state_a28bee93e7f9818084af8be6b31ee0ba4}\label{class_loading_state_a28bee93e7f9818084af8be6b31ee0ba4}} 
 \index{LoadingState@{LoadingState}!setCompletion@{setCompletion}}
 \index{setCompletion@{setCompletion}!LoadingState@{LoadingState}}
-\doxysubsubsection{\texorpdfstring{setCompletion()}{setCompletion()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+\doxysubsubsection{\texorpdfstring{setCompletion()}{setCompletion()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily void Loading\+State\+::set\+Completion (\begin{DoxyParamCaption}\item[{float}]{percent }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_loading_state_a28bee93e7f9818084af8be6b31ee0ba4}\label{class_loading_state_a28bee93e7f9818084af8be6b31ee0ba4}} 
+\index{LoadingState@{LoadingState}!setCompletion@{setCompletion}}
+\index{setCompletion@{setCompletion}!LoadingState@{LoadingState}}
+\doxysubsubsection{\texorpdfstring{setCompletion()}{setCompletion()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
 {\footnotesize\ttfamily void Loading\+State\+::set\+Completion (\begin{DoxyParamCaption}\item[{float}]{percent }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{class_loading_state_a8f2f50523c1f35e011ddd0839aa66ee4}\label{class_loading_state_a8f2f50523c1f35e011ddd0839aa66ee4}} 
 \index{LoadingState@{LoadingState}!update@{update}}
 \index{update@{update}!LoadingState@{LoadingState}}
-\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
 {\footnotesize\ttfamily bool Loading\+State\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
@@ -312,7 +354,7 @@ Definition at line \mbox{\hyperlink{_week6_2_week6-_demo5-_pause_state_2_source_
 \mbox{\Hypertarget{class_loading_state_a457c7db7de70d4fa5ab5b639d1aa7889}\label{class_loading_state_a457c7db7de70d4fa5ab5b639d1aa7889}} 
 \index{LoadingState@{LoadingState}!update@{update}}
 \index{update@{update}!LoadingState@{LoadingState}}
-\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
 {\footnotesize\ttfamily virtual bool Loading\+State\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
@@ -322,7 +364,7 @@ Implements \mbox{\hyperlink{class_state_acd5926bc7a373edff9e57f3ffe94ca13}{State
 \mbox{\Hypertarget{class_loading_state_a457c7db7de70d4fa5ab5b639d1aa7889}\label{class_loading_state_a457c7db7de70d4fa5ab5b639d1aa7889}} 
 \index{LoadingState@{LoadingState}!update@{update}}
 \index{update@{update}!LoadingState@{LoadingState}}
-\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
 {\footnotesize\ttfamily virtual bool Loading\+State\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
@@ -332,7 +374,7 @@ Implements \mbox{\hyperlink{class_state_acd5926bc7a373edff9e57f3ffe94ca13}{State
 \mbox{\Hypertarget{class_loading_state_a457c7db7de70d4fa5ab5b639d1aa7889}\label{class_loading_state_a457c7db7de70d4fa5ab5b639d1aa7889}} 
 \index{LoadingState@{LoadingState}!update@{update}}
 \index{update@{update}!LoadingState@{LoadingState}}
-\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
 {\footnotesize\ttfamily virtual bool Loading\+State\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
@@ -342,7 +384,7 @@ Implements \mbox{\hyperlink{class_state_acd5926bc7a373edff9e57f3ffe94ca13}{State
 \mbox{\Hypertarget{class_loading_state_a457c7db7de70d4fa5ab5b639d1aa7889}\label{class_loading_state_a457c7db7de70d4fa5ab5b639d1aa7889}} 
 \index{LoadingState@{LoadingState}!update@{update}}
 \index{update@{update}!LoadingState@{LoadingState}}
-\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
 {\footnotesize\ttfamily virtual bool Loading\+State\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
@@ -352,7 +394,17 @@ Implements \mbox{\hyperlink{class_state_acd5926bc7a373edff9e57f3ffe94ca13}{State
 \mbox{\Hypertarget{class_loading_state_a457c7db7de70d4fa5ab5b639d1aa7889}\label{class_loading_state_a457c7db7de70d4fa5ab5b639d1aa7889}} 
 \index{LoadingState@{LoadingState}!update@{update}}
 \index{update@{update}!LoadingState@{LoadingState}}
-\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily virtual bool Loading\+State\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_state_acd5926bc7a373edff9e57f3ffe94ca13}{State}}.
+
+\mbox{\Hypertarget{class_loading_state_a457c7db7de70d4fa5ab5b639d1aa7889}\label{class_loading_state_a457c7db7de70d4fa5ab5b639d1aa7889}} 
+\index{LoadingState@{LoadingState}!update@{update}}
+\index{update@{update}!LoadingState@{LoadingState}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
 {\footnotesize\ttfamily virtual bool Loading\+State\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsf_1_1_time}{sf\+::\+Time}}}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
@@ -364,12 +416,14 @@ Implements \mbox{\hyperlink{class_state_acd5926bc7a373edff9e57f3ffe94ca13}{State
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
 Week6/\+Week6-\/\+Demo5-\/\+Pause\+State/\+Include/\mbox{\hyperlink{_week6_2_week6-_demo5-_pause_state_2_include_2_loading_state_8hpp}{Loading\+State.\+hpp}}\item 
+Week6/\+Week6-\/\+Demo6-\/\+Loading\+State/\+Include/\mbox{\hyperlink{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp}{Loading\+State.\+hpp}}\item 
 Week8/\+Week8-\/\+Demo1-\/\+Pause\+State/\+Include/\mbox{\hyperlink{_week8_2_week8-_demo1-_pause_state_2_include_2_loading_state_8hpp}{Loading\+State.\+hpp}}\item 
 Week8/\+Week8-\/\+Demo2-\/\+Label/\+Include/\mbox{\hyperlink{_week8_2_week8-_demo2-_label_2_include_2_loading_state_8hpp}{Loading\+State.\+hpp}}\item 
 Week8/\+Week8-\/\+Demo3-\/\+Button/\+Include/\mbox{\hyperlink{_week8_2_week8-_demo3-_button_2_include_2_loading_state_8hpp}{Loading\+State.\+hpp}}\item 
 Week8/\+Week8-\/\+Demo4-\/\+Settings/\+Include/\mbox{\hyperlink{_week8_2_week8-_demo4-_settings_2_include_2_loading_state_8hpp}{Loading\+State.\+hpp}}\item 
 Week9-\/10/\+Week10-\/\+Demo1-\/\+Settings/\+Include/\mbox{\hyperlink{_week9-10_2_week10-_demo1-_settings_2_include_2_loading_state_8hpp}{Loading\+State.\+hpp}}\item 
 Week6/\+Week6-\/\+Demo5-\/\+Pause\+State/\+Source/\mbox{\hyperlink{_week6_2_week6-_demo5-_pause_state_2_source_2_loading_state_8cpp}{Loading\+State.\+cpp}}\item 
+Week6/\+Week6-\/\+Demo6-\/\+Loading\+State/\+Source/\mbox{\hyperlink{_week6_2_week6-_demo6-_loading_state_2_source_2_loading_state_8cpp}{Loading\+State.\+cpp}}\item 
 Week8/\+Week8-\/\+Demo1-\/\+Pause\+State/\+Source/\mbox{\hyperlink{_week8_2_week8-_demo1-_pause_state_2_source_2_loading_state_8cpp}{Loading\+State.\+cpp}}\item 
 Week8/\+Week8-\/\+Demo2-\/\+Label/\+Source/\mbox{\hyperlink{_week8_2_week8-_demo2-_label_2_source_2_loading_state_8cpp}{Loading\+State.\+cpp}}\item 
 Week8/\+Week8-\/\+Demo3-\/\+Button/\+Source/\mbox{\hyperlink{_week8_2_week8-_demo3-_button_2_source_2_loading_state_8cpp}{Loading\+State.\+cpp}}\item 

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: LoadingState Class Reference</title>
+<title>GAME3015: LoadingState Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">GAME3015
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -111,6 +111,7 @@ Inheritance diagram for LoadingState:</div>
 <area href="class_state.html" alt="State" shape="rect" coords="285,0,370,24"/>
 <area href="class_state.html" alt="State" shape="rect" coords="380,0,465,24"/>
 <area href="class_state.html" alt="State" shape="rect" coords="475,0,560,24"/>
+<area href="class_state.html" alt="State" shape="rect" coords="570,0,655,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -124,6 +125,16 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8f2f50523c1f35e011ddd0839aa66ee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37da243eeeca36460bac2f32cef3e368"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loading_state.html#a37da243eeeca36460bac2f32cef3e368">handleEvent</a> (const <a class="el" href="classsf_1_1_event.html">sf::Event</a> &amp;event)</td></tr>
 <tr class="separator:a37da243eeeca36460bac2f32cef3e368"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28bee93e7f9818084af8be6b31ee0ba4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loading_state.html#a28bee93e7f9818084af8be6b31ee0ba4">setCompletion</a> (float percent)</td></tr>
+<tr class="separator:a28bee93e7f9818084af8be6b31ee0ba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6830cacada1f9c215f913d31aa1805cf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loading_state.html#a6830cacada1f9c215f913d31aa1805cf">LoadingState</a> (<a class="el" href="class_state_stack.html">StateStack</a> &amp;stack, <a class="el" href="struct_state_1_1_context.html">Context</a> context)</td></tr>
+<tr class="separator:a6830cacada1f9c215f913d31aa1805cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac970b1f7d7ad5a24a84dda1bd02636d6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loading_state.html#ac970b1f7d7ad5a24a84dda1bd02636d6">draw</a> ()</td></tr>
+<tr class="separator:ac970b1f7d7ad5a24a84dda1bd02636d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a457c7db7de70d4fa5ab5b639d1aa7889"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loading_state.html#a457c7db7de70d4fa5ab5b639d1aa7889">update</a> (<a class="el" href="classsf_1_1_time.html">sf::Time</a> dt)</td></tr>
+<tr class="separator:a457c7db7de70d4fa5ab5b639d1aa7889"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adab7f548baa39569ddf7fb87a7a2d201"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loading_state.html#adab7f548baa39569ddf7fb87a7a2d201">handleEvent</a> (const <a class="el" href="classsf_1_1_event.html">sf::Event</a> &amp;event)</td></tr>
+<tr class="separator:adab7f548baa39569ddf7fb87a7a2d201"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28bee93e7f9818084af8be6b31ee0ba4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loading_state.html#a28bee93e7f9818084af8be6b31ee0ba4">setCompletion</a> (float percent)</td></tr>
 <tr class="separator:a28bee93e7f9818084af8be6b31ee0ba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6830cacada1f9c215f913d31aa1805cf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loading_state.html#a6830cacada1f9c215f913d31aa1805cf">LoadingState</a> (<a class="el" href="class_state_stack.html">StateStack</a> &amp;stack, <a class="el" href="struct_state_1_1_context.html">Context</a> context)</td></tr>
@@ -309,10 +320,16 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:afede488ff3c1b264bbd07f8aeead84a7 inherit pub_methods_class_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ddc1df6f998184d6477b48fab90281c inherit pub_methods_class_state"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_state.html#a9ddc1df6f998184d6477b48fab90281c">~State</a> ()</td></tr>
 <tr class="separator:a9ddc1df6f998184d6477b48fab90281c inherit pub_methods_class_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afede488ff3c1b264bbd07f8aeead84a7 inherit pub_methods_class_state"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_state.html#afede488ff3c1b264bbd07f8aeead84a7">State</a> (<a class="el" href="class_state_stack.html">StateStack</a> &amp;stack, <a class="el" href="struct_state_1_1_context.html">Context</a> context)</td></tr>
+<tr class="separator:afede488ff3c1b264bbd07f8aeead84a7 inherit pub_methods_class_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ddc1df6f998184d6477b48fab90281c inherit pub_methods_class_state"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_state.html#a9ddc1df6f998184d6477b48fab90281c">~State</a> ()</td></tr>
+<tr class="separator:a9ddc1df6f998184d6477b48fab90281c inherit pub_methods_class_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_types_class_state"><td colspan="2" onclick="javascript:toggleInherit('pub_types_class_state')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="class_state.html">State</a></td></tr>
+<tr class="memitem:a71d9930be1a58be7f711e245b7965d48 inherit pub_types_class_state"><td class="memItemLeft" align="right" valign="top">typedef std::unique_ptr&lt; <a class="el" href="class_state.html">State</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_state.html#a71d9930be1a58be7f711e245b7965d48">Ptr</a></td></tr>
+<tr class="separator:a71d9930be1a58be7f711e245b7965d48 inherit pub_types_class_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71d9930be1a58be7f711e245b7965d48 inherit pub_types_class_state"><td class="memItemLeft" align="right" valign="top">typedef std::unique_ptr&lt; <a class="el" href="class_state.html">State</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_state.html#a71d9930be1a58be7f711e245b7965d48">Ptr</a></td></tr>
 <tr class="separator:a71d9930be1a58be7f711e245b7965d48 inherit pub_types_class_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71d9930be1a58be7f711e245b7965d48 inherit pub_types_class_state"><td class="memItemLeft" align="right" valign="top">typedef std::unique_ptr&lt; <a class="el" href="class_state.html">State</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_state.html#a71d9930be1a58be7f711e245b7965d48">Ptr</a></td></tr>
@@ -614,13 +631,21 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a4b602bed9bf0179ee5f6748fce340ae6 inherit pro_methods_class_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b7e4ae0e09fb4265e03a747cb511131 inherit pro_methods_class_state"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_state_1_1_context.html">Context</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_state.html#a0b7e4ae0e09fb4265e03a747cb511131">getContext</a> () const</td></tr>
 <tr class="separator:a0b7e4ae0e09fb4265e03a747cb511131 inherit pro_methods_class_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6763de833ceb9c23df45aff163a4a1cd inherit pro_methods_class_state"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_state.html#a6763de833ceb9c23df45aff163a4a1cd">requestStackPush</a> (<a class="el" href="namespace_states.html#a571a0dc62822f97bb9511eb013d8e1c3">States::ID</a> stateID)</td></tr>
+<tr class="separator:a6763de833ceb9c23df45aff163a4a1cd inherit pro_methods_class_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa418660892d6161772c907bd8d70f910 inherit pro_methods_class_state"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_state.html#aa418660892d6161772c907bd8d70f910">requestStackPop</a> ()</td></tr>
+<tr class="separator:aa418660892d6161772c907bd8d70f910 inherit pro_methods_class_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b602bed9bf0179ee5f6748fce340ae6 inherit pro_methods_class_state"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_state.html#a4b602bed9bf0179ee5f6748fce340ae6">requestStateClear</a> ()</td></tr>
+<tr class="separator:a4b602bed9bf0179ee5f6748fce340ae6 inherit pro_methods_class_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b7e4ae0e09fb4265e03a747cb511131 inherit pro_methods_class_state"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_state_1_1_context.html">Context</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_state.html#a0b7e4ae0e09fb4265e03a747cb511131">getContext</a> () const</td></tr>
+<tr class="separator:a0b7e4ae0e09fb4265e03a747cb511131 inherit pro_methods_class_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="_week6_2_week6-_demo5-_pause_state_2_include_2_loading_state_8hpp_source.html#l00011">11</a> of file <a class="el" href="_week6_2_week6-_demo5-_pause_state_2_include_2_loading_state_8hpp_source.html">LoadingState.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6830cacada1f9c215f913d31aa1805cf" name="a6830cacada1f9c215f913d31aa1805cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6830cacada1f9c215f913d31aa1805cf">&#9670;&nbsp;</a></span>LoadingState() <span class="overload">[1/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6830cacada1f9c215f913d31aa1805cf">&#9670;&nbsp;</a></span>LoadingState() <span class="overload">[1/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -650,7 +675,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a6830cacada1f9c215f913d31aa1805cf" name="a6830cacada1f9c215f913d31aa1805cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6830cacada1f9c215f913d31aa1805cf">&#9670;&nbsp;</a></span>LoadingState() <span class="overload">[2/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6830cacada1f9c215f913d31aa1805cf">&#9670;&nbsp;</a></span>LoadingState() <span class="overload">[2/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -678,7 +703,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a6830cacada1f9c215f913d31aa1805cf" name="a6830cacada1f9c215f913d31aa1805cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6830cacada1f9c215f913d31aa1805cf">&#9670;&nbsp;</a></span>LoadingState() <span class="overload">[3/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6830cacada1f9c215f913d31aa1805cf">&#9670;&nbsp;</a></span>LoadingState() <span class="overload">[3/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -706,7 +731,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a6830cacada1f9c215f913d31aa1805cf" name="a6830cacada1f9c215f913d31aa1805cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6830cacada1f9c215f913d31aa1805cf">&#9670;&nbsp;</a></span>LoadingState() <span class="overload">[4/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6830cacada1f9c215f913d31aa1805cf">&#9670;&nbsp;</a></span>LoadingState() <span class="overload">[4/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -734,7 +759,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a6830cacada1f9c215f913d31aa1805cf" name="a6830cacada1f9c215f913d31aa1805cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6830cacada1f9c215f913d31aa1805cf">&#9670;&nbsp;</a></span>LoadingState() <span class="overload">[5/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6830cacada1f9c215f913d31aa1805cf">&#9670;&nbsp;</a></span>LoadingState() <span class="overload">[5/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -762,7 +787,35 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a6830cacada1f9c215f913d31aa1805cf" name="a6830cacada1f9c215f913d31aa1805cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6830cacada1f9c215f913d31aa1805cf">&#9670;&nbsp;</a></span>LoadingState() <span class="overload">[6/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6830cacada1f9c215f913d31aa1805cf">&#9670;&nbsp;</a></span>LoadingState() <span class="overload">[6/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LoadingState::LoadingState </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_state_stack.html">StateStack</a> &amp;&#160;</td>
+          <td class="paramname"><em>stack</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_state_1_1_context.html">Context</a>&#160;</td>
+          <td class="paramname"><em>context</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6830cacada1f9c215f913d31aa1805cf" name="a6830cacada1f9c215f913d31aa1805cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6830cacada1f9c215f913d31aa1805cf">&#9670;&nbsp;</a></span>LoadingState() <span class="overload">[7/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -791,7 +844,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="adfe2c002c52cc2c49967ba3ace4aa73b" name="adfe2c002c52cc2c49967ba3ace4aa73b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adfe2c002c52cc2c49967ba3ace4aa73b">&#9670;&nbsp;</a></span>draw() <span class="overload">[1/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adfe2c002c52cc2c49967ba3ace4aa73b">&#9670;&nbsp;</a></span>draw() <span class="overload">[1/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -820,7 +873,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="ac970b1f7d7ad5a24a84dda1bd02636d6" name="ac970b1f7d7ad5a24a84dda1bd02636d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac970b1f7d7ad5a24a84dda1bd02636d6">&#9670;&nbsp;</a></span>draw() <span class="overload">[2/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac970b1f7d7ad5a24a84dda1bd02636d6">&#9670;&nbsp;</a></span>draw() <span class="overload">[2/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -847,7 +900,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="ac970b1f7d7ad5a24a84dda1bd02636d6" name="ac970b1f7d7ad5a24a84dda1bd02636d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac970b1f7d7ad5a24a84dda1bd02636d6">&#9670;&nbsp;</a></span>draw() <span class="overload">[3/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac970b1f7d7ad5a24a84dda1bd02636d6">&#9670;&nbsp;</a></span>draw() <span class="overload">[3/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -874,7 +927,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="ac970b1f7d7ad5a24a84dda1bd02636d6" name="ac970b1f7d7ad5a24a84dda1bd02636d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac970b1f7d7ad5a24a84dda1bd02636d6">&#9670;&nbsp;</a></span>draw() <span class="overload">[4/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac970b1f7d7ad5a24a84dda1bd02636d6">&#9670;&nbsp;</a></span>draw() <span class="overload">[4/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -901,7 +954,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="ac970b1f7d7ad5a24a84dda1bd02636d6" name="ac970b1f7d7ad5a24a84dda1bd02636d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac970b1f7d7ad5a24a84dda1bd02636d6">&#9670;&nbsp;</a></span>draw() <span class="overload">[5/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac970b1f7d7ad5a24a84dda1bd02636d6">&#9670;&nbsp;</a></span>draw() <span class="overload">[5/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -928,7 +981,34 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="ac970b1f7d7ad5a24a84dda1bd02636d6" name="ac970b1f7d7ad5a24a84dda1bd02636d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac970b1f7d7ad5a24a84dda1bd02636d6">&#9670;&nbsp;</a></span>draw() <span class="overload">[6/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac970b1f7d7ad5a24a84dda1bd02636d6">&#9670;&nbsp;</a></span>draw() <span class="overload">[6/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void LoadingState::draw </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_state.html#ae261605bc40b7e3959ce5df5457e4942">State</a>.</p>
+
+</div>
+</div>
+<a id="ac970b1f7d7ad5a24a84dda1bd02636d6" name="ac970b1f7d7ad5a24a84dda1bd02636d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac970b1f7d7ad5a24a84dda1bd02636d6">&#9670;&nbsp;</a></span>draw() <span class="overload">[7/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -955,7 +1035,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a37da243eeeca36460bac2f32cef3e368" name="a37da243eeeca36460bac2f32cef3e368"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37da243eeeca36460bac2f32cef3e368">&#9670;&nbsp;</a></span>handleEvent() <span class="overload">[1/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a37da243eeeca36460bac2f32cef3e368">&#9670;&nbsp;</a></span>handleEvent() <span class="overload">[1/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -985,7 +1065,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="adab7f548baa39569ddf7fb87a7a2d201" name="adab7f548baa39569ddf7fb87a7a2d201"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adab7f548baa39569ddf7fb87a7a2d201">&#9670;&nbsp;</a></span>handleEvent() <span class="overload">[2/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adab7f548baa39569ddf7fb87a7a2d201">&#9670;&nbsp;</a></span>handleEvent() <span class="overload">[2/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1013,7 +1093,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="adab7f548baa39569ddf7fb87a7a2d201" name="adab7f548baa39569ddf7fb87a7a2d201"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adab7f548baa39569ddf7fb87a7a2d201">&#9670;&nbsp;</a></span>handleEvent() <span class="overload">[3/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adab7f548baa39569ddf7fb87a7a2d201">&#9670;&nbsp;</a></span>handleEvent() <span class="overload">[3/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1041,7 +1121,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="adab7f548baa39569ddf7fb87a7a2d201" name="adab7f548baa39569ddf7fb87a7a2d201"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adab7f548baa39569ddf7fb87a7a2d201">&#9670;&nbsp;</a></span>handleEvent() <span class="overload">[4/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adab7f548baa39569ddf7fb87a7a2d201">&#9670;&nbsp;</a></span>handleEvent() <span class="overload">[4/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1069,7 +1149,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="adab7f548baa39569ddf7fb87a7a2d201" name="adab7f548baa39569ddf7fb87a7a2d201"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adab7f548baa39569ddf7fb87a7a2d201">&#9670;&nbsp;</a></span>handleEvent() <span class="overload">[5/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adab7f548baa39569ddf7fb87a7a2d201">&#9670;&nbsp;</a></span>handleEvent() <span class="overload">[5/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1097,7 +1177,35 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="adab7f548baa39569ddf7fb87a7a2d201" name="adab7f548baa39569ddf7fb87a7a2d201"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adab7f548baa39569ddf7fb87a7a2d201">&#9670;&nbsp;</a></span>handleEvent() <span class="overload">[6/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adab7f548baa39569ddf7fb87a7a2d201">&#9670;&nbsp;</a></span>handleEvent() <span class="overload">[6/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool LoadingState::handleEvent </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classsf_1_1_event.html">sf::Event</a> &amp;&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_state.html#a19965f83460b248c42952aac8d001206">State</a>.</p>
+
+</div>
+</div>
+<a id="adab7f548baa39569ddf7fb87a7a2d201" name="adab7f548baa39569ddf7fb87a7a2d201"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adab7f548baa39569ddf7fb87a7a2d201">&#9670;&nbsp;</a></span>handleEvent() <span class="overload">[7/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1125,7 +1233,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a28bee93e7f9818084af8be6b31ee0ba4" name="a28bee93e7f9818084af8be6b31ee0ba4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28bee93e7f9818084af8be6b31ee0ba4">&#9670;&nbsp;</a></span>setCompletion() <span class="overload">[1/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a28bee93e7f9818084af8be6b31ee0ba4">&#9670;&nbsp;</a></span>setCompletion() <span class="overload">[1/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1145,7 +1253,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a28bee93e7f9818084af8be6b31ee0ba4" name="a28bee93e7f9818084af8be6b31ee0ba4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28bee93e7f9818084af8be6b31ee0ba4">&#9670;&nbsp;</a></span>setCompletion() <span class="overload">[2/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a28bee93e7f9818084af8be6b31ee0ba4">&#9670;&nbsp;</a></span>setCompletion() <span class="overload">[2/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1163,7 +1271,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a28bee93e7f9818084af8be6b31ee0ba4" name="a28bee93e7f9818084af8be6b31ee0ba4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28bee93e7f9818084af8be6b31ee0ba4">&#9670;&nbsp;</a></span>setCompletion() <span class="overload">[3/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a28bee93e7f9818084af8be6b31ee0ba4">&#9670;&nbsp;</a></span>setCompletion() <span class="overload">[3/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1181,7 +1289,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a28bee93e7f9818084af8be6b31ee0ba4" name="a28bee93e7f9818084af8be6b31ee0ba4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28bee93e7f9818084af8be6b31ee0ba4">&#9670;&nbsp;</a></span>setCompletion() <span class="overload">[4/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a28bee93e7f9818084af8be6b31ee0ba4">&#9670;&nbsp;</a></span>setCompletion() <span class="overload">[4/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1199,7 +1307,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a28bee93e7f9818084af8be6b31ee0ba4" name="a28bee93e7f9818084af8be6b31ee0ba4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28bee93e7f9818084af8be6b31ee0ba4">&#9670;&nbsp;</a></span>setCompletion() <span class="overload">[5/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a28bee93e7f9818084af8be6b31ee0ba4">&#9670;&nbsp;</a></span>setCompletion() <span class="overload">[5/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1217,7 +1325,25 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a28bee93e7f9818084af8be6b31ee0ba4" name="a28bee93e7f9818084af8be6b31ee0ba4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28bee93e7f9818084af8be6b31ee0ba4">&#9670;&nbsp;</a></span>setCompletion() <span class="overload">[6/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a28bee93e7f9818084af8be6b31ee0ba4">&#9670;&nbsp;</a></span>setCompletion() <span class="overload">[6/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LoadingState::setCompletion </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>percent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a28bee93e7f9818084af8be6b31ee0ba4" name="a28bee93e7f9818084af8be6b31ee0ba4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28bee93e7f9818084af8be6b31ee0ba4">&#9670;&nbsp;</a></span>setCompletion() <span class="overload">[7/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1235,7 +1361,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a8f2f50523c1f35e011ddd0839aa66ee4" name="a8f2f50523c1f35e011ddd0839aa66ee4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f2f50523c1f35e011ddd0839aa66ee4">&#9670;&nbsp;</a></span>update() <span class="overload">[1/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f2f50523c1f35e011ddd0839aa66ee4">&#9670;&nbsp;</a></span>update() <span class="overload">[1/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1265,7 +1391,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a457c7db7de70d4fa5ab5b639d1aa7889" name="a457c7db7de70d4fa5ab5b639d1aa7889"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a457c7db7de70d4fa5ab5b639d1aa7889">&#9670;&nbsp;</a></span>update() <span class="overload">[2/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a457c7db7de70d4fa5ab5b639d1aa7889">&#9670;&nbsp;</a></span>update() <span class="overload">[2/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1293,7 +1419,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a457c7db7de70d4fa5ab5b639d1aa7889" name="a457c7db7de70d4fa5ab5b639d1aa7889"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a457c7db7de70d4fa5ab5b639d1aa7889">&#9670;&nbsp;</a></span>update() <span class="overload">[3/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a457c7db7de70d4fa5ab5b639d1aa7889">&#9670;&nbsp;</a></span>update() <span class="overload">[3/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1321,7 +1447,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a457c7db7de70d4fa5ab5b639d1aa7889" name="a457c7db7de70d4fa5ab5b639d1aa7889"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a457c7db7de70d4fa5ab5b639d1aa7889">&#9670;&nbsp;</a></span>update() <span class="overload">[4/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a457c7db7de70d4fa5ab5b639d1aa7889">&#9670;&nbsp;</a></span>update() <span class="overload">[4/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1349,7 +1475,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a457c7db7de70d4fa5ab5b639d1aa7889" name="a457c7db7de70d4fa5ab5b639d1aa7889"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a457c7db7de70d4fa5ab5b639d1aa7889">&#9670;&nbsp;</a></span>update() <span class="overload">[5/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a457c7db7de70d4fa5ab5b639d1aa7889">&#9670;&nbsp;</a></span>update() <span class="overload">[5/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1377,7 +1503,35 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a457c7db7de70d4fa5ab5b639d1aa7889" name="a457c7db7de70d4fa5ab5b639d1aa7889"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a457c7db7de70d4fa5ab5b639d1aa7889">&#9670;&nbsp;</a></span>update() <span class="overload">[6/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a457c7db7de70d4fa5ab5b639d1aa7889">&#9670;&nbsp;</a></span>update() <span class="overload">[6/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool LoadingState::update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classsf_1_1_time.html">sf::Time</a>&#160;</td>
+          <td class="paramname"><em>dt</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_state.html#acd5926bc7a373edff9e57f3ffe94ca13">State</a>.</p>
+
+</div>
+</div>
+<a id="a457c7db7de70d4fa5ab5b639d1aa7889" name="a457c7db7de70d4fa5ab5b639d1aa7889"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a457c7db7de70d4fa5ab5b639d1aa7889">&#9670;&nbsp;</a></span>update() <span class="overload">[7/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1406,12 +1560,14 @@ Additional Inherited Members</h2></td></tr>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Week6/Week6-Demo5-PauseState/Include/<a class="el" href="_week6_2_week6-_demo5-_pause_state_2_include_2_loading_state_8hpp_source.html">LoadingState.hpp</a></li>
+<li>Week6/Week6-Demo6-LoadingState/Include/<a class="el" href="_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp_source.html">LoadingState.hpp</a></li>
 <li>Week8/Week8-Demo1-PauseState/Include/<a class="el" href="_week8_2_week8-_demo1-_pause_state_2_include_2_loading_state_8hpp_source.html">LoadingState.hpp</a></li>
 <li>Week8/Week8-Demo2-Label/Include/<a class="el" href="_week8_2_week8-_demo2-_label_2_include_2_loading_state_8hpp_source.html">LoadingState.hpp</a></li>
 <li>Week8/Week8-Demo3-Button/Include/<a class="el" href="_week8_2_week8-_demo3-_button_2_include_2_loading_state_8hpp_source.html">LoadingState.hpp</a></li>
 <li>Week8/Week8-Demo4-Settings/Include/<a class="el" href="_week8_2_week8-_demo4-_settings_2_include_2_loading_state_8hpp_source.html">LoadingState.hpp</a></li>
 <li>Week9-10/Week10-Demo1-Settings/Include/<a class="el" href="_week9-10_2_week10-_demo1-_settings_2_include_2_loading_state_8hpp_source.html">LoadingState.hpp</a></li>
 <li>Week6/Week6-Demo5-PauseState/Source/<a class="el" href="_week6_2_week6-_demo5-_pause_state_2_source_2_loading_state_8cpp_source.html">LoadingState.cpp</a></li>
+<li>Week6/Week6-Demo6-LoadingState/Source/<a class="el" href="_week6_2_week6-_demo6-_loading_state_2_source_2_loading_state_8cpp_source.html">LoadingState.cpp</a></li>
 <li>Week8/Week8-Demo1-PauseState/Source/<a class="el" href="_week8_2_week8-_demo1-_pause_state_2_source_2_loading_state_8cpp_source.html">LoadingState.cpp</a></li>
 <li>Week8/Week8-Demo2-Label/Source/<a class="el" href="_week8_2_week8-_demo2-_label_2_source_2_loading_state_8cpp_source.html">LoadingState.cpp</a></li>
 <li>Week8/Week8-Demo3-Button/Source/<a class="el" href="_week8_2_week8-_demo3-_button_2_source_2_loading_state_8cpp_source.html">LoadingState.cpp</a></li>

@@ -5,7 +5,7 @@
 %%For: 
 %Magnification: 1.00
 %%Orientation: Portrait
-%%BoundingBox: 0 0 500 8073.394531
+%%BoundingBox: 0 0 500 8165.137695
 %%Pages: 0
 %%BeginSetup
 %%EndSetup
@@ -19,12 +19,12 @@
 /marginwidth 10 def
 /distx 20 def
 /disty 40 def
-/boundaspect 0.061932 def  % aspect ratio of the BoundingBox (width/height)
+/boundaspect 0.061236 def  % aspect ratio of the BoundingBox (width/height)
 /boundx 500 def
 /boundy boundx boundaspect div def
 /xspacing 0 def
 /yspacing 0 def
-/rows 88 def
+/rows 89 def
 /cols 2 def
 /scalefactor 0 def
 /boxfont /Times-Roman findfont fontheight scalefont def
@@ -251,6 +251,7 @@ boxfont setfont
 (SceneNode) cw
 (SceneNode) cw
 (SceneNode) cw
+(SceneNode) cw
 (sf::Shape) cw
 (sf::Shape) cw
 (sf::Sprite) cw
@@ -272,7 +273,8 @@ boundx scalefactor div boundy scalefactor div scale
 
 % ----- classes -----
 
- (sf::Drawable) 0.000000 87.000000 box
+ (sf::Drawable) 0.000000 88.000000 box
+ (Animation) 1.000000 87.000000 box
  (Animation) 1.000000 86.000000 box
  (Animation) 1.000000 85.000000 box
  (Animation) 1.000000 84.000000 box
@@ -282,14 +284,15 @@ boundx scalefactor div boundy scalefactor div scale
  (Animation) 1.000000 80.000000 box
  (Animation) 1.000000 79.000000 box
  (Animation) 1.000000 78.000000 box
- (Animation) 1.000000 77.000000 box
+ (Effect) 1.000000 77.000000 box
+1.000000 77.000000 mark
  (Effect) 1.000000 76.000000 box
 1.000000 76.000000 mark
- (Effect) 1.000000 75.000000 box
+ (Entity) 1.000000 75.000000 box
 1.000000 75.000000 mark
  (Entity) 1.000000 74.000000 box
 1.000000 74.000000 mark
- (Entity) 1.000000 73.000000 box
+ (GUI::Component) 1.000000 73.000000 box
 1.000000 73.000000 mark
  (GUI::Component) 1.000000 72.000000 box
 1.000000 72.000000 mark
@@ -339,10 +342,10 @@ boundx scalefactor div boundy scalefactor div scale
 1.000000 50.000000 mark
  (GUI::Component) 1.000000 49.000000 box
 1.000000 49.000000 mark
- (GUI::Component) 1.000000 48.000000 box
-1.000000 48.000000 mark
+ (Player2) 1.000000 48.000000 box
  (Player2) 1.000000 47.000000 box
- (Player2) 1.000000 46.000000 box
+ (SceneNode) 1.000000 46.000000 box
+1.000000 46.000000 mark
  (SceneNode) 1.000000 45.000000 box
 1.000000 45.000000 mark
  (SceneNode) 1.000000 44.000000 box
@@ -431,7 +434,9 @@ boundx scalefactor div boundy scalefactor div scale
 % ----- relations -----
 
 solid
-1 0.000000 86.250000 out
+1 0.000000 87.250000 out
+solid
+0 0.000000 87.500000 hedge
 solid
 0 0.000000 86.500000 hedge
 solid
@@ -607,4 +612,4 @@ solid
 solid
 0 0.000000 0.500000 hedge
 solid
-0.000000 87.000000 0.500000 vedge
+0.000000 88.000000 0.500000 vedge

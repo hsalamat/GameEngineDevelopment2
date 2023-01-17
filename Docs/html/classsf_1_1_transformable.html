@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: sf::Transformable Class Reference</title>
+<title>GAME3015: sf::Transformable Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">GAME3015
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -183,12 +183,13 @@ Inheritance diagram for sf::Transformable:</div>
 <area href="class_scene_node.html" alt="SceneNode" shape="rect" coords="119,4088,228,4112"/>
 <area href="class_scene_node.html" alt="SceneNode" shape="rect" coords="119,4144,228,4168"/>
 <area href="class_scene_node.html" alt="SceneNode" shape="rect" coords="119,4200,228,4224"/>
-<area href="classsf_1_1_shape.html" title="Base class for textured shapes with outline." alt="sf::Shape" shape="rect" coords="119,4256,228,4280"/>
+<area href="class_scene_node.html" alt="SceneNode" shape="rect" coords="119,4256,228,4280"/>
 <area href="classsf_1_1_shape.html" title="Base class for textured shapes with outline." alt="sf::Shape" shape="rect" coords="119,4312,228,4336"/>
-<area href="classsf_1_1_sprite.html" title="Drawable representation of a texture, with its own transformations, color, etc." alt="sf::Sprite" shape="rect" coords="119,4368,228,4392"/>
+<area href="classsf_1_1_shape.html" title="Base class for textured shapes with outline." alt="sf::Shape" shape="rect" coords="119,4368,228,4392"/>
 <area href="classsf_1_1_sprite.html" title="Drawable representation of a texture, with its own transformations, color, etc." alt="sf::Sprite" shape="rect" coords="119,4424,228,4448"/>
-<area href="classsf_1_1_text.html" title="Graphical text that can be drawn to a render target." alt="sf::Text" shape="rect" coords="119,4480,228,4504"/>
+<area href="classsf_1_1_sprite.html" title="Drawable representation of a texture, with its own transformations, color, etc." alt="sf::Sprite" shape="rect" coords="119,4480,228,4504"/>
 <area href="classsf_1_1_text.html" title="Graphical text that can be drawn to a render target." alt="sf::Text" shape="rect" coords="119,4536,228,4560"/>
+<area href="classsf_1_1_text.html" title="Graphical text that can be drawn to a render target." alt="sf::Text" shape="rect" coords="119,4592,228,4616"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -358,7 +359,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">    <a class="code hl_class" href="classsf_1_1_transformable.html">sf::Transformable</a> myTransform;</div>
 <div class="line">};</div>
-</div><!-- fragment --><p >A note on coordinates and undistorted rendering: <br  />
+</div><!-- fragment --><p ><a class="el" href="class_a.html">A</a> note on coordinates and undistorted rendering: <br  />
 By default, SFML (or more exactly, OpenGL) may interpolate drawable objects such as sprites or texts when rendering. While this allows transitions like slow movements or rotations to appear smoothly, it can lead to unwanted results in some cases, for example blurred or distorted objects. In order to render a <a class="el" href="classsf_1_1_drawable.html" title="Abstract base class for objects that can be drawn to a render target.">sf::Drawable</a> object pixel-perfectly, make sure the involved coordinates allow a 1:1 mapping of pixels in the window to texels (pixels in the texture). More specifically, this means:</p><ul>
 <li>The object's position, origin and scale have no fractional part</li>
 <li>The object's and the view's rotation are a multiple of 90 degrees</li>

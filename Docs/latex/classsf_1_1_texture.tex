@@ -172,13 +172,13 @@ class \mbox{\hyperlink{classsf_1_1_texture_a564c389faf3e8638c546c12cdbdda81d}{Re
 
 \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} stores pixels that can be drawn, with a sprite for example.
 
-A texture lives in the graphics card memory, therefore it is very fast to draw a texture to a render target, or copy a render target to a texture (the graphics card can access both directly).
+\mbox{\hyperlink{class_a}{A}} texture lives in the graphics card memory, therefore it is very fast to draw a texture to a render target, or copy a render target to a texture (the graphics card can access both directly).
 
-Being stored in the graphics card memory has some drawbacks. A texture cannot be manipulated as freely as a \mbox{\hyperlink{classsf_1_1_image}{sf\+::\+Image}}, you need to prepare the pixels first and then upload them to the texture in a single operation (see \mbox{\hyperlink{classsf_1_1_texture_ae4eab5c6781316840b0c50ad08370963}{Texture\+::update}}).
+Being stored in the graphics card memory has some drawbacks. \mbox{\hyperlink{class_a}{A}} texture cannot be manipulated as freely as a \mbox{\hyperlink{classsf_1_1_image}{sf\+::\+Image}}, you need to prepare the pixels first and then upload them to the texture in a single operation (see \mbox{\hyperlink{classsf_1_1_texture_ae4eab5c6781316840b0c50ad08370963}{Texture\+::update}}).
 
 \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}} makes it easy to convert from/to \mbox{\hyperlink{classsf_1_1_image}{sf\+::\+Image}}, but keep in mind that these calls require transfers between the graphics card and the central memory, therefore they are slow operations.
 
-A texture can be loaded from an image, but also directly from a file/memory/stream. The necessary shortcuts are defined so that you don\textquotesingle{}t need an image first for the most common cases. However, if you want to perform some modifications on the pixels before creating the final texture, you can load your file to a \mbox{\hyperlink{classsf_1_1_image}{sf\+::\+Image}}, do whatever you need with the pixels, and then call \mbox{\hyperlink{classsf_1_1_texture_abec4567ad9856a3596dc74803f26fba2}{Texture\+::load\+From\+Image}}.
+\mbox{\hyperlink{class_a}{A}} texture can be loaded from an image, but also directly from a file/memory/stream. The necessary shortcuts are defined so that you don\textquotesingle{}t need an image first for the most common cases. However, if you want to perform some modifications on the pixels before creating the final texture, you can load your file to a \mbox{\hyperlink{classsf_1_1_image}{sf\+::\+Image}}, do whatever you need with the pixels, and then call \mbox{\hyperlink{classsf_1_1_texture_abec4567ad9856a3596dc74803f26fba2}{Texture\+::load\+From\+Image}}.
 
 Since they live in the graphics card memory, the pixels of a texture cannot be accessed without a slow copy first. And they cannot be accessed individually. Therefore, if you need to read the texture\textquotesingle{}s pixels (like for pixel-\/perfect collisions), it is recommended to store the collision information separately, for example in an array of booleans.
 
@@ -1437,7 +1437,7 @@ This function does nothing if {\itshape pixels} is null or if the texture was no
 
 
 \begin{DoxyParams}{Parameters}
-{\em pixels} & Array of pixels to copy to the texture \\
+{\em pixels} & \mbox{\hyperlink{class_array}{Array}} of pixels to copy to the texture \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classsf_1_1_texture_ae4eab5c6781316840b0c50ad08370963}\label{classsf_1_1_texture_ae4eab5c6781316840b0c50ad08370963}} 
@@ -1458,7 +1458,7 @@ This function does nothing if {\itshape pixels} is null or if the texture was no
 
 
 \begin{DoxyParams}{Parameters}
-{\em pixels} & Array of pixels to copy to the texture \\
+{\em pixels} & \mbox{\hyperlink{class_array}{Array}} of pixels to copy to the texture \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classsf_1_1_texture_a1352d8e16c2aeb4df586ed65dd2c36b9}\label{classsf_1_1_texture_a1352d8e16c2aeb4df586ed65dd2c36b9}} 
@@ -1479,7 +1479,7 @@ This function does nothing if {\itshape pixels} is null or if the texture was no
 
 
 \begin{DoxyParams}{Parameters}
-{\em pixels} & Array of pixels to copy to the texture \\
+{\em pixels} & \mbox{\hyperlink{class_array}{Array}} of pixels to copy to the texture \\
 \hline
 {\em width} & Width of the pixel region contained in {\itshape pixels} \\
 \hline
@@ -1508,7 +1508,7 @@ This function does nothing if {\itshape pixels} is null or if the texture was no
 
 
 \begin{DoxyParams}{Parameters}
-{\em pixels} & Array of pixels to copy to the texture \\
+{\em pixels} & \mbox{\hyperlink{class_array}{Array}} of pixels to copy to the texture \\
 \hline
 {\em width} & Width of the pixel region contained in {\itshape pixels} \\
 \hline

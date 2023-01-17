@@ -1,0 +1,14 @@
+﻿  Game.cpp
+C:\Hooman\GBC\GAME3015\Week 2\Week2-64bit\Week2-Demo7\Source\Game.cpp(15,46): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+C:\Hooman\GBC\GAME3015\Week 2\Week2-64bit\Week2-Demo7\Source\Game.cpp(15,34): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+  main.cpp
+  Generating Code...
+  Week2-Demo7.vcxproj -> C:\Hooman\GBC\GAME3015\Week 2\Week2-64bit\x64\Debug\Week2-Demo7.exe

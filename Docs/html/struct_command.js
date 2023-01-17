@@ -50,6 +50,7 @@ var struct_command =
     [ "Command", "struct_command.html#a18df2d81039392daeb0b78c346a70537", null ],
     [ "Command", "struct_command.html#a18df2d81039392daeb0b78c346a70537", null ],
     [ "Command", "struct_command.html#a18df2d81039392daeb0b78c346a70537", null ],
+    [ "Command", "struct_command.html#a18df2d81039392daeb0b78c346a70537", null ],
     [ "action", "struct_command.html#ac5473faf8b8b03ce83353838bc00c6dd", null ],
     [ "action", "struct_command.html#a104fe6a9eb7bc8fc2f23acc67eb2b1d9", null ],
     [ "category", "struct_command.html#a1529e898c9e6dd47b1826b5b1eac09fb", null ]

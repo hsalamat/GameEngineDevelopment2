@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: sf::RenderStates Class Reference</title>
+<title>GAME3015: sf::RenderStates Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">GAME3015
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -179,7 +179,7 @@ Static Public Attributes</h2></td></tr>
 <p >Most objects, especially high-level drawables, can be drawn directly without defining render states explicitly &ndash; the default set of states is ok in most cases. </p><div class="fragment"><div class="line">window.draw(sprite);</div>
 </div><!-- fragment --><p >If you want to use a single specific render state, for example a shader, you can pass it directly to the Draw function: <a class="el" href="classsf_1_1_render_states.html" title="Define the states used for drawing to a RenderTarget.">sf::RenderStates</a> has an implicit one-argument constructor for each state. </p><div class="fragment"><div class="line">window.draw(sprite, <a class="code hl_variable" href="classsf_1_1_render_states.html#a30e00c9f28ca246ae73119975255ebd0">shader</a>);</div>
 <div class="ttc" id="aclasssf_1_1_render_states_html_a30e00c9f28ca246ae73119975255ebd0"><div class="ttname"><a href="classsf_1_1_render_states.html#a30e00c9f28ca246ae73119975255ebd0">sf::RenderStates::shader</a></div><div class="ttdeci">const Shader * shader</div><div class="ttdoc">Shader.</div><div class="ttdef"><b>Definition:</b> <a href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_render_states_8hpp_source.html#l00118">RenderStates.hpp:118</a></div></div>
-</div><!-- fragment --><p >When you're inside the Draw function of a drawable object (inherited from <a class="el" href="classsf_1_1_drawable.html" title="Abstract base class for objects that can be drawn to a render target.">sf::Drawable</a>), you can either pass the render states unmodified, or change some of them. For example, a transformable object will combine the current transform with its own transform. A sprite will set its texture. Etc.</p>
+</div><!-- fragment --><p >When you're inside the Draw function of a drawable object (inherited from <a class="el" href="classsf_1_1_drawable.html" title="Abstract base class for objects that can be drawn to a render target.">sf::Drawable</a>), you can either pass the render states unmodified, or change some of them. For example, a transformable object will combine the current transform with its own transform. <a class="el" href="class_a.html">A</a> sprite will set its texture. Etc.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classsf_1_1_render_target.html" title="Base class for all render targets (window, texture, ...)">sf::RenderTarget</a>, <a class="el" href="classsf_1_1_drawable.html" title="Abstract base class for objects that can be drawn to a render target.">sf::Drawable</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_render_states_8hpp_source.html#l00045">45</a> of file <a class="el" href="_s_f_m_l-2_85_81_2include_2_s_f_m_l_2_graphics_2_render_states_8hpp_source.html">RenderStates.hpp</a>.</p>

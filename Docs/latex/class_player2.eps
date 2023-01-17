@@ -5,7 +5,7 @@
 %%For: 
 %Magnification: 1.00
 %%Orientation: Portrait
-%%BoundingBox: 0 0 500 897.435913
+%%BoundingBox: 0 0 500 918.803406
 %%Pages: 0
 %%BeginSetup
 %%EndSetup
@@ -19,12 +19,12 @@
 /marginwidth 10 def
 /distx 20 def
 /disty 40 def
-/boundaspect 0.557143 def  % aspect ratio of the BoundingBox (width/height)
+/boundaspect 0.544186 def  % aspect ratio of the BoundingBox (width/height)
 /boundx 500 def
 /boundy boundx boundaspect div def
 /xspacing 0 def
 /yspacing 0 def
-/rows 42 def
+/rows 43 def
 /cols 8 def
 /scalefactor 0 def
 /boxfont /Times-Roman findfont fontheight scalefont def
@@ -233,10 +233,12 @@ boxfont setfont
 (SceneNode) cw
 (SceneNode) cw
 (SceneNode) cw
+(SceneNode) cw
 (sf::Drawable) cw
 (sf::Transformable) cw
 (sf::Drawable) cw
 (sf::Transformable) cw
+(SceneNode) cw
 (SceneNode) cw
 (SceneNode) cw
 (SceneNode) cw
@@ -324,12 +326,12 @@ boundx scalefactor div boundy scalefactor div scale
 7.000000 23.000000 mark
  (SceneNode) 7.000000 24.000000 box
 7.000000 24.000000 mark
- (sf::Transformable) 7.000000 25.000000 box
- (sf::Drawable) 7.000000 26.000000 box
- (sf::Transformable) 7.000000 27.000000 box
- (sf::Drawable) 7.000000 28.000000 box
- (SceneNode) 7.000000 29.000000 box
-7.000000 29.000000 mark
+ (SceneNode) 7.000000 25.000000 box
+7.000000 25.000000 mark
+ (sf::Transformable) 7.000000 26.000000 box
+ (sf::Drawable) 7.000000 27.000000 box
+ (sf::Transformable) 7.000000 28.000000 box
+ (sf::Drawable) 7.000000 29.000000 box
  (SceneNode) 7.000000 30.000000 box
 7.000000 30.000000 mark
  (SceneNode) 7.000000 31.000000 box
@@ -354,6 +356,8 @@ boundx scalefactor div boundy scalefactor div scale
 7.000000 40.000000 mark
  (SceneNode) 7.000000 41.000000 box
 7.000000 41.000000 mark
+ (SceneNode) 7.000000 42.000000 box
+7.000000 42.000000 mark
  (SceneNode) 5.000000 2.000000 box
 5.000000 2.000000 mark
  (SceneNode) 5.000000 3.000000 box
@@ -400,12 +404,12 @@ boundx scalefactor div boundy scalefactor div scale
 5.000000 23.000000 mark
  (SceneNode) 5.000000 24.000000 box
 5.000000 24.000000 mark
- (sf::Transformable) 5.000000 25.000000 box
- (sf::Drawable) 5.000000 26.000000 box
- (sf::Transformable) 5.000000 27.000000 box
- (sf::Drawable) 5.000000 28.000000 box
- (SceneNode) 5.000000 29.000000 box
-5.000000 29.000000 mark
+ (SceneNode) 5.000000 25.000000 box
+5.000000 25.000000 mark
+ (sf::Transformable) 5.000000 26.000000 box
+ (sf::Drawable) 5.000000 27.000000 box
+ (sf::Transformable) 5.000000 28.000000 box
+ (sf::Drawable) 5.000000 29.000000 box
  (SceneNode) 5.000000 30.000000 box
 5.000000 30.000000 mark
  (SceneNode) 5.000000 31.000000 box
@@ -430,6 +434,8 @@ boundx scalefactor div boundy scalefactor div scale
 5.000000 40.000000 mark
  (SceneNode) 5.000000 41.000000 box
 5.000000 41.000000 mark
+ (SceneNode) 5.000000 42.000000 box
+5.000000 42.000000 mark
 
 % ----- relations -----
 
@@ -534,7 +540,9 @@ solid
 solid
 1 4.000000 41.500000 hedge
 solid
-4.000000 2.000000 41.500000 vedge
+1 4.000000 42.500000 hedge
+solid
+4.000000 2.000000 42.500000 vedge
 solid
 1 6.000000 2.500000 hedge
 solid
@@ -616,4 +624,6 @@ solid
 solid
 1 6.000000 41.500000 hedge
 solid
-6.000000 2.000000 41.500000 vedge
+1 6.000000 42.500000 hedge
+solid
+6.000000 2.000000 42.500000 vedge

@@ -20,5 +20,6 @@ var searchData=
   ['opt_5frecursive_17',['OPT_RECURSIVE',['../xwbtool_8cpp.html#a4d39c1cfd27cf8736005f0eeec214c9ca23a014e1f6fe5e7e51720ea2961829e4',1,'xwbtool.cpp']]],
   ['opt_5fstreaming_18',['OPT_STREAMING',['../xwbtool_8cpp.html#a4d39c1cfd27cf8736005f0eeec214c9ca7feec62c20fde3b10fcf3525550e14c1',1,'xwbtool.cpp']]],
   ['opt_5ftolower_19',['OPT_TOLOWER',['../xwbtool_8cpp.html#a4d39c1cfd27cf8736005f0eeec214c9ca8d6b45174c6325e1fa3d1b888ffc14d9',1,'xwbtool.cpp']]],
-  ['orientation_20',['Orientation',['../classsf_1_1_sensor.html#a687375af3ab77b818fca73735bcaea84a9fca0168d56fad3e328d59d09f3d4fb3',1,'sf::Sensor']]]
+  ['orange_20',['orange',['../enum_demo6_8cpp.html#a4ac5c93ec163b10d258088039e59f794aa2b3d8856786dbe594751820bc1ff2e5',1,'enumDemo6.cpp']]],
+  ['orientation_21',['Orientation',['../classsf_1_1_sensor.html#a687375af3ab77b818fca73735bcaea84a9fca0168d56fad3e328d59d09f3d4fb3',1,'sf::Sensor']]]
 ];

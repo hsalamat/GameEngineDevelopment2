@@ -1,79 +1,52 @@
 #include "Game.hpp"
 
+const float Game::PlayerSpeed = 100.f;
+const sf::Time Game::TimePerFrame = sf::seconds(1.f / 60.f);
 
 Game::Game()
-	: mWindow(sf::VideoMode(800, 600), "SFML Application", sf::Style::Close)
+	: mWindow(sf::VideoMode(640, 480), "SFML Application", sf::Style::Close)
 	, mTexture()
-	, mBackground()
-	, mAirplaneTexture()
 	, mPlayer()
-	, mMusic()
 	, mFont()
-	, mIcon()
+	, mStatisticsText()
+	, mStatisticsUpdateTime()
+	, mStatisticsNumFrames(0)
 	, mIsMovingUp(false)
 	, mIsMovingDown(false)
 	, mIsMovingRight(false)
 	, mIsMovingLeft(false)
-
 {
-
-	if (!mAirplaneTexture.loadFromFile("Media/Textures/Eagle.png"))
+	if (!mTexture.loadFromFile("Media/Textures/Eagle.png"))
 	{
 		// Handle loading error
 	}
 
-	mPlayer.setTexture(mAirplaneTexture);
+	mPlayer.setTexture(mTexture);
 	mPlayer.setPosition(100.f, 100.f);
-	mPlayer.setOrigin(20.f, 20.f);
 
-	//mIcon.loadFromFile("Media/Textures/icon.png");
-	//You could also create your own image
-	mIcon.create(20, 20, sf::Color::Red);
-	sf::Color color = mIcon.getPixel(0, 0);
-	//color.a = 0; //make the top-left pixel transparent
-	color.r = 0;   //set the r = 0 (rgb) from the color
-	mIcon.setPixel(0, 0, color);
-
-	mWindow.setIcon(mIcon.getSize().x, mIcon.getSize().y, mIcon.getPixelsPtr());
-
-	//Load a sprite to display
-	if (!mTexture.loadFromFile("Media/Textures/cute_image.jpg"))
-		return;
-	mBackground.setTexture(mTexture);
-
-	if (!mFont.loadFromFile("Media/Sansation.ttf"))
-		return;
-
-
-	mText.setString("Hello SFML");
-	mText.setFont(mFont);
-	mText.setPosition(5.f, 5.f);
-	mText.setCharacterSize(50);
-	mText.setFillColor(sf::Color::Black);
-
-
-	mMusic.openFromFile("Media/Sound/nice_music.ogg");
-
-	//change some parameters
-	mMusic.setPosition(0, 0, 0); //change its 3D position - the default position is (0,0,0)
-	mMusic.setPitch(2); //increase the pitch - pitch represents the perceived fundamental frequency of a sound such as modifying the playing speed of the sound
-	mMusic.setVolume(50); //reduce the volume
-	mMusic.setAttenuation(100); //an attenuation value of 100 will make the sound fade out very quicky as it gets further from the listener - default value is 1
-	mMusic.setLoop(true); //make it loop
-	//Play the music
-	//mMusic.play();
-
-
-
+	mFont.loadFromFile("Media/Sansation.ttf");
+	mStatisticsText.setFont(mFont);
+	mStatisticsText.setPosition(5.f, 5.f);
+	mStatisticsText.setCharacterSize(30);
 }
 
 void Game::run()
 {
-
+	sf::Clock clock;
+	sf::Time timeSinceLastUpdate = sf::Time::Zero;
 	while (mWindow.isOpen())
 	{
-		processEvents();
-		update();
+		sf::Time elapsedTime = clock.restart();
+		timeSinceLastUpdate += elapsedTime;
+		while (timeSinceLastUpdate > TimePerFrame)
+		{
+			timeSinceLastUpdate -= TimePerFrame;
+
+			processEvents();
+			update(TimePerFrame);
+		}
+
+		updateStatistics(elapsedTime);
 		render();
 	}
 }
@@ -98,41 +71,46 @@ void Game::processEvents()
 			break;
 		}
 	}
-
-	if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
-		sf::Vector2i mousePosition = sf::Mouse::getPosition(mWindow);
-		mPlayer.setPosition((float)mousePosition.x, (float)mousePosition.y);
-	}
 }
 
-void Game::update()
+void Game::update(sf::Time elapsedTime)
 {
 	sf::Vector2f movement(0.f, 0.f);
 	if (mIsMovingUp)
-		movement.y -= 1.f;
+		movement.y -= PlayerSpeed;
 	if (mIsMovingDown)
-		movement.y += 1.f;
+		movement.y += PlayerSpeed;
 	if (mIsMovingLeft)
-		movement.x -= 1.f;
+		movement.x -= PlayerSpeed;
 	if (mIsMovingRight)
-		movement.x += 1.f;
+		movement.x += PlayerSpeed;
 
-	mPlayer.move(movement);
-
+	mPlayer.move(movement * elapsedTime.asSeconds());
 }
 
 void Game::render()
 {
-	//Question: What do you think will it happen if you comment out the following two lines
 	mWindow.clear();
-	mWindow.draw(mBackground);
 	mWindow.draw(mPlayer);
-	mWindow.draw(mText);
-
-	//Update the window
+	mWindow.draw(mStatisticsText);
 	mWindow.display();
 }
 
+void Game::updateStatistics(sf::Time elapsedTime)
+{
+	mStatisticsUpdateTime += elapsedTime;
+	mStatisticsNumFrames += 1;
+
+	if (mStatisticsUpdateTime >= sf::seconds(1.0f))
+	{
+		mStatisticsText.setString(
+			"Frames / Second = " + std::to_string(mStatisticsNumFrames) + "\n" +
+			"Time / Update = " + std::to_string(mStatisticsUpdateTime.asMicroseconds() / mStatisticsNumFrames) + "us");
+
+		mStatisticsUpdateTime -= sf::seconds(1.0f);
+		mStatisticsNumFrames = 0;
+	}
+}
 
 void Game::handlePlayerInput(sf::Keyboard::Key key, bool isPressed)
 {
@@ -144,5 +122,5 @@ void Game::handlePlayerInput(sf::Keyboard::Key key, bool isPressed)
 		mIsMovingLeft = isPressed;
 	else if (key == sf::Keyboard::D)
 		mIsMovingRight = isPressed;
-
 }
+

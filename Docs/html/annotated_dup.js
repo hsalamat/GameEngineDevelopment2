@@ -104,6 +104,7 @@ var annotated_dup =
       [ "View", "classsf_1_1_view.html", "classsf_1_1_view" ],
       [ "Window", "classsf_1_1_window.html", "classsf_1_1_window" ]
     ] ],
+    [ "A", "class_a.html", "class_a" ],
     [ "Aircraft", "class_aircraft.html", "class_aircraft" ],
     [ "AircraftData", "struct_aircraft_data.html", "struct_aircraft_data" ],
     [ "AircraftFireTrigger", "struct_aircraft_fire_trigger.html", "struct_aircraft_fire_trigger" ],
@@ -111,7 +112,9 @@ var annotated_dup =
     [ "AircraftMover", "struct_aircraft_mover.html", "struct_aircraft_mover" ],
     [ "Animation", "class_animation.html", "class_animation" ],
     [ "Application", "class_application.html", "class_application" ],
+    [ "Array", "class_array.html", "class_array" ],
     [ "AudioDevice", "struct_audio_device.html", "struct_audio_device" ],
+    [ "B", "class_b.html", "class_b" ],
     [ "BloomEffect", "class_bloom_effect.html", "class_bloom_effect" ],
     [ "BoxApp", "class_box_app.html", "class_box_app" ],
     [ "Camera", "class_camera.html", "class_camera" ],

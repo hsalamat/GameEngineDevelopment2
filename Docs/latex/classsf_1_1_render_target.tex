@@ -114,7 +114,7 @@ Base class for all render targets (window, texture, ...)
 
 It makes it possible to draw 2D entities like sprites, shapes, text without using any Open\+GL command directly.
 
-A \mbox{\hyperlink{classsf_1_1_render_target}{sf\+::\+Render\+Target}} is also able to use views (\mbox{\hyperlink{classsf_1_1_view}{sf\+::\+View}}), which are a kind of 2D cameras. With views you can globally scroll, rotate or zoom everything that is drawn, without having to transform every single entity. See the documentation of \mbox{\hyperlink{classsf_1_1_view}{sf\+::\+View}} for more details and sample pieces of code about this class.
+\mbox{\hyperlink{class_a}{A}} \mbox{\hyperlink{classsf_1_1_render_target}{sf\+::\+Render\+Target}} is also able to use views (\mbox{\hyperlink{classsf_1_1_view}{sf\+::\+View}}), which are a kind of 2D cameras. With views you can globally scroll, rotate or zoom everything that is drawn, without having to transform every single entity. See the documentation of \mbox{\hyperlink{classsf_1_1_view}{sf\+::\+View}} for more details and sample pieces of code about this class.
 
 On top of that, render targets are still able to render direct Open\+GL stuff. It is even possible to mix together Open\+GL calls and regular SFML drawing commands. When doing so, make sure that Open\+GL states are not messed up by calling the push\+GLStates/pop\+GLStates functions.
 
@@ -895,7 +895,7 @@ Example\+:
 
 Activate or deactivate the render target for rendering. 
 
-This function makes the render target\textquotesingle{}s context current for future Open\+GL rendering operations (so you shouldn\textquotesingle{}t care about it if you\textquotesingle{}re not doing direct Open\+GL stuff). A render target\textquotesingle{}s context is active only on the current thread, if you want to make it active on another thread you have to deactivate it on the previous thread first if it was active. Only one context can be current in a thread, so if you want to draw Open\+GL geometry to another render target don\textquotesingle{}t forget to activate it again. Activating a render target will automatically deactivate the previously active context (if any).
+This function makes the render target\textquotesingle{}s context current for future Open\+GL rendering operations (so you shouldn\textquotesingle{}t care about it if you\textquotesingle{}re not doing direct Open\+GL stuff). \mbox{\hyperlink{class_a}{A}} render target\textquotesingle{}s context is active only on the current thread, if you want to make it active on another thread you have to deactivate it on the previous thread first if it was active. Only one context can be current in a thread, so if you want to draw Open\+GL geometry to another render target don\textquotesingle{}t forget to activate it again. Activating a render target will automatically deactivate the previously active context (if any).
 
 
 \begin{DoxyParams}{Parameters}
@@ -919,7 +919,7 @@ Reimplemented in \mbox{\hyperlink{classsf_1_1_render_texture_a5da95ecdbce615a80b
 
 Activate or deactivate the render target for rendering. 
 
-This function makes the render target\textquotesingle{}s context current for future Open\+GL rendering operations (so you shouldn\textquotesingle{}t care about it if you\textquotesingle{}re not doing direct Open\+GL stuff). A render target\textquotesingle{}s context is active only on the current thread, if you want to make it active on another thread you have to deactivate it on the previous thread first if it was active. Only one context can be current in a thread, so if you want to draw Open\+GL geometry to another render target don\textquotesingle{}t forget to activate it again. Activating a render target will automatically deactivate the previously active context (if any).
+This function makes the render target\textquotesingle{}s context current for future Open\+GL rendering operations (so you shouldn\textquotesingle{}t care about it if you\textquotesingle{}re not doing direct Open\+GL stuff). \mbox{\hyperlink{class_a}{A}} render target\textquotesingle{}s context is active only on the current thread, if you want to make it active on another thread you have to deactivate it on the previous thread first if it was active. Only one context can be current in a thread, so if you want to draw Open\+GL geometry to another render target don\textquotesingle{}t forget to activate it again. Activating a render target will automatically deactivate the previously active context (if any).
 
 
 \begin{DoxyParams}{Parameters}

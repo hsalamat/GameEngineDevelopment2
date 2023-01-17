@@ -11,8 +11,8 @@
 \DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00007}00007 \mbox{\hyperlink{class_game_ad59df6562a58a614fda24622d3715b65}{Game::Game}}()}
 \DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00008}00008     : mWindow(\mbox{\hyperlink{namespacesf}{sf}}::VideoMode(640, 480), \textcolor{stringliteral}{"{}Entity"{}}, \mbox{\hyperlink{namespacesf}{sf}}::Style::\mbox{\hyperlink{group__window_ggaa75e94f0d3f52da8a61ed467ffd6d6e8a76bbd82b28e359cc0feec9e5ec123b40}{Close}})}
 \DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00009}00009     , landscape()}
-\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00010}00010     , airplane()}
-\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00011}00011     , textures()}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00010}00010     , \mbox{\hyperlink{enum_demo1_8cpp_ac6a70fa2f77cc3032c1eea5a4c725cffad7422cd872b4c0399556e125963ac47a}{airplane}}()}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00011}00011     , \mbox{\hyperlink{enum_demo1_8cpp_ac6a70fa2f77cc3032c1eea5a4c725cff}{textures}}()}
 \DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00012}00012     , mTexture()}
 \DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00013}00013     , mPlayer()}
 \DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00014}00014     , mFont()}
@@ -37,8 +37,8 @@
 \DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00033}00033     mWindow.setVerticalSyncEnabled(\textcolor{keyword}{true});}
 \DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00034}00034     \textcolor{keywordflow}{try}}
 \DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00035}00035     \{}
-\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00036}00036         textures.load(\mbox{\hyperlink{namespace_textures_a2cfe2099537d4e80b08437b4978301a5a147ca4f7c5ec17c0c61af3c70934d861}{Textures::Landscape}}, \textcolor{stringliteral}{"{}Media/Textures/Desert.png"{}});}
-\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00037}00037         textures.load(\mbox{\hyperlink{namespace_textures_a2cfe2099537d4e80b08437b4978301a5a69e6f38969d2fb852a9aaac8bb74ddfd}{Textures::Airplane}}, \textcolor{stringliteral}{"{}Media/Textures/Eagle.png"{}});}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00036}00036         \mbox{\hyperlink{enum_demo1_8cpp_ac6a70fa2f77cc3032c1eea5a4c725cff}{textures}}.load(\mbox{\hyperlink{namespace_textures_a2cfe2099537d4e80b08437b4978301a5a147ca4f7c5ec17c0c61af3c70934d861}{Textures::Landscape}}, \textcolor{stringliteral}{"{}Media/Textures/Desert.png"{}});}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00037}00037         \mbox{\hyperlink{enum_demo1_8cpp_ac6a70fa2f77cc3032c1eea5a4c725cff}{textures}}.load(\mbox{\hyperlink{namespace_textures_a2cfe2099537d4e80b08437b4978301a5a69e6f38969d2fb852a9aaac8bb74ddfd}{Textures::Airplane}}, \textcolor{stringliteral}{"{}Media/Textures/Eagle.png"{}});}
 \DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00038}00038         mFont.loadFromFile(\textcolor{stringliteral}{"{}Media/Sansation.ttf"{}});}
 \DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00039}00039     \}}
 \DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00040}00040     \textcolor{keywordflow}{catch} (std::runtime\_error\& e)}
@@ -48,7 +48,7 @@
 \DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00044}00044 }
 \DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00045}00045 }
 \DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00046}00046     \textcolor{comment}{// Prepare the tiled background}}
-\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00047}00047     \mbox{\hyperlink{classsf_1_1_texture}{sf::Texture}}\& texture = textures.get(\mbox{\hyperlink{namespace_textures_a2cfe2099537d4e80b08437b4978301a5a147ca4f7c5ec17c0c61af3c70934d861}{Textures::Landscape}});}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00047}00047     \mbox{\hyperlink{classsf_1_1_texture}{sf::Texture}}\& texture = \mbox{\hyperlink{enum_demo1_8cpp_ac6a70fa2f77cc3032c1eea5a4c725cff}{textures}}.get(\mbox{\hyperlink{namespace_textures_a2cfe2099537d4e80b08437b4978301a5a147ca4f7c5ec17c0c61af3c70934d861}{Textures::Landscape}});}
 \DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00048}00048     texture.\mbox{\hyperlink{classsf_1_1_texture_aaa87d1eff053b9d4d34a24c784a28658}{setRepeated}}(\textcolor{keyword}{true});}
 \DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00049}00049     landscape.setTexture(texture);}
 \DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00050}00050     landscape.setTextureRect(\mbox{\hyperlink{classsf_1_1_rect}{sf::IntRect}}(mWorldBounds));}
@@ -66,8 +66,8 @@
 \DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00062}00062     \textcolor{comment}{//sf::View::rotate(float degree) to add a rotation angle to the current one sf::View::setRotation(float degrees) to set the rotation of the view to an absolute value}}
 \DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00063}00063     \textcolor{comment}{//mView.rotate(45);}}
 \DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00064}00064 }
-\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00065}00065     airplane.setTexture(textures.get(\mbox{\hyperlink{namespace_textures_a2cfe2099537d4e80b08437b4978301a5a69e6f38969d2fb852a9aaac8bb74ddfd}{Textures::Airplane}}));}
-\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00066}00066     airplane.setPosition(200.f, 200.f);}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00065}00065     \mbox{\hyperlink{enum_demo1_8cpp_ac6a70fa2f77cc3032c1eea5a4c725cffad7422cd872b4c0399556e125963ac47a}{airplane}}.setTexture(\mbox{\hyperlink{enum_demo1_8cpp_ac6a70fa2f77cc3032c1eea5a4c725cff}{textures}}.get(\mbox{\hyperlink{namespace_textures_a2cfe2099537d4e80b08437b4978301a5a69e6f38969d2fb852a9aaac8bb74ddfd}{Textures::Airplane}}));}
+\DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00066}00066     \mbox{\hyperlink{enum_demo1_8cpp_ac6a70fa2f77cc3032c1eea5a4c725cffad7422cd872b4c0399556e125963ac47a}{airplane}}.setPosition(200.f, 200.f);}
 \DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00067}00067 }
 \DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00068}00068     mStatisticsText.setFont(mFont);}
 \DoxyCodeLine{\Hypertarget{_week3_2_week3-_demo4_2_source_2game_8cpp_source_l00069}00069     mStatisticsText.setPosition(5.f, 5.f);}

@@ -87,13 +87,13 @@ The class provides functions to load, read, write and save pixels, as well as ma
 
 \mbox{\hyperlink{classsf_1_1_image}{sf\+::\+Image}} can handle a unique internal representation of pixels, which is RGBA 32 bits. This means that a pixel must be composed of 8 bits red, green, blue and alpha channels -- just like a \mbox{\hyperlink{classsf_1_1_color}{sf\+::\+Color}}. All the functions that return an array of pixels follow this rule, and all parameters that you pass to \mbox{\hyperlink{classsf_1_1_image}{sf\+::\+Image}} functions (such as load\+From\+Memory) must use this representation as well.
 
-A \mbox{\hyperlink{classsf_1_1_image}{sf\+::\+Image}} can be copied, but it is a heavy resource and if possible you should always use \mbox{[}const\mbox{]} references to pass or return them to avoid useless copies.
+\mbox{\hyperlink{class_a}{A}} \mbox{\hyperlink{classsf_1_1_image}{sf\+::\+Image}} can be copied, but it is a heavy resource and if possible you should always use \mbox{[}const\mbox{]} references to pass or return them to avoid useless copies.
 
 Usage example\+: 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{comment}{// Load an image file from a file}}
-\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_image}{sf::Image}} background;}
-\DoxyCodeLine{\textcolor{keywordflow}{if} (!background.\mbox{\hyperlink{classsf_1_1_image_a9e4f2aa8e36d0cabde5ed5a4ef80290b}{loadFromFile}}(\textcolor{stringliteral}{"{}background.jpg"{}}))}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_image}{sf::Image}} \mbox{\hyperlink{enum_demo1_8cpp_ac6a70fa2f77cc3032c1eea5a4c725cffa1667f13aa992e373547cf10fc8c61590}{background}};}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (!\mbox{\hyperlink{enum_demo1_8cpp_ac6a70fa2f77cc3032c1eea5a4c725cffa1667f13aa992e373547cf10fc8c61590}{background}}.loadFromFile(\textcolor{stringliteral}{"{}background.jpg"{}}))}
 \DoxyCodeLine{    \textcolor{keywordflow}{return} -\/1;}
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{comment}{// Create a 20x20 image filled with black color}}
@@ -101,7 +101,7 @@ Usage example\+:
 \DoxyCodeLine{image.\mbox{\hyperlink{classsf_1_1_image_a2a67930e2fd9ad97cf004e918cf5832b}{create}}(20, 20, \mbox{\hyperlink{classsf_1_1_color_a25bf5208c8c7668f1a3836acbbb23986}{sf::Color::Black}});}
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{comment}{// Copy image1 on image2 at position (10, 10)}}
-\DoxyCodeLine{image.\mbox{\hyperlink{classsf_1_1_image_ab2fa337c956f85f93377dcb52153a45a}{copy}}(background, 10, 10);}
+\DoxyCodeLine{image.\mbox{\hyperlink{classsf_1_1_image_ab2fa337c956f85f93377dcb52153a45a}{copy}}(\mbox{\hyperlink{enum_demo1_8cpp_ac6a70fa2f77cc3032c1eea5a4c725cffa1667f13aa992e373547cf10fc8c61590}{background}}, 10, 10);}
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{comment}{// Make the top-\/left pixel transparent}}
 \DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_color}{sf::Color}} color = image.\mbox{\hyperlink{classsf_1_1_image_acf278760458433b2c3626a6980388a95}{getPixel}}(0, 0);}
@@ -278,7 +278,7 @@ The {\itshape pixel} array is assumed to contain 32-\/bits RGBA pixels, and have
 \hline
 {\em height} & Height of the image \\
 \hline
-{\em pixels} & Array of pixels to copy to the image \\
+{\em pixels} & \mbox{\hyperlink{class_array}{Array}} of pixels to copy to the image \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classsf_1_1_image_a1c2b960ea12bdbb29e80934ce5268ebf}\label{classsf_1_1_image_a1c2b960ea12bdbb29e80934ce5268ebf}} 
@@ -299,7 +299,7 @@ The {\itshape pixel} array is assumed to contain 32-\/bits RGBA pixels, and have
 \hline
 {\em height} & Height of the image \\
 \hline
-{\em pixels} & Array of pixels to copy to the image \\
+{\em pixels} & \mbox{\hyperlink{class_array}{Array}} of pixels to copy to the image \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classsf_1_1_image_a22f13f8c242a6b38eb73cc176b37ae34}\label{classsf_1_1_image_a22f13f8c242a6b38eb73cc176b37ae34}} 

@@ -14,7 +14,7 @@ Utility class for manipulating RGBA colors.
 \item 
 \mbox{\hyperlink{classsf_1_1_color_ac2eb4393fb11ad3fa3ccf34e92fe08e4}{Color}} ()
 \begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classsf_1_1_color_ac791dc61be4c60baac50fe700f1c9850}{Color}} (\mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} red, \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} green, \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} blue, \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} alpha=255)
+\mbox{\hyperlink{classsf_1_1_color_ac791dc61be4c60baac50fe700f1c9850}{Color}} (\mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} \mbox{\hyperlink{enum_demo6_8cpp_a4ac5c93ec163b10d258088039e59f794aace9033470c7bfe9523c814271251908}{red}}, \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} green, \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} blue, \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} alpha=255)
 \begin{DoxyCompactList}\small\item\em Construct the color from its 4 RGBA components. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classsf_1_1_color_a5449f4b2b9a78230d40ce2c223c9ab2e}{Color}} (\mbox{\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} color)
 \begin{DoxyCompactList}\small\item\em Construct the color from 32-\/bit unsigned integer. \end{DoxyCompactList}\item 
@@ -22,7 +22,7 @@ Utility class for manipulating RGBA colors.
 \begin{DoxyCompactList}\small\item\em Retrieve the color as a 32-\/bit unsigned integer. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classsf_1_1_color_ac2eb4393fb11ad3fa3ccf34e92fe08e4}{Color}} ()
 \begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classsf_1_1_color_ac791dc61be4c60baac50fe700f1c9850}{Color}} (\mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} red, \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} green, \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} blue, \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} alpha=255)
+\mbox{\hyperlink{classsf_1_1_color_ac791dc61be4c60baac50fe700f1c9850}{Color}} (\mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} \mbox{\hyperlink{enum_demo6_8cpp_a4ac5c93ec163b10d258088039e59f794aace9033470c7bfe9523c814271251908}{red}}, \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} green, \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} blue, \mbox{\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} alpha=255)
 \begin{DoxyCompactList}\small\item\em Construct the color from its 4 RGBA components. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classsf_1_1_color_a5449f4b2b9a78230d40ce2c223c9ab2e}{Color}} (\mbox{\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} color)
 \begin{DoxyCompactList}\small\item\em Construct the color from 32-\/bit unsigned integer. \end{DoxyCompactList}\item 
@@ -115,16 +115,16 @@ Each component is a public member, an unsigned integer in the range \mbox{[}0, 2
 \end{DoxyCode}
 
 
-The fourth component of colors, named \char`\"{}alpha\char`\"{}, represents the opacity of the color. A color with an alpha value of 255 will be fully opaque, while an alpha value of 0 will make a color fully transparent, whatever the value of the other components is.
+The fourth component of colors, named \char`\"{}alpha\char`\"{}, represents the opacity of the color. \mbox{\hyperlink{class_a}{A}} color with an alpha value of 255 will be fully opaque, while an alpha value of 0 will make a color fully transparent, whatever the value of the other components is.
 
 The most common colors are already defined as static variables\+: 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_color}{sf::Color}} black       = \mbox{\hyperlink{classsf_1_1_color_a25bf5208c8c7668f1a3836acbbb23986}{sf::Color::Black}};}
 \DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_color}{sf::Color}} white       = \mbox{\hyperlink{classsf_1_1_color_abd9695b00da63b890ea40f74629237c0}{sf::Color::White}};}
-\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_color}{sf::Color}} red         = \mbox{\hyperlink{classsf_1_1_color_a7052b1c5408a953e25f9691e0e828c9d}{sf::Color::Red}};}
-\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_color}{sf::Color}} green       = \mbox{\hyperlink{classsf_1_1_color_a71bdec1f240038ee66fc8f3b418fce71}{sf::Color::Green}};}
-\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_color}{sf::Color}} blue        = \mbox{\hyperlink{classsf_1_1_color_a6d901f24edce210decaeac1ccfdb28a9}{sf::Color::Blue}};}
-\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_color}{sf::Color}} yellow      = \mbox{\hyperlink{classsf_1_1_color_ad2e5e0bad294384b8cf26a92d8d8d162}{sf::Color::Yellow}};}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_color}{sf::Color}} \mbox{\hyperlink{enum_demo6_8cpp_a4ac5c93ec163b10d258088039e59f794aace9033470c7bfe9523c814271251908}{red}}         = \mbox{\hyperlink{classsf_1_1_color_a7052b1c5408a953e25f9691e0e828c9d}{sf::Color::Red}};}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_color}{sf::Color}} \mbox{\hyperlink{enum_demo6_8cpp_a4ac5c93ec163b10d258088039e59f794a6aa25890c44e0aac424e56338abe47ca}{green}}       = \mbox{\hyperlink{classsf_1_1_color_a71bdec1f240038ee66fc8f3b418fce71}{sf::Color::Green}};}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_color}{sf::Color}} \mbox{\hyperlink{enum_demo6_8cpp_a4ac5c93ec163b10d258088039e59f794a8f5fa6b484ac7e2a97943d915cf224e2}{blue}}        = \mbox{\hyperlink{classsf_1_1_color_a6d901f24edce210decaeac1ccfdb28a9}{sf::Color::Blue}};}
+\DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_color}{sf::Color}} \mbox{\hyperlink{enum_demo6_8cpp_a4ac5c93ec163b10d258088039e59f794ab31edea3fab8c488c7a8f78545e7f5a9}{yellow}}      = \mbox{\hyperlink{classsf_1_1_color_ad2e5e0bad294384b8cf26a92d8d8d162}{sf::Color::Yellow}};}
 \DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_color}{sf::Color}} magenta     = \mbox{\hyperlink{classsf_1_1_color_a9ee8537b23a72bff51d8f20f4894519e}{sf::Color::Magenta}};}
 \DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_color}{sf::Color}} cyan        = \mbox{\hyperlink{classsf_1_1_color_a1a5568e8b58269f1c739237e31bed9d8}{sf::Color::Cyan}};}
 \DoxyCodeLine{\mbox{\hyperlink{classsf_1_1_color}{sf::Color}} transparent = \mbox{\hyperlink{classsf_1_1_color_a422c310394afa396d3a2798aad982145}{sf::Color::Transparent}};}

@@ -1,0 +1,64 @@
+\hypertarget{template_demo2_8cpp_source}{}\doxysection{template\+Demo2.\+cpp}
+\label{template_demo2_8cpp_source}\index{Week2/cplusplusdemo/templateDemo2.cpp@{Week2/cplusplusdemo/templateDemo2.cpp}}
+\mbox{\hyperlink{template_demo2_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00024}00024 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00025}00025 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00027}\mbox{\hyperlink{class_array}{00027}} \textcolor{keyword}{template} <\textcolor{keyword}{typename} T> \textcolor{keyword}{class }\mbox{\hyperlink{class_array}{Array}} \{}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00028}00028 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00029}00029     T* ptr;}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00030}00030     \textcolor{keywordtype}{int} size;}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00032}00032 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00033}00033     \mbox{\hyperlink{class_array_a44f75fbed775bc3aaa9a1bd7a12a1cac}{Array}}(T arr[], \textcolor{keywordtype}{int} s);}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00034}00034     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_array_a8e6bfa38c221bc5f936937f16085b940}{print}}();}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00035}00035 \};}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00037}\mbox{\hyperlink{class_array_a44f75fbed775bc3aaa9a1bd7a12a1cac}{00037}} \textcolor{keyword}{template} <\textcolor{keyword}{typename} T> \mbox{\hyperlink{class_array_a44f75fbed775bc3aaa9a1bd7a12a1cac}{Array<T>::Array}}(T arr[], \textcolor{keywordtype}{int} s)}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00038}00038 \{}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00039}00039     ptr = \textcolor{keyword}{new} T[s];}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00040}00040     size = s;}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00041}00041     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < size; i++)}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00042}00042         ptr[i] = arr[i];}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00043}00043 \}}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00045}\mbox{\hyperlink{class_array_a8e6bfa38c221bc5f936937f16085b940}{00045}} \textcolor{keyword}{template} <\textcolor{keyword}{typename} T> \textcolor{keywordtype}{void} \mbox{\hyperlink{class_array_a8e6bfa38c221bc5f936937f16085b940}{Array<T>::print}}()}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00046}00046 \{}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00047}00047     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < size; i++)}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00048}00048         cout << \textcolor{stringliteral}{"{} "{}} << *(ptr + i);}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00049}00049     cout << endl;}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00050}00050 \}}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00052}\mbox{\hyperlink{class_a}{00052}} \textcolor{keyword}{template} <\textcolor{keyword}{class} T, \textcolor{keyword}{class} U> \textcolor{keyword}{class }\mbox{\hyperlink{class_a}{A}} \{}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00053}00053     T x;}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00054}00054     U y;}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00056}00056 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00057}\mbox{\hyperlink{class_a_af9f178d6799f165e306aeb2c9a11e713}{00057}}     \mbox{\hyperlink{class_a_af9f178d6799f165e306aeb2c9a11e713}{A}}() \{ cout << \textcolor{stringliteral}{"{}Constructor Called"{}} << endl; \}}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00058}00058 \};}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00060}00060 \textcolor{comment}{//Yes, like normal parameters, we can specify default arguments to templates. }}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00061}\mbox{\hyperlink{class_b}{00061}} \textcolor{keyword}{template} <\textcolor{keyword}{class} T, \textcolor{keyword}{class} U = \textcolor{keywordtype}{char}> \textcolor{keyword}{class }\mbox{\hyperlink{class_b}{B}} \{}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00062}00062 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00063}\mbox{\hyperlink{class_b_a7f993be4e9c09f3777e8b36a30f1a7f5}{00063}}     T \mbox{\hyperlink{class_b_a7f993be4e9c09f3777e8b36a30f1a7f5}{x}};}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00064}\mbox{\hyperlink{class_b_a744ed43c374cd65d4f92e9c20802e850}{00064}}     U \mbox{\hyperlink{class_b_a744ed43c374cd65d4f92e9c20802e850}{y}};}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00065}\mbox{\hyperlink{class_b_aa402c6f09fba5053bd8e8191b8202365}{00065}}     \mbox{\hyperlink{class_b_aa402c6f09fba5053bd8e8191b8202365}{B}}() \{ cout << \textcolor{stringliteral}{"{}Constructor Called"{}} << endl; \}}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00066}00066 \};}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00068}\mbox{\hyperlink{template_demo2_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00068}} \textcolor{keywordtype}{int} \mbox{\hyperlink{template_demo2_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00069}00069 \{}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00070}00070     \textcolor{keywordtype}{int} arr[5] = \{ 1, 2, 3, 4, 5 \};}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00071}00071     \mbox{\hyperlink{class_array}{Array<int>}} a(arr, 5);}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00072}00072     a.\mbox{\hyperlink{class_array_a8e6bfa38c221bc5f936937f16085b940}{print}}();}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00074}00074     \mbox{\hyperlink{class_a}{A<char, char>}} a2;}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00075}00075     \mbox{\hyperlink{class_a}{A<int, double>}} b2;}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00077}00077     \mbox{\hyperlink{class_b}{B<char>}} a3; \textcolor{comment}{// This will call B<char, char>}}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00079}00079     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{template_demo2_8cpp_source_l00080}00080 \}}
+
+\end{DoxyCode}

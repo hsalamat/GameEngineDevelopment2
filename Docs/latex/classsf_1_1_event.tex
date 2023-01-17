@@ -237,7 +237,7 @@ Defines a system event and its parameters.
 
 Events are retrieved using the \mbox{\hyperlink{classsf_1_1_window_a338e996585faf82e93069858e3b531b7}{sf\+::\+Window\+::poll\+Event}} and \mbox{\hyperlink{classsf_1_1_window_aaf02ab64fbc1d374eef3696df54137bc}{sf\+::\+Window\+::wait\+Event}} functions.
 
-A \mbox{\hyperlink{classsf_1_1_event}{sf\+::\+Event}} instance contains the type of the event (mouse moved, key pressed, window closed, ...) as well as the details about this particular event. Please note that the event parameters are defined in a union, which means that only the member matching the type of the event will be properly filled; all other members will have undefined values and must not be read if the type of the event doesn\textquotesingle{}t match. For example, if you received a Key\+Pressed event, then you must read the event.\+key member, all other members such as event.\+mouse\+Move or event.\+text will have undefined values.
+\mbox{\hyperlink{class_a}{A}} \mbox{\hyperlink{classsf_1_1_event}{sf\+::\+Event}} instance contains the type of the event (mouse moved, key pressed, window closed, ...) as well as the details about this particular event. Please note that the event parameters are defined in a union, which means that only the member matching the type of the event will be properly filled; all other members will have undefined values and must not be read if the type of the event doesn\textquotesingle{}t match. For example, if you received a Key\+Pressed event, then you must read the event.\+key member, all other members such as event.\+mouse\+Move or event.\+text will have undefined values.
 
 Usage example\+: 
 \begin{DoxyCode}{0}
@@ -295,15 +295,15 @@ Gained\+Focus&The window gained the focus (no data) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{TextEntered@{TextEntered}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!TextEntered@{TextEntered}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa4da4ae2f3e97f8cbd3cb725f2da21a10}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa4da4ae2f3e97f8cbd3cb725f2da21a10}} 
-Text\+Entered&A character was entered (data in event.\+text) \\
+Text\+Entered&\mbox{\hyperlink{class_a}{A}} character was entered (data in event.\+text) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{KeyPressed@{KeyPressed}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!KeyPressed@{KeyPressed}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4}} 
-Key\+Pressed&A key was pressed (data in event.\+key) \\
+Key\+Pressed&\mbox{\hyperlink{class_a}{A}} key was pressed (data in event.\+key) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{KeyReleased@{KeyReleased}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!KeyReleased@{KeyReleased}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa1df4a1c59bf3a4613f3d577ce137b8f1}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa1df4a1c59bf3a4613f3d577ce137b8f1}} 
-Key\+Released&A key was released (data in event.\+key) \\
+Key\+Released&\mbox{\hyperlink{class_a}{A}} key was released (data in event.\+key) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{MouseWheelMoved@{MouseWheelMoved}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!MouseWheelMoved@{MouseWheelMoved}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aad53fec9b30096b56d96ae0cc3680c717}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aad53fec9b30096b56d96ae0cc3680c717}} 
@@ -315,11 +315,11 @@ Mouse\+Wheel\+Scrolled&The mouse wheel was scrolled (data in event.\+mouse\+Whee
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{MouseButtonPressed@{MouseButtonPressed}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!MouseButtonPressed@{MouseButtonPressed}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa0d16fdcf7907ec64a9cfabac6e135d1b}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa0d16fdcf7907ec64a9cfabac6e135d1b}} 
-Mouse\+Button\+Pressed&A mouse button was pressed (data in event.\+mouse\+Button) \\
+Mouse\+Button\+Pressed&\mbox{\hyperlink{class_a}{A}} mouse button was pressed (data in event.\+mouse\+Button) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{MouseButtonReleased@{MouseButtonReleased}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!MouseButtonReleased@{MouseButtonReleased}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aafa0ebea6e6dd90e3fe49ca9b52977836}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aafa0ebea6e6dd90e3fe49ca9b52977836}} 
-Mouse\+Button\+Released&A mouse button was released (data in event.\+mouse\+Button) \\
+Mouse\+Button\+Released&\mbox{\hyperlink{class_a}{A}} mouse button was released (data in event.\+mouse\+Button) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{MouseMoved@{MouseMoved}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!MouseMoved@{MouseMoved}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aacc43824f451738c5afd00c7cd08e25b5}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aacc43824f451738c5afd00c7cd08e25b5}} 
@@ -335,11 +335,11 @@ Mouse\+Left&The mouse cursor left the area of the window (no data) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{JoystickButtonPressed@{JoystickButtonPressed}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!JoystickButtonPressed@{JoystickButtonPressed}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa048f17d935ca55b7fa063062ed3aa7ee}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa048f17d935ca55b7fa063062ed3aa7ee}} 
-Joystick\+Button\+Pressed&A joystick button was pressed (data in event.\+joystick\+Button) \\
+Joystick\+Button\+Pressed&\mbox{\hyperlink{class_a}{A}} joystick button was pressed (data in event.\+joystick\+Button) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{JoystickButtonReleased@{JoystickButtonReleased}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!JoystickButtonReleased@{JoystickButtonReleased}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aab7c62947d6d4248d8ff05896f06bd360}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aab7c62947d6d4248d8ff05896f06bd360}} 
-Joystick\+Button\+Released&A joystick button was released (data in event.\+joystick\+Button) \\
+Joystick\+Button\+Released&\mbox{\hyperlink{class_a}{A}} joystick button was released (data in event.\+joystick\+Button) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{JoystickMoved@{JoystickMoved}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!JoystickMoved@{JoystickMoved}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aac6e368e4ec275235dbab7e782d857d52}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aac6e368e4ec275235dbab7e782d857d52}} 
@@ -347,27 +347,27 @@ Joystick\+Moved&The joystick moved along an axis (data in event.\+joystick\+Move
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{JoystickConnected@{JoystickConnected}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!JoystickConnected@{JoystickConnected}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa103511bbaf4d9710be5028510b80a011}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa103511bbaf4d9710be5028510b80a011}} 
-Joystick\+Connected&A joystick was connected (data in event.\+joystick\+Connect) \\
+Joystick\+Connected&\mbox{\hyperlink{class_a}{A}} joystick was connected (data in event.\+joystick\+Connect) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{JoystickDisconnected@{JoystickDisconnected}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!JoystickDisconnected@{JoystickDisconnected}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa8f4151bb75a0eec34a2950ea9d341894}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa8f4151bb75a0eec34a2950ea9d341894}} 
-Joystick\+Disconnected&A joystick was disconnected (data in event.\+joystick\+Connect) \\
+Joystick\+Disconnected&\mbox{\hyperlink{class_a}{A}} joystick was disconnected (data in event.\+joystick\+Connect) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{TouchBegan@{TouchBegan}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!TouchBegan@{TouchBegan}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aafcdbb3d909117eb088c6d290b564e6b5}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aafcdbb3d909117eb088c6d290b564e6b5}} 
-Touch\+Began&A touch event began (data in event.\+touch) \\
+Touch\+Began&\mbox{\hyperlink{class_a}{A}} touch event began (data in event.\+touch) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{TouchMoved@{TouchMoved}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!TouchMoved@{TouchMoved}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa4eed100fe434d73ac20e6a8cfd1e726c}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa4eed100fe434d73ac20e6a8cfd1e726c}} 
-Touch\+Moved&A touch moved (data in event.\+touch) \\
+Touch\+Moved&\mbox{\hyperlink{class_a}{A}} touch moved (data in event.\+touch) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{TouchEnded@{TouchEnded}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!TouchEnded@{TouchEnded}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aae35e2e04bb23e95d3786bef60ea4c074}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aae35e2e04bb23e95d3786bef60ea4c074}} 
-Touch\+Ended&A touch event ended (data in event.\+touch) \\
+Touch\+Ended&\mbox{\hyperlink{class_a}{A}} touch event ended (data in event.\+touch) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{SensorChanged@{SensorChanged}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!SensorChanged@{SensorChanged}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aac175c7fb90d3b03cda554ada20d42795}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aac175c7fb90d3b03cda554ada20d42795}} 
-Sensor\+Changed&A sensor value changed (data in event.\+sensor) \\
+Sensor\+Changed&\mbox{\hyperlink{class_a}{A}} sensor value changed (data in event.\+sensor) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Count@{Count}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!Count@{Count}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aae5c49a2d50ccccd9c941e6be36b0d05f}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aae5c49a2d50ccccd9c941e6be36b0d05f}} 
@@ -391,15 +391,15 @@ Gained\+Focus&The window gained the focus (no data) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{TextEntered@{TextEntered}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!TextEntered@{TextEntered}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa4da4ae2f3e97f8cbd3cb725f2da21a10}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa4da4ae2f3e97f8cbd3cb725f2da21a10}} 
-Text\+Entered&A character was entered (data in event.\+text) \\
+Text\+Entered&\mbox{\hyperlink{class_a}{A}} character was entered (data in event.\+text) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{KeyPressed@{KeyPressed}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!KeyPressed@{KeyPressed}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4}} 
-Key\+Pressed&A key was pressed (data in event.\+key) \\
+Key\+Pressed&\mbox{\hyperlink{class_a}{A}} key was pressed (data in event.\+key) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{KeyReleased@{KeyReleased}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!KeyReleased@{KeyReleased}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa1df4a1c59bf3a4613f3d577ce137b8f1}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa1df4a1c59bf3a4613f3d577ce137b8f1}} 
-Key\+Released&A key was released (data in event.\+key) \\
+Key\+Released&\mbox{\hyperlink{class_a}{A}} key was released (data in event.\+key) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{MouseWheelMoved@{MouseWheelMoved}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!MouseWheelMoved@{MouseWheelMoved}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aad53fec9b30096b56d96ae0cc3680c717}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aad53fec9b30096b56d96ae0cc3680c717}} 
@@ -411,11 +411,11 @@ Mouse\+Wheel\+Scrolled&The mouse wheel was scrolled (data in event.\+mouse\+Whee
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{MouseButtonPressed@{MouseButtonPressed}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!MouseButtonPressed@{MouseButtonPressed}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa0d16fdcf7907ec64a9cfabac6e135d1b}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa0d16fdcf7907ec64a9cfabac6e135d1b}} 
-Mouse\+Button\+Pressed&A mouse button was pressed (data in event.\+mouse\+Button) \\
+Mouse\+Button\+Pressed&\mbox{\hyperlink{class_a}{A}} mouse button was pressed (data in event.\+mouse\+Button) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{MouseButtonReleased@{MouseButtonReleased}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!MouseButtonReleased@{MouseButtonReleased}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aafa0ebea6e6dd90e3fe49ca9b52977836}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aafa0ebea6e6dd90e3fe49ca9b52977836}} 
-Mouse\+Button\+Released&A mouse button was released (data in event.\+mouse\+Button) \\
+Mouse\+Button\+Released&\mbox{\hyperlink{class_a}{A}} mouse button was released (data in event.\+mouse\+Button) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{MouseMoved@{MouseMoved}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!MouseMoved@{MouseMoved}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aacc43824f451738c5afd00c7cd08e25b5}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aacc43824f451738c5afd00c7cd08e25b5}} 
@@ -431,11 +431,11 @@ Mouse\+Left&The mouse cursor left the area of the window (no data) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{JoystickButtonPressed@{JoystickButtonPressed}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!JoystickButtonPressed@{JoystickButtonPressed}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa048f17d935ca55b7fa063062ed3aa7ee}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa048f17d935ca55b7fa063062ed3aa7ee}} 
-Joystick\+Button\+Pressed&A joystick button was pressed (data in event.\+joystick\+Button) \\
+Joystick\+Button\+Pressed&\mbox{\hyperlink{class_a}{A}} joystick button was pressed (data in event.\+joystick\+Button) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{JoystickButtonReleased@{JoystickButtonReleased}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!JoystickButtonReleased@{JoystickButtonReleased}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aab7c62947d6d4248d8ff05896f06bd360}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aab7c62947d6d4248d8ff05896f06bd360}} 
-Joystick\+Button\+Released&A joystick button was released (data in event.\+joystick\+Button) \\
+Joystick\+Button\+Released&\mbox{\hyperlink{class_a}{A}} joystick button was released (data in event.\+joystick\+Button) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{JoystickMoved@{JoystickMoved}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!JoystickMoved@{JoystickMoved}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aac6e368e4ec275235dbab7e782d857d52}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aac6e368e4ec275235dbab7e782d857d52}} 
@@ -443,27 +443,27 @@ Joystick\+Moved&The joystick moved along an axis (data in event.\+joystick\+Move
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{JoystickConnected@{JoystickConnected}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!JoystickConnected@{JoystickConnected}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa103511bbaf4d9710be5028510b80a011}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa103511bbaf4d9710be5028510b80a011}} 
-Joystick\+Connected&A joystick was connected (data in event.\+joystick\+Connect) \\
+Joystick\+Connected&\mbox{\hyperlink{class_a}{A}} joystick was connected (data in event.\+joystick\+Connect) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{JoystickDisconnected@{JoystickDisconnected}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!JoystickDisconnected@{JoystickDisconnected}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa8f4151bb75a0eec34a2950ea9d341894}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa8f4151bb75a0eec34a2950ea9d341894}} 
-Joystick\+Disconnected&A joystick was disconnected (data in event.\+joystick\+Connect) \\
+Joystick\+Disconnected&\mbox{\hyperlink{class_a}{A}} joystick was disconnected (data in event.\+joystick\+Connect) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{TouchBegan@{TouchBegan}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!TouchBegan@{TouchBegan}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aafcdbb3d909117eb088c6d290b564e6b5}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aafcdbb3d909117eb088c6d290b564e6b5}} 
-Touch\+Began&A touch event began (data in event.\+touch) \\
+Touch\+Began&\mbox{\hyperlink{class_a}{A}} touch event began (data in event.\+touch) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{TouchMoved@{TouchMoved}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!TouchMoved@{TouchMoved}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa4eed100fe434d73ac20e6a8cfd1e726c}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa4eed100fe434d73ac20e6a8cfd1e726c}} 
-Touch\+Moved&A touch moved (data in event.\+touch) \\
+Touch\+Moved&\mbox{\hyperlink{class_a}{A}} touch moved (data in event.\+touch) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{TouchEnded@{TouchEnded}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!TouchEnded@{TouchEnded}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aae35e2e04bb23e95d3786bef60ea4c074}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aae35e2e04bb23e95d3786bef60ea4c074}} 
-Touch\+Ended&A touch event ended (data in event.\+touch) \\
+Touch\+Ended&\mbox{\hyperlink{class_a}{A}} touch event ended (data in event.\+touch) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{SensorChanged@{SensorChanged}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!SensorChanged@{SensorChanged}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aac175c7fb90d3b03cda554ada20d42795}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aac175c7fb90d3b03cda554ada20d42795}} 
-Sensor\+Changed&A sensor value changed (data in event.\+sensor) \\
+Sensor\+Changed&\mbox{\hyperlink{class_a}{A}} sensor value changed (data in event.\+sensor) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Count@{Count}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!Count@{Count}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aae5c49a2d50ccccd9c941e6be36b0d05f}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aae5c49a2d50ccccd9c941e6be36b0d05f}} 
@@ -503,15 +503,15 @@ Gained\+Focus&The window gained the focus (no data) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{TextEntered@{TextEntered}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!TextEntered@{TextEntered}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa4da4ae2f3e97f8cbd3cb725f2da21a10}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa4da4ae2f3e97f8cbd3cb725f2da21a10}} 
-Text\+Entered&A character was entered (data in event.\+text) \\
+Text\+Entered&\mbox{\hyperlink{class_a}{A}} character was entered (data in event.\+text) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{KeyPressed@{KeyPressed}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!KeyPressed@{KeyPressed}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4}} 
-Key\+Pressed&A key was pressed (data in event.\+key) \\
+Key\+Pressed&\mbox{\hyperlink{class_a}{A}} key was pressed (data in event.\+key) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{KeyReleased@{KeyReleased}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!KeyReleased@{KeyReleased}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa1df4a1c59bf3a4613f3d577ce137b8f1}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa1df4a1c59bf3a4613f3d577ce137b8f1}} 
-Key\+Released&A key was released (data in event.\+key) \\
+Key\+Released&\mbox{\hyperlink{class_a}{A}} key was released (data in event.\+key) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{MouseWheelMoved@{MouseWheelMoved}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!MouseWheelMoved@{MouseWheelMoved}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aad53fec9b30096b56d96ae0cc3680c717}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aad53fec9b30096b56d96ae0cc3680c717}} 
@@ -523,11 +523,11 @@ Mouse\+Wheel\+Scrolled&The mouse wheel was scrolled (data in event.\+mouse\+Whee
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{MouseButtonPressed@{MouseButtonPressed}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!MouseButtonPressed@{MouseButtonPressed}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa0d16fdcf7907ec64a9cfabac6e135d1b}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa0d16fdcf7907ec64a9cfabac6e135d1b}} 
-Mouse\+Button\+Pressed&A mouse button was pressed (data in event.\+mouse\+Button) \\
+Mouse\+Button\+Pressed&\mbox{\hyperlink{class_a}{A}} mouse button was pressed (data in event.\+mouse\+Button) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{MouseButtonReleased@{MouseButtonReleased}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!MouseButtonReleased@{MouseButtonReleased}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aafa0ebea6e6dd90e3fe49ca9b52977836}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aafa0ebea6e6dd90e3fe49ca9b52977836}} 
-Mouse\+Button\+Released&A mouse button was released (data in event.\+mouse\+Button) \\
+Mouse\+Button\+Released&\mbox{\hyperlink{class_a}{A}} mouse button was released (data in event.\+mouse\+Button) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{MouseMoved@{MouseMoved}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!MouseMoved@{MouseMoved}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aacc43824f451738c5afd00c7cd08e25b5}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aacc43824f451738c5afd00c7cd08e25b5}} 
@@ -543,11 +543,11 @@ Mouse\+Left&The mouse cursor left the area of the window (no data) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{JoystickButtonPressed@{JoystickButtonPressed}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!JoystickButtonPressed@{JoystickButtonPressed}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa048f17d935ca55b7fa063062ed3aa7ee}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa048f17d935ca55b7fa063062ed3aa7ee}} 
-Joystick\+Button\+Pressed&A joystick button was pressed (data in event.\+joystick\+Button) \\
+Joystick\+Button\+Pressed&\mbox{\hyperlink{class_a}{A}} joystick button was pressed (data in event.\+joystick\+Button) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{JoystickButtonReleased@{JoystickButtonReleased}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!JoystickButtonReleased@{JoystickButtonReleased}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aab7c62947d6d4248d8ff05896f06bd360}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aab7c62947d6d4248d8ff05896f06bd360}} 
-Joystick\+Button\+Released&A joystick button was released (data in event.\+joystick\+Button) \\
+Joystick\+Button\+Released&\mbox{\hyperlink{class_a}{A}} joystick button was released (data in event.\+joystick\+Button) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{JoystickMoved@{JoystickMoved}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!JoystickMoved@{JoystickMoved}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aac6e368e4ec275235dbab7e782d857d52}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aac6e368e4ec275235dbab7e782d857d52}} 
@@ -555,27 +555,27 @@ Joystick\+Moved&The joystick moved along an axis (data in event.\+joystick\+Move
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{JoystickConnected@{JoystickConnected}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!JoystickConnected@{JoystickConnected}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa103511bbaf4d9710be5028510b80a011}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa103511bbaf4d9710be5028510b80a011}} 
-Joystick\+Connected&A joystick was connected (data in event.\+joystick\+Connect) \\
+Joystick\+Connected&\mbox{\hyperlink{class_a}{A}} joystick was connected (data in event.\+joystick\+Connect) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{JoystickDisconnected@{JoystickDisconnected}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!JoystickDisconnected@{JoystickDisconnected}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa8f4151bb75a0eec34a2950ea9d341894}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa8f4151bb75a0eec34a2950ea9d341894}} 
-Joystick\+Disconnected&A joystick was disconnected (data in event.\+joystick\+Connect) \\
+Joystick\+Disconnected&\mbox{\hyperlink{class_a}{A}} joystick was disconnected (data in event.\+joystick\+Connect) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{TouchBegan@{TouchBegan}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!TouchBegan@{TouchBegan}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aafcdbb3d909117eb088c6d290b564e6b5}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aafcdbb3d909117eb088c6d290b564e6b5}} 
-Touch\+Began&A touch event began (data in event.\+touch) \\
+Touch\+Began&\mbox{\hyperlink{class_a}{A}} touch event began (data in event.\+touch) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{TouchMoved@{TouchMoved}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!TouchMoved@{TouchMoved}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa4eed100fe434d73ac20e6a8cfd1e726c}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa4eed100fe434d73ac20e6a8cfd1e726c}} 
-Touch\+Moved&A touch moved (data in event.\+touch) \\
+Touch\+Moved&\mbox{\hyperlink{class_a}{A}} touch moved (data in event.\+touch) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{TouchEnded@{TouchEnded}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!TouchEnded@{TouchEnded}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aae35e2e04bb23e95d3786bef60ea4c074}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aae35e2e04bb23e95d3786bef60ea4c074}} 
-Touch\+Ended&A touch event ended (data in event.\+touch) \\
+Touch\+Ended&\mbox{\hyperlink{class_a}{A}} touch event ended (data in event.\+touch) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{SensorChanged@{SensorChanged}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!SensorChanged@{SensorChanged}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aac175c7fb90d3b03cda554ada20d42795}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aac175c7fb90d3b03cda554ada20d42795}} 
-Sensor\+Changed&A sensor value changed (data in event.\+sensor) \\
+Sensor\+Changed&\mbox{\hyperlink{class_a}{A}} sensor value changed (data in event.\+sensor) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Count@{Count}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!Count@{Count}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aae5c49a2d50ccccd9c941e6be36b0d05f}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aae5c49a2d50ccccd9c941e6be36b0d05f}} 
@@ -599,15 +599,15 @@ Gained\+Focus&The window gained the focus (no data) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{TextEntered@{TextEntered}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!TextEntered@{TextEntered}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa4da4ae2f3e97f8cbd3cb725f2da21a10}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa4da4ae2f3e97f8cbd3cb725f2da21a10}} 
-Text\+Entered&A character was entered (data in event.\+text) \\
+Text\+Entered&\mbox{\hyperlink{class_a}{A}} character was entered (data in event.\+text) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{KeyPressed@{KeyPressed}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!KeyPressed@{KeyPressed}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4}} 
-Key\+Pressed&A key was pressed (data in event.\+key) \\
+Key\+Pressed&\mbox{\hyperlink{class_a}{A}} key was pressed (data in event.\+key) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{KeyReleased@{KeyReleased}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!KeyReleased@{KeyReleased}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa1df4a1c59bf3a4613f3d577ce137b8f1}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa1df4a1c59bf3a4613f3d577ce137b8f1}} 
-Key\+Released&A key was released (data in event.\+key) \\
+Key\+Released&\mbox{\hyperlink{class_a}{A}} key was released (data in event.\+key) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{MouseWheelMoved@{MouseWheelMoved}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!MouseWheelMoved@{MouseWheelMoved}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aad53fec9b30096b56d96ae0cc3680c717}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aad53fec9b30096b56d96ae0cc3680c717}} 
@@ -619,11 +619,11 @@ Mouse\+Wheel\+Scrolled&The mouse wheel was scrolled (data in event.\+mouse\+Whee
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{MouseButtonPressed@{MouseButtonPressed}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!MouseButtonPressed@{MouseButtonPressed}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa0d16fdcf7907ec64a9cfabac6e135d1b}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa0d16fdcf7907ec64a9cfabac6e135d1b}} 
-Mouse\+Button\+Pressed&A mouse button was pressed (data in event.\+mouse\+Button) \\
+Mouse\+Button\+Pressed&\mbox{\hyperlink{class_a}{A}} mouse button was pressed (data in event.\+mouse\+Button) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{MouseButtonReleased@{MouseButtonReleased}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!MouseButtonReleased@{MouseButtonReleased}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aafa0ebea6e6dd90e3fe49ca9b52977836}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aafa0ebea6e6dd90e3fe49ca9b52977836}} 
-Mouse\+Button\+Released&A mouse button was released (data in event.\+mouse\+Button) \\
+Mouse\+Button\+Released&\mbox{\hyperlink{class_a}{A}} mouse button was released (data in event.\+mouse\+Button) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{MouseMoved@{MouseMoved}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!MouseMoved@{MouseMoved}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aacc43824f451738c5afd00c7cd08e25b5}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aacc43824f451738c5afd00c7cd08e25b5}} 
@@ -639,11 +639,11 @@ Mouse\+Left&The mouse cursor left the area of the window (no data) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{JoystickButtonPressed@{JoystickButtonPressed}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!JoystickButtonPressed@{JoystickButtonPressed}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa048f17d935ca55b7fa063062ed3aa7ee}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa048f17d935ca55b7fa063062ed3aa7ee}} 
-Joystick\+Button\+Pressed&A joystick button was pressed (data in event.\+joystick\+Button) \\
+Joystick\+Button\+Pressed&\mbox{\hyperlink{class_a}{A}} joystick button was pressed (data in event.\+joystick\+Button) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{JoystickButtonReleased@{JoystickButtonReleased}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!JoystickButtonReleased@{JoystickButtonReleased}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aab7c62947d6d4248d8ff05896f06bd360}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aab7c62947d6d4248d8ff05896f06bd360}} 
-Joystick\+Button\+Released&A joystick button was released (data in event.\+joystick\+Button) \\
+Joystick\+Button\+Released&\mbox{\hyperlink{class_a}{A}} joystick button was released (data in event.\+joystick\+Button) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{JoystickMoved@{JoystickMoved}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!JoystickMoved@{JoystickMoved}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aac6e368e4ec275235dbab7e782d857d52}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aac6e368e4ec275235dbab7e782d857d52}} 
@@ -651,27 +651,27 @@ Joystick\+Moved&The joystick moved along an axis (data in event.\+joystick\+Move
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{JoystickConnected@{JoystickConnected}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!JoystickConnected@{JoystickConnected}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa103511bbaf4d9710be5028510b80a011}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa103511bbaf4d9710be5028510b80a011}} 
-Joystick\+Connected&A joystick was connected (data in event.\+joystick\+Connect) \\
+Joystick\+Connected&\mbox{\hyperlink{class_a}{A}} joystick was connected (data in event.\+joystick\+Connect) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{JoystickDisconnected@{JoystickDisconnected}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!JoystickDisconnected@{JoystickDisconnected}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa8f4151bb75a0eec34a2950ea9d341894}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa8f4151bb75a0eec34a2950ea9d341894}} 
-Joystick\+Disconnected&A joystick was disconnected (data in event.\+joystick\+Connect) \\
+Joystick\+Disconnected&\mbox{\hyperlink{class_a}{A}} joystick was disconnected (data in event.\+joystick\+Connect) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{TouchBegan@{TouchBegan}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!TouchBegan@{TouchBegan}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aafcdbb3d909117eb088c6d290b564e6b5}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aafcdbb3d909117eb088c6d290b564e6b5}} 
-Touch\+Began&A touch event began (data in event.\+touch) \\
+Touch\+Began&\mbox{\hyperlink{class_a}{A}} touch event began (data in event.\+touch) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{TouchMoved@{TouchMoved}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!TouchMoved@{TouchMoved}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa4eed100fe434d73ac20e6a8cfd1e726c}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa4eed100fe434d73ac20e6a8cfd1e726c}} 
-Touch\+Moved&A touch moved (data in event.\+touch) \\
+Touch\+Moved&\mbox{\hyperlink{class_a}{A}} touch moved (data in event.\+touch) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{TouchEnded@{TouchEnded}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!TouchEnded@{TouchEnded}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aae35e2e04bb23e95d3786bef60ea4c074}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aae35e2e04bb23e95d3786bef60ea4c074}} 
-Touch\+Ended&A touch event ended (data in event.\+touch) \\
+Touch\+Ended&\mbox{\hyperlink{class_a}{A}} touch event ended (data in event.\+touch) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{SensorChanged@{SensorChanged}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!SensorChanged@{SensorChanged}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aac175c7fb90d3b03cda554ada20d42795}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aac175c7fb90d3b03cda554ada20d42795}} 
-Sensor\+Changed&A sensor value changed (data in event.\+sensor) \\
+Sensor\+Changed&\mbox{\hyperlink{class_a}{A}} sensor value changed (data in event.\+sensor) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Count@{Count}!sf::Event@{sf::Event}}\index{sf::Event@{sf::Event}!Count@{Count}}}\mbox{\Hypertarget{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aae5c49a2d50ccccd9c941e6be36b0d05f}\label{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aae5c49a2d50ccccd9c941e6be36b0d05f}} 

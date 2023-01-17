@@ -444,8 +444,8 @@
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00440}00440             XMFLOAT3 bitangent(dr*c, -\/height, dr*s);}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00441}00441 }
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00442}00442             XMVECTOR T = XMLoadFloat3(\&vertex.\mbox{\hyperlink{struct_geometry_generator_1_1_vertex_a717df2eee4e35bb0eb8f4ecf262edf4f}{TangentU}});}
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00443}00443             XMVECTOR B = XMLoadFloat3(\&bitangent);}
-\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00444}00444             XMVECTOR N = XMVector3Normalize(XMVector3Cross(T, B));}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00443}00443             XMVECTOR \mbox{\hyperlink{class_b}{B}} = XMLoadFloat3(\&bitangent);}
+\DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00444}00444             XMVECTOR N = XMVector3Normalize(XMVector3Cross(T, \mbox{\hyperlink{class_b}{B}}));}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00445}00445             XMStoreFloat3(\&vertex.\mbox{\hyperlink{struct_geometry_generator_1_1_vertex_ab09e39b41f227072d8d24768b464eaa8}{Normal}}, N);}
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00446}00446 }
 \DoxyCodeLine{\Hypertarget{_geometry_generator_8cpp_source_l00447}00447             meshData.\mbox{\hyperlink{struct_geometry_generator_1_1_mesh_data_a2a85f97f9a84b4f68d71cdcd41a7198b}{Vertices}}.push\_back(vertex);}

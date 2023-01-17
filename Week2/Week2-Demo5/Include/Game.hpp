@@ -1,29 +1,38 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include <TextureHolder.hpp>
+#include <string>
+#include "ResourceHolder.hpp"
 #include <iostream>
+
+namespace Textures
+{
+	enum ID
+	{
+		Landscape,
+		Airplane,
+	};
+}
 
 class Game : private sf::NonCopyable
 {
 	public:
-								Game();
+		Game();
 		void					run();
-
+		
 	private:
 		void					processEvents();
 		void					update(sf::Time elapsedTime);
 		void					render();
-
 		void					updateStatistics(sf::Time elapsedTime);	
 		void					handlePlayerInput(sf::Keyboard::Key key, bool isPressed);
 		
-
 	private:
 		static const float		PlayerSpeed;
 		static const sf::Time	TimePerFrame;
 
-		sf::RenderWindow		mWindow;		
+		sf::RenderWindow		mWindow;
+		
 		sf::Font				mFont;
 		sf::Text				mStatisticsText;
 		sf::Time				mStatisticsUpdateTime;
@@ -34,13 +43,14 @@ class Game : private sf::NonCopyable
 		bool					mIsMovingRight;
 		bool					mIsMovingLeft;
 
-		//step 1
-		//sf::Texture				mTexture;
-		//sf::Sprite				mPlayer;
-		TextureHolder			textures;
+#pragma region step 3
+	    //TextureHolder			 textures;
+		ResourceHolder<sf::Texture, Textures::ID> textures;
+#pragma endregion
+
 		sf::Sprite				airplane;
 		sf::Sprite				landscape;
 		sf::Texture             mBackgroundTexture;
-		sf::Texture             mAirplaneTexture;
 };
+
 

@@ -2,10 +2,10 @@
 \label{_week2-_demo6-main_8cpp}\index{Week2/Week2-\/Demo6/Source/Week2-\/Demo6-\/main.cpp@{Week2/Week2-\/Demo6/Source/Week2-\/Demo6-\/main.cpp}}
 
 
-Generalizing the approach\+: \mbox{\hyperlink{class_resource_holder}{Resource\+Holder}} We have implemented everything we need for textures, but we would like to handle other resources such as fonts and sound buffers too.  
+Lab Exercise.  
 
 
-{\ttfamily \#include \char`\"{}Game.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$Game.\+hpp$>$}\newline
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -14,15 +14,20 @@ int \mbox{\hyperlink{_week2-_demo6-main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{
 
 
 \doxysubsection{Detailed Description}
-Generalizing the approach\+: \mbox{\hyperlink{class_resource_holder}{Resource\+Holder}} We have implemented everything we need for textures, but we would like to handle other resources such as fonts and sound buffers too. 
+Lab Exercise. 
 
-As the implementation looks extremely similar for them, it would be a bad idea to write new classes Font\+Holder and Sound\+Buffer\+Holder with exactly the same functionality. Instead, we write a class template, which we instantiate for different resource classes. We call our template \mbox{\hyperlink{class_resource_holder}{Resource\+Holder}} and equip it with two template parameters\+: • Resource\+: The type of resource, for example, \mbox{\hyperlink{classsf_1_1_texture}{sf\+::\+Texture}}. We design the class template to work the SFML classes, but if you have your own resource class which conforms to the required interface (providing load\+From\+File() methods), nothing keeps you from using it together with \mbox{\hyperlink{class_resource_holder}{Resource\+Holder}}. • Identifier\+: The ID type for resource access, for example, \mbox{\hyperlink{namespace_textures_a2cfe2099537d4e80b08437b4978301a5}{Textures\+::\+ID}}. This will usually be an enum, but the type is not restricted to enumerations. Any type that supports an operator\texorpdfstring{$<$}{<} can be used as identifier, for example, std\+::string.
+
+\begin{DoxyEnumerate}
+\item Add Resource Holder
+\item Make it fixed time steps
+\item Add resource holder to load textures
+\end{DoxyEnumerate}
 
 \begin{DoxyAuthor}{Author}
 Hooman Salamat 
 \end{DoxyAuthor}
 \begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000007}{Bug}}]No known bugs. \end{DoxyRefDesc}
+\item[\mbox{\hyperlink{bug__bug000016}{Bug}}]No known bugs. \end{DoxyRefDesc}
 
 
 Definition in file \mbox{\hyperlink{_week2-_demo6-main_8cpp_source}{Week2-\/\+Demo6-\/main.\+cpp}}.
@@ -38,5 +43,5 @@ Definition in file \mbox{\hyperlink{_week2-_demo6-main_8cpp_source}{Week2-\/\+De
 
 
 
-Definition at line \mbox{\hyperlink{_week2-_demo6-main_8cpp_source_l00025}{25}} of file \mbox{\hyperlink{_week2-_demo6-main_8cpp_source}{Week2-\/\+Demo6-\/main.\+cpp}}.
+Definition at line \mbox{\hyperlink{_week2-_demo6-main_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{_week2-_demo6-main_8cpp_source}{Week2-\/\+Demo6-\/main.\+cpp}}.
 

@@ -1,0 +1,36 @@
+\hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp_source}{}\doxysection{Loading\+State.\+hpp}
+\label{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp_source}\index{Week6/Week6-\/Demo6-\/LoadingState/Include/LoadingState.hpp@{Week6/Week6-\/Demo6-\/LoadingState/Include/LoadingState.hpp}}
+\mbox{\hyperlink{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma region step 4}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp_source_l00003}00003 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_week9-10_2_week10-_demo9-_game_over_2_include_2_state_8hpp}{State.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp_source_l00005}00005 \textcolor{preprocessor}{\#include <SFML/Graphics/RectangleShape.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp_source_l00006}00006 \textcolor{preprocessor}{\#include <SFML/Graphics/Text.hpp>}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp_source_l00008}00008 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_week9-10_2_week10-_demo1-_settings_2_include_2_parallel_task_8hpp}{ParallelTask.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp_source_l00011}00011 \textcolor{keyword}{class }\mbox{\hyperlink{class_loading_state}{LoadingState}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_state}{State}}}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp_source_l00012}00012 \{}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp_source_l00013}00013 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp_source_l00014}\mbox{\hyperlink{class_loading_state_a6830cacada1f9c215f913d31aa1805cf}{00014}}     \mbox{\hyperlink{class_loading_state_a6830cacada1f9c215f913d31aa1805cf}{LoadingState}}(\mbox{\hyperlink{class_state_stack}{StateStack}}\& stack, \mbox{\hyperlink{struct_state_1_1_context}{Context}} context);}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp_source_l00016}\mbox{\hyperlink{class_loading_state_ac970b1f7d7ad5a24a84dda1bd02636d6}{00016}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}            \mbox{\hyperlink{class_loading_state_ac970b1f7d7ad5a24a84dda1bd02636d6}{draw}}();}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp_source_l00017}\mbox{\hyperlink{class_loading_state_a457c7db7de70d4fa5ab5b639d1aa7889}{00017}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool}            \mbox{\hyperlink{class_loading_state_a457c7db7de70d4fa5ab5b639d1aa7889}{update}}(\mbox{\hyperlink{classsf_1_1_time}{sf::Time}} dt);}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp_source_l00018}\mbox{\hyperlink{class_loading_state_adab7f548baa39569ddf7fb87a7a2d201}{00018}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool}            \mbox{\hyperlink{class_loading_state_adab7f548baa39569ddf7fb87a7a2d201}{handleEvent}}(\textcolor{keyword}{const} \mbox{\hyperlink{classsf_1_1_event}{sf::Event}}\& event);}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp_source_l00020}\mbox{\hyperlink{class_loading_state_a28bee93e7f9818084af8be6b31ee0ba4}{00020}}     \textcolor{keywordtype}{void}                    \mbox{\hyperlink{class_loading_state_a28bee93e7f9818084af8be6b31ee0ba4}{setCompletion}}(\textcolor{keywordtype}{float} percent);}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp_source_l00022}00022 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp_source_l00023}00023     \mbox{\hyperlink{classsf_1_1_text}{sf::Text}}                mLoadingText;}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp_source_l00024}00024     \mbox{\hyperlink{classsf_1_1_rectangle_shape}{sf::RectangleShape}}        mProgressBarBackground;}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp_source_l00025}00025     \mbox{\hyperlink{classsf_1_1_rectangle_shape}{sf::RectangleShape}}        mProgressBar;}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp_source_l00027}00027     \mbox{\hyperlink{class_parallel_task}{ParallelTask}}            mLoadingTask;}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp_source_l00028}00028 \};}
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_week6_2_week6-_demo6-_loading_state_2_include_2_loading_state_8hpp_source_l00030}00030 \textcolor{preprocessor}{\#pragma endregion}}
+
+\end{DoxyCode}

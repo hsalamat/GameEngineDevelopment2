@@ -32,10 +32,10 @@
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_source_2_aircraft_8cpp_source_l00028}00028 \textcolor{comment}{//\}}}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_source_2_aircraft_8cpp_source_l00029}00029 }
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_source_2_aircraft_8cpp_source_l00030}00030 }
-\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_source_2_aircraft_8cpp_source_l00031}00031 \mbox{\hyperlink{class_aircraft_a88290be2611c6dc415cb1e32223b790a}{Aircraft::Aircraft}}(\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0}{Type}} type, \textcolor{keyword}{const} \mbox{\hyperlink{class_texture_holder}{TextureHolder}}\& textures, \textcolor{keyword}{const} \mbox{\hyperlink{class_resource_holder}{FontHolder}}\& fonts)}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_source_2_aircraft_8cpp_source_l00031}00031 \mbox{\hyperlink{class_aircraft_a88290be2611c6dc415cb1e32223b790a}{Aircraft::Aircraft}}(\mbox{\hyperlink{namespace_category_a2ff936dbd42aeae91fdfb6f8456a8ab0}{Type}} type, \textcolor{keyword}{const} \mbox{\hyperlink{class_texture_holder}{TextureHolder}}\& \mbox{\hyperlink{enum_demo1_8cpp_ac6a70fa2f77cc3032c1eea5a4c725cff}{textures}}, \textcolor{keyword}{const} \mbox{\hyperlink{class_resource_holder}{FontHolder}}\& fonts)}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_source_2_aircraft_8cpp_source_l00032}00032 : \mbox{\hyperlink{class_entity}{Entity}}(Table[type].hitpoints)}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_source_2_aircraft_8cpp_source_l00033}00033 , mType(type)}
-\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_source_2_aircraft_8cpp_source_l00034}00034 , mSprite(textures.get(Table[type].texture))}
+\DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_source_2_aircraft_8cpp_source_l00034}00034 , mSprite(\mbox{\hyperlink{enum_demo1_8cpp_ac6a70fa2f77cc3032c1eea5a4c725cff}{textures}}.get(Table[type].texture))}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_source_2_aircraft_8cpp_source_l00035}00035 , mHealthDisplay(nullptr)}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_source_2_aircraft_8cpp_source_l00036}00036 \{}
 \DoxyCodeLine{\Hypertarget{_week9-10_2_week10-_demo2-_text_node_2_source_2_aircraft_8cpp_source_l00037}00037     \mbox{\hyperlink{_week11_2_week11-_demo1-_game_over_2_include_2_utility_8hpp_add3ffea68d586813ee6765c3bc796d35}{centerOrigin}}(mSprite);}

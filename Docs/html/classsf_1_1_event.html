@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: sf::Event Class Reference</title>
+<title>GAME3015: sf::Event Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">GAME3015
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -363,7 +363,7 @@ Public Attributes</h2></td></tr>
 <div class="textblock"><p >Defines a system event and its parameters. </p>
 <p ><a class="el" href="classsf_1_1_event.html" title="Defines a system event and its parameters.">sf::Event</a> holds all the informations about a system event that just happened.</p>
 <p >Events are retrieved using the <a class="el" href="classsf_1_1_window.html#a338e996585faf82e93069858e3b531b7" title="Pop the event on top of the event queue, if any, and return it.">sf::Window::pollEvent</a> and <a class="el" href="classsf_1_1_window.html#aaf02ab64fbc1d374eef3696df54137bc" title="Wait for an event and return it.">sf::Window::waitEvent</a> functions.</p>
-<p >A <a class="el" href="classsf_1_1_event.html" title="Defines a system event and its parameters.">sf::Event</a> instance contains the type of the event (mouse moved, key pressed, window closed, ...) as well as the details about this particular event. Please note that the event parameters are defined in a union, which means that only the member matching the type of the event will be properly filled; all other members will have undefined values and must not be read if the type of the event doesn't match. For example, if you received a KeyPressed event, then you must read the event.key member, all other members such as event.mouseMove or event.text will have undefined values.</p>
+<p ><a class="el" href="class_a.html">A</a> <a class="el" href="classsf_1_1_event.html" title="Defines a system event and its parameters.">sf::Event</a> instance contains the type of the event (mouse moved, key pressed, window closed, ...) as well as the details about this particular event. Please note that the event parameters are defined in a union, which means that only the member matching the type of the event will be properly filled; all other members will have undefined values and must not be read if the type of the event doesn't match. For example, if you received a KeyPressed event, then you must read the event.key member, all other members such as event.mouseMove or event.text will have undefined values.</p>
 <p >Usage example: </p><div class="fragment"><div class="line"><a class="code hl_class" href="classsf_1_1_event.html">sf::Event</a> event;</div>
 <div class="line"><span class="keywordflow">while</span> (window.pollEvent(event))</div>
 <div class="line">{</div>
@@ -417,19 +417,19 @@ Public Attributes</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa067f8b39dcd270abc715652102ce6e66" name="af41fa9ed45c02449030699f671331d4aa067f8b39dcd270abc715652102ce6e66"></a>GainedFocus&#160;</td><td class="fielddoc"><p >The window gained the focus (no data) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa4da4ae2f3e97f8cbd3cb725f2da21a10" name="af41fa9ed45c02449030699f671331d4aa4da4ae2f3e97f8cbd3cb725f2da21a10"></a>TextEntered&#160;</td><td class="fielddoc"><p >A character was entered (data in event.text) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa4da4ae2f3e97f8cbd3cb725f2da21a10" name="af41fa9ed45c02449030699f671331d4aa4da4ae2f3e97f8cbd3cb725f2da21a10"></a>TextEntered&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> character was entered (data in event.text) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4" name="af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4"></a>KeyPressed&#160;</td><td class="fielddoc"><p >A key was pressed (data in event.key) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4" name="af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4"></a>KeyPressed&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> key was pressed (data in event.key) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa1df4a1c59bf3a4613f3d577ce137b8f1" name="af41fa9ed45c02449030699f671331d4aa1df4a1c59bf3a4613f3d577ce137b8f1"></a>KeyReleased&#160;</td><td class="fielddoc"><p >A key was released (data in event.key) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa1df4a1c59bf3a4613f3d577ce137b8f1" name="af41fa9ed45c02449030699f671331d4aa1df4a1c59bf3a4613f3d577ce137b8f1"></a>KeyReleased&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> key was released (data in event.key) </p>
 </td></tr>
 <tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aad53fec9b30096b56d96ae0cc3680c717" name="af41fa9ed45c02449030699f671331d4aad53fec9b30096b56d96ae0cc3680c717"></a>MouseWheelMoved&#160;</td><td class="fielddoc"><p >The mouse wheel was scrolled (data in event.mouseWheel) (deprecated) </p>
 </td></tr>
 <tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aab9002e9cf83b792763b6dd8992c0b535" name="af41fa9ed45c02449030699f671331d4aab9002e9cf83b792763b6dd8992c0b535"></a>MouseWheelScrolled&#160;</td><td class="fielddoc"><p >The mouse wheel was scrolled (data in event.mouseWheelScroll) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa0d16fdcf7907ec64a9cfabac6e135d1b" name="af41fa9ed45c02449030699f671331d4aa0d16fdcf7907ec64a9cfabac6e135d1b"></a>MouseButtonPressed&#160;</td><td class="fielddoc"><p >A mouse button was pressed (data in event.mouseButton) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa0d16fdcf7907ec64a9cfabac6e135d1b" name="af41fa9ed45c02449030699f671331d4aa0d16fdcf7907ec64a9cfabac6e135d1b"></a>MouseButtonPressed&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> mouse button was pressed (data in event.mouseButton) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aafa0ebea6e6dd90e3fe49ca9b52977836" name="af41fa9ed45c02449030699f671331d4aafa0ebea6e6dd90e3fe49ca9b52977836"></a>MouseButtonReleased&#160;</td><td class="fielddoc"><p >A mouse button was released (data in event.mouseButton) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aafa0ebea6e6dd90e3fe49ca9b52977836" name="af41fa9ed45c02449030699f671331d4aafa0ebea6e6dd90e3fe49ca9b52977836"></a>MouseButtonReleased&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> mouse button was released (data in event.mouseButton) </p>
 </td></tr>
 <tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aacc43824f451738c5afd00c7cd08e25b5" name="af41fa9ed45c02449030699f671331d4aacc43824f451738c5afd00c7cd08e25b5"></a>MouseMoved&#160;</td><td class="fielddoc"><p >The mouse cursor moved (data in event.mouseMove) </p>
 </td></tr>
@@ -437,23 +437,23 @@ Public Attributes</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aaedc7ba1176d5bfd5aac46f7c08457c32" name="af41fa9ed45c02449030699f671331d4aaedc7ba1176d5bfd5aac46f7c08457c32"></a>MouseLeft&#160;</td><td class="fielddoc"><p >The mouse cursor left the area of the window (no data) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa048f17d935ca55b7fa063062ed3aa7ee" name="af41fa9ed45c02449030699f671331d4aa048f17d935ca55b7fa063062ed3aa7ee"></a>JoystickButtonPressed&#160;</td><td class="fielddoc"><p >A joystick button was pressed (data in event.joystickButton) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa048f17d935ca55b7fa063062ed3aa7ee" name="af41fa9ed45c02449030699f671331d4aa048f17d935ca55b7fa063062ed3aa7ee"></a>JoystickButtonPressed&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> joystick button was pressed (data in event.joystickButton) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aab7c62947d6d4248d8ff05896f06bd360" name="af41fa9ed45c02449030699f671331d4aab7c62947d6d4248d8ff05896f06bd360"></a>JoystickButtonReleased&#160;</td><td class="fielddoc"><p >A joystick button was released (data in event.joystickButton) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aab7c62947d6d4248d8ff05896f06bd360" name="af41fa9ed45c02449030699f671331d4aab7c62947d6d4248d8ff05896f06bd360"></a>JoystickButtonReleased&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> joystick button was released (data in event.joystickButton) </p>
 </td></tr>
 <tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aac6e368e4ec275235dbab7e782d857d52" name="af41fa9ed45c02449030699f671331d4aac6e368e4ec275235dbab7e782d857d52"></a>JoystickMoved&#160;</td><td class="fielddoc"><p >The joystick moved along an axis (data in event.joystickMove) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa103511bbaf4d9710be5028510b80a011" name="af41fa9ed45c02449030699f671331d4aa103511bbaf4d9710be5028510b80a011"></a>JoystickConnected&#160;</td><td class="fielddoc"><p >A joystick was connected (data in event.joystickConnect) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa103511bbaf4d9710be5028510b80a011" name="af41fa9ed45c02449030699f671331d4aa103511bbaf4d9710be5028510b80a011"></a>JoystickConnected&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> joystick was connected (data in event.joystickConnect) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa8f4151bb75a0eec34a2950ea9d341894" name="af41fa9ed45c02449030699f671331d4aa8f4151bb75a0eec34a2950ea9d341894"></a>JoystickDisconnected&#160;</td><td class="fielddoc"><p >A joystick was disconnected (data in event.joystickConnect) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa8f4151bb75a0eec34a2950ea9d341894" name="af41fa9ed45c02449030699f671331d4aa8f4151bb75a0eec34a2950ea9d341894"></a>JoystickDisconnected&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> joystick was disconnected (data in event.joystickConnect) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aafcdbb3d909117eb088c6d290b564e6b5" name="af41fa9ed45c02449030699f671331d4aafcdbb3d909117eb088c6d290b564e6b5"></a>TouchBegan&#160;</td><td class="fielddoc"><p >A touch event began (data in event.touch) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aafcdbb3d909117eb088c6d290b564e6b5" name="af41fa9ed45c02449030699f671331d4aafcdbb3d909117eb088c6d290b564e6b5"></a>TouchBegan&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> touch event began (data in event.touch) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa4eed100fe434d73ac20e6a8cfd1e726c" name="af41fa9ed45c02449030699f671331d4aa4eed100fe434d73ac20e6a8cfd1e726c"></a>TouchMoved&#160;</td><td class="fielddoc"><p >A touch moved (data in event.touch) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa4eed100fe434d73ac20e6a8cfd1e726c" name="af41fa9ed45c02449030699f671331d4aa4eed100fe434d73ac20e6a8cfd1e726c"></a>TouchMoved&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> touch moved (data in event.touch) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aae35e2e04bb23e95d3786bef60ea4c074" name="af41fa9ed45c02449030699f671331d4aae35e2e04bb23e95d3786bef60ea4c074"></a>TouchEnded&#160;</td><td class="fielddoc"><p >A touch event ended (data in event.touch) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aae35e2e04bb23e95d3786bef60ea4c074" name="af41fa9ed45c02449030699f671331d4aae35e2e04bb23e95d3786bef60ea4c074"></a>TouchEnded&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> touch event ended (data in event.touch) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aac175c7fb90d3b03cda554ada20d42795" name="af41fa9ed45c02449030699f671331d4aac175c7fb90d3b03cda554ada20d42795"></a>SensorChanged&#160;</td><td class="fielddoc"><p >A sensor value changed (data in event.sensor) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aac175c7fb90d3b03cda554ada20d42795" name="af41fa9ed45c02449030699f671331d4aac175c7fb90d3b03cda554ada20d42795"></a>SensorChanged&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> sensor value changed (data in event.sensor) </p>
 </td></tr>
 <tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aae5c49a2d50ccccd9c941e6be36b0d05f" name="af41fa9ed45c02449030699f671331d4aae5c49a2d50ccccd9c941e6be36b0d05f"></a>Count&#160;</td><td class="fielddoc"><p >Keep last &ndash; the total number of event types. </p>
 </td></tr>
@@ -465,19 +465,19 @@ Public Attributes</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa067f8b39dcd270abc715652102ce6e66" name="af41fa9ed45c02449030699f671331d4aa067f8b39dcd270abc715652102ce6e66"></a>GainedFocus&#160;</td><td class="fielddoc"><p >The window gained the focus (no data) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa4da4ae2f3e97f8cbd3cb725f2da21a10" name="af41fa9ed45c02449030699f671331d4aa4da4ae2f3e97f8cbd3cb725f2da21a10"></a>TextEntered&#160;</td><td class="fielddoc"><p >A character was entered (data in event.text) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa4da4ae2f3e97f8cbd3cb725f2da21a10" name="af41fa9ed45c02449030699f671331d4aa4da4ae2f3e97f8cbd3cb725f2da21a10"></a>TextEntered&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> character was entered (data in event.text) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4" name="af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4"></a>KeyPressed&#160;</td><td class="fielddoc"><p >A key was pressed (data in event.key) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4" name="af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4"></a>KeyPressed&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> key was pressed (data in event.key) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa1df4a1c59bf3a4613f3d577ce137b8f1" name="af41fa9ed45c02449030699f671331d4aa1df4a1c59bf3a4613f3d577ce137b8f1"></a>KeyReleased&#160;</td><td class="fielddoc"><p >A key was released (data in event.key) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa1df4a1c59bf3a4613f3d577ce137b8f1" name="af41fa9ed45c02449030699f671331d4aa1df4a1c59bf3a4613f3d577ce137b8f1"></a>KeyReleased&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> key was released (data in event.key) </p>
 </td></tr>
 <tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aad53fec9b30096b56d96ae0cc3680c717" name="af41fa9ed45c02449030699f671331d4aad53fec9b30096b56d96ae0cc3680c717"></a>MouseWheelMoved&#160;</td><td class="fielddoc"><p >The mouse wheel was scrolled (data in event.mouseWheel) (deprecated) </p>
 </td></tr>
 <tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aab9002e9cf83b792763b6dd8992c0b535" name="af41fa9ed45c02449030699f671331d4aab9002e9cf83b792763b6dd8992c0b535"></a>MouseWheelScrolled&#160;</td><td class="fielddoc"><p >The mouse wheel was scrolled (data in event.mouseWheelScroll) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa0d16fdcf7907ec64a9cfabac6e135d1b" name="af41fa9ed45c02449030699f671331d4aa0d16fdcf7907ec64a9cfabac6e135d1b"></a>MouseButtonPressed&#160;</td><td class="fielddoc"><p >A mouse button was pressed (data in event.mouseButton) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa0d16fdcf7907ec64a9cfabac6e135d1b" name="af41fa9ed45c02449030699f671331d4aa0d16fdcf7907ec64a9cfabac6e135d1b"></a>MouseButtonPressed&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> mouse button was pressed (data in event.mouseButton) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aafa0ebea6e6dd90e3fe49ca9b52977836" name="af41fa9ed45c02449030699f671331d4aafa0ebea6e6dd90e3fe49ca9b52977836"></a>MouseButtonReleased&#160;</td><td class="fielddoc"><p >A mouse button was released (data in event.mouseButton) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aafa0ebea6e6dd90e3fe49ca9b52977836" name="af41fa9ed45c02449030699f671331d4aafa0ebea6e6dd90e3fe49ca9b52977836"></a>MouseButtonReleased&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> mouse button was released (data in event.mouseButton) </p>
 </td></tr>
 <tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aacc43824f451738c5afd00c7cd08e25b5" name="af41fa9ed45c02449030699f671331d4aacc43824f451738c5afd00c7cd08e25b5"></a>MouseMoved&#160;</td><td class="fielddoc"><p >The mouse cursor moved (data in event.mouseMove) </p>
 </td></tr>
@@ -485,23 +485,23 @@ Public Attributes</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aaedc7ba1176d5bfd5aac46f7c08457c32" name="af41fa9ed45c02449030699f671331d4aaedc7ba1176d5bfd5aac46f7c08457c32"></a>MouseLeft&#160;</td><td class="fielddoc"><p >The mouse cursor left the area of the window (no data) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa048f17d935ca55b7fa063062ed3aa7ee" name="af41fa9ed45c02449030699f671331d4aa048f17d935ca55b7fa063062ed3aa7ee"></a>JoystickButtonPressed&#160;</td><td class="fielddoc"><p >A joystick button was pressed (data in event.joystickButton) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa048f17d935ca55b7fa063062ed3aa7ee" name="af41fa9ed45c02449030699f671331d4aa048f17d935ca55b7fa063062ed3aa7ee"></a>JoystickButtonPressed&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> joystick button was pressed (data in event.joystickButton) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aab7c62947d6d4248d8ff05896f06bd360" name="af41fa9ed45c02449030699f671331d4aab7c62947d6d4248d8ff05896f06bd360"></a>JoystickButtonReleased&#160;</td><td class="fielddoc"><p >A joystick button was released (data in event.joystickButton) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aab7c62947d6d4248d8ff05896f06bd360" name="af41fa9ed45c02449030699f671331d4aab7c62947d6d4248d8ff05896f06bd360"></a>JoystickButtonReleased&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> joystick button was released (data in event.joystickButton) </p>
 </td></tr>
 <tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aac6e368e4ec275235dbab7e782d857d52" name="af41fa9ed45c02449030699f671331d4aac6e368e4ec275235dbab7e782d857d52"></a>JoystickMoved&#160;</td><td class="fielddoc"><p >The joystick moved along an axis (data in event.joystickMove) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa103511bbaf4d9710be5028510b80a011" name="af41fa9ed45c02449030699f671331d4aa103511bbaf4d9710be5028510b80a011"></a>JoystickConnected&#160;</td><td class="fielddoc"><p >A joystick was connected (data in event.joystickConnect) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa103511bbaf4d9710be5028510b80a011" name="af41fa9ed45c02449030699f671331d4aa103511bbaf4d9710be5028510b80a011"></a>JoystickConnected&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> joystick was connected (data in event.joystickConnect) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa8f4151bb75a0eec34a2950ea9d341894" name="af41fa9ed45c02449030699f671331d4aa8f4151bb75a0eec34a2950ea9d341894"></a>JoystickDisconnected&#160;</td><td class="fielddoc"><p >A joystick was disconnected (data in event.joystickConnect) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa8f4151bb75a0eec34a2950ea9d341894" name="af41fa9ed45c02449030699f671331d4aa8f4151bb75a0eec34a2950ea9d341894"></a>JoystickDisconnected&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> joystick was disconnected (data in event.joystickConnect) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aafcdbb3d909117eb088c6d290b564e6b5" name="af41fa9ed45c02449030699f671331d4aafcdbb3d909117eb088c6d290b564e6b5"></a>TouchBegan&#160;</td><td class="fielddoc"><p >A touch event began (data in event.touch) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aafcdbb3d909117eb088c6d290b564e6b5" name="af41fa9ed45c02449030699f671331d4aafcdbb3d909117eb088c6d290b564e6b5"></a>TouchBegan&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> touch event began (data in event.touch) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa4eed100fe434d73ac20e6a8cfd1e726c" name="af41fa9ed45c02449030699f671331d4aa4eed100fe434d73ac20e6a8cfd1e726c"></a>TouchMoved&#160;</td><td class="fielddoc"><p >A touch moved (data in event.touch) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa4eed100fe434d73ac20e6a8cfd1e726c" name="af41fa9ed45c02449030699f671331d4aa4eed100fe434d73ac20e6a8cfd1e726c"></a>TouchMoved&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> touch moved (data in event.touch) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aae35e2e04bb23e95d3786bef60ea4c074" name="af41fa9ed45c02449030699f671331d4aae35e2e04bb23e95d3786bef60ea4c074"></a>TouchEnded&#160;</td><td class="fielddoc"><p >A touch event ended (data in event.touch) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aae35e2e04bb23e95d3786bef60ea4c074" name="af41fa9ed45c02449030699f671331d4aae35e2e04bb23e95d3786bef60ea4c074"></a>TouchEnded&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> touch event ended (data in event.touch) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aac175c7fb90d3b03cda554ada20d42795" name="af41fa9ed45c02449030699f671331d4aac175c7fb90d3b03cda554ada20d42795"></a>SensorChanged&#160;</td><td class="fielddoc"><p >A sensor value changed (data in event.sensor) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aac175c7fb90d3b03cda554ada20d42795" name="af41fa9ed45c02449030699f671331d4aac175c7fb90d3b03cda554ada20d42795"></a>SensorChanged&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> sensor value changed (data in event.sensor) </p>
 </td></tr>
 <tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aae5c49a2d50ccccd9c941e6be36b0d05f" name="af41fa9ed45c02449030699f671331d4aae5c49a2d50ccccd9c941e6be36b0d05f"></a>Count&#160;</td><td class="fielddoc"><p >Keep last &ndash; the total number of event types. </p>
 </td></tr>
@@ -533,19 +533,19 @@ Public Attributes</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa067f8b39dcd270abc715652102ce6e66" name="af41fa9ed45c02449030699f671331d4aa067f8b39dcd270abc715652102ce6e66"></a>GainedFocus&#160;</td><td class="fielddoc"><p >The window gained the focus (no data) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa4da4ae2f3e97f8cbd3cb725f2da21a10" name="af41fa9ed45c02449030699f671331d4aa4da4ae2f3e97f8cbd3cb725f2da21a10"></a>TextEntered&#160;</td><td class="fielddoc"><p >A character was entered (data in event.text) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa4da4ae2f3e97f8cbd3cb725f2da21a10" name="af41fa9ed45c02449030699f671331d4aa4da4ae2f3e97f8cbd3cb725f2da21a10"></a>TextEntered&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> character was entered (data in event.text) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4" name="af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4"></a>KeyPressed&#160;</td><td class="fielddoc"><p >A key was pressed (data in event.key) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4" name="af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4"></a>KeyPressed&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> key was pressed (data in event.key) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa1df4a1c59bf3a4613f3d577ce137b8f1" name="af41fa9ed45c02449030699f671331d4aa1df4a1c59bf3a4613f3d577ce137b8f1"></a>KeyReleased&#160;</td><td class="fielddoc"><p >A key was released (data in event.key) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa1df4a1c59bf3a4613f3d577ce137b8f1" name="af41fa9ed45c02449030699f671331d4aa1df4a1c59bf3a4613f3d577ce137b8f1"></a>KeyReleased&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> key was released (data in event.key) </p>
 </td></tr>
 <tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aad53fec9b30096b56d96ae0cc3680c717" name="af41fa9ed45c02449030699f671331d4aad53fec9b30096b56d96ae0cc3680c717"></a>MouseWheelMoved&#160;</td><td class="fielddoc"><p >The mouse wheel was scrolled (data in event.mouseWheel) (deprecated) </p>
 </td></tr>
 <tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aab9002e9cf83b792763b6dd8992c0b535" name="af41fa9ed45c02449030699f671331d4aab9002e9cf83b792763b6dd8992c0b535"></a>MouseWheelScrolled&#160;</td><td class="fielddoc"><p >The mouse wheel was scrolled (data in event.mouseWheelScroll) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa0d16fdcf7907ec64a9cfabac6e135d1b" name="af41fa9ed45c02449030699f671331d4aa0d16fdcf7907ec64a9cfabac6e135d1b"></a>MouseButtonPressed&#160;</td><td class="fielddoc"><p >A mouse button was pressed (data in event.mouseButton) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa0d16fdcf7907ec64a9cfabac6e135d1b" name="af41fa9ed45c02449030699f671331d4aa0d16fdcf7907ec64a9cfabac6e135d1b"></a>MouseButtonPressed&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> mouse button was pressed (data in event.mouseButton) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aafa0ebea6e6dd90e3fe49ca9b52977836" name="af41fa9ed45c02449030699f671331d4aafa0ebea6e6dd90e3fe49ca9b52977836"></a>MouseButtonReleased&#160;</td><td class="fielddoc"><p >A mouse button was released (data in event.mouseButton) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aafa0ebea6e6dd90e3fe49ca9b52977836" name="af41fa9ed45c02449030699f671331d4aafa0ebea6e6dd90e3fe49ca9b52977836"></a>MouseButtonReleased&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> mouse button was released (data in event.mouseButton) </p>
 </td></tr>
 <tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aacc43824f451738c5afd00c7cd08e25b5" name="af41fa9ed45c02449030699f671331d4aacc43824f451738c5afd00c7cd08e25b5"></a>MouseMoved&#160;</td><td class="fielddoc"><p >The mouse cursor moved (data in event.mouseMove) </p>
 </td></tr>
@@ -553,23 +553,23 @@ Public Attributes</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aaedc7ba1176d5bfd5aac46f7c08457c32" name="af41fa9ed45c02449030699f671331d4aaedc7ba1176d5bfd5aac46f7c08457c32"></a>MouseLeft&#160;</td><td class="fielddoc"><p >The mouse cursor left the area of the window (no data) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa048f17d935ca55b7fa063062ed3aa7ee" name="af41fa9ed45c02449030699f671331d4aa048f17d935ca55b7fa063062ed3aa7ee"></a>JoystickButtonPressed&#160;</td><td class="fielddoc"><p >A joystick button was pressed (data in event.joystickButton) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa048f17d935ca55b7fa063062ed3aa7ee" name="af41fa9ed45c02449030699f671331d4aa048f17d935ca55b7fa063062ed3aa7ee"></a>JoystickButtonPressed&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> joystick button was pressed (data in event.joystickButton) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aab7c62947d6d4248d8ff05896f06bd360" name="af41fa9ed45c02449030699f671331d4aab7c62947d6d4248d8ff05896f06bd360"></a>JoystickButtonReleased&#160;</td><td class="fielddoc"><p >A joystick button was released (data in event.joystickButton) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aab7c62947d6d4248d8ff05896f06bd360" name="af41fa9ed45c02449030699f671331d4aab7c62947d6d4248d8ff05896f06bd360"></a>JoystickButtonReleased&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> joystick button was released (data in event.joystickButton) </p>
 </td></tr>
 <tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aac6e368e4ec275235dbab7e782d857d52" name="af41fa9ed45c02449030699f671331d4aac6e368e4ec275235dbab7e782d857d52"></a>JoystickMoved&#160;</td><td class="fielddoc"><p >The joystick moved along an axis (data in event.joystickMove) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa103511bbaf4d9710be5028510b80a011" name="af41fa9ed45c02449030699f671331d4aa103511bbaf4d9710be5028510b80a011"></a>JoystickConnected&#160;</td><td class="fielddoc"><p >A joystick was connected (data in event.joystickConnect) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa103511bbaf4d9710be5028510b80a011" name="af41fa9ed45c02449030699f671331d4aa103511bbaf4d9710be5028510b80a011"></a>JoystickConnected&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> joystick was connected (data in event.joystickConnect) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa8f4151bb75a0eec34a2950ea9d341894" name="af41fa9ed45c02449030699f671331d4aa8f4151bb75a0eec34a2950ea9d341894"></a>JoystickDisconnected&#160;</td><td class="fielddoc"><p >A joystick was disconnected (data in event.joystickConnect) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa8f4151bb75a0eec34a2950ea9d341894" name="af41fa9ed45c02449030699f671331d4aa8f4151bb75a0eec34a2950ea9d341894"></a>JoystickDisconnected&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> joystick was disconnected (data in event.joystickConnect) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aafcdbb3d909117eb088c6d290b564e6b5" name="af41fa9ed45c02449030699f671331d4aafcdbb3d909117eb088c6d290b564e6b5"></a>TouchBegan&#160;</td><td class="fielddoc"><p >A touch event began (data in event.touch) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aafcdbb3d909117eb088c6d290b564e6b5" name="af41fa9ed45c02449030699f671331d4aafcdbb3d909117eb088c6d290b564e6b5"></a>TouchBegan&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> touch event began (data in event.touch) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa4eed100fe434d73ac20e6a8cfd1e726c" name="af41fa9ed45c02449030699f671331d4aa4eed100fe434d73ac20e6a8cfd1e726c"></a>TouchMoved&#160;</td><td class="fielddoc"><p >A touch moved (data in event.touch) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa4eed100fe434d73ac20e6a8cfd1e726c" name="af41fa9ed45c02449030699f671331d4aa4eed100fe434d73ac20e6a8cfd1e726c"></a>TouchMoved&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> touch moved (data in event.touch) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aae35e2e04bb23e95d3786bef60ea4c074" name="af41fa9ed45c02449030699f671331d4aae35e2e04bb23e95d3786bef60ea4c074"></a>TouchEnded&#160;</td><td class="fielddoc"><p >A touch event ended (data in event.touch) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aae35e2e04bb23e95d3786bef60ea4c074" name="af41fa9ed45c02449030699f671331d4aae35e2e04bb23e95d3786bef60ea4c074"></a>TouchEnded&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> touch event ended (data in event.touch) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aac175c7fb90d3b03cda554ada20d42795" name="af41fa9ed45c02449030699f671331d4aac175c7fb90d3b03cda554ada20d42795"></a>SensorChanged&#160;</td><td class="fielddoc"><p >A sensor value changed (data in event.sensor) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aac175c7fb90d3b03cda554ada20d42795" name="af41fa9ed45c02449030699f671331d4aac175c7fb90d3b03cda554ada20d42795"></a>SensorChanged&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> sensor value changed (data in event.sensor) </p>
 </td></tr>
 <tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aae5c49a2d50ccccd9c941e6be36b0d05f" name="af41fa9ed45c02449030699f671331d4aae5c49a2d50ccccd9c941e6be36b0d05f"></a>Count&#160;</td><td class="fielddoc"><p >Keep last &ndash; the total number of event types. </p>
 </td></tr>
@@ -581,19 +581,19 @@ Public Attributes</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa067f8b39dcd270abc715652102ce6e66" name="af41fa9ed45c02449030699f671331d4aa067f8b39dcd270abc715652102ce6e66"></a>GainedFocus&#160;</td><td class="fielddoc"><p >The window gained the focus (no data) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa4da4ae2f3e97f8cbd3cb725f2da21a10" name="af41fa9ed45c02449030699f671331d4aa4da4ae2f3e97f8cbd3cb725f2da21a10"></a>TextEntered&#160;</td><td class="fielddoc"><p >A character was entered (data in event.text) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa4da4ae2f3e97f8cbd3cb725f2da21a10" name="af41fa9ed45c02449030699f671331d4aa4da4ae2f3e97f8cbd3cb725f2da21a10"></a>TextEntered&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> character was entered (data in event.text) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4" name="af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4"></a>KeyPressed&#160;</td><td class="fielddoc"><p >A key was pressed (data in event.key) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4" name="af41fa9ed45c02449030699f671331d4aaadc5747df45354b4d2c89558c3f0d1a4"></a>KeyPressed&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> key was pressed (data in event.key) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa1df4a1c59bf3a4613f3d577ce137b8f1" name="af41fa9ed45c02449030699f671331d4aa1df4a1c59bf3a4613f3d577ce137b8f1"></a>KeyReleased&#160;</td><td class="fielddoc"><p >A key was released (data in event.key) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa1df4a1c59bf3a4613f3d577ce137b8f1" name="af41fa9ed45c02449030699f671331d4aa1df4a1c59bf3a4613f3d577ce137b8f1"></a>KeyReleased&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> key was released (data in event.key) </p>
 </td></tr>
 <tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aad53fec9b30096b56d96ae0cc3680c717" name="af41fa9ed45c02449030699f671331d4aad53fec9b30096b56d96ae0cc3680c717"></a>MouseWheelMoved&#160;</td><td class="fielddoc"><p >The mouse wheel was scrolled (data in event.mouseWheel) (deprecated) </p>
 </td></tr>
 <tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aab9002e9cf83b792763b6dd8992c0b535" name="af41fa9ed45c02449030699f671331d4aab9002e9cf83b792763b6dd8992c0b535"></a>MouseWheelScrolled&#160;</td><td class="fielddoc"><p >The mouse wheel was scrolled (data in event.mouseWheelScroll) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa0d16fdcf7907ec64a9cfabac6e135d1b" name="af41fa9ed45c02449030699f671331d4aa0d16fdcf7907ec64a9cfabac6e135d1b"></a>MouseButtonPressed&#160;</td><td class="fielddoc"><p >A mouse button was pressed (data in event.mouseButton) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa0d16fdcf7907ec64a9cfabac6e135d1b" name="af41fa9ed45c02449030699f671331d4aa0d16fdcf7907ec64a9cfabac6e135d1b"></a>MouseButtonPressed&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> mouse button was pressed (data in event.mouseButton) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aafa0ebea6e6dd90e3fe49ca9b52977836" name="af41fa9ed45c02449030699f671331d4aafa0ebea6e6dd90e3fe49ca9b52977836"></a>MouseButtonReleased&#160;</td><td class="fielddoc"><p >A mouse button was released (data in event.mouseButton) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aafa0ebea6e6dd90e3fe49ca9b52977836" name="af41fa9ed45c02449030699f671331d4aafa0ebea6e6dd90e3fe49ca9b52977836"></a>MouseButtonReleased&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> mouse button was released (data in event.mouseButton) </p>
 </td></tr>
 <tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aacc43824f451738c5afd00c7cd08e25b5" name="af41fa9ed45c02449030699f671331d4aacc43824f451738c5afd00c7cd08e25b5"></a>MouseMoved&#160;</td><td class="fielddoc"><p >The mouse cursor moved (data in event.mouseMove) </p>
 </td></tr>
@@ -601,23 +601,23 @@ Public Attributes</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aaedc7ba1176d5bfd5aac46f7c08457c32" name="af41fa9ed45c02449030699f671331d4aaedc7ba1176d5bfd5aac46f7c08457c32"></a>MouseLeft&#160;</td><td class="fielddoc"><p >The mouse cursor left the area of the window (no data) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa048f17d935ca55b7fa063062ed3aa7ee" name="af41fa9ed45c02449030699f671331d4aa048f17d935ca55b7fa063062ed3aa7ee"></a>JoystickButtonPressed&#160;</td><td class="fielddoc"><p >A joystick button was pressed (data in event.joystickButton) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa048f17d935ca55b7fa063062ed3aa7ee" name="af41fa9ed45c02449030699f671331d4aa048f17d935ca55b7fa063062ed3aa7ee"></a>JoystickButtonPressed&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> joystick button was pressed (data in event.joystickButton) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aab7c62947d6d4248d8ff05896f06bd360" name="af41fa9ed45c02449030699f671331d4aab7c62947d6d4248d8ff05896f06bd360"></a>JoystickButtonReleased&#160;</td><td class="fielddoc"><p >A joystick button was released (data in event.joystickButton) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aab7c62947d6d4248d8ff05896f06bd360" name="af41fa9ed45c02449030699f671331d4aab7c62947d6d4248d8ff05896f06bd360"></a>JoystickButtonReleased&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> joystick button was released (data in event.joystickButton) </p>
 </td></tr>
 <tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aac6e368e4ec275235dbab7e782d857d52" name="af41fa9ed45c02449030699f671331d4aac6e368e4ec275235dbab7e782d857d52"></a>JoystickMoved&#160;</td><td class="fielddoc"><p >The joystick moved along an axis (data in event.joystickMove) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa103511bbaf4d9710be5028510b80a011" name="af41fa9ed45c02449030699f671331d4aa103511bbaf4d9710be5028510b80a011"></a>JoystickConnected&#160;</td><td class="fielddoc"><p >A joystick was connected (data in event.joystickConnect) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa103511bbaf4d9710be5028510b80a011" name="af41fa9ed45c02449030699f671331d4aa103511bbaf4d9710be5028510b80a011"></a>JoystickConnected&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> joystick was connected (data in event.joystickConnect) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa8f4151bb75a0eec34a2950ea9d341894" name="af41fa9ed45c02449030699f671331d4aa8f4151bb75a0eec34a2950ea9d341894"></a>JoystickDisconnected&#160;</td><td class="fielddoc"><p >A joystick was disconnected (data in event.joystickConnect) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa8f4151bb75a0eec34a2950ea9d341894" name="af41fa9ed45c02449030699f671331d4aa8f4151bb75a0eec34a2950ea9d341894"></a>JoystickDisconnected&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> joystick was disconnected (data in event.joystickConnect) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aafcdbb3d909117eb088c6d290b564e6b5" name="af41fa9ed45c02449030699f671331d4aafcdbb3d909117eb088c6d290b564e6b5"></a>TouchBegan&#160;</td><td class="fielddoc"><p >A touch event began (data in event.touch) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aafcdbb3d909117eb088c6d290b564e6b5" name="af41fa9ed45c02449030699f671331d4aafcdbb3d909117eb088c6d290b564e6b5"></a>TouchBegan&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> touch event began (data in event.touch) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa4eed100fe434d73ac20e6a8cfd1e726c" name="af41fa9ed45c02449030699f671331d4aa4eed100fe434d73ac20e6a8cfd1e726c"></a>TouchMoved&#160;</td><td class="fielddoc"><p >A touch moved (data in event.touch) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aa4eed100fe434d73ac20e6a8cfd1e726c" name="af41fa9ed45c02449030699f671331d4aa4eed100fe434d73ac20e6a8cfd1e726c"></a>TouchMoved&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> touch moved (data in event.touch) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aae35e2e04bb23e95d3786bef60ea4c074" name="af41fa9ed45c02449030699f671331d4aae35e2e04bb23e95d3786bef60ea4c074"></a>TouchEnded&#160;</td><td class="fielddoc"><p >A touch event ended (data in event.touch) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aae35e2e04bb23e95d3786bef60ea4c074" name="af41fa9ed45c02449030699f671331d4aae35e2e04bb23e95d3786bef60ea4c074"></a>TouchEnded&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> touch event ended (data in event.touch) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aac175c7fb90d3b03cda554ada20d42795" name="af41fa9ed45c02449030699f671331d4aac175c7fb90d3b03cda554ada20d42795"></a>SensorChanged&#160;</td><td class="fielddoc"><p >A sensor value changed (data in event.sensor) </p>
+<tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aac175c7fb90d3b03cda554ada20d42795" name="af41fa9ed45c02449030699f671331d4aac175c7fb90d3b03cda554ada20d42795"></a>SensorChanged&#160;</td><td class="fielddoc"><p ><a class="el" href="class_a.html">A</a> sensor value changed (data in event.sensor) </p>
 </td></tr>
 <tr><td class="fieldname"><a id="af41fa9ed45c02449030699f671331d4aae5c49a2d50ccccd9c941e6be36b0d05f" name="af41fa9ed45c02449030699f671331d4aae5c49a2d50ccccd9c941e6be36b0d05f"></a>Count&#160;</td><td class="fielddoc"><p >Keep last &ndash; the total number of event types. </p>
 </td></tr>

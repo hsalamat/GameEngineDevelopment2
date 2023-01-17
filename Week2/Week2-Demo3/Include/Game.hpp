@@ -1,50 +1,48 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
-
+#include <TextureHolder.hpp>
+#include <iostream>
 
 class Game : private sf::NonCopyable
 {
-public:
-	Game();
-	void					run();
+	public:
+								Game();
+		void					run();
 
+	private:
+		void					processEvents();
+		void					update(sf::Time elapsedTime);
+		void					render();
 
-private:
-	void					processEvents();
-#pragma region step 1-1
-	void					update(sf::Time elapsedTime);
-#pragma endregion
-	void					render();
+		void					updateStatistics(sf::Time elapsedTime);	
+		void					handlePlayerInput(sf::Keyboard::Key key, bool isPressed);
+		
 
-#pragma region step1
+	private:
+		static const float		PlayerSpeed;
+		static const sf::Time	TimePerFrame;
 
-	void					handlePlayerInput(sf::Keyboard::Key key, bool isPressed);
-#pragma endregion
+		sf::RenderWindow		mWindow;		
+		sf::Font				mFont;
+		sf::Text				mStatisticsText;
+		sf::Time				mStatisticsUpdateTime;
 
-private:
-#pragma region Step 1-2
-	static const float		PlayerSpeed;
-#pragma endregion
-	sf::RenderWindow		mWindow;
-	sf::Sprite				mPlayer;
-	sf::Sprite				mBackground;
-	sf::Texture				mTexture;
-	sf::Texture				mAirplaneTexture;
-	sf::Image				mIcon;
+		std::size_t				mStatisticsNumFrames;
+		bool					mIsMovingUp;
+		bool					mIsMovingDown;
+		bool					mIsMovingRight;
+		bool					mIsMovingLeft;
 
-	//Create a graphical text to display
-	sf::Font mFont;
-	sf::Text mText;
+		//step 1
+		//sf::Texture				mTexture;
+		//sf::Sprite				mPlayer;
+		TextureHolder			textures;
+		TextureHolder			textures2;
 
-	sf::Music mMusic;
-
-#pragma region step2
-
-	bool					mIsMovingUp;
-	bool					mIsMovingDown;
-	bool					mIsMovingRight;
-	bool					mIsMovingLeft;
-#pragma endregion
+		sf::Sprite				airplane;
+		sf::Sprite				landscape;
+		sf::Texture             mBackgroundTexture;
+		sf::Texture             mAirplaneTexture;
 };
+

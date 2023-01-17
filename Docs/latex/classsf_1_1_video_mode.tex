@@ -76,7 +76,7 @@ unsigned int \mbox{\hyperlink{classsf_1_1_video_mode_aa080f1ef96a1008d58b1920ece
 \doxysubsection{Detailed Description}
 \mbox{\hyperlink{classsf_1_1_video_mode}{Video\+Mode}} defines a video mode (width, height, bpp) 
 
-A video mode is defined by a width and a height (in pixels) and a depth (in bits per pixel).
+\mbox{\hyperlink{class_a}{A}} video mode is defined by a width and a height (in pixels) and a depth (in bits per pixel).
 
 Video modes are used to setup windows (\mbox{\hyperlink{classsf_1_1_window}{sf\+::\+Window}}) at creation time.
 
@@ -84,7 +84,7 @@ The main usage of video modes is for fullscreen mode\+: indeed you must use one 
 
 \mbox{\hyperlink{classsf_1_1_video_mode}{sf\+::\+Video\+Mode}} provides a static function for retrieving the list of all the video modes supported by the system\+: \mbox{\hyperlink{classsf_1_1_video_mode_a0f99e67ef2b51fbdc335d9991232609e}{get\+Fullscreen\+Modes()}}.
 
-A custom video mode can also be checked directly for fullscreen compatibility with its \mbox{\hyperlink{classsf_1_1_video_mode_ad5e04c044b0925523c75ecb173d2129a}{is\+Valid()}} function.
+\mbox{\hyperlink{class_a}{A}} custom video mode can also be checked directly for fullscreen compatibility with its \mbox{\hyperlink{classsf_1_1_video_mode_ad5e04c044b0925523c75ecb173d2129a}{is\+Valid()}} function.
 
 Additionally, \mbox{\hyperlink{classsf_1_1_video_mode}{sf\+::\+Video\+Mode}} provides a static function to get the mode currently used by the desktop\+: \mbox{\hyperlink{classsf_1_1_video_mode_ac1be160a4342e6eafb2cb0e8c9b18d44}{get\+Desktop\+Mode()}}. This allows to build windows with the same size or pixel depth as the current resolution.
 
@@ -212,7 +212,7 @@ Retrieve all the video modes supported in fullscreen mode.
 When creating a fullscreen window, the video mode is restricted to be compatible with what the graphics driver and monitor support. This function returns the complete list of all video modes that can be used in fullscreen mode. The returned array is sorted from best to worst, so that the first element will always give the best mode (higher width, height and bits-\/per-\/pixel).
 
 \begin{DoxyReturn}{Returns}
-Array containing all the supported fullscreen modes 
+\mbox{\hyperlink{class_array}{Array}} containing all the supported fullscreen modes 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classsf_1_1_video_mode_a0f99e67ef2b51fbdc335d9991232609e}\label{classsf_1_1_video_mode_a0f99e67ef2b51fbdc335d9991232609e}} 
 \index{sf::VideoMode@{sf::VideoMode}!getFullscreenModes@{getFullscreenModes}}
@@ -227,7 +227,7 @@ Retrieve all the video modes supported in fullscreen mode.
 When creating a fullscreen window, the video mode is restricted to be compatible with what the graphics driver and monitor support. This function returns the complete list of all video modes that can be used in fullscreen mode. The returned array is sorted from best to worst, so that the first element will always give the best mode (higher width, height and bits-\/per-\/pixel).
 
 \begin{DoxyReturn}{Returns}
-Array containing all the supported fullscreen modes 
+\mbox{\hyperlink{class_array}{Array}} containing all the supported fullscreen modes 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classsf_1_1_video_mode_ad5e04c044b0925523c75ecb173d2129a}\label{classsf_1_1_video_mode_ad5e04c044b0925523c75ecb173d2129a}} 
 \index{sf::VideoMode@{sf::VideoMode}!isValid@{isValid}}

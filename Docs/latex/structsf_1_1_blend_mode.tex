@@ -134,13 +134,13 @@ Blending modes for drawing.
 
 \mbox{\hyperlink{structsf_1_1_blend_mode}{sf\+::\+Blend\+Mode}} is a class that represents a blend mode.
 
-A blend mode determines how the colors of an object you draw are mixed with the colors that are already in the buffer.
+\mbox{\hyperlink{class_a}{A}} blend mode determines how the colors of an object you draw are mixed with the colors that are already in the buffer.
 
 The class is composed of 6 components, each of which has its own public member variable\+: \begin{DoxyItemize}
 \item Color Source Factor (\mbox{\hyperlink{structsf_1_1_blend_mode_a32d1a55dbfada86a06d9b881dc8ccf7b}{color\+Src\+Factor}}) \item Color Destination Factor (\mbox{\hyperlink{structsf_1_1_blend_mode_adee68ee59e7f1bf71d12db03d251104d}{color\+Dst\+Factor}}) \item Color Blend Equation (\mbox{\hyperlink{structsf_1_1_blend_mode_aed12f06eb7f50a1b95b892b0964857b1}{color\+Equation}}) \item Alpha Source Factor (\mbox{\hyperlink{structsf_1_1_blend_mode_aa94e44f8e1042a7357e8eff78c61a1be}{alpha\+Src\+Factor}}) \item Alpha Destination Factor (\mbox{\hyperlink{structsf_1_1_blend_mode_aaf85b6b7943181cc81745569c4851e4e}{alpha\+Dst\+Factor}}) \item Alpha Blend Equation (\mbox{\hyperlink{structsf_1_1_blend_mode_a68f5a305e0912946f39ba6c9265710c4}{alpha\+Equation}})\end{DoxyItemize}
 The source factor specifies how the pixel you are drawing contributes to the final color. The destination factor specifies how the pixel already drawn in the buffer contributes to the final color.
 
-The color channels RGB (red, green, blue; simply referred to as color) and A (alpha; the transparency) can be treated separately. This separation can be useful for specific blend modes, but most often you won\textquotesingle{}t need it and will simply treat the color as a single unit.
+The color channels RGB (red, green, blue; simply referred to as color) and \mbox{\hyperlink{class_a}{A}} (alpha; the transparency) can be treated separately. This separation can be useful for specific blend modes, but most often you won\textquotesingle{}t need it and will simply treat the color as a single unit.
 
 The blend factors and equations correspond to their Open\+GL equivalents. In general, the color of the resulting pixel is calculated according to the following formula ({\itshape src} is the color of the source pixel, {\itshape dst} the color of the destination pixel, the other variables correspond to the public members, with the equations being + or -\/ operators)\+: 
 \begin{DoxyCode}{0}

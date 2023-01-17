@@ -5,7 +5,7 @@
 %%For: 
 %Magnification: 1.00
 %%Orientation: Portrait
-%%BoundingBox: 0 0 500 9658.120117
+%%BoundingBox: 0 0 500 9829.059570
 %%Pages: 0
 %%BeginSetup
 %%EndSetup
@@ -19,12 +19,12 @@
 /marginwidth 10 def
 /distx 20 def
 /disty 40 def
-/boundaspect 0.051770 def  % aspect ratio of the BoundingBox (width/height)
+/boundaspect 0.050870 def  % aspect ratio of the BoundingBox (width/height)
 /boundx 500 def
 /boundy boundx boundaspect div def
 /xspacing 0 def
 /yspacing 0 def
-/rows 113 def
+/rows 115 def
 /cols 2 def
 /scalefactor 0 def
 /boxfont /Times-Roman findfont fontheight scalefont def
@@ -214,6 +214,8 @@ boxfont setfont
 (SceneNode) cw
 (SceneNode) cw
 (SceneNode) cw
+(SceneNode) cw
+(Aircraft) cw
 (Aircraft) cw
 (Aircraft) cw
 (Aircraft) cw
@@ -297,9 +299,7 @@ boundx scalefactor div boundy scalefactor div scale
 
 % ----- classes -----
 
- (Entity) 0.000000 72.000000 box
- (SceneNode) 1.000000 73.000000 box
-1.000000 73.000000 mark
+ (Entity) 0.000000 73.000000 box
  (SceneNode) 1.000000 74.000000 box
 1.000000 74.000000 mark
  (SceneNode) 1.000000 75.000000 box
@@ -344,14 +344,14 @@ boundx scalefactor div boundy scalefactor div scale
 1.000000 94.000000 mark
  (SceneNode) 1.000000 95.000000 box
 1.000000 95.000000 mark
- (sf::Transformable) 1.000000 96.000000 box
- (sf::Drawable) 1.000000 97.000000 box
+ (SceneNode) 1.000000 96.000000 box
+1.000000 96.000000 mark
+ (SceneNode) 1.000000 97.000000 box
+1.000000 97.000000 mark
  (sf::Transformable) 1.000000 98.000000 box
  (sf::Drawable) 1.000000 99.000000 box
- (SceneNode) 1.000000 100.000000 box
-1.000000 100.000000 mark
- (SceneNode) 1.000000 101.000000 box
-1.000000 101.000000 mark
+ (sf::Transformable) 1.000000 100.000000 box
+ (sf::Drawable) 1.000000 101.000000 box
  (SceneNode) 1.000000 102.000000 box
 1.000000 102.000000 mark
  (SceneNode) 1.000000 103.000000 box
@@ -374,6 +374,11 @@ boundx scalefactor div boundy scalefactor div scale
 1.000000 111.000000 mark
  (SceneNode) 1.000000 112.000000 box
 1.000000 112.000000 mark
+ (SceneNode) 1.000000 113.000000 box
+1.000000 113.000000 mark
+ (SceneNode) 1.000000 114.000000 box
+1.000000 114.000000 mark
+ (Aircraft) 1.000000 72.000000 box
  (Aircraft) 1.000000 71.000000 box
  (Aircraft) 1.000000 70.000000 box
  (Aircraft) 1.000000 69.000000 box
@@ -450,9 +455,7 @@ boundx scalefactor div boundy scalefactor div scale
 % ----- relations -----
 
 solid
-0 0.000000 72.000000 out
-solid
-1 0.000000 73.500000 hedge
+0 0.000000 73.000000 out
 solid
 1 0.000000 74.500000 hedge
 solid
@@ -532,9 +535,15 @@ solid
 solid
 1 0.000000 112.500000 hedge
 solid
-0.000000 73.000000 112.500000 vedge
+1 0.000000 113.500000 hedge
 solid
-1 0.000000 71.250000 out
+1 0.000000 114.500000 hedge
+solid
+0.000000 74.000000 114.500000 vedge
+solid
+1 0.000000 72.250000 out
+solid
+0 0.000000 72.500000 hedge
 solid
 0 0.000000 71.500000 hedge
 solid
@@ -680,4 +689,4 @@ solid
 solid
 0 0.000000 0.500000 hedge
 solid
-0.000000 72.000000 0.500000 vedge
+0.000000 73.000000 0.500000 vedge
