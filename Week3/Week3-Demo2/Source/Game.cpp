@@ -27,9 +27,9 @@ Game::Game()
 
 	try
 	{
-		textures.load(Textures::Landscape, "Media/Textures/Desert.png");
-		textures.load(Textures::Airplane, "Media/Textures/Eagle.png");
-		mFont.loadFromFile("Media/Sansation.ttf");
+		textures.load(TextureID::Landscape, "Media/Textures/Desert.png");
+		textures.load(TextureID::Airplane, "Media/Textures/Eagle.png");
+		fonts.load(FontID::sansation, "Media/Sansation.ttf");
 	}
 	catch (std::runtime_error& e)
 	{
@@ -38,14 +38,14 @@ Game::Game()
 
 
 	// Access resources
-	sf::Texture& texture1 = textures.get(Textures::Landscape);
+	sf::Texture& texture1 = textures.get(TextureID::Landscape);
 	landscape.setTexture(texture1);
 
-	sf::Texture& texture2 = textures.get(Textures::Airplane);
+	sf::Texture& texture2 = textures.get(TextureID::Airplane);
 	airplane.setTexture(texture2);
 	airplane.setPosition(200.f, 200.f);
 
-	mStatisticsText.setFont(mFont);
+	mStatisticsText.setFont(fonts.get(FontID::sansation));
 	mStatisticsText.setPosition(5.f, 5.f);
 	mStatisticsText.setCharacterSize(10);
 
@@ -113,7 +113,7 @@ void Game::render()
 {
 	mWindow.clear();
 	mWindow.draw(landscape);
-	mWindow.draw(airplane);
+	//mWindow.draw(airplane);
 
 #pragma region step 7
 	mWindow.draw(player.getSprite());

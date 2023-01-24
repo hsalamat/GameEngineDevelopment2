@@ -8,6 +8,8 @@
 
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML\Graphics.hpp>
+#include "ResourceIdentifiers.hpp"
+#include "ResourceHolder.hpp"
 #include "Entity.hpp"
 
 class Player2: public Entity
@@ -16,7 +18,7 @@ class Player2: public Entity
 {
 
 public:
-	enum Type
+	enum class Type
 	{
 		Eagle,
 		Raptor,
@@ -34,5 +36,5 @@ public:
 private:
 	sf::Sprite mSprite;
 	sf::Texture texture2;
-
+	TextureHolder textures;
 };

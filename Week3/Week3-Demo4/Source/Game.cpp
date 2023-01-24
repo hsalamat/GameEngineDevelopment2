@@ -1,5 +1,4 @@
 #include <Game.hpp>
-#include <StringHelpers.hpp>
 
 const float Game::PlayerSpeed = 100.f;
 const sf::Time Game::TimePerFrame = sf::seconds(1.f / 60.f);
@@ -33,9 +32,9 @@ Game::Game()
 	mWindow.setVerticalSyncEnabled(true);
 	try
 	{
-		textures.load(Textures::Landscape, "Media/Textures/Desert.png");
-		textures.load(Textures::Airplane, "Media/Textures/Eagle.png");
-		mFont.loadFromFile("Media/Sansation.ttf");
+		textures.load(TextureID::Landscape, "Media/Textures/Desert.png");
+		textures.load(TextureID::Airplane, "Media/Textures/Eagle.png");
+		fonts.load(FontID::sansation, "Media/Sansation.ttf");
 	}
 	catch (std::runtime_error& e)
 	{
@@ -44,7 +43,7 @@ Game::Game()
 
 
 	// Prepare the tiled background
-	sf::Texture& texture = textures.get(Textures::Landscape);
+	sf::Texture& texture = textures.get(TextureID::Landscape);
 	texture.setRepeated(true);
 	landscape.setTexture(texture);
 	landscape.setTextureRect(sf::IntRect(mWorldBounds));
@@ -62,10 +61,10 @@ Game::Game()
 	//sf::View::rotate(float degree) to add a rotation angle to the current one sf::View::setRotation(float degrees) to set the rotation of the view to an absolute value
 	//mView.rotate(45);
 
-	airplane.setTexture(textures.get(Textures::Airplane));
+	airplane.setTexture(textures.get(TextureID::Airplane));
 	airplane.setPosition(200.f, 200.f);
 
-	mStatisticsText.setFont(mFont);
+	mStatisticsText.setFont(fonts.get(FontID::sansation));
 	mStatisticsText.setPosition(5.f, 5.f);
 	mStatisticsText.setCharacterSize(10);
 	mStatisticsText.setFillColor(sf::Color::Black);
@@ -181,10 +180,10 @@ void Game::updateStatistics(sf::Time elapsedTime)
 	if (mStatisticsUpdateTime >= sf::seconds(1.0f))
 	{
 		mStatisticsText.setString(
-			"Frames / Second = " + toString(mStatisticsNumFrames) + "\n" +
-			"Time / Update = " + toString(mStatisticsUpdateTime.asMicroseconds() / mStatisticsNumFrames) + "us" + "\n" +
-			"Position = ( " + toString(position.x) + " , " + toString(position.y) + " )" + "\n" + 
-			"Velocity = ( " + toString(velocity.x) + " , " + toString(velocity.y) + " )" + "\n"
+			"Frames / Second = " + std::to_string(mStatisticsNumFrames) + "\n" +
+			"Time / Update = " + std::to_string(mStatisticsUpdateTime.asMicroseconds() / mStatisticsNumFrames) + "us" + "\n" +
+			"Position = ( " + std::to_string(position.x) + " , " + std::to_string(position.y) + " )" + "\n" +
+			"Velocity = ( " + std::to_string(velocity.x) + " , " + std::to_string(velocity.y) + " )" + "\n"
 		);
 
 		mStatisticsUpdateTime -= sf::seconds(1.0f);

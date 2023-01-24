@@ -1,5 +1,4 @@
 #include <Game.hpp>
-#include <StringHelpers.hpp>
 
 const float Game::PlayerSpeed = 100.f;
 const sf::Time Game::TimePerFrame = sf::seconds(1.f / 60.f);
@@ -32,9 +31,9 @@ Game::Game()
 	mWindow.setFramerateLimit(20);
 	try
 	{
-		textures.load(Textures::Landscape, "Media/Textures/Desert.png");
-		textures.load(Textures::Airplane, "Media/Textures/Eagle.png");
-		mFont.loadFromFile("Media/Sansation.ttf");
+		textures.load(TextureID::Landscape, "Media/Textures/Desert.png");
+		textures.load(TextureID::Airplane, "Media/Textures/Eagle.png");
+		fonts.load(FontID::sansation, "Media/Sansation.ttf");
 	}
 	catch (std::runtime_error& e)
 	{
@@ -43,7 +42,7 @@ Game::Game()
 
 
 	// Prepare the tiled background
-	sf::Texture& texture = textures.get(Textures::Landscape);
+	sf::Texture& texture = textures.get(TextureID::Landscape);
 	texture.setRepeated(true);
 	landscape.setTexture(texture);
 	landscape.setTextureRect(sf::IntRect(mWorldBounds));
@@ -52,10 +51,10 @@ Game::Game()
 	player2.setPosition(mSpawnPosition);
 	player2.setVelocity(0.f, mScrollSpeed);
 
-	airplane.setTexture(textures.get(Textures::Airplane));
+	airplane.setTexture(textures.get(TextureID::Airplane));
 	airplane.setPosition(200.f, 200.f);
 
-	mStatisticsText.setFont(mFont);
+	mStatisticsText.setFont(fonts.get(FontID::sansation));
 	mStatisticsText.setPosition(5.f, 5.f);
 	mStatisticsText.setCharacterSize(10);
 
@@ -164,8 +163,8 @@ void Game::updateStatistics(sf::Time elapsedTime)
 	if (mStatisticsUpdateTime >= sf::seconds(1.0f))
 	{
 		mStatisticsText.setString(
-			"Frames / Second = " + toString(mStatisticsNumFrames) + "\n" +
-			"Time / Update = " + toString(mStatisticsUpdateTime.asMicroseconds() / mStatisticsNumFrames) + "us");
+			"Frames / Second = " + std::to_string(mStatisticsNumFrames) + "\n" +
+			"Time / Update = " + std::to_string(mStatisticsUpdateTime.asMicroseconds() / mStatisticsNumFrames) + "us");
 
 		mStatisticsUpdateTime -= sf::seconds(1.0f);
 		mStatisticsNumFrames = 0;

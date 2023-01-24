@@ -5,9 +5,9 @@
 Player2::Player2()
 {
 
-	textures.load(Textures::Airplane, "Media/Textures/Eagle.png");
+	textures.load(TextureID::Airplane, "Media/Textures/Eagle.png");
 
-	mSprite.setTexture(textures.get(Textures::Airplane));
+	mSprite.setTexture(textures.get(TextureID::Airplane));
 	mSprite.setPosition(400.f, 400.f);
 }
 

@@ -11,6 +11,28 @@ namespace Textures
 	};
 }
 
+
+enum class TextureID
+{
+	Landscape,
+	Airplane,
+};
+
+namespace Fonts
+{
+	enum ID
+	{
+		sansation,
+		font2,
+	};
+}
+
+enum class FontID
+{
+	sansation,
+	font2,
+};
+
 class Game : private sf::NonCopyable
 {
 	public:
@@ -45,7 +67,8 @@ class Game : private sf::NonCopyable
 
 #pragma region step 3
 	    //TextureHolder			 textures;
-		ResourceHolder<sf::Texture, Textures::ID> textures;
+		ResourceHolder<sf::Texture, TextureID> textures;
+		ResourceHolder<sf::Font, FontID> fonts;
 #pragma endregion
 
 		sf::Sprite				airplane;

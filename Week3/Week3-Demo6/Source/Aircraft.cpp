@@ -7,17 +7,17 @@
 #include <SFML/Graphics/RenderStates.hpp>
 
 
-Textures::ID toTextureID(Aircraft::Type type)
+TextureID toTextureID(Aircraft::Type type)
 {
 	switch (type)
 	{
-	case Aircraft::Eagle:
-		return Textures::Eagle;
+	case Aircraft::Type::Eagle:
+		return TextureID::Eagle;
 
-	case Aircraft::Raptor:
-		return Textures::Raptor;
+	case Aircraft::Type::Raptor:
+		return TextureID::Raptor;
 	}
-	return Textures::Eagle;
+	return TextureID::Eagle;
 }
 
 Aircraft::Aircraft(Type type, const TextureHolder& textures)

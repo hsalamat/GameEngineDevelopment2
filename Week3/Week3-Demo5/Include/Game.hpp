@@ -51,6 +51,7 @@ private:
 #pragma endregion
 
 	TextureHolder textures;
+	FontHolder fonts;
 
 	class Player player;
 	class Player2 player2;

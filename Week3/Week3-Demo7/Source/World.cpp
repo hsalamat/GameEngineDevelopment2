@@ -51,9 +51,9 @@ void World::draw()
 
 void World::loadTextures()
 {
-	mTextures.load(Textures::Eagle, "Media/Textures/Eagle.png");
-	mTextures.load(Textures::Raptor, "Media/Textures/Raptor.png");
-	mTextures.load(Textures::Desert, "Media/Textures/Desert.png");
+	mTextures.load(TextureID::Eagle, "Media/Textures/Eagle.png");
+	mTextures.load(TextureID::Raptor, "Media/Textures/Raptor.png");
+	mTextures.load(TextureID::Desert, "Media/Textures/Desert.png");
 }
 
 void World::buildScene()
@@ -68,7 +68,7 @@ void World::buildScene()
 	}
 
 	// Prepare the tiled background
-	sf::Texture& texture = mTextures.get(Textures::Desert);
+	sf::Texture& texture = mTextures.get(TextureID::Desert);
 	sf::IntRect textureRect(mWorldBounds);
 	texture.setRepeated(true);
 
@@ -78,18 +78,18 @@ void World::buildScene()
 	mSceneLayers[Background]->attachChild(std::move(backgroundSprite));
 
 	// Add player's aircraft
-	std::unique_ptr<Aircraft> leader(new Aircraft(Aircraft::Eagle, mTextures));
+	std::unique_ptr<Aircraft> leader(new Aircraft(Aircraft::Type::Eagle, mTextures));
 	mPlayerAircraft = leader.get();
 	mPlayerAircraft->setPosition(mSpawnPosition);
 	mPlayerAircraft->setVelocity(40.f, mScrollSpeed);
 	mSceneLayers[Air]->attachChild(std::move(leader));
 
 	// Add two escorting aircrafts, placed relatively to the main plane
-	std::unique_ptr<Aircraft> leftEscort(new Aircraft(Aircraft::Raptor, mTextures));
+	std::unique_ptr<Aircraft> leftEscort(new Aircraft(Aircraft::Type::Raptor, mTextures));
 	leftEscort->setPosition(-80.f, 50.f);
 	mPlayerAircraft->attachChild(std::move(leftEscort));
 
-	std::unique_ptr<Aircraft> rightEscort(new Aircraft(Aircraft::Raptor, mTextures));
+	std::unique_ptr<Aircraft> rightEscort(new Aircraft(Aircraft::Type::Raptor, mTextures));
 	rightEscort->setPosition(80.f, 50.f); 
 	mPlayerAircraft->attachChild(std::move(rightEscort));
 }

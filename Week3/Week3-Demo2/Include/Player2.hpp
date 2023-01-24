@@ -19,7 +19,7 @@ class Player2 : public sf::Drawable, public sf::Transformable
 {
 
 public:
-	enum Type
+	enum class Type
 	{
 		Eagle,
 		Raptor,

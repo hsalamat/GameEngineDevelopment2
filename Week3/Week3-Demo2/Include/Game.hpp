@@ -45,6 +45,7 @@ private:
 	// Try to load resources
 	//ResourceHolder<sf::Texture, Textures::ID> textures;
 	TextureHolder textures;
+	FontHolder fonts;
 
 	class Player player;
 	class Player2 player2;

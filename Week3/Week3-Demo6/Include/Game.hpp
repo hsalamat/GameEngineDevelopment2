@@ -60,6 +60,7 @@ private:
 	};
 
 	TextureHolder						mTextures;
+	FontHolder						    mFonts;
 	SceneNode							mSceneGraph;
 	std::array<SceneNode*, LayerCount>	mSceneLayers;
 	Aircraft*							mPlayerAircraft;

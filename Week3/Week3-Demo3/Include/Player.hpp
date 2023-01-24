@@ -4,6 +4,9 @@
 #include <SFML/Graphics/Transformable.hpp>
 #include <SFML/Graphics/Drawable.hpp>
 
+#include "ResourceIdentifiers.hpp"
+#include "ResourceHolder.hpp"
+
 class Player
 {
 
@@ -24,5 +27,6 @@ public:
 private:
 	sf::Sprite mSprite;
 	sf::Texture texture2;
+	TextureHolder textures;
 	
 };

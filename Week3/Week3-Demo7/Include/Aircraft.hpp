@@ -9,7 +9,7 @@
 class Aircraft : public Entity
 {
 public:
-	enum Type
+	enum class Type
 	{
 		Eagle,
 		Raptor,

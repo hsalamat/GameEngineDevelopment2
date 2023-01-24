@@ -33,6 +33,7 @@ private:
 	World					mWorld;
 
 	sf::Font				mFont;
+	FontHolder				mFonts;
 	sf::Text				mStatisticsText;
 	sf::Time				mStatisticsUpdateTime;
 	std::size_t				mStatisticsNumFrames;

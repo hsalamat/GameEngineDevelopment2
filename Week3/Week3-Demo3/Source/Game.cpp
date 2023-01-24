@@ -38,9 +38,9 @@ Game::Game()
 
 	try
 	{
-		textures.load(Textures::Landscape, "Media/Textures/Desert.png");
-		textures.load(Textures::Airplane, "Media/Textures/Eagle.png");
-		mFont.loadFromFile("Media/Sansation.ttf");
+		textures.load(TextureID::Landscape, "Media/Textures/Desert.png");
+		textures.load(TextureID::Airplane, "Media/Textures/Eagle.png");
+		fonts.load(FontID::sansation, "Media/Sansation.ttf");
 	}
 	catch (std::runtime_error& e)
 	{
@@ -50,7 +50,7 @@ Game::Game()
 #pragma region step5
 
 	// Prepare the tiled background
-	sf::Texture& texture = textures.get(Textures::Landscape);	
+	sf::Texture& texture = textures.get(TextureID::Landscape);	
 	texture.setRepeated(true);
 	landscape.setTexture(texture);
 	landscape.setTextureRect(sf::IntRect(mWorldBounds));
@@ -65,7 +65,7 @@ Game::Game()
 
 #pragma endregion
 
-	airplane.setTexture(textures.get(Textures::Airplane));
+	airplane.setTexture(textures.get(TextureID::Airplane));
 	airplane.setPosition(200.f, 200.f);
 
 	mStatisticsText.setFont(mFont);

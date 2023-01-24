@@ -6,12 +6,13 @@
 #include <SFML\Graphics.hpp>
 #include <SFML/Graphics/Transformable.hpp>
 #include <SFML/Graphics/Drawable.hpp>
+#include "ResourceIdentifiers.hpp"
 
 class Player
 {
 
 public:
-	enum Type
+	enum class Type
 	{
 		Eagle,
 		Raptor,
@@ -27,7 +28,6 @@ public:
 private:
 	sf::Sprite mSprite;
 	sf::Texture texture2;
-
 };
 
 #pragma endregion
