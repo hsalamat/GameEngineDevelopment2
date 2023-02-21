@@ -1,4 +1,4 @@
-// Week8-1-SharepointerDemo.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// Week8-8-WeakPointer2.cpp : This file contains the 'main' function. Program execution begins and ends there.
 // std::weak_ptr is a very good way to solve the dangling pointer problem. 
 // By just using raw pointers it is impossible to know 
 // if the referenced data has been deallocated or not. Instead, by letting a std::shared_ptr manage the data, 

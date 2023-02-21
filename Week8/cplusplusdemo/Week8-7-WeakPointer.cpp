@@ -1,3 +1,6 @@
+////Weak_ptr is much more similar to shared_ptr except it’ll not maintain a Reference Counter. 
+//In this case, a pointer will not have a stronghold on the object. 
+//The reason is if suppose pointers are holding the object and requesting for other objects then they may form a Deadlock. 
 // In this example we use weak_ptr to avoid cyclically referenced classes. When the classes go out of scope they are  destroyed.
 
 
