@@ -1,4 +1,4 @@
-﻿/** @file example1.cpp
+﻿/** @file week1-quaternionDemo.cpp
  *  @brief Quaternions
  *
  *  Quaternion is matrix like structure which provides only one rotation.

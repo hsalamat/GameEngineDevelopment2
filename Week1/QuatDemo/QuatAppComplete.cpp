@@ -1,6 +1,15 @@
-//***************************************************************************************
-// QuatApp.cpp by Frank Luna (C) 2015 All Rights Reserved.
-//***************************************************************************************
+/** @file QuatAppComplete.cpp
+ *  @brief Quaternions
+ *
+ *  @note: Exclude QuatAppStart.cpp
+ * 
+ *  @attention: A common form of animation is called key frame animation. A key frame specifies
+ *  the position, orientation, and scale of an object at an instance in time. In our demo (in
+ *  AnimationHelper.h/.cpp), we define the key frame structure
+ *
+ *  @author Hooman Salamat
+ *  @bug No known bugs.
+ */
 
 #include "../../Common/d3dApp.h"
 #include "../../Common/MathHelper.h"
@@ -215,7 +224,7 @@ void QuatApp::Update(const GameTimer& gt)
     mAnimTimePos += gt.DeltaTime();
     if(mAnimTimePos >= mSkullAnimation.GetEndTime())
     {
-        // Loop animation back to beginning.
+         //Loop animation back to beginning.
         mAnimTimePos = 0.0f;
     }
 
