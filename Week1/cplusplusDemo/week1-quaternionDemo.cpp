@@ -1,6 +1,8 @@
 ﻿/** @file week1-quaternionDemo.cpp
  *  @brief Quaternions
  *
+ *  https://en.wikipedia.org/wiki/William_Rowan_Hamilton
+ * 
  *  Quaternion is matrix like structure which provides only one rotation.
  *  https://quaternions.online/
  *  https://eater.net/quaternions
@@ -145,7 +147,25 @@ int main()
 
 	XMVECTOR p_inverse_multiply_p = XMQuaternionMultiply(p_inverse, p);
 	cout << "p_inverse * p = " << p_inverse_multiply_p << endl;
-	cout << "notice that it's not quite identity thanks to numerical errors!!!" << endl;
+	cout << "notice that it's not quite a quaternion identity thanks to numerical precision, but close enough!" << endl;
+
+
+	// While Lerp would give us a vector that is situated on the direct line between Start and Finish, 
+	// Slerp will now treat the vector not as a position but as a direction.
+	// That means that we’re interpolating between two vector’s angle to the origin point and their radius.
+	//https://www.faustofonseca.com/tutorial/unity-vector3-lerp-vs-vector3-slerp
+
+	XMFLOAT3 S0 = XMFLOAT3(0.25f, 0.25f, 0.25f);
+	XMFLOAT3 S1 = XMFLOAT3(0.5f, 0.5f, 0.5f);
+	XMVECTOR s0 = XMLoadFloat3(&S0);
+	XMVECTOR s1 = XMLoadFloat3(&S1);
+	float lerpPercent = 0.5f;
+
+	XMVECTOR S = XMVectorLerp(s0, s1, lerpPercent);
+	cout << "lerp between s0 & s1 = " << S << endl;
+
+	XMVECTOR Q = XMQuaternionSlerp(p, q, lerpPercent);
+	cout << "slerp between p & q = " << Q << endl;
 
 	return 0;
 }
