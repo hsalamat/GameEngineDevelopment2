@@ -1,6 +1,0 @@
-﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Week2-Demo5-1.vcxproj, Week2-Demo5.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  Game.cpp
-  Week2-Demo4-1-main.cpp
-  TextureHolder.cpp
-  Generating Code...
-  Week2-Demo5-1.vcxproj -> C:\Hooman\GBC\GAME3015\Week 2\Week2-64bit\x64\Debug\Week2-Demo4.exe
