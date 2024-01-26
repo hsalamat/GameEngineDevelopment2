@@ -1,1 +1,0 @@
-Use this code with SFML Template!!!
