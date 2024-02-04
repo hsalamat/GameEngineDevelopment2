@@ -145,11 +145,19 @@ float CalcShadowFactor(float4 shadowPosH)
         //For each texel fetched (based on the sampler configuration of the filter mode), SampleCmp performs a comparison of the z value (3rd component of input) from the shader against the texel value (1 if the comparison passes; otherwise 0). SampleCmp then blends these 0 and 1 results for each texel together as in normal texture filtering (not an average) and returns the resulting [0..1] value to the shader.
         //Notice that we are using gsamShadow which is a SamplerComparisonState
         percentLit += gShadowMap.SampleCmpLevelZero(gsamShadow,
-            shadowPosH.xy + offsets[i], depth).r;
+            shadowPosH.xy + offsets[i], depth).r;              
     }
     
     return percentLit / 9.0f;
-    //return 1.0f; => no shadow
+        
+    //Single Point Sampling ==> NO PCF
+    //You should observe hard shadows and jagged shadow edges
+    //First comment out this line: return percentLit / 9.0f;
+    //Then uncomment folling line
+        
+    ////return gShadowMap.Sample(gsamAnisotropicWrap, shadowPosH.xy).r;
+    //return gShadowMap.SampleCmpLevelZero(gsamShadow, shadowPosH.xy, depth).r;
+
 }
 
 
