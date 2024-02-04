@@ -109,7 +109,7 @@ float3 NormalSampleToWorldSpace(float3 normalMapSample, float3 unitNormalW, floa
 }
 
 //---------------------------------------------------------------------------------------
-// step5: PCF for shadow mapping.
+// step5: PCF (Percentage Closer Filtering) for shadow mapping.
 //The shadow factor is a scalar in the range 0 to 1. 
 //A value of 0 indicates a point is in shadow, and a value of 1 indicates a point is not in shadow.
 //With PCF, a point can also be partially in shadow, in which case the shadow factor will be between 0 and 1.
@@ -124,6 +124,7 @@ float CalcShadowFactor(float4 shadowPosH)
     float depth = shadowPosH.z;
 
     uint width, height, numMips;
+    //GetDimensions: Gets texture size information
     gShadowMap.GetDimensions(0, width, height, numMips);
 
     // Texel size.
@@ -140,11 +141,15 @@ float CalcShadowFactor(float4 shadowPosH)
     [unroll]
     for(int i = 0; i < 9; ++i)
     {
+        //Samples a texture and compares the result to a comparison value. This function is identical to calling SampleCmp on mipmap level 0 only.
+        //For each texel fetched (based on the sampler configuration of the filter mode), SampleCmp performs a comparison of the z value (3rd component of input) from the shader against the texel value (1 if the comparison passes; otherwise 0). SampleCmp then blends these 0 and 1 results for each texel together as in normal texture filtering (not an average) and returns the resulting [0..1] value to the shader.
+        //Notice that we are using gsamShadow which is a SamplerComparisonState
         percentLit += gShadowMap.SampleCmpLevelZero(gsamShadow,
             shadowPosH.xy + offsets[i], depth).r;
     }
     
     return percentLit / 9.0f;
+    //return 1.0f; => no shadow
 }
 
 

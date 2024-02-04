@@ -192,7 +192,7 @@ ShadowMapApp::ShadowMapApp(HINSTANCE hInstance)
     // the world space origin.  In general, you need to loop over every world space vertex
     // position and compute the bounding sphere.
 
-	//We then define a light view matrixand projection matrix(representing the light frame and view volume).
+	//We then define a light view matrix and projection matrix(representing the light frame and view volume).
 	//The light view matrix is derived from the primary light source, and the light view volume is computed to fit the bounding sphere of the entire scene.
 
 
@@ -1140,7 +1140,7 @@ void ShadowMapApp::BuildPSOs()
     // step4: PSO for shadow map pass.
     //
     D3D12_GRAPHICS_PIPELINE_STATE_DESC smapPsoDesc = opaquePsoDesc;
-    smapPsoDesc.RasterizerState.DepthBias = 100000;
+    smapPsoDesc.RasterizerState.DepthBias = 100000;  //Change the depth bias to 1000000 => Peter Panning
     smapPsoDesc.RasterizerState.DepthBiasClamp = 0.0f;
     smapPsoDesc.RasterizerState.SlopeScaledDepthBias = 1.0f;
     smapPsoDesc.pRootSignature = mRootSignature.Get();
@@ -1153,6 +1153,9 @@ void ShadowMapApp::BuildPSOs()
     {
         reinterpret_cast<BYTE*>(mShaders["shadowOpaquePS"]->GetBufferPointer()),
         mShaders["shadowOpaquePS"]->GetBufferSize()
+        //reinterpret_cast<BYTE*>(mShaders["shadowAlphaTestedPS"]->GetBufferPointer()),
+        //mShaders["shadowAlphaTestedPS"]->GetBufferSize()
+        
     };
     
     //step8: Note that we set a null render target, which essentially disables color writes. 
@@ -1280,7 +1283,7 @@ void ShadowMapApp::BuildRenderItems()
 	skyRitem->ObjCBIndex = 0;
 	skyRitem->Mat = mMaterials["sky"].get();
 	skyRitem->Geo = mGeometries["shapeGeo"].get();
-	skyRitem->PrimitiveType = D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
+	skyRitem->PrimitiveType = D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
 	skyRitem->IndexCount = skyRitem->Geo->DrawArgs["sphere"].IndexCount;
 	skyRitem->StartIndexLocation = skyRitem->Geo->DrawArgs["sphere"].StartIndexLocation;
 	skyRitem->BaseVertexLocation = skyRitem->Geo->DrawArgs["sphere"].BaseVertexLocation;
@@ -1294,7 +1297,7 @@ void ShadowMapApp::BuildRenderItems()
     quadRitem->ObjCBIndex = 1;
     quadRitem->Mat = mMaterials["bricks0"].get();
     quadRitem->Geo = mGeometries["shapeGeo"].get();
-    quadRitem->PrimitiveType = D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
+    quadRitem->PrimitiveType = D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
     quadRitem->IndexCount = quadRitem->Geo->DrawArgs["quad"].IndexCount;
     quadRitem->StartIndexLocation = quadRitem->Geo->DrawArgs["quad"].StartIndexLocation;
     quadRitem->BaseVertexLocation = quadRitem->Geo->DrawArgs["quad"].BaseVertexLocation;
@@ -1308,7 +1311,7 @@ void ShadowMapApp::BuildRenderItems()
 	boxRitem->ObjCBIndex = 2;
 	boxRitem->Mat = mMaterials["bricks0"].get();
 	boxRitem->Geo = mGeometries["shapeGeo"].get();
-	boxRitem->PrimitiveType = D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
+	boxRitem->PrimitiveType = D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
 	boxRitem->IndexCount = boxRitem->Geo->DrawArgs["box"].IndexCount;
 	boxRitem->StartIndexLocation = boxRitem->Geo->DrawArgs["box"].StartIndexLocation;
 	boxRitem->BaseVertexLocation = boxRitem->Geo->DrawArgs["box"].BaseVertexLocation;
@@ -1336,7 +1339,7 @@ void ShadowMapApp::BuildRenderItems()
 	gridRitem->ObjCBIndex = 4;
 	gridRitem->Mat = mMaterials["tile0"].get();
 	gridRitem->Geo = mGeometries["shapeGeo"].get();
-	gridRitem->PrimitiveType = D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
+	gridRitem->PrimitiveType = D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
     gridRitem->IndexCount = gridRitem->Geo->DrawArgs["grid"].IndexCount;
     gridRitem->StartIndexLocation = gridRitem->Geo->DrawArgs["grid"].StartIndexLocation;
     gridRitem->BaseVertexLocation = gridRitem->Geo->DrawArgs["grid"].BaseVertexLocation;
@@ -1364,7 +1367,7 @@ void ShadowMapApp::BuildRenderItems()
 		leftCylRitem->ObjCBIndex = objCBIndex++;
 		leftCylRitem->Mat = mMaterials["bricks0"].get();
 		leftCylRitem->Geo = mGeometries["shapeGeo"].get();
-		leftCylRitem->PrimitiveType = D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
+		leftCylRitem->PrimitiveType = D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
 		leftCylRitem->IndexCount = leftCylRitem->Geo->DrawArgs["cylinder"].IndexCount;
 		leftCylRitem->StartIndexLocation = leftCylRitem->Geo->DrawArgs["cylinder"].StartIndexLocation;
 		leftCylRitem->BaseVertexLocation = leftCylRitem->Geo->DrawArgs["cylinder"].BaseVertexLocation;
@@ -1374,7 +1377,7 @@ void ShadowMapApp::BuildRenderItems()
 		rightCylRitem->ObjCBIndex = objCBIndex++;
 		rightCylRitem->Mat = mMaterials["bricks0"].get();
 		rightCylRitem->Geo = mGeometries["shapeGeo"].get();
-		rightCylRitem->PrimitiveType = D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
+		rightCylRitem->PrimitiveType = D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
 		rightCylRitem->IndexCount = rightCylRitem->Geo->DrawArgs["cylinder"].IndexCount;
 		rightCylRitem->StartIndexLocation = rightCylRitem->Geo->DrawArgs["cylinder"].StartIndexLocation;
 		rightCylRitem->BaseVertexLocation = rightCylRitem->Geo->DrawArgs["cylinder"].BaseVertexLocation;
@@ -1384,7 +1387,7 @@ void ShadowMapApp::BuildRenderItems()
 		leftSphereRitem->ObjCBIndex = objCBIndex++;
 		leftSphereRitem->Mat = mMaterials["mirror0"].get();
 		leftSphereRitem->Geo = mGeometries["shapeGeo"].get();
-		leftSphereRitem->PrimitiveType = D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
+		leftSphereRitem->PrimitiveType = D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
 		leftSphereRitem->IndexCount = leftSphereRitem->Geo->DrawArgs["sphere"].IndexCount;
 		leftSphereRitem->StartIndexLocation = leftSphereRitem->Geo->DrawArgs["sphere"].StartIndexLocation;
 		leftSphereRitem->BaseVertexLocation = leftSphereRitem->Geo->DrawArgs["sphere"].BaseVertexLocation;
@@ -1394,7 +1397,7 @@ void ShadowMapApp::BuildRenderItems()
 		rightSphereRitem->ObjCBIndex = objCBIndex++;
 		rightSphereRitem->Mat = mMaterials["mirror0"].get();
 		rightSphereRitem->Geo = mGeometries["shapeGeo"].get();
-		rightSphereRitem->PrimitiveType = D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
+		rightSphereRitem->PrimitiveType = D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
 		rightSphereRitem->IndexCount = rightSphereRitem->Geo->DrawArgs["sphere"].IndexCount;
 		rightSphereRitem->StartIndexLocation = rightSphereRitem->Geo->DrawArgs["sphere"].StartIndexLocation;
 		rightSphereRitem->BaseVertexLocation = rightSphereRitem->Geo->DrawArgs["sphere"].BaseVertexLocation;
