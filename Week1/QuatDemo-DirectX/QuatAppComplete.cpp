@@ -17,6 +17,7 @@
 #include "../../Common/GeometryGenerator.h"
 #include "../../Common/Camera.h"
 #include "FrameResource.h"
+//step0
 #include "AnimationHelper.h"
 
 using Microsoft::WRL::ComPtr;
@@ -85,7 +86,9 @@ private:
 	void UpdateMaterialBuffer(const GameTimer& gt);
 	void UpdateMainPassCB(const GameTimer& gt);
 
+	//step1
     void DefineSkullAnimation();
+
 	void LoadTextures();
     void BuildRootSignature();
 	void BuildDescriptorHeaps();
@@ -134,6 +137,8 @@ private:
 	Camera mCamera;
 
     float mAnimTimePos = 0.0f;
+
+	//step2
     BoneAnimation mSkullAnimation;
 
     POINT mLastMousePos;
@@ -165,6 +170,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance,
 QuatApp::QuatApp(HINSTANCE hInstance)
     : D3DApp(hInstance)
 {
+	//step3
     DefineSkullAnimation();
 }
 
@@ -221,6 +227,8 @@ void QuatApp::Update(const GameTimer& gt)
 {
     OnKeyboardInput(gt);
 
+
+	///Step4
     mAnimTimePos += gt.DeltaTime();
     if(mAnimTimePos >= mSkullAnimation.GetEndTime())
     {
@@ -229,6 +237,10 @@ void QuatApp::Update(const GameTimer& gt)
     }
 
     mSkullAnimation.Interpolate(mAnimTimePos, mSkullWorld);
+
+	///
+
+
     mSkullRitem->World = mSkullWorld;
     mSkullRitem->NumFramesDirty = gNumFrameResources;
 
@@ -462,12 +474,11 @@ void QuatApp::UpdateMainPassCB(const GameTimer& gt)
 	currPassCB->CopyData(0, mMainPassCB);
 }
 
+// Step6
+// Define the animation keyframes
+//
 void QuatApp::DefineSkullAnimation()
 {
-    //
-    // Define the animation keyframes
-    //
-
     XMVECTOR q0 = XMQuaternionRotationAxis(XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f), XMConvertToRadians(30.0f));
     XMVECTOR q1 = XMQuaternionRotationAxis(XMVectorSet(1.0f, 1.0f, 2.0f, 0.0f), XMConvertToRadians(45.0f));
     XMVECTOR q2 = XMQuaternionRotationAxis(XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f), XMConvertToRadians(-30.0f));
